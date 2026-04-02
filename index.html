@@ -5,63 +5,82 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Legacy Continues | The Heritage Vault</title>
     <link rel="stylesheet" href="style.css">
-    <style>
-        /* Minimalist Sound Toggle */
-        #audio-toggle {
-            position: absolute;
-            top: 25px;
-            right: 25px;
-            z-index: 100;
-            background: rgba(0, 0, 0, 0.5);
-            color: #d4af37;
-            border: 1px solid rgba(212, 175, 55, 0.5);
-            width: 45px;
-            height: 45px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            backdrop-filter: blur(10px);
-            font-size: 0.6rem;
-            letter-spacing: 1px;
-            transition: 0.3s;
-        }
-        #audio-toggle:hover {
-            border-color: #d4af37;
-            background: rgba(212, 175, 55, 0.1);
-        }
-    </style>
 </head>
 <body>
     <div class="app-wrap">
         <button id="audio-toggle">SOUND</button>
-
         <video autoplay muted loop playsinline id="bg-video">
             <source src="hero-marathon.mp4" type="video/mp4">
         </video>
-        
         <div class="glass-overlay">
             <h1 class="brand-name">MY LEGACY CONTINUES</h1>
             <p class="tagline">Your Voice. Your Wisdom. Preserved Forever.</p>
             <div class="button-group">
-                <a href="order.html" class="gold-btn">GET STARTED</a>
-                <p class="price-notice">Heritage Bundle: $650.00</p>
+                <a href="#about" class="gold-btn">EXPLORE THE VAULT</a>
             </div>
         </div>
     </div>
 
+    <section id="about" class="info-section">
+        <h2>PRESERVE YOUR WISDOM</h2>
+        <p class="section-sub">A secure digital sanctuary for your life's most important lessons.</p>
+        <div class="info-grid">
+            <div class="info-card">
+                <h3>VOICE ARCHIVE</h3>
+                <p>High-fidelity recording of your stories, advice, and humor for future generations.</p>
+            </div>
+            <div class="info-card">
+                <h3>THE DIGITAL VAULT</h3>
+                <p>A private, encrypted space for letters, photos, and values accessible only by your heirs.</p>
+            </div>
+            <div class="info-card">
+                <h3>HERITAGE BUNDLE</h3>
+                <p>Our $650 master package including the full vault setup and legacy consultation.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="ecosystem" class="info-section dark-bg">
+        <h2>THE PHYSICAL ECOSYSTEM</h2>
+        <div class="info-grid">
+            <div class="info-card">
+                <div class="icon">🏷️</div>
+                <h3>HERITAGE TAGS</h3>
+                <p>Premium metal QR keys. Link physical family heirlooms to their digital stories instantly.</p>
+                <span class="price">$49.00</span>
+            </div>
+            <div class="info-card">
+                <div class="icon">🤝</div>
+                <h3>CONCIERGE SETUP</h3>
+                <p>We do the work. We gather the media and record the audio to build your vault from scratch.</p>
+                <span class="price">CUSTOM QUOTE</span>
+            </div>
+        </div>
+        <div style="margin-top: 50px;">
+            <a href="order.html" class="gold-btn">SECURE YOUR LEGACY</a>
+        </div>
+    </section>
+
     <script>
         const video = document.getElementById('bg-video');
         const audioBtn = document.getElementById('audio-toggle');
-
-        // Cinematic Slow-Mo
-        video.playbackRate = 0.5; 
-
-        // Minimalist Audio Toggle
+        video.playbackRate = 1.0; // NORMAL SPEED - Voice will sound correct now
         audioBtn.addEventListener('click', () => {
             if (video.muted) {
                 video.muted = false;
+                audioBtn.style.background = "#d4af37";
+                audioBtn.style.color = "#000";
+                audioBtn.innerText = "ON";
+            } else {
+                video.muted = true;
+                audioBtn.style.background = "rgba(0, 0, 0, 0.5)";
+                audioBtn.style.color = "#d4af37";
+                audioBtn.innerText = "SOUND";
+            }
+        });
+    </script>
+</body>
+</html>                video.muted = false;
                 audioBtn.style.background = "#d4af37";
                 audioBtn.style.color = "#000";
                 audioBtn.innerText = "ON";
