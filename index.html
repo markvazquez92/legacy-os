@@ -3,91 +3,115 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Legacy Continues | The Total Heritage System</title>
+    <title>My Legacy Continues | The Heritage Vault</title>
     <style>
-        body { background-color: #000; color: #d4af37; font-family: 'Georgia', serif; margin: 0; padding: 0; text-align: center; line-height: 1.6; }
-        .vault-container { max-width: 1100px; margin: auto; padding: 20px; }
-        .logo { width: 180px; margin-top: 30px; border: 2px solid #d4af37; border-radius: 50%; }
-        h1, h2, h3 { letter-spacing: 2px; text-transform: uppercase; }
-        .pillar { background: #111; border: 1px solid #d4af37; padding: 40px; margin: 40px 0; text-align: left; position: relative; }
-        .btn { display: inline-block; background: #d4af37; color: #000; padding: 12px 25px; text-decoration: none; font-weight: bold; margin-top: 15px; border: none; transition: 0.3s; cursor: pointer; }
-        .btn:hover { background: #fff; transform: scale(1.05); }
-        .white-text { color: #fff; }
-        .highlight { color: #d4af37; font-weight: bold; }
-        .price { font-size: 1.8rem; color: #fff; margin: 10px 0; }
-        .video-frame { border: 2px solid #d4af37; background: #000; margin: 20px 0; }
-        
-        /* Product Grid */
-        .grid { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; }
-        .card { border: 1px solid #d4af37; padding: 20px; width: 280px; background: #050505; text-align: center; }
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: 'Helvetica', sans-serif;
+            background-color: #000;
+            color: #d4af37; /* Gold */
+            overflow-x: hidden;
+        }
+
+        /* Video Background Styling */
+        #video-bg {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+            z-index: -1;
+            filter: brightness(40%);
+        }
+
+        .overlay {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.4);
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 10px rgba(212, 175, 55, 0.5);
+        }
+
+        p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            color: #fff;
+            margin-bottom: 30px;
+        }
+
+        .btn-container {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .btn {
+            padding: 15px 30px;
+            border: 2px solid #d4af37;
+            background: transparent;
+            color: #d4af37;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+            text-transform: uppercase;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: #d4af37;
+            color: #000;
+        }
+
+        .section-info {
+            padding: 100px 20px;
+            background: #000;
+            text-align: center;
+        }
     </style>
 </head>
 <body>
 
-<div class="vault-container">
-    <img src="logo.jpg" alt="Legacy Logo" class="logo">
-    <h1>My Legacy Continues</h1>
-    <p style="font-style: italic; color: #fff;">Premium Life-Cycle Preservation & Rescue Network</p>
+    <video autoplay muted loop playsinline id="video-bg">
+        <source src="hero-marathon.mp4" type="video/mp4">
+    </video>
 
-    <div class="pillar" style="text-align: center;">
-        <h2>Experience the Vault</h2>
-        <div class="video-frame">
-            <iframe width="100%" height="450" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allowfullscreen></iframe>
-        </div>
-        <p class="white-text">Watch how we bridge the gap between physical memorials and digital history.</p>
-    </div>
-
-    <div class="pillar">
-        <h2 style="text-align: center;">The Heritage Shop</h2>
-        <div class="grid">
-            <div class="card">
-                <h3>Trade Bundle</h3>
-                <p class="white-text" style="font-size: 0.9rem;">Business heritage & estate setup.</p>
-                <p class="price">$650.00</p>
-                <a href="https://buy.stripe.com/dRm3cwdSL05u58o6qwfQI01" class="btn">SECURE BUNDLE</a>
-            </div>
-            <div class="card">
-                <h3>Full Legacy Vault</h3>
-                <p class="white-text" style="font-size: 0.9rem;">Complete Birth-to-Tribute system.</p>
-                <p class="price">$199.00</p>
-                <a href="https://buy.stripe.com/4gM14odSLaK8asI9CIfQI03" class="btn">ORDER VAULT</a>
-            </div>
-            <div class="card">
-                <h3>Heritage Book</h3>
-                <p class="white-text" style="font-size: 0.9rem;">Lay-flat archival research guide.</p>
-                <p class="price">$150.00</p>
-                <a href="https://buy.stripe.com/bJe14o2a35pO6csg16fQI02" class="btn">ORDER BOOK</a>
-            </div>
-            <div class="card">
-                <h3>Tribute Plaque</h3>
-                <p class="white-text" style="font-size: 0.9rem;">Stainless steel QR memorial tag.</p>
-                <p class="price">$149.00</p>
-                <a href="https://buy.stripe.com/14A14o6qjg4sgR62agfQI05" class="btn">ORDER TAG</a>
-            </div>
-            <div class="card">
-                <h3>Pet Hero Tag</h3>
-                <p class="white-text" style="font-size: 0.9rem;">Safety registry & rescue support.</p>
-                <p class="price">$35.00</p>
-                <a href="https://buy.stripe.com/aFa3cw15ZaK81Wc028fQI04" class="btn">ORDER TAG</a>
-            </div>
+    <div class="overlay">
+        <img src="logo.png" alt="Gold Ship Logo" style="width: 150px; margin-bottom: 20px;">
+        <h1>My Legacy Continues</h1>
+        <p>Forensic Genealogy | Ancestry Blueprints | Humanitarian Rescue</p>
+        
+        <div class="btn-container">
+            <a href="order.html" class="btn">Heritage Bundles ($650)</a>
+            <a href="tribute.html" class="btn">Legacy Profiles</a>
+            <a href="bears-concrete.html" class="btn">Concrete Pumping Services</a>
         </div>
     </div>
 
-    <div class="pillar">
-        <h2>What Makes Us Different?</h2>
-        <p class="white-text">Most companies offer a one-time product. We offer a <span class="highlight">Life-Cycle Infrastructure</span>.</p>
-        <ul class="white-text" style="text-align: left;">
-            <li><span class="highlight">Birth-to-Legacy:</span> We start child profiles the day they are born.</li>
-            <li><span class="highlight">Memory Anchors:</span> Our Lay-Flat books are designed specifically for Alzheimer's/Dementia patients so they never "wake up lost."</li>
-            <li><span class="highlight">Rescue Networking:</span> A portion of every sale funds emergency pet transport and shelter support in our community.</li>
-            <li><span class="highlight">Stainless Steel Quality:</span> Our physical tags are surgical-grade steel, designed to never rust or fade.</li>
-        </ul>
+    <div class="section-info">
+        <h2>The Garcia & Vazquez Lineage</h2>
+        <p>From 1547 Spanish Maps to modern-day DNA Blueprints. We preserve the proof of your existence.</p>
     </div>
 
-    <footer style="padding: 40px; font-size: 0.8rem; color: #555;">
-        © 2026 My Legacy Continues | Santa Maria, CA
-    </footer>
-</div>
+    <script>
+        // CEO Vision: Slow the video to 0.5x speed for a cinematic, premium feel
+        const video = document.getElementById('video-bg');
+        video.playbackRate = 0.75;
+    </script>
 
 </body>
 </html>
