@@ -3,66 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Legacy Continues | The Heritage Vault</title>
+    <title>My Legacy Continues | Generational Infrastructure</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="hero-static">
-        <div class="glass-overlay">
+    <section class="hero-static">
+        <div class="brand-shield">
             <h1 class="brand-name">MY LEGACY CONTINUES</h1>
-            <p class="tagline">Your Voice. Your Wisdom. Preserved Forever.</p>
-            <div class="button-group">
-                <a href="#demo" class="gold-btn">WATCH THE DEMO</a>
-                <a href="order.html" class="outline-btn">RESERVE VAULT - $650</a>
+            <p class="tagline">ARCHITECTS OF DIGITAL ETERNITY</p>
+            <div class="cta-group">
+                <a href="#ecosystem" class="gold-btn">VIEW SYSTEM INFRASTRUCTURE</a>
+                <a href="order.html" class="outline-btn">INITIATE HERITAGE BUNDLE</a>
             </div>
-        </div>
-    </div>
-
-    <section id="demo" class="info-section dark-bg">
-        <h2>THE HERITAGE EXPERIENCE</h2>
-        <div class="video-container">
-            <video controls playsinline poster="logo.jpg" id="demo-video">
-                <source src="hero-marathon.mp4" type="video/mp4">
-            </video>
         </div>
     </section>
 
-    <section id="ecosystem" class="info-section">
-        <h2>THE ECOSYSTEM</h2>
-        <div class="info-grid">
-            <div class="info-card">
-                <div class="icon">🏷️</div>
-                <h3>HERITAGE TAGS</h3>
-                <p>Premium metal QR keys to link family heirlooms to digital stories.</p>
-                <span class="price">$49.00</span>
+    <section id="demo" class="video-section">
+        <div class="container">
+            <h2 class="section-title">THE CINEMATIC RECORD</h2>
+            <div class="video-frame">
+                <video controls playsinline id="demo-video">
+                    <source src="hero-marathon.mp4" type="video/mp4">
+                </video>
             </div>
-            <div class="info-card">
-                <div class="icon">🤝</div>
-                <h3>CONCIERGE SETUP</h3>
-                <p>We gather the media and record the audio to build your vault for you.</p>
-                <span class="price">CUSTOM QUOTE</span>
+        </div>
+    </section>
+
+    <section id="ecosystem" class="grid-section">
+        <div class="container">
+            <h2 class="section-title">THE INTEGRATED NETWORK</h2>
+            <div class="main-grid">
+                
+                <div class="card">
+                    <h3>THE HERITAGE VAULT</h3>
+                    <p>The central encrypted repository for voice, wisdom, and media. Designed for perpetual access across generations.</p>
+                </div>
+
+                <div class="card">
+                    <h3>MEMORIAL INTEGRATION</h3>
+                    <p>Premium hardware tags for cemetery monuments. Bridging the physical resting place with the digital story.</p>
+                </div>
+
+                <div class="card">
+                    <h3>THE GENERATIONAL SEED</h3>
+                    <p>Childhood legacy vaults. Preserving the earliest chapters of a life to be unlocked at designated milestones.</p>
+                </div>
+
+                <div class="card">
+                    <h3>ALTRUISTIC INTEGRATION</h3>
+                    <p>Direct network support for The Shelltrr. Every legacy secured provides infrastructure for animal rescue initiatives.</p>
+                </div>
+
             </div>
+        </div>
+    </section>
+
+    <section class="security-footer">
+        <div class="container">
+            <h2>BANK-GRADE SECURITY. GENERATIONAL STABILITY.</h2>
+            <p>Our infrastructure is built on redundant, encrypted frameworks to ensure your voice never fades.</p>
+            <a href="order.html" class="gold-btn large">ESTABLISH YOUR LEGACY - $650</a>
         </div>
     </section>
 
     <script>
-        // Sets video to normal speed so the voice is clear
         document.getElementById('demo-video').playbackRate = 1.0;
     </script>
 </body>
-</html>
-    <script>
-        const video = document.getElementById('bg-video');
-        const audioBtn = document.getElementById('audio-toggle');
-        video.playbackRate = 1.0; // NORMAL SPEED - Voice will sound correct now
-        audioBtn.addEventListener('click', () => {
-            if (video.muted) {
-                video.muted = false;
-                audioBtn.style.background = "#d4af37";
-                audioBtn.style.color = "#000";
-                audioBtn.innerText = "ON";
-            } else {
+</html>            } else {
                 video.muted = true;
                 audioBtn.style.background = "rgba(0, 0, 0, 0.5)";
                 audioBtn.style.color = "#d4af37";
