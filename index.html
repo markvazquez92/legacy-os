@@ -3,65 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Legacy Continues</title>
+    <title>My Legacy Continues | The Heritage Vault</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Minimalist Sound Toggle */
+        #audio-toggle {
+            position: absolute;
+            top: 25px;
+            right: 25px;
+            z-index: 100;
+            background: rgba(0, 0, 0, 0.5);
+            color: #d4af37;
+            border: 1px solid rgba(212, 175, 55, 0.5);
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            backdrop-filter: blur(10px);
+            font-size: 0.6rem;
+            letter-spacing: 1px;
+            transition: 0.3s;
+        }
+        #audio-toggle:hover {
+            border-color: #d4af37;
+            background: rgba(212, 175, 55, 0.1);
+        }
+    </style>
 </head>
 <body>
     <div class="app-wrap">
+        <button id="audio-toggle">SOUND</button>
+
         <video autoplay muted loop playsinline id="bg-video">
             <source src="hero-marathon.mp4" type="video/mp4">
         </video>
+        
         <div class="glass-overlay">
             <h1 class="brand-name">MY LEGACY CONTINUES</h1>
             <p class="tagline">Your Voice. Your Wisdom. Preserved Forever.</p>
-            <a href="order.html" class="gold-btn">GET STARTED</a>
-            <p class="price-notice">Heritage Bundle: $650.00</p>
+            <div class="button-group">
+                <a href="order.html" class="gold-btn">GET STARTED</a>
+                <p class="price-notice">Heritage Bundle: $650.00</p>
+            </div>
         </div>
     </div>
+
     <script>
-        const v = document.getElementById('bg-video');
-        v.playbackRate = 0.5; // Slow-motion "Marathon" effect
+        const video = document.getElementById('bg-video');
+        const audioBtn = document.getElementById('audio-toggle');
+
+        // Cinematic Slow-Mo
+        video.playbackRate = 0.5; 
+
+        // Minimalist Audio Toggle
+        audioBtn.addEventListener('click', () => {
+            if (video.muted) {
+                video.muted = false;
+                audioBtn.style.background = "#d4af37";
+                audioBtn.style.color = "#000";
+                audioBtn.innerText = "ON";
+            } else {
+                video.muted = true;
+                audioBtn.style.background = "rgba(0, 0, 0, 0.5)";
+                audioBtn.style.color = "#d4af37";
+                audioBtn.innerText = "SOUND";
+            }
+        });
     </script>
 </body>
-</html>        </video>
-        <div class="overlay"></div>
-        
-        <div class="content">
-            <h1>MY LEGACY CONTINUES</h1>
-            <p>Your wisdom, preserved forever.</p>
-            <a href="order.html" class="btn-gold">View Heritage Bundles</a>
-        </div>
-    </header>
-
-    <script>
-        // Forces the video to play at half-speed
-        const video = document.getElementById('hero-video');
-        video.playbackRate = 0.5;
-    </script>
-</body>
-</html>    </section>
-
-    <section id="contact">
-        <h2>Start Your Legacy</h2>
-        <p>Inquire about the $650 Heritage Bundle or Pet Safety Registry.</p>
-        
-        <form name="contact" method="POST" data-netlify="true">
-            <input type="text" name="name" placeholder="Your Name" required>
-            <input type="email" name="email" placeholder="Your Email" required>
-            <textarea name="message" rows="5" placeholder="Tell us about the legacy you want to preserve..." required></textarea>
-            <div data-netlify-recapcha="true"></div>
-            <button type="submit" class="btn-gold">SEND MESSAGE</button>
-        </form>
-    </section>
-
-    <footer>
-        <p>&copy; 2026 My Legacy Continues | Santa Maria, California</p>
-    </footer>
-
-    <script>
-        window.onload = function() {
-            var video = document.getElementById('hero-video');
-            if (video) {
+</html>            if (video) {
                 // This slows the ship and surnames to a majestic 0.5x speed
                 video.playbackRate = 0.5;
                 
