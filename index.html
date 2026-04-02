@@ -7,60 +7,51 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="app-wrap">
-        <button id="audio-toggle">SOUND</button>
-        <video autoplay muted loop playsinline id="bg-video">
-            <source src="hero-marathon.mp4" type="video/mp4">
-        </video>
+
+    <div class="hero-static">
         <div class="glass-overlay">
             <h1 class="brand-name">MY LEGACY CONTINUES</h1>
             <p class="tagline">Your Voice. Your Wisdom. Preserved Forever.</p>
             <div class="button-group">
-                <a href="#about" class="gold-btn">EXPLORE THE VAULT</a>
+                <a href="#demo" class="gold-btn">WATCH THE DEMO</a>
+                <a href="order.html" class="outline-btn">RESERVE VAULT - $650</a>
             </div>
         </div>
     </div>
 
-    <section id="about" class="info-section">
-        <h2>PRESERVE YOUR WISDOM</h2>
-        <p class="section-sub">A secure digital sanctuary for your life's most important lessons.</p>
-        <div class="info-grid">
-            <div class="info-card">
-                <h3>VOICE ARCHIVE</h3>
-                <p>High-fidelity recording of your stories, advice, and humor for future generations.</p>
-            </div>
-            <div class="info-card">
-                <h3>THE DIGITAL VAULT</h3>
-                <p>A private, encrypted space for letters, photos, and values accessible only by your heirs.</p>
-            </div>
-            <div class="info-card">
-                <h3>HERITAGE BUNDLE</h3>
-                <p>Our $650 master package including the full vault setup and legacy consultation.</p>
-            </div>
+    <section id="demo" class="info-section dark-bg">
+        <h2>THE HERITAGE EXPERIENCE</h2>
+        <div class="video-container">
+            <video controls playsinline poster="logo.jpg" id="demo-video">
+                <source src="hero-marathon.mp4" type="video/mp4">
+            </video>
         </div>
     </section>
 
-    <section id="ecosystem" class="info-section dark-bg">
-        <h2>THE PHYSICAL ECOSYSTEM</h2>
+    <section id="ecosystem" class="info-section">
+        <h2>THE ECOSYSTEM</h2>
         <div class="info-grid">
             <div class="info-card">
                 <div class="icon">🏷️</div>
                 <h3>HERITAGE TAGS</h3>
-                <p>Premium metal QR keys. Link physical family heirlooms to their digital stories instantly.</p>
+                <p>Premium metal QR keys to link family heirlooms to digital stories.</p>
                 <span class="price">$49.00</span>
             </div>
             <div class="info-card">
                 <div class="icon">🤝</div>
                 <h3>CONCIERGE SETUP</h3>
-                <p>We do the work. We gather the media and record the audio to build your vault from scratch.</p>
+                <p>We gather the media and record the audio to build your vault for you.</p>
                 <span class="price">CUSTOM QUOTE</span>
             </div>
         </div>
-        <div style="margin-top: 50px;">
-            <a href="order.html" class="gold-btn">SECURE YOUR LEGACY</a>
-        </div>
     </section>
 
+    <script>
+        // Sets video to normal speed so the voice is clear
+        document.getElementById('demo-video').playbackRate = 1.0;
+    </script>
+</body>
+</html>
     <script>
         const video = document.getElementById('bg-video');
         const audioBtn = document.getElementById('audio-toggle');
