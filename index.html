@@ -3,46 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Legacy Continues | The Heritage Network</title>
+    <title>My Legacy Continues | The Heritage Archive</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="hero-static">
-        <div class="hero-content">
-            <div class="cta-group">
-                <a href="#ecosystem" class="gold-btn">EXPLORE THE NETWORK</a>
-                <a href="order.html" class="outline-btn">RESERVE THE VAULT - $650</a>
+    <header class="hero-section">
+        <div class="hero-anchor">
+            <div class="cta-stack">
+                <a href="#purpose" class="gold-btn">OUR PURPOSE</a>
+                <a href="#ecosystem" class="outline-btn">THE ECOSYSTEM</a>
             </div>
         </div>
-    </div>
+    </header>
 
-    <section id="demo" class="info-section dark-bg">
-        <h2>THE EXPERIENCE</h2>
-        <div class="video-container">
-            <video controls playsinline id="demo-video">
-                <source src="hero-marathon.mp4" type="video/mp4">
-            </video>
+    <section id="purpose" class="text-block">
+        <div class="container">
+            <h2 class="gold-title">BEYOND THE GRAVE</h2>
+            <p class="mission-text">
+                Most memories fade within two generations. We built <strong>My Legacy Continues</strong> to ensure yours never does. We aren't just a digital vault; we are the bridge between your physical life and your family's future. Whether it's your voice, your values, or your direct guidance, we archive the essence of who you are.
+            </p>
         </div>
     </section>
 
-    <section id="ecosystem" class="info-section">
-        <h2>THE INTEGRATED ECOSYSTEM</h2>
-        <div class="info-grid">
-            <div class="info-card">
-                <h3>THE HERITAGE VAULT</h3>
-                <p>An encrypted digital sanctuary for your voice and wisdom, designed for generational stability.</p>
-            </div>
-            <div class="info-card">
-                <h3>MEMORIAL TAGS</h3>
-                <p>Premium hardware for cemetery monuments, connecting physical markers to the digital vault.</p>
-            </div>
-            <div class="info-card">
-                <h3>RESCUE LEGACY</h3>
-                <p>Every legacy secured provides direct infrastructure support for animal rescue at The Shelltrr.</p>
+    <section id="demo" class="video-preview">
+        <div class="container">
+            <h2 class="gold-title">THE CINEMATIC RECORD</h2>
+            <div class="video-frame">
+                <video controls playsinline poster="logo.jpg" id="demo-video">
+                    <source src="hero-marathon.mp4" type="video/mp4">
+                </video>
             </div>
         </div>
     </section>
+
+    <section id="ecosystem" class="grid-section">
+        <div class="container">
+            <h2 class="gold-title">A UNIFIED NETWORK</h2>
+            <div class="legacy-grid">
+                
+                <div class="legacy-card">
+                    <h3>THE HERITAGE VAULT</h3>
+                    <p>The core of your legacy. An encrypted, permanent home for your "Marathon" voice recordings and family wisdom. It is bank-grade security for your soul.</p>
+                </div>
+
+                <div class="legacy-card">
+                    <h3>MEMORIAL ANCHORS</h3>
+                    <p>We extend the vault to the physical world. Our premium tags for cemetery monuments allow anyone who visits your resting place to instantly hear your stories.</p>
+                </div>
+
+                <div class="legacy-card">
+                    <h3>THE GENERATIONAL SEED</h3>
+                    <p>Starting the legacy at birth. We build vaults for children that unlock at major life milestones—preserving a parent's voice for a future they may not see.</p>
+                </div>
+
+                <div class="legacy-card">
+                    <h3>THE SHELLTRR ALLIANCE</h3>
+                    <p>Your legacy saves lives. Every vault secured provides the infrastructure for animal rescue, turning family history into community action.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer class="final-cta">
+        <h2 class="gold-title">SECURE THE BLOODLINE</h2>
+        <a href="order.html" class="gold-btn large">ESTABLISH YOUR VAULT — $650</a>
+        <p class="stability-tag">ENCRYPTED • REDUNDANT • GENERATIONAL</p>
+    </footer>
 
     <script>
         document.getElementById('demo-video').playbackRate = 1.0;
