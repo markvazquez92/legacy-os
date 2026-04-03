@@ -3,78 +3,109 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vazquez | Heritage & Trade</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Lora:wght@400;600&display=swap" rel="stylesheet">
+    <title>My Legacy Continues | Heritage & Trade</title>
     <style>
-        :root { --parchment: #F4F1EA; --midnight: #0B1610; --bronze: #8C6A3D; }
-        body, html { margin: 0; padding: 0; background-color: var(--midnight); font-family: 'Lora', serif; color: #1a1a1a; }
-        
-        /* Simple, Solid Header */
-        .header { background: var(--midnight); padding: 80px 20px; text-align: center; border-bottom: 3px solid var(--bronze); }
-        .header h1 { font-family: 'Playfair Display'; color: var(--parchment); font-size: 3rem; margin: 0; letter-spacing: 6px; text-transform: uppercase; }
-        .header p { color: var(--bronze); font-weight: bold; letter-spacing: 3px; margin-top: 10px; font-size: 0.9rem; }
-
-        /* The Main Ledger (Beige/Parchment) */
-        .ledger-container { background: var(--parchment); padding: 60px 20px; min-height: 70vh; }
-        .grid { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
-        
-        .card { background: #fff; border: 1px solid #D1CDC4; padding: 40px; box-shadow: 6px 6px 0px var(--bronze); transition: 0.3s; }
-        .card h2 { font-family: 'Playfair Display'; font-size: 1.8rem; margin: 0 0 15px 0; color: var(--midnight); border-bottom: 2px solid var(--bronze); padding-bottom: 10px; }
-        .card p { line-height: 1.6; font-size: 1.05rem; }
-        .tag { font-size: 0.7rem; font-weight: bold; color: var(--bronze); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 10px; display: block; }
-
-        /* The Book Preview Video (Tucked inside the Vault Card) */
-        .book-preview-box { margin-top: 20px; border: 4px solid var(--midnight); background: #000; line-height: 0; position: relative; }
-        .book-preview-box video { width: 100%; height: auto; opacity: 0.9; }
-        .video-caption { background: var(--midnight); color: var(--parchment); padding: 10px; font-size: 0.8rem; text-align: center; font-weight: bold; letter-spacing: 1px; }
-
-        .footer { background: var(--midnight); color: var(--parchment); text-align: center; padding: 60px 20px; border-top: 3px solid var(--bronze); }
-        
-        @media (max-width: 768px) { .grid { grid-template-columns: 1fr; } }
+        :root {
+            --parchment: #f5f2e9;
+            --midnight-green: #004d40;
+            --bronze: #cd7f32;
+            --text-dark: #2c2c2c;
+        }
+        body {
+            background-color: var(--parchment);
+            color: var(--text-dark);
+            font-family: 'Cinzel', serif; /* Or Times New Roman if Cinzel isn't loaded */
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: var(--midnight-green);
+            padding: 40px 20px;
+            text-align: center;
+            border-bottom: 5px solid var(--bronze);
+        }
+        .logo-container img {
+            max-width: 200px; /* Your Gold Ship Logo */
+            filter: drop-shadow(0px 4px 4px rgba(0,0,0,0.5));
+        }
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .nav-links a {
+            color: var(--parchment);
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        .hero-section {
+            padding: 60px 20px;
+            text-align: center;
+        }
+        .profile-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .profile-card {
+            background: white;
+            border: 2px solid var(--midnight-green);
+            padding: 20px;
+            box-shadow: 10px 10px 0px var(--bronze);
+            transition: transform 0.2s;
+        }
+        .profile-card:hover {
+            transform: translate(-5px, -5px);
+        }
+        .cta-button {
+            background-color: var(--midnight-green);
+            color: var(--parchment);
+            padding: 15px 30px;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 20px;
+            border: 2px solid var(--bronze);
+        }
     </style>
 </head>
 <body>
-
-    <header class="header">
-        <h1>VAZQUEZ</h1>
-        <p>HERITAGE • CONSTRUCTION • RESCUE</p>
+    <header>
+        <div class="logo-container">
+            <img src="logo.png" alt="My Legacy Continues Gold Ship">
+        </div>
+        <div class="nav-links">
+            <a href="trade-profile.html">Trade</a>
+            <a href="rescue-registry.html">Rescue</a>
+            <a href="heritage-vault.html">Heritage</a>
+        </div>
     </header>
 
-    <main class="ledger-container">
-        <div class="grid">
-            
-            <div class="card">
-                <span class="tag">Operations</span>
-                <h2>Bears Concrete</h2>
-                <p>Owner-operated concrete pumping and industrial maintenance in Santa Maria. Built on a decade of professional field experience and mechanical grit.</p>
-            </div>
+    <section class="hero-section">
+        <h1>Building Legacies, Preserving History.</h1>
+        <p>From the structural integrity of concrete to the preservation of a family's journey.</p>
+    </section>
 
-            <div class="card">
-                <span class="tag">Logistics</span>
-                <h2>Underdog Heroes</h2>
-                <p>Digital rescue registry and safety protocols. Partnered with Director Shoshana G. to provide high-stakes animal transport and identification.</p>
-            </div>
-
-            <div class="card" style="grid-column: span 2;">
-                <span class="tag">Preservation</span>
-                <h2>The Family Vault</h2>
-                <p>Documenting the Garcia and Vazquez lineage. Specialized tools for cemetery wayfinding and memory preservation for families navigating Dementia and Alzheimer’s.</p>
-                
-                <div class="book-preview-box">
-                    <video autoplay muted loop playsinline>
-                        <source src="book-preview.mp4" type="video/mp4">
-                    </video>
-                    <div class="video-caption">PREVIEW: THE HERITAGE LEDGER</div>
-                </div>
-            </div>
-
+    <div class="profile-grid">
+        <div class="profile-card">
+            <h2>Bears Concrete Pumping</h2>
+            <p>Professional Contractor Services & Equipment Maintenance.</p>
+            <a href="trade-profile.html" class="cta-button">View Trade Profile</a>
         </div>
-    </main>
-
-    <footer class="footer">
-        <div style="font-family: 'Playfair Display'; font-size: 1.5rem; letter-spacing: 4px;">MARK VAZQUEZ</div>
-        <p style="opacity: 0.6; font-size: 0.8rem; margin-top: 20px;">SANTA MARIA, CA | EST. 2026</p>
-    </footer>
-
+        <div class="profile-card">
+            <h2>Rescue & Transport</h2>
+            <p>Lake Hughes Rescue Operation & Digital Pet ID Registry.</p>
+            <a href="rescue-registry.html" class="cta-button">View Rescue Registry</a>
+        </div>
+        <div class="profile-card">
+            <h2>Family Heritage</h2>
+            <p>The My Legacy Continues Vault & Genealogy Records.</p>
+            <a href="heritage-vault.html" class="cta-button">Enter Vault</a>
+        </div>
+    </div>
 </body>
 </html>
