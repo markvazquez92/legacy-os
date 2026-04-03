@@ -18,9 +18,9 @@
   --forest-light:   #2E6142;
   --parchment:      #F5EDD5;
   --parchment-mid:  #EAD9B5;
-  --gold:           #C9A84C;
-  --gold-light:     #E2C070;
-  --gold-dark:      #A07828;
+  --gold:           #B8943F;
+  --gold-light:     #D4AD5A;
+  --gold-dark:      #8C6E28;
   --gold-wash:      rgba(201,168,76,0.08);
   --gold-border:    rgba(201,168,76,0.20);
   --text-light:     #F0E8D6;
@@ -93,15 +93,15 @@ nav {
 .hero-video-wrap video {
   width: 100%; height: 100%;
   object-fit: cover;
-  opacity: 0.45;
+  opacity: 0.80;
 }
 .hero-overlay {
   position: absolute; inset: 0; z-index: 1;
   background: linear-gradient(
     170deg,
-    rgba(12,30,20,0.30) 0%,
-    rgba(12,30,20,0.55) 50%,
-    rgba(12,30,20,0.92) 100%
+    rgba(12,30,20,0.10) 0%,
+    rgba(12,30,20,0.22) 50%,
+    rgba(12,30,20,0.40) 100%
   );
 }
 .trade-hero-content {
@@ -227,10 +227,14 @@ nav {
 
 /* PARCHMENT */
 .parchment-section {
-  background: var(--parchment);
-  background-image: radial-gradient(ellipse 80% 60% at 12% 38%, rgba(201,168,76,0.07) 0%, transparent 55%);
+  background-color: #EFE6CC;
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E"),
+    radial-gradient(ellipse 80% 60% at 12% 38%, rgba(184,148,63,0.10) 0%, transparent 55%);
   color: var(--text-parch);
   padding: 80px 48px;
+  border-top: 2px solid rgba(184,148,63,0.30);
+  border-bottom: 2px solid rgba(184,148,63,0.30);
 }
 .parchment-inner { max-width: 960px; margin: 0 auto; }
 .parchment-section .card-label { color: var(--gold-dark); }
@@ -263,10 +267,10 @@ footer { background: var(--forest-darkest); border-top: 1px solid var(--gold-bor
   </button>
   <ul class="nav-links">
     <li><a href="index.html">Home</a></li>
-    <li><a href="portal.html">Vault</a></li>
+    <li><a href="portal.html">The Family Vault</a></li>
     <li><a href="trade-profile.html" class="active">Trade Profile</a></li>
     <li><a href="rescue-registry.html">Rescue Registry</a></li>
-    <li><a href="portal.html" class="nav-vault">Vault Login</a></li>
+    <li><a href="portal.html" class="nav-vault">Family Vault</a></li>
   </ul>
 </nav>
 
@@ -290,7 +294,10 @@ footer { background: var(--forest-darkest); border-top: 1px solid var(--gold-bor
     </div>
     <div class="trade-hero-title">Bears Concrete Pumping</div>
     <div class="trade-hero-sub">
-      Santa Maria, CA &nbsp;&middot;&nbsp; Licensed &amp; Insured &nbsp;&middot;&nbsp; Lic# 42702 &nbsp;&middot;&nbsp; Santa Barbara &amp; SLO County
+      Santa Maria, CA &nbsp;&middot;&nbsp; Licensed &amp; Insured &nbsp;&middot;&nbsp; Santa Barbara &amp; SLO County
+    </div>
+    <div style="display: inline-block; font-family: var(--cinzel); font-size: 0.78rem; letter-spacing: 0.18em; color: var(--gold); border: 1px solid var(--gold-border); padding: 8px 20px; border-radius: var(--r); margin-bottom: 24px; background: rgba(184,148,63,0.1);">
+      California Contractor License &nbsp;&mdash;&nbsp; <strong>#42702</strong>
     </div>
     <div class="hero-ctas">
       <a href="tel:8058633794" class="btn btn-gold">Call (805) 863-3794</a>
@@ -317,22 +324,23 @@ footer { background: var(--forest-darkest); border-top: 1px solid var(--gold-bor
     <div>
 
       <div class="card">
-        <span class="card-label">About This Company</span>
-        <h2>Concrete Pumping Done Right</h2>
+        <span class="card-label">Our Story</span>
+        <h2>Concrete Pumping the Way It Should Be</h2>
         <p>
-          Bears Concrete Pumping is a family-owned concrete pumping operation based in Santa Maria, California.
+          Bears Concrete Pumping is a family-run operation out of Santa Maria, California.
           We pump concrete for residential foundations, commercial slabs, custom pools, hillside builds,
           and everything in between across Santa Barbara and San Luis Obispo County.
+          Been doing it long enough to know that the job isn't done right until the concrete is where it needs to be.
         </p>
         <p>
-          <strong>Owner-operated.</strong> Mark Vazquez runs every job personally or has direct oversight on every pour.
-          When you call Bears, you are talking to the guy who shows up.
-          We do not hand work off to crews you have never met.
+          <strong>Mark Vazquez runs every job.</strong> When you call Bears, you are talking to the guy who shows up.
+          No middleman, no crews you've never met. If something goes sideways on a pour,
+          the same person who took your call is the one standing next to the pump.
         </p>
         <p>
-          We operate trailer pumps and line pumps capable of reaching tight residential lots,
-          backyard pours, elevated decks, and multi-story commercial builds.
-          If the concrete needs to get somewhere difficult, that is exactly where we specialize.
+          Trailer pumps and line pumps for tight residential lots, backyard pours, elevated decks,
+          and multi-story commercial work. If the concrete has to get somewhere a boom truck can't reach,
+          that's exactly where we do our best work.
         </p>
       </div>
 
@@ -420,16 +428,16 @@ footer { background: var(--forest-darkest); border-top: 1px solid var(--gold-bor
 
       <div class="upsell-card">
         <span class="card-label" style="display: block; text-align: center; margin-bottom: 14px;">This Is a Live Example</span>
-        <h3>Want a Profile Like This?</h3>
+        <h3>Want a Profile Like This for Your Business?</h3>
         <p>
-          The Verified Trade Profile &mdash; custom digital portfolio with 500 metal QR identity cards.
-          Your business, your reputation, permanent on this site.
+          Built by a local contractor, for local contractors.
+          Your trade profile lives permanently on this site &mdash; with 500 metal QR cards to hand out on the job.
         </p>
         <ul class="what-you-get">
-          <li>Custom permanent digital portfolio</li>
+          <li>Custom permanent digital trade profile</li>
           <li>500 metal QR identity cards</li>
-          <li>Verified by My Legacy Continues seal</li>
-          <li>Project gallery &mdash; before and after</li>
+          <li>Your license number front and center</li>
+          <li>Services, coverage, and direct contact</li>
           <li>Hosted at mylegacycontinues.com forever</li>
         </ul>
         <span class="upsell-price"><sup>$</sup>650 <sub>one-time</sub></span>
@@ -447,24 +455,22 @@ footer { background: var(--forest-darkest); border-top: 1px solid var(--gold-bor
     <span class="card-label">The DNA of Excellence</span>
     <h2>Foundations Have Always Been in This Family.</h2>
     <p>
-      Bears Concrete Pumping did not appear out of nowhere.
-      The Vazquez family has been working stone and earth for generations &mdash;
-      tracing back through Nuevo Le&oacute;n, Mexico, through colonial Spanish settlements,
-      all the way to Hidalgo-confirmed lineage in Galicia and the Basque Country of northern Spain.
+      Bears Concrete Pumping didn't come out of nowhere. Mark Vazquez has been working with his hands
+      his whole life &mdash; and so did the men before him. The Vazquez family traces back through Nuevo Le&oacute;n, Mexico,
+      through colonial Spanish settlements, all the way to confirmed Hidalgo lineage in Galicia
+      and the Basque Country of northern Spain. 1547.
     </p>
     <p>
-      The <strong>Hidalgo designation</strong> &mdash; confirmed in 1547 &mdash; was not inherited wealth.
-      It was earned through military service, through skilled labor, through building
-      and defending the communities that came after them.
-      That is not a coincidence.
-      That is a bloodline.
+      That Hidalgo designation wasn't handed down with money. It was earned through military service,
+      through skilled physical work, through showing up and doing the job right.
+      <strong>That's not a coincidence. That's a bloodline.</strong>
     </p>
     <p>
-      When Mark Vazquez shows up to a job site, he is carrying five hundred years of
-      people who did hard, skilled, physical work and did it right.
-      The Heritage Culture Book documents all of it.
+      When Mark pulls up to a job site in Santa Maria, he's carrying five hundred years of people
+      who built things with their hands and didn't cut corners. The Heritage Culture Book tells that whole story.
+      Where it started, how it got here, and why it matters to the next generation.
     </p>
-    <a href="https://buy.stripe.com/bJe14o2a35pO6csg16fQI02" class="btn-parch">Order the Heritage Book &mdash; $150</a>
+    <a href="https://buy.stripe.com/bJe14o2a35pO6csg16fQI02" class="btn-parch">Order the Heritage Book &mdash; $199</a>
   </div>
 </section>
 

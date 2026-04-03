@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Heritage Vault — My Legacy Continues</title>
-<meta name="description" content="Your private Heritage Vault — family archive, QR tag management, heritage research, and digital legacy profiles.">
+<title>The Family Vault — My Legacy Continues</title>
+<meta name="description" content="The Family Vault — a place to save the stories that matter most. Request access to your family's permanent record. Heritage profiles, QR tag management, and genealogy research. My Legacy Continues, Santa Maria CA.">
 <link rel="icon" href="logo.png" type="image/png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
@@ -18,9 +18,9 @@
   --forest-light:   #2E6142;
   --parchment:      #F5EDD5;
   --parchment-mid:  #EAD9B5;
-  --gold:           #C9A84C;
-  --gold-light:     #E2C070;
-  --gold-dark:      #A07828;
+  --gold:           #B8943F;
+  --gold-light:     #D4AD5A;
+  --gold-dark:      #8C6E28;
   --gold-wash:      rgba(201,168,76,0.08);
   --gold-border:    rgba(201,168,76,0.20);
   --text-light:     #F0E8D6;
@@ -288,10 +288,13 @@ nav {
 
 /* VAULT FEATURES STRIP */
 .vault-features {
-  background: var(--parchment);
-  background-image: radial-gradient(ellipse 60% 50% at 50% 40%, rgba(201,168,76,0.08) 0%, transparent 60%);
+  background-color: #EFE6CC;
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E"),
+    radial-gradient(ellipse 60% 50% at 50% 40%, rgba(184,148,63,0.10) 0%, transparent 60%);
   padding: 72px 48px;
-  border-top: 1px solid rgba(201,168,76,0.15);
+  border-top: 2px solid rgba(184,148,63,0.30);
+  border-bottom: 2px solid rgba(184,148,63,0.30);
 }
 .vault-features-inner { max-width: 1060px; margin: 0 auto; }
 .vault-features .section-label { color: var(--gold-dark); font-family: var(--cinzel); font-size: 0.58rem; letter-spacing: 0.28em; text-transform: uppercase; display: block; margin-bottom: 18px; }
@@ -327,55 +330,71 @@ footer { background: var(--forest-darkest); border-top: 1px solid var(--gold-bor
   </button>
   <ul class="nav-links">
     <li><a href="index.html">Home</a></li>
-    <li><a href="portal.html" class="active">Vault</a></li>
+    <li><a href="portal.html" class="active">The Family Vault</a></li>
     <li><a href="trade-profile.html">Trade Profile</a></li>
     <li><a href="rescue-registry.html">Rescue Registry</a></li>
-    <li><a href="portal.html" class="nav-vault">Vault Login</a></li>
+    <li><a href="portal.html" class="nav-vault">Family Vault</a></li>
   </ul>
 </nav>
 
 <!-- VAULT HERO -->
 <div class="vault-hero">
-  <span class="vault-eyebrow">Heritage Vault &nbsp;&bull;&nbsp; My Legacy Continues</span>
-  <h1 class="vault-title">Your Family Archive.<br>Yours Forever.</h1>
-  <p class="vault-subtitle">Access your digital legacy profiles, QR tag management, heritage research, and family documents — all in one private vault.</p>
+  <span class="vault-eyebrow">The Family Vault &nbsp;&bull;&nbsp; My Legacy Continues</span>
+  <h1 class="vault-title">The Family Vault</h1>
+  <p class="vault-subtitle">A private place for your family's history to live forever. Your heritage research, your profiles, your QR tags &mdash; kept safe so the people who come after you know where they came from.</p>
 </div>
 
 <!-- PORTAL BODY -->
 <div class="portal-body">
   <div class="portal-grid">
 
-    <!-- LOGIN CARD -->
+    <!-- REQUEST ACCESS CARD -->
     <div class="login-card">
-      <span class="login-card-label">Vault Access</span>
-      <h2>Sign In to Your Vault</h2>
-      <p>Enter the email address and access code provided when you purchased. Your vault is permanent — no subscription required to maintain access.</p>
+      <span class="login-card-label">Request Access to the Family Vault</span>
+      <h2>Tell Us About Your Family</h2>
+      <p>Mark sets up every vault personally. Fill this out and he'll be in touch within 24 hours. You're not filling out a form &mdash; you're starting a conversation with the guy who's going to preserve your family's story.</p>
 
-      <form id="vaultForm" onsubmit="handleVaultLogin(event)">
+      <form id="requestForm" action="https://formspree.io/f/xzzpqjle" method="POST">
+        <div class="form-group">
+          <label class="form-label" for="name">Your Name</label>
+          <input type="text" id="name" name="name" class="form-input" placeholder="First and last name" required>
+        </div>
         <div class="form-group">
           <label class="form-label" for="email">Email Address</label>
-          <input type="email" id="email" class="form-input" placeholder="your@email.com" required>
+          <input type="email" id="email" name="email" class="form-input" placeholder="your@email.com" required>
         </div>
         <div class="form-group">
-          <label class="form-label" for="accessCode">Access Code</label>
-          <input type="text" id="accessCode" class="form-input" placeholder="e.g. LEGACY-2024-XXXX" required>
+          <label class="form-label" for="phone">Phone Number</label>
+          <input type="tel" id="phone" name="phone" class="form-input" placeholder="(805) 000-0000">
         </div>
-        <button type="submit" class="form-submit">Enter My Vault</button>
-
-        <div class="form-divider">or</div>
-
-        <div class="form-note">
-          Don't have a vault yet?
-          <a href="https://buy.stripe.com/4gM14odSLaK8asI9CIfQI03">Purchase the Legacy Bundle — $199</a>
+        <div class="form-group">
+          <label class="form-label" for="product">What Did You Order?</label>
+          <select id="product" name="product" class="form-input" style="cursor: pointer;">
+            <option value="">Select your product</option>
+            <option value="Heritage Culture Book ($199)">Heritage Culture Book &mdash; $199</option>
+            <option value="Full Legacy Bundle ($199)">Full Legacy Bundle &mdash; $199</option>
+            <option value="Cemetery Tribute Plaque ($149)">Cemetery Tribute Plaque &mdash; $149</option>
+            <option value="Contractor Bundle ($650)">Contractor Bundle &mdash; $650</option>
+            <option value="Pet Safety Tag ($35)">Pet Safety Registry Tag &mdash; $35</option>
+            <option value="Not yet — I have questions">I haven't ordered yet &mdash; I have questions</option>
+          </select>
         </div>
-        <div class="form-note" style="margin-top: 10px;">
-          Lost your code?
-          <a href="mailto:mark.vazquez92@gmail.com?subject=Vault%20Access%20Code%20Request">Email for support</a>
+        <div class="form-group">
+          <label class="form-label" for="message">Anything else you want Mark to know?</label>
+          <textarea id="message" name="message" class="form-input" rows="4" placeholder="Tell us about your family, your project, or what you're hoping to preserve..." style="resize: vertical; min-height: 100px;"></textarea>
         </div>
+        <input type="hidden" name="_subject" value="New Vault Request — My Legacy Continues">
+        <button type="submit" class="form-submit">Send My Request</button>
       </form>
 
-      <div id="loginMsg" style="display:none; margin-top: 20px; padding: 14px 18px; border-radius: var(--r); background: rgba(201,168,76,0.1); border: 1px solid var(--gold-border); font-size: 0.85rem; color: var(--text-muted);">
-        Checking your access code...
+      <div id="successMsg" style="display:none; margin-top: 20px; padding: 14px 18px; border-radius: var(--r); background: rgba(184,148,63,0.1); border: 1px solid var(--gold-border); font-size: 0.85rem; color: var(--text-muted); line-height: 1.75;">
+        Request sent. Mark will be in touch within 24 hours. For anything urgent, call <a href="tel:8058633794" style="color:var(--gold)">(805) 863-3794</a>.
+      </div>
+
+      <div class="form-divider">already have access?</div>
+      <div class="form-note">
+        If Mark already set up your vault, email him for your link:
+        <a href="mailto:mark.vazquez92@gmail.com?subject=Vault%20Access%20Request">mark.vazquez92@gmail.com</a>
       </div>
     </div>
 
@@ -383,37 +402,37 @@ footer { background: var(--forest-darkest); border-top: 1px solid var(--gold-bor
     <div class="vault-sidebar">
 
       <div class="info-card">
-        <span class="info-card-title">What's Inside</span>
-        <h3>Your Heritage Vault</h3>
-        <p>Everything created for your family lives here — permanently, privately, at your own URL.</p>
+        <span class="info-card-title">What Lives in the Vault</span>
+        <h3>Everything Your Family Built, Kept Safe</h3>
+        <p>Every profile, every document, every photo. At your own permanent URL. Nothing expires, nothing gets deleted, nobody can take it down.</p>
         <ul class="info-list">
-          <li>Legacy profile pages for family members</li>
-          <li>Heritage research documents &amp; books</li>
-          <li>QR tag management &amp; link updates</li>
-          <li>Photo archives &amp; media uploads</li>
-          <li>Cemetery tribute management</li>
-          <li>Family genealogy research notes</li>
+          <li>Family member legacy profiles</li>
+          <li>Heritage research, books, and genealogy findings</li>
+          <li>QR tag links — update them anytime</li>
+          <li>Photos and family media</li>
+          <li>Cemetery tribute records</li>
+          <li>Surname history and coat of arms documentation</li>
         </ul>
       </div>
 
       <div class="info-card">
-        <span class="info-card-title">Access by Product</span>
-        <h3>Which Products Include Vault Access?</h3>
+        <span class="info-card-title">What Opens the Vault</span>
+        <h3>Which Products Include Access?</h3>
         <ul class="info-list">
-          <li>Full Legacy Bundle ($199) — Full vault</li>
-          <li>Contractor Bundle ($650) — Trade profile portal</li>
-          <li>Cemetery Tribute ($149) — Memorial management</li>
-          <li>Heritage Book ($150) — Research archive</li>
+          <li>Full Legacy Bundle ($199) &mdash; Full family vault</li>
+          <li>Contractor Bundle ($650) &mdash; Trade profile + vault</li>
+          <li>Cemetery Tribute ($149) &mdash; Memorial management</li>
+          <li>Heritage Culture Book ($199) &mdash; Research archive</li>
         </ul>
         <div style="margin-top: 20px;">
-          <a href="https://buy.stripe.com/4gM14odSLaK8asI9CIfQI03" class="btn btn-gold" style="width: 100%; text-align: center; display: block;">Get the Legacy Bundle — $199</a>
+          <a href="https://buy.stripe.com/4gM14odSLaK8asI9CIfQI03" class="btn btn-gold" style="width: 100%; text-align: center; display: block;">Get the Full Legacy Bundle &mdash; $199</a>
         </div>
       </div>
 
       <div class="info-card">
-        <span class="info-card-title">Support</span>
-        <h3>Need Help?</h3>
-        <p style="margin-bottom: 12px;">Mark Vazquez personally manages all vault access. Contact directly for any issues.</p>
+        <span class="info-card-title">Talk to Mark Directly</span>
+        <h3>A Real Person Handles This</h3>
+        <p style="margin-bottom: 12px;">Mark Vazquez personally sets up every vault. Call or email him directly &mdash; no ticket system, no chatbot.</p>
         <a href="tel:8058633794" style="display: block; font-family: var(--cinzel); font-size: 0.72rem; letter-spacing: 0.12em; color: var(--gold); padding: 10px 0; border-bottom: 1px solid var(--gold-border);">(805) 863-3794</a>
         <a href="mailto:mark.vazquez92@gmail.com" style="display: block; font-size: 0.82rem; color: var(--text-muted); padding: 10px 0; transition: color 0.2s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--text-muted)'">mark.vazquez92@gmail.com</a>
       </div>
@@ -425,38 +444,32 @@ footer { background: var(--forest-darkest); border-top: 1px solid var(--gold-bor
 <!-- VAULT FEATURES -->
 <section class="vault-features">
   <div class="vault-features-inner">
-    <span class="section-label">Why the Vault Matters</span>
+    <span class="section-label">Why the Family Vault Exists</span>
     <h2>Built to Last. No Subscriptions. No Expiration.</h2>
     <div class="features-grid">
       <div class="feature-item">
-        <div class="feature-icon">🔒</div>
         <div class="feature-title">Permanently Hosted</div>
-        <p class="feature-desc">Your family's digital legacy lives at mylegacycontinues.com for as long as the site exists — no renewal required.</p>
+        <p class="feature-desc">Your family's digital legacy lives at mylegacycontinues.com for as long as the site exists &mdash; no renewal required, no password to lose.</p>
       </div>
       <div class="feature-item">
-        <div class="feature-icon">📱</div>
         <div class="feature-title">QR Tag Control</div>
-        <p class="feature-desc">Update the destination of any QR tag you own. Business cards, cemetery plaques, pet tags — all managed from one place.</p>
+        <p class="feature-desc">Update where any of your QR tags point. Business cards, cemetery plaques, pet tags &mdash; all managed from one place, one call to Mark.</p>
       </div>
       <div class="feature-item">
-        <div class="feature-icon">🌿</div>
-        <div class="feature-title">Living Documents</div>
-        <p class="feature-desc">Add photos, update bios, add new family members, upload new research — your vault grows as your family does.</p>
+        <div class="feature-title">A Living Record</div>
+        <p class="feature-desc">Add photos, update bios, bring in new family members, upload new research. The vault grows as your family does.</p>
       </div>
       <div class="feature-item">
-        <div class="feature-icon">🧬</div>
         <div class="feature-title">Heritage Research Archive</div>
-        <p class="feature-desc">All forensic genealogy findings, migration maps, and coat-of-arms documentation stored and accessible forever.</p>
+        <p class="feature-desc">All genealogy findings, migration maps, and coat-of-arms documentation stored and readable forever &mdash; not locked in a file on someone's hard drive.</p>
       </div>
       <div class="feature-item">
-        <div class="feature-icon">📖</div>
-        <div class="feature-title">Digital Heritage Book</div>
-        <p class="feature-desc">The digital version of your Heritage Culture Book lives in the vault alongside the physical print edition.</p>
+        <div class="feature-title">Your Heritage Book, Online</div>
+        <p class="feature-desc">The digital version of your Heritage Culture Book lives alongside the physical edition. Share it with family. It never goes out of print.</p>
       </div>
       <div class="feature-item">
-        <div class="feature-icon">🤝</div>
-        <div class="feature-title">Direct Owner Support</div>
-        <p class="feature-desc">Mark Vazquez personally handles all vault requests. One email or call and you get a real person, not a ticket system.</p>
+        <div class="feature-title">Mark Handles It Personally</div>
+        <p class="feature-desc">No ticket system. No chatbot. Mark Vazquez handles every vault himself. One email or call and you get a real answer from the person who built this.</p>
       </div>
     </div>
   </div>
@@ -481,17 +494,28 @@ window.addEventListener('scroll', () => {
     window.scrollY > 20 ? '0 4px 32px rgba(0,0,0,0.4)' : 'none';
 });
 
-function handleVaultLogin(e) {
-  e.preventDefault();
-  const msg = document.getElementById('loginMsg');
-  const email = document.getElementById('email').value.trim();
-  const code = document.getElementById('accessCode').value.trim().toUpperCase();
-  msg.style.display = 'block';
-  msg.textContent = 'Verifying access code for ' + email + '...';
-  // Placeholder — wire to backend/Netlify function when ready
-  setTimeout(() => {
-    msg.innerHTML = 'Access code received. Mark will verify and contact you at <strong>' + email + '</strong> within 24 hours. For immediate access, call <a href="tel:8058633794" style="color:var(--gold)">(805) 863-3794</a>.';
-  }, 1800);
+// Show success message after Formspree redirect (if using AJAX-style)
+const form = document.getElementById('requestForm');
+if (form) {
+  form.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const data = new FormData(form);
+    try {
+      const res = await fetch(form.action, {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      });
+      if (res.ok) {
+        form.style.display = 'none';
+        document.getElementById('successMsg').style.display = 'block';
+      } else {
+        form.submit(); // fallback
+      }
+    } catch(err) {
+      form.submit(); // fallback
+    }
+  });
 }
 </script>
 </body>

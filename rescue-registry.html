@@ -18,9 +18,9 @@
   --forest-light:   #2E6142;
   --parchment:      #F5EDD5;
   --parchment-mid:  #EAD9B5;
-  --gold:           #C9A84C;
-  --gold-light:     #E2C070;
-  --gold-dark:      #A07828;
+  --gold:           #B8943F;
+  --gold-light:     #D4AD5A;
+  --gold-dark:      #8C6E28;
   --gold-wash:      rgba(201,168,76,0.08);
   --gold-border:    rgba(201,168,76,0.20);
   --text-light:     #F0E8D6;
@@ -230,9 +230,13 @@ nav {
 
 /* PARTNER STRIP */
 .partner-strip {
-  background: var(--parchment);
-  background-image: radial-gradient(ellipse 70% 50% at 50% 40%, rgba(201,168,76,0.08) 0%, transparent 60%);
+  background-color: #EFE6CC;
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E"),
+    radial-gradient(ellipse 70% 50% at 50% 40%, rgba(184,148,63,0.10) 0%, transparent 60%);
   padding: 80px 48px;
+  border-top: 2px solid rgba(184,148,63,0.30);
+  border-bottom: 2px solid rgba(184,148,63,0.30);
 }
 .partner-inner { max-width: 1060px; margin: 0 auto; }
 .partner-strip .section-label { color: var(--gold-dark); }
@@ -265,10 +269,10 @@ footer { background: var(--forest-darkest); border-top: 1px solid var(--gold-bor
   </button>
   <ul class="nav-links">
     <li><a href="index.html">Home</a></li>
-    <li><a href="portal.html">Vault</a></li>
+    <li><a href="portal.html">The Family Vault</a></li>
     <li><a href="trade-profile.html">Trade Profile</a></li>
     <li><a href="rescue-registry.html" class="active">Rescue Registry</a></li>
-    <li><a href="portal.html" class="nav-vault">Vault Login</a></li>
+    <li><a href="portal.html" class="nav-vault">Family Vault</a></li>
   </ul>
 </nav>
 
@@ -278,8 +282,9 @@ footer { background: var(--forest-darkest); border-top: 1px solid var(--gold-bor
     <span class="page-eyebrow">Guardian Protocol &nbsp;&bull;&nbsp; My Legacy Continues &bull; Underdog Heroes</span>
     <h1 class="page-title">Rescue Registry<br>&amp; <em>Memorial Wall</em></h1>
     <p class="page-sub">
-      Every animal that passed through the Lake Hughes &#8594; Santa Barbara County rescue corridor deserves a permanent record.
-      This page exists because every life matters &mdash; not just while it's being lived, but forever after.
+      Duke is still at SBCAS right now, waiting on a transport. Bear didn't make it out &mdash; and this page exists because of him.
+      Every dog that comes through the Lake Hughes &#8594; Santa Barbara County corridor gets a permanent record here.
+      Not because it's good marketing. Because it's the right thing to do.
     </p>
     <div class="page-stats">
       <div>
@@ -307,22 +312,22 @@ footer { background: var(--forest-darkest); border-top: 1px solid var(--gold-bor
   <div class="mission-inner">
     <div>
       <p class="mission-quote">
-        These dogs don&#8217;t have anyone to write their story down. That&#8217;s what this is for.
+        Bear didn&#8217;t make it out. Nobody was counting the transports back then. That changes now.
       </p>
-      <div class="mission-attr">Mark Vazquez &nbsp;&mdash;&nbsp; Founder, My Legacy Continues</div>
+      <div class="mission-attr">Mark Vazquez &nbsp;&mdash;&nbsp; Founder, My Legacy Continues &nbsp;&mdash;&nbsp; Santa Maria, CA</div>
     </div>
     <div class="mission-details">
       <div class="mission-detail-item">
-        <div class="mission-detail-title">The Partnership</div>
-        <div class="mission-detail-text">My Legacy Continues partners with Underdog Heroes (Lake Hughes, CA) and Santa Barbara County Animal Services to fund transports and create permanent digital profiles for every animal in the corridor.</div>
+        <div class="mission-detail-title">Duke Needs a Transport Right Now</div>
+        <div class="mission-detail-text">Duke is a German Shepherd mix currently sitting at SBCAS waiting on a transport to his forever home. He came in quiet. He leaves nothing but space where a good dog should be. Help fund his ride out.</div>
       </div>
       <div class="mission-detail-item">
-        <div class="mission-detail-title">How It&#8217;s Funded</div>
-        <div class="mission-detail-text">Every $650 Contractor Bundle purchase funds a rescue transport. Every $35 Safety Registry Tag creates a permanent pet profile. Revenue from heritage products directly supports this mission.</div>
+        <div class="mission-detail-title">How It Gets Funded</div>
+        <div class="mission-detail-text">Every $650 Contractor Bundle sold funds one rescue transport from Lake Hughes to SBCAS. Every $35 Safety Tag creates a permanent pet profile. The heritage work funds the rescue work &mdash; one purchase at a time.</div>
       </div>
       <div class="mission-detail-item">
-        <div class="mission-detail-title">The Memorial Wall</div>
-        <div class="mission-detail-text">Dogs who passed before they found a home, and those lost after adoption, are memorialized here permanently. No subscription. No expiration. Their names don&#8217;t disappear.</div>
+        <div class="mission-detail-title">The Memorial Wall Is Permanent</div>
+        <div class="mission-detail-text">Bear is on this wall. So is every dog who passed before they found a home. No subscription. No expiration. Their names don&#8217;t disappear when a shelter clears its records. This page doesn&#8217;t close.</div>
       </div>
     </div>
   </div>
@@ -360,23 +365,25 @@ footer { background: var(--forest-darkest); border-top: 1px solid var(--gold-bor
       <div class="dog-card">
         <div class="dog-photo">
           <img src="duke.jpg" alt="Duke" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-          <div class="dog-photo-placeholder" style="display:none;width:100%;height:100%;align-items:center;justify-content:center;">🐕</div>
-          <div class="dog-status-badge status-adopted">Adopted</div>
+          <div class="dog-photo-placeholder" style="display:none;width:100%;height:100%;align-items:center;justify-content:center;font-family:var(--cinzel);font-size:0.7rem;letter-spacing:0.14em;color:var(--gold);opacity:0.5;">Photo Pending</div>
+          <div class="dog-status-badge status-active">Needs Transport</div>
         </div>
         <div class="dog-body">
           <div class="dog-name">Duke</div>
           <span class="dog-breed">German Shepherd Mix &nbsp;&bull;&nbsp; Male</span>
           <p class="dog-story">
-            Duke came through the Lake Hughes corridor with a broken spirit and a strong jaw.
-            He trusted nobody on day one. By week two he was sleeping at Mark&#8217;s feet.
-            He found his forever home in Santa Maria in the spring.
+            Spotted at SBCAS: Duke needs a transport to his forever home. Can you help?
+            He came into Santa Barbara County Animal Services carrying the kind of quiet that
+            tells you a dog has been through something. Big dog. Gentle soul. He doesn&#8217;t bark much &mdash;
+            he just watches you, waiting to see if you&#8217;re going to be different from the last person who walked away.
+            Duke deserves a yard, a couch, and somebody who doesn&#8217;t quit on him.
           </p>
           <div class="dog-meta">
-            <div class="dog-meta-item">Origin <span>Lake Hughes, CA</span></div>
+            <div class="dog-meta-item">Currently at <span>SBCAS</span></div>
             <div class="dog-meta-item">Weight <span>~72 lbs</span></div>
-            <div class="dog-meta-item">Route <span>Lake Hughes &#8594; SBCAS</span></div>
+            <div class="dog-meta-item">Status <span>Needs transport</span></div>
           </div>
-          <div class="dog-dates">Rescued 2024 &nbsp;&bull;&nbsp; Adopted Spring 2025</div>
+          <div class="dog-dates">At SBCAS now &nbsp;&bull;&nbsp; Looking for his ride home</div>
         </div>
       </div>
 
@@ -384,15 +391,16 @@ footer { background: var(--forest-darkest); border-top: 1px solid var(--gold-bor
       <div class="dog-card">
         <div class="dog-photo">
           <img src="luna.jpg" alt="Luna" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-          <div class="dog-photo-placeholder" style="display:none;width:100%;height:100%;align-items:center;justify-content:center;">🐾</div>
-          <div class="dog-status-badge status-active">Available</div>
+          <div class="dog-photo-placeholder" style="display:none;width:100%;height:100%;align-items:center;justify-content:center;font-family:var(--cinzel);font-size:0.7rem;letter-spacing:0.14em;color:var(--gold);opacity:0.5;">Photo Pending</div>
+          <div class="dog-status-badge status-active">Looking for Home</div>
         </div>
         <div class="dog-body">
           <div class="dog-name">Luna</div>
           <span class="dog-breed">Labrador Mix &nbsp;&bull;&nbsp; Female</span>
           <p class="dog-story">
             Luna was pulled from the Lake Hughes shelter at the last possible hour.
-            She&#8217;s young, curious, and absolutely unshakeable. She needs a yard, patience,
+            She&#8217;s young, curious, and absolutely unshakeable &mdash; the kind of dog who forgives you
+            for the crate and still comes to find you in the morning. She needs a yard, patience,
             and someone who won&#8217;t quit on her the way others did.
           </p>
           <div class="dog-meta">
@@ -407,17 +415,19 @@ footer { background: var(--forest-darkest); border-top: 1px solid var(--gold-bor
       <!-- DOG PROFILE: BEAR (IN MEMORIAM) -->
       <div class="dog-card in-memoriam">
         <div class="dog-photo">
-          <img src="bear-dog.jpg" alt="Bear" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-          <div class="dog-photo-placeholder" style="display:none;width:100%;height:100%;align-items:center;justify-content:center;font-size:3rem;opacity:0.5;">🕯️</div>
+          <img src="bear.jpg" alt="Bear" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="dog-photo-placeholder" style="display:none;width:100%;height:100%;align-items:center;justify-content:center;font-family:var(--cinzel);font-size:0.65rem;letter-spacing:0.16em;color:var(--gold);opacity:0.5;">In Memoriam</div>
           <div class="dog-status-badge status-memoriam">In Memoriam</div>
         </div>
         <div class="dog-body">
           <div class="dog-name">Bear</div>
           <span class="dog-breed">Pit Bull Mix &nbsp;&bull;&nbsp; Male</span>
           <p class="dog-story">
-            Bear was the one that started all of this. He didn&#8217;t make it out.
-            He was at Lake Hughes when the corridor wasn&#8217;t yet organized, when there weren&#8217;t enough transports,
-            when nobody was watching the numbers. His name is why this registry exists.
+            Bear was the one that started all of this. He was at Lake Hughes when the corridor
+            wasn&#8217;t yet organized &mdash; when there weren&#8217;t enough transports, when nobody was
+            counting the days. A big, brown dog with a white chest who never got to find out
+            what it felt like to have a yard and a family. He didn&#8217;t make it out.
+            His name is the reason this registry exists. His name is the reason we keep count.
           </p>
           <div class="dog-meta">
             <div class="dog-meta-item">Origin <span>Lake Hughes, CA</span></div>
@@ -430,7 +440,7 @@ footer { background: var(--forest-darkest); border-top: 1px solid var(--gold-bor
       <!-- DOG PROFILE: COYOTE -->
       <div class="dog-card">
         <div class="dog-photo">
-          <div class="dog-photo-placeholder" style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;">🐺</div>
+          <div class="dog-photo-placeholder" style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-family:var(--cinzel);font-size:0.7rem;letter-spacing:0.14em;color:var(--gold);opacity:0.5;">Photo Pending</div>
           <div class="dog-status-badge status-adopted">Adopted</div>
         </div>
         <div class="dog-body">
@@ -452,8 +462,8 @@ footer { background: var(--forest-darkest); border-top: 1px solid var(--gold-bor
       <!-- DOG PROFILE: ROSA -->
       <div class="dog-card">
         <div class="dog-photo">
-          <div class="dog-photo-placeholder" style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;">🐶</div>
-          <div class="dog-status-badge status-active">Available</div>
+          <div class="dog-photo-placeholder" style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-family:var(--cinzel);font-size:0.7rem;letter-spacing:0.14em;color:var(--gold);opacity:0.5;">Photo Pending</div>
+          <div class="dog-status-badge status-active">Looking for Home</div>
         </div>
         <div class="dog-body">
           <div class="dog-name">Rosa</div>
@@ -473,12 +483,12 @@ footer { background: var(--forest-darkest); border-top: 1px solid var(--gold-bor
       </div>
 
       <!-- ADD YOUR DOG CARD -->
-      <div class="dog-card" style="border-style: dashed; border-color: rgba(201,168,76,0.2); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 48px 28px; min-height: 300px;">
-        <div style="font-size: 2.4rem; margin-bottom: 20px; opacity: 0.5;">+</div>
+      <div class="dog-card" style="border-style: dashed; border-color: rgba(184,148,63,0.2); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 48px 28px; min-height: 300px;">
+        <div style="font-family: var(--cinzel); font-size: 1.4rem; font-weight: 700; color: var(--gold); margin-bottom: 20px; opacity: 0.6;">+</div>
         <div class="dog-name" style="margin-bottom: 8px; font-size: 1.1rem;">Add a Profile</div>
         <p style="font-size: 0.82rem; color: var(--text-muted); line-height: 1.75; margin-bottom: 22px;">
           Know a rescue dog that deserves a permanent record?
-          Safety Registry Tags are $35. Each one creates a permanent profile on this wall.
+          A $35 Safety Tag creates a profile on this wall that never goes away.
         </p>
         <a href="https://buy.stripe.com/aFa3cw15ZaK81Wc028fQI04" class="btn btn-gold" style="font-size: 0.68rem;">Register a Dog &mdash; $35</a>
       </div>
@@ -497,7 +507,6 @@ footer { background: var(--forest-darkest); border-top: 1px solid var(--gold-bor
     <p class="section-sub">Buying any product from My Legacy Continues directly supports the rescue transport network. The Contractor Bundle funds a full transport. The Safety Tag creates a permanent profile.</p>
     <div class="products-strip-grid">
       <div class="product-mini">
-        <div class="product-mini-icon">🏷️</div>
         <span class="product-mini-label">Safety Registry Tag</span>
         <div class="product-mini-name">Permanent Pet Profile</div>
         <p class="product-mini-desc">A metal QR tag that links to a permanent digital profile for your pet. Medical info, photos, and your contact — available to anyone who scans it, forever.</p>
@@ -505,7 +514,6 @@ footer { background: var(--forest-darkest); border-top: 1px solid var(--gold-bor
         <a href="https://buy.stripe.com/aFa3cw15ZaK81Wc028fQI04" class="btn btn-gold">Get Safety Tag</a>
       </div>
       <div class="product-mini">
-        <div class="product-mini-icon">🪦</div>
         <span class="product-mini-label">Cemetery Tribute</span>
         <div class="product-mini-name">Memorial Digital Plaque</div>
         <p class="product-mini-desc">A permanent digital tribute page linked to a physical QR plaque. Works for people and pets alike. Scan to view photos, stories, and a living memorial.</p>
@@ -513,7 +521,6 @@ footer { background: var(--forest-darkest); border-top: 1px solid var(--gold-bor
         <a href="https://buy.stripe.com/14A14o6qjg4sgR62agfQI05" class="btn btn-gold">Order Tribute</a>
       </div>
       <div class="product-mini">
-        <div class="product-mini-icon">🔨</div>
         <span class="product-mini-label">Contractor Bundle</span>
         <div class="product-mini-name">Funds a Rescue Transport</div>
         <p class="product-mini-desc">Every $650 Contractor Bundle purchase directly funds one rescue transport from Lake Hughes to SBCAS. Get your trade profile and fund the mission at the same time.</p>
@@ -529,20 +536,17 @@ footer { background: var(--forest-darkest); border-top: 1px solid var(--gold-bor
 <!-- PARTNER STRIP (PARCHMENT) -->
 <section class="partner-strip">
   <div class="partner-inner">
-    <span class="section-label">Our Partners</span>
-    <h2 class="section-title" style="color: var(--text-parch); margin-bottom: 20px;">The Organizations Behind This Work</h2>
+    <span class="section-label">Who's Behind This</span>
+    <h2 class="section-title" style="color: var(--text-parch); margin-bottom: 20px;">The People Doing the Work</h2>
     <p>
-      <strong>Underdog Heroes</strong> operates out of Lake Hughes, California and coordinates rescue transports for high-risk animals across the Los Angeles and Santa Barbara County shelter systems.
-      They are the reason dogs like Bear and Duke made it into a corridor at all.
+      <strong>Underdog Heroes</strong> is out of Lake Hughes, California. They're the ones in the trenches &mdash; coordinating transports for high-risk animals across the LA and Santa Barbara County shelter systems.
+      They're the reason dogs like Bear and Duke ever had a shot at getting out.
     </p>
     <p>
-      <strong>Santa Barbara County Animal Services (SBCAS)</strong> is the receiving end of the Lake Hughes corridor.
-      They process, vet, and rehome animals that would otherwise have no path forward.
-      My Legacy Continues partners with SBCAS to ensure every transported animal has a permanent digital profile.
+      <strong>Santa Barbara County Animal Services (SBCAS)</strong> is where Duke is right now. They receive, vet, and rehome the animals that come through. Every dog that lands there deserves a permanent profile &mdash; because when the shelter clears its records, this page doesn't.
     </p>
     <p>
-      <strong>My Legacy Continues</strong> provides the permanent digital infrastructure &mdash; the profiles, the QR tags, the hosting, and the funding mechanism.
-      When you buy any product on this site, part of what you&#8217;re buying is the ability to keep this network running.
+      <strong>My Legacy Continues</strong> handles the digital side &mdash; the profiles, the QR tags, the permanent hosting, and the funding connection. When you buy anything on this site, a piece of it keeps this network running. That's not a slogan. That's how the math works.
     </p>
     <div style="display: flex; gap: 14px; flex-wrap: wrap; margin-top: 28px;">
       <a href="https://underdogheroes.org" target="_blank" rel="noopener" class="btn-parch">Visit Underdog Heroes</a>
