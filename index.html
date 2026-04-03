@@ -11,7 +11,8 @@
         body { 
             background-color: var(--obsidian); color: var(--off-white); 
             font-family: 'Playfair Display', serif; margin: 0; 
-            background-image: url('images/logo-gold-transparent.png'); 
+            /* MATCHING YOUR FILENAME: logo.jpg */
+            background-image: url('logo.jpg'); 
             background-repeat: no-repeat;
             background-position: center 30%; background-attachment: fixed; background-size: 60%;
             background-blend-mode: overlay;
@@ -20,12 +21,25 @@
         h1, h2, h3 { color: var(--gold); font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
 
         header { 
-            text-align: center; padding: 100px 20px 60px 20px; 
+            text-align: center; padding: 60px 20px; 
             border-bottom: 2px solid var(--tobacco); 
-            background: rgba(18,18,18,0.9);
+            background: rgba(18,18,18,0.95);
         }
 
-        .logo-header { width: 180px; height: auto; margin-bottom: 20px; }
+        .logo-header { 
+            width: 320px; 
+            height: auto; 
+            margin: 0 auto;
+            display: block;
+        }
+
+        .tagline {
+            font-style: italic; 
+            font-size: 1.1rem; 
+            color: var(--off-white);
+            margin-top: 15px;
+            letter-spacing: 1px;
+        }
 
         section { padding: 80px 20px; max-width: 1000px; margin: 0 auto; background: rgba(18,18,18,0.9); border-bottom: 1px solid #333; }
         
@@ -49,9 +63,8 @@
 <body>
 
     <header>
-        <img src="images/logo-gold-transparent.png" alt="My Legacy Continues" class="logo-header">
-        <h1 style="font-size: 2.8rem; margin: 0;">MY LEGACY CONTINUES</h1>
-        <p style="font-style: italic; font-size: 1.2rem; color: var(--off-white);">From First Breath to Eternal Remembrance.</p>
+        <img src="logo.jpg" alt="My Legacy Continues" class="logo-header">
+        <p class="tagline">From First Breath to Eternal Remembrance.</p>
     </header>
 
     <section id="marathon">
@@ -79,7 +92,7 @@
 
         <div class="card">
             <h3>Individual Monument Tag</h3>
-            <p>For linking an existing memorial. A scannable, permanent, weather-resistant QR-enabled bronze-style key for cemetery headstones.</p>
+            <p>For linking an existing memorial. A scannable, permanent, weather-resistant QR-enabled key for cemetery headstones.</p>
             <span class="price">$149.00</span>
             <a href="https://buy.stripe.com/14A14o6qjg4sgR62agfQI05" class="btn-gold">Order Monument Tag</a>
         </div>
@@ -90,17 +103,11 @@
             <span class="price">$150.00</span>
             <a href="https://buy.stripe.com/bJe14o2a35pO6csg16fQI02" class="btn-gold">Start The Wisdom Vault</a>
         </div>
-
-        <div class="card" style="opacity: 0.8;">
-            <h3>Memory Care & Alzheimer’s Anchors</h3>
-            <p>Personalized digital anchors to help those facing memory loss stay connected to their identity and family. Currently in development—Inquire for early access.</p>
-            <a href="mailto:contact@mylegacycontinues.com" class="btn-gold" style="background-color: var(--tobacco); color: white;">Inquire for Details</a>
-        </div>
     </section>
 
     <section id="the-rescue">
         <h2>The Rescue & Transport Network</h2>
-        <p><strong>Infrastructure for the Voiceless.</strong> Your purchase fuels the logistics that move animals from high-kill environments to permanent safety.</p>
+        <p><strong>Infrastructure for the Voiceless.</strong> Your purchase funds the logistics that move animals from high-kill environments to permanent safety.</p>
         
         <div class="card">
             <h3>Safety Registry & Story Tag</h3>
