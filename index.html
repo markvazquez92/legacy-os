@@ -3,58 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Legacy Continues | Official Ledger</title>
+    <title>Vazquez | Heritage & Trade</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Lora:wght@400;600&display=swap" rel="stylesheet">
     <style>
-        :root { --parchment: #F9F6F0; --midnight: #142118; --gold: #C5A059; }
-        body, html { margin: 0; padding: 0; background-color: var(--midnight); font-family: 'Lora', serif; color: var(--midnight); }
+        :root { --parchment: #F4F1EA; --midnight: #0B1610; --bronze: #8C6A3D; --text: #1A1A1A; }
+        body, html { margin: 0; padding: 0; background-color: var(--midnight); font-family: 'Lora', serif; }
         
-        /* Cinematic Hero */
-        .hero { position: relative; height: 60vh; display: flex; align-items: center; justify-content: center; overflow: hidden; background: #000; }
-        .hero video { position: absolute; width: 100%; height: 100%; object-fit: cover; opacity: 0.5; }
-        .hero-content { position: relative; z-index: 2; text-align: center; color: var(--parchment); }
-        .hero-content img { height: 120px; filter: brightness(0) invert(1); margin-bottom: 10px; }
-        .hero-content h1 { font-family: 'Playfair Display'; font-size: 3.5rem; margin: 0; letter-spacing: 4px; }
+        /* The Cinematic Book Preview */
+        .hero-video-container { position: relative; height: 70vh; width: 100%; overflow: hidden; background: #000; display: flex; align-items: center; justify-content: center; }
+        video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.6; }
+        .hero-overlay { position: relative; z-index: 2; text-align: center; color: var(--parchment); }
+        .hero-overlay h1 { font-family: 'Playfair Display'; font-size: 3.5rem; letter-spacing: 8px; margin: 0; }
+        .hero-overlay p { color: var(--bronze); letter-spacing: 4px; font-weight: bold; margin-top: 10px; }
 
-        /* The Ledger Cards */
-        .main-content { background: var(--parchment); padding: 60px 20px; border-top: 5px solid var(--gold); }
+        /* The Professional Ledger */
+        .main-content { background: var(--parchment); padding: 60px 20px; border-top: 4px solid var(--bronze); }
         .grid { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
-        .card { background: white; border: 2px solid var(--midnight); padding: 30px; text-decoration: none; color: inherit; transition: 0.3s; box-shadow: 10px 10px 0px var(--gold); }
-        .card:hover { transform: translateY(-5px); box-shadow: 15px 15px 0px var(--midnight); }
-        .card h2 { font-family: 'Playfair Display'; font-size: 1.8rem; margin: 10px 0; border-bottom: 1px solid var(--gold); padding-bottom: 10px; }
+        .card { background: white; border: 1px solid #D1CDC4; padding: 30px; box-shadow: 8px 8px 0px var(--bronze); transition: 0.3s; }
+        .card h2 { font-family: 'Playfair Display'; color: var(--midnight); border-bottom: 2px solid var(--bronze); padding-bottom: 10px; }
         
-        @media (max-width: 768px) { .grid { grid-template-columns: 1fr; } }
-        .footer { text-align: center; padding: 40px; background: var(--midnight); color: var(--parchment); font-size: 0.8rem; letter-spacing: 2px; }
+        .footer { background: var(--midnight); color: var(--parchment); text-align: center; padding: 50px; border-top: 4px solid var(--bronze); }
     </style>
 </head>
 <body>
-    <section class="hero">
-        <video autoplay muted loop playsinline><source src="hero-marathon.mp4" type="video/mp4"></video>
-        <div class="hero-content">
-            <img src="logo.png" alt="Logo">
-            <h1>LEGACY OS</h1>
-            <p>TRADE • TRADITION • PROTECTION</p>
+
+    <section class="hero-video-container">
+        <video autoplay muted loop playsinline>
+            <source src="book-preview.mp4" type="video/mp4">
+        </video>
+        <div class="hero-overlay">
+            <h1>VAZQUEZ</h1>
+            <p>HERITAGE • CONSTRUCTION • RESCUE</p>
         </div>
     </section>
+
     <main class="main-content">
         <div class="grid">
-            <a href="trade-profile.html" class="card">
-                <small style="color:var(--gold); font-weight:bold;">FIELD RECORD</small>
-                <h2>Bears Concrete & Construction</h2>
-                <p>Over a decade of multi-trade experience. The industrial engine that powers our mission.</p>
-            </a>
-            <a href="rescue-registry.html" class="card">
-                <small style="color:var(--gold); font-weight:bold;">LOGISTICS PORTAL</small>
-                <h2>Guardian Protocol</h2>
-                <p>The official rescue registry for Underdog Heroes. Real-time tracking for Shoshana G.’s mission.</p>
-            </a>
-            <a href="family-vault.html" class="card" style="grid-column: span 2;">
-                <small style="color:var(--gold); font-weight:bold;">HERITAGE LEDGER</small>
+            <div class="card">
+                <h2>Bears Concrete</h2>
+                <p>Industrial pumping and maintenance in Santa Maria. 10+ years of professional field experience.</p>
+            </div>
+            <div class="card">
+                <h2>Underdog Heroes</h2>
+                <p>Official Rescue Registry. Partnered with Shoshana G. for advanced animal safety protocols.</p>
+            </div>
+            <div class="card" style="grid-column: span 2;">
                 <h2>The Family Vault</h2>
-                <p>Cemetery indexing and specialized memory preservation for families navigating Dementia and Alzheimer’s.</p>
-            </a>
+                <p>Digital and physical preservation of the Vazquez & Garcia lineage. Specializing in Alzheimer’s/Dementia memory ledgers and cemetery wayfinding.</p>
+            </div>
         </div>
     </main>
-    <footer class="footer">EST. 2026 | MARK VAZQUEZ | IN HONOR OF DUKE & BEAR</footer>
+
+    <footer class="footer">
+        <div style="font-family: 'Playfair Display'; font-size: 1.5rem; letter-spacing: 4px;">MARK VAZQUEZ</div>
+        <p style="opacity: 0.5; font-size: 0.8rem; margin-top: 15px;">SANTA MARIA, CA | EST. 2026</p>
+    </footer>
+
 </body>
 </html>
