@@ -3,98 +3,188 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Legacy Continues | The Heritage Archive</title>
-    <link rel="stylesheet" href="style.css">
+    <title>My Legacy Continues | The Total Heritage System</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --obsidian: #121212;
+            --gold: #D4AF37;
+            --tobacco: #7A3E26;
+            --off-white: #EAEAEA;
+        }
+
+        body {
+            background-color: var(--obsidian);
+            color: var(--off-white);
+            font-family: 'Playfair Display', serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4 {
+            color: var(--gold);
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        header {
+            text-align: center;
+            padding: 60px 20px;
+            border-bottom: 2px solid var(--tobacco);
+            background: linear-gradient(180deg, rgba(18,18,18,1) 0%, rgba(30,30,30,1) 100%);
+        }
+
+        .logo-text {
+            font-size: 2.5rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin: 0;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: var(--off-white);
+            font-style: italic;
+            margin-top: 10px;
+        }
+
+        section {
+            padding: 80px 20px;
+            max-width: 1100px;
+            margin: 0 auto;
+            border-bottom: 1px solid #333;
+        }
+
+        .pillar-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .card {
+            background-color: #1A1A1A;
+            border: 1px solid var(--tobacco);
+            padding: 40px;
+            border-radius: 4px;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--gold);
+        }
+
+        .price {
+            font-size: 2rem;
+            color: var(--off-white);
+            margin: 20px 0;
+            display: block;
+        }
+
+        .btn-gold {
+            display: inline-block;
+            background-color: var(--gold);
+            color: var(--obsidian);
+            padding: 15px 30px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            text-align: center;
+            margin-top: 20px;
+            transition: background 0.3s ease;
+            text-decoration: none;
+        }
+
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            margin: 40px 0;
+            border: 2px solid var(--gold);
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: #888;
+            font-size: 0.9rem;
+        }
+    </style>
 </head>
 <body>
 
-    <header class="hero-section">
-        <div class="cta-stack">
-            <a href="#mission" class="gold-btn">OUR MISSION</a>
-            <a href="#pricing" class="outline-btn">VIEW PRICING</a>
-        </div>
+    <header>
+        <h1 class="logo-text">My Legacy Continues</h1>
+        <p class="subtitle">The World's Only Total Heritage Infrastructure</p>
     </header>
 
-    <section id="mission" class="content-block">
-        <div class="container">
-            <h2 class="gold-title">THE ARCHITECTURE OF MEMORY</h2>
-            <p class="mission-text">
-                Most stories disappear within two generations. We ensure yours survives for ten. My Legacy Continues is a bridge between your physical life and your family's future. We archive your voice, your values, and your direct guidance—preserving the essence of who you are for those who follow.
-            </p>
+    <section id="the-vault">
+        <h2>The Heritage Vault</h2>
+        <p>Record high-fidelity voice sessions and build a secure digital history that generations will inherit.</p>
+        
+        <div class="video-wrapper">
+            <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" frameborder="0" allowfullscreen></iframe>
         </div>
-    </section>
 
-    <section id="ecosystem" class="grid-section">
-        <div class="container">
-            <h2 class="gold-title">THE INTEGRATED NETWORK</h2>
-            <div class="legacy-grid">
-                <div class="card">
-                    <h3>THE HERITAGE VAULT</h3>
-                    <p>A permanent, encrypted archive for your voice and wisdom. This is the central hub of your digital legacy.</p>
-                </div>
-                <div class="card">
-                    <h3>MEMORIAL TAGS</h3>
-                    <p>Weather-resistant QR keys for cemetery monuments. Connecting the physical resting place to the digital story.</p>
-                </div>
-                <div class="card">
-                    <h3>SEED VAULTS</h3>
-                    <p>Early-start archives for children and infants, preserving a parent's voice for future milestones.</p>
-                </div>
+        <div class="pillar-grid">
+            <div class="card">
+                <h3>The Heritage & Culture Book</h3>
+                <p>The standalone digital "Seed Vault." High-fidelity wisdom archiving for families and memory care.</p>
+                <span class="price">$150.00</span>
+                <a href="https://buy.stripe.com/bJe14o2a35pO6csg16fQI02" class="btn-gold">Start The Archive</a>
+            </div>
+            
+            <div class="card">
+                <h3>Full Legacy Bundle</h3>
+                <p>The complete bridge from physical to digital. Includes the Heritage Book plus physical Monument Vault Tags.</p>
+                <span class="price">$199.00</span>
+                <a href="https://buy.stripe.com/4gM14odSLaK8asI9CIfQI03" class="btn-gold">Secure The Bundle</a>
             </div>
         </div>
     </section>
 
-    <section id="pricing" class="pricing-section">
-        <div class="container">
-            <h2 class="gold-title">INVESTMENT</h2>
-            <div class="price-grid">
-                
-                <div class="price-card highlight">
-                    <h3>THE HERITAGE BUNDLE</h3>
-                    <p class="price">$650.00</p>
-                    <ul class="specs">
-                        <li>Full Vault Setup</li>
-                        <li>2 Heritage Tags</li>
-                        <li>Voice Archiving</li>
-                        <li>Lifetime Hosting</li>
-                    </ul>
-                    <a href="https://buy.stripe.com/YOUR_LINK_HERE" class="gold-btn small">SECURE THE BUNDLE</a>
-                </div>
+    <section id="the-trade">
+        <h2>The Verified Trade Profile</h2>
+        <p><strong>Infrastructure for the Modern Contractor.</strong></p>
+        <p>We build your digital storefront. This includes a custom-designed professional profile to showcase your work, a digital business card, and high-fidelity QR codes for your physical marketing and vehicles.</p>
+        
+        <div class="card" style="margin-top: 30px; border-color: var(--gold);">
+            <h3>Contractor Infrastructure Bundle</h3>
+            <span class="price">$650.00</span>
+            <a href="https://buy.stripe.com/dRm3cwdSL05u58o6qwfQI01" class="btn-gold">Build Your Profile</a>
+        </div>
+    </section>
 
-                <div class="price-card">
-                    <h3>HERITAGE TAGS</h3>
-                    <p class="price">$49.00</p>
-                    <p>Premium metal keys for heirlooms or monuments.</p>
-                    <a href="https://buy.stripe.com/YOUR_LINK_HERE" class="outline-btn small">ORDER TAGS</a>
-                </div>
-
-                <div class="price-card">
-                    <h3>THE SEED VAULT</h3>
-                    <p class="price">$150.00</p>
-                    <p>A starter archive for children and future delivery.</p>
-                    <a href="https://buy.stripe.com/YOUR_LINK_HERE" class="outline-btn small">START A SEED</a>
-                </div>
-
+    <section id="the-registry">
+        <h2>The Rescue & Memorial Registry</h2>
+        <div class="pillar-grid">
+            <div class="card">
+                <h3>Safety Registry Tag</h3>
+                <p>Scannable, permanent ID profiling for rescue networks and personal pets. Tracks medical and journey history.</p>
+                <span class="price">$35.00</span>
+                <a href="https://buy.stripe.com/aFa3cw15ZaK81Wc028fQI04" class="btn-gold">Register An Animal</a>
+            </div>
+            <div class="card">
+                <h3>Cemetery Monument Tag</h3>
+                <p>Individual weather-resistant metal QR keys designed for headstones and family memorials.</p>
+                <span class="price">$49.00</span>
+                <a href="https://buy.stripe.com/14A14o6qjg4sgR62agfQI05" class="btn-gold">Order Monument Tag</a>
             </div>
         </div>
     </section>
 
-    <section class="community-block">
-        <div class="container">
-            <h2 class="gold-title">THE SHELLTRR SUPPORT</h2>
-            <p>We are builders. Every legacy secured through this network directly funds the construction and infrastructure of local animal rescue efforts at the Shelltrr.</p>
-        </div>
-    </section>
-
-    <footer class="final-footer">
-        <div class="container">
-            <p class="security-text">BANK-GRADE ENCRYPTION • REDUNDANT STORAGE • GENERATIONAL STABILITY</p>
-            <div class="footer-links">
-                <a href="mailto:support@mylegacycontinues.com">CONTACT SUPPORT</a>
-                <a href="https://github.com/markvazquez92">DEVELOPMENT</a>
-            </div>
-        </div>
-    </footer>
-
-</body>
-</html>
+    <footer>
+        <p>Designed and Built for Digital Eternity.</
