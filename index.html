@@ -4,187 +4,67 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Legacy Continues | The Total Heritage System</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --obsidian: #121212;
-            --gold: #D4AF37;
-            --tobacco: #7A3E26;
-            --off-white: #EAEAEA;
+        :root { --obsidian: #121212; --gold: #D4AF37; --tobacco: #7A3E26; --off-white: #EAEAEA; }
+        body { 
+            background-color: var(--obsidian); color: var(--off-white); 
+            font-family: 'Playfair Display', serif; margin: 0; 
+            background-image: url('images/logo-gold.png'); background-repeat: no-repeat;
+            background-position: center 30%; background-attachment: fixed; background-size: 50%;
+            background-blend-mode: overlay;
         }
-
-        body {
-            background-color: var(--obsidian);
-            color: var(--off-white);
-            font-family: 'Playfair Display', serif;
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
-        }
-
-        h1, h2, h3, h4 {
-            color: var(--gold);
-            font-weight: 700;
-            margin-bottom: 15px;
-        }
-
-        header {
-            text-align: center;
-            padding: 60px 20px;
-            border-bottom: 2px solid var(--tobacco);
-            background: linear-gradient(180deg, rgba(18,18,18,1) 0%, rgba(30,30,30,1) 100%);
-        }
-
-        .logo-text {
-            font-size: 2.5rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            margin: 0;
-        }
-
-        .subtitle {
-            font-size: 1.2rem;
-            color: var(--off-white);
-            font-style: italic;
-            margin-top: 10px;
-        }
-
-        section {
-            padding: 80px 20px;
-            max-width: 1100px;
-            margin: 0 auto;
-            border-bottom: 1px solid #333;
-        }
-
-        .pillar-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-            margin-top: 40px;
-        }
-
-        .card {
-            background-color: #1A1A1A;
-            border: 1px solid var(--tobacco);
-            padding: 40px;
-            border-radius: 4px;
-            transition: transform 0.3s ease;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-            border-color: var(--gold);
-        }
-
-        .price {
-            font-size: 2rem;
-            color: var(--off-white);
-            margin: 20px 0;
-            display: block;
-        }
-
-        .btn-gold {
-            display: inline-block;
-            background-color: var(--gold);
-            color: var(--obsidian);
-            padding: 15px 30px;
-            font-size: 1.1rem;
-            font-weight: bold;
-            text-transform: uppercase;
-            border: none;
-            cursor: pointer;
-            width: 100%;
-            text-align: center;
-            margin-top: 20px;
-            transition: background 0.3s ease;
-            text-decoration: none;
-        }
-
-        .video-wrapper {
-            position: relative;
-            padding-bottom: 56.25%;
-            height: 0;
-            margin: 40px 0;
-            border: 2px solid var(--gold);
-        }
-
-        .video-wrapper iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
-
-        footer {
-            text-align: center;
-            padding: 40px 20px;
-            color: #888;
-            font-size: 0.9rem;
-        }
+        header { text-align: center; padding: 100px 20px; border-bottom: 2px solid var(--tobacco); background: rgba(18,18,18,0.9); }
+        section { padding: 80px 20px; max-width: 1000px; margin: 0 auto; background: rgba(18,18,18,0.9); border-bottom: 1px solid #333; }
+        .card { background-color: #1A1A1A; border: 1px solid var(--tobacco); padding: 40px; margin: 20px 0; }
+        .price { font-size: 2.2rem; color: var(--gold); margin: 20px 0; display: block; }
+        .btn-gold { display: block; background-color: var(--gold); color: var(--obsidian); padding: 20px; text-align: center; font-weight: bold; text-decoration: none; text-transform: uppercase; }
+        video { width: 100%; border: 2px solid var(--gold); margin-bottom: 30px; }
     </style>
 </head>
 <body>
 
     <header>
-        <h1 class="logo-text">My Legacy Continues</h1>
-        <p class="subtitle">The World's Only Total Heritage Infrastructure</p>
+        <h1 style="font-size: 3rem; margin: 0; color: var(--gold);">MY LEGACY CONTINUES</h1>
+        <p style="font-style: italic;">From First Breath to Eternal Remembrance.</p>
     </header>
 
-    <section id="the-vault">
-        <h2>The Heritage Vault</h2>
-        <p>Record high-fidelity voice sessions and build a secure digital history that generations will inherit.</p>
-        
-        <div class="video-wrapper">
-            <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" frameborder="0" allowfullscreen></iframe>
-        </div>
+    <section id="the-vision">
+        <video autoplay muted loop playsinline>
+            <source src="hero-marathon.mp4" type="video/mp4">
+        </video>
 
-        <div class="pillar-grid">
-            <div class="card">
-                <h3>The Heritage & Culture Book</h3>
-                <p>The standalone digital "Seed Vault." High-fidelity wisdom archiving for families and memory care.</p>
-                <span class="price">$150.00</span>
-                <a href="https://buy.stripe.com/bJe14o2a35pO6csg16fQI02" class="btn-gold">Start The Archive</a>
-            </div>
-            
-            <div class="card">
-                <h3>Full Legacy Bundle</h3>
-                <p>The complete bridge from physical to digital. Includes the Heritage Book plus physical Monument Vault Tags.</p>
-                <span class="price">$199.00</span>
-                <a href="https://buy.stripe.com/4gM14odSLaK8asI9CIfQI03" class="btn-gold">Secure The Bundle</a>
-            </div>
+        <h2>The Total Heritage Ecosystem</h2>
+        <p>We provide a one-time, permanent solution to preserve life's most vital stories. One payment. No subscriptions. A lifetime of legacy.</p>
+
+        <div class="card">
+            <h3>Human & Infant Heritage Bundle</h3>
+            <p>From the day a child is born to the day they are remembered, we provide a **Private Family Profile**. Store first steps, high-fidelity voice recordings, and ancestral research. This is your family’s secure social dashboard—no strangers, just heritage.</p>
+            <span class="price">$199.00</span>
+            <a href="https://buy.stripe.com/4gM14odSLaK8asI9CIfQI03" class="btn-gold">Secure Your Legacy</a>
+        </div>
+    </section>
+
+    <section id="the-rescue">
+        <h2>The Rescue & Transport Network</h2>
+        <p><strong>Infrastructure for the Voiceless.</strong></p>
+        <p>We don't just tag animals; we track their salvation. Our logistics network moves dogs from high-kill environments to forever homes, documenting every mile and medical update along the way.</p>
+        
+        <div class="card">
+            <h3>Safety Registry & Story Tag</h3>
+            <p>A scannable life-line. When a pet is adopted, the new owners receive a full digital profile—the video of their rescue, their medical history, and their journey home. No "strange dogs," just documented family members.</p>
+            <span class="price">$35.00</span>
+            <a href="https://buy.stripe.com/aFa3cw15ZaK81Wc028fQI04" class="btn-gold">Register & Protect</a>
         </div>
     </section>
 
     <section id="the-trade">
         <h2>The Verified Trade Profile</h2>
-        <p><strong>Infrastructure for the Modern Contractor.</strong></p>
-        <p>We build your digital storefront. This includes a custom-designed professional profile to showcase your work, a digital business card, and high-fidelity QR codes for your physical marketing and vehicles.</p>
-        
-        <div class="card" style="margin-top: 30px; border-color: var(--gold);">
-            <h3>Contractor Infrastructure Bundle</h3>
-            <span class="price">$650.00</span>
-            <a href="https://buy.stripe.com/dRm3cwdSL05u58o6qwfQI01" class="btn-gold">Build Your Profile</a>
-        </div>
+        <p><strong>Builder-to-Builder Professionalism.</strong></p>
+        <p>As a contractor, your work is your legacy. We build you a custom digital storefront to showcase your projects and a high-fidelity QR profile for your vehicles and job sites.</p>
+        <span class="price">$650.00</span>
+        <a href="https://buy.stripe.com/dRm3cwdSL05u58o6qwfQI01" class="btn-gold">Build Your Profile</a>
     </section>
 
-    <section id="the-registry">
-        <h2>The Rescue & Memorial Registry</h2>
-        <div class="pillar-grid">
-            <div class="card">
-                <h3>Safety Registry Tag</h3>
-                <p>Scannable, permanent ID profiling for rescue networks and personal pets. Tracks medical and journey history.</p>
-                <span class="price">$35.00</span>
-                <a href="https://buy.stripe.com/aFa3cw15ZaK81Wc028fQI04" class="btn-gold">Register An Animal</a>
-            </div>
-            <div class="card">
-                <h3>Cemetery Monument Tag</h3>
-                <p>Individual weather-resistant metal QR keys designed for headstones and family memorials.</p>
-                <span class="price">$49.00</span>
-                <a href="https://buy.stripe.com/14A14o6qjg4sgR62agfQI05" class="btn-gold">Order Monument Tag</a>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <p>Designed and Built for Digital Eternity.</
+</body>
+</html>
