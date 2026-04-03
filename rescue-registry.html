@@ -2,48 +2,78 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bears Concrete | Transport Registry</title>
+    <title>Guardian Protocol | Rescue Registry</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lora:wght@400;600&display=swap" rel="stylesheet">
     <style>
-        body { background-color: #F9F6F0; color: #142118; font-family: 'Playfair Display', serif; margin: 0; }
-        header { background-color: #142118; color: #F9F6F0; padding: 20px; text-align: center; border-bottom: 3px solid #C5A059; }
-        .registry-container { max-width: 1200px; margin: 40px auto; padding: 20px; display: flex; gap: 30px; justify-content: center; flex-wrap: wrap; }
-        .dog-card { background: #fff; border: 1px solid #C5A059; width: 300px; padding: 0; box-shadow: 5px 5px 15px rgba(0,0,0,0.1); }
-        .dog-card img { width: 100%; height: 250px; object-fit: cover; }
-        .card-content { padding: 20px; text-align: center; }
-        .status-badge { background: #C5A059; color: white; padding: 5px 10px; font-size: 12px; font-weight: bold; display: inline-block; margin-bottom: 15px; }
-        .btn-gold { display: block; background: #142118; color: #F9F6F0; text-decoration: none; padding: 12px; font-weight: bold; border: 1px solid #C5A059; transition: 0.3s; }
-        .btn-gold:hover { background: #C5A059; color: #142118; }
+        :root {
+            --parchment: #F9F6F0; /* The Beige Hat Color */
+            --midnight: #142118; /* Dark Green Text */
+            --gold: #C5A059;
+        }
+        body { background-color: var(--parchment); color: var(--midnight); font-family: 'Lora', serif; margin: 0; padding: 20px; }
+        
+        .header-box { text-align: center; border-bottom: 2px solid var(--gold); padding-bottom: 40px; margin-bottom: 40px; }
+        h1 { font-family: 'Playfair Display', serif; font-size: 2.5rem; margin: 0; }
+        
+        /* Shoshi's Professional Profile */
+        .director-card { 
+            background: #fff; 
+            border: 1px solid var(--gold); 
+            padding: 30px; 
+            max-width: 800px; 
+            margin: 0 auto 50px auto; 
+            display: flex; 
+            align-items: center; 
+            gap: 20px;
+        }
+        .director-info h2 { margin: 0; font-family: 'Playfair Display'; color: var(--midnight); }
+        .insta-btn { 
+            display: inline-block; 
+            padding: 10px 20px; 
+            background: var(--midnight); 
+            color: var(--parchment); 
+            text-decoration: none; 
+            font-weight: bold; 
+            margin-top: 10px;
+        }
+
+        /* The Dog Grid - Underdog Heroes */
+        .registry-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto; }
+        .dog-card { border: 1px solid var(--midnight); padding: 15px; background: #fff; }
+        .dog-image { width: 100%; height: 250px; background-color: #ddd; object-fit: cover; border-bottom: 1px solid var(--midnight); }
+        .tag-id { font-family: monospace; font-weight: bold; color: var(--gold); display: block; margin-top: 10px; }
     </style>
 </head>
 <body>
 
-<header>
-    <h1>Active Underdog Transport Registry</h1>
-    <p>Powered by Bears Concrete Pumping & Logistics</p>
-</header>
+<div class="header-box">
+    <h1>RESCUE REGISTRY</h1>
+    <p>Guardian Protocol Logistics | Powered by Bears Concrete & Construction</p>
+</div>
 
-<div class="registry-container">
-    <div class="dog-card">
-        <img src="zena.jpg" alt="Zena">
-        <div class="card-content">
-            <div class="status-badge">AWAITING TRANSPORT</div>
-            <h3>Zena</h3>
-            <p>Route: Riverside → Santa Maria Hub</p>
-            <a href="zena.html" class="btn-gold">VIEW LOGISTICS PROFILE</a>
-        </div>
-    </div>
-
-    <div class="dog-card">
-        <img src="espi.jpg" alt="Espi">
-        <div class="card-content">
-            <div class="status-badge">AWAITING TRANSPORT</div>
-            <h3>Espi</h3>
-            <p>Route: Riverside → Santa Maria Hub</p>
-            <a href="espi.html" class="btn-gold">VIEW LOGISTICS PROFILE</a>
-        </div>
+<div class="director-card">
+    <div class="director-info">
+        <h2>Shoshana G.</h2>
+        <p><strong>CEO, Underdog Heroes</strong></p>
+        <p>Leading the rehabilitation and advocacy for bully breeds. Shoshana oversees the care, training, and placement of every "Underdog" listed in this registry.</p>
+        <a href="https://www.instagram.com/underdogheroes" class="insta-btn" target="_blank">View Live Rescues (Instagram)</a>
     </div>
 </div>
+
+<h2 style="text-align:center; font-family:'Playfair Display';">ACTIVE TRANSPORT & REHAB LIST</h2>
+
+<div class="registry-grid">
+    <div class="dog-card">
+        <img src="zena-photo.jpg" alt="Zena" class="dog-image">
+        <span class="tag-id">REGISTRY ID: GP-2026-ZB-01</span>
+        <h3>ZENA</h3>
+        <p><strong>Breed:</strong> Pit Bull Mix</p>
+        <p><strong>Status:</strong> In Rehabilitation (Underdog Heroes)</p>
+        <p>Zena is a resilient survivor overcoming breed stereotypes. Her profile tracks her medical recovery and behavior milestones.</p>
+        <a href="zena.html" style="color:var(--gold); font-weight:bold;">VIEW LOGISTICS PROFILE →</a>
+    </div>
+    
+    </div>
 
 </body>
 </html>
