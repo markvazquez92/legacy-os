@@ -253,6 +253,118 @@ footer { background: var(--forest-darkest); border-top: 1px solid var(--gold-bor
 .footer-links-row a { font-size: 0.76rem; color: var(--text-dim); transition: color 0.2s; }
 .footer-links-row a:hover { color: var(--gold); }
 
+/* =============================================
+   HIGH-END HERITAGE PALETTE OVERRIDE
+   Parchment body / Midnight Green header+footer / Burnished Gold borders
+   Applied: April 2026
+   ============================================= */
+
+:root {
+  --forest-darkest: #142118;
+  --forest-dark:    #142118;
+  --forest:         #1C2E22;
+  --forest-mid:     #233427;
+  --forest-light:   #2A3D2E;
+  --parchment:      #F9F6F0;
+  --parchment-mid:  #EDE8DE;
+  --gold:           #C5A059;
+  --gold-light:     #D4B46A;
+  --gold-dark:      #9E7E3E;
+  --gold-wash:      rgba(197,160,89,0.08);
+  --gold-border:    rgba(197,160,89,0.28);
+  --text-light:     #F5F0E8;
+  --text-muted:     rgba(245,240,232,0.70);
+  --text-dim:       rgba(245,240,232,0.42);
+  --text-parch:     #1A1206;
+  --text-parch-mid: #4E3415;
+  --r: 0px;
+}
+
+body { background: #F9F6F0 !important; color: #1A1206 !important; }
+
+/* Sharp corners */
+.btn, .btn-gold, .btn-outline, .btn-parch, .nav-vault, .dog-status-badge {
+  border-radius: 0 !important;
+}
+
+/* Nav: Deep Midnight Green */
+nav { background: rgba(20,33,24,0.98) !important; }
+@media (max-width: 780px) {
+  .nav-links { background: rgba(20,33,24,0.99) !important; }
+}
+
+/* Page hero stays dark (header band) */
+.page-hero {
+  background: linear-gradient(180deg, #142118 0%, #1C2E22 100%) !important;
+}
+
+/* Mission strip stays dark */
+.mission-strip {
+  background: linear-gradient(135deg, #1C2E22 0%, #142118 100%) !important;
+}
+
+/* Section text on parchment */
+.section-title { color: #1A1206 !important; }
+.section-sub   { color: #4E3415 !important; }
+.section-label { color: var(--gold-dark) !important; }
+
+/* Memorial wall section: parchment */
+.memorial-wall { background: #F9F6F0 !important; }
+
+/* Dog cards: parchment surface */
+.dog-card {
+  background: #EDE8DE !important;
+  border: 1px solid rgba(197,160,89,0.35) !important;
+}
+.dog-card:hover {
+  border-color: rgba(197,160,89,0.60) !important;
+  box-shadow: 0 10px 32px rgba(20,33,24,0.12) !important;
+}
+.dog-card.in-memoriam {
+  background: #E2DAC8 !important;
+  border-color: rgba(197,160,89,0.25) !important;
+}
+.dog-photo {
+  background: linear-gradient(145deg, #D5CDB8, #C5BAA0) !important;
+}
+.dog-name  { color: #1A1206 !important; }
+.dog-breed { color: var(--gold-dark) !important; }
+.dog-story { color: #4E3415 !important; }
+.dog-meta-item { color: #6B5030 !important; }
+.dog-meta-item span { color: #4E3415 !important; }
+.dog-dates { color: #6B5030 !important; border-top-color: rgba(197,160,89,0.25) !important; }
+
+/* Transport counter card */
+.transport-counter {
+  background: #1C2E22 !important;
+  border: 1px solid rgba(197,160,89,0.35) !important;
+}
+.counter-label { color: rgba(245,240,232,0.65) !important; }
+.counter-sub   { color: rgba(245,240,232,0.55) !important; }
+
+/* Product mini cards */
+.product-mini {
+  background: #EDE8DE !important;
+  border: 1px solid rgba(197,160,89,0.35) !important;
+}
+.product-mini:hover { border-color: rgba(197,160,89,0.60) !important; }
+.product-mini-name  { color: #1A1206 !important; }
+.product-mini-desc  { color: #4E3415 !important; }
+.product-mini-price { color: #1A1206 !important; }
+.product-mini-price sup { color: #6B5030 !important; }
+
+/* Partner strip: update parchment section */
+.partner-strip {
+  background-color: #EDE8DE !important;
+  border-color: rgba(197,160,89,0.30) !important;
+}
+
+/* Divider */
+.divider { background: rgba(197,160,89,0.25) !important; }
+
+/* Footer: Deep Midnight Green */
+footer { background: #142118 !important; }
+
 </style>
 </head>
 <body>
@@ -384,6 +496,60 @@ footer { background: var(--forest-darkest); border-top: 1px solid var(--gold-bor
             <div class="dog-meta-item">Status <span>Needs transport</span></div>
           </div>
           <div class="dog-dates">At SBCAS now &nbsp;&bull;&nbsp; Looking for his ride home</div>
+        </div>
+      </div>
+
+      <!-- DOG PROFILE: ZENA — GP-2026-PB-001 -->
+      <div class="dog-card">
+        <div class="dog-photo">
+          <img src="zena-photo.jpg" alt="Zena" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="dog-photo-placeholder" style="display:none;width:100%;height:100%;align-items:center;justify-content:center;font-family:var(--cinzel);font-size:0.7rem;letter-spacing:0.14em;color:var(--gold);opacity:0.5;">Photo Pending</div>
+          <div class="dog-status-badge status-active">Awaiting Transport</div>
+        </div>
+        <div class="dog-body">
+          <div class="dog-name">Zena</div>
+          <span class="dog-breed">Pit Bull Mix &nbsp;&bull;&nbsp; Female &nbsp;&bull;&nbsp; GP-2026-PB-001</span>
+          <p class="dog-story">
+            Zena is in Riverside right now, listed through Underdog Heroes and flagged for
+            transport to Santa Maria. She came in carrying more patience than the situation
+            deserved &mdash; the way most Pit Bull mixes do. The route is confirmed.
+            The logistics lead is Bear Vazquez. She just needs her ride.
+          </p>
+          <div class="dog-meta">
+            <div class="dog-meta-item">Origin <span>Riverside, CA</span></div>
+            <div class="dog-meta-item">Source <span>Underdog Heroes</span></div>
+            <div class="dog-meta-item">Status <span>Awaiting transport</span></div>
+          </div>
+          <div class="dog-dates" style="padding-top:14px;border-top:1px solid var(--gold-border);">
+            Route: Riverside &rarr; Santa Maria &nbsp;&bull;&nbsp; <a href="zena.html" style="color:var(--gold);text-decoration:underline;text-underline-offset:3px;">Full Transport Profile &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- DOG PROFILE: ESPI — GP-2026-EB-001 -->
+      <div class="dog-card">
+        <div class="dog-photo">
+          <img src="espi-photo.jpg" alt="Espi" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="dog-photo-placeholder" style="display:none;width:100%;height:100%;align-items:center;justify-content:center;font-family:var(--cinzel);font-size:0.7rem;letter-spacing:0.14em;color:var(--gold);opacity:0.5;">Photo Pending</div>
+          <div class="dog-status-badge status-active">Awaiting Transport</div>
+        </div>
+        <div class="dog-body">
+          <div class="dog-name">Espi</div>
+          <span class="dog-breed">English Bulldog &nbsp;&bull;&nbsp; Female &nbsp;&bull;&nbsp; GP-2026-EB-001</span>
+          <p class="dog-story">
+            Espi is a female English Bulldog listed through Underdog Heroes and flagged
+            for transport through the Guardian Protocol network. She needs a
+            climate-controlled transport window &mdash; brachycephalic breed, max 3-hour
+            transit. Gentle, patient, and waiting for someone to make the call.
+          </p>
+          <div class="dog-meta">
+            <div class="dog-meta-item">Breed <span>English Bulldog</span></div>
+            <div class="dog-meta-item">Source <span>Underdog Heroes</span></div>
+            <div class="dog-meta-item">Status <span>Awaiting transport</span></div>
+          </div>
+          <div class="dog-dates" style="padding-top:14px;border-top:1px solid var(--gold-border);">
+            Source: Underdog Heroes &nbsp;&bull;&nbsp; <a href="dog-template.html" style="color:var(--gold);text-decoration:underline;text-underline-offset:3px;">Full Transport Profile &rarr;</a>
+          </div>
         </div>
       </div>
 
