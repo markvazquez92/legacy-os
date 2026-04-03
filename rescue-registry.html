@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rescue Registry &amp; Memorial Wall — My Legacy Continues</title>
+<meta name="description" content="The Guardian Protocol rescue registry — memorial profiles for rescue dogs and animals. Safety Tags, Cemetery Plaques, and permanent digital tributes. Every life deserves a record.">
+<link rel="icon" href="logo.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+
+:root {
+  --forest-darkest: #0C1E14;
+  --forest-dark:    #112A1A;
+  --forest:         #1A3D28;
+  --forest-mid:     #234E33;
+  --forest-light:   #2E6142;
+  --parchment:      #F5EDD5;
+  --parchment-mid:  #EAD9B5;
+  --gold:           #C9A84C;
+  --gold-light:     #E2C070;
+  --gold-dark:      #A07828;
+  --gold-wash:      rgba(201,168,76,0.08);
+  --gold-border:    rgba(201,168,76,0.20);
+  --text-light:     #F0E8D6;
+  --text-muted:     rgba(240,232,214,0.62);
+  --text-dim:       rgba(240,232,214,0.38);
+  --text-parch:     #2C1F0E;
+  --text-parch-mid: #6B4F2A;
+  --cinzel:   'Cinzel', Georgia, serif;
+  --playfair: 'Playfair Display', Georgia, serif;
+  --lora:     'Lora', Georgia, serif;
+  --r: 6px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: var(--lora); background: var(--forest-darkest); color: var(--text-light); line-height: 1.78; -webkit-font-smoothing: antialiased; }
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; height: auto; display: block; }
+
+.btn { display: inline-block; font-family: var(--cinzel); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; padding: 14px 32px; border-radius: var(--r); border: none; cursor: pointer; transition: all 0.24s ease; text-decoration: none; white-space: nowrap; }
+.btn-gold { background: var(--gold); color: var(--forest-darkest); box-shadow: 0 4px 18px rgba(201,168,76,0.25); }
+.btn-gold:hover { background: var(--gold-light); transform: translateY(-2px); }
+.btn-outline { background: transparent; color: var(--gold); border: 1.5px solid var(--gold-border); }
+.btn-outline:hover { border-color: var(--gold); background: var(--gold-wash); }
+.btn-parch { display: inline-block; background: transparent; color: var(--text-parch); border: 1px solid rgba(44,31,14,0.28); font-family: var(--cinzel); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; padding: 14px 32px; border-radius: var(--r); cursor: pointer; transition: all 0.22s; }
+.btn-parch:hover { background: rgba(44,31,14,0.07); }
+
+/* NAV */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 900;
+  height: 68px;
+  background: rgba(12,30,20,0.97);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--gold-border);
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 48px;
+}
+.nav-brand { display: flex; align-items: center; gap: 14px; flex-shrink: 0; }
+.nav-logo { height: 42px; width: 42px; object-fit: contain; mix-blend-mode: screen; filter: drop-shadow(0 0 8px rgba(201,168,76,0.35)); }
+.nav-logo.broken { display: none; }
+.nav-logo-text { font-family: var(--cinzel); font-size: 0.88rem; font-weight: 600; color: var(--gold); letter-spacing: 0.08em; line-height: 1.25; }
+.nav-links { display: flex; align-items: center; gap: 36px; list-style: none; }
+.nav-links a { font-family: var(--lora); font-size: 0.84rem; color: var(--text-muted); transition: color 0.2s; }
+.nav-links a:hover, .nav-links a.active { color: var(--gold); }
+.nav-vault { font-family: var(--cinzel) !important; font-size: 0.72rem !important; letter-spacing: 0.12em !important; text-transform: uppercase; color: var(--gold) !important; border: 1px solid var(--gold-border); padding: 8px 18px; border-radius: var(--r); transition: all 0.22s; }
+.nav-vault:hover { background: var(--gold-wash); border-color: var(--gold); }
+.nav-toggle { display: none; background: none; border: none; cursor: pointer; flex-direction: column; gap: 5px; padding: 4px; }
+.nav-toggle span { display: block; width: 22px; height: 1.5px; background: var(--gold); }
+@media (max-width: 780px) {
+  nav { padding: 0 20px; }
+  .nav-links { display: none; flex-direction: column; position: fixed; top: 68px; left: 0; right: 0; background: rgba(12,30,20,0.98); padding: 28px 24px; gap: 0; border-bottom: 1px solid var(--gold-border); }
+  .nav-links.open { display: flex; }
+  .nav-links li { width: 100%; }
+  .nav-links a { display: block; padding: 14px 0; border-bottom: 1px solid rgba(201,168,76,0.07); font-size: 0.92rem; }
+  .nav-vault { margin: 16px 0 0; display: inline-block !important; }
+  .nav-toggle { display: flex; }
+}
+
+/* PAGE HERO */
+.page-hero {
+  padding-top: 68px;
+  background: linear-gradient(180deg, var(--forest-darkest) 0%, var(--forest-dark) 100%);
+  border-bottom: 1px solid var(--gold-border);
+  position: relative;
+  overflow: hidden;
+}
+.page-hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse 70% 60% at 50% 0%, rgba(201,168,76,0.06) 0%, transparent 60%);
+  pointer-events: none;
+}
+.page-hero-inner {
+  max-width: 1060px; margin: 0 auto;
+  padding: 72px 48px 64px;
+  position: relative; z-index: 1;
+}
+.page-eyebrow {
+  font-family: var(--cinzel); font-size: 0.6rem; letter-spacing: 0.3em; text-transform: uppercase;
+  color: var(--gold); display: block; margin-bottom: 20px;
+}
+.page-title {
+  font-family: var(--playfair);
+  font-size: clamp(2rem, 5vw, 3.6rem);
+  font-weight: 700; color: var(--text-light);
+  line-height: 1.1; margin-bottom: 16px; letter-spacing: -0.01em;
+}
+.page-title em { font-style: italic; color: var(--gold); }
+.page-sub {
+  font-size: 0.96rem; color: var(--text-muted); line-height: 1.85;
+  max-width: 620px; margin-bottom: 36px;
+}
+.page-stats {
+  display: flex; gap: 40px; flex-wrap: wrap;
+  border-top: 1px solid var(--gold-border); padding-top: 36px;
+}
+.page-stat-val { font-family: var(--playfair); font-size: 2.4rem; font-weight: 700; color: var(--gold); line-height: 1; margin-bottom: 4px; }
+.page-stat-label { font-family: var(--cinzel); font-size: 0.56rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-dim); }
+@media (max-width: 600px) { .page-hero-inner { padding: 56px 20px 48px; } }
+
+/* SECTION */
+.section { padding: 80px 48px; }
+.section-inner { max-width: 1060px; margin: 0 auto; }
+.section-label { font-family: var(--cinzel); font-size: 0.58rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold); display: block; margin-bottom: 18px; }
+.section-title { font-family: var(--playfair); font-size: clamp(1.6rem, 3.5vw, 2.6rem); font-weight: 700; color: var(--text-light); line-height: 1.18; margin-bottom: 16px; }
+.section-sub { font-size: 0.96rem; color: var(--text-muted); line-height: 1.85; max-width: 600px; margin-bottom: 48px; }
+@media (max-width: 600px) { .section { padding: 56px 20px; } }
+
+/* DIVIDER */
+.divider { height: 1px; background: var(--gold-border); }
+
+/* MISSION STRIP */
+.mission-strip {
+  background: linear-gradient(135deg, rgba(26,61,40,0.7) 0%, rgba(12,30,20,0.95) 100%);
+  border-top: 1px solid var(--gold-border); border-bottom: 1px solid var(--gold-border);
+  padding: 72px 48px;
+}
+.mission-inner { max-width: 1060px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+@media (max-width: 760px) { .mission-inner { grid-template-columns: 1fr; } .mission-strip { padding: 56px 20px; } }
+.mission-quote {
+  font-family: var(--playfair); font-size: clamp(1.2rem, 2.5vw, 1.6rem); font-style: italic;
+  color: var(--text-light); line-height: 1.6; margin-bottom: 24px;
+}
+.mission-quote::before { content: '\201C'; color: var(--gold); }
+.mission-quote::after { content: '\201D'; color: var(--gold); }
+.mission-attr { font-family: var(--cinzel); font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-dim); }
+.mission-details { display: flex; flex-direction: column; gap: 20px; }
+.mission-detail-item { border-left: 2px solid var(--gold); padding-left: 18px; }
+.mission-detail-title { font-family: var(--cinzel); font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); margin-bottom: 6px; }
+.mission-detail-text { font-size: 0.86rem; color: var(--text-muted); line-height: 1.78; }
+
+/* MEMORIAL WALL */
+.memorial-wall { padding: 80px 48px; }
+.memorial-inner { max-width: 1060px; margin: 0 auto; }
+.memorial-header { text-align: center; margin-bottom: 56px; }
+.memorial-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 28px; }
+@media (max-width: 600px) { .memorial-wall { padding: 56px 20px; } }
+
+/* DOG PROFILE CARD */
+.dog-card {
+  background: rgba(17,42,26,0.55);
+  border: 1px solid var(--gold-border);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: border-color 0.24s, transform 0.22s, box-shadow 0.24s;
+}
+.dog-card:hover { border-color: rgba(201,168,76,0.4); transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.3); }
+.dog-card.in-memoriam { border-color: rgba(201,168,76,0.25); background: rgba(12,30,20,0.7); }
+.dog-photo {
+  width: 100%; height: 200px;
+  background: linear-gradient(145deg, var(--forest-mid), var(--forest-dark));
+  display: flex; align-items: center; justify-content: center;
+  font-size: 4rem;
+  position: relative; overflow: hidden;
+}
+.dog-photo img { width: 100%; height: 100%; object-fit: cover; }
+.dog-photo-placeholder { font-size: 4rem; }
+.dog-status-badge {
+  position: absolute; top: 12px; right: 12px;
+  font-family: var(--cinzel); font-size: 0.52rem; letter-spacing: 0.18em; text-transform: uppercase;
+  padding: 5px 12px; border-radius: 20px;
+}
+.status-active { background: rgba(46,97,66,0.9); color: var(--gold); border: 1px solid var(--gold-border); }
+.status-adopted { background: rgba(201,168,76,0.2); color: var(--gold-light); border: 1px solid rgba(201,168,76,0.3); }
+.status-memoriam { background: rgba(12,30,20,0.9); color: var(--text-dim); border: 1px solid var(--gold-border); }
+.dog-body { padding: 24px 22px; }
+.dog-name { font-family: var(--playfair); font-size: 1.3rem; font-weight: 700; color: var(--text-light); margin-bottom: 4px; }
+.dog-breed { font-family: var(--cinzel); font-size: 0.6rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; display: block; }
+.dog-story { font-size: 0.84rem; color: var(--text-muted); line-height: 1.78; margin-bottom: 16px; }
+.dog-meta { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 18px; }
+.dog-meta-item { font-family: var(--cinzel); font-size: 0.56rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-dim); }
+.dog-meta-item span { color: var(--text-muted); }
+.dog-dates { font-family: var(--cinzel); font-size: 0.58rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-dim); padding-top: 14px; border-top: 1px solid var(--gold-border); }
+.dog-dates.memoriam-dates { color: var(--gold); font-style: italic; }
+
+/* TRANSPORT COUNTER */
+.transport-counter {
+  background: rgba(17,42,26,0.6);
+  border: 1px solid var(--gold-border);
+  border-radius: 10px;
+  padding: 40px 36px;
+  text-align: center;
+  grid-column: 1 / -1;
+}
+.counter-num { font-family: var(--playfair); font-size: 4rem; font-weight: 700; color: var(--gold); line-height: 1; margin-bottom: 8px; }
+.counter-label { font-family: var(--cinzel); font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 16px; display: block; }
+.counter-sub { font-size: 0.86rem; color: var(--text-muted); line-height: 1.75; max-width: 480px; margin: 0 auto 24px; }
+
+/* PRODUCTS STRIP */
+.products-strip { padding: 80px 48px; }
+.products-strip-inner { max-width: 1060px; margin: 0 auto; }
+.products-strip-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; }
+@media (max-width: 600px) { .products-strip { padding: 56px 20px; } }
+.product-mini {
+  background: rgba(17,42,26,0.55); border: 1px solid var(--gold-border); border-radius: 8px;
+  padding: 32px 26px; display: flex; flex-direction: column;
+  transition: border-color 0.22s, transform 0.22s;
+}
+.product-mini:hover { border-color: rgba(201,168,76,0.4); transform: translateY(-3px); }
+.product-mini-icon { font-size: 1.6rem; margin-bottom: 16px; }
+.product-mini-label { font-family: var(--cinzel); font-size: 0.56rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; display: block; }
+.product-mini-name { font-family: var(--playfair); font-size: 1.1rem; font-weight: 700; color: var(--text-light); margin-bottom: 10px; }
+.product-mini-desc { font-size: 0.82rem; color: var(--text-muted); line-height: 1.78; flex: 1; margin-bottom: 20px; }
+.product-mini-price { font-family: var(--cinzel); font-size: 1.8rem; font-weight: 700; color: var(--text-light); margin-bottom: 18px; }
+.product-mini-price sup { font-size: 0.9rem; vertical-align: super; font-weight: 400; color: var(--text-muted); }
+.product-mini-price sub { font-size: 0.6rem; color: var(--text-dim); font-weight: 400; }
+
+/* PARTNER STRIP */
+.partner-strip {
+  background: var(--parchment);
+  background-image: radial-gradient(ellipse 70% 50% at 50% 40%, rgba(201,168,76,0.08) 0%, transparent 60%);
+  padding: 80px 48px;
+}
+.partner-inner { max-width: 1060px; margin: 0 auto; }
+.partner-strip .section-label { color: var(--gold-dark); }
+.partner-strip .section-title { color: var(--text-parch); }
+.partner-strip p { color: var(--text-parch-mid); font-size: 0.94rem; line-height: 1.9; margin-bottom: 20px; max-width: 680px; }
+.partner-strip p strong { color: var(--text-parch); font-weight: 600; }
+@media (max-width: 600px) { .partner-strip { padding: 56px 20px; } }
+
+/* FOOTER */
+footer { background: var(--forest-darkest); border-top: 1px solid var(--gold-border); padding: 40px 48px; }
+.footer-inner { max-width: 1060px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+.footer-brand { font-family: var(--cinzel); font-size: 0.68rem; color: var(--text-dim); letter-spacing: 0.1em; }
+.footer-links-row { display: flex; gap: 20px; flex-wrap: wrap; }
+.footer-links-row a { font-size: 0.76rem; color: var(--text-dim); transition: color 0.2s; }
+.footer-links-row a:hover { color: var(--gold); }
+
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="mainNav">
+  <a href="index.html" class="nav-brand">
+    <img src="logo.png" alt="My Legacy Continues" class="nav-logo" onerror="this.classList.add('broken')">
+    <span class="nav-logo-text">MY LEGACY<br>CONTINUES</span>
+  </a>
+  <button class="nav-toggle" aria-label="Open menu"
+    onclick="this.closest('nav').querySelector('.nav-links').classList.toggle('open')">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="portal.html">Vault</a></li>
+    <li><a href="trade-profile.html">Trade Profile</a></li>
+    <li><a href="rescue-registry.html" class="active">Rescue Registry</a></li>
+    <li><a href="portal.html" class="nav-vault">Vault Login</a></li>
+  </ul>
+</nav>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <span class="page-eyebrow">Guardian Protocol &nbsp;&bull;&nbsp; My Legacy Continues &bull; Underdog Heroes</span>
+    <h1 class="page-title">Rescue Registry<br>&amp; <em>Memorial Wall</em></h1>
+    <p class="page-sub">
+      Every animal that passed through the Lake Hughes &#8594; Santa Barbara County rescue corridor deserves a permanent record.
+      This page exists because every life matters &mdash; not just while it's being lived, but forever after.
+    </p>
+    <div class="page-stats">
+      <div>
+        <div class="page-stat-val" id="transportCount">7+</div>
+        <div class="page-stat-label">Transports<br>Funded</div>
+      </div>
+      <div>
+        <div class="page-stat-val">2</div>
+        <div class="page-stat-label">Shelter<br>Partners</div>
+      </div>
+      <div>
+        <div class="page-stat-val">&#x221E;</div>
+        <div class="page-stat-label">Years Each<br>Profile Lives</div>
+      </div>
+      <div>
+        <div class="page-stat-val">$0</div>
+        <div class="page-stat-label">Cost to View<br>a Profile</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MISSION STRIP -->
+<section class="mission-strip">
+  <div class="mission-inner">
+    <div>
+      <p class="mission-quote">
+        These dogs don&#8217;t have anyone to write their story down. That&#8217;s what this is for.
+      </p>
+      <div class="mission-attr">Mark Vazquez &nbsp;&mdash;&nbsp; Founder, My Legacy Continues</div>
+    </div>
+    <div class="mission-details">
+      <div class="mission-detail-item">
+        <div class="mission-detail-title">The Partnership</div>
+        <div class="mission-detail-text">My Legacy Continues partners with Underdog Heroes (Lake Hughes, CA) and Santa Barbara County Animal Services to fund transports and create permanent digital profiles for every animal in the corridor.</div>
+      </div>
+      <div class="mission-detail-item">
+        <div class="mission-detail-title">How It&#8217;s Funded</div>
+        <div class="mission-detail-text">Every $650 Contractor Bundle purchase funds a rescue transport. Every $35 Safety Registry Tag creates a permanent pet profile. Revenue from heritage products directly supports this mission.</div>
+      </div>
+      <div class="mission-detail-item">
+        <div class="mission-detail-title">The Memorial Wall</div>
+        <div class="mission-detail-text">Dogs who passed before they found a home, and those lost after adoption, are memorialized here permanently. No subscription. No expiration. Their names don&#8217;t disappear.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- MEMORIAL WALL -->
+<section class="memorial-wall" id="wall">
+  <div class="memorial-inner">
+    <div class="memorial-header">
+      <span class="section-label">The Memorial Wall</span>
+      <h2 class="section-title">Every Name, Remembered Forever</h2>
+      <p class="section-sub" style="margin: 0 auto 0; text-align: center;">
+        These profiles are permanent. They cannot be deleted, archived, or taken down.
+        A rescue dog&#8217;s story deserves the same permanence as any human legacy.
+      </p>
+    </div>
+
+    <div class="memorial-grid">
+
+      <!-- Transport Counter Card -->
+      <div class="transport-counter">
+        <div class="counter-num" id="liveCount">7</div>
+        <span class="counter-label">Transports Funded Through My Legacy Continues Purchases</span>
+        <p class="counter-sub">
+          Every Contractor Bundle ($650) sold directly funds one rescue transport from Lake Hughes to Santa Barbara County Animal Services.
+          Every dog on this wall had someone who remembered them.
+        </p>
+        <a href="https://buy.stripe.com/dRm3cwdSL05u58o6qwfQI01" class="btn btn-gold" style="margin-right: 12px;">Fund a Transport &mdash; $650</a>
+        <a href="https://buy.stripe.com/aFa3cw15ZaK81Wc028fQI04" class="btn btn-outline">Safety Tag &mdash; $35</a>
+      </div>
+
+      <!-- DOG PROFILE: DUKE -->
+      <div class="dog-card">
+        <div class="dog-photo">
+          <img src="duke.jpg" alt="Duke" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="dog-photo-placeholder" style="display:none;width:100%;height:100%;align-items:center;justify-content:center;">🐕</div>
+          <div class="dog-status-badge status-adopted">Adopted</div>
+        </div>
+        <div class="dog-body">
+          <div class="dog-name">Duke</div>
+          <span class="dog-breed">German Shepherd Mix &nbsp;&bull;&nbsp; Male</span>
+          <p class="dog-story">
+            Duke came through the Lake Hughes corridor with a broken spirit and a strong jaw.
+            He trusted nobody on day one. By week two he was sleeping at Mark&#8217;s feet.
+            He found his forever home in Santa Maria in the spring.
+          </p>
+          <div class="dog-meta">
+            <div class="dog-meta-item">Origin <span>Lake Hughes, CA</span></div>
+            <div class="dog-meta-item">Weight <span>~72 lbs</span></div>
+            <div class="dog-meta-item">Route <span>Lake Hughes &#8594; SBCAS</span></div>
+          </div>
+          <div class="dog-dates">Rescued 2024 &nbsp;&bull;&nbsp; Adopted Spring 2025</div>
+        </div>
+      </div>
+
+      <!-- DOG PROFILE: LUNA -->
+      <div class="dog-card">
+        <div class="dog-photo">
+          <img src="luna.jpg" alt="Luna" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="dog-photo-placeholder" style="display:none;width:100%;height:100%;align-items:center;justify-content:center;">🐾</div>
+          <div class="dog-status-badge status-active">Available</div>
+        </div>
+        <div class="dog-body">
+          <div class="dog-name">Luna</div>
+          <span class="dog-breed">Labrador Mix &nbsp;&bull;&nbsp; Female</span>
+          <p class="dog-story">
+            Luna was pulled from the Lake Hughes shelter at the last possible hour.
+            She&#8217;s young, curious, and absolutely unshakeable. She needs a yard, patience,
+            and someone who won&#8217;t quit on her the way others did.
+          </p>
+          <div class="dog-meta">
+            <div class="dog-meta-item">Origin <span>Lake Hughes, CA</span></div>
+            <div class="dog-meta-item">Weight <span>~55 lbs</span></div>
+            <div class="dog-meta-item">Age <span>~2 years</span></div>
+          </div>
+          <div class="dog-dates">Rescued 2025 &nbsp;&bull;&nbsp; Currently in foster care, Santa Maria</div>
+        </div>
+      </div>
+
+      <!-- DOG PROFILE: BEAR (IN MEMORIAM) -->
+      <div class="dog-card in-memoriam">
+        <div class="dog-photo">
+          <img src="bear-dog.jpg" alt="Bear" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="dog-photo-placeholder" style="display:none;width:100%;height:100%;align-items:center;justify-content:center;font-size:3rem;opacity:0.5;">🕯️</div>
+          <div class="dog-status-badge status-memoriam">In Memoriam</div>
+        </div>
+        <div class="dog-body">
+          <div class="dog-name">Bear</div>
+          <span class="dog-breed">Pit Bull Mix &nbsp;&bull;&nbsp; Male</span>
+          <p class="dog-story">
+            Bear was the one that started all of this. He didn&#8217;t make it out.
+            He was at Lake Hughes when the corridor wasn&#8217;t yet organized, when there weren&#8217;t enough transports,
+            when nobody was watching the numbers. His name is why this registry exists.
+          </p>
+          <div class="dog-meta">
+            <div class="dog-meta-item">Origin <span>Lake Hughes, CA</span></div>
+            <div class="dog-meta-item">Color <span>Brown &amp; white</span></div>
+          </div>
+          <div class="dog-dates memoriam-dates">2023 &nbsp;&mdash;&nbsp; Forever in this registry. Forever remembered.</div>
+        </div>
+      </div>
+
+      <!-- DOG PROFILE: COYOTE -->
+      <div class="dog-card">
+        <div class="dog-photo">
+          <div class="dog-photo-placeholder" style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;">🐺</div>
+          <div class="dog-status-badge status-adopted">Adopted</div>
+        </div>
+        <div class="dog-body">
+          <div class="dog-name">Coyote</div>
+          <span class="dog-breed">Husky / Shepherd Mix &nbsp;&bull;&nbsp; Male</span>
+          <p class="dog-story">
+            Named for the way he moved through the shelter like he was passing through, not staying.
+            And he was right. Coyote got adopted within 18 days of his profile going live on this registry.
+            His family said the story on this page is what convinced them.
+          </p>
+          <div class="dog-meta">
+            <div class="dog-meta-item">Origin <span>SBCAS</span></div>
+            <div class="dog-meta-item">Weight <span>~64 lbs</span></div>
+          </div>
+          <div class="dog-dates">Rescued 2024 &nbsp;&bull;&nbsp; Adopted within 18 days of profile going live</div>
+        </div>
+      </div>
+
+      <!-- DOG PROFILE: ROSA -->
+      <div class="dog-card">
+        <div class="dog-photo">
+          <div class="dog-photo-placeholder" style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;">🐶</div>
+          <div class="dog-status-badge status-active">Available</div>
+        </div>
+        <div class="dog-body">
+          <div class="dog-name">Rosa</div>
+          <span class="dog-breed">Beagle Mix &nbsp;&bull;&nbsp; Female</span>
+          <p class="dog-story">
+            Rosa is small, stubborn, and extremely food motivated. She walks on leash, knows &#8220;sit,&#8221;
+            and has decided she prefers couches to dog beds. Looking for a home with no other animals
+            and a lot of couch space.
+          </p>
+          <div class="dog-meta">
+            <div class="dog-meta-item">Origin <span>Lake Hughes, CA</span></div>
+            <div class="dog-meta-item">Weight <span>~28 lbs</span></div>
+            <div class="dog-meta-item">Age <span>~4 years</span></div>
+          </div>
+          <div class="dog-dates">Rescued 2025 &nbsp;&bull;&nbsp; Profile active — looking for home</div>
+        </div>
+      </div>
+
+      <!-- ADD YOUR DOG CARD -->
+      <div class="dog-card" style="border-style: dashed; border-color: rgba(201,168,76,0.2); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 48px 28px; min-height: 300px;">
+        <div style="font-size: 2.4rem; margin-bottom: 20px; opacity: 0.5;">+</div>
+        <div class="dog-name" style="margin-bottom: 8px; font-size: 1.1rem;">Add a Profile</div>
+        <p style="font-size: 0.82rem; color: var(--text-muted); line-height: 1.75; margin-bottom: 22px;">
+          Know a rescue dog that deserves a permanent record?
+          Safety Registry Tags are $35. Each one creates a permanent profile on this wall.
+        </p>
+        <a href="https://buy.stripe.com/aFa3cw15ZaK81Wc028fQI04" class="btn btn-gold" style="font-size: 0.68rem;">Register a Dog &mdash; $35</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- PRODUCTS STRIP -->
+<section class="products-strip" id="products">
+  <div class="products-strip-inner">
+    <span class="section-label">Support the Registry</span>
+    <h2 class="section-title" style="margin-bottom: 12px;">Every Purchase Funds the Mission</h2>
+    <p class="section-sub">Buying any product from My Legacy Continues directly supports the rescue transport network. The Contractor Bundle funds a full transport. The Safety Tag creates a permanent profile.</p>
+    <div class="products-strip-grid">
+      <div class="product-mini">
+        <div class="product-mini-icon">🏷️</div>
+        <span class="product-mini-label">Safety Registry Tag</span>
+        <div class="product-mini-name">Permanent Pet Profile</div>
+        <p class="product-mini-desc">A metal QR tag that links to a permanent digital profile for your pet. Medical info, photos, and your contact — available to anyone who scans it, forever.</p>
+        <div class="product-mini-price"><sup>$</sup>35 <sub>one-time</sub></div>
+        <a href="https://buy.stripe.com/aFa3cw15ZaK81Wc028fQI04" class="btn btn-gold">Get Safety Tag</a>
+      </div>
+      <div class="product-mini">
+        <div class="product-mini-icon">🪦</div>
+        <span class="product-mini-label">Cemetery Tribute</span>
+        <div class="product-mini-name">Memorial Digital Plaque</div>
+        <p class="product-mini-desc">A permanent digital tribute page linked to a physical QR plaque. Works for people and pets alike. Scan to view photos, stories, and a living memorial.</p>
+        <div class="product-mini-price"><sup>$</sup>149 <sub>one-time</sub></div>
+        <a href="https://buy.stripe.com/14A14o6qjg4sgR62agfQI05" class="btn btn-gold">Order Tribute</a>
+      </div>
+      <div class="product-mini">
+        <div class="product-mini-icon">🔨</div>
+        <span class="product-mini-label">Contractor Bundle</span>
+        <div class="product-mini-name">Funds a Rescue Transport</div>
+        <p class="product-mini-desc">Every $650 Contractor Bundle purchase directly funds one rescue transport from Lake Hughes to SBCAS. Get your trade profile and fund the mission at the same time.</p>
+        <div class="product-mini-price"><sup>$</sup>650 <sub>one-time</sub></div>
+        <a href="https://buy.stripe.com/dRm3cwdSL05u58o6qwfQI01" class="btn btn-gold">Build Profile + Fund Transport</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- PARTNER STRIP (PARCHMENT) -->
+<section class="partner-strip">
+  <div class="partner-inner">
+    <span class="section-label">Our Partners</span>
+    <h2 class="section-title" style="color: var(--text-parch); margin-bottom: 20px;">The Organizations Behind This Work</h2>
+    <p>
+      <strong>Underdog Heroes</strong> operates out of Lake Hughes, California and coordinates rescue transports for high-risk animals across the Los Angeles and Santa Barbara County shelter systems.
+      They are the reason dogs like Bear and Duke made it into a corridor at all.
+    </p>
+    <p>
+      <strong>Santa Barbara County Animal Services (SBCAS)</strong> is the receiving end of the Lake Hughes corridor.
+      They process, vet, and rehome animals that would otherwise have no path forward.
+      My Legacy Continues partners with SBCAS to ensure every transported animal has a permanent digital profile.
+    </p>
+    <p>
+      <strong>My Legacy Continues</strong> provides the permanent digital infrastructure &mdash; the profiles, the QR tags, the hosting, and the funding mechanism.
+      When you buy any product on this site, part of what you&#8217;re buying is the ability to keep this network running.
+    </p>
+    <div style="display: flex; gap: 14px; flex-wrap: wrap; margin-top: 28px;">
+      <a href="https://underdogheroes.org" target="_blank" rel="noopener" class="btn-parch">Visit Underdog Heroes</a>
+      <a href="mailto:mark.vazquez92@gmail.com?subject=Rescue%20Partnership%20Inquiry" class="btn-parch">Partner With Us</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">Rescue Registry &nbsp;&mdash;&nbsp; Guardian Protocol &nbsp;&mdash;&nbsp; My Legacy Continues &nbsp;&mdash;&nbsp; Santa Maria, CA</div>
+    <div class="footer-links-row">
+      <a href="index.html">Home</a>
+      <a href="portal.html">Vault</a>
+      <a href="trade-profile.html">Trade Profile</a>
+      <a href="rescue-registry.html">Rescue Registry</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+window.addEventListener('scroll', () => {
+  document.getElementById('mainNav').style.boxShadow =
+    window.scrollY > 20 ? '0 4px 32px rgba(0,0,0,0.4)' : 'none';
+});
+
+// Animate transport counter on scroll
+const counter = document.getElementById('liveCount');
+let counted = false;
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting && !counted) {
+      counted = true;
+      let n = 0;
+      const target = 7;
+      const interval = setInterval(() => {
+        n++;
+        counter.textContent = n;
+        if (n >= target) clearInterval(interval);
+      }, 120);
+    }
+  });
+}, { threshold: 0.5 });
+if (counter) observer.observe(counter);
+</script>
+</body>
+</html>

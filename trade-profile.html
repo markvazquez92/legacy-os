@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bears Concrete Pumping — Verified Trade Profile</title>
+<meta name="description" content="Bears Concrete Pumping — Santa Maria, CA. Licensed and insured concrete pumping across Santa Barbara and SLO County. Owner-operated by Mark Vazquez. A Verified Trade Profile by My Legacy Continues.">
+<link rel="icon" href="logo.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+
+:root {
+  --forest-darkest: #0C1E14;
+  --forest-dark:    #112A1A;
+  --forest:         #1A3D28;
+  --forest-mid:     #234E33;
+  --forest-light:   #2E6142;
+  --parchment:      #F5EDD5;
+  --parchment-mid:  #EAD9B5;
+  --gold:           #C9A84C;
+  --gold-light:     #E2C070;
+  --gold-dark:      #A07828;
+  --gold-wash:      rgba(201,168,76,0.08);
+  --gold-border:    rgba(201,168,76,0.20);
+  --text-light:     #F0E8D6;
+  --text-muted:     rgba(240,232,214,0.62);
+  --text-dim:       rgba(240,232,214,0.38);
+  --text-parch:     #2C1F0E;
+  --text-parch-mid: #6B4F2A;
+  --cinzel:   'Cinzel', Georgia, serif;
+  --playfair: 'Playfair Display', Georgia, serif;
+  --lora:     'Lora', Georgia, serif;
+  --r: 6px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: var(--lora); background: var(--forest-darkest); color: var(--text-light); line-height: 1.78; -webkit-font-smoothing: antialiased; }
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; height: auto; display: block; }
+
+.btn { display: inline-block; font-family: var(--cinzel); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; padding: 14px 32px; border-radius: var(--r); border: none; cursor: pointer; transition: all 0.24s ease; text-decoration: none; white-space: nowrap; }
+.btn-gold { background: var(--gold); color: var(--forest-darkest); box-shadow: 0 4px 18px rgba(201,168,76,0.25); }
+.btn-gold:hover { background: var(--gold-light); transform: translateY(-2px); }
+.btn-outline { background: transparent; color: var(--gold); border: 1.5px solid var(--gold-border); }
+.btn-outline:hover { border-color: var(--gold); background: var(--gold-wash); }
+.btn-parch { display: inline-block; background: transparent; color: var(--text-parch); border: 1px solid rgba(44,31,14,0.28); font-family: var(--cinzel); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; padding: 14px 32px; border-radius: var(--r); cursor: pointer; transition: all 0.22s; }
+.btn-parch:hover { background: rgba(44,31,14,0.07); }
+
+/* NAV */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 900;
+  height: 68px;
+  background: rgba(12,30,20,0.96);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--gold-border);
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 48px;
+}
+.nav-brand { display: flex; align-items: center; gap: 14px; flex-shrink: 0; }
+.nav-logo { height: 42px; width: 42px; object-fit: contain; mix-blend-mode: screen; filter: drop-shadow(0 0 8px rgba(201,168,76,0.35)); }
+.nav-logo.broken { display: none; }
+.nav-logo-text { font-family: var(--cinzel); font-size: 0.88rem; font-weight: 600; color: var(--gold); letter-spacing: 0.08em; line-height: 1.25; }
+.nav-links { display: flex; align-items: center; gap: 36px; list-style: none; }
+.nav-links a { font-family: var(--lora); font-size: 0.84rem; color: var(--text-muted); transition: color 0.2s; }
+.nav-links a:hover, .nav-links a.active { color: var(--gold); }
+.nav-vault { font-family: var(--cinzel) !important; font-size: 0.72rem !important; letter-spacing: 0.12em !important; text-transform: uppercase; color: var(--gold) !important; border: 1px solid var(--gold-border); padding: 8px 18px; border-radius: var(--r); transition: all 0.22s; }
+.nav-vault:hover { background: var(--gold-wash); border-color: var(--gold); }
+.nav-toggle { display: none; background: none; border: none; cursor: pointer; flex-direction: column; gap: 5px; padding: 4px; }
+.nav-toggle span { display: block; width: 22px; height: 1.5px; background: var(--gold); }
+@media (max-width: 780px) {
+  nav { padding: 0 20px; }
+  .nav-links { display: none; flex-direction: column; position: fixed; top: 68px; left: 0; right: 0; background: rgba(12,30,20,0.98); padding: 28px 24px; gap: 0; border-bottom: 1px solid var(--gold-border); }
+  .nav-links.open { display: flex; }
+  .nav-links li { width: 100%; }
+  .nav-links a { display: block; padding: 14px 0; border-bottom: 1px solid rgba(201,168,76,0.07); font-size: 0.92rem; }
+  .nav-vault { margin: 16px 0 0; display: inline-block !important; }
+  .nav-toggle { display: flex; }
+}
+
+/* HERO VIDEO */
+.trade-hero {
+  position: relative;
+  height: 100vh;
+  min-height: 520px;
+  display: flex; align-items: flex-end; justify-content: flex-start;
+  overflow: hidden;
+}
+.hero-video-wrap {
+  position: absolute; inset: 0; z-index: 0;
+}
+.hero-video-wrap video {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  opacity: 0.45;
+}
+.hero-overlay {
+  position: absolute; inset: 0; z-index: 1;
+  background: linear-gradient(
+    170deg,
+    rgba(12,30,20,0.30) 0%,
+    rgba(12,30,20,0.55) 50%,
+    rgba(12,30,20,0.92) 100%
+  );
+}
+.trade-hero-content {
+  position: relative; z-index: 2;
+  max-width: 760px;
+  padding: 0 56px 72px;
+}
+.bears-logo-wrap {
+  margin-bottom: 24px;
+}
+.bears-logo-img {
+  height: 120px;
+  width: auto;
+  mix-blend-mode: screen;
+  filter: drop-shadow(0 0 24px rgba(201,168,76,0.4));
+}
+.verified-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: var(--cinzel); font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--gold); border: 1px solid var(--gold-border);
+  padding: 6px 14px; border-radius: 20px; margin-bottom: 18px;
+}
+.verified-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--gold); animation: pulse 2s ease-in-out infinite; }
+@keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
+.trade-hero-title {
+  font-family: var(--cinzel);
+  font-size: clamp(2rem, 5vw, 3.8rem);
+  font-weight: 700;
+  color: var(--text-light);
+  letter-spacing: 0.04em;
+  line-height: 1.05;
+  margin-bottom: 12px;
+}
+.trade-hero-sub {
+  font-family: var(--lora);
+  font-size: 0.94rem;
+  color: var(--text-muted);
+  font-style: italic;
+  margin-bottom: 32px;
+}
+.hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; }
+@media (max-width: 600px) {
+  .trade-hero-content { padding: 0 20px 56px; }
+  .bears-logo-img { height: 80px; }
+}
+
+/* PROFILE TABS */
+.profile-tabs-bar {
+  background: rgba(12,30,20,0.97);
+  border-bottom: 1px solid var(--gold-border);
+  position: sticky; top: 68px; z-index: 800;
+}
+.profile-tabs-inner {
+  max-width: 960px; margin: 0 auto;
+  display: flex; gap: 0;
+  padding: 0 48px;
+}
+@media (max-width: 600px) { .profile-tabs-inner { padding: 0 16px; overflow-x: auto; } }
+.profile-tab {
+  font-family: var(--cinzel);
+  font-size: 0.65rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  padding: 16px 20px;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  transition: all 0.22s;
+  white-space: nowrap;
+}
+.profile-tab.active, .profile-tab:hover { color: var(--gold); }
+.profile-tab.active { border-bottom-color: var(--gold); }
+
+/* MAIN CONTENT */
+.main { max-width: 960px; margin: 0 auto; padding: 60px 48px 100px; }
+@media (max-width: 760px) { .main { padding: 40px 20px 80px; } }
+.content-grid { display: grid; grid-template-columns: 1fr 320px; gap: 40px; align-items: start; }
+@media (max-width: 860px) { .content-grid { grid-template-columns: 1fr; } }
+
+/* CARDS */
+.card { background: rgba(17,42,26,0.6); border: 1px solid var(--gold-border); border-radius: var(--r); padding: 36px 32px; margin-bottom: 28px; }
+@media (max-width: 760px) { .card { padding: 28px 22px; } }
+.card-label { font-family: var(--cinzel); font-size: 0.6rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); display: block; margin-bottom: 14px; }
+.card h2 { font-family: var(--playfair); font-size: 1.3rem; font-weight: 700; color: var(--text-light); margin-bottom: 16px; }
+.card p { color: var(--text-muted); font-size: 0.9rem; line-height: 1.85; margin-bottom: 16px; }
+.card p:last-of-type { margin-bottom: 0; }
+.card p strong { color: var(--text-light); font-weight: 500; }
+
+/* SERVICES */
+.services-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-bottom: 28px; }
+@media (max-width: 560px) { .services-grid { grid-template-columns: 1fr; } }
+.service-card { background: rgba(12,30,20,0.7); border: 1px solid var(--gold-border); border-radius: var(--r); padding: 24px 22px; transition: border-color 0.22s, transform 0.22s; }
+.service-card:hover { border-color: rgba(201,168,76,0.4); transform: translateY(-2px); }
+.service-card h3 { font-family: var(--cinzel); font-size: 0.76rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-light); margin-bottom: 8px; font-weight: 600; }
+.service-card p { font-size: 0.82rem; color: var(--text-muted); line-height: 1.7; }
+
+/* COVERAGE */
+.coverage-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+@media (max-width: 480px) { .coverage-grid { grid-template-columns: repeat(2, 1fr); } }
+.coverage-item { font-family: var(--lora); font-size: 0.82rem; color: var(--text-muted); padding: 8px 0; border-bottom: 1px solid rgba(201,168,76,0.07); }
+
+/* SIDEBAR */
+.sidebar-col { display: flex; flex-direction: column; gap: 20px; }
+.contact-card { background: rgba(26,61,40,0.4); border: 1px solid var(--gold-border); border-radius: var(--r); padding: 28px 24px; }
+.contact-card-title { font-family: var(--cinzel); font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); display: block; margin-bottom: 18px; }
+.contact-row { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 14px; }
+.contact-row:last-child { margin-bottom: 0; }
+.contact-label { font-family: var(--cinzel); font-size: 0.56rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-dim); min-width: 64px; padding-top: 2px; }
+.contact-val { font-family: var(--lora); font-size: 0.86rem; color: var(--text-light); }
+.contact-val a { color: var(--text-light); transition: color 0.2s; }
+.contact-val a:hover { color: var(--gold); }
+
+.upsell-card { background: linear-gradient(145deg, rgba(26,61,40,0.5), rgba(12,30,20,0.9)); border: 1px solid rgba(201,168,76,0.28); border-radius: var(--r); padding: 28px 24px; text-align: center; }
+.upsell-card h3 { font-family: var(--playfair); font-size: 1.1rem; font-weight: 700; color: var(--text-light); margin-bottom: 10px; }
+.upsell-card p { font-size: 0.82rem; color: var(--text-muted); line-height: 1.75; margin-bottom: 18px; }
+.upsell-price { font-family: var(--cinzel); font-size: 2rem; font-weight: 700; color: var(--text-light); display: block; margin-bottom: 18px; letter-spacing: -0.01em; }
+.upsell-price sup { font-size: 1rem; vertical-align: super; font-weight: 400; color: var(--text-muted); }
+.upsell-price sub { font-size: 0.68rem; color: var(--text-dim); letter-spacing: 0.06em; font-weight: 400; }
+.upsell-card .btn { width: 100%; text-align: center; display: block; margin-bottom: 10px; }
+.what-you-get { list-style: none; margin-bottom: 20px; text-align: left; }
+.what-you-get li { font-size: 0.8rem; color: var(--text-muted); padding: 5px 0; display: flex; gap: 8px; align-items: flex-start; border-bottom: 1px solid rgba(255,255,255,0.04); }
+.what-you-get li::before { content: '\2014'; color: var(--gold); font-size: 0.7rem; margin-top: 3px; flex-shrink: 0; }
+
+/* PARCHMENT */
+.parchment-section {
+  background: var(--parchment);
+  background-image: radial-gradient(ellipse 80% 60% at 12% 38%, rgba(201,168,76,0.07) 0%, transparent 55%);
+  color: var(--text-parch);
+  padding: 80px 48px;
+}
+.parchment-inner { max-width: 960px; margin: 0 auto; }
+.parchment-section .card-label { color: var(--gold-dark); }
+.parchment-section h2 { font-family: var(--playfair); font-size: clamp(1.6rem, 3.5vw, 2.4rem); font-weight: 700; color: var(--text-parch); margin-bottom: 16px; }
+.parchment-section p { color: var(--text-parch-mid); font-size: 0.92rem; line-height: 1.85; margin-bottom: 20px; }
+.parchment-section p strong { color: var(--text-parch); font-weight: 600; }
+@media (max-width: 600px) { .parchment-section { padding: 56px 20px; } }
+
+/* FOOTER */
+footer { background: var(--forest-darkest); border-top: 1px solid var(--gold-border); padding: 40px 48px; }
+.footer-inner { max-width: 960px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+.footer-brand { font-family: var(--cinzel); font-size: 0.68rem; color: var(--text-dim); letter-spacing: 0.1em; }
+.footer-links-row { display: flex; gap: 20px; flex-wrap: wrap; }
+.footer-links-row a { font-size: 0.76rem; color: var(--text-dim); transition: color 0.2s; }
+.footer-links-row a:hover { color: var(--gold); }
+
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="mainNav">
+  <a href="index.html" class="nav-brand">
+    <img src="logo.png" alt="My Legacy Continues" class="nav-logo" onerror="this.classList.add('broken')">
+    <span class="nav-logo-text">MY LEGACY<br>CONTINUES</span>
+  </a>
+  <button class="nav-toggle" aria-label="Open menu"
+    onclick="this.closest('nav').querySelector('.nav-links').classList.toggle('open')">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="portal.html">Vault</a></li>
+    <li><a href="trade-profile.html" class="active">Trade Profile</a></li>
+    <li><a href="rescue-registry.html">Rescue Registry</a></li>
+    <li><a href="portal.html" class="nav-vault">Vault Login</a></li>
+  </ul>
+</nav>
+
+<!-- HERO VIDEO -->
+<section class="trade-hero">
+  <div class="hero-video-wrap">
+    <video autoplay muted loop playsinline id="tradeHeroVid">
+      <source src="tik.MOV" type="video/mp4">
+      <source src="tik.MOV" type="video/quicktime">
+    </video>
+  </div>
+  <div class="hero-overlay"></div>
+  <div class="trade-hero-content">
+    <div class="bears-logo-wrap">
+      <img src="bears-logo.png" alt="Bears Concrete Pumping" class="bears-logo-img"
+        onerror="this.style.display='none'">
+    </div>
+    <div class="verified-badge">
+      <div class="verified-dot"></div>
+      Verified Trade Profile
+    </div>
+    <div class="trade-hero-title">Bears Concrete Pumping</div>
+    <div class="trade-hero-sub">
+      Santa Maria, CA &nbsp;&middot;&nbsp; Licensed &amp; Insured &nbsp;&middot;&nbsp; Lic# 42702 &nbsp;&middot;&nbsp; Santa Barbara &amp; SLO County
+    </div>
+    <div class="hero-ctas">
+      <a href="tel:8058633794" class="btn btn-gold">Call (805) 863-3794</a>
+      <a href="#about" class="btn btn-outline">View Profile</a>
+    </div>
+  </div>
+</section>
+
+<!-- TABS BAR -->
+<div class="profile-tabs-bar">
+  <div class="profile-tabs-inner">
+    <div class="profile-tab active">About</div>
+    <div class="profile-tab">Services</div>
+    <div class="profile-tab">Coverage</div>
+    <div class="profile-tab">Contact</div>
+  </div>
+</div>
+
+<!-- MAIN CONTENT -->
+<div class="main" id="about">
+  <div class="content-grid">
+
+    <!-- LEFT COLUMN -->
+    <div>
+
+      <div class="card">
+        <span class="card-label">About This Company</span>
+        <h2>Concrete Pumping Done Right</h2>
+        <p>
+          Bears Concrete Pumping is a family-owned concrete pumping operation based in Santa Maria, California.
+          We pump concrete for residential foundations, commercial slabs, custom pools, hillside builds,
+          and everything in between across Santa Barbara and San Luis Obispo County.
+        </p>
+        <p>
+          <strong>Owner-operated.</strong> Mark Vazquez runs every job personally or has direct oversight on every pour.
+          When you call Bears, you are talking to the guy who shows up.
+          We do not hand work off to crews you have never met.
+        </p>
+        <p>
+          We operate trailer pumps and line pumps capable of reaching tight residential lots,
+          backyard pours, elevated decks, and multi-story commercial builds.
+          If the concrete needs to get somewhere difficult, that is exactly where we specialize.
+        </p>
+      </div>
+
+      <div class="card" id="services">
+        <span class="card-label">Services</span>
+        <h2>What We Do</h2>
+        <div class="services-grid">
+          <div class="service-card">
+            <h3>Residential Foundations</h3>
+            <p>Slabs, footings, and piers for new construction, additions, and ADUs throughout Santa Barbara and SLO County.</p>
+          </div>
+          <div class="service-card">
+            <h3>Commercial Slabs</h3>
+            <p>Large-volume commercial pours, warehouse floors, parking structures, and tilt-up panel work.</p>
+          </div>
+          <div class="service-card">
+            <h3>Pools &amp; Custom Pours</h3>
+            <p>Gunite and shotcrete placement for custom pools. Tight-radius line pump work for unconventional site access.</p>
+          </div>
+          <div class="service-card">
+            <h3>Infrastructure &amp; Public Works</h3>
+            <p>Pump support for municipal projects, drainage structures, retaining walls, and infrastructure rehabilitation.</p>
+          </div>
+          <div class="service-card">
+            <h3>Emergency Pour Services</h3>
+            <p>Short-notice and after-hours availability. When your schedule tightens or weather changes the plan, call Bears.</p>
+          </div>
+          <div class="service-card">
+            <h3>Tight-Access &amp; Hillside</h3>
+            <p>Line pump work for lots where conventional boom trucks cannot reach. Hillside, backyard, alley access &mdash; no problem.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" id="coverage">
+        <span class="card-label">Service Coverage Area</span>
+        <h2>Where We Work</h2>
+        <div class="coverage-grid">
+          <span class="coverage-item">Santa Maria</span>
+          <span class="coverage-item">Lompoc</span>
+          <span class="coverage-item">Santa Barbara</span>
+          <span class="coverage-item">Goleta</span>
+          <span class="coverage-item">Solvang &amp; Santa Ynez</span>
+          <span class="coverage-item">Buellton</span>
+          <span class="coverage-item">San Luis Obispo</span>
+          <span class="coverage-item">Paso Robles</span>
+          <span class="coverage-item">Arroyo Grande</span>
+          <span class="coverage-item">Pismo Beach</span>
+          <span class="coverage-item">Ventura County</span>
+          <span class="coverage-item">All of SB County</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- RIGHT COLUMN -->
+    <div class="sidebar-col" id="contact">
+
+      <div class="contact-card">
+        <span class="contact-card-title">Get a Quote</span>
+        <div class="contact-row">
+          <span class="contact-label">Phone</span>
+          <span class="contact-val"><a href="tel:8058633794">(805) 863-3794</a></span>
+        </div>
+        <div class="contact-row">
+          <span class="contact-label">Email</span>
+          <span class="contact-val"><a href="mailto:bearsconcretepumping@gmail.com">bearsconcretepumping<br>@gmail.com</a></span>
+        </div>
+        <div class="contact-row">
+          <span class="contact-label">License</span>
+          <span class="contact-val">Lic# 42702</span>
+        </div>
+        <div class="contact-row">
+          <span class="contact-label">Location</span>
+          <span class="contact-val">Santa Maria, CA</span>
+        </div>
+        <div class="contact-row">
+          <span class="contact-label">Hours</span>
+          <span class="contact-val">Mon&ndash;Sat: 6am&ndash;6pm<br>Emergency availability after hours</span>
+        </div>
+        <div style="margin-top: 22px;">
+          <a href="tel:8058633794" class="btn btn-gold" style="width: 100%; text-align: center; display: block;">Call for a Quote</a>
+        </div>
+      </div>
+
+      <div class="upsell-card">
+        <span class="card-label" style="display: block; text-align: center; margin-bottom: 14px;">This Is a Live Example</span>
+        <h3>Want a Profile Like This?</h3>
+        <p>
+          The Verified Trade Profile &mdash; custom digital portfolio with 500 metal QR identity cards.
+          Your business, your reputation, permanent on this site.
+        </p>
+        <ul class="what-you-get">
+          <li>Custom permanent digital portfolio</li>
+          <li>500 metal QR identity cards</li>
+          <li>Verified by My Legacy Continues seal</li>
+          <li>Project gallery &mdash; before and after</li>
+          <li>Hosted at mylegacycontinues.com forever</li>
+        </ul>
+        <span class="upsell-price"><sup>$</sup>650 <sub>one-time</sub></span>
+        <a href="https://buy.stripe.com/dRm3cwdSL05u58o6qwfQI01" class="btn btn-gold">Build Your Profile</a>
+        <a href="index.html" class="btn btn-outline" style="width: 100%; text-align: center; display: block; margin-top: 10px;">Back to Main Site</a>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- PARCHMENT — DNA of Excellence -->
+<section class="parchment-section">
+  <div class="parchment-inner">
+    <span class="card-label">The DNA of Excellence</span>
+    <h2>Foundations Have Always Been in This Family.</h2>
+    <p>
+      Bears Concrete Pumping did not appear out of nowhere.
+      The Vazquez family has been working stone and earth for generations &mdash;
+      tracing back through Nuevo Le&oacute;n, Mexico, through colonial Spanish settlements,
+      all the way to Hidalgo-confirmed lineage in Galicia and the Basque Country of northern Spain.
+    </p>
+    <p>
+      The <strong>Hidalgo designation</strong> &mdash; confirmed in 1547 &mdash; was not inherited wealth.
+      It was earned through military service, through skilled labor, through building
+      and defending the communities that came after them.
+      That is not a coincidence.
+      That is a bloodline.
+    </p>
+    <p>
+      When Mark Vazquez shows up to a job site, he is carrying five hundred years of
+      people who did hard, skilled, physical work and did it right.
+      The Heritage Culture Book documents all of it.
+    </p>
+    <a href="https://buy.stripe.com/bJe14o2a35pO6csg16fQI02" class="btn-parch">Order the Heritage Book &mdash; $150</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">Bears Concrete Pumping &nbsp;&mdash;&nbsp; A Verified Trade Profile by My Legacy Continues</div>
+    <div class="footer-links-row">
+      <a href="index.html">Home</a>
+      <a href="portal.html">Vault</a>
+      <a href="rescue-registry.html">Rescue Registry</a>
+      <a href="https://buy.stripe.com/dRm3cwdSL05u58o6qwfQI01">Build Your Profile &mdash; $650</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+window.addEventListener('scroll', () => {
+  document.getElementById('mainNav').style.boxShadow =
+    window.scrollY > 20 ? '0 4px 32px rgba(0,0,0,0.35)' : 'none';
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  const v = document.getElementById('tradeHeroVid');
+  if (v) { v.playbackRate = 0.75; }
+});
+
+// Tab click smooth scroll
+const tabs = document.querySelectorAll('.profile-tab');
+const sections = { 'About': '#about', 'Services': '#services', 'Coverage': '#coverage', 'Contact': '#contact' };
+tabs.forEach(tab => {
+  tab.addEventListener('click', () => {
+    tabs.forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+    const target = document.querySelector(sections[tab.textContent.trim()]);
+    if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+});
+</script>
+</body>
+</html>

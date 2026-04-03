@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Heritage Vault — My Legacy Continues</title>
+<meta name="description" content="Your private Heritage Vault — family archive, QR tag management, heritage research, and digital legacy profiles.">
+<link rel="icon" href="logo.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+
+:root {
+  --forest-darkest: #0C1E14;
+  --forest-dark:    #112A1A;
+  --forest:         #1A3D28;
+  --forest-mid:     #234E33;
+  --forest-light:   #2E6142;
+  --parchment:      #F5EDD5;
+  --parchment-mid:  #EAD9B5;
+  --gold:           #C9A84C;
+  --gold-light:     #E2C070;
+  --gold-dark:      #A07828;
+  --gold-wash:      rgba(201,168,76,0.08);
+  --gold-border:    rgba(201,168,76,0.20);
+  --text-light:     #F0E8D6;
+  --text-muted:     rgba(240,232,214,0.62);
+  --text-dim:       rgba(240,232,214,0.38);
+  --text-parch:     #2C1F0E;
+  --text-parch-mid: #6B4F2A;
+  --cinzel:   'Cinzel', Georgia, serif;
+  --playfair: 'Playfair Display', Georgia, serif;
+  --lora:     'Lora', Georgia, serif;
+  --r: 6px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: var(--lora); background: var(--forest-darkest); color: var(--text-light); line-height: 1.78; -webkit-font-smoothing: antialiased; min-height: 100vh; }
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; height: auto; display: block; }
+
+.btn { display: inline-block; font-family: var(--cinzel); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; padding: 14px 32px; border-radius: var(--r); border: none; cursor: pointer; transition: all 0.24s ease; text-decoration: none; white-space: nowrap; }
+.btn-gold { background: var(--gold); color: var(--forest-darkest); box-shadow: 0 4px 18px rgba(201,168,76,0.25); }
+.btn-gold:hover { background: var(--gold-light); transform: translateY(-2px); }
+.btn-outline { background: transparent; color: var(--gold); border: 1.5px solid var(--gold-border); }
+.btn-outline:hover { border-color: var(--gold); background: var(--gold-wash); }
+
+/* NAV */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 900;
+  height: 68px;
+  background: rgba(12,30,20,0.97);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--gold-border);
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 48px;
+}
+.nav-brand { display: flex; align-items: center; gap: 14px; flex-shrink: 0; }
+.nav-logo { height: 42px; width: 42px; object-fit: contain; mix-blend-mode: screen; filter: drop-shadow(0 0 8px rgba(201,168,76,0.35)); }
+.nav-logo.broken { display: none; }
+.nav-logo-text { font-family: var(--cinzel); font-size: 0.88rem; font-weight: 600; color: var(--gold); letter-spacing: 0.08em; line-height: 1.25; }
+.nav-links { display: flex; align-items: center; gap: 36px; list-style: none; }
+.nav-links a { font-family: var(--lora); font-size: 0.84rem; color: var(--text-muted); letter-spacing: 0.02em; transition: color 0.2s; }
+.nav-links a:hover, .nav-links a.active { color: var(--gold); }
+.nav-vault { font-family: var(--cinzel) !important; font-size: 0.72rem !important; letter-spacing: 0.12em !important; text-transform: uppercase; color: var(--gold) !important; border: 1px solid var(--gold-border); padding: 8px 18px; border-radius: var(--r); transition: all 0.22s; }
+.nav-vault:hover { background: var(--gold-wash); border-color: var(--gold); }
+.nav-toggle { display: none; background: none; border: none; cursor: pointer; flex-direction: column; gap: 5px; padding: 4px; }
+.nav-toggle span { display: block; width: 22px; height: 1.5px; background: var(--gold); }
+@media (max-width: 780px) {
+  nav { padding: 0 20px; }
+  .nav-links { display: none; flex-direction: column; position: fixed; top: 68px; left: 0; right: 0; background: rgba(12,30,20,0.98); padding: 28px 24px; gap: 0; border-bottom: 1px solid var(--gold-border); }
+  .nav-links.open { display: flex; }
+  .nav-links li { width: 100%; }
+  .nav-links a { display: block; padding: 14px 0; border-bottom: 1px solid rgba(201,168,76,0.07); font-size: 0.92rem; }
+  .nav-vault { margin: 16px 0 0; display: inline-block !important; }
+  .nav-toggle { display: flex; }
+}
+
+/* PAGE LAYOUT */
+.page-wrap {
+  min-height: 100vh;
+  padding-top: 68px;
+  display: flex;
+  align-items: stretch;
+}
+
+/* VAULT HERO PANEL */
+.vault-hero {
+  background: linear-gradient(180deg, var(--forest-darkest) 0%, var(--forest-dark) 100%);
+  border-bottom: 1px solid var(--gold-border);
+  padding: 64px 48px 56px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.vault-hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 60% 50% at 50% 30%, rgba(201,168,76,0.07) 0%, transparent 60%);
+  pointer-events: none;
+}
+.vault-eyebrow {
+  font-family: var(--cinzel);
+  font-size: 0.6rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold);
+  display: block;
+  margin-bottom: 20px;
+}
+.vault-title {
+  font-family: var(--playfair);
+  font-size: clamp(2rem, 5vw, 3.4rem);
+  font-weight: 700;
+  color: var(--text-light);
+  line-height: 1.1;
+  margin-bottom: 16px;
+  letter-spacing: -0.01em;
+}
+.vault-subtitle {
+  font-family: var(--lora);
+  font-size: 0.96rem;
+  color: var(--text-muted);
+  max-width: 500px;
+  margin: 0 auto;
+  line-height: 1.8;
+}
+
+/* MAIN PORTAL LAYOUT */
+.portal-body {
+  max-width: 1060px;
+  margin: 0 auto;
+  padding: 64px 48px 100px;
+  width: 100%;
+}
+@media (max-width: 600px) { .portal-body { padding: 40px 20px 80px; } }
+
+.portal-grid {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 40px;
+  align-items: start;
+}
+@media (max-width: 860px) { .portal-grid { grid-template-columns: 1fr; } }
+
+/* LOGIN CARD */
+.login-card {
+  background: rgba(17,42,26,0.55);
+  border: 1px solid var(--gold-border);
+  border-radius: 8px;
+  padding: 48px 40px;
+}
+@media (max-width: 600px) { .login-card { padding: 32px 22px; } }
+.login-card-label {
+  font-family: var(--cinzel);
+  font-size: 0.58rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--gold);
+  display: block;
+  margin-bottom: 20px;
+}
+.login-card h2 {
+  font-family: var(--playfair);
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--text-light);
+  margin-bottom: 10px;
+}
+.login-card p {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.8;
+  margin-bottom: 36px;
+}
+
+/* FORM ELEMENTS */
+.form-group { margin-bottom: 22px; }
+.form-label {
+  display: block;
+  font-family: var(--cinzel);
+  font-size: 0.6rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+.form-input {
+  width: 100%;
+  background: rgba(12,30,20,0.7);
+  border: 1px solid var(--gold-border);
+  border-radius: var(--r);
+  padding: 14px 18px;
+  font-family: var(--lora);
+  font-size: 0.9rem;
+  color: var(--text-light);
+  transition: border-color 0.22s;
+  outline: none;
+}
+.form-input:focus { border-color: var(--gold); }
+.form-input::placeholder { color: var(--text-dim); }
+.form-submit {
+  width: 100%;
+  text-align: center;
+  display: block;
+  margin-top: 8px;
+  background: var(--gold);
+  color: var(--forest-darkest);
+  font-family: var(--cinzel);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 16px 32px;
+  border-radius: var(--r);
+  border: none;
+  cursor: pointer;
+  transition: all 0.22s;
+  box-shadow: 0 4px 18px rgba(201,168,76,0.25);
+}
+.form-submit:hover { background: var(--gold-light); transform: translateY(-2px); }
+.form-divider {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 28px 0;
+  color: var(--text-dim);
+  font-size: 0.78rem;
+}
+.form-divider::before, .form-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--gold-border);
+}
+.form-note {
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--text-dim);
+  margin-top: 18px;
+}
+.form-note a { color: var(--gold); transition: color 0.2s; }
+.form-note a:hover { color: var(--gold-light); }
+
+/* SIDEBAR */
+.vault-sidebar { display: flex; flex-direction: column; gap: 24px; }
+
+.info-card {
+  background: rgba(12,30,20,0.7);
+  border: 1px solid var(--gold-border);
+  border-radius: 8px;
+  padding: 28px 24px;
+}
+.info-card-title {
+  font-family: var(--cinzel);
+  font-size: 0.6rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+  display: block;
+  margin-bottom: 16px;
+}
+.info-card h3 {
+  font-family: var(--playfair);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-light);
+  margin-bottom: 10px;
+}
+.info-card p {
+  font-size: 0.83rem;
+  color: var(--text-muted);
+  line-height: 1.8;
+  margin-bottom: 16px;
+}
+.info-list { list-style: none; }
+.info-list li {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  padding: 6px 0;
+  display: flex;
+  gap: 10px;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+.info-list li::before { content: '—'; color: var(--gold); flex-shrink: 0; }
+
+/* VAULT FEATURES STRIP */
+.vault-features {
+  background: var(--parchment);
+  background-image: radial-gradient(ellipse 60% 50% at 50% 40%, rgba(201,168,76,0.08) 0%, transparent 60%);
+  padding: 72px 48px;
+  border-top: 1px solid rgba(201,168,76,0.15);
+}
+.vault-features-inner { max-width: 1060px; margin: 0 auto; }
+.vault-features .section-label { color: var(--gold-dark); font-family: var(--cinzel); font-size: 0.58rem; letter-spacing: 0.28em; text-transform: uppercase; display: block; margin-bottom: 18px; }
+.vault-features h2 { font-family: var(--playfair); font-size: clamp(1.5rem, 3.5vw, 2.4rem); font-weight: 700; color: var(--text-parch); margin-bottom: 40px; }
+.features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+@media (max-width: 720px) { .features-grid { grid-template-columns: 1fr; } .vault-features { padding: 56px 20px; } }
+.feature-item { padding: 28px 0; border-top: 1px solid rgba(44,31,14,0.12); }
+.feature-icon { font-size: 1.5rem; margin-bottom: 14px; }
+.feature-title { font-family: var(--cinzel); font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-parch); font-weight: 600; margin-bottom: 10px; }
+.feature-desc { font-size: 0.84rem; color: var(--text-parch-mid); line-height: 1.8; }
+
+/* FOOTER */
+footer { background: var(--forest-darkest); border-top: 1px solid var(--gold-border); padding: 40px 48px; }
+.footer-inner { max-width: 1060px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+.footer-brand { font-family: var(--cinzel); font-size: 0.68rem; color: var(--text-dim); letter-spacing: 0.1em; }
+.footer-links-row { display: flex; gap: 20px; flex-wrap: wrap; }
+.footer-links-row a { font-size: 0.78rem; color: var(--text-dim); transition: color 0.2s; }
+.footer-links-row a:hover { color: var(--gold); }
+
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="mainNav">
+  <a href="index.html" class="nav-brand">
+    <img src="logo.png" alt="My Legacy Continues" class="nav-logo" onerror="this.classList.add('broken')">
+    <span class="nav-logo-text">MY LEGACY<br>CONTINUES</span>
+  </a>
+  <button class="nav-toggle" aria-label="Open menu"
+    onclick="this.closest('nav').querySelector('.nav-links').classList.toggle('open')">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="portal.html" class="active">Vault</a></li>
+    <li><a href="trade-profile.html">Trade Profile</a></li>
+    <li><a href="rescue-registry.html">Rescue Registry</a></li>
+    <li><a href="portal.html" class="nav-vault">Vault Login</a></li>
+  </ul>
+</nav>
+
+<!-- VAULT HERO -->
+<div class="vault-hero">
+  <span class="vault-eyebrow">Heritage Vault &nbsp;&bull;&nbsp; My Legacy Continues</span>
+  <h1 class="vault-title">Your Family Archive.<br>Yours Forever.</h1>
+  <p class="vault-subtitle">Access your digital legacy profiles, QR tag management, heritage research, and family documents — all in one private vault.</p>
+</div>
+
+<!-- PORTAL BODY -->
+<div class="portal-body">
+  <div class="portal-grid">
+
+    <!-- LOGIN CARD -->
+    <div class="login-card">
+      <span class="login-card-label">Vault Access</span>
+      <h2>Sign In to Your Vault</h2>
+      <p>Enter the email address and access code provided when you purchased. Your vault is permanent — no subscription required to maintain access.</p>
+
+      <form id="vaultForm" onsubmit="handleVaultLogin(event)">
+        <div class="form-group">
+          <label class="form-label" for="email">Email Address</label>
+          <input type="email" id="email" class="form-input" placeholder="your@email.com" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="accessCode">Access Code</label>
+          <input type="text" id="accessCode" class="form-input" placeholder="e.g. LEGACY-2024-XXXX" required>
+        </div>
+        <button type="submit" class="form-submit">Enter My Vault</button>
+
+        <div class="form-divider">or</div>
+
+        <div class="form-note">
+          Don't have a vault yet?
+          <a href="https://buy.stripe.com/4gM14odSLaK8asI9CIfQI03">Purchase the Legacy Bundle — $199</a>
+        </div>
+        <div class="form-note" style="margin-top: 10px;">
+          Lost your code?
+          <a href="mailto:mark.vazquez92@gmail.com?subject=Vault%20Access%20Code%20Request">Email for support</a>
+        </div>
+      </form>
+
+      <div id="loginMsg" style="display:none; margin-top: 20px; padding: 14px 18px; border-radius: var(--r); background: rgba(201,168,76,0.1); border: 1px solid var(--gold-border); font-size: 0.85rem; color: var(--text-muted);">
+        Checking your access code...
+      </div>
+    </div>
+
+    <!-- SIDEBAR -->
+    <div class="vault-sidebar">
+
+      <div class="info-card">
+        <span class="info-card-title">What's Inside</span>
+        <h3>Your Heritage Vault</h3>
+        <p>Everything created for your family lives here — permanently, privately, at your own URL.</p>
+        <ul class="info-list">
+          <li>Legacy profile pages for family members</li>
+          <li>Heritage research documents &amp; books</li>
+          <li>QR tag management &amp; link updates</li>
+          <li>Photo archives &amp; media uploads</li>
+          <li>Cemetery tribute management</li>
+          <li>Family genealogy research notes</li>
+        </ul>
+      </div>
+
+      <div class="info-card">
+        <span class="info-card-title">Access by Product</span>
+        <h3>Which Products Include Vault Access?</h3>
+        <ul class="info-list">
+          <li>Full Legacy Bundle ($199) — Full vault</li>
+          <li>Contractor Bundle ($650) — Trade profile portal</li>
+          <li>Cemetery Tribute ($149) — Memorial management</li>
+          <li>Heritage Book ($150) — Research archive</li>
+        </ul>
+        <div style="margin-top: 20px;">
+          <a href="https://buy.stripe.com/4gM14odSLaK8asI9CIfQI03" class="btn btn-gold" style="width: 100%; text-align: center; display: block;">Get the Legacy Bundle — $199</a>
+        </div>
+      </div>
+
+      <div class="info-card">
+        <span class="info-card-title">Support</span>
+        <h3>Need Help?</h3>
+        <p style="margin-bottom: 12px;">Mark Vazquez personally manages all vault access. Contact directly for any issues.</p>
+        <a href="tel:8058633794" style="display: block; font-family: var(--cinzel); font-size: 0.72rem; letter-spacing: 0.12em; color: var(--gold); padding: 10px 0; border-bottom: 1px solid var(--gold-border);">(805) 863-3794</a>
+        <a href="mailto:mark.vazquez92@gmail.com" style="display: block; font-size: 0.82rem; color: var(--text-muted); padding: 10px 0; transition: color 0.2s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--text-muted)'">mark.vazquez92@gmail.com</a>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- VAULT FEATURES -->
+<section class="vault-features">
+  <div class="vault-features-inner">
+    <span class="section-label">Why the Vault Matters</span>
+    <h2>Built to Last. No Subscriptions. No Expiration.</h2>
+    <div class="features-grid">
+      <div class="feature-item">
+        <div class="feature-icon">🔒</div>
+        <div class="feature-title">Permanently Hosted</div>
+        <p class="feature-desc">Your family's digital legacy lives at mylegacycontinues.com for as long as the site exists — no renewal required.</p>
+      </div>
+      <div class="feature-item">
+        <div class="feature-icon">📱</div>
+        <div class="feature-title">QR Tag Control</div>
+        <p class="feature-desc">Update the destination of any QR tag you own. Business cards, cemetery plaques, pet tags — all managed from one place.</p>
+      </div>
+      <div class="feature-item">
+        <div class="feature-icon">🌿</div>
+        <div class="feature-title">Living Documents</div>
+        <p class="feature-desc">Add photos, update bios, add new family members, upload new research — your vault grows as your family does.</p>
+      </div>
+      <div class="feature-item">
+        <div class="feature-icon">🧬</div>
+        <div class="feature-title">Heritage Research Archive</div>
+        <p class="feature-desc">All forensic genealogy findings, migration maps, and coat-of-arms documentation stored and accessible forever.</p>
+      </div>
+      <div class="feature-item">
+        <div class="feature-icon">📖</div>
+        <div class="feature-title">Digital Heritage Book</div>
+        <p class="feature-desc">The digital version of your Heritage Culture Book lives in the vault alongside the physical print edition.</p>
+      </div>
+      <div class="feature-item">
+        <div class="feature-icon">🤝</div>
+        <div class="feature-title">Direct Owner Support</div>
+        <p class="feature-desc">Mark Vazquez personally handles all vault requests. One email or call and you get a real person, not a ticket system.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">My Legacy Continues &nbsp;&mdash;&nbsp; Heritage Vault &nbsp;&mdash;&nbsp; Santa Maria, CA</div>
+    <div class="footer-links-row">
+      <a href="index.html">Home</a>
+      <a href="portal.html">Vault</a>
+      <a href="trade-profile.html">Trade Profile</a>
+      <a href="rescue-registry.html">Rescue Registry</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+window.addEventListener('scroll', () => {
+  document.getElementById('mainNav').style.boxShadow =
+    window.scrollY > 20 ? '0 4px 32px rgba(0,0,0,0.4)' : 'none';
+});
+
+function handleVaultLogin(e) {
+  e.preventDefault();
+  const msg = document.getElementById('loginMsg');
+  const email = document.getElementById('email').value.trim();
+  const code = document.getElementById('accessCode').value.trim().toUpperCase();
+  msg.style.display = 'block';
+  msg.textContent = 'Verifying access code for ' + email + '...';
+  // Placeholder — wire to backend/Netlify function when ready
+  setTimeout(() => {
+    msg.innerHTML = 'Access code received. Mark will verify and contact you at <strong>' + email + '</strong> within 24 hours. For immediate access, call <a href="tel:8058633794" style="color:var(--gold)">(805) 863-3794</a>.';
+  }, 1800);
+}
+</script>
+</body>
+</html>
