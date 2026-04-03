@@ -2,42 +2,57 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>My Legacy Continues | Heritage & Logistics</title>
+    <title>My Legacy Continues | Home</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lora:wght@400;600&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --parchment: #F9F6F0; /* The Hat Color */
-            --midnight: #142118; /* The Writing Color */
-            --gold: #C5A059;
-        }
-        body { background-color: var(--parchment); color: var(--midnight); font-family: 'Lora', serif; margin: 0; padding: 0; }
-        
-        header { padding: 80px 20px; text-align: center; border-bottom: 2px solid var(--gold); }
-        .ship-logo { height: 120px; margin-bottom: 20px; filter: grayscale(100%) contrast(1.2); }
-        
-        /* Video Frame - No longer background */
-        .video-container { max-width: 900px; margin: -40px auto 60px; border: 8px solid var(--midnight); background: #000; box-shadow: 0 30px 60px rgba(0,0,0,0.15); position: relative; z-index: 10; }
-        video { width: 100%; display: block; opacity: 0.9; }
-
-        .mission-statement { text-align: center; max-width: 800px; margin: 0 auto 80px; padding: 0 20px; }
-        .mission-statement h2 { font-family: 'Playfair Display'; font-size: 2.2rem; margin-bottom: 20px; }
-        .mission-statement p { font-size: 1.2rem; line-height: 1.8; color: #333; }
-
-        /* The Ledger - Replacing the AI columns */
-        .ledger { max-width: 1000px; margin: 0 auto 100px; border-top: 1px solid var(--gold); }
-        .ledger-row { display: flex; border-bottom: 1px solid var(--gold); padding: 40px 0; align-items: flex-start; text-decoration: none; color: inherit; transition: 0.3s; }
-        .ledger-row:hover { background-color: rgba(197, 160, 89, 0.05); }
-        .ledger-number { font-family: 'Playfair Display'; font-size: 1.5rem; width: 10%; color: var(--gold); }
-        .ledger-content { width: 90%; }
-        .ledger-title { font-family: 'Playfair Display'; font-size: 1.6rem; margin-bottom: 10px; text-transform: uppercase; }
-        .ledger-text { font-size: 1rem; line-height: 1.6; opacity: 0.8; }
-
-        .footer { text-align: center; padding: 60px; border-top: 2px solid var(--gold); font-size: 0.9rem; letter-spacing: 1px; }
+        :root { --parchment: #F9F6F0; --midnight: #142118; --gold: #C5A059; }
+        body { background-color: var(--parchment); color: var(--midnight); font-family: 'Lora', serif; margin: 0; }
+        header { padding: 60px 20px; text-align: center; border-bottom: 2px solid var(--gold); }
+        .ship-logo { height: 100px; margin-bottom: 15px; }
+        .video-frame { max-width: 850px; margin: 40px auto; border: 8px solid var(--midnight); background: #000; box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+        video { width: 100%; display: block; }
+        .ledger { max-width: 900px; margin: 50px auto; border-top: 1px solid var(--gold); }
+        .ledger-row { display: flex; border-bottom: 1px solid var(--gold); padding: 30px 0; text-decoration: none; color: inherit; }
+        .ledger-row:hover { background: rgba(20, 33, 24, 0.03); }
+        .row-num { font-family: 'Playfair Display'; width: 10%; color: var(--gold); font-size: 1.4rem; }
+        .row-body { width: 90%; }
+        .row-title { font-family: 'Playfair Display'; font-size: 1.5rem; text-transform: uppercase; margin-bottom: 8px; }
+        .row-text { font-size: 1rem; opacity: 0.85; line-height: 1.6; }
     </style>
 </head>
 <body>
+    <header>
+        <img src="logo.png" alt="Legacy Ship" class="ship-logo">
+        <h1 style="font-family:'Playfair Display'; font-size: 2.5rem; margin:0;">MY LEGACY CONTINUES</h1>
+        <p style="letter-spacing: 2px; font-weight: 600;">TRADE SKILLS & ANIMAL WELFARE LOGISTICS</p>
+    </header>
 
-<header>
-    <img src="logo.png" alt="Heritage Ship" class="ship-logo">
-    <h1 style="font-family:'Playfair Display'; font-size: 3rem; margin:0;">MY LEGACY CONTINUES</h1>
-    <p style="letter-spacing:
+    <div class="video-frame">
+        <video autoplay muted loop playsinline><source src="hero-marathon.mp4" type="video/mp4"></video>
+    </div>
+
+    <div class="ledger">
+        <a href="rescue-registry.html" class="ledger-row">
+            <div class="row-num">01</div>
+            <div class="row-body">
+                <div class="row-title">Guardian Protocol</div>
+                <div class="row-text">A logistics-first safety net for Underdog Heroes. We use QR-linked registry tags to bridge the gap between shelters and forever homes. Directed by Shoshana G.</div>
+            </div>
+        </a>
+        <a href="family-vault.html" class="ledger-row">
+            <div class="row-num">02</div>
+            <div class="row-body">
+                <div class="row-title">The Family Vault</div>
+                <div class="row-text">Preserving the stories your family lived. Featuring specialized ledgers for Dementia/Alzheimer’s memory logs and a traditional Cemetery Index.</div>
+            </div>
+        </a>
+        <a href="trade-profile.html" class="ledger-row">
+            <div class="row-num">03</div>
+            <div class="row-body">
+                <div class="row-title">Bears Concrete & Construction</div>
+                <div class="row-text">Built on a decade of field experience. Professional pumping and multi-trade remodeling that funds the mission of protecting the underdogs.</div>
+            </div>
+        </a>
+    </div>
+</body>
+</html>
