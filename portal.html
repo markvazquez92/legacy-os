@@ -314,6 +314,89 @@ footer { background: var(--forest-darkest); border-top: 1px solid var(--gold-bor
 .footer-links-row a { font-size: 0.78rem; color: var(--text-dim); transition: color 0.2s; }
 .footer-links-row a:hover { color: var(--gold); }
 
+/* =============================================
+   HIGH-END HERITAGE PALETTE OVERRIDE
+   Parchment body / Midnight Green header+footer / Burnished Gold borders
+   Applied: April 2026
+   ============================================= */
+
+:root {
+  --forest-darkest: #142118;
+  --forest-dark:    #142118;
+  --forest:         #1C2E22;
+  --forest-mid:     #233427;
+  --forest-light:   #2A3D2E;
+  --parchment:      #F9F6F0;
+  --parchment-mid:  #EDE8DE;
+  --gold:           #C5A059;
+  --gold-light:     #D4B46A;
+  --gold-dark:      #9E7E3E;
+  --gold-wash:      rgba(197,160,89,0.08);
+  --gold-border:    rgba(197,160,89,0.28);
+  --text-light:     #F5F0E8;
+  --text-muted:     rgba(245,240,232,0.70);
+  --text-dim:       rgba(245,240,232,0.42);
+  --text-parch:     #1A1206;
+  --text-parch-mid: #4E3415;
+  --r: 0px;
+}
+
+body { background: #F9F6F0 !important; color: #1A1206 !important; }
+
+/* Sharp corners */
+.btn, .btn-gold, .btn-outline, .btn-parch, .nav-vault {
+  border-radius: 0 !important;
+}
+
+/* Nav: Deep Midnight Green */
+nav { background: rgba(20,33,24,0.98) !important; }
+@media (max-width: 780px) {
+  .nav-links { background: rgba(20,33,24,0.99) !important; }
+}
+
+/* Page hero — stays dark (it's a header band, not a full page section) */
+.page-hero {
+  background: linear-gradient(180deg, #142118 0%, #1C2E22 100%) !important;
+}
+
+/* Vault hero/intro on parchment */
+.vault-hero, .vault-intro {
+  background: #F9F6F0 !important;
+  color: #1A1206 !important;
+}
+
+/* Section text on parchment */
+.section-title { color: #1A1206 !important; }
+.section-sub   { color: #4E3415 !important; }
+.section-label { color: var(--gold-dark) !important; }
+
+/* Vault request form section */
+.vault-request { background: #F9F6F0 !important; }
+.vault-request h2 { color: #1A1206 !important; }
+.vault-request p  { color: #4E3415 !important; }
+
+/* Form elements on parchment */
+.form-card {
+  background: #EDE8DE !important;
+  border: 1px solid rgba(197,160,89,0.35) !important;
+}
+
+/* Vault features: update parchment section */
+.vault-features {
+  background-color: #EDE8DE !important;
+  border-color: rgba(197,160,89,0.30) !important;
+}
+.vault-features h2 { color: #1A1206 !important; }
+.feature-title { color: #1A1206 !important; }
+.feature-desc  { color: #4E3415 !important; }
+.feature-item  { border-top-color: rgba(197,160,89,0.22) !important; }
+
+/* Divider */
+.divider { background: rgba(197,160,89,0.25) !important; }
+
+/* Footer: Deep Midnight Green */
+footer { background: #142118 !important; }
+
 </style>
 </head>
 <body>

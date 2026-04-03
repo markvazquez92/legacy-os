@@ -1,0 +1,1138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Espi — English Bulldog — Transport Profile — Guardian Protocol</title>
+<meta name="description" content="Espi is an English Bulldog in active transport coordination through the Guardian Protocol rescue logistics network. Profile maintained by My Legacy Continues. Source: Underdog Heroes.">
+<link rel="icon" href="logo.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+
+/* =============================================
+   GUARDIAN PROTOCOL — INDIVIDUAL DOG PROFILE
+   Heritage Palette: Parchment / Midnight Green / Burnished Gold
+   No emojis. No rounded pill buttons. Professional logistics system.
+   ============================================= */
+
+:root {
+  --midnight:       #142118;
+  --midnight-mid:   #1C2E22;
+  --midnight-light: #233427;
+  --parchment:      #F9F6F0;
+  --parchment-mid:  #EDE8DE;
+  --parchment-deep: #E2DAC8;
+  --gold:           #C5A059;
+  --gold-light:     #D4B46A;
+  --gold-dark:      #9E7E3E;
+  --gold-border:    rgba(197,160,89,0.30);
+  --gold-wash:      rgba(197,160,89,0.08);
+  --text-dark:      #1A1206;
+  --text-mid:       #4E3415;
+  --text-muted:     #6B5030;
+  --text-light:     #F5F0E8;
+  --text-dim:       rgba(245,240,232,0.55);
+  --cinzel:   'Cinzel', Georgia, serif;
+  --playfair: 'Playfair Display', Georgia, serif;
+  --lora:     'Lora', Georgia, serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--lora);
+  background: var(--parchment);
+  color: var(--text-dark);
+  line-height: 1.78;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+}
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; height: auto; display: block; }
+
+/* BUTTONS — Sharp corners, no pill, no radius */
+.btn {
+  display: inline-block;
+  font-family: var(--cinzel);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  padding: 14px 32px;
+  border-radius: 0;
+  border: none;
+  cursor: pointer;
+  transition: all 0.22s ease;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.btn-gold {
+  background: var(--gold);
+  color: var(--midnight);
+  border: 1.5px solid var(--gold);
+  box-shadow: 0 3px 14px rgba(197,160,89,0.22);
+}
+.btn-gold:hover {
+  background: var(--gold-light);
+  border-color: var(--gold-light);
+  box-shadow: 0 6px 22px rgba(197,160,89,0.32);
+}
+.btn-outline {
+  background: transparent;
+  color: var(--midnight);
+  border: 1.5px solid rgba(20,33,24,0.35);
+}
+.btn-outline:hover {
+  border-color: var(--gold);
+  color: var(--gold-dark);
+  background: var(--gold-wash);
+}
+.btn-dark {
+  background: var(--midnight);
+  color: var(--text-light);
+  border: 1.5px solid var(--midnight);
+}
+.btn-dark:hover {
+  background: var(--midnight-mid);
+}
+
+/* NAV — Deep Midnight Green */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 900;
+  height: 68px;
+  background: rgba(20,33,24,0.98);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--gold-border);
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 48px;
+}
+.nav-brand { display: flex; align-items: center; gap: 14px; flex-shrink: 0; }
+.nav-logo { height: 42px; width: 42px; object-fit: contain; mix-blend-mode: screen; filter: drop-shadow(0 0 8px rgba(197,160,89,0.35)); }
+.nav-logo.broken { display: none; }
+.nav-logo-text { font-family: var(--cinzel); font-size: 0.88rem; font-weight: 600; color: var(--gold); letter-spacing: 0.08em; line-height: 1.25; }
+.nav-links { display: flex; align-items: center; gap: 36px; list-style: none; }
+.nav-links a { font-family: var(--lora); font-size: 0.84rem; color: rgba(245,240,232,0.65); transition: color 0.2s; }
+.nav-links a:hover, .nav-links a.active { color: var(--gold); }
+.nav-protocol {
+  font-family: var(--cinzel) !important;
+  font-size: 0.68rem !important;
+  letter-spacing: 0.12em !important;
+  text-transform: uppercase;
+  color: var(--gold) !important;
+  border: 1px solid var(--gold-border);
+  padding: 8px 18px;
+  border-radius: 0;
+  transition: all 0.22s;
+}
+.nav-protocol:hover { background: var(--gold-wash); border-color: var(--gold); }
+.nav-toggle { display: none; background: none; border: none; cursor: pointer; flex-direction: column; gap: 5px; padding: 4px; }
+.nav-toggle span { display: block; width: 22px; height: 1.5px; background: var(--gold); }
+@media (max-width: 780px) {
+  nav { padding: 0 20px; }
+  .nav-links { display: none; flex-direction: column; position: fixed; top: 68px; left: 0; right: 0; background: rgba(20,33,24,0.99); padding: 28px 24px; gap: 0; border-bottom: 1px solid var(--gold-border); }
+  .nav-links.open { display: flex; }
+  .nav-links li { width: 100%; }
+  .nav-links a { display: block; padding: 14px 0; border-bottom: 1px solid rgba(197,160,89,0.07); font-size: 0.92rem; }
+  .nav-protocol { margin: 16px 0 0; display: inline-block !important; }
+  .nav-toggle { display: flex; }
+}
+
+/* PROFILE HEADER BAND — Dark, contains name + status badge */
+.profile-header {
+  margin-top: 68px;
+  background: var(--midnight);
+  border-bottom: 2px solid var(--gold-border);
+  padding: 52px 48px 44px;
+}
+.profile-header-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 32px;
+  align-items: flex-end;
+}
+@media (max-width: 680px) {
+  .profile-header-inner { grid-template-columns: 1fr; }
+  .profile-header { padding: 40px 20px 36px; }
+}
+.profile-eyebrow {
+  font-family: var(--cinzel);
+  font-size: 0.58rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--gold);
+  display: block;
+  margin-bottom: 16px;
+}
+.profile-name {
+  font-family: var(--playfair);
+  font-size: clamp(2.2rem, 5vw, 3.8rem);
+  font-weight: 700;
+  color: var(--text-light);
+  line-height: 1.05;
+  margin-bottom: 10px;
+}
+.profile-breed {
+  font-family: var(--cinzel);
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(245,240,232,0.55);
+  margin-bottom: 22px;
+  display: block;
+}
+.profile-meta-row {
+  display: flex;
+  gap: 28px;
+  flex-wrap: wrap;
+  border-top: 1px solid rgba(197,160,89,0.18);
+  padding-top: 22px;
+}
+.profile-meta-item {
+  font-family: var(--cinzel);
+  font-size: 0.56rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(245,240,232,0.42);
+}
+.profile-meta-item span {
+  color: rgba(245,240,232,0.70);
+  display: block;
+  font-size: 0.84rem;
+  font-family: var(--lora);
+  letter-spacing: 0;
+  text-transform: none;
+  margin-top: 3px;
+}
+
+/* TRANSPORT STATUS BADGE */
+.transport-badge-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+}
+.transport-badge {
+  font-family: var(--cinzel);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  padding: 10px 22px;
+  border-radius: 0;
+  display: inline-block;
+  white-space: nowrap;
+}
+.badge-awaiting {
+  background: rgba(197,160,89,0.14);
+  color: var(--gold-light);
+  border: 1.5px solid var(--gold-border);
+}
+.badge-in-transit {
+  background: rgba(46,97,66,0.35);
+  color: #7DBFA0;
+  border: 1.5px solid rgba(100,180,130,0.35);
+}
+.badge-complete {
+  background: rgba(197,160,89,0.08);
+  color: rgba(245,240,232,0.45);
+  border: 1.5px solid rgba(197,160,89,0.15);
+}
+.badge-pending {
+  background: rgba(197,160,89,0.08);
+  color: rgba(245,240,232,0.50);
+  border: 1.5px solid rgba(197,160,89,0.15);
+}
+.badge-label {
+  font-family: var(--cinzel);
+  font-size: 0.52rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(245,240,232,0.35);
+  text-align: right;
+}
+
+/* PROFILE PHOTO PANEL */
+.photo-section {
+  padding: 48px 48px 0;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+@media (max-width: 680px) { .photo-section { padding: 32px 20px 0; } }
+.photo-frame {
+  width: 100%;
+  max-height: 440px;
+  background: var(--parchment-deep);
+  border: 1px solid var(--gold-border);
+  border-bottom: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+.photo-frame img {
+  width: 100%;
+  height: 440px;
+  object-fit: cover;
+  display: block;
+}
+.photo-placeholder {
+  padding: 80px 48px;
+  text-align: center;
+}
+.photo-placeholder-label {
+  font-family: var(--cinzel);
+  font-size: 0.6rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+  display: block;
+}
+.photo-placeholder-name {
+  font-family: var(--playfair);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-mid);
+  font-style: italic;
+}
+.photo-credit {
+  font-family: var(--cinzel);
+  font-size: 0.52rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  position: absolute;
+  bottom: 12px;
+  right: 16px;
+}
+
+/* MAIN CONTENT GRID */
+.content-wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 48px 80px;
+}
+@media (max-width: 680px) { .content-wrap { padding: 0 20px 60px; } }
+.content-grid {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 0;
+  border: 1px solid var(--gold-border);
+  border-top: 2px solid var(--gold);
+}
+@media (max-width: 900px) { .content-grid { grid-template-columns: 1fr; } }
+
+/* LEFT COLUMN — Profile Details */
+.profile-body {
+  padding: 44px 40px;
+  border-right: 1px solid var(--gold-border);
+}
+@media (max-width: 900px) { .profile-body { border-right: none; border-bottom: 1px solid var(--gold-border); } }
+@media (max-width: 680px) { .profile-body { padding: 32px 24px; } }
+
+.section-rule {
+  font-family: var(--cinzel);
+  font-size: 0.56rem;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  display: block;
+  margin-bottom: 12px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--gold-border);
+}
+.profile-section-title {
+  font-family: var(--playfair);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 14px;
+}
+.profile-body p {
+  font-size: 0.92rem;
+  color: var(--text-mid);
+  line-height: 1.88;
+  margin-bottom: 18px;
+}
+.profile-body p strong { color: var(--text-dark); font-weight: 600; }
+
+/* Needs list */
+.needs-list {
+  list-style: none;
+  margin: 0 0 32px;
+  border: 1px solid var(--gold-border);
+}
+.needs-list li {
+  font-family: var(--lora);
+  font-size: 0.86rem;
+  color: var(--text-mid);
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--gold-border);
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+.needs-list li:last-child { border-bottom: none; }
+.needs-list li::before {
+  content: '—';
+  color: var(--gold);
+  font-size: 0.7rem;
+  margin-top: 3px;
+  flex-shrink: 0;
+}
+
+/* Source link section */
+.source-block {
+  background: var(--parchment-mid);
+  border: 1px solid var(--gold-border);
+  border-left: 3px solid var(--gold);
+  padding: 24px 22px;
+  margin-top: 32px;
+}
+.source-block-label {
+  font-family: var(--cinzel);
+  font-size: 0.54rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  display: block;
+  margin-bottom: 8px;
+}
+.source-block-name {
+  font-family: var(--playfair);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 6px;
+}
+.source-block-url {
+  font-family: var(--cinzel);
+  font-size: 0.6rem;
+  letter-spacing: 0.14em;
+  color: var(--gold-dark);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  display: block;
+  margin-bottom: 12px;
+}
+.source-block-url:hover { color: var(--gold); }
+.source-block p {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  line-height: 1.75;
+  margin: 0;
+}
+
+.profile-divider {
+  height: 1px;
+  background: var(--gold-border);
+  margin: 36px 0;
+}
+
+/* Business funding block */
+.funding-block {
+  background: var(--midnight);
+  padding: 28px 26px;
+  margin-top: 32px;
+}
+.funding-block-label {
+  font-family: var(--cinzel);
+  font-size: 0.54rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+  display: block;
+  margin-bottom: 10px;
+}
+.funding-block-title {
+  font-family: var(--playfair);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-light);
+  margin-bottom: 8px;
+}
+.funding-block p {
+  font-size: 0.82rem !important;
+  color: rgba(245,240,232,0.65) !important;
+  line-height: 1.75 !important;
+  margin-bottom: 16px !important;
+}
+.funding-link {
+  font-family: var(--cinzel);
+  font-size: 0.6rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.funding-link:hover { color: var(--gold-light); }
+
+/* RIGHT COLUMN — Logistics Panel */
+.logistics-panel {
+  padding: 44px 32px;
+  background: var(--parchment-mid);
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+@media (max-width: 680px) { .logistics-panel { padding: 32px 24px; } }
+
+.logistics-header {
+  font-family: var(--cinzel);
+  font-size: 0.56rem;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  display: block;
+  margin-bottom: 12px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--gold-border);
+}
+
+/* Status block */
+.status-block {
+  background: var(--parchment);
+  border: 1px solid var(--gold-border);
+  padding: 22px 20px;
+  margin-bottom: 24px;
+}
+.status-block-label {
+  font-family: var(--cinzel);
+  font-size: 0.52rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  display: block;
+  margin-bottom: 10px;
+}
+.status-display {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+.status-indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.status-indicator.awaiting { background: var(--gold); }
+.status-indicator.in-transit { background: #5FC490; animation: pulse 2s ease-in-out infinite; }
+.status-indicator.complete { background: rgba(197,160,89,0.35); }
+@keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
+.status-text {
+  font-family: var(--cinzel);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-dark);
+}
+.status-note {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+/* Transport route block */
+.route-block {
+  background: var(--parchment);
+  border: 1px solid var(--gold-border);
+  padding: 22px 20px;
+  margin-bottom: 24px;
+}
+.route-block-label {
+  font-family: var(--cinzel);
+  font-size: 0.52rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  display: block;
+  margin-bottom: 14px;
+}
+.route-row {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 14px;
+}
+.route-row:last-of-type { margin-bottom: 0; }
+.route-field {
+  font-family: var(--cinzel);
+  font-size: 0.5rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+.route-value {
+  font-family: var(--lora);
+  font-size: 0.88rem;
+  color: var(--text-dark);
+}
+.route-divider {
+  height: 1px;
+  background: var(--gold-border);
+  margin: 12px 0;
+}
+
+/* Logistics lead block */
+.lead-block {
+  background: var(--midnight);
+  padding: 22px 20px;
+  margin-bottom: 24px;
+}
+.lead-block-label {
+  font-family: var(--cinzel);
+  font-size: 0.52rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  display: block;
+  margin-bottom: 14px;
+}
+.lead-name {
+  font-family: var(--playfair);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-light);
+  margin-bottom: 4px;
+}
+.lead-title {
+  font-family: var(--cinzel);
+  font-size: 0.56rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(245,240,232,0.45);
+  margin-bottom: 14px;
+  display: block;
+}
+.lead-contact-row {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+.lead-contact-item {
+  font-size: 0.82rem;
+  color: rgba(245,240,232,0.65);
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+.lead-contact-field {
+  font-family: var(--cinzel);
+  font-size: 0.5rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gold);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* COORDINATE TRANSPORT BUTTON */
+.coordinate-btn-wrap {
+  margin-top: auto;
+}
+.coordinate-btn {
+  display: block;
+  width: 100%;
+  text-align: center;
+  font-family: var(--cinzel);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 18px 24px;
+  background: var(--gold);
+  color: var(--midnight);
+  border: 1.5px solid var(--gold);
+  border-radius: 0;
+  cursor: pointer;
+  transition: all 0.22s;
+  text-decoration: none;
+  margin-bottom: 10px;
+}
+.coordinate-btn:hover {
+  background: var(--gold-light);
+  border-color: var(--gold-light);
+  box-shadow: 0 6px 22px rgba(197,160,89,0.30);
+}
+.coordinate-btn-note {
+  font-family: var(--cinzel);
+  font-size: 0.5rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  text-align: center;
+  display: block;
+}
+
+/* SHELTER LINK SECTION */
+.shelter-section {
+  background: var(--parchment-mid);
+  border-top: 1px solid var(--gold-border);
+  border-bottom: 1px solid var(--gold-border);
+  padding: 56px 48px;
+}
+@media (max-width: 680px) { .shelter-section { padding: 44px 20px; } }
+.shelter-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: start;
+}
+@media (max-width: 780px) { .shelter-inner { grid-template-columns: 1fr; gap: 32px; } }
+.shelter-label {
+  font-family: var(--cinzel);
+  font-size: 0.56rem;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  display: block;
+  margin-bottom: 14px;
+}
+.shelter-title {
+  font-family: var(--playfair);
+  font-size: clamp(1.4rem, 3vw, 1.9rem);
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 14px;
+  line-height: 1.2;
+}
+.shelter-body {
+  font-size: 0.9rem;
+  color: var(--text-mid);
+  line-height: 1.88;
+  margin-bottom: 22px;
+}
+
+.shelter-detail-list {
+  list-style: none;
+  border: 1px solid var(--gold-border);
+}
+.shelter-detail-list li {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 0;
+  border-bottom: 1px solid var(--gold-border);
+  font-size: 0.84rem;
+}
+.shelter-detail-list li:last-child { border-bottom: none; }
+.shelter-detail-list dt {
+  font-family: var(--cinzel);
+  font-size: 0.52rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  background: var(--parchment-deep);
+  padding: 12px 14px;
+  border-right: 1px solid var(--gold-border);
+  display: flex;
+  align-items: center;
+}
+.shelter-detail-list dd {
+  color: var(--text-dark);
+  padding: 12px 14px;
+  background: var(--parchment);
+}
+
+/* FOOTER — Deep Midnight Green */
+footer {
+  background: var(--midnight);
+  border-top: 1px solid var(--gold-border);
+  padding: 44px 48px 36px;
+}
+@media (max-width: 680px) { footer { padding: 36px 20px 28px; } }
+.footer-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 36px;
+}
+@media (max-width: 720px) { .footer-inner { grid-template-columns: 1fr; gap: 28px; } }
+.footer-brand-name {
+  font-family: var(--cinzel);
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--gold);
+  letter-spacing: 0.08em;
+  margin-bottom: 8px;
+}
+.footer-tagline {
+  font-size: 0.82rem;
+  color: rgba(245,240,232,0.40);
+  line-height: 1.7;
+  max-width: 260px;
+}
+.footer-col-title {
+  font-family: var(--cinzel);
+  font-size: 0.56rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 14px;
+  display: block;
+}
+.footer-list { list-style: none; display: flex; flex-direction: column; gap: 9px; }
+.footer-list a { font-size: 0.82rem; color: rgba(245,240,232,0.42); transition: color 0.2s; }
+.footer-list a:hover { color: var(--gold); }
+.footer-bottom {
+  border-top: 1px solid rgba(197,160,89,0.15);
+  padding-top: 22px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.footer-copy {
+  font-family: var(--cinzel);
+  font-size: 0.54rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(245,240,232,0.30);
+}
+.footer-registry {
+  font-family: var(--cinzel);
+  font-size: 0.54rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(197,160,89,0.45);
+}
+
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="mainNav">
+  <a href="index.html" class="nav-brand">
+    <img src="logo.png" alt="My Legacy Continues" class="nav-logo" onerror="this.classList.add('broken')">
+    <span class="nav-logo-text">MY LEGACY<br>CONTINUES</span>
+  </a>
+  <button class="nav-toggle" aria-label="Open menu"
+    onclick="this.closest('nav').querySelector('.nav-links').classList.toggle('open')">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="rescue-registry.html" class="active">Rescue Registry</a></li>
+    <li><a href="trade-profile.html">Trade Profile</a></li>
+    <li><a href="portal.html">Family Vault</a></li>
+    <li><a href="rescue-registry.html" class="nav-protocol">Guardian Protocol</a></li>
+  </ul>
+</nav>
+
+<!-- PROFILE HEADER BAND -->
+<div class="profile-header">
+  <div class="profile-header-inner">
+    <div>
+      <span class="profile-eyebrow">Guardian Protocol &nbsp;&bull;&nbsp; Transport Profile &nbsp;&bull;&nbsp; Source: Underdog Heroes</span>
+      <h1 class="profile-name">Espi</h1>
+      <span class="profile-breed">English Bulldog &nbsp;&mdash;&nbsp; Female &nbsp;&mdash;&nbsp; Approx. 4 Years</span>
+      <div class="profile-meta-row">
+        <div class="profile-meta-item">
+          Profile Created
+          <span>April 3, 2026</span>
+        </div>
+        <div class="profile-meta-item">
+          Registry ID
+          <span>GP-2026-EB-001</span>
+        </div>
+        <div class="profile-meta-item">
+          Source Shelter
+          <span>Underdog Heroes</span>
+        </div>
+        <div class="profile-meta-item">
+          Logistics Lead
+          <span>Bear Vazquez</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="transport-badge-wrap">
+      <span class="badge-label">Transport Status</span>
+      <!-- STATUS: Change class to badge-in-transit, badge-complete, or badge-pending as needed -->
+      <span class="transport-badge badge-awaiting">Awaiting Transport</span>
+    </div>
+  </div>
+</div>
+
+<!-- PHOTO FRAME -->
+<div style="max-width:1100px; margin:0 auto; padding:0 48px;">
+  <div class="photo-frame">
+    <!-- Replace src with actual photo when available -->
+    <img src="espi-photo.jpg" alt="Espi the English Bulldog"
+      onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+    <div class="photo-placeholder" style="display:none; flex-direction:column; align-items:center;">
+      <span class="photo-placeholder-label">Transport Profile Photo</span>
+      <span class="photo-placeholder-name">Espi</span>
+      <span style="font-family:var(--cinzel);font-size:0.52rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--text-muted);margin-top:14px;">Photo pending — contact Underdog Heroes to submit</span>
+    </div>
+    <span class="photo-credit">Source: underdogheroes.org</span>
+  </div>
+</div>
+
+<!-- MAIN CONTENT GRID -->
+<div class="content-wrap">
+  <div class="content-grid">
+
+    <!-- LEFT: Profile Details -->
+    <div class="profile-body">
+
+      <span class="section-rule">Dog Profile</span>
+      <h2 class="profile-section-title">About Espi</h2>
+      <p>
+        Espi is a female English Bulldog, approximately four years old, currently listed through
+        <strong>Underdog Heroes</strong> and flagged for transport coordination through the
+        Guardian Protocol logistics network. She came in gentle and quiet &mdash; the kind of dog
+        that earns trust the moment she settles.
+      </p>
+      <p>
+        Bulldogs in the rescue system carry additional logistical requirements that most transport
+        networks aren't equipped for. Espi is no different. She needs a short-haul, climate-controlled
+        transport window, careful monitoring during transit, and a receiving party briefed on her breed-specific needs.
+        This profile exists to make sure that coordination happens correctly.
+      </p>
+
+      <div class="profile-divider"></div>
+
+      <span class="section-rule">Transport Requirements</span>
+      <h2 class="profile-section-title">Breed-Specific Logistics Notes</h2>
+      <ul class="needs-list">
+        <li>Climate-controlled vehicle required &mdash; English Bulldogs are brachycephalic and cannot tolerate heat above 75&deg;F during transit</li>
+        <li>Maximum continuous transit window: 3 hours. Rest stop required with shade and water access</li>
+        <li>No crating in unventilated cargo. Must ride in temperature-controlled passenger compartment</li>
+        <li>Receiving party must be present at drop-off. No unattended handoffs</li>
+        <li>Current medications and feeding schedule to be transferred with transport documentation</li>
+        <li>Veterinary release form from Underdog Heroes required before transport is scheduled</li>
+      </ul>
+
+      <div class="profile-divider"></div>
+
+      <span class="section-rule">Special Needs &amp; Notes</span>
+      <p>
+        Espi does well with calm adults and older children. She is not aggressive but can become
+        anxious in loud or chaotic environments. The receiving foster or adopter should be made aware
+        of her temperament before transport is confirmed.
+      </p>
+      <p>
+        Skin fold maintenance is required. Her facial wrinkles need to be cleaned and dried daily to
+        prevent infection. Any transport or foster arrangement should include written care instructions
+        from the shelter before she is released into the logistics pipeline.
+      </p>
+
+      <!-- ORIGINAL SHELTER LINK -->
+      <div class="source-block">
+        <span class="source-block-label">Original Shelter Source</span>
+        <div class="source-block-name">Underdog Heroes</div>
+        <a href="https://www.underdogheroes.org" target="_blank" rel="noopener" class="source-block-url">
+          www.underdogheroes.org
+        </a>
+        <p>
+          Espi's original listing, intake documentation, and veterinary records are maintained
+          by Underdog Heroes. This transport profile references their listing directly.
+          All breed data, temperament notes, and medical history should be verified against the
+          original shelter record before transport is finalized.
+        </p>
+      </div>
+
+      <!-- BUSINESS INTEGRATION — Bears Concrete funds the mission -->
+      <div class="funding-block">
+        <span class="funding-block-label">How This Transport Is Funded</span>
+        <div class="funding-block-title">Bears Concrete Pumping</div>
+        <p>
+          Every professional services job booked through Bears Concrete Pumping directly supports
+          the Guardian Protocol rescue network. Concrete work funds dog transports.
+          The contractor trade and the rescue mission are the same operation.
+        </p>
+        <a href="trade-profile.html" class="funding-link">View Trade Profile &nbsp;&rarr;</a>
+      </div>
+
+    </div><!-- end .profile-body -->
+
+    <!-- RIGHT: Logistics Panel -->
+    <div class="logistics-panel">
+
+      <span class="logistics-header">Transport Logistics</span>
+
+      <!-- STATUS BLOCK -->
+      <div class="status-block">
+        <span class="status-block-label">Current Transport Status</span>
+        <div class="status-display">
+          <div class="status-indicator awaiting"></div>
+          <span class="status-text">Awaiting Transport</span>
+        </div>
+        <p class="status-note">
+          Transport has not yet been scheduled. Logistics lead is actively coordinating
+          with Underdog Heroes. Contact Bear Vazquez to accelerate this timeline.
+        </p>
+      </div>
+
+      <!-- ROUTE BLOCK -->
+      <div class="route-block">
+        <span class="route-block-label">Transport Route</span>
+        <div class="route-row">
+          <span class="route-field">Origin</span>
+          <span class="route-value">Underdog Heroes &mdash; Lake Hughes Corridor, CA</span>
+        </div>
+        <div class="route-divider"></div>
+        <div class="route-row">
+          <span class="route-field">Destination</span>
+          <span class="route-value">To Be Confirmed &mdash; Santa Barbara County Area</span>
+        </div>
+        <div class="route-divider"></div>
+        <div class="route-row">
+          <span class="route-field">Scheduled Date</span>
+          <span class="route-value">Pending Coordination</span>
+        </div>
+        <div class="route-divider"></div>
+        <div class="route-row">
+          <span class="route-field">Est. Transit Time</span>
+          <span class="route-value">Under 3 hours &mdash; climate-controlled</span>
+        </div>
+      </div>
+
+      <!-- LOGISTICS LEAD -->
+      <div class="lead-block">
+        <span class="lead-block-label">Logistics Lead</span>
+        <div class="lead-name">Bear Vazquez</div>
+        <span class="lead-title">Transport Coordinator &nbsp;&mdash;&nbsp; Guardian Protocol</span>
+        <div class="lead-contact-row">
+          <div class="lead-contact-item">
+            <span class="lead-contact-field">Co.</span>
+            Bears Concrete Pumping &mdash; Santa Maria, CA
+          </div>
+          <div class="lead-contact-item">
+            <span class="lead-contact-field">Web</span>
+            mylegacycontinues.com
+          </div>
+          <div class="lead-contact-item">
+            <span class="lead-contact-field">Via</span>
+            Trade Profile contact form
+          </div>
+        </div>
+      </div>
+
+      <!-- COORDINATE TRANSPORT CTA -->
+      <div class="coordinate-btn-wrap">
+        <a href="trade-profile.html#contact" class="coordinate-btn">
+          Coordinate Transport
+        </a>
+        <span class="coordinate-btn-note">Contact Bear Vazquez directly via the Trade Profile</span>
+      </div>
+
+    </div><!-- end .logistics-panel -->
+
+  </div><!-- end .content-grid -->
+</div><!-- end .content-wrap -->
+
+<!-- SHELTER LINK SECTION -->
+<section class="shelter-section" id="shelter-record">
+  <div class="shelter-inner">
+    <div>
+      <span class="shelter-label">Original Shelter Record</span>
+      <h2 class="shelter-title">Underdog Heroes &mdash; Primary Data Source</h2>
+      <p class="shelter-body">
+        All data in this transport profile originates from Underdog Heroes, the primary rescue organization
+        responsible for Espi's intake, care, and placement. This Guardian Protocol profile serves as a
+        logistics coordination layer &mdash; it does not replace or supersede the original shelter record.
+      </p>
+      <p class="shelter-body">
+        Before any transport is confirmed, the logistics lead must verify current status, medical records,
+        and behavioral notes directly with Underdog Heroes staff.
+      </p>
+      <a href="https://www.underdogheroes.org" target="_blank" rel="noopener" class="btn btn-dark">
+        View Underdog Heroes Listing
+      </a>
+    </div>
+    <div>
+      <dl class="shelter-detail-list">
+        <li>
+          <dt>Organization</dt>
+          <dd>Underdog Heroes</dd>
+        </li>
+        <li>
+          <dt>Dog Name</dt>
+          <dd>Espi</dd>
+        </li>
+        <li>
+          <dt>Breed</dt>
+          <dd>English Bulldog</dd>
+        </li>
+        <li>
+          <dt>Sex</dt>
+          <dd>Female</dd>
+        </li>
+        <li>
+          <dt>Age</dt>
+          <dd>Approx. 4 Years</dd>
+        </li>
+        <li>
+          <dt>Status at Source</dt>
+          <dd>Available for Adoption / Transport</dd>
+        </li>
+        <li>
+          <dt>Shelter URL</dt>
+          <dd><a href="https://www.underdogheroes.org" target="_blank" style="color:var(--gold-dark);text-decoration:underline;">underdogheroes.org</a></dd>
+        </li>
+        <li>
+          <dt>Registry ID</dt>
+          <dd>GP-2026-EB-001</dd>
+        </li>
+        <li>
+          <dt>Profile Owner</dt>
+          <dd>My Legacy Continues &mdash; Santa Maria, CA</dd>
+        </li>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand-name">My Legacy Continues</div>
+      <p class="footer-tagline">
+        Permanent digital assets. Heritage preservation. Rescue transport logistics.
+        Santa Maria, CA.
+      </p>
+    </div>
+    <div>
+      <span class="footer-col-title">Guardian Protocol</span>
+      <ul class="footer-list">
+        <li><a href="rescue-registry.html">Rescue Registry</a></li>
+        <li><a href="rescue-registry.html#wall">Memorial Wall</a></li>
+        <li><a href="trade-profile.html#contact">Coordinate a Transport</a></li>
+      </ul>
+    </div>
+    <div>
+      <span class="footer-col-title">My Legacy Continues</span>
+      <ul class="footer-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="portal.html">Family Vault</a></li>
+        <li><a href="trade-profile.html">Trade Profile</a></li>
+        <li><a href="index.html#products">Products</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-copy">My Legacy Continues &nbsp;&mdash;&nbsp; Santa Maria, CA &nbsp;&mdash;&nbsp; 2026</span>
+    <span class="footer-registry">Guardian Protocol Transport Registry &nbsp;&mdash;&nbsp; Record GP-2026-EB-001</span>
+  </div>
+</footer>
+
+</body>
+</html>
