@@ -7,64 +7,119 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700&display=swap" rel="stylesheet">
     <style>
         :root { --obsidian: #121212; --gold: #D4AF37; --tobacco: #7A3E26; --off-white: #EAEAEA; }
+        
         body { 
             background-color: var(--obsidian); color: var(--off-white); 
             font-family: 'Playfair Display', serif; margin: 0; 
-            background-image: url('images/logo-gold.png'); background-repeat: no-repeat;
-            background-position: center 30%; background-attachment: fixed; background-size: 50%;
+            background-image: url('images/logo-gold-transparent.png'); 
+            background-repeat: no-repeat;
+            background-position: center 30%; background-attachment: fixed; background-size: 60%;
             background-blend-mode: overlay;
         }
-        header { text-align: center; padding: 100px 20px; border-bottom: 2px solid var(--tobacco); background: rgba(18,18,18,0.9); }
+
+        h1, h2, h3 { color: var(--gold); font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
+
+        header { 
+            text-align: center; padding: 100px 20px 60px 20px; 
+            border-bottom: 2px solid var(--tobacco); 
+            background: rgba(18,18,18,0.9);
+        }
+
+        .logo-header { width: 180px; height: auto; margin-bottom: 20px; }
+
         section { padding: 80px 20px; max-width: 1000px; margin: 0 auto; background: rgba(18,18,18,0.9); border-bottom: 1px solid #333; }
-        .card { background-color: #1A1A1A; border: 1px solid var(--tobacco); padding: 40px; margin: 20px 0; }
+        
+        .card { background-color: rgba(26,26,26,0.95); border: 1px solid var(--tobacco); padding: 40px; margin: 30px 0; }
+        .card:hover { border-color: var(--gold); }
+
         .price { font-size: 2.2rem; color: var(--gold); margin: 20px 0; display: block; }
-        .btn-gold { display: block; background-color: var(--gold); color: var(--obsidian); padding: 20px; text-align: center; font-weight: bold; text-decoration: none; text-transform: uppercase; }
-        video { width: 100%; border: 2px solid var(--gold); margin-bottom: 30px; }
+        
+        .btn-gold { 
+            display: block; background-color: var(--gold); color: var(--obsidian); 
+            padding: 20px; text-align: center; font-weight: bold; 
+            text-decoration: none; text-transform: uppercase; margin-top: 20px;
+        }
+
+        .video-container { border: 2px solid var(--gold); margin: 40px 0; background: #000; }
+        video { width: 100%; height: auto; display: block; }
+
+        footer { text-align: center; padding: 60px; color: #666; font-size: 0.8rem; }
     </style>
 </head>
 <body>
 
     <header>
-        <h1 style="font-size: 3rem; margin: 0; color: var(--gold);">MY LEGACY CONTINUES</h1>
-        <p style="font-style: italic;">From First Breath to Eternal Remembrance.</p>
+        <img src="images/logo-gold-transparent.png" alt="My Legacy Continues" class="logo-header">
+        <h1 style="font-size: 2.8rem; margin: 0;">MY LEGACY CONTINUES</h1>
+        <p style="font-style: italic; font-size: 1.2rem; color: var(--off-white);">From First Breath to Eternal Remembrance.</p>
     </header>
 
-    <section id="the-vision">
-        <video autoplay muted loop playsinline>
-            <source src="hero-marathon.mp4" type="video/mp4">
-        </video>
+    <section id="marathon">
+        <h2>The Heritage Proof of Work</h2>
+        <p>Witness the high-fidelity recording process that bridges physical ancestry to digital eternity.</p>
+        
+        <div class="video-container">
+            <video controls playsinline>
+                <source src="hero-marathon.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </section>
 
-        <h2>The Total Heritage Ecosystem</h2>
-        <p>We provide a one-time, permanent solution to preserve life's most vital stories. One payment. No subscriptions. A lifetime of legacy.</p>
+    <section id="the-human-heritage">
+        <h2>The Human Heritage Ecosystem</h2>
+        <p>A permanent, one-time solution for legacy. No subscriptions. A lifetime of connection.</p>
 
         <div class="card">
-            <h3>Human & Infant Heritage Bundle</h3>
-            <p>From the day a child is born to the day they are remembered, we provide a **Private Family Profile**. Store first steps, high-fidelity voice recordings, and ancestral research. This is your family’s secure social dashboard—no strangers, just heritage.</p>
+            <h3>Full Legacy Bundle</h3>
+            <p>The total connection. Includes the standalone digital "Seed Vault" (Wisdom Book) and physical Monument Tags for memorial integration.</p>
             <span class="price">$199.00</span>
-            <a href="https://buy.stripe.com/4gM14odSLaK8asI9CIfQI03" class="btn-gold">Secure Your Legacy</a>
+            <a href="https://buy.stripe.com/4gM14odSLaK8asI9CIfQI03" class="btn-gold">Secure The Bundle</a>
+        </div>
+
+        <div class="card">
+            <h3>Individual Monument Tag</h3>
+            <p>For linking an existing memorial. A scannable, permanent, weather-resistant QR-enabled bronze-style key for cemetery headstones.</p>
+            <span class="price">$149.00</span>
+            <a href="https://buy.stripe.com/14A14o6qjg4sgR62agfQI05" class="btn-gold">Order Monument Tag</a>
+        </div>
+
+        <div class="card">
+            <h3>Wisdom & Infant Seed Vault</h3>
+            <p>A secure digital "Wisdom Book" for family stories and genealogical archives. From the first breath of an infant to the legacy of a lifetime.</p>
+            <span class="price">$150.00</span>
+            <a href="https://buy.stripe.com/bJe14o2a35pO6csg16fQI02" class="btn-gold">Start The Wisdom Vault</a>
+        </div>
+
+        <div class="card" style="opacity: 0.8;">
+            <h3>Memory Care & Alzheimer’s Anchors</h3>
+            <p>Personalized digital anchors to help those facing memory loss stay connected to their identity and family. Currently in development—Inquire for early access.</p>
+            <a href="mailto:contact@mylegacycontinues.com" class="btn-gold" style="background-color: var(--tobacco); color: white;">Inquire for Details</a>
         </div>
     </section>
 
     <section id="the-rescue">
         <h2>The Rescue & Transport Network</h2>
-        <p><strong>Infrastructure for the Voiceless.</strong></p>
-        <p>We don't just tag animals; we track their salvation. Our logistics network moves dogs from high-kill environments to forever homes, documenting every mile and medical update along the way.</p>
+        <p><strong>Infrastructure for the Voiceless.</strong> Your purchase fuels the logistics that move animals from high-kill environments to permanent safety.</p>
         
         <div class="card">
             <h3>Safety Registry & Story Tag</h3>
-            <p>A scannable life-line. When a pet is adopted, the new owners receive a full digital profile—the video of their rescue, their medical history, and their journey home. No "strange dogs," just documented family members.</p>
+            <p>A scannable life-line. Track medical history, rescue journey footage, and transport data. They aren’t just strange dogs; they are documented family members.</p>
             <span class="price">$35.00</span>
-            <a href="https://buy.stripe.com/aFa3cw15ZaK81Wc028fQI04" class="btn-gold">Register & Protect</a>
+            <a href="https://buy.stripe.com/aFa3cw15ZaK81Wc028fQI04" class="btn-gold">Register An Animal</a>
         </div>
     </section>
 
     <section id="the-trade">
         <h2>The Verified Trade Profile</h2>
-        <p><strong>Builder-to-Builder Professionalism.</strong></p>
-        <p>As a contractor, your work is your legacy. We build you a custom digital storefront to showcase your projects and a high-fidelity QR profile for your vehicles and job sites.</p>
+        <p><strong>Infrastructure for the Trade.</strong> Showcase your work legacy. We build you a custom digital storefront and high-fidelity QR profile for your vehicles and job sites.</p>
         <span class="price">$650.00</span>
         <a href="https://buy.stripe.com/dRm3cwdSL05u58o6qwfQI01" class="btn-gold">Build Your Profile</a>
     </section>
+
+    <footer>
+        <p>&copy; 2026 My Legacy Continues | Santa Maria, CA | Secure. Reliable. Permanent.</p>
+    </footer>
 
 </body>
 </html>
