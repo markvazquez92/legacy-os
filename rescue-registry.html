@@ -1,25 +1,49 @@
-<div class="heritage-container" style="background-color: #F9F6F0; padding: 40px; font-family: 'Playfair Display', serif;">
-    
-    <h1 style="color: #142118; border-bottom: 2px solid #C5A059; padding-bottom: 10px;">Active Underdog Registry</h1>
-    <p style="color: #142118; font-style: italic;">Logistics and Transport managed by Bears Concrete Pumping</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bears Concrete | Transport Registry</title>
+    <style>
+        body { background-color: #F9F6F0; color: #142118; font-family: 'Playfair Display', serif; margin: 0; }
+        header { background-color: #142118; color: #F9F6F0; padding: 20px; text-align: center; border-bottom: 3px solid #C5A059; }
+        .registry-container { max-width: 1200px; margin: 40px auto; padding: 20px; display: flex; gap: 30px; justify-content: center; flex-wrap: wrap; }
+        .dog-card { background: #fff; border: 1px solid #C5A059; width: 300px; padding: 0; box-shadow: 5px 5px 15px rgba(0,0,0,0.1); }
+        .dog-card img { width: 100%; height: 250px; object-fit: cover; }
+        .card-content { padding: 20px; text-align: center; }
+        .status-badge { background: #C5A059; color: white; padding: 5px 10px; font-size: 12px; font-weight: bold; display: inline-block; margin-bottom: 15px; }
+        .btn-gold { display: block; background: #142118; color: #F9F6F0; text-decoration: none; padding: 12px; font-weight: bold; border: 1px solid #C5A059; transition: 0.3s; }
+        .btn-gold:hover { background: #C5A059; color: #142118; }
+    </style>
+</head>
+<body>
 
-    <div class="registry-grid" style="display: flex; gap: 20px; margin-top: 30px;">
-        
-        <div class="dog-card" style="background: white; border: 1px solid #C5A059; padding: 20px; width: 300px;">
-            <img src="espi.jpg" style="width: 100%; height: 200px; object-fit: cover;">
-            <h3 style="color: #142118;">Espi</h3>
-            <span style="background: #C5A059; color: white; padding: 5px 10px; font-size: 12px;">AWAITING TRANSPORT</span>
-            <p style="font-size: 14px; margin-top: 10px;">Route: Riverside → Santa Maria</p>
-            <a href="espi.html" style="display: block; background: #142118; color: #F9F6F0; text-align: center; padding: 10px; text-decoration: none; margin-top: 10px;">VIEW LOGISTICS</a>
+<header>
+    <h1>Active Underdog Transport Registry</h1>
+    <p>Powered by Bears Concrete Pumping & Logistics</p>
+</header>
+
+<div class="registry-container">
+    <div class="dog-card">
+        <img src="zena.jpg" alt="Zena">
+        <div class="card-content">
+            <div class="status-badge">AWAITING TRANSPORT</div>
+            <h3>Zena</h3>
+            <p>Route: Riverside → Santa Maria Hub</p>
+            <a href="zena.html" class="btn-gold">VIEW LOGISTICS PROFILE</a>
         </div>
+    </div>
 
-        <div class="dog-card" style="background: white; border: 1px solid #C5A059; padding: 20px; width: 300px; opacity: 0.8;">
-            <div style="width: 100%; height: 200px; background: #eee; display: flex; align-items: center; justify-content: center;">[PHOTO PENDING]</div>
-            <h3 style="color: #142118;">Upcoming Rescue</h3>
-            <span style="background: #666; color: white; padding: 5px 10px; font-size: 12px;">PENDING REGISTRY</span>
-            <p style="font-size: 14px; margin-top: 10px;">Sourcing from Underdog Heroes...</p>
-            <a href="#" style="display: block; background: #ccc; color: #666; text-align: center; padding: 10px; text-decoration: none; margin-top: 10px;">LOCKED</a>
+    <div class="dog-card">
+        <img src="espi.jpg" alt="Espi">
+        <div class="card-content">
+            <div class="status-badge">AWAITING TRANSPORT</div>
+            <h3>Espi</h3>
+            <p>Route: Riverside → Santa Maria Hub</p>
+            <a href="espi.html" class="btn-gold">VIEW LOGISTICS PROFILE</a>
         </div>
-
     </div>
 </div>
+
+</body>
+</html>
