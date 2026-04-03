@@ -6,59 +6,38 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lora:wght@400;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --beige: #F9F6F0; /* The Hat Color */
-            --midnight: #142118; /* Professional Green */
+            --parchment: #F9F6F0; /* The Hat Color */
+            --midnight: #142118; /* The Writing Color */
             --gold: #C5A059;
         }
-        body { background-color: var(--beige); color: var(--midnight); font-family: 'Lora', serif; margin: 0; }
-        header { padding: 60px 20px; text-align: center; border-bottom: 2px solid var(--gold); }
-        h1, h2 { font-family: 'Playfair Display', serif; text-transform: uppercase; letter-spacing: 2px; }
+        body { background-color: var(--parchment); color: var(--midnight); font-family: 'Lora', serif; margin: 0; padding: 0; }
         
-        /* The Video Frame - No longer a full background */
-        .video-section { max-width: 800px; margin: 40px auto; border: 10px solid var(--midnight); box-shadow: 0 20px 40px rgba(0,0,0,0.2); }
-        video { width: 100%; display: block; }
+        header { padding: 80px 20px; text-align: center; border-bottom: 2px solid var(--gold); }
+        .ship-logo { height: 120px; margin-bottom: 20px; filter: grayscale(100%) contrast(1.2); }
+        
+        /* Video Frame - No longer background */
+        .video-container { max-width: 900px; margin: -40px auto 60px; border: 8px solid var(--midnight); background: #000; box-shadow: 0 30px 60px rgba(0,0,0,0.15); position: relative; z-index: 10; }
+        video { width: 100%; display: block; opacity: 0.9; }
 
-        /* The Modern Ledger (Replacing the 4 columns) */
-        .ledger-container { max-width: 1000px; margin: 50px auto; padding: 20px; }
-        .ledger-item { display: flex; justify-content: space-between; padding: 25px 0; border-bottom: 1px solid var(--gold); }
-        .ledger-label { font-weight: bold; font-family: 'Playfair Display'; font-size: 1.2rem; width: 30%; }
-        .ledger-description { width: 65%; font-size: 0.95rem; line-height: 1.6; }
+        .mission-statement { text-align: center; max-width: 800px; margin: 0 auto 80px; padding: 0 20px; }
+        .mission-statement h2 { font-family: 'Playfair Display'; font-size: 2.2rem; margin-bottom: 20px; }
+        .mission-statement p { font-size: 1.2rem; line-height: 1.8; color: #333; }
 
-        .btn-main { display: inline-block; padding: 15px 40px; background: var(--midnight); color: var(--beige); text-decoration: none; font-weight: bold; margin-top: 20px; border: 1px solid var(--gold); }
+        /* The Ledger - Replacing the AI columns */
+        .ledger { max-width: 1000px; margin: 0 auto 100px; border-top: 1px solid var(--gold); }
+        .ledger-row { display: flex; border-bottom: 1px solid var(--gold); padding: 40px 0; align-items: flex-start; text-decoration: none; color: inherit; transition: 0.3s; }
+        .ledger-row:hover { background-color: rgba(197, 160, 89, 0.05); }
+        .ledger-number { font-family: 'Playfair Display'; font-size: 1.5rem; width: 10%; color: var(--gold); }
+        .ledger-content { width: 90%; }
+        .ledger-title { font-family: 'Playfair Display'; font-size: 1.6rem; margin-bottom: 10px; text-transform: uppercase; }
+        .ledger-text { font-size: 1rem; line-height: 1.6; opacity: 0.8; }
+
+        .footer { text-align: center; padding: 60px; border-top: 2px solid var(--gold); font-size: 0.9rem; letter-spacing: 1px; }
     </style>
 </head>
 <body>
 
 <header>
-    <img src="logo.png" alt="Logo" style="height: 100px; margin-bottom: 20px;">
-    <h1>My Legacy Continues</h1>
-    <p>Preserving Technical Trades & Animal Welfare Logistics</p>
-</header>
-
-<div class="video-section">
-    <video autoplay muted loop>
-        <source src="hero-marathon.mp4" type="video/mp4">
-    </video>
-</div>
-
-<div class="ledger-container">
-    <div class="ledger-item">
-        <div class="ledger-label">Guardian Protocol</div>
-        <div class="ledger-description">A logistics-first rescue registry. We utilize QR-integrated hardware to bridge the gap between shelters, transporters, and forever homes. Managed in partnership with Underdog Heroes (Shoshi).</div>
-    </div>
-    
-    <div class="ledger-item">
-        <div class="ledger-label">The Family Vault</div>
-        <div class="ledger-description">Secure documentation for genealogy, cemetery records, and specialized support for families navigating Dementia and Alzheimer’s. Keeping the stories your family lived, organized and accessible.</div>
-    </div>
-
-    <div class="ledger-item">
-        <div class="ledger-label">Bears Concrete Pumping</div>
-        <div class="ledger-description">Professional concrete pumping and local contracting. Providing the physical infrastructure and funding that powers our rescue transport operations.</div>
-    </div>
-</div>
-
-<center><a href="rescue-registry.html" class="btn-main">Enter Registry</a></center>
-
-</body>
-</html>
+    <img src="logo.png" alt="Heritage Ship" class="ship-logo">
+    <h1 style="font-family:'Playfair Display'; font-size: 3rem; margin:0;">MY LEGACY CONTINUES</h1>
+    <p style="letter-spacing:
