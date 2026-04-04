@@ -11,111 +11,122 @@
 <style>
 
 :root {
-  --bg:          #0a0a0a;
-  --bg-card:     #111111;
-  --gold:        #D4AF37;
-  --gold-light:  #E8C84A;
-  --gold-dim:    rgba(212,175,55,0.55);
-  --gold-border: rgba(212,175,55,0.22);
-  --gold-wash:   rgba(212,175,55,0.07);
-  --white:       #ffffff;
-  --text-muted:  rgba(255,255,255,0.65);
-  --text-dim:    rgba(255,255,255,0.38);
+  --bg:          #F4EFE6;
+  --bg-card:     #FFFFFF;
+  --bg-warm:     #EDE8DC;
+  --forest:      #1E2D1F;
+  --forest-dark: #162217;
+  --gold:        #C9A84C;
+  --gold-light:  #DFC06A;
+  --gold-dim:    rgba(201,168,76,0.55);
+  --gold-border: rgba(201,168,76,0.28);
+  --gold-wash:   rgba(201,168,76,0.08);
+  --text:        #2C2C2C;
+  --text-muted:  #5C5545;
+  --text-dim:    #9B8E77;
   --cinzel: 'Cinzel', Georgia, serif;
   --lora:   'Lora', Georgia, serif;
+  --sans:   -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
-body { font-family: var(--lora); background: var(--bg); color: var(--white); line-height: 1.8; -webkit-font-smoothing: antialiased; }
+body { font-family: var(--lora); background: var(--bg); color: var(--text); line-height: 1.8; -webkit-font-smoothing: antialiased; }
 a { color: inherit; text-decoration: none; }
+img { max-width: 100%; height: auto; display: block; }
 
 .btn { display: inline-block; font-family: var(--cinzel); font-size: 0.72rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; padding: 16px 34px; min-height: 44px; border: none; cursor: pointer; transition: all 0.22s ease; text-decoration: none; white-space: nowrap; border-radius: 2px; }
-.btn-gold { background: var(--gold); color: #0a0a0a; box-shadow: 0 4px 20px rgba(212,175,55,0.28); }
-.btn-gold:hover { background: var(--gold-light); transform: translateY(-2px); }
-.btn-outline { background: transparent; color: var(--gold); border: 1.5px solid var(--gold-border); }
-.btn-outline:hover { border-color: var(--gold); background: var(--gold-wash); }
+.btn-primary { background: var(--forest); color: var(--gold); box-shadow: 0 4px 20px rgba(30,45,31,0.22); }
+.btn-primary:hover { background: var(--forest-dark); transform: translateY(-2px); }
+.btn-outline { background: transparent; color: var(--forest); border: 1.5px solid var(--forest); }
+.btn-outline:hover { background: var(--forest); color: var(--gold); }
 
-/* NAV */
-nav { position: fixed; top: 0; left: 0; right: 0; z-index: 900; height: 66px; background: rgba(10,10,10,0.96); backdrop-filter: blur(20px); border-bottom: 1px solid var(--gold-border); display: flex; align-items: center; justify-content: space-between; padding: 0 48px; }
-.nav-brand { font-family: var(--cinzel); font-size: 0.82rem; font-weight: 700; color: var(--gold); letter-spacing: 0.1em; text-decoration: none; white-space: nowrap; }
-.nav-center { display: flex; align-items: center; gap: 28px; list-style: none; }
-.nav-center a { font-family: var(--lora); font-size: 0.8rem; color: var(--text-muted); letter-spacing: 0.02em; transition: color 0.2s; }
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 900; height: 68px; background: var(--forest); border-bottom: 1px solid rgba(201,168,76,0.25); display: flex; align-items: center; justify-content: space-between; padding: 0 48px; }
+.nav-logo { height: 40px; width: auto; }
+.nav-center { display: flex; align-items: center; gap: 26px; list-style: none; }
+.nav-center a { font-family: var(--sans); font-size: 0.78rem; color: rgba(244,239,230,0.75); letter-spacing: 0.02em; transition: color 0.2s; }
 .nav-center a:hover { color: var(--gold); }
 .nav-right { display: flex; align-items: center; gap: 12px; }
-.nav-lang { font-family: var(--cinzel); font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-dim); border: 1px solid var(--gold-border); padding: 6px 14px; border-radius: 2px; cursor: pointer; background: none; transition: all 0.2s; }
+.nav-lang { font-family: var(--cinzel); font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(244,239,230,0.5); border: 1px solid rgba(201,168,76,0.3); padding: 6px 14px; border-radius: 2px; cursor: pointer; background: none; transition: all 0.2s; }
 .nav-lang:hover { color: var(--gold); border-color: var(--gold); }
-.nav-vault-link { font-family: var(--cinzel); font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); border: 1px solid var(--gold-border); padding: 8px 16px; border-radius: 2px; transition: all 0.22s; }
-.nav-vault-link:hover { background: var(--gold-wash); border-color: var(--gold); }
+.nav-vault-link { font-family: var(--cinzel); font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); border: 1px solid rgba(201,168,76,0.4); padding: 8px 16px; border-radius: 2px; transition: all 0.22s; }
+.nav-vault-link:hover { background: rgba(201,168,76,0.12); }
 .nav-toggle { display: none; background: none; border: none; cursor: pointer; flex-direction: column; gap: 5px; padding: 4px; }
 .nav-toggle span { display: block; width: 22px; height: 1.5px; background: var(--gold); }
 @media (max-width: 960px) {
   nav { padding: 0 20px; }
-  .nav-center { display: none; flex-direction: column; position: fixed; top: 66px; left: 0; right: 0; background: rgba(10,10,10,0.99); padding: 24px 20px; gap: 0; border-bottom: 1px solid var(--gold-border); }
+  .nav-center { display: none; flex-direction: column; position: fixed; top: 68px; left: 0; right: 0; background: var(--forest); padding: 24px 20px; gap: 0; border-bottom: 1px solid rgba(201,168,76,0.2); }
   .nav-center.open { display: flex; }
   .nav-center li { width: 100%; }
-  .nav-center a { display: block; padding: 14px 0; border-bottom: 1px solid rgba(212,175,55,0.07); font-size: 0.92rem; }
+  .nav-center a { display: block; padding: 14px 0; border-bottom: 1px solid rgba(201,168,76,0.1); font-size: 0.92rem; color: rgba(244,239,230,0.8); }
   .nav-toggle { display: flex; }
 }
 
-/* PAGE */
-.page-header { padding: 140px 48px 60px; max-width: 760px; margin: 0 auto; text-align: center; }
-.page-label { font-family: var(--cinzel); font-size: 0.56rem; letter-spacing: 0.32em; text-transform: uppercase; color: var(--gold); display: block; margin-bottom: 18px; }
-.page-title { font-family: var(--cinzel); font-size: clamp(2rem, 4.5vw, 3.4rem); font-weight: 700; color: var(--white); line-height: 1.1; margin-bottom: 18px; }
-.page-sub { font-size: 0.95rem; color: var(--text-muted); line-height: 1.9; }
+/* PAGE HEADER */
+.page-header { background: var(--forest); padding: 130px 48px 64px; text-align: center; }
+.page-header-inner { max-width: 660px; margin: 0 auto; }
+.page-eyebrow { font-family: var(--cinzel); font-size: 0.56rem; letter-spacing: 0.32em; text-transform: uppercase; color: var(--gold); display: block; margin-bottom: 18px; }
+.page-title { font-family: var(--cinzel); font-size: clamp(2rem, 4.5vw, 3.2rem); font-weight: 700; color: #F4EFE6; line-height: 1.1; margin-bottom: 18px; }
+.page-sub { font-size: 1rem; color: rgba(244,239,230,0.7); line-height: 1.85; }
+@media (max-width: 600px) { .page-header { padding: 116px 20px 48px; } }
 
-.vault-body { padding: 0 48px 64px; max-width: 760px; margin: 0 auto; }
-@media (max-width: 600px) { .page-header { padding: 120px 20px 40px; } .vault-body { padding: 0 20px 56px; } }
+.gold-rule { height: 1px; background: var(--gold-border); }
 
-.vault-desc { font-size: 0.92rem; color: var(--text-muted); line-height: 1.95; margin-bottom: 40px; padding: 28px 32px; border: 1px solid var(--gold-border); border-radius: 4px; background: var(--bg-card); }
+/* VAULT BODY */
+.vault-body { padding: 56px 48px 80px; max-width: 760px; margin: 0 auto; }
+@media (max-width: 600px) { .vault-body { padding: 40px 20px 64px; } }
+
+.vault-desc { font-size: 0.92rem; color: var(--text-muted); line-height: 1.95; margin-bottom: 40px; padding: 28px 32px; border: 1px solid var(--gold-border); border-radius: 4px; background: var(--bg-card); box-shadow: 0 2px 12px rgba(44,28,0,0.05); }
 
 .vault-form { display: flex; flex-direction: column; gap: 18px; margin-bottom: 40px; }
 .form-group { display: flex; flex-direction: column; gap: 8px; }
-.form-group label { font-family: var(--cinzel); font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); }
+.form-group label { font-family: var(--cinzel); font-size: 0.58rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-muted); }
 .form-group input,
-.form-group textarea { background: var(--bg-card); border: 1px solid var(--gold-border); border-radius: 2px; color: var(--white); font-family: var(--lora); font-size: 0.9rem; padding: 14px 18px; min-height: 44px; transition: border-color 0.2s; width: 100%; }
+.form-group textarea { background: var(--bg-card); border: 1px solid var(--gold-border); border-radius: 2px; color: var(--text); font-family: var(--lora); font-size: 0.9rem; padding: 13px 16px; min-height: 44px; transition: border-color 0.2s; width: 100%; }
 .form-group input:focus,
-.form-group textarea:focus { outline: none; border-color: var(--gold); }
+.form-group textarea:focus { outline: none; border-color: var(--gold); box-shadow: 0 0 0 3px rgba(201,168,76,0.1); }
 .form-group textarea { min-height: 120px; resize: vertical; }
 .form-group input::placeholder,
 .form-group textarea::placeholder { color: var(--text-dim); }
 
 .vault-links { display: flex; gap: 20px; flex-wrap: wrap; padding-top: 24px; border-top: 1px solid var(--gold-border); }
-.vault-links a { font-family: var(--cinzel); font-size: 0.62rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold-dim); transition: color 0.2s; }
+.vault-links a { font-family: var(--cinzel); font-size: 0.62rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--text-dim); transition: color 0.2s; }
 .vault-links a:hover { color: var(--gold); }
 
-footer { background: #050505; border-top: 1px solid var(--gold-border); padding: 32px 48px; }
-.footer-inner { max-width: 1060px; margin: 0 auto; }
-.footer-copy { font-family: var(--cinzel); font-size: 0.58rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-dim); }
+footer { background: var(--forest); border-top: 1px solid rgba(201,168,76,0.2); padding: 40px 48px 28px; }
+.footer-inner { max-width: 1060px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 20px; }
+.footer-logo { height: 48px; width: auto; opacity: 0.8; }
+.footer-copy { font-family: var(--cinzel); font-size: 0.56rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(244,239,230,0.4); text-align: center; }
 </style>
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
-  <a href="index.html" class="nav-brand">My Legacy Continues</a>
+  <a href="index.html"><img src="logo.png" alt="My Legacy Continues" class="nav-logo"></a>
   <ul class="nav-center" id="navLinks">
     <li><a href="index.html">Home</a></li>
-    <li><a href="index.html#cemetery">Cemetery Plaque</a></li>
-    <li><a href="index.html#heritage">Heritage Book</a></li>
-    <li><a href="index.html#pet-tag">Pet Tag</a></li>
-    <li><a href="index.html#business">Business Profile</a></li>
+    <li><a href="cemetery-plaque.html">Cemetery Plaque</a></li>
+    <li><a href="heritage-book.html">Heritage Book</a></li>
+    <li><a href="pet-tag.html">Pet Tag</a></li>
+    <li><a href="business-profile.html">Business Profile</a></li>
     <li><a href="rescue-registry.html">Rescue Registry</a></li>
     <li><a href="portal.html" class="nav-vault-link">Vault</a></li>
   </ul>
   <div class="nav-right">
     <button class="nav-lang" onclick="alert('Spanish version coming soon.')">EN | ES</button>
-    <button class="nav-toggle" id="navToggle" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
   </div>
 </nav>
 
 <div class="page-header">
-  <span class="page-label">Members Only</span>
-  <h1 class="page-title">Your Legacy Vault</h1>
-  <p class="page-sub">A place to save the stories that matter most.</p>
+  <div class="page-header-inner">
+    <span class="page-eyebrow">Members Only</span>
+    <h1 class="page-title">Your Legacy Vault</h1>
+    <p class="page-sub">A place to save the stories that matter most.</p>
+  </div>
 </div>
+
+<div class="gold-rule"></div>
 
 <div class="vault-body">
   <div class="vault-desc">
@@ -123,6 +134,7 @@ footer { background: #050505; border-top: 1px solid var(--gold-border); padding:
   </div>
 
   <form class="vault-form" action="https://formspree.io/f/xzzpqjle" method="POST">
+    <input type="hidden" name="_subject" value="Vault Access Request">
     <div class="form-group">
       <label for="fullname">Full Name *</label>
       <input type="text" id="fullname" name="fullname" placeholder="Your full name" required>
@@ -139,7 +151,7 @@ footer { background: #050505; border-top: 1px solid var(--gold-border); padding:
       <label for="products">What products have you ordered or are interested in?</label>
       <textarea id="products" name="products" placeholder="Tell us what you've ordered or what you're thinking about..."></textarea>
     </div>
-    <button type="submit" class="btn btn-gold" style="align-self:flex-start;">Request My Vault Access</button>
+    <button type="submit" class="btn btn-primary" style="align-self:flex-start;">Request My Vault Access</button>
   </form>
 
   <div class="vault-links">
@@ -150,7 +162,8 @@ footer { background: #050505; border-top: 1px solid var(--gold-border); padding:
 
 <footer>
   <div class="footer-inner">
-    <span class="footer-copy">Long Live Your Legacy &mdash; mylegacycontinues.com &mdash; &copy; 2026 My Legacy Continues &mdash; Santa Maria, CA</span>
+    <img src="logo.png" alt="My Legacy Continues" class="footer-logo">
+    <div class="footer-copy">Long Live Your Legacy &mdash; mylegacycontinues.com &mdash; &copy; 2026 My Legacy Continues &mdash; Santa Maria, CA</div>
   </div>
 </footer>
 
@@ -160,6 +173,5 @@ const links = document.getElementById('navLinks');
 toggle.addEventListener('click', () => links.classList.toggle('open'));
 document.querySelectorAll('#navLinks a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
 </script>
-
 </body>
 </html>

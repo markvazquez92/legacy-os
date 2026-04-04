@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cemetery Memorial QR Plaque — $129 — My Legacy Continues</title>
+<meta name="description" content="A stainless steel QR plaque for any headstone. Scan to hear their songs, see photos, leave tributes. One-time $129. Hosted forever. My Legacy Continues.">
+<link rel="icon" href="logo.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+
+:root {
+  --bg:          #F4EFE6;
+  --bg-card:     #FFFFFF;
+  --bg-warm:     #EDE8DC;
+  --forest:      #1E2D1F;
+  --forest-dark: #162217;
+  --gold:        #C9A84C;
+  --gold-light:  #DFC06A;
+  --gold-dim:    rgba(201,168,76,0.55);
+  --gold-border: rgba(201,168,76,0.28);
+  --gold-wash:   rgba(201,168,76,0.08);
+  --text:        #2C2C2C;
+  --text-muted:  #5C5545;
+  --text-dim:    #9B8E77;
+  --cinzel: 'Cinzel', Georgia, serif;
+  --lora:   'Lora', Georgia, serif;
+  --sans:   -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: var(--lora); background: var(--bg); color: var(--text); line-height: 1.8; -webkit-font-smoothing: antialiased; }
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; height: auto; display: block; }
+
+.btn { display: inline-block; font-family: var(--cinzel); font-size: 0.72rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; padding: 16px 34px; min-height: 44px; border: none; cursor: pointer; transition: all 0.22s ease; text-decoration: none; white-space: nowrap; border-radius: 2px; }
+.btn-primary { background: var(--forest); color: var(--gold); box-shadow: 0 4px 20px rgba(30,45,31,0.22); }
+.btn-primary:hover { background: var(--forest-dark); transform: translateY(-2px); }
+.btn-outline { background: transparent; color: var(--forest); border: 1.5px solid var(--forest); }
+.btn-outline:hover { background: var(--forest); color: var(--gold); }
+
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 900; height: 68px; background: var(--forest); border-bottom: 1px solid rgba(201,168,76,0.25); display: flex; align-items: center; justify-content: space-between; padding: 0 48px; }
+.nav-logo { height: 40px; width: auto; }
+.nav-center { display: flex; align-items: center; gap: 26px; list-style: none; }
+.nav-center a { font-family: var(--sans); font-size: 0.78rem; color: rgba(244,239,230,0.75); letter-spacing: 0.02em; transition: color 0.2s; }
+.nav-center a:hover { color: var(--gold); }
+.nav-right { display: flex; align-items: center; gap: 12px; }
+.nav-lang { font-family: var(--cinzel); font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(244,239,230,0.5); border: 1px solid rgba(201,168,76,0.3); padding: 6px 14px; border-radius: 2px; cursor: pointer; background: none; transition: all 0.2s; }
+.nav-lang:hover { color: var(--gold); border-color: var(--gold); }
+.nav-vault-link { font-family: var(--cinzel); font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); border: 1px solid rgba(201,168,76,0.4); padding: 8px 16px; border-radius: 2px; transition: all 0.22s; }
+.nav-vault-link:hover { background: rgba(201,168,76,0.12); }
+.nav-toggle { display: none; background: none; border: none; cursor: pointer; flex-direction: column; gap: 5px; padding: 4px; }
+.nav-toggle span { display: block; width: 22px; height: 1.5px; background: var(--gold); }
+@media (max-width: 960px) {
+  nav { padding: 0 20px; }
+  .nav-center { display: none; flex-direction: column; position: fixed; top: 68px; left: 0; right: 0; background: var(--forest); padding: 24px 20px; gap: 0; border-bottom: 1px solid rgba(201,168,76,0.2); }
+  .nav-center.open { display: flex; }
+  .nav-center li { width: 100%; }
+  .nav-center a { display: block; padding: 14px 0; border-bottom: 1px solid rgba(201,168,76,0.1); font-size: 0.92rem; color: rgba(244,239,230,0.8); }
+  .nav-toggle { display: flex; }
+}
+
+/* PAGE HERO */
+.page-hero { background: var(--forest); padding: 130px 48px 72px; }
+.page-hero-inner { max-width: 860px; margin: 0 auto; }
+.back-link { font-family: var(--cinzel); font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(201,168,76,0.65); display: inline-flex; align-items: center; gap: 8px; margin-bottom: 28px; transition: color 0.2s; }
+.back-link:hover { color: var(--gold); }
+.back-link::before { content: '←'; font-size: 0.9rem; }
+.page-eyebrow { font-family: var(--cinzel); font-size: 0.56rem; letter-spacing: 0.32em; text-transform: uppercase; color: var(--gold); display: block; margin-bottom: 18px; }
+.page-title { font-family: var(--cinzel); font-size: clamp(2rem, 4.5vw, 3.2rem); font-weight: 700; color: #F4EFE6; line-height: 1.1; margin-bottom: 18px; }
+.page-sub { font-size: 1rem; color: rgba(244,239,230,0.7); line-height: 1.85; max-width: 600px; margin-bottom: 32px; }
+.price-badge { display: inline-block; font-family: var(--cinzel); font-size: 2.2rem; font-weight: 700; color: var(--gold); margin-bottom: 32px; }
+.price-note { font-size: 0.8rem; color: rgba(244,239,230,0.5); margin-top: -20px; margin-bottom: 28px; }
+@media (max-width: 600px) { .page-hero { padding: 116px 20px 56px; } }
+
+.gold-rule { height: 1px; background: var(--gold-border); }
+
+/* WHAT YOU GET */
+.what-section { padding: 72px 48px; background: var(--bg); }
+.what-inner { max-width: 860px; margin: 0 auto; }
+.what-section h2 { font-family: var(--cinzel); font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 700; color: var(--forest); margin-bottom: 32px; }
+.includes-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin-bottom: 40px; }
+.include-item { background: var(--bg-card); border: 1px solid var(--gold-border); border-radius: 4px; padding: 22px 20px; box-shadow: 0 2px 12px rgba(44,28,0,0.05); }
+.include-item-icon { font-size: 1.4rem; margin-bottom: 10px; }
+.include-item-title { font-family: var(--cinzel); font-size: 0.72rem; font-weight: 700; color: var(--forest); margin-bottom: 6px; }
+.include-item-desc { font-size: 0.8rem; color: var(--text-muted); line-height: 1.7; }
+@media (max-width: 600px) { .what-section { padding: 52px 20px; } }
+
+/* ORDER + FORM */
+.order-section { padding: 0 48px 80px; background: var(--bg); }
+.order-inner { max-width: 860px; margin: 0 auto; }
+.order-intro { background: var(--forest); border-radius: 4px; padding: 32px 36px; margin-bottom: 40px; }
+.order-intro p { font-size: 0.9rem; color: rgba(244,239,230,0.75); line-height: 1.85; margin-bottom: 16px; }
+.order-intro p:last-child { margin-bottom: 0; }
+.order-intro a { color: var(--gold); }
+.order-intro strong { color: #F4EFE6; }
+
+.form-section-title { font-family: var(--cinzel); font-size: 0.6rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; padding-bottom: 10px; border-bottom: 1px solid var(--gold-border); }
+.intake-form { display: flex; flex-direction: column; gap: 18px; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+@media (max-width: 600px) { .form-row { grid-template-columns: 1fr; } .order-section { padding: 0 20px 64px; } }
+.form-group { display: flex; flex-direction: column; gap: 8px; }
+.form-group label { font-family: var(--cinzel); font-size: 0.58rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-muted); }
+.form-group input,
+.form-group textarea,
+.form-group select { background: var(--bg-card); border: 1px solid var(--gold-border); border-radius: 2px; color: var(--text); font-family: var(--lora); font-size: 0.9rem; padding: 13px 16px; min-height: 44px; transition: border-color 0.2s; width: 100%; }
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus { outline: none; border-color: var(--gold); box-shadow: 0 0 0 3px rgba(201,168,76,0.1); }
+.form-group input::placeholder,
+.form-group textarea::placeholder { color: var(--text-dim); }
+.form-group textarea { min-height: 110px; resize: vertical; }
+.form-group select { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23C9A84C' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 16px center; padding-right: 40px; }
+.form-divider { height: 1px; background: var(--gold-border); margin: 8px 0; }
+.form-submit-row { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; margin-top: 8px; }
+.form-submit-note { font-size: 0.78rem; color: var(--text-dim); line-height: 1.6; }
+.stripe-cta { text-align: center; background: var(--bg-card); border: 1px solid var(--gold-border); border-radius: 4px; padding: 28px 32px; margin-bottom: 32px; box-shadow: 0 2px 12px rgba(44,28,0,0.05); }
+.stripe-cta p { font-size: 0.88rem; color: var(--text-muted); margin-bottom: 18px; line-height: 1.7; }
+.stripe-cta .price-label { font-family: var(--cinzel); font-size: 1.6rem; font-weight: 700; color: var(--forest); display: block; margin-bottom: 18px; }
+
+footer { background: var(--forest); border-top: 1px solid rgba(201,168,76,0.2); padding: 40px 48px 28px; }
+.footer-inner { max-width: 1060px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 20px; }
+.footer-logo { height: 48px; width: auto; opacity: 0.8; }
+.footer-copy { font-family: var(--cinzel); font-size: 0.56rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(244,239,230,0.4); text-align: center; }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html"><img src="logo.png" alt="My Legacy Continues" class="nav-logo"></a>
+  <ul class="nav-center" id="navLinks">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="cemetery-plaque.html">Cemetery Plaque</a></li>
+    <li><a href="heritage-book.html">Heritage Book</a></li>
+    <li><a href="pet-tag.html">Pet Tag</a></li>
+    <li><a href="business-profile.html">Business Profile</a></li>
+    <li><a href="rescue-registry.html">Rescue Registry</a></li>
+    <li><a href="portal.html" class="nav-vault-link">Vault</a></li>
+  </ul>
+  <div class="nav-right">
+    <button class="nav-lang" onclick="alert('Spanish version coming soon.')">EN | ES</button>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <a href="index.html" class="back-link">Back to All Products</a>
+    <span class="page-eyebrow">Memorial</span>
+    <h1 class="page-title">Cemetery Memorial<br>QR Plaque</h1>
+    <p class="page-sub">A stainless steel QR plaque for any headstone. Scan to hear their songs, see family photos, and leave tributes. Not mourning — visiting.</p>
+    <div class="price-badge">$129</div>
+    <p class="price-note">One-time purchase. Hosted forever at mylegacycontinues.com. No subscriptions.</p>
+    <a href="https://buy.stripe.com/6oU3cw15Z5pO7gw5msfQI06" class="btn btn-primary">Pay Now — $129</a>
+  </div>
+</div>
+
+<div class="gold-rule"></div>
+
+<section class="what-section">
+  <div class="what-inner">
+    <h2>What You're Getting</h2>
+    <div class="includes-grid">
+      <div class="include-item">
+        <div class="include-item-icon">⚓</div>
+        <div class="include-item-title">Stainless Steel Plaque</div>
+        <div class="include-item-desc">Weatherproof, fade-resistant. Attaches to any headstone with permanent adhesive. Built to last.</div>
+      </div>
+      <div class="include-item">
+        <div class="include-item-icon">🎵</div>
+        <div class="include-item-title">Their Favorite Songs</div>
+        <div class="include-item-desc">Up to 5 songs added to their memorial profile. Visitors scan and hear music that mattered to them.</div>
+      </div>
+      <div class="include-item">
+        <div class="include-item-icon">📸</div>
+        <div class="include-item-title">Photo & Memory Gallery</div>
+        <div class="include-item-desc">Family photos and stories preserved in a beautiful digital gallery. No app needed to view.</div>
+      </div>
+      <div class="include-item">
+        <div class="include-item-icon">🕯️</div>
+        <div class="include-item-title">Remembrance Mode</div>
+        <div class="include-item-desc">Candle glow interface automatically activates on birthdays and anniversaries.</div>
+      </div>
+      <div class="include-item">
+        <div class="include-item-icon">💬</div>
+        <div class="include-item-title">Tribute Wall</div>
+        <div class="include-item-desc">Family and friends can leave messages and memories directly on the profile. Forever preserved.</div>
+      </div>
+      <div class="include-item">
+        <div class="include-item-icon">🌐</div>
+        <div class="include-item-title">English & Spanish</div>
+        <div class="include-item-desc">Every profile is available in both languages. Their story told the way they lived it.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="gold-rule"></div>
+
+<section class="order-section" id="order">
+  <div class="order-inner">
+    <div style="padding-top:56px; margin-bottom:36px;">
+      <h2 style="font-family:var(--cinzel);font-size:clamp(1.4rem,3vw,2rem);font-weight:700;color:var(--forest);margin-bottom:12px;">Start Their Memorial</h2>
+      <p style="font-size:0.9rem;color:var(--text-muted);max-width:580px;line-height:1.85;">Pay first, then fill out the form below. We'll build their profile and ship the plaque within 5–7 business days.</p>
+    </div>
+
+    <div class="stripe-cta">
+      <p>Secure checkout through Stripe. One-time payment. Nothing recurring.</p>
+      <span class="price-label">Cemetery Memorial Plaque — $129</span>
+      <a href="https://buy.stripe.com/6oU3cw15Z5pO7gw5msfQI06" class="btn btn-primary">Pay $129 — Secure Checkout</a>
+    </div>
+
+    <form class="intake-form" action="https://formspree.io/f/xzzpqjle" method="POST">
+      <input type="hidden" name="_subject" value="New Cemetery Plaque Order">
+
+      <div class="form-section-title">About the Person Being Honored</div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="deceased-name">Full Name of Deceased *</label>
+          <input type="text" id="deceased-name" name="deceased_name" placeholder="e.g. Maria Elena Montemayor" required>
+        </div>
+        <div class="form-group">
+          <label for="birth-year">Birth Year *</label>
+          <input type="text" id="birth-year" name="birth_year" placeholder="e.g. 1932">
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="death-year">Year of Passing *</label>
+          <input type="text" id="death-year" name="death_year" placeholder="e.g. 2019">
+        </div>
+        <div class="form-group">
+          <label for="hometown">Hometown / Where They Were From</label>
+          <input type="text" id="hometown" name="hometown" placeholder="e.g. Sinton, Texas">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="songs">Favorite Songs (up to 5) — Title and Artist</label>
+        <textarea id="songs" name="favorite_songs" placeholder="e.g. Cielito Lindo — traditional / La Bamba — Ritchie Valens / ..." style="min-height:90px;"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="memory">A Memory or Story — Tell Us About Them</label>
+        <textarea id="memory" name="memory_story" placeholder="Share a favorite memory, what they meant to the family, how they lived — anything that captures who they were."></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="language">Language Preference for the Profile</label>
+        <select id="language" name="language_preference">
+          <option value="" disabled selected>Select preference</option>
+          <option value="English">English</option>
+          <option value="Spanish">Spanish</option>
+          <option value="Both">Both English and Spanish</option>
+        </select>
+      </div>
+
+      <div class="form-divider"></div>
+      <div class="form-section-title">Your Contact Information</div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="your-name">Your Full Name *</label>
+          <input type="text" id="your-name" name="your_name" placeholder="Your name" required>
+        </div>
+        <div class="form-group">
+          <label for="your-email">Your Email *</label>
+          <input type="email" id="your-email" name="your_email" placeholder="your@email.com" required>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="your-phone">Your Phone</label>
+        <input type="tel" id="your-phone" name="your_phone" placeholder="(805) 000-0000">
+      </div>
+
+      <div class="form-submit-row">
+        <button type="submit" class="btn btn-primary">Start Their Memorial</button>
+        <p class="form-submit-note">We'll confirm by email within 24 hours and follow up with any questions.</p>
+      </div>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <img src="logo.png" alt="My Legacy Continues" class="footer-logo">
+    <div class="footer-copy">Long Live Your Legacy &mdash; mylegacycontinues.com &mdash; &copy; 2026 My Legacy Continues &mdash; Santa Maria, CA</div>
+  </div>
+</footer>
+
+<script>
+const toggle = document.getElementById('navToggle');
+const links = document.getElementById('navLinks');
+toggle.addEventListener('click', () => links.classList.toggle('open'));
+document.querySelectorAll('#navLinks a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
+</script>
+</body>
+</html>
