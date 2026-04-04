@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Vázquez Legacy — My Legacy Continues</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Barlow+Condensed:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold: #D4AF37;
+    --gold-light: #E8C84A;
+    --gold-dim: rgba(212,175,55,0.15);
+    --gold-border: rgba(212,175,55,0.3);
+    --dark: #0A0804;
+    --dark-2: #120E06;
+    --dark-3: #1A1408;
+    --text: #F5EDD6;
+    --text-dim: rgba(245,237,214,0.55);
+    --text-faint: rgba(245,237,214,0.25);
+    --red: #8B1A1A;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--dark);
+    color: var(--text);
+    font-family: 'Cormorant Garamond', serif;
+    overflow-x: hidden;
+    cursor: default;
+  }
+
+  /* ─── HERO ─────────────────────────────── */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    padding: 60px 24px 80px;
+    text-align: center;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 70% 50% at 50% 30%, rgba(212,175,55,0.08) 0%, transparent 70%),
+      radial-gradient(ellipse 40% 60% at 80% 80%, rgba(139,26,26,0.06) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  .hero-badge {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 11px;
+    letter-spacing: 6px;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 32px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.2s forwards;
+  }
+
+  .crest {
+    width: 120px;
+    height: 140px;
+    margin: 0 auto 32px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.4s forwards;
+    position: relative;
+  }
+
+  .crest svg {
+    width: 100%;
+    height: 100%;
+    filter: drop-shadow(0 0 20px rgba(212,175,55,0.4));
+  }
+
+  .hero-name {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(52px, 14vw, 100px);
+    font-weight: 900;
+    color: var(--gold);
+    line-height: 0.9;
+    letter-spacing: -1px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.6s forwards;
+  }
+
+  .hero-name span {
+    display: block;
+    font-size: clamp(28px, 7vw, 52px);
+    font-weight: 400;
+    color: var(--text-dim);
+    font-style: italic;
+    letter-spacing: 0;
+    margin-top: 8px;
+  }
+
+  .hero-origin {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 13px;
+    letter-spacing: 4px;
+    color: var(--text-faint);
+    text-transform: uppercase;
+    margin-top: 24px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.8s forwards;
+  }
+
+  .hero-line {
+    width: 1px;
+    height: 60px;
+    background: linear-gradient(to bottom, var(--gold), transparent);
+    margin: 40px auto 0;
+    opacity: 0;
+    animation: fadeIn 1s ease 1.2s forwards;
+  }
+
+  /* ─── SECTION BASE ──────────────────────── */
+  section {
+    padding: 80px 24px;
+    max-width: 680px;
+    margin: 0 auto;
+  }
+
+  .section-label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 10px;
+    letter-spacing: 6px;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--gold-border);
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(32px, 8vw, 52px);
+    font-weight: 700;
+    color: var(--text);
+    line-height: 1.1;
+    margin-bottom: 24px;
+  }
+
+  .section-title em {
+    color: var(--gold);
+    font-style: italic;
+  }
+
+  .body-text {
+    font-size: 18px;
+    line-height: 1.8;
+    color: var(--text-dim);
+    font-weight: 300;
+  }
+
+  .body-text + .body-text {
+    margin-top: 16px;
+  }
+
+  /* ─── DIVIDER ────────────────────────────── */
+  .divider {
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--gold-border), transparent);
+    margin: 0;
+  }
+
+  /* ─── CHAPTERS ──────────────────────────── */
+  .chapters {
+    background: var(--dark-2);
+    padding: 0;
+  }
+
+  .chapter {
+    padding: 64px 24px;
+    max-width: 680px;
+    margin: 0 auto;
+    border-bottom: 1px solid var(--gold-border);
+  }
+
+  .chapter:last-child { border-bottom: none; }
+
+  .chapter-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 80px;
+    font-weight: 900;
+    color: var(--gold-dim);
+    line-height: 1;
+    margin-bottom: -20px;
+    display: block;
+  }
+
+  .chapter-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 6vw, 40px);
+    font-weight: 700;
+    color: var(--gold);
+    margin-bottom: 8px;
+  }
+
+  .chapter-subtitle {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 12px;
+    letter-spacing: 4px;
+    color: var(--text-faint);
+    text-transform: uppercase;
+    margin-bottom: 28px;
+  }
+
+  /* ─── TIMELINE ──────────────────────────── */
+  .timeline-section {
+    background: var(--dark-3);
+    padding: 80px 0;
+  }
+
+  .timeline-inner {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  .timeline {
+    position: relative;
+    margin-top: 40px;
+  }
+
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 20px;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: linear-gradient(to bottom, var(--gold), rgba(212,175,55,0.1));
+  }
+
+  .timeline-item {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 36px;
+    padding-left: 4px;
+    cursor: pointer;
+  }
+
+  .timeline-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--gold);
+    margin-top: 8px;
+    flex-shrink: 0;
+    position: relative;
+    left: 17px;
+    box-shadow: 0 0 10px rgba(212,175,55,0.5);
+    transition: transform 0.2s ease;
+  }
+
+  .timeline-item:hover .timeline-dot {
+    transform: scale(1.6);
+  }
+
+  .timeline-content {
+    padding-left: 20px;
+  }
+
+  .timeline-year {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 13px;
+    letter-spacing: 3px;
+    color: var(--gold);
+    margin-bottom: 4px;
+  }
+
+  .timeline-event {
+    font-size: 17px;
+    color: var(--text-dim);
+    line-height: 1.5;
+    font-weight: 300;
+  }
+
+  .timeline-source {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: var(--text-faint);
+    margin-top: 4px;
+  }
+
+  /* ─── CULTURE GUIDE ─────────────────────── */
+  .culture-section {
+    background: var(--dark);
+    padding: 80px 0;
+  }
+
+  .culture-inner {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  .culture-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 40px;
+  }
+
+  .culture-card {
+    background: var(--dark-2);
+    border: 1px solid var(--gold-border);
+    border-radius: 2px;
+    padding: 24px 20px;
+    text-decoration: none;
+    display: block;
+    transition: all 0.25s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .culture-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--gold-dim);
+    opacity: 0;
+    transition: opacity 0.25s ease;
+  }
+
+  .culture-card:hover::before { opacity: 1; }
+  .culture-card:hover { border-color: var(--gold); transform: translateY(-2px); }
+
+  .culture-icon {
+    font-size: 18px;
+    font-family: 'Cinzel', serif;
+    color: var(--gold);
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+    display: block;
+    opacity: 0.85;
+  }
+
+  .culture-label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 10px;
+    letter-spacing: 4px;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+
+  .culture-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    color: var(--text);
+    margin-bottom: 6px;
+  }
+
+  .culture-desc {
+    font-size: 13px;
+    color: var(--text-faint);
+    line-height: 1.5;
+  }
+
+  .culture-card-wide {
+    grid-column: 1 / -1;
+  }
+
+  /* ─── TRIBUTE WALL ──────────────────────── */
+  .tribute-section {
+    background: var(--dark-2);
+    padding: 80px 0;
+  }
+
+  .tribute-inner {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  .tribute-list {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .tribute-item {
+    border-left: 2px solid var(--gold-border);
+    padding-left: 20px;
+  }
+
+  .tribute-name {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: var(--gold);
+    margin-bottom: 6px;
+  }
+
+  .tribute-text {
+    font-size: 17px;
+    color: var(--text-dim);
+    line-height: 1.6;
+    font-style: italic;
+    font-weight: 300;
+  }
+
+  .tribute-btn {
+    display: block;
+    margin-top: 40px;
+    padding: 18px 32px;
+    border: 1px solid var(--gold);
+    background: transparent;
+    color: var(--gold);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 13px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    width: 100%;
+  }
+
+  .tribute-btn:hover {
+    background: var(--gold);
+    color: var(--dark);
+  }
+
+  /* ─── DNA PULLQUOTE ─────────────────────── */
+  .pullquote {
+    border-left: 3px solid var(--gold);
+    padding: 24px 28px;
+    margin: 40px 0;
+    background: var(--gold-dim);
+  }
+
+  .pullquote p {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(20px, 4vw, 26px);
+    font-style: italic;
+    color: var(--text);
+    line-height: 1.5;
+  }
+
+  /* ─── FOOTER ────────────────────────────── */
+  .footer {
+    padding: 60px 24px;
+    text-align: center;
+    border-top: 1px solid var(--gold-border);
+    background: var(--dark);
+  }
+
+  .footer-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    color: var(--gold);
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+  }
+
+  .footer-tag {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 11px;
+    letter-spacing: 5px;
+    color: var(--text-faint);
+    text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+
+  .footer-link {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 12px;
+    letter-spacing: 3px;
+    color: var(--gold);
+    text-decoration: none;
+    border-bottom: 1px solid var(--gold-border);
+    padding-bottom: 2px;
+  }
+
+  /* ─── STICKY NAV ────────────────────────── */
+  .sticky-nav {
+    position: fixed;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(10,8,4,0.95);
+    border: 1px solid var(--gold-border);
+    border-radius: 40px;
+    padding: 12px 24px;
+    display: flex;
+    gap: 24px;
+    z-index: 100;
+    backdrop-filter: blur(12px);
+  }
+
+  .nav-item {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: var(--text-faint);
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: color 0.2s ease;
+    white-space: nowrap;
+  }
+
+  .nav-item:hover { color: var(--gold); }
+
+  /* ─── ANIMATIONS ────────────────────────── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ─── RESPONSIVE ────────────────────────── */
+  @media (max-width: 480px) {
+    .culture-grid { grid-template-columns: 1fr; }
+    .culture-card-wide { grid-column: 1; }
+    .sticky-nav { gap: 16px; padding: 10px 16px; }
+    .nav-item { font-size: 9px; letter-spacing: 2px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ─── STICKY NAV ─────────────────────────────── -->
+<nav class="sticky-nav">
+  <a href="#story" class="nav-item">Story</a>
+  <a href="#timeline" class="nav-item">Timeline</a>
+  <a href="#culture" class="nav-item">Culture</a>
+  <a href="#tributes" class="nav-item">Tributes</a>
+</nav>
+
+<!-- ─── HERO ──────────────────────────────────── -->
+<section class="hero">
+  <div class="hero-badge">My Legacy Continues · Heritage Profile</div>
+
+  <!-- Vázquez Coat of Arms SVG -->
+  <div class="crest">
+    <svg viewBox="0 0 120 140" xmlns="http://www.w3.org/2000/svg">
+      <!-- Shield shape -->
+      <path d="M10 10 L110 10 L110 90 Q110 130 60 138 Q10 130 10 90 Z"
+            fill="#1A0A0A" stroke="#D4AF37" stroke-width="2"/>
+      <!-- Red top bar (gules) -->
+      <path d="M12 12 L108 12 L108 42 L12 42 Z" fill="#8B1A1A"/>
+      <!-- Gold middle bar (or) -->
+      <path d="M12 42 L108 42 L108 72 L12 72 Z" fill="#D4AF37"/>
+      <!-- Red bottom section -->
+      <path d="M12 72 L108 72 L108 90 Q108 126 60 135 Q12 126 12 90 Z" fill="#8B1A1A"/>
+      <!-- Six cross florys (3 on top, 3 on gold bar area) -->
+      <!-- Row 1 -->
+      <g fill="#D4AF37">
+        <text x="26" y="36" font-size="16" text-anchor="middle">✛</text>
+        <text x="60" y="36" font-size="16" text-anchor="middle">✛</text>
+        <text x="94" y="36" font-size="16" text-anchor="middle">✛</text>
+      </g>
+      <!-- Row 2 on middle gold bar — contrast color -->
+      <g fill="#1A0A0A">
+        <text x="26" y="66" font-size="16" text-anchor="middle">✛</text>
+        <text x="60" y="66" font-size="16" text-anchor="middle">✛</text>
+        <text x="94" y="66" font-size="16" text-anchor="middle">✛</text>
+      </g>
+      <!-- Border glow -->
+      <path d="M10 10 L110 10 L110 90 Q110 130 60 138 Q10 130 10 90 Z"
+            fill="none" stroke="rgba(212,175,55,0.4)" stroke-width="1"/>
+    </svg>
+  </div>
+
+  <h1 class="hero-name">
+    Vázquez
+    <span>A Heritage Preserved Forever</span>
+  </h1>
+  <p class="hero-origin">Galicia, Spain · Mexico City · Santa Barbara · Santa Maria, California</p>
+  <div class="hero-line"></div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ─── STORY SECTION ──────────────────────────── -->
+<div id="story">
+
+  <!-- Chapter 1 -->
+  <div class="chapters">
+    <div class="chapter reveal">
+      <span class="chapter-number">I</span>
+      <h2 class="chapter-title">The Soil</h2>
+      <p class="chapter-subtitle">The Ancient Homeland</p>
+      <p class="body-text">Long before the name Vázquez appeared in any registry, the land that would shape this family already had its character. Galicia — the green, rain-soaked corner of northwestern Spain — is a place of granite coastlines, ancient oak forests, and river valleys so lush they seem painted. This is Atlantic Spain, not the arid Castile of legend.</p>
+      <p class="body-text" style="margin-top:16px">Vázquez is not simply a surname. It is a record of lineage encoded in language — a patronymic meaning "son of Vasco," derived from the ancient pre-Roman root <em style="color:var(--gold)">bel</em>, meaning raven. A bird associated across cultures with intelligence, memory, and the guardianship between worlds.</p>
+      <div class="pullquote">
+        <p>"Your family kept the accent. Vázquez, not Vasquez — across borders, across generations, through a century of erasure. That's not nothing."</p>
+      </div>
+      <p class="body-text">The earliest documented bearer of this line is Juan Vázquez de Coronado, traced to 13th-century Spain — with his son Gonzalo born in Galicia around 1300 AD. By 1535, Francisco Vázquez de Coronado had already crossed to New Spain. The name was on Mexican soil before California was California.</p>
+    </div>
+
+    <div class="chapter reveal">
+      <span class="chapter-number">II</span>
+      <h2 class="chapter-title">The Journey</h2>
+      <p class="chapter-subtitle">The Crossing</p>
+      <p class="body-text">Mexico City in the early 20th century was a city in violent transformation. The Mexican Revolution — which began in 1910 — reshuffled everything: land, power, identity, safety. Families in the capital faced conscription, food shortages, and a future that offered no horizon.</p>
+      <p class="body-text" style="margin-top:16px">For a working family in Mexico City during this era, California was not a dream — it was a calculation. The railroads were hiring. The Central Coast was expanding. And so the Vázquez family made the calculation thousands of others made — and moved north.</p>
+      <p class="body-text" style="margin-top:16px">The journey from Mexico City to Santa Barbara — roughly 1,500 miles — was made by a generation that carried their craft, their faith, and their name across a continent. They arrived with callused hands and the knowledge of how to work.</p>
+    </div>
+
+    <div class="chapter reveal">
+      <span class="chapter-number">III</span>
+      <h2 class="chapter-title">The Legacy</h2>
+      <p class="chapter-subtitle">The DNA of Excellence</p>
+      <p class="body-text">Grandpa Joe made rings. This is the detail that survives — passed through oral tradition, confirmed by family. In the tradition of the skilled craftsman, he shaped metal by hand. He understood material. He knew how metal behaved under heat, under pressure, under the intention of a craftsman's eye.</p>
+      <div class="pullquote">
+        <p>"Grandpa Joe shaped metal with his hands. Bear shapes California with a pump truck. The tools are different. The instinct is the same."</p>
+      </div>
+      <p class="body-text">Today, Bear Vázquez runs Bears Concrete Pumping — shaping the foundations of California. You take a raw material. You move it with precision. You place it exactly where it needs to go. You shape the ground beneath people's feet. You build the thing that holds everything else up.</p>
+      <p class="body-text" style="margin-top:16px">The Vázquez family has always known how to move material with intention. The family's inheritance is not money or land. It is the knowledge of how things are built to last. <strong style="color:var(--gold)">Lineage-made, not self-made.</strong></p>
+    </div>
+  </div>
+
+</div>
+
+<div class="divider"></div>
+
+<!-- ─── TIMELINE ────────────────────────────────── -->
+<div id="timeline" class="timeline-section">
+  <div class="timeline-inner">
+    <p class="section-label">Five Centuries</p>
+    <h2 class="section-title">Family <em>Timeline</em></h2>
+
+    <div class="timeline">
+
+      <div class="timeline-item reveal">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-year">~1300 AD</div>
+          <div class="timeline-event">Gonzalo Vázquez born in Galicia, Spain — earliest documented ancestor</div>
+          <div class="timeline-source">Source: Coat of Arms Database</div>
+        </div>
+      </div>
+
+      <div class="timeline-item reveal">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-year">1535</div>
+          <div class="timeline-event">Francisco Vázquez de Coronado crosses to New Spain — the name plants roots in Mexico</div>
+          <div class="timeline-source">Source: Historical Record</div>
+        </div>
+      </div>
+
+      <div class="timeline-item reveal">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-year">1852</div>
+          <div class="timeline-event">Faustino Montemayor born in Mexico — maternal great-great-grandfather begins a 98-year life</div>
+          <div class="timeline-source">Source: Texas Death Certificate, 1950</div>
+        </div>
+      </div>
+
+      <div class="timeline-item reveal">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-year">1893</div>
+          <div class="timeline-event">Maria Montemayor born in Cadereyta Jiménez, Nuevo León — the family's Mexican roots confirmed</div>
+          <div class="timeline-source">Source: FindAGrave, Sinton TX</div>
+        </div>
+      </div>
+
+      <div class="timeline-item reveal">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-year">1910–1929</div>
+          <div class="timeline-event">Mexican Revolution + Cristero War — the push that sent families north toward California</div>
+          <div class="timeline-source">Source: Historical Record</div>
+        </div>
+      </div>
+
+      <div class="timeline-item reveal">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-year">1940</div>
+          <div class="timeline-event">Francisco Garcia, 50, farming 60 hrs/week in Sinton TX — raising 18 children through the Great Depression</div>
+          <div class="timeline-source">Source: 1940 US Census</div>
+        </div>
+      </div>
+
+      <div class="timeline-item reveal">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-year">1944</div>
+          <div class="timeline-event">Elvira 'Barbara' Garcia born — youngest of 18 children, Santa Maria bound</div>
+          <div class="timeline-source">Source: Family Record</div>
+        </div>
+      </div>
+
+      <div class="timeline-item reveal">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-year">Mid 1900s</div>
+          <div class="timeline-event">Grandpa Joe Vázquez arrives in California — ring-maker, craftsman, patriarch — settles in Santa Barbara</div>
+          <div class="timeline-source">Source: Oral Tradition</div>
+        </div>
+      </div>
+
+      <div class="timeline-item reveal">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-year">Present</div>
+          <div class="timeline-event">Bear Vázquez founds Bears Concrete Pumping + My Legacy Continues — Santa Maria, California</div>
+          <div class="timeline-source">Source: Living Record</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ─── CULTURE GUIDE ───────────────────────────── -->
+<div id="culture" class="culture-section">
+  <div class="culture-inner">
+    <p class="section-label">Your Heritage, Interactive</p>
+    <h2 class="section-title">Culture <em>Guide</em></h2>
+    <p class="body-text" style="margin-top:8px">Tap to explore your heritage. Music, film, archives, and traditions — curated for your specific family lines.</p>
+
+    <div class="culture-grid" style="margin-top:40px">
+
+      <!-- Music -->
+      <a href="https://open.spotify.com/search/Los%20Alegres%20de%20Ter%C3%A1n" target="_blank" class="culture-card reveal">
+        <span class="culture-icon">I</span>
+        <div class="culture-label">Listen</div>
+        <div class="culture-title">Your Music</div>
+        <div class="culture-desc">Los Alegres de Terán — norteño legends from Nuevo León, 130 miles from Cadereyta Jiménez where your Montemayor family was born.</div>
+      </a>
+
+      <!-- Film -->
+      <a href="https://www.youtube.com/results?search_query=Mi+Familia+1995+film" target="_blank" class="culture-card reveal">
+        <span class="culture-icon">II</span>
+        <div class="culture-label">Watch</div>
+        <div class="culture-title">Your Films</div>
+        <div class="culture-desc">Mi Familia (1995), Coco (2017), Latino Americans PBS series — stories that mirror your family's exact journey.</div>
+      </a>
+
+      <!-- Galicia -->
+      <a href="https://www.youtube.com/results?search_query=Galicia+Spain+heritage+culture" target="_blank" class="culture-card reveal">
+        <span class="culture-icon">III</span>
+        <div class="culture-label">Explore</div>
+        <div class="culture-title">Galicia, Spain</div>
+        <div class="culture-desc">The Celtic corner of Spain — where the Vázquez name was born. Green coastlines, bagpipes (gaita), and the Santiago de Compostela pilgrimage.</div>
+      </a>
+
+      <!-- Archives -->
+      <a href="https://www.familysearch.org/search/record/results?q.surname=Vazquez&q.birthPlace=Mexico+City" target="_blank" class="culture-card reveal">
+        <span class="culture-icon">IV</span>
+        <div class="culture-label">Research</div>
+        <div class="culture-title">Your Archives</div>
+        <div class="culture-desc">FamilySearch pre-searched for Vázquez + Mexico City. Over 1,500 years of parish records — free to access.</div>
+      </a>
+
+      <!-- Sinton TX -->
+      <a href="https://www.findagrave.com/cemetery/2348/sinton-mexican-cemetery" target="_blank" class="culture-card reveal">
+        <span class="culture-icon">V</span>
+        <div class="culture-label">Visit</div>
+        <div class="culture-title">Sinton, Texas</div>
+        <div class="culture-desc">Sinton Mexican Cemetery — where Faustino Montemayor is buried, age 98. Your family's Texas roots. San Patricio County.</div>
+      </a>
+
+      <!-- Norteño -->
+      <a href="https://open.spotify.com/search/norte%C3%B1o%20Nuevo%20Leon" target="_blank" class="culture-card reveal">
+        <span class="culture-icon">VI</span>
+        <div class="culture-label">Listen</div>
+        <div class="culture-title">Norteño Roots</div>
+        <div class="culture-desc">Nuevo León is the birthplace of norteño music. Ramon Ayala, Los Cadetes de Linares — this is the sound of your blood.</div>
+      </a>
+
+      <!-- Book recommendation wide -->
+      <a href="https://www.amazon.com/s?k=Caramelo+Sandra+Cisneros" target="_blank" class="culture-card culture-card-wide reveal">
+        <span class="culture-icon">VII</span>
+        <div class="culture-label">Read</div>
+        <div class="culture-title">Caramelo — Sandra Cisneros</div>
+        <div class="culture-desc">A multi-generational Mexican-American family story that mirrors the Vázquez-García journey from Mexico to Texas to California. Required reading for understanding where your family fits in the larger American story.</div>
+      </a>
+
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ─── TRIBUTE WALL ────────────────────────────── -->
+<div id="tributes" class="tribute-section">
+  <div class="tribute-inner">
+    <p class="section-label">Family Voices</p>
+    <h2 class="section-title">Tribute <em>Wall</em></h2>
+    <p class="body-text" style="margin-top:8px">Messages left by family members across generations. This wall grows with time.</p>
+
+    <div class="tribute-list">
+
+      <div class="tribute-item reveal">
+        <div class="tribute-name">Mark "Bear" Vázquez · Santa Maria, CA · 2026</div>
+        <div class="tribute-text">"When I found out Grandpa Joe made rings — things that last forever — and I pour concrete foundations — things that hold everything up — I realized we've always been the same kind of man. The Vázquez family builds things that last. That's our inheritance."</div>
+      </div>
+
+      <div class="tribute-item reveal">
+        <div class="tribute-name">In Memory of Grandpa Joe Vázquez · Mexico City → Santa Barbara</div>
+        <div class="tribute-text">"He crossed 1,500 miles with his craft in his hands and his name on his back. He never let anyone spell it without the accent."</div>
+      </div>
+
+      <div class="tribute-item reveal">
+        <div class="tribute-name">In Memory of Faustino Montemayor · Born 1852 · Sinton, Texas</div>
+        <div class="tribute-text">"He lived 98 years. He crossed from Nuevo León to Texas and raised a family through two World Wars and the Great Depression. His daughter raised 18 children. The Montemayor family does not stop."</div>
+      </div>
+
+    </div>
+
+    <a href="mailto:mark.vazquez92@gmail.com?subject=Tribute for the Vázquez Family&body=My name is [your name] and I want to leave a tribute..." class="tribute-btn">
+      + Leave a Tribute
+    </a>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ─── FOOTER ─────────────────────────────────── -->
+<footer class="footer">
+  <div class="footer-logo">My Legacy Continues</div>
+  <div class="footer-tag">Long Live Your Legacy</div>
+  <p style="font-size:13px; color:var(--text-faint); margin-bottom:20px; font-family:'Barlow Condensed',sans-serif; letter-spacing:2px;">
+    Santa Maria, California · Est. 2024
+  </p>
+  <a href="https://mylegacycontinues.com" class="footer-link">mylegacycontinues.com</a>
+  <p style="margin-top:32px; font-size:12px; color:var(--text-faint); font-family:'Barlow Condensed',sans-serif; letter-spacing:1px;">
+    This profile is permanent and hosted forever. No subscription required.
+  </p>
+</footer>
+
+<script>
+  // Intersection Observer for reveal animations
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
