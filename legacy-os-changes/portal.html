@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Legacy Vault — My Legacy Continues</title>
+<meta name="description" content="The Legacy Vault — a place to save the stories that matter most. Request access to your family's permanent record. My Legacy Continues — Santa Maria, CA.">
+<link rel="icon" href="logo.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IM+Fell+English&display=swap" rel="stylesheet">
+<style>
+
+:root{--bg:#202e1f;--bg-card:#192619;--bg-warm:#192619;--bg-nav:#141f13;--forest:#202e1f;--forest-dark:#141f13;--gold:#D4AF37;--gold-light:#e8c93f;--gold-dim:rgba(201,168,76,0.55);--gold-border:rgba(201,168,76,0.25);--gold-wash:rgba(201,168,76,0.08);--heading:#E8DFC8;--heading-hover:#D4C9A8;--text:#F0EAD6;--text-muted:#B5A98A;--text-dim:#B5A98A;--im-fell:'IM Fell English',serif;--sans:Inter,-apple-system,sans-serif;--cinzel:'IM Fell English',serif;--lora:Inter,-apple-system,sans-serif;--serif:'IM Fell English',serif;}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: var(--lora); background: var(--bg); color: var(--text); line-height: 1.8; -webkit-font-smoothing: antialiased; }
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; height: auto; display: block; }
+
+.btn { display: inline-block; font-family: var(--cinzel); font-size: 0.72rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; padding: 16px 34px; min-height: 44px; border: none; cursor: pointer; transition: all 0.22s ease; text-decoration: none; white-space: nowrap; border-radius: 2px; }
+.btn-primary { background: var(--forest); color: var(--gold); box-shadow: 0 4px 20px rgba(30,45,31,0.22); }
+.btn-primary:hover { background: var(--forest-dark); transform: translateY(-2px); }
+.btn-outline { background: transparent; color: var(--heading); border: 1.5px solid var(--forest); }
+.btn-outline:hover { background: var(--forest); color: var(--gold); }
+
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 900; height: 68px; background: #141f13; border-bottom: 1px solid rgba(201,168,76,0.25); display: flex; align-items: center; justify-content: space-between; padding: 0 48px; }
+.nav-logo { height: 40px; width: auto; }
+.nav-center { display: flex; align-items: center; gap: 26px; list-style: none; }
+.nav-center a { font-family: var(--sans); font-size: 0.78rem; color: rgba(244,239,230,0.75); letter-spacing: 0.02em; transition: color 0.2s; }
+.nav-center a:hover { color: var(--gold); }
+.nav-right { display: flex; align-items: center; gap: 12px; }
+.nav-lang { font-family: var(--cinzel); font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(244,239,230,0.5); border: 1px solid rgba(201,168,76,0.3); padding: 6px 14px; border-radius: 2px; cursor: pointer; background: none; transition: all 0.2s; }
+.nav-lang:hover { color: var(--gold); border-color: var(--gold); }
+.nav-vault-link { font-family: var(--cinzel); font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); border: 1px solid rgba(201,168,76,0.4); padding: 8px 16px; border-radius: 2px; transition: all 0.22s; }
+.nav-vault-link:hover { background: rgba(201,168,76,0.12); }
+.nav-toggle { display: none; background: none; border: none; cursor: pointer; flex-direction: column; gap: 5px; padding: 4px; }
+.nav-toggle span { display: block; width: 22px; height: 1.5px; background: var(--gold); }
+@media (max-width: 960px) {
+  nav { padding: 0 20px; }
+  .nav-center { display: none; flex-direction: column; position: fixed; top: 68px; left: 0; right: 0; background: var(--forest); padding: 24px 20px; gap: 0; border-bottom: 1px solid rgba(201,168,76,0.2); }
+  .nav-center.open { display: flex; }
+  .nav-center li { width: 100%; }
+  .nav-center a { display: block; padding: 14px 0; border-bottom: 1px solid rgba(201,168,76,0.1); font-size: 0.92rem; color: rgba(244,239,230,0.8); }
+  .nav-toggle { display: flex; }
+}
+
+/* PAGE HEADER */
+.page-header { background: var(--forest); padding: 130px 48px 64px; text-align: center; }
+.page-header-inner { max-width: 660px; margin: 0 auto; }
+.page-eyebrow { font-family: var(--cinzel); font-size: 0.56rem; letter-spacing: 0.32em; text-transform: uppercase; color: var(--gold); display: block; margin-bottom: 18px; }
+.page-title { font-family: var(--cinzel); font-size: clamp(2rem, 4.5vw, 3.2rem); font-weight: 700; color: #F4EFE6; line-height: 1.1; margin-bottom: 18px; }
+.page-sub { font-size: 1rem; color: rgba(244,239,230,0.7); line-height: 1.85; }
+@media (max-width: 600px) { .page-header { padding: 116px 20px 48px; } }
+
+.gold-rule { height: 1px; background: var(--gold-border); }
+
+/* VAULT BODY */
+.vault-body { padding: 56px 48px 80px; max-width: 760px; margin: 0 auto; }
+@media (max-width: 600px) { .vault-body { padding: 40px 20px 64px; } }
+
+.vault-desc { font-size: 0.92rem; color: var(--text-muted); line-height: 1.95; margin-bottom: 40px; padding: 28px 32px; border: 1px solid var(--gold-border); border-radius: 4px; background: var(--bg-card); box-shadow: 0 2px 12px rgba(44,28,0,0.05); }
+
+.vault-form { display: flex; flex-direction: column; gap: 18px; margin-bottom: 40px; }
+.form-group { display: flex; flex-direction: column; gap: 8px; }
+.form-group label { font-family: var(--cinzel); font-size: 0.58rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-muted); }
+.form-group input,
+.form-group textarea { background: var(--bg-card); border: 1px solid var(--gold-border); border-radius: 2px; color: var(--text); font-family: var(--lora); font-size: 0.9rem; padding: 13px 16px; min-height: 44px; transition: border-color 0.2s; width: 100%; }
+.form-group input:focus,
+.form-group textarea:focus { outline: none; border-color: var(--gold); box-shadow: 0 0 0 3px rgba(201,168,76,0.1); }
+.form-group textarea { min-height: 120px; resize: vertical; }
+.form-group input::placeholder,
+.form-group textarea::placeholder { color: var(--text-dim); }
+
+.vault-links { display: flex; gap: 20px; flex-wrap: wrap; padding-top: 24px; border-top: 1px solid var(--gold-border); }
+.vault-links a { font-family: var(--cinzel); font-size: 0.62rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--text-dim); transition: color 0.2s; }
+.vault-links a:hover { color: var(--gold); }
+
+footer { background: var(--forest); border-top: 1px solid rgba(201,168,76,0.2); padding: 40px 48px 28px; }
+.footer-inner { max-width: 1060px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 20px; }
+.footer-logo { height: 48px; width: auto; opacity: 0.8; }
+.footer-copy { font-family: var(--cinzel); font-size: 0.56rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(244,239,230,0.4); text-align: center; }
+</style>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <a href="index.html"><img src="logo.png" alt="My Legacy Continues" class="nav-logo"></a>
+  <ul class="nav-center" id="navLinks">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="cemetery-plaque.html">Cemetery Plaque</a></li>
+    <li><a href="heritage-book.html">Heritage Book</a></li>
+    <li><a href="pet-tag.html">Pet Tag</a></li>
+    <li><a href="business-profile.html">Business Profile</a></li>
+    <li><a href="rescue-registry.html">Rescue Registry</a></li>
+    <li><a href="portal.html" class="nav-vault-link">Vault</a></li>
+  </ul>
+  <div class="nav-right">
+    <button class="nav-lang" onclick="alert('Spanish version coming soon.')">EN | ES</button>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div class="page-header">
+  <div class="page-header-inner">
+    <span class="page-eyebrow">Members Only</span>
+    <h1 class="page-title">Your Legacy Vault</h1>
+    <p class="page-sub">A place to save the stories that matter most.</p>
+  </div>
+</div>
+
+<div class="gold-rule"></div>
+
+<div class="vault-body">
+  <div class="vault-desc">
+    The Legacy Vault is where your family's full digital record lives — heritage books, memorial profiles, pet tags, and business legacies, all connected under one family account. Right now we're building this for you personally. Request access below and we'll set up your family's vault within 48 hours.
+  </div>
+
+  <form class="vault-form" action="https://formspree.io/f/xzzpqjle" method="POST">
+    <input type="hidden" name="_subject" value="Vault Access Request">
+    <div class="form-group">
+      <label for="fullname">Full Name *</label>
+      <input type="text" id="fullname" name="fullname" placeholder="Your full name" required>
+    </div>
+    <div class="form-group">
+      <label for="email">Email *</label>
+      <input type="email" id="email" name="email" placeholder="your@email.com" required>
+    </div>
+    <div class="form-group">
+      <label for="phone">Phone *</label>
+      <input type="tel" id="phone" name="phone" placeholder="(805) 000-0000" required>
+    </div>
+    <div class="form-group">
+      <label for="products">What products have you ordered or are interested in?</label>
+      <textarea id="products" name="products" placeholder="Tell us what you've ordered or what you're thinking about..."></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary" style="align-self:flex-start;">Request My Vault Access</button>
+  </form>
+
+  <div class="vault-links">
+    <a href="rescue-registry.html">View Rescue Registry</a>
+    <a href="trade-profile.html">View Trade Profile Example</a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <img src="logo.png" alt="My Legacy Continues" class="footer-logo">
+    <div class="footer-copy">Long Live Your Legacy &mdash; mylegacycontinues.com &mdash; &copy; 2026 My Legacy Continues &mdash; Santa Maria, CA</div>
+  </div>
+</footer>
+
+<script>
+const toggle = document.getElementById('navToggle');
+const links = document.getElementById('navLinks');
+toggle.addEventListener('click', () => links.classList.toggle('open'));
+document.querySelectorAll('#navLinks a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
+</script>
+</body>
+</html>
