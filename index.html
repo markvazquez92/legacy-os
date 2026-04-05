@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -11,145 +12,145 @@
 <style>
 
 :root {
-  --bg:          #F4EFE6;
-  --bg-card:     #FFFFFF;
-  --bg-warm:     #EDE8DC;
-  --forest:      #1E2D1F;
-  --forest-dark: #162217;
-  --gold:        #C9A84C;
-  --gold-light:  #DFC06A;
-  --gold-dim:    rgba(201,168,76,0.55);
-  --gold-border: rgba(201,168,76,0.28);
-  --gold-wash:   rgba(201,168,76,0.08);
-  --text:        #2C2C2C;
-  --text-muted:  #5C5545;
-  --text-dim:    #9B8E77;
-  --serif: Georgia, 'Times New Roman', serif;
-  --sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
-  --cinzel: 'Cinzel', Georgia, serif;
-  --lora:   'Lora', Georgia, serif;
+–bg:          #F4EFE6;
+–bg-card:     #FFFFFF;
+–bg-warm:     #EDE8DC;
+–forest:      #1E2D1F;
+–forest-dark: #162217;
+–gold:        #C9A84C;
+–gold-light:  #DFC06A;
+–gold-dim:    rgba(201,168,76,0.55);
+–gold-border: rgba(201,168,76,0.28);
+–gold-wash:   rgba(201,168,76,0.08);
+–text:        #2C2C2C;
+–text-muted:  #5C5545;
+–text-dim:    #9B8E77;
+–serif: Georgia, ‘Times New Roman’, serif;
+–sans: -apple-system, BlinkMacSystemFont, ‘Segoe UI’, ‘Helvetica Neue’, sans-serif;
+–cinzel: ‘Cinzel’, Georgia, serif;
+–lora:   ‘Lora’, Georgia, serif;
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
-body { font-family: var(--lora); background: var(--bg); color: var(--text); line-height: 1.8; -webkit-font-smoothing: antialiased; }
+body { font-family: var(–lora); background: var(–bg); color: var(–text); line-height: 1.8; -webkit-font-smoothing: antialiased; }
 a { color: inherit; text-decoration: none; }
 img { max-width: 100%; height: auto; display: block; }
 
 .btn {
-  display: inline-block;
-  font-family: var(--cinzel);
-  font-size: 0.72rem;
-  font-weight: 600;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  padding: 16px 34px;
-  min-height: 44px;
-  border: none;
-  cursor: pointer;
-  transition: all 0.22s ease;
-  text-decoration: none;
-  white-space: nowrap;
-  border-radius: 2px;
+display: inline-block;
+font-family: var(–cinzel);
+font-size: 0.72rem;
+font-weight: 600;
+letter-spacing: 0.14em;
+text-transform: uppercase;
+padding: 16px 34px;
+min-height: 44px;
+border: none;
+cursor: pointer;
+transition: all 0.22s ease;
+text-decoration: none;
+white-space: nowrap;
+border-radius: 2px;
 }
-.btn-primary { background: var(--forest); color: var(--gold); box-shadow: 0 4px 20px rgba(30,45,31,0.22); }
-.btn-primary:hover { background: var(--forest-dark); transform: translateY(-2px); box-shadow: 0 8px 28px rgba(30,45,31,0.32); }
-.btn-outline { background: transparent; color: var(--forest); border: 1.5px solid var(--forest); }
-.btn-outline:hover { background: var(--forest); color: var(--gold); }
-.btn-gold-outline { background: transparent; color: var(--gold); border: 1.5px solid rgba(201,168,76,0.5); }
-.btn-gold-outline:hover { border-color: var(--gold); background: var(--gold-wash); }
+.btn-primary { background: var(–forest); color: var(–gold); box-shadow: 0 4px 20px rgba(30,45,31,0.22); }
+.btn-primary:hover { background: var(–forest-dark); transform: translateY(-2px); box-shadow: 0 8px 28px rgba(30,45,31,0.32); }
+.btn-outline { background: transparent; color: var(–forest); border: 1.5px solid var(–forest); }
+.btn-outline:hover { background: var(–forest); color: var(–gold); }
+.btn-gold-outline { background: transparent; color: var(–gold); border: 1.5px solid rgba(201,168,76,0.5); }
+.btn-gold-outline:hover { border-color: var(–gold); background: var(–gold-wash); }
 .btn-sm { padding: 12px 24px; font-size: 0.68rem; }
 
 /* ── NAV ── */
 nav {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 900;
-  height: 68px;
-  background: var(--forest);
-  border-bottom: 1px solid rgba(201,168,76,0.25);
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 0 48px;
+position: fixed; top: 0; left: 0; right: 0; z-index: 900;
+height: 68px;
+background: var(–forest);
+border-bottom: 1px solid rgba(201,168,76,0.25);
+display: flex; align-items: center; justify-content: space-between;
+padding: 0 48px;
 }
 .nav-logo { height: 40px; width: auto; }
 .nav-center { display: flex; align-items: center; gap: 26px; list-style: none; }
-.nav-center a { font-family: var(--sans); font-size: 0.78rem; color: rgba(244,239,230,0.75); letter-spacing: 0.02em; transition: color 0.2s; }
-.nav-center a:hover { color: var(--gold); }
+.nav-center a { font-family: var(–sans); font-size: 0.78rem; color: rgba(244,239,230,0.75); letter-spacing: 0.02em; transition: color 0.2s; }
+.nav-center a:hover { color: var(–gold); }
 .nav-right { display: flex; align-items: center; gap: 12px; }
-.nav-lang { font-family: var(--cinzel); font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(244,239,230,0.5); border: 1px solid rgba(201,168,76,0.3); padding: 6px 14px; border-radius: 2px; cursor: pointer; background: none; transition: all 0.2s; }
-.nav-lang:hover { color: var(--gold); border-color: var(--gold); }
-.nav-vault-link { font-family: var(--cinzel); font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); border: 1px solid rgba(201,168,76,0.4); padding: 8px 16px; border-radius: 2px; transition: all 0.22s; }
-.nav-vault-link:hover { background: rgba(201,168,76,0.12); border-color: var(--gold); }
+.nav-lang { font-family: var(–cinzel); font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(244,239,230,0.5); border: 1px solid rgba(201,168,76,0.3); padding: 6px 14px; border-radius: 2px; cursor: pointer; background: none; transition: all 0.2s; }
+.nav-lang:hover { color: var(–gold); border-color: var(–gold); }
+.nav-vault-link { font-family: var(–cinzel); font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(–gold); border: 1px solid rgba(201,168,76,0.4); padding: 8px 16px; border-radius: 2px; transition: all 0.22s; }
+.nav-vault-link:hover { background: rgba(201,168,76,0.12); border-color: var(–gold); }
 .nav-toggle { display: none; background: none; border: none; cursor: pointer; flex-direction: column; gap: 5px; padding: 4px; }
-.nav-toggle span { display: block; width: 22px; height: 1.5px; background: var(--gold); }
+.nav-toggle span { display: block; width: 22px; height: 1.5px; background: var(–gold); }
 @media (max-width: 960px) {
-  nav { padding: 0 20px; }
-  .nav-center { display: none; flex-direction: column; position: fixed; top: 68px; left: 0; right: 0; background: var(--forest); padding: 24px 20px; gap: 0; border-bottom: 1px solid rgba(201,168,76,0.2); }
-  .nav-center.open { display: flex; }
-  .nav-center li { width: 100%; }
-  .nav-center a { display: block; padding: 14px 0; border-bottom: 1px solid rgba(201,168,76,0.1); font-size: 0.92rem; color: rgba(244,239,230,0.8); }
-  .nav-toggle { display: flex; }
+nav { padding: 0 20px; }
+.nav-center { display: none; flex-direction: column; position: fixed; top: 68px; left: 0; right: 0; background: var(–forest); padding: 24px 20px; gap: 0; border-bottom: 1px solid rgba(201,168,76,0.2); }
+.nav-center.open { display: flex; }
+.nav-center li { width: 100%; }
+.nav-center a { display: block; padding: 14px 0; border-bottom: 1px solid rgba(201,168,76,0.1); font-size: 0.92rem; color: rgba(244,239,230,0.8); }
+.nav-toggle { display: flex; }
 }
 
 /* ── HERO ── */
 .hero {
-  background: var(--forest);
-  min-height: 100vh;
-  display: flex; align-items: center; justify-content: center;
-  padding: 120px 48px 80px;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
+background: var(–forest);
+min-height: 100vh;
+display: flex; align-items: center; justify-content: center;
+padding: 120px 48px 80px;
+text-align: center;
+position: relative;
+overflow: hidden;
 }
 .hero::before {
-  content: '';
-  position: absolute; inset: 0;
-  background: radial-gradient(ellipse at center top, rgba(201,168,76,0.06) 0%, transparent 65%);
-  pointer-events: none;
+content: ‘’;
+position: absolute; inset: 0;
+background: radial-gradient(ellipse at center top, rgba(201,168,76,0.06) 0%, transparent 65%);
+pointer-events: none;
 }
 .hero-content { position: relative; z-index: 1; max-width: 760px; }
 .hero-logo { width: 160px; height: 160px; object-fit: contain; margin: 0 auto 36px; filter: drop-shadow(0 4px 24px rgba(201,168,76,0.35)); }
-.hero-eyebrow { font-family: var(--cinzel); font-size: 0.58rem; letter-spacing: 0.32em; text-transform: uppercase; color: var(--gold); display: block; margin-bottom: 22px; }
-.hero-title { font-family: var(--cinzel); font-size: clamp(2rem, 5vw, 3.8rem); font-weight: 700; line-height: 1.12; color: #F4EFE6; margin-bottom: 24px; letter-spacing: 0.01em; }
-.hero-subtitle { font-family: var(--lora); font-size: clamp(0.9rem, 1.8vw, 1.05rem); color: rgba(244,239,230,0.72); line-height: 1.9; max-width: 560px; margin: 0 auto 44px; }
+.hero-eyebrow { font-family: var(–cinzel); font-size: 0.58rem; letter-spacing: 0.32em; text-transform: uppercase; color: var(–gold); display: block; margin-bottom: 22px; }
+.hero-title { font-family: var(–cinzel); font-size: clamp(2rem, 5vw, 3.8rem); font-weight: 700; line-height: 1.12; color: #F4EFE6; margin-bottom: 24px; letter-spacing: 0.01em; }
+.hero-subtitle { font-family: var(–lora); font-size: clamp(0.9rem, 1.8vw, 1.05rem); color: rgba(244,239,230,0.72); line-height: 1.9; max-width: 560px; margin: 0 auto 44px; }
 .hero-ctas { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
-.hero-divider { width: 60px; height: 1px; background: var(--gold); margin: 0 auto 32px; opacity: 0.5; }
+.hero-divider { width: 60px; height: 1px; background: var(–gold); margin: 0 auto 32px; opacity: 0.5; }
 @media (max-width: 600px) { .hero { padding: 110px 24px 64px; } .hero-logo { width: 120px; height: 120px; } }
 
 /* ── GOLD RULE ── */
-.gold-rule { height: 1px; background: var(--gold-border); margin: 0; }
+.gold-rule { height: 1px; background: var(–gold-border); margin: 0; }
 
 /* ── SECTIONS ── */
 .section { padding: 88px 48px; }
 .section-inner { max-width: 1060px; margin: 0 auto; }
-.section-eyebrow { font-family: var(--cinzel); font-size: 0.56rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); display: block; margin-bottom: 14px; }
-.section-title { font-family: var(--cinzel); font-size: clamp(1.6rem, 3.5vw, 2.5rem); font-weight: 700; color: var(--forest); line-height: 1.18; margin-bottom: 14px; }
-.section-sub { font-size: 0.95rem; color: var(--text-muted); line-height: 1.9; max-width: 600px; margin-bottom: 52px; }
+.section-eyebrow { font-family: var(–cinzel); font-size: 0.56rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(–gold); display: block; margin-bottom: 14px; }
+.section-title { font-family: var(–cinzel); font-size: clamp(1.6rem, 3.5vw, 2.5rem); font-weight: 700; color: var(–forest); line-height: 1.18; margin-bottom: 14px; }
+.section-sub { font-size: 0.95rem; color: var(–text-muted); line-height: 1.9; max-width: 600px; margin-bottom: 52px; }
 @media (max-width: 600px) { .section { padding: 56px 20px; } }
 
 /* ── PRODUCTS ── */
 .products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 22px; }
 .product-card {
-  background: var(--bg-card);
-  border: 1px solid var(--gold-border);
-  border-radius: 4px;
-  padding: 36px 28px 30px;
-  display: flex; flex-direction: column;
-  transition: border-color 0.22s, transform 0.2s, box-shadow 0.22s;
-  box-shadow: 0 2px 16px rgba(44,28,0,0.06);
+background: var(–bg-card);
+border: 1px solid var(–gold-border);
+border-radius: 4px;
+padding: 36px 28px 30px;
+display: flex; flex-direction: column;
+transition: border-color 0.22s, transform 0.2s, box-shadow 0.22s;
+box-shadow: 0 2px 16px rgba(44,28,0,0.06);
 }
 .product-card:hover { border-color: rgba(201,168,76,0.55); transform: translateY(-4px); box-shadow: 0 12px 40px rgba(44,28,0,0.12); }
-.product-tag { font-family: var(--cinzel); font-size: 0.54rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; display: block; }
-.product-name { font-family: var(--cinzel); font-size: 1.05rem; font-weight: 700; color: var(--forest); margin-bottom: 8px; line-height: 1.3; }
-.product-sub { font-family: var(--lora); font-style: italic; font-size: 0.84rem; color: var(--text-muted); margin-bottom: 16px; }
-.product-desc { font-size: 0.84rem; color: var(--text-muted); line-height: 1.85; flex: 1; margin-bottom: 22px; }
+.product-tag { font-family: var(–cinzel); font-size: 0.54rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(–gold); margin-bottom: 10px; display: block; }
+.product-name { font-family: var(–cinzel); font-size: 1.05rem; font-weight: 700; color: var(–forest); margin-bottom: 8px; line-height: 1.3; }
+.product-sub { font-family: var(–lora); font-style: italic; font-size: 0.84rem; color: var(–text-muted); margin-bottom: 16px; }
+.product-desc { font-size: 0.84rem; color: var(–text-muted); line-height: 1.85; flex: 1; margin-bottom: 22px; }
 .product-bullets { list-style: none; margin-bottom: 24px; }
-.product-bullets li { font-size: 0.78rem; color: var(--text-muted); padding: 5px 0; display: flex; gap: 10px; align-items: flex-start; border-bottom: 1px solid rgba(44,28,0,0.06); }
-.product-bullets li::before { content: '—'; color: var(--gold); font-size: 0.68rem; margin-top: 3px; flex-shrink: 0; }
-.product-price { font-family: var(--cinzel); font-size: 2rem; font-weight: 700; color: var(--forest); margin-bottom: 18px; }
-.product-price-note { font-size: 0.72rem; color: var(--text-dim); margin-top: 10px; line-height: 1.6; }
+.product-bullets li { font-size: 0.78rem; color: var(–text-muted); padding: 5px 0; display: flex; gap: 10px; align-items: flex-start; border-bottom: 1px solid rgba(44,28,0,0.06); }
+.product-bullets li::before { content: ‘—’; color: var(–gold); font-size: 0.68rem; margin-top: 3px; flex-shrink: 0; }
+.product-price { font-family: var(–cinzel); font-size: 2rem; font-weight: 700; color: var(–forest); margin-bottom: 18px; }
+.product-price-note { font-size: 0.72rem; color: var(–text-dim); margin-top: 10px; line-height: 1.6; }
 .btn-row { display: flex; gap: 10px; flex-wrap: wrap; }
 
 /* ── ABOUT ── */
-.about-section { background: var(--forest); border-top: 1px solid rgba(201,168,76,0.2); border-bottom: 1px solid rgba(201,168,76,0.2); padding: 88px 48px; }
+.about-section { background: var(–forest); border-top: 1px solid rgba(201,168,76,0.2); border-bottom: 1px solid rgba(201,168,76,0.2); padding: 88px 48px; }
 .about-inner { max-width: 1060px; margin: 0 auto; display: grid; grid-template-columns: 1.2fr 1fr; gap: 64px; align-items: center; }
 @media (max-width: 760px) { .about-inner { grid-template-columns: 1fr; } .about-section { padding: 56px 20px; } }
 .about-section .section-eyebrow { color: rgba(201,168,76,0.8); }
@@ -157,38 +158,39 @@ nav {
 .about-section p { font-size: 0.92rem; color: rgba(244,239,230,0.72); line-height: 1.95; margin-bottom: 20px; max-width: 560px; }
 .about-section p strong { color: #F4EFE6; font-weight: 600; }
 .about-stat { text-align: center; border: 1px solid rgba(201,168,76,0.25); padding: 28px 20px; border-radius: 4px; background: rgba(244,239,230,0.04); }
-.about-stat-num { font-family: var(--cinzel); font-size: 2.8rem; font-weight: 700; color: var(--gold); display: block; }
-.about-stat-label { font-family: var(--cinzel); font-size: 0.54rem; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(244,239,230,0.45); display: block; margin-top: 8px; }
+.about-stat-num { font-family: var(–cinzel); font-size: 2.8rem; font-weight: 700; color: var(–gold); display: block; }
+.about-stat-label { font-family: var(–cinzel); font-size: 0.54rem; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(244,239,230,0.45); display: block; margin-top: 8px; }
 .about-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
 
 /* ── RESCUE ── */
-.rescue-section { background: var(--bg-warm); border-top: 1px solid var(--gold-border); padding: 72px 48px; }
+.rescue-section { background: var(–bg-warm); border-top: 1px solid var(–gold-border); padding: 72px 48px; }
 .rescue-inner { max-width: 1060px; margin: 0 auto; display: grid; grid-template-columns: 1fr auto; gap: 40px; align-items: center; }
 @media (max-width: 680px) { .rescue-inner { grid-template-columns: 1fr; } .rescue-section { padding: 52px 20px; } }
-.rescue-eyebrow { font-family: var(--cinzel); font-size: 0.56rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 14px; display: block; }
-.rescue-title { font-family: var(--cinzel); font-size: clamp(1.3rem, 3vw, 2rem); font-weight: 700; color: var(--forest); margin-bottom: 14px; }
-.rescue-text { font-size: 0.88rem; color: var(--text-muted); line-height: 1.85; max-width: 560px; margin-bottom: 24px; }
+.rescue-eyebrow { font-family: var(–cinzel); font-size: 0.56rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(–gold); margin-bottom: 14px; display: block; }
+.rescue-title { font-family: var(–cinzel); font-size: clamp(1.3rem, 3vw, 2rem); font-weight: 700; color: var(–forest); margin-bottom: 14px; }
+.rescue-text { font-size: 0.88rem; color: var(–text-muted); line-height: 1.85; max-width: 560px; margin-bottom: 24px; }
 .rescue-btns { display: flex; gap: 12px; flex-wrap: wrap; }
 
 /* ── STATS BAR ── */
-.stats-bar { background: var(--forest); border-top: 1px solid rgba(201,168,76,0.2); border-bottom: 1px solid rgba(201,168,76,0.2); padding: 52px 48px; }
+.stats-bar { background: var(–forest); border-top: 1px solid rgba(201,168,76,0.2); border-bottom: 1px solid rgba(201,168,76,0.2); padding: 52px 48px; }
 .stats-inner { max-width: 1060px; margin: 0 auto; display: grid; grid-template-columns: repeat(4,1fr); gap: 24px; text-align: center; }
 @media (max-width: 640px) { .stats-inner { grid-template-columns: 1fr 1fr; } .stats-bar { padding: 40px 20px; } }
-.stat-num { font-family: var(--cinzel); font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 700; color: var(--gold); display: block; }
-.stat-label { font-family: var(--cinzel); font-size: 0.52rem; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(244,239,230,0.45); display: block; margin-top: 8px; line-height: 1.5; }
+.stat-num { font-family: var(–cinzel); font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 700; color: var(–gold); display: block; }
+.stat-label { font-family: var(–cinzel); font-size: 0.52rem; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(244,239,230,0.45); display: block; margin-top: 8px; line-height: 1.5; }
 
 /* ── FOOTER ── */
-footer { background: var(--forest); border-top: 1px solid rgba(201,168,76,0.2); padding: 48px 48px 32px; }
+footer { background: var(–forest); border-top: 1px solid rgba(201,168,76,0.2); padding: 48px 48px 32px; }
 .footer-inner { max-width: 1060px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 24px; }
 .footer-logo { height: 56px; width: auto; opacity: 0.85; }
 .footer-bottom { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; width: 100%; border-top: 1px solid rgba(201,168,76,0.15); padding-top: 24px; }
-.footer-copy { font-family: var(--cinzel); font-size: 0.58rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(244,239,230,0.4); }
+.footer-copy { font-family: var(–cinzel); font-size: 0.58rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(244,239,230,0.4); }
 
 </style>
 </head>
 <body>
 
 <!-- NAV -->
+
 <nav>
   <a href="index.html"><img src="logo.png" alt="My Legacy Continues" class="nav-logo"></a>
   <ul class="nav-center" id="navLinks">
@@ -207,6 +209,7 @@ footer { background: var(--forest); border-top: 1px solid rgba(201,168,76,0.2); 
 </nav>
 
 <!-- HERO -->
+
 <section class="hero">
   <div class="hero-content">
     <img src="logo.png" alt="My Legacy Continues" class="hero-logo">
@@ -224,6 +227,7 @@ footer { background: var(--forest); border-top: 1px solid rgba(201,168,76,0.2); 
 <div class="gold-rule"></div>
 
 <!-- PRODUCTS -->
+
 <section class="section" id="products">
   <div class="section-inner">
     <span class="section-eyebrow">What We Build</span>
@@ -231,107 +235,111 @@ footer { background: var(--forest); border-top: 1px solid rgba(201,168,76,0.2); 
     <p class="section-sub">Every product is a one-time purchase. No renewals. No login to view. Permanent.</p>
     <div class="products-grid">
 
-      <!-- HERITAGE BOOK -->
-      <div class="product-card">
-        <span class="product-tag">Heritage</span>
-        <div class="product-name">Heritage Culture Book</div>
-        <div class="product-sub">Your Family's Story, Researched and Written</div>
-        <p class="product-desc">We dig into the archives — FamilySearch, Spanish nobility records, border crossing documents, census records — and write your family's story chapter by chapter.</p>
-        <ul class="product-bullets">
-          <li>Professional genealogy research — 4 generations minimum</li>
-          <li>Custom written narrative — not a template</li>
-          <li>Cultural guide: food, music, traditions of your region</li>
-          <li>Family timeline and migration map</li>
-          <li>Physical book printed and shipped to your door</li>
-          <li>Permanent digital profile linked to a QR code</li>
-          <li>English and Spanish available</li>
-        </ul>
-        <div class="product-price">$199</div>
-        <a href="https://buy.stripe.com/bJe14o2a35pO6csg16fQI02" class="btn btn-primary">Order Heritage Book — $199</a>
-      </div>
+```
+  <!-- HERITAGE BOOK -->
+  <div class="product-card">
+    <span class="product-tag">Heritage</span>
+    <div class="product-name">Heritage Culture Book</div>
+    <div class="product-sub">Your Family's Story, Researched and Written</div>
+    <p class="product-desc">We dig into the archives — FamilySearch, Spanish nobility records, border crossing documents, census records — and write your family's story chapter by chapter.</p>
+    <ul class="product-bullets">
+      <li>Professional genealogy research — 4 generations minimum</li>
+      <li>Custom written narrative — not a template</li>
+      <li>Cultural guide: food, music, traditions of your region</li>
+      <li>Family timeline and migration map</li>
+      <li>Physical book printed and shipped to your door</li>
+      <li>Permanent digital profile linked to a QR code</li>
+      <li>English and Spanish available</li>
+    </ul>
+    <div class="product-price">$199</div>
+    <a href="https://buy.stripe.com/bJe14o2a35pO6csg16fQI02" class="btn btn-primary">Order Heritage Book — $199</a>
+  </div>
 
-      <!-- PET TAG -->
-      <div class="product-card">
-        <span class="product-tag">Pet Legacy</span>
-        <div class="product-name">Pet QR Legacy Tag</div>
-        <div class="product-sub">If They Get Lost, This Brings Them Home</div>
-        <p class="product-desc">A durable metal QR tag for your pet's collar. Scan to see contact info, medical needs, and how to reach you — no app required.</p>
-        <ul class="product-bullets">
-          <li>Scan instantly — no app needed</li>
-          <li>Owner contact shown as call/text button — your number stays private</li>
-          <li>Medical info visible: medications, allergies, vet contact</li>
-          <li>Personality notes so finders know how to handle your pet</li>
-          <li>Connects to your family's account on the platform</li>
-        </ul>
-        <div class="btn-row">
-          <a href="https://buy.stripe.com/eVq7sM9CvdWk9oE4iofQI07" class="btn btn-primary">Basic Tag — $24.99</a>
-          <a href="https://buy.stripe.com/bJe28s15ZcSgdEU9CIfQI09" class="btn btn-outline">Premium + AirTag — $49.99</a>
-        </div>
-        <p class="product-price-note">Premium includes an AirTag-compatible collar holder. AirTag sold separately.</p>
-      </div>
-
-      <!-- CEMETERY PLAQUE -->
-      <div class="product-card">
-        <span class="product-tag">Memorial</span>
-        <div class="product-name">Cemetery Memorial QR Plaque</div>
-        <div class="product-sub">Give Them a Voice at the Gravesite</div>
-        <p class="product-desc">A stainless steel QR plaque attaches to any headstone. Scan to hear their songs, see photos, leave voice tributes. Not mourning. Visiting.</p>
-        <ul class="product-bullets">
-          <li>Physical stainless steel plaque — weatherproof, permanent adhesive</li>
-          <li>We build the memorial profile — you just send us the info</li>
-          <li>Playlist of their favorite songs</li>
-          <li>Photo and video gallery</li>
-          <li>Tribute wall — family and friends leave messages</li>
-          <li>Remembrance Mode — candle glow on birthdays</li>
-          <li>English and Spanish on every profile</li>
-        </ul>
-        <div class="product-price">$129</div>
-        <a href="https://buy.stripe.com/6oU3cw15Z5pO7gw5msfQI06" class="btn btn-primary">Order Memorial Plaque — $129</a>
-      </div>
-
-      <!-- BUSINESS PROFILE -->
-      <div class="product-card">
-        <span class="product-tag">Business</span>
-        <div class="product-name">Business Founder Profile</div>
-        <div class="product-sub">Your Business Card Should Tell the Whole Story</div>
-        <p class="product-desc">Scan your card and they see your real story — 20 years of work, your best jobs, your license number, and why you started. Done for you. Permanent.</p>
-        <ul class="product-bullets">
-          <li>We write your founder story — you just answer a few questions</li>
-          <li>Portfolio of your best work — up to 10 photos</li>
-          <li>Tap-to-call and quote request button built in</li>
-          <li>License number and certifications displayed</li>
-          <li>QR code for business cards, truck decals, job signs</li>
-          <li>English and Spanish available</li>
-        </ul>
-        <div class="product-price">$79</div>
-        <a href="https://buy.stripe.com/4gM14odSLaK8asI9CIfQI03" class="btn btn-primary">Get Your Business Profile — $79</a>
-      </div>
-
-      <!-- CONTRACTOR BUNDLE -->
-      <div class="product-card">
-        <span class="product-tag">Contractor Bundle</span>
-        <div class="product-name">Contractor Bundle</div>
-        <div class="product-sub">Everything a Tradesperson Needs in One Package</div>
-        <p class="product-desc">Custom digital portfolio, 500 metal QR identity cards, and a verified founder profile — all permanent, all linked.</p>
-        <ul class="product-bullets">
-          <li>Custom permanent digital portfolio page</li>
-          <li>500 metal QR identity cards shipped to you</li>
-          <li>Verified by My Legacy Continues badge</li>
-          <li>Project gallery — before and after</li>
-          <li>Services listed, coverage area mapped</li>
-          <li>Direct contact and quote request buttons</li>
-        </ul>
-        <div class="product-price">$650</div>
-        <a href="https://buy.stripe.com/dRm3cwdSL05u58o6qwfQI01" class="btn btn-primary">Build Your Profile — $650</a>
-      </div>
-
+  <!-- PET TAG -->
+  <div class="product-card">
+    <span class="product-tag">Pet Legacy</span>
+    <div class="product-name">Pet QR Legacy Tag</div>
+    <div class="product-sub">If They Get Lost, This Brings Them Home</div>
+    <p class="product-desc">A durable metal QR tag for your pet's collar. Scan to see contact info, medical needs, and how to reach you — no app required.</p>
+    <ul class="product-bullets">
+      <li>Scan instantly — no app needed</li>
+      <li>Owner contact shown as call/text button — your number stays private</li>
+      <li>Medical info visible: medications, allergies, vet contact</li>
+      <li>Personality notes so finders know how to handle your pet</li>
+      <li>Connects to your family's account on the platform</li>
+    </ul>
+    <div class="btn-row">
+      <a href="https://buy.stripe.com/eVq7sM9CvdWk9oE4iofQI07" class="btn btn-primary">Basic Tag — $24.99</a>
+      <a href="https://buy.stripe.com/bJe28s15ZcSgdEU9CIfQI09" class="btn btn-outline">Premium + AirTag — $49.99</a>
     </div>
+    <p class="product-price-note">Premium includes an AirTag-compatible collar holder. AirTag sold separately.</p>
+  </div>
+
+  <!-- CEMETERY PLAQUE -->
+  <div class="product-card">
+    <span class="product-tag">Memorial</span>
+    <div class="product-name">Cemetery Memorial QR Plaque</div>
+    <div class="product-sub">Give Them a Voice at the Gravesite</div>
+    <p class="product-desc">A stainless steel QR plaque attaches to any headstone. Scan to hear their songs, see photos, leave voice tributes. Not mourning. Visiting.</p>
+    <ul class="product-bullets">
+      <li>Physical stainless steel plaque — weatherproof, permanent adhesive</li>
+      <li>We build the memorial profile — you just send us the info</li>
+      <li>Playlist of their favorite songs</li>
+      <li>Photo and video gallery</li>
+      <li>Tribute wall — family and friends leave messages</li>
+      <li>Remembrance Mode — candle glow on birthdays</li>
+      <li>English and Spanish on every profile</li>
+    </ul>
+    <div class="product-price">$129</div>
+    <a href="https://buy.stripe.com/6oU3cw15Z5pO7gw5msfQI06" class="btn btn-primary">Order Memorial Plaque — $129</a>
+  </div>
+
+  <!-- BUSINESS PROFILE -->
+  <div class="product-card">
+    <span class="product-tag">Business</span>
+    <div class="product-name">Business Founder Profile</div>
+    <div class="product-sub">Your Business Card Should Tell the Whole Story</div>
+    <p class="product-desc">Scan your card and they see your real story — 20 years of work, your best jobs, your license number, and why you started. Done for you. Permanent.</p>
+    <ul class="product-bullets">
+      <li>We write your founder story — you just answer a few questions</li>
+      <li>Portfolio of your best work — up to 10 photos</li>
+      <li>Tap-to-call and quote request button built in</li>
+      <li>License number and certifications displayed</li>
+      <li>QR code for business cards, truck decals, job signs</li>
+      <li>English and Spanish available</li>
+    </ul>
+    <div class="product-price">$79</div>
+    <a href="https://buy.stripe.com/4gM14odSLaK8asI9CIfQI03" class="btn btn-primary">Get Your Business Profile — $79</a>
+  </div>
+
+  <!-- CONTRACTOR BUNDLE -->
+  <div class="product-card">
+    <span class="product-tag">Contractor Bundle</span>
+    <div class="product-name">Contractor Bundle</div>
+    <div class="product-sub">Everything a Tradesperson Needs in One Package</div>
+    <p class="product-desc">Custom digital portfolio, 500 metal QR identity cards, and a verified founder profile — all permanent, all linked.</p>
+    <ul class="product-bullets">
+      <li>Custom permanent digital portfolio page</li>
+      <li>500 metal QR identity cards shipped to you</li>
+      <li>Verified by My Legacy Continues badge</li>
+      <li>Project gallery — before and after</li>
+      <li>Services listed, coverage area mapped</li>
+      <li>Direct contact and quote request buttons</li>
+    </ul>
+    <div class="product-price">$650</div>
+    <a href="https://buy.stripe.com/dRm3cwdSL05u58o6qwfQI01" class="btn btn-primary">Build Your Profile — $650</a>
+  </div>
+
+</div>
+```
+
   </div>
 </section>
 
 <div class="gold-rule"></div>
 
 <!-- ABOUT -->
+
 <section class="about-section" id="about">
   <div class="about-inner">
     <div>
@@ -346,6 +354,7 @@ footer { background: var(--forest); border-top: 1px solid rgba(201,168,76,0.2); 
 </section>
 
 <!-- RESCUE / GUARDIAN PROTOCOL -->
+
 <section class="rescue-section" id="rescue">
   <div class="rescue-inner">
     <div>
@@ -361,7 +370,76 @@ footer { background: var(--forest); border-top: 1px solid rgba(201,168,76,0.2); 
   </div>
 </section>
 
+<!-- REAL EXAMPLES SECTION -->
+
+<section style="padding: 72px 48px; background: #F4EFE6;">
+  <div style="max-width: 1060px; margin: 0 auto;">
+    <div style="text-align: center; margin-bottom: 48px;">
+      <span style="font-family: var(--cinzel); font-size: 0.56rem; letter-spacing: 0.32em; text-transform: uppercase; color: var(--gold); display: block; margin-bottom: 14px;">Real Stories Built With Our Platform</span>
+      <h2 style="font-family: var(--cinzel); font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 700; color: var(--forest); margin-bottom: 12px;">See What Permanent Looks Like</h2>
+      <p style="font-size: 0.95rem; color: var(--text-muted); line-height: 1.8; max-width: 580px; margin: 0 auto;">These are real families, real pets, and real businesses using My Legacy Continues. Click any to see their full profile.</p>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px;">
+      <!-- Vazquez Profile -->
+      <a href="vazquez-profile.html" style="text-decoration: none; color: inherit;">
+        <div style="background: white; border: 1px solid rgba(201,168,76,0.28); border-radius: 4px; padding: 28px; transition: all 0.22s; cursor: pointer;" onmouseover="this.style.boxShadow='0 8px 20px rgba(30,45,31,0.15)'" onmouseout="this.style.boxShadow='none'">
+          <span style="font-family: var(--cinzel); font-size: 0.56rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); display: block; margin-bottom: 10px;">Heritage Profile</span>
+          <h3 style="font-family: var(--cinzel); font-size: 1.2rem; font-weight: 700; color: var(--forest); margin-bottom: 6px;">The Vázquez Legacy</h3>
+          <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 16px;">From Galicia, Spain to Santa Maria — 1547 to today.</p>
+          <span style="font-family: var(--cinzel); font-size: 0.65rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); font-weight: 600;">View Profile →</span>
+        </div>
+      </a>
+      <!-- Butters Profile -->
+      <a href="butters-profile.html" style="text-decoration: none; color: inherit;">
+        <div style="background: white; border: 1px solid rgba(201,168,76,0.28); border-radius: 4px; padding: 28px; transition: all 0.22s; cursor: pointer;" onmouseover="this.style.boxShadow='0 8px 20px rgba(30,45,31,0.15)'" onmouseout="this.style.boxShadow='none'">
+          <span style="font-family: var(--cinzel); font-size: 0.56rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); display: block; margin-bottom: 10px;">Pet Profile</span>
+          <h3 style="font-family: var(--cinzel); font-size: 1.2rem; font-weight: 700; color: var(--forest); margin-bottom: 6px;">Butters</h3>
+          <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 16px;">Orange tabby. 5 years. Santa Maria. Permanently recorded.</p>
+          <span style="font-family: var(--cinzel); font-size: 0.65rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); font-weight: 600;">View Profile →</span>
+        </div>
+      </a>
+      <!-- Nick McNeal Profile -->
+      <a href="mcneal-construction-profile.html" style="text-decoration: none; color: inherit;">
+        <div style="background: white; border: 1px solid rgba(201,168,76,0.28); border-radius: 4px; padding: 28px; transition: all 0.22s; cursor: pointer;" onmouseover="this.style.boxShadow='0 8px 20px rgba(30,45,31,0.15)'" onmouseout="this.style.boxShadow='none'">
+          <span style="font-family: var(--cinzel); font-size: 0.56rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); display: block; margin-bottom: 10px;">Business Profile</span>
+          <h3 style="font-family: var(--cinzel); font-size: 1.2rem; font-weight: 700; color: var(--forest); margin-bottom: 6px;">Nick McNeal</h3>
+          <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 16px;">Licensed contractor. 20+ years. Santa Barbara County. Permanent record.</p>
+          <span style="font-family: var(--cinzel); font-size: 0.65rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); font-weight: 600;">View Profile →</span>
+        </div>
+      </a>
+      <!-- Carlos Macias Profile -->
+      <a href="carlos-macias-profile.html" style="text-decoration: none; color: inherit;">
+        <div style="background: white; border: 1px solid rgba(201,168,76,0.28); border-radius: 4px; padding: 28px; transition: all 0.22s; cursor: pointer;" onmouseover="this.style.boxShadow='0 8px 20px rgba(30,45,31,0.15)'" onmouseout="this.style.boxShadow='none'">
+          <span style="font-family: var(--cinzel); font-size: 0.56rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); display: block; margin-bottom: 10px;">Business Profile</span>
+          <h3 style="font-family: var(--cinzel); font-size: 1.2rem; font-weight: 700; color: var(--forest); margin-bottom: 6px;">Carlos Macias</h3>
+          <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 16px;">Creative property manager. Portfolio-driven. Santa Maria. Scan to see his work.</p>
+          <span style="font-family: var(--cinzel); font-size: 0.65rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); font-weight: 600;">View Profile →</span>
+        </div>
+      </a>
+      <!-- Bears Concrete Profile -->
+      <a href="bears-concrete-profile.html" style="text-decoration: none; color: inherit;">
+        <div style="background: white; border: 1px solid rgba(201,168,76,0.28); border-radius: 4px; padding: 28px; transition: all 0.22s; cursor: pointer;" onmouseover="this.style.boxShadow='0 8px 20px rgba(30,45,31,0.15)'" onmouseout="this.style.boxShadow='none'">
+          <span style="font-family: var(--cinzel); font-size: 0.56rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); display: block; margin-bottom: 10px;">Business Profile</span>
+          <h3 style="font-family: var(--cinzel); font-size: 1.2rem; font-weight: 700; color: var(--forest); margin-bottom: 6px;">Bears Concrete</h3>
+          <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 16px;">Concrete pumping. Central Coast. Founded by Mark Vazquez. The founder's own profile.</p>
+          <span style="font-family: var(--cinzel); font-size: 0.65rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); font-weight: 600;">View Profile →</span>
+        </div>
+      </a>
+      <!-- Rescue Registry -->
+      <a href="rescue-registry.html" style="text-decoration: none; color: inherit;">
+        <div style="background: white; border: 1px solid rgba(201,168,76,0.28); border-radius: 4px; padding: 28px; transition: all 0.22s; cursor: pointer;" onmouseover="this.style.boxShadow='0 8px 20px rgba(30,45,31,0.15)'" onmouseout="this.style.boxShadow='none'">
+          <span style="font-family: var(--cinzel); font-size: 0.56rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); display: block; margin-bottom: 10px;">Rescue Registry</span>
+          <h3 style="font-family: var(--cinzel); font-size: 1.2rem; font-weight: 700; color: var(--forest); margin-bottom: 6px;">Underdog Heroes</h3>
+          <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 16px;">8 rescue dogs from Lompoc. Every one has a permanent profile — free.</p>
+          <span style="font-family: var(--cinzel); font-size: 0.65rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); font-weight: 600;">View Registry →</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
 <!-- STATS BAR -->
+
 <section class="stats-bar">
   <div class="stats-inner">
     <div><span class="stat-num">1547</span><span class="stat-label">Earliest Confirmed Family Record</span></div>
@@ -372,6 +450,7 @@ footer { background: var(--forest); border-top: 1px solid rgba(201,168,76,0.2); 
 </section>
 
 <!-- FOOTER -->
+
 <footer>
   <div class="footer-inner">
     <img src="logo.png" alt="My Legacy Continues" class="footer-logo">
@@ -387,5 +466,6 @@ const links = document.getElementById('navLinks');
 toggle.addEventListener('click', () => links.classList.toggle('open'));
 document.querySelectorAll('#navLinks a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
 </script>
+
 </body>
 </html>
