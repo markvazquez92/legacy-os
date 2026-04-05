@@ -1,370 +1,357 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pet QR Legacy Tag — $24.99 / $49.99 — My Legacy Continues</title>
-<meta name="description" content="A durable metal QR tag for your pet's collar. Scan to see contact info, medical needs, and how to reach you — no app required. Basic $24.99, Premium $49.99.">
-<link rel="icon" href="logo.png" type="image/png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
-<style>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pet QR Tag Demo — My Legacy Continues</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Karla:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --bg:     #202e1f;
+      --dark:   #1a2619;
+      --card:   #1e2b1d;
+      --border: #2d3f2c;
+      --gold:   #D4AF37;
+      --gold2:  #e8c93f;
+      --cream:  #f0ede6;
+      --muted:  #8a9e87;
+      --silver: #c0c0c0;
+    }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { background:var(--bg); color:var(--cream); font-family:'Karla',sans-serif; font-weight:300; line-height:1.7; }
 
-:root {
-  --bg:          #F4EFE6;
-  --bg-card:     #FFFFFF;
-  --bg-warm:     #EDE8DC;
-  --forest:      #1E2D1F;
-  --forest-dark: #162217;
-  --gold:        #C9A84C;
-  --gold-light:  #DFC06A;
-  --gold-dim:    rgba(201,168,76,0.55);
-  --gold-border: rgba(201,168,76,0.28);
-  --gold-wash:   rgba(201,168,76,0.08);
-  --text:        #2C2C2C;
-  --text-muted:  #5C5545;
-  --text-dim:    #9B8E77;
-  --cinzel: 'Cinzel', Georgia, serif;
-  --lora:   'Lora', Georgia, serif;
-  --sans:   -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-}
+    .nav { background:var(--dark); border-bottom:1px solid var(--border); padding:16px 28px; display:flex; justify-content:space-between; align-items:center; }
+    .nav a { color:var(--gold); text-decoration:none; font-size:11px; letter-spacing:0.14em; text-transform:uppercase; font-weight:600; }
+    .nav-right { font-size:11px; color:var(--muted); }
 
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
-body { font-family: var(--lora); background: var(--bg); color: var(--text); line-height: 1.8; -webkit-font-smoothing: antialiased; }
-a { color: inherit; text-decoration: none; }
-img { max-width: 100%; height: auto; display: block; }
+    .hero { background:var(--dark); border-bottom:1px solid var(--border); padding:64px 28px 48px; text-align:center; }
+    .badge { display:inline-block; border:1px solid var(--gold); color:var(--gold); font-size:9px; letter-spacing:0.2em; text-transform:uppercase; padding:5px 14px; margin-bottom:22px; }
+    .hero h1 { font-family:'Cormorant Garamond',serif; font-size:clamp(36px,6vw,56px); font-weight:700; line-height:1.05; color:var(--cream); margin-bottom:12px; }
+    .hero h1 em { color:var(--gold); font-style:normal; }
+    .hero p { font-size:15px; color:var(--muted); max-width:500px; margin:0 auto; line-height:1.75; }
 
-.btn { display: inline-block; font-family: var(--cinzel); font-size: 0.72rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; padding: 16px 34px; min-height: 44px; border: none; cursor: pointer; transition: all 0.22s ease; text-decoration: none; white-space: nowrap; border-radius: 2px; }
-.btn-primary { background: var(--forest); color: var(--gold); box-shadow: 0 4px 20px rgba(30,45,31,0.22); }
-.btn-primary:hover { background: var(--forest-dark); transform: translateY(-2px); }
-.btn-outline { background: transparent; color: var(--forest); border: 1.5px solid var(--forest); }
-.btn-outline:hover { background: var(--forest); color: var(--gold); }
+    .wrap { max-width:860px; margin:0 auto; padding:0 28px 64px; }
+    .sec { display:flex; align-items:center; gap:18px; margin:52px 0 36px; }
+    .sec h2 { font-family:'Cormorant Garamond',serif; font-size:26px; font-weight:700; white-space:nowrap; }
+    .sec-rule { flex:1; height:1px; background:var(--border); }
 
-nav { position: fixed; top: 0; left: 0; right: 0; z-index: 900; height: 68px; background: var(--forest); border-bottom: 1px solid rgba(201,168,76,0.25); display: flex; align-items: center; justify-content: space-between; padding: 0 48px; }
-.nav-logo { height: 40px; width: auto; }
-.nav-center { display: flex; align-items: center; gap: 26px; list-style: none; }
-.nav-center a { font-family: var(--sans); font-size: 0.78rem; color: rgba(244,239,230,0.75); letter-spacing: 0.02em; transition: color 0.2s; }
-.nav-center a:hover { color: var(--gold); }
-.nav-right { display: flex; align-items: center; gap: 12px; }
-.nav-lang { font-family: var(--cinzel); font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(244,239,230,0.5); border: 1px solid rgba(201,168,76,0.3); padding: 6px 14px; border-radius: 2px; cursor: pointer; background: none; transition: all 0.2s; }
-.nav-lang:hover { color: var(--gold); border-color: var(--gold); }
-.nav-vault-link { font-family: var(--cinzel); font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); border: 1px solid rgba(201,168,76,0.4); padding: 8px 16px; border-radius: 2px; transition: all 0.22s; }
-.nav-vault-link:hover { background: rgba(201,168,76,0.12); }
-.nav-toggle { display: none; background: none; border: none; cursor: pointer; flex-direction: column; gap: 5px; padding: 4px; }
-.nav-toggle span { display: block; width: 22px; height: 1.5px; background: var(--gold); }
-@media (max-width: 960px) {
-  nav { padding: 0 20px; }
-  .nav-center { display: none; flex-direction: column; position: fixed; top: 68px; left: 0; right: 0; background: var(--forest); padding: 24px 20px; gap: 0; border-bottom: 1px solid rgba(201,168,76,0.2); }
-  .nav-center.open { display: flex; }
-  .nav-center li { width: 100%; }
-  .nav-center a { display: block; padding: 14px 0; border-bottom: 1px solid rgba(201,168,76,0.1); font-size: 0.92rem; color: rgba(244,239,230,0.8); }
-  .nav-toggle { display: flex; }
-}
+    /* TAG COMPARISON */
+    .tag-compare { display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--border); margin-bottom:40px; }
+    @media(max-width:580px){ .tag-compare{ grid-template-columns:1fr; } }
 
-.page-hero { background: var(--forest); padding: 130px 48px 72px; }
-.page-hero-inner { max-width: 860px; margin: 0 auto; }
-.back-link { font-family: var(--cinzel); font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(201,168,76,0.65); display: inline-flex; align-items: center; gap: 8px; margin-bottom: 28px; transition: color 0.2s; }
-.back-link:hover { color: var(--gold); }
-.back-link::before { content: '←'; font-size: 0.9rem; }
-.page-eyebrow { font-family: var(--cinzel); font-size: 0.56rem; letter-spacing: 0.32em; text-transform: uppercase; color: var(--gold); display: block; margin-bottom: 18px; }
-.page-title { font-family: var(--cinzel); font-size: clamp(2rem, 4.5vw, 3.2rem); font-weight: 700; color: #F4EFE6; line-height: 1.1; margin-bottom: 18px; }
-.page-sub { font-size: 1rem; color: rgba(244,239,230,0.7); line-height: 1.85; max-width: 600px; margin-bottom: 32px; }
-@media (max-width: 600px) { .page-hero { padding: 116px 20px 56px; } }
+    .tag-option { background:var(--card); padding:36px 28px; display:flex; flex-direction:column; align-items:center; }
+    .tag-option.premium { background:#1c271b; }
 
-/* TIER CARDS */
-.tier-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 12px; }
-@media (max-width: 620px) { .tier-cards { grid-template-columns: 1fr; } }
-.tier-card { background: rgba(244,239,230,0.07); border: 1px solid rgba(201,168,76,0.3); border-radius: 4px; padding: 28px 24px; }
-.tier-card.featured { border-color: var(--gold); background: rgba(201,168,76,0.08); }
-.tier-label { font-family: var(--cinzel); font-size: 0.54rem; letter-spacing: 0.24em; text-transform: uppercase; color: rgba(201,168,76,0.7); margin-bottom: 8px; display: block; }
-.tier-name { font-family: var(--cinzel); font-size: 1.1rem; font-weight: 700; color: #F4EFE6; margin-bottom: 6px; }
-.tier-price { font-family: var(--cinzel); font-size: 2rem; font-weight: 700; color: var(--gold); margin-bottom: 14px; }
-.tier-desc { font-size: 0.82rem; color: rgba(244,239,230,0.65); line-height: 1.75; margin-bottom: 20px; }
-.tier-note { font-size: 0.72rem; color: rgba(201,168,76,0.55); margin-top: 10px; line-height: 1.5; }
+    .tag-tier { font-size:9px; letter-spacing:0.2em; text-transform:uppercase; color:var(--gold); margin-bottom:6px; }
+    .tag-price { font-family:'Cormorant Garamond',serif; font-size:40px; font-weight:700; color:var(--cream); margin-bottom:4px; line-height:1; }
+    .tag-price-sub { font-size:11px; color:var(--muted); margin-bottom:28px; }
 
-.gold-rule { height: 1px; background: var(--gold-border); }
+    /* PHYSICAL TAG MOCKUP */
+    .tag-visual { margin-bottom:28px; position:relative; }
 
-.what-section { padding: 72px 48px; }
-.what-inner { max-width: 860px; margin: 0 auto; }
-.what-section h2 { font-family: var(--cinzel); font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 700; color: var(--forest); margin-bottom: 32px; }
-.includes-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin-bottom: 40px; }
-.include-item { background: var(--bg-card); border: 1px solid var(--gold-border); border-radius: 4px; padding: 22px 20px; box-shadow: 0 2px 12px rgba(44,28,0,0.05); }
-.include-item-icon { font-size: 1.4rem; margin-bottom: 10px; }
-.include-item-title { font-family: var(--cinzel); font-size: 0.72rem; font-weight: 700; color: var(--forest); margin-bottom: 6px; }
-.include-item-desc { font-size: 0.8rem; color: var(--text-muted); line-height: 1.7; }
-@media (max-width: 600px) { .what-section { padding: 52px 20px; } }
+    /* BASIC TAG */
+    .basic-tag {
+      width:160px; height:180px;
+      background:linear-gradient(145deg, #2a2a2a, #1a1a1a);
+      border-radius:50% 50% 50% 50% / 40% 40% 60% 60%;
+      display:flex; flex-direction:column; align-items:center; justify-content:center;
+      padding:16px 12px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.05);
+      position:relative; margin:0 auto;
+      border:1px solid #3a3a3a;
+    }
+    .basic-tag::before {
+      content:'';
+      position:absolute; top:-12px; left:50%; transform:translateX(-50%);
+      width:18px; height:14px;
+      background:#333;
+      border-radius:3px;
+      border:1px solid #444;
+    }
+    .basic-tag::after {
+      content:'';
+      position:absolute; top:-18px; left:50%; transform:translateX(-50%);
+      width:10px; height:10px;
+      border-radius:50%;
+      border:2px solid #555;
+    }
 
-.order-section { padding: 0 48px 80px; }
-.order-inner { max-width: 860px; margin: 0 auto; }
-.stripe-cta-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 40px; }
-@media (max-width: 620px) { .stripe-cta-row { grid-template-columns: 1fr; } }
-.stripe-cta { text-align: center; background: var(--bg-card); border: 1px solid var(--gold-border); border-radius: 4px; padding: 24px 20px; box-shadow: 0 2px 12px rgba(44,28,0,0.05); }
-.stripe-cta.featured { border-color: rgba(201,168,76,0.6); background: rgba(201,168,76,0.04); }
-.stripe-cta p { font-size: 0.8rem; color: var(--text-muted); margin-bottom: 14px; line-height: 1.6; }
-.stripe-cta .price-label { font-family: var(--cinzel); font-size: 1.3rem; font-weight: 700; color: var(--forest); display: block; margin-bottom: 16px; }
-.form-section-title { font-family: var(--cinzel); font-size: 0.6rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; padding-bottom: 10px; border-bottom: 1px solid var(--gold-border); }
-.intake-form { display: flex; flex-direction: column; gap: 18px; }
-.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
-@media (max-width: 600px) { .form-row { grid-template-columns: 1fr; } .order-section { padding: 0 20px 64px; } }
-.form-group { display: flex; flex-direction: column; gap: 8px; }
-.form-group label { font-family: var(--cinzel); font-size: 0.58rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-muted); }
-.form-group input,
-.form-group textarea,
-.form-group select { background: var(--bg-card); border: 1px solid var(--gold-border); border-radius: 2px; color: var(--text); font-family: var(--lora); font-size: 0.9rem; padding: 13px 16px; min-height: 44px; transition: border-color 0.2s; width: 100%; }
-.form-group input:focus,
-.form-group textarea:focus,
-.form-group select:focus { outline: none; border-color: var(--gold); box-shadow: 0 0 0 3px rgba(201,168,76,0.1); }
-.form-group input::placeholder,
-.form-group textarea::placeholder { color: var(--text-dim); }
-.form-group textarea { min-height: 90px; resize: vertical; }
-.form-group select { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23C9A84C' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 16px center; padding-right: 40px; }
-.form-divider { height: 1px; background: var(--gold-border); margin: 8px 0; }
-.form-submit-row { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; margin-top: 8px; }
-.form-submit-note { font-size: 0.78rem; color: var(--text-dim); line-height: 1.6; }
+    /* PREMIUM TAG */
+    .premium-tag {
+      width:160px; height:180px;
+      background:linear-gradient(145deg, #2c2c1a, #1a1a0a);
+      border-radius:50% 50% 50% 50% / 40% 40% 60% 60%;
+      display:flex; flex-direction:column; align-items:center; justify-content:center;
+      padding:16px 12px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.5), 0 0 0 1px rgba(212,175,55,0.3), inset 0 1px 0 rgba(212,175,55,0.1);
+      position:relative; margin:0 auto;
+      border:1px solid var(--gold);
+    }
+    .premium-tag::before {
+      content:'';
+      position:absolute; top:-12px; left:50%; transform:translateX(-50%);
+      width:18px; height:14px;
+      background:linear-gradient(145deg,#D4AF37,#a88b25);
+      border-radius:3px;
+    }
+    .premium-tag::after {
+      content:'';
+      position:absolute; top:-18px; left:50%; transform:translateX(-50%);
+      width:10px; height:10px;
+      border-radius:50%;
+      border:2px solid var(--gold);
+    }
 
-footer { background: var(--forest); border-top: 1px solid rgba(201,168,76,0.2); padding: 40px 48px 28px; }
-.footer-inner { max-width: 1060px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 20px; }
-.footer-logo { height: 48px; width: auto; opacity: 0.8; }
-.footer-copy { font-family: var(--cinzel); font-size: 0.56rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(244,239,230,0.4); text-align: center; }
-</style>
+    .tag-engraved-name {
+      font-family:'Cormorant Garamond',serif;
+      font-size:20px; font-weight:700; letter-spacing:0.04em;
+      margin-bottom:6px; text-align:center;
+    }
+    .basic-tag .tag-engraved-name { color:#ccc; text-shadow:0 1px 0 #000, 0 -1px 0 #555; }
+    .premium-tag .tag-engraved-name { color:var(--gold); text-shadow:0 1px 2px rgba(0,0,0,0.8); }
+
+    .tag-qr-box {
+      width:68px; height:68px;
+      background:white;
+      display:flex; align-items:center; justify-content:center;
+      margin-bottom:6px;
+      position:relative;
+    }
+    .qr-pattern {
+      width:56px; height:56px;
+      display:grid;
+      grid-template-columns:repeat(7,1fr);
+      grid-template-rows:repeat(7,1fr);
+      gap:1px;
+    }
+    .qr-cell { background:#111; }
+    .qr-cell.w { background:white; }
+
+    .tag-scan-text { font-size:7px; letter-spacing:0.1em; text-transform:uppercase; }
+    .basic-tag .tag-scan-text { color:#777; }
+    .premium-tag .tag-scan-text { color:rgba(212,175,55,0.6); }
+
+    .tag-phone-line { font-size:10px; font-weight:600; margin-top:4px; }
+    .basic-tag .tag-phone-line { color:#aaa; }
+    .premium-tag .tag-phone-line { color:var(--gold); }
+
+    /* AIRTAG HOLDER */
+    .airtag-holder {
+      width:80px; height:80px;
+      background:linear-gradient(145deg,#e8e8e8,#c0c0c0);
+      border-radius:50%;
+      display:flex; align-items:center; justify-content:center;
+      margin:12px auto 0;
+      box-shadow:0 4px 12px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.5);
+      position:relative;
+    }
+    .airtag-inner {
+      width:60px; height:60px;
+      background:linear-gradient(145deg,#f5f5f5,#d0d0d0);
+      border-radius:50%;
+      display:flex; flex-direction:column; align-items:center; justify-content:center;
+      box-shadow:inset 0 2px 4px rgba(0,0,0,0.2);
+    }
+    .airtag-logo { font-size:16px; line-height:1; }
+    .airtag-label { font-size:6px; letter-spacing:0.1em; text-transform:uppercase; color:#555; margin-top:2px; }
+    .airtag-note { font-size:10px; color:var(--muted); text-align:center; margin-top:6px; }
+
+    /* FEATURES LIST */
+    .features { list-style:none; width:100%; margin-top:20px; }
+    .features li { padding:9px 0; border-bottom:1px solid var(--border); font-size:13px; display:flex; align-items:center; gap:10px; }
+    .features li:last-child { border-bottom:none; }
+    .feat-check { color:var(--gold); font-size:12px; font-weight:700; flex-shrink:0; }
+    .feat-check.dim { color:var(--border); }
+
+    .order-btn {
+      display:block; text-align:center; margin-top:24px; width:100%;
+      background:var(--gold); color:#0a0e0a;
+      padding:14px; font-size:11px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; text-decoration:none;
+      transition:background 0.2s;
+    }
+    .order-btn:hover { background:var(--gold2); }
+    .order-btn.outline {
+      background:transparent; border:1px solid var(--gold); color:var(--gold);
+    }
+    .order-btn.outline:hover { background:var(--gold); color:#0a0e0a; }
+
+    /* HOW IT WORKS */
+    .how-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(180px,1fr)); gap:1px; background:var(--border); margin-bottom:40px; }
+    .how-step { background:var(--card); padding:24px 20px; }
+    .step-n { font-family:'Cormorant Garamond',serif; font-size:36px; font-weight:700; color:var(--border); line-height:1; margin-bottom:10px; }
+    .step-title { font-size:14px; font-weight:600; color:var(--cream); margin-bottom:6px; }
+    .step-desc { font-size:12px; color:var(--muted); line-height:1.65; }
+
+    /* SAMPLE PROFILE LINK */
+    .sample-link { background:var(--card); border:1px solid var(--gold); display:flex; align-items:center; justify-content:space-between; gap:20px; padding:24px 28px; text-decoration:none; transition:background 0.2s; margin-bottom:0; }
+    .sample-link:hover { background:#243222; }
+    .sl-left .sl-tag { font-size:9px; letter-spacing:0.14em; text-transform:uppercase; color:var(--gold); margin-bottom:4px; }
+    .sl-left .sl-name { font-family:'Cormorant Garamond',serif; font-size:20px; font-weight:700; color:var(--cream); margin-bottom:2px; }
+    .sl-left .sl-sub { font-size:12px; color:var(--muted); }
+    .sl-arrow { font-size:22px; color:var(--gold); }
+
+    .cta { background:var(--gold); }
+    .cta-inner { max-width:860px; margin:0 auto; padding:32px 28px; display:flex; justify-content:space-between; align-items:center; gap:20px; flex-wrap:wrap; }
+    .cta p { font-size:15px; font-weight:600; color:#0a0e0a; }
+    .cta a { display:inline-block; background:#0a0e0a; color:var(--gold); padding:12px 24px; font-size:10px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; text-decoration:none; }
+
+    .footer { background:var(--dark); border-top:1px solid var(--border); padding:28px; text-align:center; }
+    .footer p { font-size:12px; color:var(--muted); margin-bottom:4px; }
+    .footer a { color:var(--gold); text-decoration:none; }
+    .footer-credit { font-size:10px; color:#4a5e49; margin-top:8px; }
+  </style>
 </head>
 <body>
 
-<nav>
-  <a href="index.html"><img src="logo.png" alt="My Legacy Continues" class="nav-logo"></a>
-  <ul class="nav-center" id="navLinks">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="cemetery-plaque.html">Cemetery Plaque</a></li>
-    <li><a href="heritage-book.html">Heritage Book</a></li>
-    <li><a href="pet-tag.html">Pet Tag</a></li>
-    <li><a href="business-profile.html">Business Profile</a></li>
-    <li><a href="rescue-registry.html">Rescue Registry</a></li>
-    <li><a href="portal.html" class="nav-vault-link">Vault</a></li>
-  </ul>
-  <div class="nav-right">
-    <button class="nav-lang" onclick="alert('Spanish version coming soon.')">EN | ES</button>
-    <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
-  </div>
+<nav class="nav">
+  <a href="https://mylegacycontinues.com">My Legacy Continues</a>
+  <span class="nav-right">Pet QR Legacy Tags</span>
 </nav>
 
-<div class="page-hero">
-  <div class="page-hero-inner">
-    <a href="index.html" class="back-link">Back to All Products</a>
-    <span class="page-eyebrow">Pet Legacy</span>
-    <h1 class="page-title">Pet QR Legacy Tag</h1>
-    <p class="page-sub">If they get lost, this brings them home. A durable metal QR tag on your pet's collar. Anyone who scans it sees your contact info, medical needs, and how to reach you — no app, no account needed.</p>
+<section class="hero">
+  <div class="badge">Pet QR Legacy Tag</div>
+  <h1>If They Get Lost,<br/>This Brings Them <em>Home</em></h1>
+  <p>A durable metal QR tag on their collar. Scan it — no app needed — and your contact info, medical details, and a call button show up instantly. One-time purchase. Permanent profile. No subscription.</p>
+</section>
 
-    <div class="tier-cards">
-      <div class="tier-card">
-        <span class="tier-label">Basic</span>
-        <div class="tier-name">Basic Pet Tag</div>
-        <div class="tier-price">$24.99</div>
-        <p class="tier-desc">Metal QR tag + digital profile with contact info, medical details, and personality notes.</p>
-        <a href="https://buy.stripe.com/eVq7sM9CvdWk9oE4iofQI07" class="btn btn-primary" style="width:100%;text-align:center;display:block;">Order Basic Tag</a>
+<div class="wrap">
+
+  <div class="sec"><h2>Choose Your Tag</h2><div class="sec-rule"></div></div>
+
+  <div class="tag-compare">
+
+    <!-- BASIC TAG -->
+    <div class="tag-option">
+      <div class="tag-tier">Basic Tag</div>
+      <div class="tag-price">$24.99</div>
+      <div class="tag-price-sub">One-time &middot; No subscription</div>
+
+      <div class="tag-visual">
+        <div class="basic-tag">
+          <div class="tag-engraved-name">Butters</div>
+          <div class="tag-qr-box">
+            <div class="qr-pattern">
+              <div class="qr-cell"></div><div class="qr-cell"></div><div class="qr-cell"></div><div class="qr-cell w"></div><div class="qr-cell"></div><div class="qr-cell"></div><div class="qr-cell"></div>
+              <div class="qr-cell"></div><div class="qr-cell w"></div><div class="qr-cell"></div><div class="qr-cell w"></div><div class="qr-cell"></div><div class="qr-cell w"></div><div class="qr-cell"></div>
+              <div class="qr-cell"></div><div class="qr-cell w"></div><div class="qr-cell"></div><div class="qr-cell"></div><div class="qr-cell"></div><div class="qr-cell w"></div><div class="qr-cell"></div>
+              <div class="qr-cell w"></div><div class="qr-cell"></div><div class="qr-cell w"></div><div class="qr-cell"></div><div class="qr-cell w"></div><div class="qr-cell"></div><div class="qr-cell w"></div>
+              <div class="qr-cell"></div><div class="qr-cell w"></div><div class="qr-cell"></div><div class="qr-cell"></div><div class="qr-cell"></div><div class="qr-cell w"></div><div class="qr-cell"></div>
+              <div class="qr-cell"></div><div class="qr-cell w"></div><div class="qr-cell"></div><div class="qr-cell w"></div><div class="qr-cell"></div><div class="qr-cell w"></div><div class="qr-cell"></div>
+              <div class="qr-cell"></div><div class="qr-cell"></div><div class="qr-cell"></div><div class="qr-cell w"></div><div class="qr-cell"></div><div class="qr-cell"></div><div class="qr-cell"></div>
+            </div>
+          </div>
+          <div class="tag-scan-text">Scan — No App Needed</div>
+          <div class="tag-phone-line">(805) 863-3794</div>
+        </div>
       </div>
-      <div class="tier-card featured">
-        <span class="tier-label">Premium</span>
-        <div class="tier-name">Premium + AirTag Holder</div>
-        <div class="tier-price">$49.99</div>
-        <p class="tier-desc">Everything in Basic, plus an AirTag-compatible collar holder so you can track them on your phone anytime.</p>
-        <a href="https://buy.stripe.com/bJe28s15ZcSgdEU9CIfQI09" class="btn btn-primary" style="width:100%;text-align:center;display:block;">Order Premium Tag</a>
-        <p class="tier-note">AirTag sold separately at apple.com (~$29).</p>
-      </div>
+
+      <ul class="features">
+        <li><span class="feat-check">+</span> Durable metal QR tag</li>
+        <li><span class="feat-check">+</span> Permanent digital profile</li>
+        <li><span class="feat-check">+</span> Tap-to-call owner button</li>
+        <li><span class="feat-check">+</span> Medical info visible on scan</li>
+        <li><span class="feat-check">+</span> No app needed to scan</li>
+        <li><span class="feat-check">+</span> No subscription, ever</li>
+        <li><span class="feat-check dim">+</span> <span style="color:var(--border)">AirTag holder (Premium only)</span></li>
+      </ul>
+      <a class="order-btn outline" href="https://buy.stripe.com/eVq7sM9CvdWk9oE4iofQI07">Order Basic Tag — $24.99</a>
     </div>
+
+    <!-- PREMIUM TAG -->
+    <div class="tag-option premium">
+      <div class="tag-tier">Premium Tag</div>
+      <div class="tag-price">$49.99</div>
+      <div class="tag-price-sub">Includes AirTag collar holder</div>
+
+      <div class="tag-visual">
+        <div class="premium-tag">
+          <div class="tag-engraved-name">Butters</div>
+          <div class="tag-qr-box">
+            <div class="qr-pattern">
+              <div class="qr-cell"></div><div class="qr-cell"></div><div class="qr-cell"></div><div class="qr-cell w"></div><div class="qr-cell"></div><div class="qr-cell"></div><div class="qr-cell"></div>
+              <div class="qr-cell"></div><div class="qr-cell w"></div><div class="qr-cell"></div><div class="qr-cell w"></div><div class="qr-cell"></div><div class="qr-cell w"></div><div class="qr-cell"></div>
+              <div class="qr-cell"></div><div class="qr-cell w"></div><div class="qr-cell"></div><div class="qr-cell"></div><div class="qr-cell"></div><div class="qr-cell w"></div><div class="qr-cell"></div>
+              <div class="qr-cell w"></div><div class="qr-cell"></div><div class="qr-cell w"></div><div class="qr-cell"></div><div class="qr-cell w"></div><div class="qr-cell"></div><div class="qr-cell w"></div>
+              <div class="qr-cell"></div><div class="qr-cell w"></div><div class="qr-cell"></div><div class="qr-cell"></div><div class="qr-cell"></div><div class="qr-cell w"></div><div class="qr-cell"></div>
+              <div class="qr-cell"></div><div class="qr-cell w"></div><div class="qr-cell"></div><div class="qr-cell w"></div><div class="qr-cell"></div><div class="qr-cell w"></div><div class="qr-cell"></div>
+              <div class="qr-cell"></div><div class="qr-cell"></div><div class="qr-cell"></div><div class="qr-cell w"></div><div class="qr-cell"></div><div class="qr-cell"></div><div class="qr-cell"></div>
+            </div>
+          </div>
+          <div class="tag-scan-text">Scan — No App Needed</div>
+          <div class="tag-phone-line">(805) 863-3794</div>
+        </div>
+        <div class="airtag-holder">
+          <div class="airtag-inner">
+            <div class="airtag-logo">&#9201;</div>
+            <div class="airtag-label">AirTag</div>
+          </div>
+        </div>
+        <div class="airtag-note">AirTag holder included<br/>AirTag sold separately</div>
+      </div>
+
+      <ul class="features">
+        <li><span class="feat-check">+</span> Durable metal QR tag</li>
+        <li><span class="feat-check">+</span> Permanent digital profile</li>
+        <li><span class="feat-check">+</span> Tap-to-call owner button</li>
+        <li><span class="feat-check">+</span> Medical info visible on scan</li>
+        <li><span class="feat-check">+</span> No app needed to scan</li>
+        <li><span class="feat-check">+</span> No subscription, ever</li>
+        <li><span class="feat-check">+</span> AirTag collar holder included</li>
+      </ul>
+      <a class="order-btn" href="https://buy.stripe.com/bJe28s15ZcSgdEU9CIfQI09">Order Premium Tag — $49.99</a>
+    </div>
+
+  </div>
+
+  <!-- HOW IT WORKS -->
+  <div class="sec"><h2>How It Works</h2><div class="sec-rule"></div></div>
+  <div class="how-grid">
+    <div class="how-step">
+      <div class="step-n">01</div>
+      <div class="step-title">Order Your Tag</div>
+      <div class="step-desc">One-time purchase. We build your pet's permanent profile and ship the metal QR tag to your door.</div>
+    </div>
+    <div class="how-step">
+      <div class="step-n">02</div>
+      <div class="step-title">We Build the Profile</div>
+      <div class="step-desc">Photos, personality, medical info, owner contact. A real profile — not just a name and phone number.</div>
+    </div>
+    <div class="how-step">
+      <div class="step-n">03</div>
+      <div class="step-title">Attach It to the Collar</div>
+      <div class="step-desc">Tag goes on. Profile goes live. Anyone who finds your pet scans it and reaches you directly. No app needed.</div>
+    </div>
+    <div class="how-step">
+      <div class="step-n">04</div>
+      <div class="step-title">Permanent. Forever.</div>
+      <div class="step-desc">No subscription. No renewal. No login required to view the profile. It lives online as long as we do.</div>
+    </div>
+  </div>
+
+  <!-- SAMPLE PROFILE -->
+  <div class="sec"><h2>See a Real Profile</h2><div class="sec-rule"></div></div>
+  <a class="sample-link" href="https://mylegacycontinues.com/butters-profile.html">
+    <div class="sl-left">
+      <div class="sl-tag">Live Sample Profile</div>
+      <div class="sl-name">Butters — Orange Tabby &middot; 5 Years</div>
+      <div class="sl-sub">Santa Maria, CA &middot; Owner: Bear Vazquez &middot; Microchipped &middot; Sterilized</div>
+    </div>
+    <div class="sl-arrow">&rarr;</div>
+  </a>
+
+</div>
+
+<div class="cta">
+  <div class="cta-inner">
+    <p>A portion of every tag sale supports local rescue operations.</p>
+    <a href="https://mylegacycontinues.com/rescue-registry.html">View Rescue Registry</a>
   </div>
 </div>
 
-<div class="gold-rule"></div>
-
-<section class="what-section">
-  <div class="what-inner">
-    <h2>What's on the Tag</h2>
-    <div class="includes-grid">
-      <div class="include-item">
-        <div class="include-item-icon">📱</div>
-        <div class="include-item-title">Instant Scan — No App</div>
-        <div class="include-item-desc">Anyone with a smartphone can scan the tag and see your contact info immediately. No downloads, no accounts.</div>
-      </div>
-      <div class="include-item">
-        <div class="include-item-icon">🔒</div>
-        <div class="include-item-title">Your Number Stays Private</div>
-        <div class="include-item-desc">Finders see a call/text button — not your actual phone number. You stay protected while staying reachable.</div>
-      </div>
-      <div class="include-item">
-        <div class="include-item-icon">💊</div>
-        <div class="include-item-title">Medical Info Visible</div>
-        <div class="include-item-desc">Medications, allergies, and vet contact are visible to anyone who finds your pet. Potentially lifesaving.</div>
-      </div>
-      <div class="include-item">
-        <div class="include-item-icon">🐾</div>
-        <div class="include-item-title">Personality Notes</div>
-        <div class="include-item-desc">Let finders know if your pet is friendly, nervous, good with kids, or needs special handling. Less stress for everyone.</div>
-      </div>
-      <div class="include-item">
-        <div class="include-item-icon">📍</div>
-        <div class="include-item-title">AirTag Holder (Premium)</div>
-        <div class="include-item-desc">Premium includes a holder for an Apple AirTag so you can track your pet's location in real time from your iPhone.</div>
-      </div>
-      <div class="include-item">
-        <div class="include-item-icon">♾️</div>
-        <div class="include-item-title">Permanent Profile</div>
-        <div class="include-item-desc">Hosted at mylegacycontinues.com forever. No subscription needed. Update their info anytime by contacting us.</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="gold-rule"></div>
-
-<section class="order-section" id="order">
-  <div class="order-inner">
-    <div style="padding-top:56px; margin-bottom:36px;">
-      <h2 style="font-family:var(--cinzel);font-size:clamp(1.4rem,3vw,2rem);font-weight:700;color:var(--forest);margin-bottom:12px;">Order My Pet Tag</h2>
-      <p style="font-size:0.9rem;color:var(--text-muted);max-width:580px;line-height:1.85;">Choose your tier below, then fill out the form. We'll build your pet's profile and ship the tag within 3–5 business days.</p>
-    </div>
-
-    <div class="stripe-cta-row">
-      <div class="stripe-cta">
-        <p>Metal QR tag + permanent digital profile.</p>
-        <span class="price-label">Basic Pet Tag — $24.99</span>
-        <a href="https://buy.stripe.com/eVq7sM9CvdWk9oE4iofQI07" class="btn btn-primary" style="width:100%;text-align:center;display:block;">Pay $24.99</a>
-      </div>
-      <div class="stripe-cta featured">
-        <p>Everything in Basic + AirTag-compatible collar holder.</p>
-        <span class="price-label">Premium Tag — $49.99</span>
-        <a href="https://buy.stripe.com/bJe28s15ZcSgdEU9CIfQI09" class="btn btn-primary" style="width:100%;text-align:center;display:block;">Pay $49.99</a>
-      </div>
-    </div>
-
-    <form class="intake-form" action="https://formspree.io/f/xzzpqjle" method="POST">
-      <input type="hidden" name="_subject" value="New Pet Tag Order">
-
-      <div class="form-section-title">About Your Pet</div>
-
-      <div class="form-row">
-        <div class="form-group">
-          <label for="pet-name">Pet's Name *</label>
-          <input type="text" id="pet-name" name="pet_name" placeholder="e.g. Duke" required>
-        </div>
-        <div class="form-group">
-          <label for="pet-type">Type of Pet *</label>
-          <select id="pet-type" name="pet_type">
-            <option value="" disabled selected>Select type</option>
-            <option value="Dog">Dog</option>
-            <option value="Cat">Cat</option>
-            <option value="Other">Other</option>
-          </select>
-        </div>
-      </div>
-
-      <div class="form-row">
-        <div class="form-group">
-          <label for="pet-breed">Breed</label>
-          <input type="text" id="pet-breed" name="pet_breed" placeholder="e.g. Lab Mix">
-        </div>
-        <div class="form-group">
-          <label for="pet-color">Color / Markings</label>
-          <input type="text" id="pet-color" name="pet_color" placeholder="e.g. Black with white chest">
-        </div>
-      </div>
-
-      <div class="form-group">
-        <label for="meds-allergies">Medications or Allergies (if any)</label>
-        <textarea id="meds-allergies" name="medications_allergies" placeholder="List any medications, dosages, or known allergies. Leave blank if none."></textarea>
-      </div>
-
-      <div class="form-row">
-        <div class="form-group">
-          <label for="vet-name">Vet Name</label>
-          <input type="text" id="vet-name" name="vet_name" placeholder="e.g. Santa Maria Animal Hospital">
-        </div>
-        <div class="form-group">
-          <label for="vet-phone">Vet Phone</label>
-          <input type="tel" id="vet-phone" name="vet_phone" placeholder="(805) 000-0000">
-        </div>
-      </div>
-
-      <div class="form-group">
-        <label for="pet-temperament">Pet's Temperament — How Should a Stranger Approach Them?</label>
-        <textarea id="pet-temperament" name="pet_temperament" placeholder="e.g. Friendly, loves attention. Nervous around loud noises. Let him sniff your hand first."></textarea>
-      </div>
-
-      <div class="form-row">
-        <div class="form-group">
-          <label for="good-kids">Good With Kids?</label>
-          <select id="good-kids" name="good_with_kids">
-            <option value="" disabled selected>Select</option>
-            <option value="Yes">Yes</option>
-            <option value="No">No</option>
-            <option value="Depends">Depends on the kid</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="good-dogs">Good With Other Dogs?</label>
-          <select id="good-dogs" name="good_with_dogs">
-            <option value="" disabled selected>Select</option>
-            <option value="Yes">Yes</option>
-            <option value="No">No</option>
-            <option value="Depends">Depends on the dog</option>
-          </select>
-        </div>
-      </div>
-
-      <div class="form-group">
-        <label for="tag-tier">Tag Tier Selected *</label>
-        <select id="tag-tier" name="tag_tier_selected" required>
-          <option value="" disabled selected>Which tag did you order?</option>
-          <option value="Basic $24.99">Basic Tag — $24.99</option>
-          <option value="Premium $49.99">Premium + AirTag Holder — $49.99</option>
-        </select>
-      </div>
-
-      <div class="form-divider"></div>
-      <div class="form-section-title">Your Contact Information</div>
-
-      <div class="form-row">
-        <div class="form-group">
-          <label for="owner-name">Your First Name *</label>
-          <input type="text" id="owner-name" name="owner_first_name" placeholder="Your first name" required>
-        </div>
-        <div class="form-group">
-          <label for="owner-city">Your City</label>
-          <input type="text" id="owner-city" name="owner_city" placeholder="e.g. Santa Maria, CA">
-        </div>
-      </div>
-
-      <div class="form-row">
-        <div class="form-group">
-          <label for="owner-phone">Your Phone *</label>
-          <input type="tel" id="owner-phone" name="owner_phone" placeholder="(805) 000-0000" required>
-        </div>
-        <div class="form-group">
-          <label for="backup-phone">Backup Contact Phone</label>
-          <input type="tel" id="backup-phone" name="backup_contact_phone" placeholder="(805) 000-0000">
-        </div>
-      </div>
-
-      <div class="form-submit-row">
-        <button type="submit" class="btn btn-primary">Order My Pet Tag</button>
-        <p class="form-submit-note">We'll confirm by email within 24 hours and follow up with shipping details.</p>
-      </div>
-    </form>
-  </div>
-</section>
-
-<footer>
-  <div class="footer-inner">
-    <img src="logo.png" alt="My Legacy Continues" class="footer-logo">
-    <div class="footer-copy">Long Live Your Legacy &mdash; mylegacycontinues.com &mdash; &copy; 2026 My Legacy Continues &mdash; Santa Maria, CA</div>
-  </div>
+<footer class="footer">
+  <p>My Legacy Continues &middot; Santa Maria, California &middot; <a href="https://mylegacycontinues.com">mylegacycontinues.com</a></p>
+  <p class="footer-credit">Long Live Your Legacy &middot; Est. 2024</p>
 </footer>
 
-<script>
-const toggle = document.getElementById('navToggle');
-const links = document.getElementById('navLinks');
-toggle.addEventListener('click', () => links.classList.toggle('open'));
-document.querySelectorAll('#navLinks a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
-</script>
 </body>
 </html>
