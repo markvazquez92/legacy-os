@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Debbie Mahony | My Legacy Continues</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=DM+Sans:wght@300;400;500&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --gold: #D4AF37; --cream: #f0ede6; --white: #fff;
+  --gray: #aaa; --border: 1px solid rgba(212,175,55,0.25);
+}
+body {
+  background: linear-gradient(160deg, #0a0a0a 0%, #111111 40%, #202e1f 100%);
+  min-height: 100vh; color: var(--cream);
+  font-family: 'DM Sans', sans-serif; font-weight: 300;
+}
+body::after {
+  content:''; position:fixed; inset:0; pointer-events:none; z-index:999;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  opacity:0.035;
+}
+nav {
+  position:sticky; top:0; z-index:100;
+  background:rgba(6,9,6,0.95); backdrop-filter:blur(12px);
+  border-bottom:var(--border); padding:1rem 2rem;
+  display:flex; align-items:center; justify-content:space-between;
+}
+.nav-logo { font-family:'Cormorant Garamond',serif; font-size:1.3rem; font-weight:600; color:var(--gold); text-decoration:none; }
+.nav-links { display:flex; gap:2rem; list-style:none; }
+.nav-links a { color:var(--gray); text-decoration:none; font-size:0.8rem; letter-spacing:0.08em; text-transform:uppercase; transition:color 0.2s; }
+.nav-links a:hover { color:var(--gold); }
+
+.profile-hero { padding:100px 2rem 60px; text-align:center; }
+.profile-photo {
+  width:180px; height:180px; border-radius:50%;
+  border:3px solid var(--gold); object-fit:cover;
+  margin:0 auto 2rem; display:block;
+  box-shadow:0 0 40px rgba(212,175,55,0.2);
+  background:#1a2a19;
+}
+.photo-placeholder {
+  width:180px; height:180px; border-radius:50%;
+  border:3px solid var(--gold); margin:0 auto 2rem;
+  display:flex; align-items:center; justify-content:center;
+  background:rgba(26,40,26,0.8);
+  font-family:'Cormorant Garamond',serif;
+  font-size:3rem; color:var(--gold);
+}
+.profile-name { font-family:'Chakra Petch',sans-serif; font-size:clamp(2rem,5vw,3.5rem); color:var(--white); margin-bottom:0.5rem; }
+.profile-title { font-family:'Cormorant Garamond',serif; font-size:1.2rem; font-style:italic; color:var(--gold); margin-bottom:2rem; }
+.gold-line { width:60px; height:2px; background:var(--gold); margin:2rem auto; opacity:0.6; }
+
+section { padding:70px 2rem; }
+.container { max-width:860px; margin:0 auto; }
+.section-label {
+  font-family:'Chakra Petch',sans-serif; font-size:0.7rem;
+  letter-spacing:0.2em; text-transform:uppercase;
+  color:var(--gold); margin-bottom:1rem; opacity:0.75;
+}
+.section-title { font-family:'Chakra Petch',sans-serif; font-size:1.8rem; color:var(--white); margin-bottom:1.5rem; }
+.body-text { font-family:'Cormorant Garamond',serif; font-size:1.2rem; line-height:1.9; color:var(--cream); opacity:0.88; }
+.card {
+  background:rgba(26,40,26,0.6); border:var(--border);
+  border-radius:8px; padding:2.5rem; margin-bottom:1.5rem;
+  backdrop-filter:blur(4px);
+}
+.card-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:1.5rem; margin-top:2rem; }
+.stat-label { font-family:'Chakra Petch',sans-serif; font-size:0.7rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--gold); opacity:0.7; margin-bottom:0.4rem; }
+.stat-value { font-family:'Cormorant Garamond',serif; font-size:1.4rem; color:var(--cream); }
+
+.family-links { display:flex; flex-wrap:wrap; gap:1rem; margin-top:2rem; justify-content:center; }
+.family-link {
+  display:inline-block; border:1px solid var(--gold); color:var(--gold);
+  font-family:'Chakra Petch',sans-serif; font-size:0.75rem;
+  letter-spacing:0.1em; text-transform:uppercase;
+  padding:0.7rem 1.5rem; border-radius:4px; text-decoration:none;
+  transition:background 0.2s;
+}
+.family-link:hover { background:rgba(212,175,55,0.1); }
+
+footer { border-top:var(--border); padding:3rem 2rem; text-align:center; background:rgba(6,9,6,0.8); }
+footer p { font-family:'Cormorant Garamond',serif; color:var(--gray); font-size:0.9rem; margin-bottom:0.5rem; }
+.footer-tagline { font-family:'Chakra Petch',sans-serif; color:var(--gold); font-size:0.95rem; letter-spacing:0.1em; margin-top:1rem; }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">My Legacy Continues</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="vazquez-profile.html">Bear</a></li>
+    <li><a href="rescue-registry.html">Rescue</a></li>
+  </ul>
+</nav>
+
+<div class="profile-hero">
+  <div class="photo-placeholder">D</div>
+  <h1 class="profile-name">Debbie Mahony</h1>
+  <p class="profile-title">Mom. The Garcia Line. Santa Maria, California.</p>
+  <div class="gold-line"></div>
+</div>
+
+<section>
+  <div class="container">
+    <div class="section-label">Her Story</div>
+    <h2 class="section-title">The Garcia Line</h2>
+    <div class="card">
+      <p class="body-text">
+        Debbie Garcia — now Mahony — is the daughter of Elvira "Barbara" Garcia, the youngest of eighteen children born to Francisco and Clara Montemayor Garcia in Sinton, Texas. The Montemayor name traces back to Faustino Montemayor, born 1852, who lived to age 98. That is not coincidence. That is the blood.
+      </p>
+      <br>
+      <p class="body-text">
+        Debbie was raised on the Central Coast of California. She built a life here, raised a son here, and her family's story is woven into the fabric of Santa Maria in a way that doesn't get talked about enough. She is the living link between the Montemayor line of South Texas and the Vázquez line of Mexico City — two families that, together, produced Bear.
+      </p>
+      <br>
+      <p class="body-text">
+        Her father — Bear's grandfather on the Garcia side — passed when Debbie was only one year old. A loss that left a gap in the oral record, but not in the blood. What she carried forward, she carried alone. And she carried it well.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0;">
+  <div class="container">
+    <div class="section-label">Family Record</div>
+    <h2 class="section-title">Roots</h2>
+    <div class="card-grid">
+      <div class="card">
+        <div class="stat-label">Mother</div>
+        <div class="stat-value">Elvira "Barbara" Garcia</div>
+        <div class="stat-label" style="margin-top:1rem;">Born</div>
+        <div class="stat-value">September 7, 1944</div>
+        <div class="stat-label" style="margin-top:1rem;">One of</div>
+        <div class="stat-value">18 children</div>
+      </div>
+      <div class="card">
+        <div class="stat-label">Great-Great-Grandfather</div>
+        <div class="stat-value">Faustino Montemayor</div>
+        <div class="stat-label" style="margin-top:1rem;">Born</div>
+        <div class="stat-value">1852 — Sinton, TX</div>
+        <div class="stat-label" style="margin-top:1rem;">Lived to</div>
+        <div class="stat-value">Age 98</div>
+      </div>
+      <div class="card">
+        <div class="stat-label">Family Origin</div>
+        <div class="stat-value">Sinton, Texas</div>
+        <div class="stat-label" style="margin-top:1rem;">Settled</div>
+        <div class="stat-value">Santa Maria, CA</div>
+        <div class="stat-label" style="margin-top:1rem;">Name Meaning</div>
+        <div class="stat-value">Garcia — possibly Basque for "bear"</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0;">
+  <div class="container">
+    <div class="section-label">The Garcia Name</div>
+    <h2 class="section-title">What's in a Name</h2>
+    <div class="card">
+      <p class="body-text">
+        Garcia is the most common surname in Spain — and it arrived in California with the first wave of Spanish settlers. Mission San Carlos recorded the Garcia name as early as December 13, 1777. Some linguists trace the Garcia name to the Basque word for "bear."
+      </p>
+      <br>
+      <p class="body-text">
+        Bear Vázquez. Son of Garcia. Named for the animal his mother's family may have carried in their name for a thousand years. That is not a coincidence anyone planned. That is lineage working through time.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0; text-align:center;">
+  <div class="container">
+    <div class="section-label">Family</div>
+    <h2 class="section-title">Connected Profiles</h2>
+    <div class="family-links">
+      <a href="vazquez-profile.html" class="family-link">Bear Vázquez</a>
+      <a href="butters-profile.html" class="family-link">Butters</a>
+      <a href="bears-concrete-profile.html" class="family-link">Bears Concrete</a>
+      <a href="rescue-registry.html" class="family-link">Rescue Registry</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>Debbie Mahony — Santa Maria, California</p>
+  <p>Preserved by My Legacy Continues · mylegacycontinues.com</p>
+  <p class="footer-tagline">Long Live Your Legacy.</p>
+</footer>
+
+</body>
+</html>

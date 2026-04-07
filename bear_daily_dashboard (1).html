@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bear's Marathon — Daily Dashboard</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400&family=Space+Mono&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: #202e1f;
+    min-height: 100vh;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 40px 20px;
+  }
+
+  .dash {
+    background: #202e1f;
+    padding: 28px 24px;
+    font-family: 'Space Mono', monospace;
+    width: 100%;
+    max-width: 520px;
+    border: 1px solid rgba(212,175,55,0.15);
+  }
+
+  .dash-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid rgba(212,175,55,0.2);
+  }
+
+  .dash-date {
+    font-size: 9px;
+    letter-spacing: 3px;
+    color: rgba(212,175,55,0.7);
+    text-transform: uppercase;
+  }
+
+  .dash-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 900;
+    color: #f0ede6;
+    line-height: 1;
+  }
+
+  .dash-sub {
+    font-size: 9px;
+    color: #D4AF37;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-top: 4px;
+  }
+
+  .quote-box {
+    background: rgba(212,175,55,0.08);
+    border-left: 3px solid #D4AF37;
+    padding: 14px 16px;
+    margin-bottom: 20px;
+  }
+
+  .quote-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 13px;
+    font-style: italic;
+    color: #f0ede6;
+    line-height: 1.7;
+    margin-bottom: 6px;
+  }
+
+  .quote-attr {
+    font-size: 8px;
+    letter-spacing: 2px;
+    color: #D4AF37;
+    text-transform: uppercase;
+  }
+
+  .section-label {
+    font-size: 7px;
+    letter-spacing: 4px;
+    color: rgba(212,175,55,0.6);
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    display: block;
+  }
+
+  .checklist {
+    margin-bottom: 20px;
+  }
+
+  .check-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(212,175,55,0.08);
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .check-item:hover { background: rgba(212,175,55,0.05); margin: 0 -8px; padding: 8px 8px; }
+
+  .check-box {
+    width: 14px; height: 14px;
+    border: 1px solid rgba(212,175,55,0.4);
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+  }
+
+  .check-box.done {
+    background: #D4AF37;
+    border-color: #D4AF37;
+  }
+
+  .check-mark {
+    width: 8px; height: 8px;
+    background: #202e1f;
+    clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+    display: none;
+  }
+
+  .check-box.done .check-mark { display: block; }
+
+  .check-label {
+    font-size: 10px;
+    color: #f0ede6;
+    opacity: 0.85;
+    flex: 1;
+    transition: all 0.2s;
+  }
+
+  .check-item.checked .check-label {
+    opacity: 0.35;
+    text-decoration: line-through;
+  }
+
+  .check-cat {
+    font-size: 7px;
+    color: #D4AF37;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    flex-shrink: 0;
+  }
+
+  .pillars-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 8px;
+    margin-bottom: 20px;
+  }
+
+  .pillar-card {
+    background: rgba(212,175,55,0.06);
+    border: 1px solid rgba(212,175,55,0.15);
+    padding: 10px;
+    text-align: center;
+  }
+
+  .pillar-icon {
+    font-size: 11px;
+    color: #D4AF37;
+    margin-bottom: 4px;
+    letter-spacing: 1px;
+  }
+
+  .pillar-name {
+    font-size: 7px;
+    letter-spacing: 2px;
+    color: #f0ede6;
+    text-transform: uppercase;
+    opacity: 0.7;
+  }
+
+  .nipsey-line {
+    background: rgba(212,175,55,0.04);
+    border: 1px solid rgba(212,175,55,0.12);
+    padding: 12px 14px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .nipsey-line:hover { background: rgba(212,175,55,0.08); }
+
+  .nipsey-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 12px;
+    font-style: italic;
+    color: #D4AF37;
+    line-height: 1.6;
+    text-align: center;
+  }
+
+  .nipsey-tap {
+    font-size: 7px;
+    letter-spacing: 2px;
+    color: rgba(212,175,55,0.4);
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: 6px;
+  }
+
+  .reset-btn {
+    width: 100%;
+    padding: 10px;
+    background: transparent;
+    border: 1px solid rgba(212,175,55,0.2);
+    color: rgba(212,175,55,0.5);
+    font-family: 'Space Mono', monospace;
+    font-size: 8px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin-bottom: 12px;
+    transition: all 0.2s;
+  }
+
+  .reset-btn:hover { border-color: rgba(212,175,55,0.5); color: #D4AF37; }
+
+  .footer-dash {
+    text-align: center;
+    font-size: 8px;
+    letter-spacing: 3px;
+    color: rgba(212,175,55,0.3);
+    text-transform: uppercase;
+    padding-top: 12px;
+    border-top: 1px solid rgba(212,175,55,0.1);
+  }
+</style>
+</head>
+<body>
+<div class="dash">
+  <div class="dash-header">
+    <div>
+      <div class="dash-date" id="todayDate"></div>
+      <div class="dash-title">Bear's Marathon</div>
+      <div class="dash-sub">Daily Foundation</div>
+    </div>
+    <div style="text-align:right">
+      <div style="font-size:9px;letter-spacing:2px;color:rgba(212,175,55,0.5);text-transform:uppercase">Progress</div>
+      <div style="font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:#D4AF37;" id="progressNum">0%</div>
+    </div>
+  </div>
+
+  <div class="quote-box">
+    <div class="quote-text" id="dailyQuote"></div>
+    <div class="quote-attr">Nipsey Hussle</div>
+  </div>
+
+  <span class="section-label">Daily checklist — The Foundation</span>
+  <div class="checklist" id="checklist">
+    <div class="check-item" onclick="toggle(this)">
+      <div class="check-box"><div class="check-mark"></div></div>
+      <span class="check-label">Gym / movement today</span>
+      <span class="check-cat">Body</span>
+    </div>
+    <div class="check-item" onclick="toggle(this)">
+      <div class="check-box"><div class="check-mark"></div></div>
+      <span class="check-label">8 hours sleep last night</span>
+      <span class="check-cat">Body</span>
+    </div>
+    <div class="check-item" onclick="toggle(this)">
+      <div class="check-box"><div class="check-mark"></div></div>
+      <span class="check-label">1 revenue action taken today</span>
+      <span class="check-cat">MLC</span>
+    </div>
+    <div class="check-item" onclick="toggle(this)">
+      <div class="check-box"><div class="check-mark"></div></div>
+      <span class="check-label">Direct to family — no middleman today</span>
+      <span class="check-cat">MLC</span>
+    </div>
+    <div class="check-item" onclick="toggle(this)">
+      <div class="check-box"><div class="check-mark"></div></div>
+      <span class="check-label">Checked on the rescue registry</span>
+      <span class="check-cat">Community</span>
+    </div>
+    <div class="check-item" onclick="toggle(this)">
+      <div class="check-box"><div class="check-mark"></div></div>
+      <span class="check-label">No circles — moved forward today</span>
+      <span class="check-cat">Focus</span>
+    </div>
+    <div class="check-item" onclick="toggle(this)">
+      <div class="check-box"><div class="check-mark"></div></div>
+      <span class="check-label">Documented something — the grind is the marketing</span>
+      <span class="check-cat">Brand</span>
+    </div>
+    <div class="check-item" onclick="toggle(this)">
+      <div class="check-box"><div class="check-mark"></div></div>
+      <span class="check-label">Stayed on the block — owned my lane today</span>
+      <span class="check-cat">Mind</span>
+    </div>
+  </div>
+
+  <span class="section-label">The Six Pillars</span>
+  <div class="pillars-grid">
+    <div class="pillar-card">
+      <div class="pillar-icon">I</div>
+      <div class="pillar-name">Own the Block</div>
+    </div>
+    <div class="pillar-card">
+      <div class="pillar-icon">II</div>
+      <div class="pillar-name">No Middleman</div>
+    </div>
+    <div class="pillar-card">
+      <div class="pillar-icon">III</div>
+      <div class="pillar-name">Stack Verticals</div>
+    </div>
+    <div class="pillar-card">
+      <div class="pillar-icon">IV</div>
+      <div class="pillar-name">Physical Anchor</div>
+    </div>
+    <div class="pillar-card">
+      <div class="pillar-icon">V</div>
+      <div class="pillar-name">Document Everything</div>
+    </div>
+    <div class="pillar-card">
+      <div class="pillar-icon">VI</div>
+      <div class="pillar-name">Reinvest in Community</div>
+    </div>
+  </div>
+
+  <div class="nipsey-line" onclick="nextQuote()">
+    <div class="nipsey-text" id="nipseyLine">"The Marathon Continues."</div>
+    <div class="nipsey-tap">Tap for another</div>
+  </div>
+
+  <button class="reset-btn" onclick="resetAll()">Reset for Tomorrow</button>
+
+  <div class="footer-dash">Long Live Your Legacy &middot; Long Live Nipsey &middot; The Marathon Continues</div>
+</div>
+
+<script>
+  const quotes = [
+    "The Marathon Continues.",
+    "You've got to have faith in what you're doing and not take the first no for an answer.",
+    "I'm a living testimony that you can come from nothing and build an empire.",
+    "Dedicate yourself to a purpose bigger than you.",
+    "The highest human act is to inspire.",
+    "We're going to build something out of nothing.",
+    "Control your own narrative. Own your masters. Own your platform.",
+    "Tough times reveal character. Stay consistent.",
+    "Don't just build a product. Build the model.",
+    "Invest in your block. The world will come to you."
+  ];
+
+  let qIdx = Math.floor(Math.random() * quotes.length);
+
+  function nextQuote() {
+    qIdx = (qIdx + 1) % quotes.length;
+    document.getElementById('nipseyLine').textContent = '\u201c' + quotes[qIdx] + '\u201d';
+  }
+
+  const dailyQuotes = [
+    "The giants gon' be the ones who create the business models.",
+    "Overtime — they don't know about them sleepless nights.",
+    "Opportunity and preparation — when they meet, it's nice.",
+    "I felt like this about myself before the mic.",
+    "What's the gross? That's the bottom line."
+  ];
+
+  const days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+  const months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+  const now = new Date();
+  document.getElementById('todayDate').textContent = days[now.getDay()] + ' \u00b7 ' + months[now.getMonth()] + ' ' + now.getDate() + ', ' + now.getFullYear();
+  document.getElementById('dailyQuote').textContent = '\u201c' + dailyQuotes[now.getDay() % dailyQuotes.length] + '\u201d';
+  document.getElementById('nipseyLine').textContent = '\u201c' + quotes[qIdx] + '\u201d';
+
+  function toggle(el) {
+    el.classList.toggle('checked');
+    const box = el.querySelector('.check-box');
+    box.classList.toggle('done');
+    updateProgress();
+  }
+
+  function updateProgress() {
+    const items = document.querySelectorAll('.check-item');
+    const done = document.querySelectorAll('.check-item.checked').length;
+    const pct = Math.round((done / items.length) * 100);
+    document.getElementById('progressNum').textContent = pct + '%';
+  }
+
+  function resetAll() {
+    document.querySelectorAll('.check-item').forEach(el => {
+      el.classList.remove('checked');
+      el.querySelector('.check-box').classList.remove('done');
+    });
+    updateProgress();
+  }
+</script>
+</body>
+</html>

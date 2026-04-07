@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Vázquez Legacy — My Legacy Continues</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500&display=swap');
+
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+
+:root {
+  --gold: #D4AF37;
+  --gold-dim: rgba(212,175,55,0.2);
+  --bg: #0d0d0d;
+  --white: #ffffff;
+  --gray: #cccccc;
+  --muted: #888888;
+}
+
+html,body{width:100%;height:100%;overflow:hidden;background:var(--bg);color:var(--white);font-family:'Inter',sans-serif;}
+
+body::after{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23g)' opacity='0.03'/%3E%3C/svg%3E");pointer-events:none;z-index:9999;mix-blend-mode:screen;}
+
+#stage{position:fixed;inset:0;}
+
+.slide{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:60px 40px;opacity:0;pointer-events:none;transition:opacity 1.2s ease;text-align:center;}
+.slide.active{opacity:1;pointer-events:all;}
+
+.slide-content{position:relative;z-index:2;max-width:900px;width:100%;}
+
+.bg-dark{background:var(--bg);}
+.bg-pattern{background:radial-gradient(ellipse at 20% 50%,rgba(212,175,55,0.05) 0%,transparent 60%),radial-gradient(ellipse at 80% 50%,rgba(212,175,55,0.04) 0%,transparent 60%),var(--bg);}
+.bg-galicia{background:linear-gradient(to bottom,rgba(13,13,13,0.72) 0%,rgba(13,13,13,0.52) 50%,rgba(13,13,13,0.88) 100%),url('https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Praia_As_Catedrais_02.jpg/1280px-Praia_As_Catedrais_02.jpg') center/cover no-repeat;animation:kb 30s ease infinite alternate;}
+.bg-mexico{background:linear-gradient(to bottom,rgba(13,13,13,0.78) 0%,rgba(13,13,13,0.52) 50%,rgba(13,13,13,0.9) 100%),url('https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Mexico_City_at_Night.jpg/1280px-Mexico_City_at_Night.jpg') center/cover no-repeat;animation:kb-r 30s ease infinite alternate;}
+.bg-deep{background:radial-gradient(ellipse at center,#161208 0%,#0d0d0d 70%);}
+
+@keyframes kb{0%{background-position:40% 50%;background-size:110%;}100%{background-position:60% 50%;background-size:100%;}}
+@keyframes kb-r{0%{background-position:60% 50%;background-size:100%;}100%{background-position:40% 50%;background-size:112%;}}
+
+/* PROGRESS */
+#timer-bg{position:fixed;bottom:0;left:0;height:2px;width:100%;background:rgba(212,175,55,0.12);z-index:8999;}
+#progress-bar{position:fixed;bottom:0;left:0;height:2px;background:var(--gold);box-shadow:0 0 8px var(--gold);z-index:9000;width:0%;transition:width 0.1s linear;}
+
+/* DOTS */
+#dots{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);display:flex;gap:10px;z-index:9000;}
+.dot{width:6px;height:6px;border-radius:50%;background:rgba(212,175,55,0.2);cursor:pointer;transition:all 0.4s;}
+.dot.active{background:var(--gold);box-shadow:0 0 6px var(--gold);transform:scale(1.4);}
+
+/* UI */
+#sound-btn{position:fixed;top:22px;right:28px;background:transparent;border:1px solid var(--gold-dim);color:var(--gold);font-family:'Inter',sans-serif;font-size:9px;letter-spacing:0.3em;text-transform:uppercase;padding:8px 14px;cursor:pointer;z-index:9000;transition:all 0.3s;}
+#sound-btn:hover{background:var(--gold-dim);}
+#pause-btn{position:fixed;bottom:16px;right:28px;background:transparent;border:none;color:rgba(212,175,55,0.35);font-size:10px;letter-spacing:0.2em;cursor:pointer;z-index:9000;font-family:'Inter',sans-serif;text-transform:uppercase;transition:color 0.3s;}
+#pause-btn:hover{color:var(--gold);}
+#corner{position:fixed;top:22px;left:28px;z-index:9000;text-align:left;}
+#corner .cn{font-family:'Playfair Display',serif;font-size:12px;letter-spacing:0.15em;color:var(--gold);text-transform:uppercase;}
+#corner .ct{font-size:8px;letter-spacing:0.3em;color:var(--muted);text-transform:uppercase;margin-top:2px;}
+
+/* TYPOGRAPHY */
+.stamp{font-family:'Inter',sans-serif;font-size:9px;letter-spacing:0.5em;text-transform:uppercase;color:var(--gold);opacity:0.75;margin-bottom:20px;}
+.family-name{font-family:'Playfair Display',serif;font-size:clamp(72px,15vw,160px);font-weight:700;color:var(--gold);line-height:0.9;letter-spacing:0.05em;}
+.italic-name{font-family:'Cormorant Garamond',serif;font-size:clamp(52px,11vw,120px);font-weight:300;font-style:italic;color:var(--white);line-height:0.95;}
+.headline{font-family:'Playfair Display',serif;font-size:clamp(30px,5.5vw,68px);font-weight:400;color:var(--white);line-height:1.2;}
+.headline .gold{color:var(--gold);}
+.subhead{font-family:'Cormorant Garamond',serif;font-size:clamp(18px,3.2vw,38px);font-style:italic;color:var(--gray);line-height:1.4;}
+.body{font-family:'Inter',sans-serif;font-size:clamp(13px,1.7vw,16px);color:var(--gray);line-height:1.9;font-weight:300;}
+.body .hl{color:var(--white);}
+.body .gd{color:var(--gold);}
+.dline{width:60px;height:1px;background:linear-gradient(to right,transparent,var(--gold),transparent);margin:26px auto;}
+.dv{width:1px;height:50px;background:linear-gradient(to bottom,transparent,var(--gold),transparent);margin:20px auto;}
+
+/* GRID */
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:56px;text-align:left;max-width:780px;}
+.col-label{font-size:9px;letter-spacing:0.4em;text-transform:uppercase;color:var(--gold);margin-bottom:12px;opacity:0.7;}
+.col-text{font-family:'Cormorant Garamond',serif;font-size:clamp(24px,4vw,40px);color:var(--white);line-height:1.2;font-weight:300;}
+.col-sub{font-size:12px;color:var(--muted);margin-top:10px;line-height:1.8;font-weight:300;}
+
+/* WATERMARK */
+.wm{font-family:'Playfair Display',serif;font-size:clamp(100px,22vw,260px);font-weight:700;color:var(--gold);opacity:0.035;position:absolute;line-height:1;user-select:none;letter-spacing:-0.02em;z-index:1;}
+
+/* CTA */
+.cta-btn{display:inline-block;background:var(--gold);color:#0d0d0d;font-family:'Inter',sans-serif;font-size:11px;font-weight:500;letter-spacing:0.3em;text-transform:uppercase;padding:16px 44px;text-decoration:none;border-radius:3px;transition:all 0.3s;}
+.cta-btn:hover{background:#c49b2e;}
+.ghost-btn{display:inline-block;background:transparent;border:1px solid var(--gold);color:var(--gold);font-family:'Inter',sans-serif;font-size:11px;letter-spacing:0.3em;text-transform:uppercase;padding:14px 36px;text-decoration:none;border-radius:3px;transition:all 0.3s;margin-left:14px;}
+.ghost-btn:hover{background:var(--gold-dim);}
+
+/* ANIMATIONS */
+@keyframes fadeUp{from{opacity:0;transform:translateY(22px);}to{opacity:1;transform:translateY(0);}}
+@keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
+@keyframes grow{from{width:0;}to{width:60px;}}
+
+.slide.active .a1{animation:fadeUp 0.9s ease 0.1s both;}
+.slide.active .a2{animation:fadeUp 0.9s ease 0.4s both;}
+.slide.active .a3{animation:fadeUp 0.9s ease 0.7s both;}
+.slide.active .a4{animation:fadeUp 0.9s ease 1.0s both;}
+.slide.active .a5{animation:fadeUp 0.9s ease 1.3s both;}
+.slide.active .al{animation:grow 0.8s ease 0.6s both;}
+
+/* ENTRY */
+#entry{position:fixed;inset:0;background:var(--bg);z-index:8000;display:flex;flex-direction:column;align-items:center;justify-content:center;transition:opacity 1.4s ease;}
+#entry.gone{opacity:0;pointer-events:none;}
+.ey{font-size:9px;letter-spacing:0.5em;text-transform:uppercase;color:var(--gold);opacity:0.6;margin-bottom:28px;animation:fadeIn 1.5s ease 0.5s both;}
+.en{font-family:'Playfair Display',serif;font-size:clamp(60px,13vw,140px);font-weight:700;color:var(--gold);letter-spacing:0.08em;line-height:1;animation:fadeIn 1.5s ease 0.8s both;}
+.es{font-family:'Cormorant Garamond',serif;font-size:clamp(14px,2.5vw,22px);font-style:italic;color:var(--gray);letter-spacing:0.1em;margin-top:14px;animation:fadeIn 1.5s ease 1.1s both;}
+.el{height:1px;background:linear-gradient(to right,transparent,var(--gold),transparent);margin:32px auto;animation:grow 1s ease 1.4s both;}
+.eb{background:transparent;border:1px solid var(--gold);color:var(--gold);font-family:'Inter',sans-serif;font-size:10px;letter-spacing:0.4em;text-transform:uppercase;padding:14px 44px;cursor:pointer;border-radius:3px;transition:all 0.4s;animation:fadeIn 1s ease 1.8s both;}
+.eb:hover{background:var(--gold);color:var(--bg);}
+
+@media(max-width:600px){.two-col{grid-template-columns:1fr;gap:28px;}#corner{display:none;}.ghost-btn{margin-left:0;margin-top:12px;display:block;}}
+</style>
+</head>
+<body>
+
+<audio id="audio" loop preload="auto">
+  <source src="https://cdn.pixabay.com/audio/2023/10/09/audio_a4b9e5de4e.mp3" type="audio/mpeg">
+</audio>
+
+<!-- ENTRY -->
+<div id="entry">
+  <div class="ey">My Legacy Continues &nbsp;·&nbsp; Est. 2024</div>
+  <div class="en">Vázquez</div>
+  <div class="es">Galicia &nbsp;·&nbsp; Mexico City &nbsp;·&nbsp; California</div>
+  <div class="el" style="width:80px;"></div>
+  <button class="eb" onclick="startTrailer()">Watch the Legacy</button>
+</div>
+
+<!-- UI -->
+<div id="corner"><div class="cn">My Legacy Continues</div><div class="ct">Long Live Your Legacy.</div></div>
+<button id="sound-btn" onclick="toggleSound()">Sound Off</button>
+<button id="pause-btn" onclick="togglePause()">⏸ Pause</button>
+<div id="dots"></div>
+<div id="timer-bg"></div>
+<div id="progress-bar"></div>
+
+<!-- SLIDES -->
+<div id="stage">
+
+  <!-- 1: TITLE -->
+  <div class="slide bg-pattern" data-duration="5000">
+    <div class="slide-content">
+      <div class="stamp a1">Heritage · 1300 AD — Present</div>
+      <div class="family-name a2">Vázquez</div>
+      <div class="dline al"></div>
+      <div class="italic-name a3">A Legacy Preserved.</div>
+      <div class="a4" style="margin-top:24px;"><div class="body">Galicia, Spain &nbsp;·&nbsp; Mexico City &nbsp;·&nbsp; Santa Maria, California</div></div>
+    </div>
+  </div>
+
+  <!-- 2: THE LAND -->
+  <div class="slide bg-galicia" data-duration="6500">
+    <div class="slide-content">
+      <div class="stamp a1">Galicia, Spain · 13th Century</div>
+      <div class="headline a2">The land that shaped<br>the <span class="gold">name.</span></div>
+      <div class="dline al"></div>
+      <div class="subhead a3">Green. Rain-soaked. Granite coastlines.<br>A land of fishermen, farmers, and fighters.</div>
+      <div class="a4" style="margin-top:22px;"><div class="body">Not the arid Castile of legend — Atlantic Spain,<br>where the sea is never far and mountains rise sudden and steep.</div></div>
+    </div>
+  </div>
+
+  <!-- 3: THE NAME -->
+  <div class="slide bg-dark" data-duration="6500">
+    <div class="wm" style="right:-30px;top:50%;transform:translateY(-50%);">V</div>
+    <div class="slide-content">
+      <div class="stamp a1">The Name · The Raven</div>
+      <div class="body a2" style="color:var(--muted);font-size:clamp(13px,2vw,18px);">Vázquez is not simply a surname.</div>
+      <div class="dline al"></div>
+      <div class="italic-name a3" style="font-size:clamp(34px,7vw,86px);">"Son of Vasco."</div>
+      <div class="a4" style="margin-top:18px;"><div class="subhead" style="color:var(--gold);font-size:clamp(16px,2.8vw,32px);">From the ancient Basque root — the Raven.</div></div>
+      <div class="a5" style="margin-top:18px;"><div class="body">A messenger between worlds. A guardian of memory.<br><span class="hl">The family that carries this name has always moved between worlds.</span></div></div>
+    </div>
+  </div>
+
+  <!-- 4: THE CROSSING -->
+  <div class="slide bg-mexico" data-duration="7000">
+    <div class="slide-content">
+      <div class="stamp a1">Mexico City · 1920s</div>
+      <div class="headline a2">The Revolution changed<br>everything.</div>
+      <div class="dline al"></div>
+      <div class="body a3" style="font-size:clamp(13px,1.9vw,18px);line-height:2.3;">
+        The Cristero War. Economic collapse. Conscription.<br>
+        A future with no horizon.<br><br>
+        <span class="hl">They looked north.</span><br>
+        1,500 miles. No crossing record. No fear.<br>
+        <span class="gd">Just the name they carried and the craft in their hands.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5: GRANDPA JOE -->
+  <div class="slide bg-deep" data-duration="6500">
+    <div class="wm" style="right:-20px;bottom:-40px;font-size:clamp(80px,18vw,200px);opacity:0.04;">Au</div>
+    <div class="slide-content">
+      <div class="stamp a1">Grandpa Joe · Mexico City → Santa Barbara</div>
+      <div class="headline a2" style="font-size:clamp(40px,8vw,88px);">He made <span class="gold">rings.</span></div>
+      <div class="dline al"></div>
+      <div class="subhead a3">Small. Precise. Built to outlast the maker.</div>
+      <div class="a4" style="margin-top:22px;">
+        <div class="body">He shaped metal by hand. He understood material.<br>He knew how metal behaved under heat, under pressure,<br>under the intention of a craftsman's eye.<br><br><span class="gd">That is not a small skill. That is a master's knowledge.</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 6: TWO TRADES -->
+  <div class="slide bg-dark" data-duration="7000">
+    <div class="slide-content">
+      <div class="stamp a1">The DNA of Excellence</div>
+      <div class="headline a2" style="margin-bottom:40px;">The material changed.<br><span class="gold">The mastery did not.</span></div>
+      <div class="two-col a3">
+        <div>
+          <div class="col-label">Grandpa Joe · Mexico City</div>
+          <div class="col-text">Ring<br>Maker</div>
+          <div class="col-sub">Shaped metal by hand.<br>Precision to the millimeter.<br>Built things that outlasted him.</div>
+        </div>
+        <div>
+          <div class="col-label">Bear Vázquez · Santa Maria, CA</div>
+          <div class="col-text">Foundation<br>Builder</div>
+          <div class="col-sub">Bears Concrete Pumping.<br>400 horsepower. Same intention.<br>Shapes the ground beneath people's feet.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 7: CTA -->
+  <div class="slide bg-pattern" data-duration="9999000">
+    <div class="slide-content">
+      <div class="stamp a1" style="font-size:14px;letter-spacing:0.1em;opacity:0.4;">— ✦ —</div>
+      <div class="headline a2" style="font-size:clamp(28px,5.5vw,62px);">Your family's story<br>is <span class="gold">waiting.</span></div>
+      <div class="dline al"></div>
+      <div class="body a3" style="margin-bottom:36px;">
+        Every family has a crossing. A craftsman. A name with meaning.<br>
+        We find it. We write it. We preserve it — permanently.<br>
+        <span style="color:var(--muted);font-size:11px;">No subscriptions. No expiration. Yours forever.</span>
+      </div>
+      <div class="a4">
+        <a class="cta-btn" href="https://buy.stripe.com/bJe14o2a35pO6csg16fQI02" target="_blank">Begin Your Heritage Book — $199</a>
+        <a class="ghost-btn" href="https://mylegacycontinues.com" target="_blank">Learn More</a>
+      </div>
+      <div class="a5" style="margin-top:44px;">
+        <div class="stamp" style="font-size:8px;opacity:0.4;">My Legacy Continues · mylegacycontinues.com · Santa Maria, CA · Est. 2024</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+const slides = document.querySelectorAll('.slide');
+const dotsEl = document.getElementById('dots');
+const bar = document.getElementById('progress-bar');
+const audio = document.getElementById('audio');
+audio.volume = 0.22;
+
+let current = 0, paused = false, timer = null;
+
+slides.forEach((_,i) => {
+  const d = document.createElement('div');
+  d.className = 'dot' + (i===0?' active':'');
+  d.onclick = () => goTo(i);
+  dotsEl.appendChild(d);
+});
+
+function dots(){ return document.querySelectorAll('.dot'); }
+
+function goTo(i){
+  slides[current].classList.remove('active');
+  dots()[current].classList.remove('active');
+  current = i;
+  slides[current].classList.add('active');
+  dots()[current].classList.add('active');
+  resetTimer();
+}
+
+function next(){ goTo((current+1) % (slides.length-1)); }
+
+function resetTimer(){
+  clearTimeout(timer);
+  const dur = parseInt(slides[current].dataset.duration)||5000;
+  if(dur > 500000){ bar.style.transition='none'; bar.style.width='100%'; return; }
+  bar.style.transition='none'; bar.style.width='0%';
+  requestAnimationFrame(()=>requestAnimationFrame(()=>{
+    bar.style.transition=`width ${dur}ms linear`;
+    bar.style.width='100%';
+  }));
+  if(!paused) timer = setTimeout(next, dur);
+}
+
+function togglePause(){
+  paused=!paused;
+  document.getElementById('pause-btn').textContent = paused ? '▶ Play' : '⏸ Pause';
+  if(paused){ clearTimeout(timer); bar.style.transition='none'; } else { resetTimer(); }
+}
+
+function toggleSound(){
+  if(audio.paused){ audio.play(); document.getElementById('sound-btn').textContent='Sound On'; }
+  else { audio.pause(); document.getElementById('sound-btn').textContent='Sound Off'; }
+}
+
+document.addEventListener('keydown', e=>{
+  if(e.key==='ArrowRight') next();
+  if(e.key==='ArrowLeft') goTo(Math.max(0,current-1));
+  if(e.key===' '){ e.preventDefault(); togglePause(); }
+});
+
+let tx=0;
+document.addEventListener('touchstart',e=>tx=e.touches[0].clientX);
+document.addEventListener('touchend',e=>{ const dx=e.changedTouches[0].clientX-tx; if(Math.abs(dx)>50) dx<0?next():goTo(Math.max(0,current-1)); });
+
+function startTrailer(){
+  const entry=document.getElementById('entry');
+  entry.classList.add('gone');
+  setTimeout(()=>entry.style.display='none',1500);
+  slides[0].classList.add('active');
+  resetTimer();
+  audio.play().then(()=>{ document.getElementById('sound-btn').textContent='Sound On'; }).catch(()=>{});
+}
+</script>
+</body>
+</html>

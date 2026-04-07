@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order Confirmed — My Legacy Continues</title>
+  <meta name="description" content="Your order is confirmed. Here's what happens next with My Legacy Continues.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Karla:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root{--obsidian:#0a0a0a;--bg:#0a0a0a;--bg-card:#141414;--bg-nav:#0d0d0d;--gold:#C9920A;--gold-light:#E5A812;--gold-border:rgba(201,146,10,0.25);--gold-wash:rgba(201,146,10,0.08);--parchment:#F5F0E8;--heading:#F5F0E8;--text-main:#F5F0E8;--text-muted:#B5A98A;--im-fell:'Cormorant Garamond', Georgia, serif;--cinzel:'Cormorant Garamond', Georgia, serif;--mont:'Karla', sans-serif;--sans:'Karla', sans-serif;}
+
+    body {
+      background: var(--obsidian);
+      color: var(--text-main);
+      font-family: var(--mont);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* NAV */
+    nav {
+      padding: 20px 32px;
+      border-bottom: 1px solid var(--gold-border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-brand {
+      font-family: var(--cinzel);
+      font-size: 1rem;
+      color: var(--gold);
+      text-decoration: none;
+      letter-spacing: 0.08em;
+    }
+    .nav-home {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      text-decoration: none;
+      letter-spacing: 0.05em;
+    }
+    .nav-home:hover { color: var(--gold); }
+
+    /* HERO */
+    .hero {
+      text-align: center;
+      padding: 80px 24px 48px;
+    }
+    .checkmark {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      border: 2px solid var(--gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 32px;
+      font-size: 2rem;
+    }
+    .hero h1 {
+      font-family: var(--cinzel);
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 700;
+      color: var(--gold);
+      letter-spacing: 0.04em;
+      margin-bottom: 16px;
+    }
+    .hero p {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      max-width: 540px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    /* MAIN CONTENT */
+    main {
+      flex: 1;
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 0 24px 80px;
+      width: 100%;
+    }
+
+    /* WHAT HAPPENS NEXT */
+    .steps-card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--gold-border);
+      border-radius: 8px;
+      padding: 40px;
+      margin-bottom: 32px;
+    }
+    .steps-card h2 {
+      font-family: var(--cinzel);
+      font-size: 1.1rem;
+      color: var(--gold);
+      letter-spacing: 0.06em;
+      margin-bottom: 32px;
+      text-transform: uppercase;
+    }
+    .step {
+      display: flex;
+      gap: 20px;
+      margin-bottom: 28px;
+    }
+    .step:last-child { margin-bottom: 0; }
+    .step-num {
+      font-family: var(--cinzel);
+      font-size: 1.1rem;
+      color: var(--gold);
+      font-weight: 700;
+      min-width: 28px;
+      line-height: 1.5;
+    }
+    .step-content h3 {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text-main);
+      margin-bottom: 6px;
+      letter-spacing: 0.02em;
+    }
+    .step-content p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
+    .step-divider {
+      border: none;
+      border-top: 1px solid var(--gold-border);
+      margin: 28px 0;
+    }
+
+    /* INTAKE FORM CTA */
+    .intake-card {
+      background: var(--gold-wash);
+      border: 1px solid var(--gold-border);
+      border-radius: 8px;
+      padding: 40px;
+      text-align: center;
+      margin-bottom: 32px;
+    }
+    .intake-card h2 {
+      font-family: var(--cinzel);
+      font-size: 1.1rem;
+      color: var(--gold);
+      letter-spacing: 0.06em;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+    }
+    .intake-card p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+      margin-bottom: 28px;
+      max-width: 440px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .btn-gold {
+      display: inline-block;
+      background: var(--gold);
+      color: #0a0a0a;
+      font-family: var(--cinzel);
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 16px 36px;
+      border-radius: 3px;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .btn-gold:hover {
+      background: var(--gold-light);
+      transform: translateY(-1px);
+    }
+
+    /* CONTACT */
+    .contact-note {
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+    .contact-note a {
+      color: var(--gold);
+      text-decoration: none;
+    }
+    .contact-note a:hover { text-decoration: underline; }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid var(--gold-border);
+      padding: 24px 32px;
+      text-align: center;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      letter-spacing: 0.04em;
+    }
+    footer a { color: var(--gold); text-decoration: none; }
+  </style>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav>
+    <a href="index.html"><img src="logo.png" alt="My Legacy Continues" class="nav-logo" style="height:40px;width:auto;"></a>
+    <a href="/" class="nav-home">← Back to Home</a>
+  </nav>
+
+  <div class="hero">
+    <div class="checkmark">✓</div>
+    <h1>Order Received</h1>
+    <p>Your payment went through. We're on it — here's exactly what happens next.</p>
+  </div>
+
+  <main>
+
+    <div class="steps-card">
+      <h2>What Happens Next</h2>
+
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <h3>You'll get a confirmation email</h3>
+          <p>Check your inbox — we send a confirmation to the email you used at checkout. If you don't see it within a few minutes, check spam.</p>
+        </div>
+      </div>
+
+      <hr class="step-divider">
+
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-content">
+          <h3>Fill out your intake form below</h3>
+          <p>This is how we get the details we need to build your order correctly — family names, contact info, photos, whatever applies to your product. The more you give us, the better your result.</p>
+        </div>
+      </div>
+
+      <hr class="step-divider">
+
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-content">
+          <h3>We get to work</h3>
+          <p>Once we have your intake, we start building. Heritage Books take 5–7 business days. Digital profiles and QR tags are typically ready in 48–72 hours. We'll email you when it's done.</p>
+        </div>
+      </div>
+
+      <hr class="step-divider">
+
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-content">
+          <h3>Your legacy is permanent</h3>
+          <p>Everything we build lives at a permanent URL on mylegacycontinues.com — no subscriptions, no expiration. It's yours forever.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="intake-card">
+      <h2>Complete Your Intake Form</h2>
+      <p>This is the most important step. Fill it out now so we can start your order right away. Takes about 3 minutes.</p>
+      <a href="https://formspree.io/f/xzzpqjle" class="btn-gold" target="_blank" rel="noopener">
+        Fill Out Your Intake Form →
+      </a>
+    </div>
+
+    <div class="contact-note">
+      Questions? Reply to your confirmation email or reach us directly at<br>
+      <a href="mailto:mark.vazquez92@gmail.com">mark.vazquez92@gmail.com</a> &nbsp;·&nbsp;
+      <a href="tel:8058633794">(805) 863-3794</a>
+    </div>
+
+  </main>
+
+  <footer>
+    <a href="/">My Legacy Continues</a> &nbsp;·&nbsp; Permanent Digital Assets | Zero Subscriptions &nbsp;·&nbsp; Long Live Your Legacy
+  </footer>
+
+</body>
+</html>

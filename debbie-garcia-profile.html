@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Debbie Garcia — My Legacy Continues</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Karla:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #202e1f;
+      --bg2: #1a2619;
+      --gold: #D4AF37;
+      --cream: #f0ede6;
+      --muted: rgba(240,237,230,0.6);
+      --border: rgba(212,175,55,0.25);
+    }
+    body {
+      background: var(--bg);
+      color: var(--cream);
+      font-family: 'Karla', sans-serif;
+      font-weight: 300;
+      line-height: 1.8;
+    }
+
+    /* NAV */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(32,46,31,0.95);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+      padding: 16px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    nav a { color: var(--gold); text-decoration: none; font-family: 'Karla', sans-serif; font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase; }
+    nav .site-name { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 400; letter-spacing: 0.08em; }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 80px 24px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at center top, rgba(212,175,55,0.06) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-photo-wrap {
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      border: 3px solid var(--gold);
+      overflow: hidden;
+      margin-bottom: 32px;
+      box-shadow: 0 0 40px rgba(212,175,55,0.2);
+    }
+    .hero-photo-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+    }
+    .label {
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+    .hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.8rem, 6vw, 4.5rem);
+      font-weight: 300;
+      color: var(--cream);
+      line-height: 1.1;
+      margin-bottom: 16px;
+    }
+    .hero-tagline {
+      font-size: 1rem;
+      color: var(--muted);
+      max-width: 480px;
+      margin: 0 auto 32px;
+    }
+    .gold-rule {
+      width: 60px;
+      height: 1px;
+      background: var(--gold);
+      margin: 0 auto;
+      opacity: 0.6;
+    }
+
+    /* SECTIONS */
+    .section {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 80px 24px;
+      border-bottom: 1px solid var(--border);
+    }
+    .section:last-of-type { border-bottom: none; }
+    .section .label { margin-bottom: 8px; }
+    .section h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 300;
+      color: var(--gold);
+      margin-bottom: 24px;
+      line-height: 1.2;
+    }
+    .section p {
+      color: var(--muted);
+      margin-bottom: 16px;
+      font-size: 1rem;
+    }
+    .section p:last-child { margin-bottom: 0; }
+
+    /* INFO ROWS */
+    .info-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 32px;
+    }
+    @media (max-width: 600px) { .info-grid { grid-template-columns: 1fr; } }
+    .info-card {
+      background: rgba(0,0,0,0.2);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 20px;
+    }
+    .info-card .info-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 6px;
+    }
+    .info-card .info-value {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      color: var(--cream);
+    }
+
+    /* FAMILY TAGS */
+    .family-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 24px;
+    }
+    .ftag {
+      background: rgba(212,175,55,0.08);
+      border: 1px solid var(--border);
+      border-radius: 3px;
+      padding: 8px 16px;
+      font-size: 0.85rem;
+      color: var(--cream);
+    }
+
+    /* CONNECTIONS */
+    .connections {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      margin-top: 32px;
+    }
+    .conn-card {
+      background: rgba(0,0,0,0.2);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 20px;
+      text-decoration: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .conn-card:hover {
+      border-color: var(--gold);
+      box-shadow: 0 0 20px rgba(212,175,55,0.1);
+    }
+    .conn-card .conn-label {
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 8px;
+    }
+    .conn-card .conn-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem;
+      color: var(--cream);
+      margin-bottom: 4px;
+    }
+    .conn-card .conn-desc {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 60px 24px;
+      border-top: 1px solid var(--border);
+    }
+    footer a { color: var(--gold); text-decoration: none; }
+    footer .tagline {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      font-style: italic;
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+    footer .site-link { font-size: 0.8rem; letter-spacing: 0.1em; color: var(--muted); }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="https://mylegacycontinues.com" class="site-name">My Legacy Continues</a>
+  <a href="vazquez-profile.html">The Vázquez Family</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-photo-wrap">
+    <img src="mom.JPG" alt="Debbie Garcia" />
+  </div>
+  <p class="label">Family Legacy Profile</p>
+  <h1>Debbie Garcia</h1>
+  <p class="hero-tagline">Santa Maria, California &mdash; Central Coast born and raised. Mother. Sister. Daughter of the Garcia line.</p>
+  <div class="gold-rule"></div>
+</section>
+
+<!-- HER STORY -->
+<section class="section">
+  <p class="label">Her Story</p>
+  <h2>Central Coast Roots</h2>
+  <p>Debbie Garcia was born and raised on the Central Coast of California — the youngest generation of a Garcia family that put down deep roots in Santa Maria and never left. Her grandmother Elvira, born September 7, 1944, was the youngest of 18 children raised by Francisco and Clara Garcia in Sinton, Texas before the family made their way west.</p>
+  <p>Debbie grew up surrounded by family — cousins, aunts, uncles, the whole Garcia tree gathered under one sky. That's the kind of upbringing that shapes a person. She carried that warmth into everything she built: her family, her community, her son.</p>
+  <p>She is the mother of Mark "Bear" Vázquez — founder of My Legacy Continues — and the living link between the Garcia and Vázquez lines on the Central Coast.</p>
+
+  <div class="info-grid">
+    <div class="info-card">
+      <div class="info-label">Hometown</div>
+      <div class="info-value">Santa Maria, California</div>
+    </div>
+    <div class="info-card">
+      <div class="info-label">Birthday</div>
+      <div class="info-value">August 31</div>
+    </div>
+    <div class="info-card">
+      <div class="info-label">Heritage</div>
+      <div class="info-value">Garcia &mdash; Sinton, Texas &rarr; Central Coast</div>
+    </div>
+    <div class="info-card">
+      <div class="info-label">Family Line</div>
+      <div class="info-value">Daughter of Elvira "Barbara" Garcia</div>
+    </div>
+  </div>
+</section>
+
+<!-- THE GARCIA LINE -->
+<section class="section">
+  <p class="label">Where She Comes From</p>
+  <h2>The Garcia Line</h2>
+  <p>The Garcia family traces back to Faustino Montemayor, born 1852 in Texas, who lived 98 years and saw the entire arc of Mexican-American history in the Southwest. His granddaughter Clara married Francisco Garcia and together they raised 18 children — a family so large the 1940 US Census recorded them all in Sinton, Texas.</p>
+  <p>Elvira "Barbara" Garcia — Debbie's mother and Bear's grandmother — was the youngest of those 18. Born September 7, 1944, she eventually married John Garcia and raised her family on the Central Coast. That line runs straight through Debbie and into Bear.</p>
+  <p>The Garcia name itself carries Basque-Galician roots — some linguists trace it to the Basque word for "bear." Bear Vázquez carries both names in his blood.</p>
+</section>
+
+<!-- FAMILY -->
+<section class="section">
+  <p class="label">Her People</p>
+  <h2>Family</h2>
+  <p>The people who make up her world.</p>
+  <div class="family-tags">
+    <span class="ftag">Mark "Bear" Vázquez &mdash; Son</span>
+    <span class="ftag">Elvira "Barbara" Garcia &mdash; Mother</span>
+    <span class="ftag">John Garcia &mdash; Father</span>
+    <span class="ftag">Anthony Raygoza Sr. &mdash; Brother</span>
+    <span class="ftag">Eddie Garcia &mdash; Brother</span>
+    <span class="ftag">Jack Garcia &mdash; Brother</span>
+    <span class="ftag">Ginger Garcia &mdash; Sister</span>
+    <span class="ftag">Marlene Garcia &mdash; Sister</span>
+    <span class="ftag">Antoinette Raygoza &mdash; Niece</span>
+  </div>
+</section>
+
+<!-- CONNECTED PROFILES -->
+<section class="section">
+  <p class="label">Connected Profiles</p>
+  <h2>The Family Network</h2>
+  <p>Every profile connects to the ones that came before and the ones that come after.</p>
+  <div class="connections">
+    <a href="vazquez-profile.html" class="conn-card">
+      <div class="conn-label">Son &mdash; Heritage Profile</div>
+      <div class="conn-name">Mark "Bear" Vázquez</div>
+      <div class="conn-desc">Founder. Concrete. Santa Maria.</div>
+    </a>
+    <a href="anthony-raygoza-memorial.html" class="conn-card">
+      <div class="conn-label">Brother &mdash; Memorial</div>
+      <div class="conn-name">Anthony Raygoza Sr.</div>
+      <div class="conn-desc">In loving memory.</div>
+    </a>
+    <a href="raygoza-memorial.html" class="conn-card">
+      <div class="conn-label">Niece &mdash; Memorial</div>
+      <div class="conn-name">Antoinette Raygoza</div>
+      <div class="conn-desc">Forever in her family's hearts.</div>
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p class="tagline">Long Live Your Legacy.</p>
+  <p class="site-link"><a href="https://mylegacycontinues.com">mylegacycontinues.com</a> &nbsp;&middot;&nbsp; Santa Maria, California &nbsp;&middot;&nbsp; Est. 2024</p>
+</footer>
+
+</body>
+</html>

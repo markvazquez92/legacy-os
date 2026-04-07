@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>FAQ & Contact — My Legacy Continues</title>
+<meta name="description" content="Questions about Heritage Books, Cemetery Plaques, Pet Tags, or Business Profiles? We've got answers. Contact My Legacy Continues."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+:root{
+  --black:#0a0a0a;
+  --green-deep:#0f1a0e;
+  --green:#202e1f;
+  --green-mid:#2a3d28;
+  --gold:#D4AF37;
+  --gold-dim:rgba(212,175,55,0.12);
+  --gold-glow:rgba(212,175,55,0.08);
+  --cream:#f0ede6;
+  --cream-dim:rgba(240,237,230,0.7);
+  --cream-muted:rgba(240,237,230,0.45);
+  --border:rgba(212,175,55,0.15);
+  --border-strong:rgba(212,175,55,0.3);
+}
+
+html{scroll-behavior:smooth}
+
+body{
+  background:var(--black);
+  color:var(--cream);
+  font-family:'DM Sans',sans-serif;
+  font-size:16px;
+  line-height:1.7;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+
+body::after{
+  content:'';position:fixed;inset:0;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+  pointer-events:none;z-index:9999;opacity:0.5;
+}
+
+/* NAV */
+.site-nav{
+  position:fixed;top:0;left:0;right:0;z-index:500;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 clamp(20px,5vw,60px);
+  background:rgba(10,10,10,0.92);
+  backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--border);
+  height:64px;
+}
+.nav-left{display:flex;align-items:center;gap:12px}
+.nav-logo{width:44px;height:44px;border-radius:0;object-fit:contain}
+.nav-brand{
+  font-family:'Chakra Petch',sans-serif;
+  font-size:14px;font-weight:600;
+  letter-spacing:0.08em;text-transform:uppercase;
+  color:var(--cream);
+}
+.nav-links{display:flex;gap:24px;list-style:none}
+.nav-links a{
+  font-family:'DM Sans',sans-serif;
+  font-size:12px;font-weight:500;
+  letter-spacing:0.1em;text-transform:uppercase;
+  color:var(--cream-muted);text-decoration:none;
+  transition:color 0.3s;
+}
+.nav-links a:hover{color:var(--gold)}
+.hamburger{display:none;background:none;border:none;cursor:pointer;padding:8px}
+.hamburger span{display:block;width:24px;height:2px;background:var(--cream);margin:5px 0;transition:0.3s}
+.mobile-menu{
+  display:none;position:fixed;top:64px;left:0;right:0;
+  background:rgba(10,10,10,0.97);
+  backdrop-filter:blur(20px);
+  padding:32px;z-index:499;
+  flex-direction:column;gap:20px;
+  border-bottom:1px solid var(--border);
+}
+.mobile-menu.open{display:flex}
+.mobile-menu a{
+  font-family:'Chakra Petch',sans-serif;
+  font-size:16px;font-weight:500;
+  letter-spacing:0.08em;text-transform:uppercase;
+  color:var(--cream);text-decoration:none;
+  padding:8px 0;border-bottom:1px solid var(--border);
+}
+@media(max-width:768px){
+  .nav-links{display:none}
+  .hamburger{display:block}
+}
+
+/* PAGE HEADER */
+.page-header{
+  padding:140px clamp(24px,6vw,80px) 80px;
+  background:linear-gradient(175deg, var(--black) 0%, var(--green-deep) 60%, var(--green) 100%);
+  text-align:center;
+  border-bottom:1px solid var(--border);
+}
+.page-tag{
+  font-family:'Chakra Petch',sans-serif;
+  font-size:11px;font-weight:600;
+  letter-spacing:0.4em;text-transform:uppercase;
+  color:var(--gold);
+  margin-bottom:20px;
+}
+.page-header h1{
+  font-family:'Chakra Petch',sans-serif;
+  font-size:clamp(28px,5vw,56px);
+  font-weight:700;letter-spacing:-0.02em;
+  text-transform:uppercase;
+  color:var(--cream);
+  margin-bottom:16px;
+}
+.page-header h1 em{
+  font-family:'Cormorant Garamond',serif;
+  font-style:italic;font-weight:400;
+  text-transform:none;color:var(--gold);
+}
+.page-header p{
+  font-size:clamp(15px,1.4vw,18px);
+  color:var(--cream-muted);
+  max-width:540px;margin:0 auto;
+}
+
+/* CONTAINER */
+.container{max-width:900px;margin:0 auto;padding:0 clamp(24px,5vw,60px)}
+
+/* SECTION */
+section{padding:80px 0}
+section+section{border-top:1px solid var(--border)}
+
+.section-label{
+  font-family:'Chakra Petch',sans-serif;
+  font-size:10px;font-weight:600;
+  letter-spacing:0.4em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:16px;
+}
+.section-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(24px,3vw,36px);
+  font-weight:600;color:var(--cream);
+  margin-bottom:40px;
+}
+
+/* FAQ ACCORDION */
+.faq-list{display:flex;flex-direction:column;gap:16px}
+
+.faq-item{
+  border:1px solid var(--border);
+  border-radius:4px;
+  overflow:hidden;
+  transition:border-color 0.3s;
+}
+.faq-item:hover{border-color:var(--border-strong)}
+
+.faq-q{
+  width:100%;background:none;border:none;cursor:pointer;
+  display:flex;justify-content:space-between;align-items:center;
+  padding:20px 24px;
+  text-align:left;
+  font-family:'Chakra Petch',sans-serif;
+  font-size:15px;font-weight:500;
+  letter-spacing:0.02em;
+  color:var(--cream);
+}
+.faq-q:hover{color:var(--gold)}
+.faq-arrow{
+  font-size:18px;color:var(--gold);
+  transition:transform 0.3s;
+  flex-shrink:0;margin-left:16px;
+}
+.faq-item.open .faq-arrow{transform:rotate(45deg)}
+
+.faq-a{
+  max-height:0;overflow:hidden;
+  transition:max-height 0.4s ease, padding 0.3s;
+  padding:0 24px;
+}
+.faq-item.open .faq-a{
+  max-height:600px;
+  padding:0 24px 24px;
+}
+.faq-a p{
+  font-size:15px;color:var(--cream-muted);
+  line-height:1.8;
+}
+.faq-a a{color:var(--gold);text-decoration:none}
+.faq-a a:hover{text-decoration:underline}
+
+/* CONTACT SECTION */
+.contact-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:40px;
+}
+@media(max-width:640px){
+  .contact-grid{grid-template-columns:1fr}
+}
+
+.contact-card{
+  background:rgba(212,175,55,0.04);
+  border:1px solid var(--border);
+  border-radius:4px;
+  padding:32px;
+}
+.contact-card h3{
+  font-family:'Chakra Petch',sans-serif;
+  font-size:13px;font-weight:600;
+  letter-spacing:0.15em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:12px;
+}
+.contact-card p{
+  font-size:15px;color:var(--cream-muted);
+  line-height:1.7;margin-bottom:16px;
+}
+.contact-card a{
+  color:var(--cream);text-decoration:none;
+  font-weight:500;
+}
+.contact-card a:hover{color:var(--gold)}
+
+.btn-gold{
+  display:inline-block;
+  font-family:'Chakra Petch',sans-serif;
+  font-size:13px;font-weight:600;
+  letter-spacing:0.12em;text-transform:uppercase;
+  color:var(--black);background:var(--gold);
+  padding:14px 32px;border-radius:3px;
+  text-decoration:none;border:none;cursor:pointer;
+  transition:background 0.2s,transform 0.2s;
+  margin-top:8px;
+}
+.btn-gold:hover{background:#c49b2e;transform:translateY(-1px)}
+
+.btn-outline{
+  display:inline-block;
+  font-family:'Chakra Petch',sans-serif;
+  font-size:13px;font-weight:600;
+  letter-spacing:0.12em;text-transform:uppercase;
+  color:var(--gold);background:transparent;
+  padding:13px 32px;border-radius:3px;
+  text-decoration:none;
+  border:1px solid var(--gold);
+  transition:background 0.2s,transform 0.2s;
+  margin-top:8px;
+}
+.btn-outline:hover{background:var(--gold-dim);transform:translateY(-1px)}
+
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:60px clamp(24px,5vw,60px);
+  border-top:1px solid var(--border);
+}
+footer img{width:56px;height:56px;object-fit:contain;margin-bottom:16px;opacity:0.8}
+.footer-tagline{
+  font-family:'Cormorant Garamond',serif;
+  font-size:18px;font-style:italic;
+  color:var(--gold);margin-bottom:12px;
+}
+footer p{font-size:13px;color:var(--cream-muted)}
+footer a{color:var(--cream-muted);text-decoration:none}
+footer a:hover{color:var(--gold)}
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="nav-left">
+    <img src="logo.png" alt="MLC" class="nav-logo"/>
+    <span class="nav-brand">My Legacy Continues</span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="/heritage-book.html">Heritage Book</a></li>
+    <li><a href="/cemetery-plaque.html">Memorial Plaque</a></li>
+    <li><a href="/pet-tag.html">Pet Tag</a></li>
+    <li><a href="/business-profile.html">Business Profile</a></li>
+    <li><a href="/rescue-registry.html">Rescue Registry</a></li>
+    <li><a href="/portal.html">Vault</a></li>
+  </ul>
+  <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="/heritage-book.html" onclick="toggleMenu()">Heritage Book</a>
+  <a href="/cemetery-plaque.html" onclick="toggleMenu()">Memorial Plaque</a>
+  <a href="/pet-tag.html" onclick="toggleMenu()">Pet Tag</a>
+  <a href="/business-profile.html" onclick="toggleMenu()">Business Profile</a>
+  <a href="/rescue-registry.html" onclick="toggleMenu()">Rescue Registry</a>
+  <a href="/portal.html" onclick="toggleMenu()">Vault</a>
+</div>
+
+<div class="page-header">
+  <div class="page-tag">Support</div>
+  <h1>FAQ &amp; <em>Contact</em></h1>
+  <p>Real questions, real answers. If you don't see yours here, reach out directly.</p>
+</div>
+
+<main>
+
+<!-- GENERAL -->
+<section>
+  <div class="container">
+    <div class="section-label">The Basics</div>
+    <div class="section-title">What is My Legacy Continues?</div>
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggle(this)">
+          What exactly is My Legacy Continues?
+          <span class="faq-arrow">+</span>
+        </button>
+        <div class="faq-a">
+          <p>My Legacy Continues is a heritage preservation and legacy business based in Santa Maria, CA. We build permanent digital profiles, Heritage Books, Cemetery Memorial Plaques, and Pet QR Tags — things that keep your family, your business, and the people you love remembered long after you're gone. Everything is built by hand, one order at a time.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggle(this)">
+          Are there subscriptions or monthly fees?
+          <span class="faq-arrow">+</span>
+        </button>
+        <div class="faq-a">
+          <p>No. Every product is a one-time purchase. Your profile, memorial page, or QR tag link is hosted permanently with no recurring charges. You pay once, it lives forever.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggle(this)">
+          Who builds everything?
+          <span class="faq-arrow">+</span>
+        </button>
+        <div class="faq-a">
+          <p>Everything is built by Mark "Bear" Vázquez — the founder. This isn't a faceless platform with automated outputs. When you order, Bear personally handles your research, your page, and your delivery. You're working with a real person who cares about getting it right.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggle(this)">
+          Where are you located?
+          <span class="faq-arrow">+</span>
+        </button>
+        <div class="faq-a">
+          <p>Santa Maria, California — Central Coast. We serve customers anywhere in the US, but we're rooted right here on the Central Coast. If you're local and want to connect in person, reach out.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- HERITAGE BOOK -->
+<section>
+  <div class="container">
+    <div class="section-label">Heritage Book — $199</div>
+    <div class="section-title">Your Family's Story, Printed and Preserved</div>
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggle(this)">
+          What's included in the Heritage Book?
+          <span class="faq-arrow">+</span>
+        </button>
+        <div class="faq-a">
+          <p>The Heritage Book is a 5-part package: (1) a printed hardcover book with your family's documented history, (2) a permanent QR-linked digital profile page, (3) a 4-week Culture Learning Guide with music, films, food, and archive links, (4) an Ancestor's Eyes narrative written from your ancestor's perspective, and (5) historical archive images sourced from public records. One price covers everything.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggle(this)">
+          How do you research my family?
+          <span class="faq-arrow">+</span>
+        </button>
+        <div class="faq-a">
+          <p>We dig into archives — FamilySearch, the Library of Congress, Chronicling America, regional databases, and more. We trace surnames through immigration records, census documents, parish records, and historical newspapers. The deeper the trail, the richer the book. Every book is different because every family is different.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggle(this)">
+          How accurate is the heritage research?
+          <span class="faq-arrow">+</span>
+        </button>
+        <div class="faq-a">
+          <p>We source everything from documented archives and always note what's confirmed vs. what's oral tradition. No family history is 100% complete — some branches have deeper records than others. We tell you exactly what we found and where we found it. You'll know what's fact and what's legend.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggle(this)">
+          How long does it take to receive my book?
+          <span class="faq-arrow">+</span>
+        </button>
+        <div class="faq-a">
+          <p>The research and writing takes 5–10 business days. Once your book is approved, it prints through our print partner and ships to you. Total time from order to delivery is typically 2–3 weeks. Your digital profile goes live within 5–7 business days.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggle(this)">
+          Is my family's information kept private?
+          <span class="faq-arrow">+</span>
+        </button>
+        <div class="faq-a">
+          <p>Yes. Your intake form information is used only to build your book and profile. We don't sell data. We don't share names with third parties. What you share with us stays between us.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PET TAG -->
+<section>
+  <div class="container">
+    <div class="section-label">Pet QR Tags — $24.99 / $49.99</div>
+    <div class="section-title">A Permanent Home for Your Pet's Story</div>
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggle(this)">
+          How does the Pet QR Tag work?
+          <span class="faq-arrow">+</span>
+        </button>
+        <div class="faq-a">
+          <p>Your pet gets a QR tag on their collar. Anyone who scans it goes directly to their permanent profile page — photos, their name, microchip info, your contact details, their story. If they ever get lost, whoever finds them can scan the tag and know exactly who to call. And when they pass, the page becomes their memorial — it never goes away.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggle(this)">
+          What's the difference between the $24.99 and $49.99 tag?
+          <span class="faq-arrow">+</span>
+        </button>
+        <div class="faq-a">
+          <p>The $24.99 tag is a standard QR tag on a durable engraved disc. The $49.99 Premium Tag includes an AirTag holder — so you can slide in an Apple AirTag for real-time GPS tracking in addition to the QR profile. Same profile, same permanent page. One tag just adds live tracking capability.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggle(this)">
+          Does part of the purchase go to rescue?
+          <span class="faq-arrow">+</span>
+        </button>
+        <div class="faq-a">
+          <p>Yes. A portion of every pet tag sale supports local rescue organizations we partner with, including Underdog Heroes in the Santa Maria/Lompoc area. The more tags sold, the more rescue support.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CEMETERY PLAQUE -->
+<section>
+  <div class="container">
+    <div class="section-label">Cemetery Memorial Plaque — $129</div>
+    <div class="section-title">A Physical Marker with a Digital Life</div>
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggle(this)">
+          What comes with the Cemetery Plaque?
+          <span class="faq-arrow">+</span>
+        </button>
+        <div class="faq-a">
+          <p>A weatherproof memorial plaque with a permanently embedded QR code, plus a custom digital memorial page for your loved one. Visitors at the grave scan the code and are taken to a full tribute — their photo, their story, a tribute message, family connections. The plaque is built to last outdoors for decades.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggle(this)">
+          Can I update the memorial page after it's live?
+          <span class="faq-arrow">+</span>
+        </button>
+        <div class="faq-a">
+          <p>Yes. If you need to update photos, add a tribute, or make changes to the page, reach out directly at <a href="mailto:mark.vazquez92@gmail.com">mark.vazquez92@gmail.com</a>. Updates are handled personally.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggle(this)">
+          Is the plaque cemetery-approved?
+          <span class="faq-arrow">+</span>
+        </button>
+        <div class="faq-a">
+          <p>Our plaques are designed to meet standard cemetery requirements, but we always recommend checking with your specific cemetery about their policies before ordering. If you have questions about installation, we'll help you figure it out.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- BUSINESS PROFILE -->
+<section>
+  <div class="container">
+    <div class="section-label">Business Founder Profile — $79</div>
+    <div class="section-title">Your Story Behind the Business</div>
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggle(this)">
+          What is a Business Founder Profile?
+          <span class="faq-arrow">+</span>
+        </button>
+        <div class="faq-a">
+          <p>A permanent digital page that tells the real story of who built a business and why. Not a LinkedIn bio. Not a generic "About Us." It's the founder's actual background, what they built, what they know, and where they came from. Built to scan via QR code on a business card, truck wrap, or website. Clients trust people, not logos — this makes that trust visible.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggle(this)">
+          Who is this for?
+          <span class="faq-arrow">+</span>
+        </button>
+        <div class="faq-a">
+          <p>Contractors, trades, small business owners, solo operators — anyone who built something with their hands or their hustle and wants clients to understand who they're working with before they ever make a call. Especially powerful for concrete, construction, landscaping, roofing, HVAC, plumbing, and similar trades.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section>
+  <div class="container">
+    <div class="section-label">Get in Touch</div>
+    <div class="section-title">We answer every message personally.</div>
+    <div class="contact-grid">
+
+      <div class="contact-card">
+        <h3>Email</h3>
+        <p>The best way to reach us. Send your question, your order details, or whatever's on your mind. Bear responds personally.</p>
+        <a href="mailto:mark.vazquez92@gmail.com">mark.vazquez92@gmail.com</a>
+        <br/>
+        <a href="mailto:mark.vazquez92@gmail.com" class="btn-gold" style="margin-top:20px;display:inline-block">Send a Message</a>
+      </div>
+
+      <div class="contact-card">
+        <h3>Phone / Text</h3>
+        <p>Call or text during business hours. If we're in the field, leave a message or shoot a text — we'll get back to you same day.</p>
+        <a href="tel:8058633794">805-863-3794</a>
+        <br/>
+        <a href="tel:8058633794" class="btn-outline" style="margin-top:20px;display:inline-block">Call or Text</a>
+      </div>
+
+      <div class="contact-card">
+        <h3>Place an Order</h3>
+        <p>Ready to get started? Go straight to the product page and order. You'll receive a confirmation email with next steps.</p>
+        <a href="/heritage-book.html" class="btn-gold" style="margin-top:8px;display:inline-block">Heritage Book — $199</a>
+      </div>
+
+      <div class="contact-card">
+        <h3>Rescue Partnership</h3>
+        <p>Own a rescue or shelter and want a free Rescue Registry page for your dogs? We build those at no cost. Reach out and let's set it up.</p>
+        <a href="mailto:mark.vazquez92@gmail.com?subject=Rescue%20Partnership" class="btn-outline" style="margin-top:8px;display:inline-block">Partner With Us</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <img src="logo.png" alt="My Legacy Continues"/>
+  <div class="footer-tagline">Long Live Your Legacy.</div>
+  <p><a href="https://mylegacycontinues.com">mylegacycontinues.com</a> &middot; &copy; 2026 My Legacy Continues &middot; Santa Maria, CA</p>
+</footer>
+
+<script>
+function toggleMenu(){
+  document.getElementById('mobileMenu').classList.toggle('open');
+}
+function toggle(btn){
+  const item = btn.closest('.faq-item');
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
+  if(!isOpen) item.classList.add('open');
+}
+</script>
+</body>
+</html>
