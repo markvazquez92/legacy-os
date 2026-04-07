@@ -1,0 +1,363 @@
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Space+Mono:wght@400;700&display=swap');
+
+  .poster {
+    background: #202e1f;
+    min-height: 100vh;
+    padding: 48px 40px;
+    font-family: 'Space Mono', monospace;
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
+  }
+
+  .poster::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-image: repeating-linear-gradient(
+      0deg, transparent, transparent 40px,
+      rgba(212,175,55,0.04) 40px, rgba(212,175,55,0.04) 41px
+    ),
+    repeating-linear-gradient(
+      90deg, transparent, transparent 40px,
+      rgba(212,175,55,0.04) 40px, rgba(212,175,55,0.04) 41px
+    );
+    pointer-events: none;
+  }
+
+  .corner {
+    position: absolute;
+    width: 32px; height: 32px;
+    border-color: #D4AF37;
+    border-style: solid;
+    border-width: 0;
+    opacity: 0.6;
+  }
+  .corner.tl { top: 20px; left: 20px; border-top-width: 2px; border-left-width: 2px; }
+  .corner.tr { top: 20px; right: 20px; border-top-width: 2px; border-right-width: 2px; }
+  .corner.bl { bottom: 20px; left: 20px; border-bottom-width: 2px; border-left-width: 2px; }
+  .corner.br { bottom: 20px; right: 20px; border-bottom-width: 2px; border-right-width: 2px; }
+
+  .eyebrow {
+    font-family: 'Space Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 6px;
+    color: #D4AF37;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 20px;
+    opacity: 0.8;
+  }
+
+  .divider {
+    width: 60px;
+    height: 1px;
+    background: #D4AF37;
+    margin: 0 auto 20px;
+    opacity: 0.5;
+  }
+
+  .main-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 52px;
+    font-weight: 900;
+    color: #f0ede6;
+    text-align: center;
+    line-height: 1.05;
+    margin: 0 0 8px;
+    letter-spacing: -1px;
+  }
+
+  .sub-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 400;
+    color: #D4AF37;
+    text-align: center;
+    font-style: italic;
+    margin-bottom: 32px;
+    letter-spacing: 1px;
+  }
+
+  .creed {
+    border-left: 2px solid #D4AF37;
+    padding: 0 0 0 20px;
+    margin: 0 0 32px;
+  }
+
+  .creed-line {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    color: #f0ede6;
+    line-height: 2;
+    opacity: 0.85;
+    display: block;
+    letter-spacing: 0.5px;
+  }
+
+  .creed-line.gold {
+    color: #D4AF37;
+    opacity: 1;
+    font-weight: 700;
+  }
+
+  .pillars {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 28px;
+  }
+
+  .pillar {
+    border: 1px solid rgba(212,175,55,0.25);
+    padding: 14px;
+    position: relative;
+  }
+
+  .pillar-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: rgba(212,175,55,0.15);
+    position: absolute;
+    top: 6px;
+    right: 10px;
+    line-height: 1;
+  }
+
+  .pillar-label {
+    font-size: 8px;
+    letter-spacing: 3px;
+    color: #D4AF37;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  .pillar-text {
+    font-family: 'Space Mono', monospace;
+    font-size: 9.5px;
+    color: #f0ede6;
+    line-height: 1.6;
+    opacity: 0.8;
+  }
+
+  .marathon-map {
+    background: rgba(212,175,55,0.05);
+    border: 1px solid rgba(212,175,55,0.2);
+    padding: 16px;
+    margin-bottom: 24px;
+  }
+
+  .map-title {
+    font-size: 8px;
+    letter-spacing: 4px;
+    color: #D4AF37;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    display: block;
+  }
+
+  .map-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 6px;
+  }
+
+  .map-nipsey {
+    font-size: 9px;
+    color: rgba(240,237,230,0.5);
+    font-family: 'Space Mono', monospace;
+    width: 160px;
+    flex-shrink: 0;
+    line-height: 1.4;
+  }
+
+  .map-arrow {
+    color: #D4AF37;
+    font-size: 10px;
+    opacity: 0.6;
+  }
+
+  .map-bear {
+    font-size: 9px;
+    color: #f0ede6;
+    font-family: 'Space Mono', monospace;
+    line-height: 1.4;
+    flex: 1;
+  }
+
+  .snapback {
+    border-top: 1px solid rgba(212,175,55,0.3);
+    border-bottom: 1px solid rgba(212,175,55,0.3);
+    padding: 16px 0;
+    margin-bottom: 24px;
+    text-align: center;
+  }
+
+  .snapback-label {
+    font-size: 7px;
+    letter-spacing: 4px;
+    color: rgba(212,175,55,0.6);
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  .snapback-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 15px;
+    color: #D4AF37;
+    font-style: italic;
+    line-height: 1.5;
+  }
+
+  .footer-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer-left {
+    font-size: 8px;
+    letter-spacing: 3px;
+    color: rgba(212,175,55,0.5);
+    text-transform: uppercase;
+  }
+
+  .footer-right {
+    font-size: 8px;
+    letter-spacing: 2px;
+    color: rgba(240,237,230,0.4);
+    text-transform: uppercase;
+  }
+
+  .raven {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 4px;
+    opacity: 0.4;
+  }
+
+  .print-btn {
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+    padding: 12px;
+    background: transparent;
+    border: 1px solid rgba(212,175,55,0.4);
+    color: #D4AF37;
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .print-btn:hover { background: rgba(212,175,55,0.1); }
+</style>
+
+<div class="poster">
+  <div class="corner tl"></div>
+  <div class="corner tr"></div>
+  <div class="corner bl"></div>
+  <div class="corner br"></div>
+
+  <div class="eyebrow">The Marathon Continues · My Legacy Continues</div>
+  <div class="divider"></div>
+
+  <h1 class="main-title">The Blueprint</h1>
+  <p class="sub-title">What we stand on. What we build toward.</p>
+
+  <div class="creed">
+    <span class="creed-line gold">We don't measure by how many people are watching.</span>
+    <span class="creed-line">We measure by the gross. By what we build. By what lasts.</span>
+    <span class="creed-line gold">We own our block first.</span>
+    <span class="creed-line">Santa Maria. The Central Coast. The families nobody else is telling the story of.</span>
+    <span class="creed-line gold">We cut the middleman. Direct to the family. Every time.</span>
+    <span class="creed-line">Concrete funds the vision. Books build credibility.</span>
+    <span class="creed-line">Tags drive traffic. Rescue builds the community.</span>
+    <span class="creed-line gold">We document everything. The grind is the marketing.</span>
+    <span class="creed-line">We bring the archive to the people.</span>
+    <span class="creed-line">Their history should not live behind a paywall in a country they've never been to.</span>
+    <span class="creed-line gold">We are not the book guy. We built the model.</span>
+    <span class="creed-line gold">Giants build models. We build the model.</span>
+  </div>
+
+  <div class="pillars">
+    <div class="pillar">
+      <span class="pillar-num">01</span>
+      <span class="pillar-label">Own the block</span>
+      <div class="pillar-text">Start local. Santa Maria first. The world comes to you — not the other way.</div>
+    </div>
+    <div class="pillar">
+      <span class="pillar-num">02</span>
+      <span class="pillar-label">Stack verticals</span>
+      <div class="pillar-text">Every product feeds the next. Books, tags, plaques, rescue — one ecosystem.</div>
+    </div>
+    <div class="pillar">
+      <span class="pillar-num">03</span>
+      <span class="pillar-label">No middleman</span>
+      <div class="pillar-text">Direct to the family. Own the relationship. Nobody skims your margin.</div>
+    </div>
+    <div class="pillar">
+      <span class="pillar-num">04</span>
+      <span class="pillar-label">Physical anchor</span>
+      <div class="pillar-text">Books. Plaques. Tags. Real things people hold. The digital layer sits on top.</div>
+    </div>
+  </div>
+
+  <div class="marathon-map">
+    <span class="map-title">The Parallel — Nipsey's Blueprint Applied</span>
+    <div class="map-row">
+      <span class="map-nipsey">Proud2Pay — direct to fan</span>
+      <span class="map-arrow">→</span>
+      <span class="map-bear">Direct to family — no platform tax</span>
+    </div>
+    <div class="map-row">
+      <span class="map-nipsey">Marathon Clothing — physical anchor</span>
+      <span class="map-arrow">→</span>
+      <span class="map-bear">Books, plaques, tags — physical anchor</span>
+    </div>
+    <div class="map-row">
+      <span class="map-nipsey">Vector90 — community hub / STEM</span>
+      <span class="map-arrow">→</span>
+      <span class="map-bear">Community hub — Central Coast (Phase 2)</span>
+    </div>
+    <div class="map-row">
+      <span class="map-nipsey">Crenshaw plaza — own the real estate</span>
+      <span class="map-arrow">→</span>
+      <span class="map-bear">Own the platform — GitHub, not rented land</span>
+    </div>
+    <div class="map-row">
+      <span class="map-nipsey">All Money In label — own the masters</span>
+      <span class="map-arrow">→</span>
+      <span class="map-bear">Own the archive — family history is the master</span>
+    </div>
+  </div>
+
+  <div class="snapback">
+    <span class="snapback-label">When you drift — come back to this</span>
+    <div class="snapback-text">
+      "Remember the Chevy.<br>
+      The sleepless nights. The preparation.<br>
+      That was the real work.<br>
+      Giants build models."
+    </div>
+  </div>
+
+  <div class="raven">✦</div>
+
+  <div class="footer-row">
+    <span class="footer-left">Long Live Your Legacy</span>
+    <span class="footer-right">mylegacycontinues.com · Est. 2024</span>
+  </div>
+  <div style="text-align:center;margin-top:6px">
+    <span style="font-size:7px;letter-spacing:3px;color:rgba(212,175,55,0.3);text-transform:uppercase">Long Live Nipsey · The Marathon Continues</span>
+  </div>
+
+  <button class="print-btn" onclick="window.print()">Print This Poster</button>
+</div>
