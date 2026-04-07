@@ -277,6 +277,50 @@
       padding: 4px 10px;
       border-radius: 2px;
     }
+    .feature-tag-live {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 14px;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #4CAF7D;
+      background: rgba(10,140,60,0.08);
+      border: 1px solid rgba(10,140,60,0.25);
+      padding: 4px 10px;
+      border-radius: 2px;
+    }
+    .feature-tag-live::before {
+      content: '';
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: #4CAF7D;
+      animation: pulse-green 2s infinite;
+      flex-shrink: 0;
+    }
+    @keyframes pulse-green {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
+    .feature-tag-soon {
+      display: inline-block;
+      margin-top: 14px;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.1);
+      padding: 4px 10px;
+      border-radius: 2px;
+    }
+    .feature-card-soon {
+      opacity: 0.7;
+    }
+    .feature-card-soon:hover { opacity: 0.85; }
 
     /* ── JOURNEY TIMELINE ── */
     .journey-section {
@@ -673,7 +717,8 @@
         <p class="feature-desc">
           Where they were found. What condition they were in. Who saved them. The rescue origin story lives on the profile forever — not in a Facebook caption that disappears from the algorithm, but in a permanent URL that can be shared, linked, and remembered.
         </p>
-        <span class="feature-tag">Never Disappears</span>
+        <span class="feature-tag-live">Live Now</span>
+        &nbsp;<a href="https://docs.google.com/forms/d/e/1FAIpQLSdjinj8gFY6JWgDnXQt5gY52NUH4OVadrsiv2_0DdU-xVvt6w/viewform?usp=publish-editor" style="display:inline-block; margin-top:14px; font-size:10px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--gold); text-decoration:underline; text-underline-offset:3px;">Submit a Dog →</a>
       </div>
 
       <div class="feature-card">
@@ -682,7 +727,7 @@
         <p class="feature-desc">
           Fearful → trusting → thriving. Every behavioral note from intake through foster care gets documented in structured form — specific triggers, what worked in training, known fears, daily routine. Adopters receive this full history, not vague coded phrases like "needs patient owner."
         </p>
-        <span class="feature-tag">Cuts Returns by 35%</span>
+        <span class="feature-tag-live">Live Now</span>
       </div>
 
       <div class="feature-card">
@@ -691,7 +736,7 @@
         <p class="feature-desc">
           Vaccines, treatments, vet visits, medications — all in one portable record that travels with the dog forever. No more fragmented records scattered across shelters, foster homes, and new vets. One profile. One complete history.
         </p>
-        <span class="feature-tag">Portable Forever</span>
+        <span class="feature-tag-live">Live Now</span>
       </div>
 
       <div class="feature-card">
@@ -700,7 +745,7 @@
         <p class="feature-desc">
           The first 3 days, 3 weeks, and 3 months after adoption are when most dogs get returned — and when adopters feel most alone. Automated check-ins at day 2, day 10, week 3, month 1.5, and month 3 provide behavioral guidance and a direct escalation path before the dog ends up back at a shelter.
         </p>
-        <span class="feature-tag">Day 2 · Day 10 · Week 3 · Month 3</span>
+        <span class="feature-tag-live">Live Now</span>
       </div>
 
       <div class="feature-card">
@@ -709,7 +754,7 @@
         <p class="feature-desc">
           Fosters stay connected to the dogs they raised — getting updates, celebrating gotcha days, sharing in the dog's story long after adoption. Fosters can also request backup coverage for weekends when things get hard. No more burning out in silence.
         </p>
-        <span class="feature-tag">Built for Burnout Prevention</span>
+        <span class="feature-tag-live">Live Now</span>
       </div>
 
       <div class="feature-card">
@@ -718,25 +763,25 @@
         <p class="feature-desc">
           Every dog that enters a rescue organization is logged publicly — intake date, condition, status, outcome. When intake consistently exceeds outcomes, the system flags it. Legitimate rescuers like Shoshi get a verified public record of every dog they've saved. Bad actors can't hide behind a website and a nonprofit ID.
         </p>
-        <span class="feature-tag">Public Accountability</span>
+        <span class="feature-tag-live">Live Now</span>
       </div>
 
-      <div class="feature-card">
+      <div class="feature-card feature-card-soon">
         <div class="feature-num">07</div>
         <h3 class="feature-title">Red List Alert Network</h3>
         <p class="feature-desc">
           When a shelter puts a dog on the euthanasia list, rescue partners get an immediate notification — not a vague "check the website" message, not a call 24 hours too late. Real-time alerts so rescues like Underdog Heroes can respond before it's over.
         </p>
-        <span class="feature-tag">Bowie's Law in Action</span>
+        <span class="feature-tag-soon">Coming Soon</span>
       </div>
 
-      <div class="feature-card">
+      <div class="feature-card feature-card-soon">
         <div class="feature-num">08</div>
         <h3 class="feature-title">Transport Coordination Network</h3>
         <p class="feature-desc">
           Volunteer drivers connect across counties to move dogs to safety. Real-time relay tracking, volunteer leg claiming, automated backup matching when someone drops a leg, and digital handoff verification. Not duct-taped together with Facebook posts and phone calls.
         </p>
-        <span class="feature-tag">Prevents Lake Hughes Situations</span>
+        <span class="feature-tag-soon">Coming Soon</span>
       </div>
 
       <div class="feature-card">
@@ -745,7 +790,7 @@
         <p class="feature-desc">
           Adopters post updates, photos, birthday posts, and milestones directly to the dog's profile. The foster who raised them sees it. The rescue team sees it. The dog's story keeps growing long after adoption day — not in a Facebook comment thread, but on a permanent page that belongs to that dog.
         </p>
-        <span class="feature-tag">Updates Live on the Profile</span>
+        <span class="feature-tag-live">Live Now</span>
       </div>
 
       <div class="feature-card">
@@ -754,7 +799,7 @@
         <p class="feature-desc">
           When the dog passes, the profile becomes a tribute. The rescue story, the behavioral journey, the adoption day, the years of life — all preserved. The foster, the transporter, the shelter staff, and the adopter can all contribute memories. Grief support resources integrate directly. The dog's full community is notified.
         </p>
-        <span class="feature-tag">The Story Never Ends</span>
+        <span class="feature-tag-live">Live Now</span>
       </div>
     </div>
   </div>
