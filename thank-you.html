@@ -3,94 +3,203 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Thank You — My Legacy Continues</title>
-  <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=Karla:wght@400;500;700&display=swap" rel="stylesheet" />
+  <title>You're In — My Legacy Continues</title>
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;600;700&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
-      background: #1B3A2D;
-      color: #F0EAD6;
-      font-family: 'Karla', sans-serif;
+      background: #0a0f0a;
+      color: #f0ede6;
+      font-family: 'DM Sans', sans-serif;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
+    }
+
+    nav {
+      padding: 20px 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid rgba(212,175,55,0.2);
+    }
+
+    nav a img { height: 48px; }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 24px;
+    }
+
+    nav ul li a {
+      color: #f0ede6;
+      text-decoration: none;
+      font-size: 13px;
+      letter-spacing: 0.5px;
+      opacity: 0.8;
+      transition: opacity 0.2s;
+    }
+
+    nav ul li a:hover { opacity: 1; color: #D4AF37; }
+
+    main {
+      flex: 1;
+      display: flex;
       align-items: center;
       justify-content: center;
+      padding: 60px 24px;
+    }
+
+    .card {
+      max-width: 520px;
+      width: 100%;
       text-align: center;
-      padding: 2rem;
+      animation: fadeUp 0.7s ease forwards;
+      opacity: 0;
     }
 
-    /* FILM GRAIN */
-    body::before {
-      content: '';
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      z-index: 9999;
-      opacity: 0.035;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='grain'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23grain)' opacity='1'/%3E%3C/svg%3E");
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
     }
 
-    img { height: 48px; margin-bottom: 2.5rem; display: block; }
-
-    .label {
-      display: inline-block;
-      font-size: 11px;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: #C9A84C;
-      border: 1px solid #C9A84C;
-      padding: 4px 12px;
-      margin-bottom: 1.75rem;
+    .seal {
+      width: 72px;
+      height: 72px;
+      border: 2px solid #D4AF37;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 28px;
+      font-size: 28px;
     }
 
     h1 {
-      font-family: 'IM Fell English', Georgia, serif;
-      font-size: clamp(2rem, 5vw, 3rem);
-      color: #E8DFC8;
-      margin-bottom: 1.25rem;
-      line-height: 1.2;
+      font-family: 'Chakra Petch', sans-serif;
+      font-size: clamp(28px, 5vw, 40px);
+      color: #D4AF37;
+      letter-spacing: 1px;
+      margin-bottom: 16px;
     }
 
     p {
-      color: rgba(240,234,214,0.65);
-      font-size: 1rem;
-      max-width: 480px;
-      line-height: 1.75;
-      margin-bottom: 2.5rem;
+      font-size: 17px;
+      line-height: 1.7;
+      color: #c8c4bc;
+      margin-bottom: 12px;
     }
 
-    a.btn {
-      display: inline-block;
-      background: #C9A84C;
-      color: #1B3A2D;
-      font-family: 'Karla', sans-serif;
-      font-weight: 700;
-      font-size: 0.875rem;
-      padding: 12px 28px;
-      border-radius: 3px;
-      text-decoration: none;
-      letter-spacing: 0.1em;
+    .divider {
+      width: 48px;
+      height: 2px;
+      background: #D4AF37;
+      margin: 28px auto;
+    }
+
+    .next-steps {
+      text-align: left;
+      background: rgba(212,175,55,0.05);
+      border: 1px solid rgba(212,175,55,0.2);
+      border-radius: 6px;
+      padding: 24px 28px;
+      margin-bottom: 32px;
+    }
+
+    .next-steps p {
+      font-size: 13px;
+      letter-spacing: 1px;
       text-transform: uppercase;
-      transition: background 0.2s;
+      color: #D4AF37;
+      margin-bottom: 14px;
     }
-    a.btn:hover { background: #a07c32; }
 
-    .footer-note {
-      margin-top: 3.5rem;
-      font-size: 0.75rem;
-      color: rgba(240,234,214,0.3);
-      letter-spacing: 0.04em;
+    .next-steps ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .next-steps ul li {
+      font-size: 15px;
+      color: #f0ede6;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .next-steps ul li::before {
+      content: '→';
+      color: #D4AF37;
+      flex-shrink: 0;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 36px;
+      background: #D4AF37;
+      color: #111;
+      font-family: 'Chakra Petch', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-decoration: none;
+      border-radius: 4px;
+      transition: opacity 0.2s;
+    }
+
+    .btn:hover { opacity: 0.88; }
+
+    footer {
+      text-align: center;
+      padding: 24px;
+      font-size: 12px;
+      color: rgba(240,237,230,0.4);
+      border-top: 1px solid rgba(212,175,55,0.1);
     }
   </style>
 </head>
 <body>
-  <img src="https://mylegacycontinues.com/logo.png" alt="My Legacy Continues" />
-  <div class="label">Order Received</div>
-  <h1>We Got It.</h1>
-  <p>Your information is in. Bear will confirm by email within 24 hours and get to work. Long live your legacy.</p>
-  <a href="https://mylegacycontinues.com" class="btn">Back to Home</a>
-  <div class="footer-note">My Legacy Continues &nbsp;&middot;&nbsp; Santa Maria, CA &nbsp;&middot;&nbsp; mylegacycontinues.com</div>
+
+<nav>
+  <a href="/index.html"><img src="/logo.png" alt="My Legacy Continues" /></a>
+  <ul>
+    <li><a href="/index.html">Home</a></li>
+    <li><a href="/heritage-book.html">Heritage Book</a></li>
+    <li><a href="/cemetery-plaque.html">Cemetery Plaque</a></li>
+    <li><a href="/pet-tag.html">Pet Tag</a></li>
+    <li><a href="/business-profile.html">Business Profile</a></li>
+  </ul>
+</nav>
+
+<main>
+  <div class="card">
+    <div class="seal">✓</div>
+    <h1>You're In.</h1>
+    <p>Your vault access request was received. Bear will personally reach out within 48 hours to get your family's record set up.</p>
+
+    <div class="divider"></div>
+
+    <div class="next-steps">
+      <p>What happens next</p>
+      <ul>
+        <li>You'll get a confirmation email shortly</li>
+        <li>Bear reviews your request personally</li>
+        <li>We reach out to gather your family's info</li>
+        <li>Your vault is built and linked to your QR products</li>
+      </ul>
+    </div>
+
+    <a href="/index.html" class="btn">BACK TO HOME</a>
+  </div>
+</main>
+
+<footer>
+  Long Live Your Legacy — mylegacycontinues.com — © 2026 My Legacy Continues — Santa Maria, CA
+</footer>
+
 </body>
 </html>
