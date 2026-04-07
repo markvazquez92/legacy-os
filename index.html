@@ -78,8 +78,6 @@ nav {
 .nav-center a { font-family: var(--sans); font-size: 0.78rem; color: rgba(244,239,230,0.75); letter-spacing: 0.02em; transition: color 0.2s; }
 .nav-center a:hover { color: var(--gold); }
 .nav-right { display: flex; align-items: center; gap: 12px; }
-.nav-lang { font-family: var(--cinzel); font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(244,239,230,0.5); border: 1px solid rgba(201,146,10,0.3); padding: 6px 14px; border-radius: 2px; cursor: pointer; background: none; transition: all 0.2s; }
-.nav-lang:hover { color: var(--gold); border-color: var(--gold); }
 .nav-vault-link { font-family: var(--cinzel); font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); border: 1px solid rgba(201,146,10,0.4); padding: 8px 16px; border-radius: 2px; transition: all 0.22s; }
 .nav-vault-link:hover { background: rgba(201,146,10,0.12); border-color: var(--gold); }
 .nav-toggle { display: none; background: none; border: none; cursor: pointer; flex-direction: column; gap: 5px; padding: 4px; }
@@ -206,7 +204,6 @@ footer { background: var(--forest); border-top: 1px solid rgba(201,146,10,0.2); 
     <li><a href="portal.html" class="nav-vault-link">Vault</a></li>
   </ul>
   <div class="nav-right">
-    <button class="nav-lang" onclick="alert('Spanish version coming soon.')">EN | ES</button>
     <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
   </div>
 </nav>
@@ -375,7 +372,6 @@ footer { background: var(--forest); border-top: 1px solid rgba(201,146,10,0.2); 
       <p style="font-size: 0.95rem; color: var(--text-muted); line-height: 1.8; max-width: 580px; margin: 0 auto;">These are real families, real pets, and real businesses using My Legacy Continues. Click any to see their full profile.</p>
     </div>
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px;">
-      <!-- Vazquez Profile -->
       <a href="vazquez-profile.html" style="text-decoration: none; color: inherit;">
         <div style="background: white; border: 1px solid rgba(201,146,10,0.28); border-radius: 4px; padding: 28px; transition: all 0.22s; cursor: pointer;" onmouseover="this.style.boxShadow='0 8px 20px rgba(30,45,31,0.15)'" onmouseout="this.style.boxShadow='none'">
           <span style="font-family: var(--cinzel); font-size: 0.56rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); display: block; margin-bottom: 10px;">Heritage Profile</span>
@@ -384,7 +380,6 @@ footer { background: var(--forest); border-top: 1px solid rgba(201,146,10,0.2); 
           <span style="font-family: var(--cinzel); font-size: 0.65rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); font-weight: 600;">View Profile →</span>
         </div>
       </a>
-      <!-- Butters Profile -->
       <a href="butters-profile.html" style="text-decoration: none; color: inherit;">
         <div style="background: white; border: 1px solid rgba(201,146,10,0.28); border-radius: 4px; padding: 28px; transition: all 0.22s; cursor: pointer;" onmouseover="this.style.boxShadow='0 8px 20px rgba(30,45,31,0.15)'" onmouseout="this.style.boxShadow='none'">
           <span style="font-family: var(--cinzel); font-size: 0.56rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); display: block; margin-bottom: 10px;">Pet Profile</span>
@@ -393,7 +388,6 @@ footer { background: var(--forest); border-top: 1px solid rgba(201,146,10,0.2); 
           <span style="font-family: var(--cinzel); font-size: 0.65rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); font-weight: 600;">View Profile →</span>
         </div>
       </a>
-      <!-- Nick McNeal Profile -->
       <a href="mcneal-construction-profile.html" style="text-decoration: none; color: inherit;">
         <div style="background: white; border: 1px solid rgba(201,146,10,0.28); border-radius: 4px; padding: 28px; transition: all 0.22s; cursor: pointer;" onmouseover="this.style.boxShadow='0 8px 20px rgba(30,45,31,0.15)'" onmouseout="this.style.boxShadow='none'">
           <span style="font-family: var(--cinzel); font-size: 0.56rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); display: block; margin-bottom: 10px;">Business Profile</span>
@@ -402,7 +396,6 @@ footer { background: var(--forest); border-top: 1px solid rgba(201,146,10,0.2); 
           <span style="font-family: var(--cinzel); font-size: 0.65rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); font-weight: 600;">View Profile →</span>
         </div>
       </a>
-      <!-- Carlos Macias Profile -->
       <a href="carlos-macias-profile.html" style="text-decoration: none; color: inherit;">
         <div style="background: white; border: 1px solid rgba(201,146,10,0.28); border-radius: 4px; padding: 28px; transition: all 0.22s; cursor: pointer;" onmouseover="this.style.boxShadow='0 8px 20px rgba(30,45,31,0.15)'" onmouseout="this.style.boxShadow='none'">
           <span style="font-family: var(--cinzel); font-size: 0.56rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); display: block; margin-bottom: 10px;">Business Profile</span>
@@ -411,7 +404,6 @@ footer { background: var(--forest); border-top: 1px solid rgba(201,146,10,0.2); 
           <span style="font-family: var(--cinzel); font-size: 0.65rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); font-weight: 600;">View Profile →</span>
         </div>
       </a>
-      <!-- Bears Concrete Profile -->
       <a href="bears-concrete-profile.html" style="text-decoration: none; color: inherit;">
         <div style="background: white; border: 1px solid rgba(201,146,10,0.28); border-radius: 4px; padding: 28px; transition: all 0.22s; cursor: pointer;" onmouseover="this.style.boxShadow='0 8px 20px rgba(30,45,31,0.15)'" onmouseout="this.style.boxShadow='none'">
           <span style="font-family: var(--cinzel); font-size: 0.56rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); display: block; margin-bottom: 10px;">Business Profile</span>
@@ -420,7 +412,6 @@ footer { background: var(--forest); border-top: 1px solid rgba(201,146,10,0.2); 
           <span style="font-family: var(--cinzel); font-size: 0.65rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); font-weight: 600;">View Profile →</span>
         </div>
       </a>
-      <!-- Rescue Registry -->
       <a href="rescue-registry.html" style="text-decoration: none; color: inherit;">
         <div style="background: white; border: 1px solid rgba(201,146,10,0.28); border-radius: 4px; padding: 28px; transition: all 0.22s; cursor: pointer;" onmouseover="this.style.boxShadow='0 8px 20px rgba(30,45,31,0.15)'" onmouseout="this.style.boxShadow='none'">
           <span style="font-family: var(--cinzel); font-size: 0.56rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); display: block; margin-bottom: 10px;">Rescue Registry</span>
