@@ -7,27 +7,27 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=Karla:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;400;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,300;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap');
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --gold: #C9A84C;
-  --cream: #F0EAD6;
+  --gold: #D4AF37;
+  --cream: #f0ede6;
   --white: #fff;
-  --dark: #1B3A2D;
-  --dark-green: #1B3A2D;
-  --gray: rgba(240,234,214,0.55);
-  --border: 1px solid rgba(201,168,76,0.2);
+  --dark: #0a0a0a;
+  --dark-green: #202e1f;
+  --gray: #888;
+  --border: 1px solid rgba(212,175,55,0.25);
 }
 
 html { scroll-behavior: smooth; }
 
 body {
-  background: #1B3A2D;
+  background: linear-gradient(160deg, #0a0a0a 0%, #111111 50%, #202e1f 100%);
   min-height: 100vh;
   color: var(--cream);
-  font-family: 'Karla', sans-serif;
+  font-family: 'DM Sans', sans-serif;
   font-weight: 300;
 }
 
@@ -58,7 +58,7 @@ nav {
   justify-content: space-between;
 }
 .nav-logo {
-  font-family: 'IM Fell English', serif;
+  font-family: 'Cormorant Garamond', serif;
   font-size: 1.25rem;
   font-weight: 600;
   color: var(--gold);
@@ -76,12 +76,12 @@ nav {
   font-size: 0.75rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  font-family: 'Karla', sans-serif;
+  font-family: 'DM Sans', sans-serif;
   transition: color 0.2s;
 }
 .nav-links a:hover { color: var(--gold); }
 
-/* HERO — FULL BLEED CINEMATIC */
+/* HERO */
 .hero {
   position: relative;
   width: 100%;
@@ -92,11 +92,10 @@ nav {
   overflow: hidden;
 }
 
-/* Photo background — swap src to ants.jpg when available */
 .hero-bg {
   position: absolute;
   inset: 0;
-  background-color: #1a2a19;
+  background-color: #1a2419;
   background-image: url('ants.jpg');
   background-size: cover;
   background-position: center top;
@@ -106,7 +105,6 @@ nav {
 }
 .hero:hover .hero-bg { transform: scale(1.0); }
 
-/* Multi-layer dark overlay */
 .hero-overlay {
   position: absolute;
   inset: 0;
@@ -124,7 +122,7 @@ nav {
 }
 
 .in-memory-label {
-  font-family: 'Karla', sans-serif;
+  font-family: 'Chakra Petch', sans-serif;
   font-size: 0.65rem;
   letter-spacing: 0.3em;
   text-transform: uppercase;
@@ -135,7 +133,7 @@ nav {
 }
 
 .hero-name {
-  font-family: 'Karla', sans-serif;
+  font-family: 'Chakra Petch', sans-serif;
   font-size: clamp(2.8rem, 7vw, 5.5rem);
   font-weight: 700;
   color: var(--white);
@@ -145,7 +143,7 @@ nav {
 }
 
 .hero-relation {
-  font-family: 'IM Fell English', serif;
+  font-family: 'Cormorant Garamond', serif;
   font-size: clamp(1.1rem, 2.5vw, 1.5rem);
   font-style: italic;
   font-weight: 300;
@@ -154,7 +152,7 @@ nav {
 }
 
 .hero-tagline {
-  font-family: 'IM Fell English', serif;
+  font-family: 'Cormorant Garamond', serif;
   font-size: 1rem;
   color: var(--cream);
   opacity: 0.6;
@@ -182,7 +180,7 @@ nav {
   opacity: 0.4;
 }
 .scroll-hint span {
-  font-family: 'Karla', sans-serif;
+  font-family: 'Chakra Petch', sans-serif;
   font-size: 0.6rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
@@ -206,7 +204,7 @@ nav {
   text-align: center;
 }
 .tribute-quote {
-  font-family: 'IM Fell English', serif;
+  font-family: 'Cormorant Garamond', serif;
   font-size: clamp(1.4rem, 3vw, 2rem);
   font-style: italic;
   font-weight: 300;
@@ -236,7 +234,7 @@ section { padding: 70px 2.5rem; }
 .container { max-width: 860px; margin: 0 auto; }
 
 .section-label {
-  font-family: 'Karla', sans-serif;
+  font-family: 'Chakra Petch', sans-serif;
   font-size: 0.65rem;
   letter-spacing: 0.25em;
   text-transform: uppercase;
@@ -247,7 +245,7 @@ section { padding: 70px 2.5rem; }
 }
 
 .section-title {
-  font-family: 'Karla', sans-serif;
+  font-family: 'Chakra Petch', sans-serif;
   font-size: clamp(1.5rem, 3vw, 2rem);
   font-weight: 600;
   color: var(--white);
@@ -273,7 +271,7 @@ section { padding: 70px 2.5rem; }
 }
 
 .body-text {
-  font-family: 'IM Fell English', serif;
+  font-family: 'Cormorant Garamond', serif;
   font-size: 1.2rem;
   line-height: 1.95;
   color: var(--cream);
@@ -281,24 +279,6 @@ section { padding: 70px 2.5rem; }
 }
 
 .body-text + .body-text { margin-top: 1.5rem; }
-
-/* PHOTO PLACEHOLDER (remove when ants.jpg is embedded or pathed) */
-.photo-note {
-  background: rgba(201,168,76,0.06);
-  border: 1px dashed rgba(201,168,76,0.3);
-  border-radius: 4px;
-  padding: 2rem;
-  text-align: center;
-  margin-bottom: 1.5rem;
-}
-.photo-note p {
-  font-family: 'Karla', sans-serif;
-  font-size: 0.7rem;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--gold);
-  opacity: 0.5;
-}
 
 /* FAMILY LINKS */
 .family-links {
@@ -310,9 +290,9 @@ section { padding: 70px 2.5rem; }
 }
 .family-link {
   display: inline-block;
-  border: 1px solid rgba(201,168,76,0.5);
+  border: 1px solid rgba(212,175,55,0.5);
   color: var(--gold);
-  font-family: 'Karla', sans-serif;
+  font-family: 'Chakra Petch', sans-serif;
   font-size: 0.7rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -322,11 +302,127 @@ section { padding: 70px 2.5rem; }
   transition: background 0.2s, border-color 0.2s;
 }
 .family-link:hover {
-  background: rgba(201,168,76,0.1);
+  background: rgba(212,175,55,0.1);
   border-color: var(--gold);
 }
 
 /* FOOTER */
 footer {
   border-top: var(--border);
-  padd
+  padding: 3.5rem 2.5rem;
+  text-align: center;
+  background: rgba(10,10,10,0.85);
+}
+footer p {
+  font-family: 'Cormorant Garamond', serif;
+  color: var(--gray);
+  font-size: 0.9rem;
+  margin-bottom: 0.4rem;
+  font-style: italic;
+}
+.footer-tagline {
+  font-family: 'Chakra Petch', sans-serif;
+  color: var(--gold);
+  font-size: 0.85rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-top: 1.2rem;
+  opacity: 0.8;
+}
+
+/* RESPONSIVE */
+@media (max-width: 640px) {
+  nav { padding: 1rem 1.5rem; }
+  .nav-links { gap: 1.5rem; }
+  .hero-content { padding: 0 1.5rem 4rem; }
+  section { padding: 50px 1.5rem; }
+  .tribute-section { padding: 50px 1.5rem; }
+  footer { padding: 2.5rem 1.5rem; }
+  .card { padding: 1.75rem; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="https://mylegacycontinues.com" class="nav-logo">My Legacy Continues</a>
+  <ul class="nav-links">
+    <li><a href="https://mylegacycontinues.com">Home</a></li>
+    <li><a href="antoinette-raygoza-memorial.html">Antoinette</a></li>
+    <li><a href="debbie-mahony-profile.html">Debbie</a></li>
+    <li><a href="vazquez-profile.html">Bear</a></li>
+  </ul>
+</nav>
+
+<!-- FULL-BLEED CINEMATIC HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+
+  <div class="hero-content">
+    <span class="in-memory-label">In Loving Memory</span>
+    <h1 class="hero-name">Anthony Raygoza</h1>
+    <p class="hero-relation">Bear's Cousin &mdash; Central Coast Family</p>
+    <p class="hero-tagline">Some people live so fully that the world doesn't forget them easily.</p>
+    <div class="hero-gold-line"></div>
+  </div>
+
+  <div class="scroll-hint">
+    <div class="scroll-hint-line"></div>
+    <span>Scroll</span>
+  </div>
+</section>
+
+<!-- TRIBUTE QUOTE -->
+<div class="tribute-section">
+  <blockquote class="tribute-quote">
+    "Some people live so fully that the world doesn't forget them easily.<br>
+    Anthony was one of those people."
+  </blockquote>
+</div>
+
+<!-- HIS LIFE -->
+<section>
+  <div class="container">
+    <span class="section-label">His Life</span>
+    <h2 class="section-title">Who He Was</h2>
+    <div class="gold-rule"></div>
+    <div class="card">
+      <p class="body-text">
+        Anthony Raygoza was family &mdash; the kind you don't just visit on holidays. He was woven into the fabric of the Central Coast, part of the Raygoza and Vazquez roots that run through Santa Barbara and Santa Maria like deep water.
+      </p>
+      <p class="body-text">
+        He had a way about him. Presence. The kind of person who made things feel more alive just by being in the room. His laugh was the real kind. His loyalty was the real kind. You knew where you stood with Anthony, and that was a gift.
+      </p>
+      <p class="body-text">
+        This page was built so his name stays on the internet. Permanent. No subscription required. No expiration date. He was here, he mattered, and this is the record of that.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- FAMILY -->
+<section style="padding-top: 0; text-align: center;">
+  <div class="container">
+    <span class="section-label">Family</span>
+    <h2 class="section-title">Connected Profiles</h2>
+    <div class="family-links">
+      <a href="antoinette-raygoza-memorial.html" class="family-link">Antoinette Raygoza</a>
+      <a href="debbie-mahony-profile.html" class="family-link">Debbie Mahony</a>
+      <a href="vazquez-profile.html" class="family-link">Bear Vazquez</a>
+      <a href="https://mylegacycontinues.com" class="family-link">All Profiles</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>In memory of Anthony Raygoza &mdash; Central Coast, California</p>
+  <p>A permanent page. No ads. No expiration.</p>
+  <div class="footer-tagline">
+    <a href="https://mylegacycontinues.com" style="color: inherit; text-decoration: none;">My Legacy Continues</a>
+  </div>
+</footer>
+
+</body>
+</html>

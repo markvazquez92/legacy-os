@@ -7,30 +7,31 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=Karla:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;400;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,300;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap');
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --gold: #C9A84C;
-  --cream: #F0EAD6;
+  --gold: #D4AF37;
+  --cream: #f0ede6;
   --white: #fff;
-  --dark: #1B3A2D;
-  --dark-green: #1B3A2D;
-  --gray: rgba(240,234,214,0.55);
-  --border: 1px solid rgba(201,168,76,0.2);
+  --dark: #0a0a0a;
+  --dark-green: #202e1f;
+  --gray: #888;
+  --border: 1px solid rgba(212,175,55,0.25);
 }
 
 html { scroll-behavior: smooth; }
 
 body {
-  background: #1B3A2D;
+  background: linear-gradient(160deg, #0a0a0a 0%, #111111 50%, #202e1f 100%);
   min-height: 100vh;
   color: var(--cream);
-  font-family: 'Karla', sans-serif;
+  font-family: 'DM Sans', sans-serif;
   font-weight: 300;
 }
 
+/* Film grain */
 body::before {
   content: '';
   position: fixed;
@@ -41,9 +42,12 @@ body::before {
   opacity: 0.035;
 }
 
+/* NAV */
 nav {
   position: fixed;
-  top: 0; left: 0; right: 0;
+  top: 0;
+  left: 0;
+  right: 0;
   z-index: 100;
   background: rgba(10,10,10,0.92);
   backdrop-filter: blur(14px);
@@ -54,25 +58,30 @@ nav {
   justify-content: space-between;
 }
 .nav-logo {
-  font-family: 'IM Fell English', serif;
+  font-family: 'Cormorant Garamond', serif;
   font-size: 1.25rem;
   font-weight: 600;
   color: var(--gold);
   text-decoration: none;
   letter-spacing: 0.02em;
 }
-.nav-links { display: flex; gap: 2.5rem; list-style: none; }
+.nav-links {
+  display: flex;
+  gap: 2.5rem;
+  list-style: none;
+}
 .nav-links a {
   color: var(--gray);
   text-decoration: none;
   font-size: 0.75rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  font-family: 'Karla', sans-serif;
+  font-family: 'DM Sans', sans-serif;
   transition: color 0.2s;
 }
 .nav-links a:hover { color: var(--gold); }
 
+/* HERO */
 .hero {
   position: relative;
   width: 100%;
@@ -86,4 +95,334 @@ nav {
 .hero-bg {
   position: absolute;
   inset: 0;
-  background-image: url('data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAASABIAAD/4SlxRXhpZgAATU0AKgAAAAgABgESAAMAAAABAAEAAAEaAAUAAAABAAAAVgEbAAUAAAABAAAAXgEoAAMAAAABAAIAAAITAAMAAAABAAEAAIdpAAQAAAABAAAAZgAAAMAAAABIAAAAAQAAAEgAAAABAAeQAAAHAAAABDAyMjGRAQAHAAAABAECAwCgAAAHAAAABDAxMDCgAQADAAAAAQABAACgAgAEAAAAAQAABACgAwAEAAAAAQAABgCkBgADAAAAAQAAAAAAAAAAAAYBAwADAAAAAQAGAAABGgAFAAAAAQAAAQ4BGwAFAAAAAQAAARYBKAADAAAAAQACAAACAQAEAAAAAQAAAR4CAgAEAAAAAQAAKEkAAAAAAAAASAAAAAEAAABIAAAAAf/Y/9sAhAABAQEBAQECAQECAwICAgMEAwMDAwQFBAQEBAQFBgUFBQUFBQYGBgYGBgYGBwcHBwcHCAgICAgJCQkJCQkJCQkJAQEBAQICAgQCAgQJBgUGCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQn/3QAEAAf/wAARCACgAGsDASIAAhEBAxEB/8QBogAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoLEAACAQMDAgQDBQUEBAAAAX0BAgMABBEFEiExQQYTUWEHInEUMoGRoQgjQrHBFVLR8CQzYnKCCQoWFxgZGiUmJygpKjQ1Njc4OTpDREVGR0hJSlNUVVZXWFlaY2RlZmdoaWpzdHV2d3h5eoOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4eLj5OXm5+jp6vHy8/T19vf4+foBAAMBAQEBAQEBAQEAAAAAAAABAgMEBQYHCAkKCxEAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwDi/DvxH8NRa7/aLyNJc2/D7slVz7V9c+BNO0fxHoEk1gzRztIJvv5JZeenYe1fhNpHj7X/ABZcXcOi3K3FrZknjCyJ747gV9UfBP4k654G8S2n/CIawmoWOoJ5c13eN909Wwo5XHSvG+j14qPLMW6GMadOKSV/s99fXqeXx1kP1ujelpLyP2itrSGW2W4RAARnp0pvkugwg4rM+Hev2Wv6Ijpdw3bON++E/LnuBW94ivrDSYomldEaVxGgZ1Tcx7AsQBxz2wK/0qfE+Dhglj6lRKFr36H84YXIMTiMUsJRheW1jLcqP3YHPoP8KWy0WLxBpq+JbK7gSzt5jCZy2FVhjcpPAwM881+OX7Rn/BUf4dfDvXNZ8IeAUPifWPO+z22Cy2cYQkSAtHJG7txhWC7OeOxr588HaD+2R+3/AK9Y654xun8P6A6+X5axNFaJt+6Y1Cjqrcjk+5r+VuP/AKS06LccvSjDu936Lof1BwH9HqnXa+tXnLstl8z+hPX7XTtL8GS+NLTV9P1DTYEYm8tLhHjUr2cZBXH0wa+Cfjb+0Hq/hmVLLRdc02zZvKKGdWlLwsPnIWM7twJCrnAJ+hrr/hD+xzJ8E9GNnf3TXMMqNb3KldyTjdlWyMnqOvfp0r8qP2sv2b4vCXji78QeH3urO0+aRIXJYFjj5c8/JgfKBjp0r8Wx/wBJnMsxthsPWUX5K1z91wn0ccFlcPrOIw3Mvvsbvj3/AIKN+L/hX8S7vRVng1+xs2LtBKxjk8vgAgLuKsfvKPTgkV+lf7Lf7YHww/ah0OL/AIQ6VoNZ2lpdMk5nTbwduPvAcdOQPbmv5qta+Lmi+H/AB8E+I9Js5755zdTXUg/fPzgYXABVUyEDHjrx1r5ck+PHiP4bePrTxr8M7x9AuYLgTxXVlMwngcHKbH4JKj7wHDA4wAa+64M8a85wUrTfPHtI/LuNvDHJsVG8VyS/uq1vkf36aD8Fvif4pQT6Voty0X/PR08pP++n2iuttv2ZdciP/FV6zp2lr/c80zyD/gEQI/Wvzt/4Jm/8FINS/au+Gq6P8U7+a88V6aAk8g3uLhQceaAc9RjI6g5FfrBDJquo4Gn2chU9GI2j9a++xn0g80rK2Hio+i/zPy6n4RYOhK1Z3+f+RzNn8DfhJpo/4mupahqjelvGlvGfoX3N+laP/CA/BiL93H4fdwOhkunLH64AH6Vvp4S8Y3RG8JCPz4pW8CXinbNqSK3cccV8DnHHmdYy31ibt62/A+mwnCeXYdfuYL7j/9D5asv+CTn7W/i21s20HRbXwTME2XFzq19HD5gPXMKb5P8Axyvsr4Pf8EbLnw2YZPi/8TluEUDNpolkTjHUefOVB/74r9h4DrV6mYLZj7sMfzrWh8PeI7hMzSJCB3r57JODsFgKXJSg2v7zPTqUueV5NfI+ePDnwI/Zx/Z10eK98PWN5dtaDiS/vHKEtwSYYtq5P1r8Jf8Agqt+3Jb6l4F/4RrwZYRaNJqSzQRyLiPFmrBDIi8nbOwOH3jKAY4Nfqr/AMFCfiNpPwd+D890dVSXU7jckECuOX24XKr/AAq5Vm/2RX8n37WHxA8E/EHxA3iC1up9WuI7a3QXM0RigV0AXbGrH/UKoVYwODnJ99c7znEVHHD05Xguid1/kfqnBmQ4TCYOpjJq1Rqyurfcfc//AARO/wCCdXhr9qf4oy/FD40OJtI0lhNBDKNgnZSMBvQAYPHXGK/t3/4Vr8GvCdlZ+GdG0qG3gjAREhXAZl/3R0UV/Pl/wRj0y2X4PadBFNmadszySHYGwihT2woHFfrF+0v+2F8JvgFp0Pm39pNcbxaq6XEbBnZchQc8cdgOlfh2NzPEY7EVVyaQdj9/yjhujgqdBU6luZXetkVvHOhX+o6A97o8EdnaQh1XcPlXBJz7mvxN+PvhzUr3xBPa3eNRQ5yqKW49cD2r079o3/gpx4c0DQ3aDVbTULOOIvHb2cglKbscOid88c4r8EPiH/wUr+N3i6/1XydTTRtF1KF7X7FGkYDQsOdxIyWPrxjtXdw9wVUrN1HZHp8U8bYfAxjQk+Z+W1jyT9pT4S3lzcagngK2a8mhR5lFunmFVXqGxnAHf29K/J3X9O17TLwaNr0P2Z7hQ6s48x9qkrhTzjBBGK+/NS+Imo/ECKWO1uS0hXaCjAMR2yRXyN8b9Q8W6T4ms7TxHbFI44Ea3mZcsY2BEgzn5hu7e3GK/Y8rw8aEVQcrs/mLi2oq0niqcLR/A/TP/gkJ+0l/wob4zi3ZPtsdwu3yiQmeP4vpyRX9Yt3+3B4svbYHw9bWlsCuRsUyED8eK/z3Phl4k1TwRraeJ9Gm/ewyBoWU9wQcflX9Yf7D/wAavCnx28GW8lzB5d3Ioid8/KsyrkwuP4Xxyh5Dr3yMV+S+LMOIYcssrxDhTtstNfzPp+CVlNalfF0U6i79vyPuvxH+018W/EMxS51eaLdxsixGP/HRXj91428aXNw07Xl0249S719CH4c6dFs3RAtjg46VqQ+BbFIgjxjIr8j4L4bzOeMlXxlZyfLbVvuj6PijM8HDCxpUKair9EuzP//R+jdZ/ba+KetZGjtBYIeMQx8/m1eb3/xj+KfihSdT1S6lVu29gPyGBWvovw1sIYfljANd9Y+ELG0iXauMLycV/EeKyvO8d/veJk/mz+sqOKy3DaUKSXyR+OP7fsXirWNJ0JpfNWDfJ5hLfeUvCpHPsPyFfgvo0r/EL4xR6B4gupjpFuXkhhRggcxEGOMFgQgwBzg9PxH9M/8AwUU0F9a+HGl+HtJeBLp7wOHZ1jCQqjNIzOxAA4A9+1fyp+JbrT9Ms9V1eylMd6ZfLtxFlZjg/O+c5SNemSOeAOjV+++HWWTw+C9g3tofN8Y5jGXsq8o7a27pH9D/AOz7450PTvhdqug6leRWuk2h2yRCVpY4fLXaoJBBZmPZieAK/H/41/Ffw3J4mfw7oes32q2ts2I4fMZoIyvACDJXCjgbeg6V+jP7G37PF58Tv2MLb4nePtE15vB3iSe5h1G70RfOnW4ssRyTn5dscTbc7WKkndhuMVc039hT9l1mg1nwVq2sXGmxoJJPPsPsgjA/gd7h2klI9YxtI7iu6hnWGwcqnOuvTyP0yHDGPznDYf2MopJK9/06LQ+qP2Kv+CePiT9sL9jzVfGXhJdNgmt4o4ZZ5VeOY3SJlYS2ByvDN0XDLknt+FfxN/Zf8Z+CPH174H8cRfZNTsHMcsF4/lxsVO3dFJwjoe2D7V/XB4Z/aa+Gv7FnwM0f9hfwT4jil8Sagkmral5O6TyvtZ80LJKi7FYIQBkgcYHavzi8UeL7z4jeM9Q0+68KW0umxj9xq8k/mXTTjpIsIUoq5/vkkjsK8LK+IJ0HOUFo9T6HNuD6GLdNYxpuD5VppZJb7WPz3+Bv7GWrvYDV5bASXEoAht7JOoOPmaV8IF98/QV3v/BQD9iqDTf2YLP4g6DEyXnhRQ98VO/MMh/esD1wrHI9q/TPwp8VrrR7eLTfFsWwRoE8+FNgGMY3J/D+HFe9eJ7Dw58W/hjqvgW+2yWOtWUlnLnskyFcjqOO30rCHGUnXhKfQ6eIuCcHPLZ0KEVtpY/hn8OXcEg/smPjb9zPXLY5P0Ar9zv+CZfjpvDF5rCFM6VeG0XzOy3CzZjb24yCcYANfhxrvhW58E+N9b8IXRDXGl3U1k2P+mbFTj8Biv0x/wCCdvx08MeAPiHYab4zk8nR5m3TkHHl4Vowzeic4ZlyU64I4r77iqMpYSUoan8ucL14wrezqadP0P7HtLu9P1qyg1C1wY5I9y49xmnmOYn5VJH0r7Z/Y/8ACv7OOpeF9N1PwxpCTW0pQXFvcyed5LS4CywkHYYmYjIAwOowK/TaH4d+A4YxFDotiqLwB5Cf4V+S8L53CpXlGMbaf5HtcS4KVOCXmf/S/U3Q/wBmD4zahGJLbQpI4yODKRH/ADNem6v+xf8AEux8PSalq9zY26qoym8scZA7Ljiv1qmuQVSLPJZRj8a80+MGri08H3cKKJJXjKohOAztwo+nr7V/Jc86q9LI/pjC5fF1Fc/j9/4KI/A+4h8D3WixX8UWsQtBOkyr+6jRyNq5PVwoJ+6AMV/Hp8T7240XxVqOmIwuGDBZpFChVPUDCgDcMfNxknNf16/8FMfiNrnwt8Rax4T1Nftl7cwLqtnK3y7UibyHJXGCPnUhMD5Sa/ly+MreCPH/AIjn8X+F7GCyvLlD9tsQSB5hABZck5+cblPHBxX7nwbXhLDKTZ5PHuGlLlVLT+uh/Xj/AMEM/wBpjwp/w7DvfANoY5b3wxq19p1zESP3iXp+0I+Bj5GWTHb7pryf4x6tYJ4qh8IH50mzNIv8OwH5V+n9K/DP/gjh8bIPhD8cvEfgLxtd/wBneD/G6R6X9qmdY4INWUvNYZLYG6REmjHbDc9BX79fFr4WWWuK2prlru1HyspwSo4YcdiK/NOKcH9Ux8oP4W7/ANeh+6eG3ELxWTR5ElJKzXmtPxWxyeleHPhxc2M89/uv9UCjy7aJDMHK9Vfafl2qCR16YrtfDXw8+IGrqy6XpSaPZJ5WXvAIlRJPuvjHK4xn0Fc/+z18IvGfwV0e70H4UausVjPK11tu0WaZHf5jtmkDEj2OcZ4rqfEHh7xT4quGj+I2sXF3HjZ5asdm0dF2AKmB6bTXe40YJWlp6an0OGliasWnyx+9v9EfKXxB8O/EnxP8QotE8KazbXmjQxOb+WG3+ViV/dxRy5GSOrEA9MV9k+DIYNC8MLJFt8hA7Ek8BVzn6VaW30vTbCGy0W3CiPk/XGOa/Pz/AIKP/tG2v7Ov7Nl5oWiziPxB4njfT7GND8y+aP302PSND19SBXkYnAfXMZSp0Fa+ny7nnZjmtPLcDWxNd7L8eiP5zv2lNV8L6943vvix4duvIudb1vUka0+XKxwyKUuBj+CQuy4IH3eM844/4Z+KrnTdegkGI5Q4aG4Tgxv656bWHDDpjntXi8enNcRJHuaWeTHX5jx7nsK9O+G2hRaj4mj8PTyqlzcfJCV+ZFlwfL3Y4wzYU+xr+hK2EjDD8j6H8VYfHVJ4r2m1z+v3/gjL+2j/AGBq2o/AX4hTNaoZVWxE5ETW1w4P+jqD0UuuUxhfn24AAFf2raN4tsb7Sbe7kYb5I1Ldvmxzxn1r/NZ/YP0fwb8cdN1CPxhetoPiVLmyisb4sY/ntI8RfvOMeYyBEP8AeH4V/Y78E/21Wh+E3h+P4l6dLe62LOP7TcW7eWkvHyPtGACybSwHG7OOK/A1goU81qOmraar7tj9bzWLq5fTm9df0Z//0/66Lm5SKSMt3f8AkK8W+IGo2+s6JGYObjzDjd0V0B4I7AYxil8eeOpNF1BLO1j8zyIXmuHZxGkQbhck5yT6AV+EX7Q37b/xs0HxLrth4N0Jriw0R/MvruOVkt44ygOSZolUuwYKAmWJ47V/HVDBTry5Y6LY/sPKcqnP952PyS/4LGePPD7/AB9torFGutWg00rJE+SifaBtKsBnoo3KMjoK/mm8X+DfED3r31rbsHZRgj1QZOD/ALuCT0Ffsl8RviDreteKdZuvGPhmO0vfF2JTqWqJLcXIg3ZIt3kOxSQAuQB1wF7ji/EPg29+L+jyar4I0GxW6CSxrbAFZJC23YNmATFtU7lXHfnpX71wrhoYSgox1PnOKsvli243Wm
+  background-color: #1a1a1a;
+  background-image: url('mom.JPG');
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  transform: scale(1.04);
+  transition: transform 8s ease;
+}
+.hero:hover .hero-bg { transform: scale(1.0); }
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(to top, rgba(10,10,10,0.97) 0%, rgba(10,10,10,0.65) 40%, rgba(10,10,10,0.25) 70%, transparent 100%),
+    linear-gradient(to right, rgba(10,10,10,0.3) 0%, transparent 60%);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  padding: 0 3rem 5rem;
+  max-width: 900px;
+}
+
+.profile-label {
+  font-family: 'Chakra Petch', sans-serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold);
+  opacity: 0.8;
+  margin-bottom: 1.2rem;
+  display: block;
+}
+
+.hero-name {
+  font-family: 'Chakra Petch', sans-serif;
+  font-size: clamp(2.8rem, 7vw, 5.5rem);
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1.0;
+  letter-spacing: -0.01em;
+  margin-bottom: 0.6rem;
+}
+
+.hero-relation {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+  font-style: italic;
+  font-weight: 300;
+  color: var(--gold);
+  margin-bottom: 0.4rem;
+}
+
+.hero-tagline {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1rem;
+  color: var(--cream);
+  opacity: 0.6;
+  font-style: italic;
+  margin-bottom: 2rem;
+}
+
+.hero-gold-line {
+  width: 80px;
+  height: 1px;
+  background: var(--gold);
+  opacity: 0.5;
+}
+
+/* SCROLL INDICATOR */
+.scroll-hint {
+  position: absolute;
+  bottom: 2rem;
+  right: 3rem;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  opacity: 0.4;
+}
+.scroll-hint span {
+  font-family: 'Chakra Petch', sans-serif;
+  font-size: 0.6rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--cream);
+  writing-mode: vertical-rl;
+}
+.scroll-hint-line {
+  width: 1px;
+  height: 40px;
+  background: var(--gold);
+  animation: scrollPulse 2s ease-in-out infinite;
+}
+@keyframes scrollPulse {
+  0%, 100% { opacity: 0.3; transform: scaleY(1); }
+  50% { opacity: 0.8; transform: scaleY(0.6); }
+}
+
+/* TRIBUTE QUOTE */
+.tribute-section {
+  padding: 80px 2.5rem;
+  text-align: center;
+}
+.tribute-quote {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  font-style: italic;
+  font-weight: 300;
+  color: var(--gold);
+  line-height: 1.7;
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+  border-top: var(--border);
+  border-bottom: var(--border);
+  position: relative;
+}
+.tribute-quote::before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 1px;
+  background: var(--gold);
+  opacity: 0.8;
+}
+
+/* SECTIONS */
+section { padding: 70px 2.5rem; }
+.container { max-width: 860px; margin: 0 auto; }
+
+.section-label {
+  font-family: 'Chakra Petch', sans-serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.8rem;
+  opacity: 0.7;
+  display: block;
+}
+
+.section-title {
+  font-family: 'Chakra Petch', sans-serif;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 1.8rem;
+  letter-spacing: -0.01em;
+}
+
+.gold-rule {
+  width: 50px;
+  height: 1px;
+  background: var(--gold);
+  opacity: 0.4;
+  margin-bottom: 2rem;
+}
+
+.card {
+  background: rgba(20, 32, 20, 0.55);
+  border: var(--border);
+  border-radius: 4px;
+  padding: 2.5rem;
+  margin-bottom: 1.5rem;
+  backdrop-filter: blur(6px);
+}
+
+.body-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.2rem;
+  line-height: 1.95;
+  color: var(--cream);
+  opacity: 0.9;
+}
+
+.body-text + .body-text { margin-top: 1.5rem; }
+
+/* FAMILY LINKS */
+.family-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+.family-link {
+  display: inline-block;
+  border: 1px solid rgba(212,175,55,0.5);
+  color: var(--gold);
+  font-family: 'Chakra Petch', sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.75rem 1.75rem;
+  border-radius: 3px;
+  text-decoration: none;
+  transition: background 0.2s, border-color 0.2s;
+}
+.family-link:hover {
+  background: rgba(212,175,55,0.1);
+  border-color: var(--gold);
+}
+
+/* FOOTER */
+footer {
+  border-top: var(--border);
+  padding: 3.5rem 2.5rem;
+  text-align: center;
+  background: rgba(10,10,10,0.85);
+}
+footer p {
+  font-family: 'Cormorant Garamond', serif;
+  color: var(--gray);
+  font-size: 0.9rem;
+  margin-bottom: 0.4rem;
+  font-style: italic;
+}
+.footer-tagline {
+  font-family: 'Chakra Petch', sans-serif;
+  color: var(--gold);
+  font-size: 0.85rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-top: 1.2rem;
+  opacity: 0.8;
+}
+
+/* RESPONSIVE */
+@media (max-width: 640px) {
+  nav { padding: 1rem 1.5rem; }
+  .nav-links { gap: 1.5rem; }
+  .hero-content { padding: 0 1.5rem 4rem; }
+  section { padding: 50px 1.5rem; }
+  .tribute-section { padding: 50px 1.5rem; }
+  footer { padding: 2.5rem 1.5rem; }
+  .card { padding: 1.75rem; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="https://mylegacycontinues.com" class="nav-logo">My Legacy Continues</a>
+  <ul class="nav-links">
+    <li><a href="https://mylegacycontinues.com">Home</a></li>
+    <li><a href="anthony-raygoza-memorial.html">Anthony</a></li>
+    <li><a href="antoinette-raygoza-memorial.html">Antoinette</a></li>
+    <li><a href="vazquez-profile.html">Bear</a></li>
+  </ul>
+</nav>
+
+<!-- FULL-BLEED CINEMATIC HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+
+  <div class="hero-content">
+    <span class="profile-label">A Life Remembered</span>
+    <h1 class="hero-name">Debbie Mahony</h1>
+    <p class="hero-relation">Bear's Mom &mdash; Santa Maria, California</p>
+    <p class="hero-tagline">The woman who made everything possible.</p>
+    <div class="hero-gold-line"></div>
+  </div>
+
+  <div class="scroll-hint">
+    <div class="scroll-hint-line"></div>
+    <span>Scroll</span>
+  </div>
+</section>
+
+<!-- TRIBUTE QUOTE -->
+<div class="tribute-section">
+  <blockquote class="tribute-quote">
+    "The woman who made everything possible.<br>
+    Her love was the kind that holds a family together across generations."
+  </blockquote>
+</div>
+
+<!-- HER LIFE -->
+<section>
+  <div class="container">
+    <span class="section-label">Her Life</span>
+    <h2 class="section-title">Who She Was</h2>
+    <div class="gold-rule"></div>
+    <div class="card">
+      <p class="body-text">
+        Debbie Mahony was a Central Coast woman through and through. She raised her family in Santa Maria with the kind of quiet strength that doesn't announce itself &mdash; it just holds everything together. The house ran because of her. The family stayed close because of her.
+      </p>
+      <p class="body-text">
+        She was the kind of mother who showed up. Not just for the big moments, but for the ordinary ones &mdash; the drives, the conversations, the small acts of showing her kids they were worth her time. That's the thing people don't talk about enough. Consistency. Debbie had it.
+      </p>
+      <p class="body-text">
+        This page is here so her name stays in the world. So anyone who loved her &mdash; or anyone who wants to know where Bear comes from &mdash; can find her here. No subscription. No expiration. Just a permanent record of a real life, well-lived.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- FAMILY -->
+<section style="padding-top: 0; text-align: center;">
+  <div class="container">
+    <span class="section-label">Family</span>
+    <h2 class="section-title">Connected Profiles</h2>
+    <div class="family-links">
+      <a href="vazquez-profile.html" class="family-link">Bear Vazquez</a>
+      <a href="anthony-raygoza-memorial.html" class="family-link">Anthony Raygoza</a>
+      <a href="antoinette-raygoza-memorial.html" class="family-link">Antoinette Raygoza</a>
+      <a href="https://mylegacycontinues.com" class="family-link">All Profiles</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>Debbie Mahony &mdash; Santa Maria, California</p>
+  <p>A permanent page. No ads. No expiration.</p>
+  <div class="footer-tagline">
+    <a href="https://mylegacycontinues.com" style="color: inherit; text-decoration: none;">My Legacy Continues</a>
+  </div>
+</footer>
+
+</body>
+</html>
