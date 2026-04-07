@@ -1,502 +1,385 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Rescue Registry — My Legacy Continues</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Karla:wght@400;500;600&display=swap" rel="stylesheet" />
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Rescue Registry &mdash; My Legacy Continues</title>
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     :root {
+      --black: #0a0a0a;
       --green: #202e1f;
-      --green-dark: #172117;
-      --green-card: #28391f;
-      --gold: #D4AF37;
-      --gold-hover: #c49b2e;
+      --dark:  #111a10;
+      --card:  rgba(0,0,0,0.35);
+      --gold:  #D4AF37;
+      --gold-dim: rgba(212,175,55,0.15);
       --cream: #f0ede6;
-      --white: #ffffff;
-      --muted: #a8b8a0;
-      --border: rgba(212, 175, 55, 0.25);
+      --sage:  #a8b89e;
+      --rule:  rgba(212,175,55,0.2);
+      --border: 1px solid rgba(212,175,55,0.2);
     }
-
+    *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
     html { scroll-behavior: smooth; }
-
     body {
-      background-color: var(--green-dark);
+      background: linear-gradient(160deg, var(--black) 0%, var(--green) 100%);
+      background-attachment: fixed;
       color: var(--cream);
-      font-family: 'Karla', sans-serif;
-      min-height: 100vh;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 400;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+    body::before {
+      content: '';
+      position: fixed; inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");
+      opacity: 0.035; pointer-events: none; z-index: 9999;
     }
 
     /* NAV */
-    nav {
-      background: var(--green-dark);
-      border-bottom: 1px solid var(--border);
-      padding: 18px 40px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: sticky;
-      top: 0;
-      z-index: 100;
+    .site-nav {
+      background: rgba(10,10,10,0.92);
+      border-bottom: 1px solid rgba(212,175,55,0.3);
+      padding: 16px 28px;
+      display: flex; justify-content: space-between; align-items: center;
+      position: sticky; top: 0; z-index: 100;
+      backdrop-filter: blur(8px);
     }
-    .nav-brand {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.1rem;
-      color: var(--gold);
-      text-decoration: none;
-      letter-spacing: 0.05em;
-    }
-    .nav-links a {
-      color: var(--muted);
-      text-decoration: none;
-      font-size: 0.85rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      margin-left: 28px;
-      transition: color 0.2s;
-    }
+    .nav-brand { color: var(--gold); text-decoration: none; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 600; }
+    .nav-brand:hover { color: var(--cream); }
+    .nav-links { display: flex; gap: 24px; }
+    .nav-links a { color: var(--sage); text-decoration: none; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 500; }
     .nav-links a:hover { color: var(--gold); }
 
     /* HERO */
     .hero {
-      background: var(--green);
-      border-bottom: 1px solid var(--border);
-      padding: 80px 40px 60px;
+      padding: 100px 28px 72px;
       text-align: center;
+      border-bottom: var(--border);
+      position: relative;
     }
-    .guardian-badge {
-      display: inline-block;
-      font-size: 0.7rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--gold);
-      border: 1px solid var(--border);
-      padding: 6px 16px;
-      margin-bottom: 28px;
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 60% 50% at 50% 30%, rgba(212,175,55,0.05) 0%, transparent 70%);
+      pointer-events: none;
     }
+    .hero-status {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: 1px solid rgba(212,175,55,0.4);
+      padding: 6px 18px;
+      margin-bottom: 32px;
+    }
+    .status-dot { width: 7px; height: 7px; background: var(--gold); border-radius: 50%; animation: pulse 2s infinite; }
+    @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+    .status-text { font-size: 9px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold); font-weight: 600; }
     .hero h1 {
+      font-family: 'Chakra Petch', sans-serif;
+      font-size: clamp(40px, 8vw, 76px);
+      font-weight: 700;
+      line-height: 1;
+      color: var(--cream);
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+    }
+    .hero-sub {
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2.4rem, 5vw, 3.8rem);
-      color: var(--gold);
-      font-weight: 600;
-      line-height: 1.1;
-      margin-bottom: 20px;
+      font-style: italic;
+      font-size: clamp(17px, 3vw, 22px);
+      color: var(--sage);
+      max-width: 520px;
+      margin: 0 auto 48px;
+      line-height: 1.6;
     }
-    .hero p {
-      font-size: 1.05rem;
-      color: var(--muted);
-      max-width: 560px;
-      margin: 0 auto 16px;
-      line-height: 1.7;
-    }
-    .hero-note {
-      font-size: 0.82rem;
-      color: var(--gold);
-      letter-spacing: 0.06em;
-      margin-top: 8px;
-    }
-
-    /* STATS BAR */
-    .stats-bar {
-      background: var(--green-dark);
-      border-bottom: 1px solid var(--border);
-      padding: 22px 40px;
+    .hero-stats {
       display: flex;
       justify-content: center;
-      gap: 60px;
-      flex-wrap: wrap;
+      gap: 1px;
+      background: rgba(212,175,55,0.12);
+      max-width: 480px;
+      margin: 0 auto 36px;
     }
-    .stat {
-      text-align: center;
-    }
-    .stat-number {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 2rem;
-      color: var(--gold);
-      font-weight: 600;
-      display: block;
-    }
-    .stat-label {
-      font-size: 0.72rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--muted);
+    .h-stat { background: rgba(0,0,0,0.4); padding: 18px 28px; flex: 1; text-align: center; }
+    .h-stat-num { font-family: 'Chakra Petch', sans-serif; font-size: 32px; font-weight: 700; color: var(--gold); line-height: 1; display: block; }
+    .h-stat-lbl { font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--sage); margin-top: 5px; display: block; font-weight: 600; }
+    .hero-mission {
+      font-size: 13px;
+      color: var(--sage);
+      max-width: 480px;
+      margin: 0 auto;
+      line-height: 1.7;
+      font-style: italic;
     }
 
-    /* DOGS GRID */
-    .registry-section {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 60px 40px 80px;
-    }
-    .section-label {
-      font-size: 0.72rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 40px;
-      padding-bottom: 16px;
-      border-bottom: 1px solid var(--border);
-    }
+    /* DOG GRID */
+    .dogs-section { padding: 72px 28px; max-width: 1060px; margin: 0 auto; }
+    .section-label { font-family: 'DM Sans', sans-serif; font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold); font-weight: 600; display: block; margin-bottom: 20px; }
     .dogs-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 28px;
+      gap: 2px;
+      background: rgba(212,175,55,0.1);
     }
-
-    /* DOG CARD */
-    .dog-card {
-      background: var(--green);
-      border: 1px solid var(--border);
-      overflow: hidden;
-      transition: transform 0.25s, border-color 0.25s;
-    }
-    .dog-card:hover {
-      transform: translateY(-4px);
-      border-color: var(--gold);
-    }
+    .dog-card { background: var(--card); display: flex; flex-direction: column; transition: background 0.2s; }
+    .dog-card:hover { background: rgba(0,0,0,0.55); }
     .dog-photo {
       width: 100%;
-      height: 240px;
-      object-fit: cover;
-      display: block;
-      background: var(--green-dark);
-    }
-    .dog-photo-placeholder {
-      width: 100%;
-      height: 240px;
-      background: var(--green-dark);
+      aspect-ratio: 4/3;
+      background: rgba(0,0,0,0.5);
       display: flex;
       align-items: center;
       justify-content: center;
-      color: var(--muted);
-      font-size: 0.8rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
+      overflow: hidden;
+      position: relative;
     }
-    .dog-info {
-      padding: 24px;
-    }
-    .dog-status {
-      font-size: 0.68rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 8px;
-    }
-    .dog-name {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.8rem;
-      color: var(--white);
-      font-weight: 600;
-      margin-bottom: 4px;
-      line-height: 1;
-    }
-    .dog-breed {
-      font-size: 0.82rem;
-      color: var(--muted);
-      margin-bottom: 14px;
-      letter-spacing: 0.04em;
-    }
-    .dog-tags {
+    .dog-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .dog-photo-placeholder {
       display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      margin-bottom: 16px;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100%; height: 100%;
+      gap: 8px;
     }
-    .tag {
-      font-size: 0.68rem;
-      letter-spacing: 0.1em;
+    .dog-photo-icon { font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(168,184,158,0.35); font-weight: 600; }
+    .avail-badge {
+      position: absolute;
+      top: 12px; left: 12px;
+      background: var(--gold);
+      color: var(--black);
+      font-size: 8px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
       text-transform: uppercase;
       padding: 4px 10px;
-      border: 1px solid var(--border);
-      color: var(--muted);
     }
-    .dog-bio {
-      font-size: 0.88rem;
-      color: var(--cream);
-      line-height: 1.65;
-      margin-bottom: 20px;
-      opacity: 0.85;
-    }
-    .adopt-btn {
-      display: inline-block;
-      background: var(--gold);
-      color: var(--green-dark);
-      font-family: 'Karla', sans-serif;
-      font-size: 0.78rem;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      padding: 11px 22px;
-      text-decoration: none;
-      border: none;
-      cursor: pointer;
-      transition: background 0.2s;
-    }
-    .adopt-btn:hover { background: var(--gold-hover); }
+    .dog-info { padding: 24px 26px; flex: 1; display: flex; flex-direction: column; }
+    .dog-name { font-family: 'Chakra Petch', sans-serif; font-size: 24px; font-weight: 700; color: var(--cream); margin-bottom: 6px; letter-spacing: -0.01em; }
+    .dog-breed { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 15px; color: var(--gold); margin-bottom: 14px; display: block; }
+    .dog-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 16px; }
+    .dog-tag { font-size: 9px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--sage); border: 1px solid rgba(212,175,55,0.2); padding: 4px 10px; }
+    .dog-bio { font-size: 13px; color: rgba(240,237,230,0.75); line-height: 1.7; margin-bottom: 20px; flex: 1; }
+    .dog-cta { display: inline-block; background: transparent; border: 1px solid var(--gold); color: var(--gold); padding: 10px 22px; font-family: 'DM Sans', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; text-decoration: none; border-radius: 2px; align-self: flex-start; transition: background 0.2s; }
+    .dog-cta:hover { background: var(--gold-dim); }
 
     /* GUARDIAN PROTOCOL */
-    .guardian-section {
-      background: var(--green);
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-      padding: 60px 40px;
-      text-align: center;
-    }
-    .guardian-section h2 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 2rem;
-      color: var(--gold);
-      margin-bottom: 16px;
-    }
-    .guardian-section p {
-      font-size: 0.95rem;
-      color: var(--muted);
-      max-width: 560px;
-      margin: 0 auto;
-      line-height: 1.75;
-    }
+    .guardian { background: rgba(0,0,0,0.45); border-top: var(--border); border-bottom: var(--border); padding: 80px 28px; text-align: center; }
+    .guardian-inner { max-width: 680px; margin: 0 auto; }
+    .guardian h2 { font-family: 'Chakra Petch', sans-serif; font-size: clamp(28px, 5vw, 44px); font-weight: 700; color: var(--cream); line-height: 1.1; margin-bottom: 24px; }
+    .guardian-body { font-size: 15px; color: rgba(240,237,230,0.78); line-height: 1.85; margin-bottom: 36px; }
+    .contact-links { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+    .contact-link { font-size: 13px; color: var(--gold); text-decoration: none; letter-spacing: 0.06em; border-bottom: 1px solid rgba(212,175,55,0.4); padding-bottom: 2px; }
+    .contact-link:hover { color: var(--cream); }
+
+    /* CTA */
+    .cta { background: var(--gold); }
+    .cta-inner { max-width: 820px; margin: 0 auto; padding: 32px 28px; display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap; }
+    .cta p { font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 600; color: var(--black); }
+    .cta a { display: inline-block; background: var(--black); color: var(--gold); padding: 12px 24px; font-family: 'DM Sans', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; text-decoration: none; border-radius: 2px; }
 
     /* FOOTER */
-    footer {
-      background: var(--green-dark);
-      padding: 40px;
-      text-align: center;
-      border-top: 1px solid var(--border);
-    }
-    footer p {
-      font-size: 0.8rem;
-      color: var(--muted);
-      margin-bottom: 6px;
-    }
-    footer a {
-      color: var(--gold);
-      text-decoration: none;
-    }
-    .footer-tagline {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1rem;
-      color: var(--gold);
-      font-style: italic;
-      margin-top: 12px;
-    }
-
-    @media (max-width: 600px) {
-      nav { padding: 16px 20px; }
-      .nav-links { display: none; }
-      .hero { padding: 50px 20px 40px; }
-      .stats-bar { gap: 30px; padding: 20px; }
-      .registry-section { padding: 40px 20px 60px; }
-      .guardian-section { padding: 40px 20px; }
-      footer { padding: 30px 20px; }
-    }
+    .footer { background: rgba(0,0,0,0.6); border-top: var(--border); padding: 32px 28px; text-align: center; }
+    .footer p { font-size: 12px; color: var(--sage); margin-bottom: 4px; }
+    .footer a { color: var(--gold); text-decoration: none; }
+    .footer-tagline { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 14px; color: rgba(168,184,158,0.5); margin-top: 8px; }
   </style>
 </head>
 <body>
 
-  <!-- NAV -->
-  <nav>
-    <a href="index.html" class="nav-brand">My Legacy Continues</a>
-    <div class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="pet-tag.html">Pet Tags</a>
-      <a href="heritage-book.html">Heritage Book</a>
-      <a href="index.html#contact">Contact</a>
-    </div>
-  </nav>
+<nav class="site-nav">
+  <a href="https://mylegacycontinues.com" class="nav-brand">My Legacy Continues</a>
+  <div class="nav-links">
+    <a href="https://mylegacycontinues.com">Home</a>
+    <a href="https://mylegacycontinues.com">Pet Tags</a>
+    <a href="https://mylegacycontinues.com/heritage-book.html">Heritage Book</a>
+    <a href="https://mylegacycontinues.com">Contact</a>
+  </div>
+</nav>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="guardian-badge">Guardian Protocol — Active</div>
-    <h1>Every Dog Deserves<br>a Permanent Story</h1>
-    <p>These dogs are waiting. Each one has a profile that lives on this site — free, permanent, and shareable — until they find their home.</p>
-    <p class="hero-note">A portion of every pet tag sale supports Underdog Heroes rescue operations.</p>
-  </section>
-
-  <!-- STATS -->
-  <div class="stats-bar">
-    <div class="stat">
-      <span class="stat-number">8</span>
-      <span class="stat-label">Dogs in Registry</span>
+<section class="hero">
+  <div class="hero-status">
+    <div class="status-dot"></div>
+    <span class="status-text">Guardian Protocol &mdash; Active</span>
+  </div>
+  <h1>Every Dog Deserves<br>a Permanent Story</h1>
+  <p class="hero-sub">These dogs are waiting. Each one has a profile that lives on this site &mdash; free, permanent, and shareable &mdash; until they find their home.</p>
+  <div class="hero-stats">
+    <div class="h-stat">
+      <span class="h-stat-num">8</span>
+      <span class="h-stat-lbl">Dogs in Registry</span>
     </div>
-    <div class="stat">
-      <span class="stat-number">Free</span>
-      <span class="stat-label">Profile for Every Dog</span>
+    <div class="h-stat">
+      <span class="h-stat-num">Free</span>
+      <span class="h-stat-lbl">Profile for Every Dog</span>
     </div>
-    <div class="stat">
-      <span class="stat-number">Forever</span>
-      <span class="stat-label">Page Stays Live After Adoption</span>
+    <div class="h-stat">
+      <span class="h-stat-num">Forever</span>
+      <span class="h-stat-lbl">Page Stays Live</span>
     </div>
   </div>
+  <p class="hero-mission">A portion of every pet tag sale supports Underdog Heroes rescue operations.</p>
+</section>
 
-  <!-- DOG REGISTRY -->
-  <section class="registry-section">
-    <div class="section-label">Underdog Heroes — Available for Adoption — Riverside, CA</div>
+<div class="dogs-section">
+  <span class="section-label">Underdog Heroes &mdash; Available for Adoption &mdash; Riverside, CA</span>
+  <div class="dogs-grid">
 
-    <div class="dogs-grid">
-
-      <!-- ZENA -->
-      <div class="dog-card">
-        <img class="dog-photo" src="https://dbw3zep4prcju.cloudfront.net/animal/9f3b5c2a-7e1d-4f8a-b2c3-1d4e5f6a7b8c/photo/9f3b5c2a-7e1d-4f8a-b2c3-1d4e5f6a7b8c.jpg" alt="Zena" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
-        <div class="dog-photo-placeholder" style="display:none;">Photo Coming Soon</div>
-        <div class="dog-info">
-          <div class="dog-status">Available for Adoption</div>
-          <div class="dog-name">Zena</div>
-          <div class="dog-breed">Pit Bull Mix · Adult · Female · Large</div>
-          <div class="dog-tags">
-            <span class="tag">High Energy</span>
-            <span class="tag">Loves People</span>
-            <span class="tag">Spayed</span>
-          </div>
-          <p class="dog-bio">Zena is full of heart and ready to run. She's been waiting for someone who can match her energy and give her the life she deserves. Loyal, loving, and built for an active home.</p>
-          <a href="mailto:adopt@underdogheroes.org?subject=I want to adopt Zena" class="adopt-btn">Adopt Zena</a>
+    <div class="dog-card">
+      <div class="dog-photo">
+        <div class="dog-photo-placeholder">
+          <span class="dog-photo-icon">Photo Coming Soon</span>
         </div>
+        <div class="avail-badge">Available</div>
       </div>
-
-      <!-- LUNA -->
-      <div class="dog-card">
-        <img class="dog-photo" src="https://dbw3zep4prcju.cloudfront.net/animal/2a3b4c5d-8e2f-4g9b-c3d4-2e5f6g7h8i9j/photo/2a3b4c5d-8e2f-4g9b-c3d4-2e5f6g7h8i9j.jpg" alt="Luna" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
-        <div class="dog-photo-placeholder" style="display:none;">Photo Coming Soon</div>
-        <div class="dog-info">
-          <div class="dog-status">Available for Adoption</div>
-          <div class="dog-name">Luna</div>
-          <div class="dog-breed">Shepherd Mix · Young · Female · Medium</div>
-          <div class="dog-tags">
-            <span class="tag">Good with Kids</span>
-            <span class="tag">Smart</span>
-            <span class="tag">Spayed</span>
-          </div>
-          <p class="dog-bio">Luna picks up on everything. She watches, learns, and connects fast. Smart dogs need smart homes — she's looking for someone who wants a real partner, not just a pet.</p>
-          <a href="mailto:adopt@underdogheroes.org?subject=I want to adopt Luna" class="adopt-btn">Adopt Luna</a>
-        </div>
+      <div class="dog-info">
+        <div class="dog-name">Zena</div>
+        <span class="dog-breed">Pit Bull Mix &middot; Adult &middot; Female &middot; Large</span>
+        <div class="dog-tags"><span class="dog-tag">High Energy</span><span class="dog-tag">Loves People</span><span class="dog-tag">Spayed</span></div>
+        <p class="dog-bio">Zena is full of heart and ready to run. She's been waiting for someone who can match her energy and give her the life she deserves. Loyal, loving, and built for an active home.</p>
+        <a href="mailto:adopt@underdogheroes.org?subject=Adopt Zena" class="dog-cta">Adopt Zena</a>
       </div>
-
-      <!-- BEAR -->
-      <div class="dog-card">
-        <img class="dog-photo" src="https://dbw3zep4prcju.cloudfront.net/animal/3b4c5d6e-9f3g-5h0c-d4e5-3f6g7h8i9j0k/photo/3b4c5d6e-9f3g-5h0c-d4e5-3f6g7h8i9j0k.jpg" alt="Bear" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
-        <div class="dog-photo-placeholder" style="display:none;">Photo Coming Soon</div>
-        <div class="dog-info">
-          <div class="dog-status">Available for Adoption</div>
-          <div class="dog-name">Bear</div>
-          <div class="dog-breed">Rottweiler Mix · Adult · Male · Large</div>
-          <div class="dog-tags">
-            <span class="tag">Gentle Giant</span>
-            <span class="tag">Calm</span>
-            <span class="tag">Neutered</span>
-          </div>
-          <p class="dog-bio">Big name, bigger heart. Bear moves through the world with a calm that the right person will recognize immediately. He's not looking for excitement — he's looking for home.</p>
-          <a href="mailto:adopt@underdogheroes.org?subject=I want to adopt Bear" class="adopt-btn">Adopt Bear</a>
-        </div>
-      </div>
-
-      <!-- RIO -->
-      <div class="dog-card">
-        <img class="dog-photo" src="https://dbw3zep4prcju.cloudfront.net/animal/4c5d6e7f-0g4h-6i1d-e5f6-4g7h8i9j0k1l/photo/4c5d6e7f-0g4h-6i1d-e5f6-4g7h8i9j0k1l.jpg" alt="Rio" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
-        <div class="dog-photo-placeholder" style="display:none;">Photo Coming Soon</div>
-        <div class="dog-info">
-          <div class="dog-status">Available for Adoption</div>
-          <div class="dog-name">Rio</div>
-          <div class="dog-breed">Husky Mix · Young · Male · Medium</div>
-          <div class="dog-tags">
-            <span class="tag">High Energy</span>
-            <span class="tag">Vocal</span>
-            <span class="tag">Neutered</span>
-          </div>
-          <p class="dog-bio">Rio has got a lot to say. He's got opinions, personality, and enough energy to fill a house. If you've got room to run and room to laugh, Rio's your dog.</p>
-          <a href="mailto:adopt@underdogheroes.org?subject=I want to adopt Rio" class="adopt-btn">Adopt Rio</a>
-        </div>
-      </div>
-
-      <!-- DAISY -->
-      <div class="dog-card">
-        <img class="dog-photo" src="https://dbw3zep4prcju.cloudfront.net/animal/5d6e7f8g-1h5i-7j2e-f6g7-5h8i9j0k1l2m/photo/5d6e7f8g-1h5i-7j2e-f6g7-5h8i9j0k1l2m.jpg" alt="Daisy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
-        <div class="dog-photo-placeholder" style="display:none;">Photo Coming Soon</div>
-        <div class="dog-info">
-          <div class="dog-status">Available for Adoption</div>
-          <div class="dog-name">Daisy</div>
-          <div class="dog-breed">Labrador Mix · Senior · Female · Large</div>
-          <div class="dog-tags">
-            <span class="tag">Gentle</span>
-            <span class="tag">Good with Dogs</span>
-            <span class="tag">Spayed</span>
-          </div>
-          <p class="dog-bio">Daisy has lived a full life and still has so much left to give. Senior dogs know things younger dogs don't. She's earned a soft bed, a slow morning, and someone who understands that.</p>
-          <a href="mailto:adopt@underdogheroes.org?subject=I want to adopt Daisy" class="adopt-btn">Adopt Daisy</a>
-        </div>
-      </div>
-
-      <!-- ROCCO -->
-      <div class="dog-card">
-        <img class="dog-photo" src="https://dbw3zep4prcju.cloudfront.net/animal/6e7f8g9h-2i6j-8k3f-g7h8-6i9j0k1l2m3n/photo/6e7f8g9h-2i6j-8k3f-g7h8-6i9j0k1l2m3n.jpg" alt="Rocco" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
-        <div class="dog-photo-placeholder" style="display:none;">Photo Coming Soon</div>
-        <div class="dog-info">
-          <div class="dog-status">Available for Adoption</div>
-          <div class="dog-name">Rocco</div>
-          <div class="dog-breed">Boxer Mix · Adult · Male · Large</div>
-          <div class="dog-tags">
-            <span class="tag">Playful</span>
-            <span class="tag">Good with Kids</span>
-            <span class="tag">Neutered</span>
-          </div>
-          <p class="dog-bio">Rocco plays hard and loves harder. He's the dog that makes every room louder and every day better. Families with kids and backyards — he's been waiting for you specifically.</p>
-          <a href="mailto:adopt@underdogheroes.org?subject=I want to adopt Rocco" class="adopt-btn">Adopt Rocco</a>
-        </div>
-      </div>
-
-      <!-- STELLA -->
-      <div class="dog-card">
-        <img class="dog-photo" src="https://dbw3zep4prcju.cloudfront.net/animal/7f8g9h0i-3j7k-9l4g-h8i9-7j0k1l2m3n4o/photo/7f8g9h0i-3j7k-9l4g-h8i9-7j0k1l2m3n4o.jpg" alt="Stella" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
-        <div class="dog-photo-placeholder" style="display:none;">Photo Coming Soon</div>
-        <div class="dog-info">
-          <div class="dog-status">Available for Adoption</div>
-          <div class="dog-name">Stella</div>
-          <div class="dog-breed">American Bulldog Mix · Young · Female · Medium</div>
-          <div class="dog-tags">
-            <span class="tag">Affectionate</span>
-            <span class="tag">Loyal</span>
-            <span class="tag">Spayed</span>
-          </div>
-          <p class="dog-bio">Stella doesn't need much — just your time and your couch. She gives back everything you put in and then some. The kind of dog that becomes part of your routine before you realize it.</p>
-          <a href="mailto:adopt@underdogheroes.org?subject=I want to adopt Stella" class="adopt-btn">Adopt Stella</a>
-        </div>
-      </div>
-
-      <!-- KING -->
-      <div class="dog-card">
-        <img class="dog-photo" src="https://dbw3zep4prcju.cloudfront.net/animal/8g9h0i1j-4k8l-0m5h-i9j0-8k1l2m3n4o5p/photo/8g9h0i1j-4k8l-0m5h-i9j0-8k1l2m3n4o5p.jpg" alt="King" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
-        <div class="dog-photo-placeholder" style="display:none;">Photo Coming Soon</div>
-        <div class="dog-info">
-          <div class="dog-status">Available for Adoption</div>
-          <div class="dog-name">King</div>
-          <div class="dog-breed">German Shepherd Mix · Adult · Male · Large</div>
-          <div class="dog-tags">
-            <span class="tag">Protective</span>
-            <span class="tag">Intelligent</span>
-            <span class="tag">Neutered</span>
-          </div>
-          <p class="dog-bio">King carries himself like he knows his worth. He needs someone who does too. An experienced dog owner, a patient hand, and a home where he can finally settle — that's all he's asking for.</p>
-          <a href="mailto:adopt@underdogheroes.org?subject=I want to adopt King" class="adopt-btn">Adopt King</a>
-        </div>
-      </div>
-
     </div>
-  </section>
 
-  <!-- GUARDIAN PROTOCOL -->
-  <section class="guardian-section">
-    <h2>The Guardian Protocol</h2>
-    <p>A portion of every pet tag sale supports Underdog Heroes rescue operations. Every rescue dog gets a permanent profile — free. When a dog gets adopted, the page stays live. That's a legacy, not a listing.</p>
-  </section>
+    <div class="dog-card">
+      <div class="dog-photo">
+        <div class="dog-photo-placeholder">
+          <span class="dog-photo-icon">Photo Coming Soon</span>
+        </div>
+        <div class="avail-badge">Available</div>
+      </div>
+      <div class="dog-info">
+        <div class="dog-name">Luna</div>
+        <span class="dog-breed">Shepherd Mix &middot; Young &middot; Female &middot; Medium</span>
+        <div class="dog-tags"><span class="dog-tag">Good with Kids</span><span class="dog-tag">Smart</span><span class="dog-tag">Spayed</span></div>
+        <p class="dog-bio">Luna picks up on everything. She watches, learns, and connects fast. Smart dogs need smart homes &mdash; she's looking for someone who wants a real partner, not just a pet.</p>
+        <a href="mailto:adopt@underdogheroes.org?subject=Adopt Luna" class="dog-cta">Adopt Luna</a>
+      </div>
+    </div>
 
-  <!-- FOOTER -->
-  <footer>
-    <p>Underdog Heroes Rescue — <a href="mailto:adopt@underdogheroes.org">adopt@underdogheroes.org</a> — <a href="https://underdogheroes.org" target="_blank">underdogheroes.org</a></p>
-    <p style="margin-top: 10px;">Powered by <a href="index.html">My Legacy Continues</a> — Santa Maria, CA</p>
-    <p class="footer-tagline">Long Live Your Legacy.</p>
-  </footer>
+    <div class="dog-card">
+      <div class="dog-photo">
+        <div class="dog-photo-placeholder">
+          <span class="dog-photo-icon">Photo Coming Soon</span>
+        </div>
+        <div class="avail-badge">Available</div>
+      </div>
+      <div class="dog-info">
+        <div class="dog-name">Bear</div>
+        <span class="dog-breed">Rottweiler Mix &middot; Adult &middot; Male &middot; Large</span>
+        <div class="dog-tags"><span class="dog-tag">Gentle Giant</span><span class="dog-tag">Calm</span><span class="dog-tag">Neutered</span></div>
+        <p class="dog-bio">Big name, bigger heart. Bear moves through the world with a calm that the right person will recognize immediately. He's not looking for excitement &mdash; he's looking for home.</p>
+        <a href="mailto:adopt@underdogheroes.org?subject=Adopt Bear" class="dog-cta">Adopt Bear</a>
+      </div>
+    </div>
+
+    <div class="dog-card">
+      <div class="dog-photo">
+        <div class="dog-photo-placeholder">
+          <span class="dog-photo-icon">Photo Coming Soon</span>
+        </div>
+        <div class="avail-badge">Available</div>
+      </div>
+      <div class="dog-info">
+        <div class="dog-name">Rio</div>
+        <span class="dog-breed">Husky Mix &middot; Young &middot; Male &middot; Medium</span>
+        <div class="dog-tags"><span class="dog-tag">High Energy</span><span class="dog-tag">Vocal</span><span class="dog-tag">Neutered</span></div>
+        <p class="dog-bio">Rio has got a lot to say. He's got opinions, personality, and enough energy to fill a house. If you've got room to run and room to laugh, Rio's your dog.</p>
+        <a href="mailto:adopt@underdogheroes.org?subject=Adopt Rio" class="dog-cta">Adopt Rio</a>
+      </div>
+    </div>
+
+    <div class="dog-card">
+      <div class="dog-photo">
+        <div class="dog-photo-placeholder">
+          <span class="dog-photo-icon">Photo Coming Soon</span>
+        </div>
+        <div class="avail-badge">Available</div>
+      </div>
+      <div class="dog-info">
+        <div class="dog-name">Daisy</div>
+        <span class="dog-breed">Labrador Mix &middot; Senior &middot; Female &middot; Large</span>
+        <div class="dog-tags"><span class="dog-tag">Gentle</span><span class="dog-tag">Good with Dogs</span><span class="dog-tag">Spayed</span></div>
+        <p class="dog-bio">Daisy has lived a full life and still has so much left to give. Senior dogs know things younger dogs don't. She's earned a soft bed, a slow morning, and someone who understands that.</p>
+        <a href="mailto:adopt@underdogheroes.org?subject=Adopt Daisy" class="dog-cta">Adopt Daisy</a>
+      </div>
+    </div>
+
+    <div class="dog-card">
+      <div class="dog-photo">
+        <div class="dog-photo-placeholder">
+          <span class="dog-photo-icon">Photo Coming Soon</span>
+        </div>
+        <div class="avail-badge">Available</div>
+      </div>
+      <div class="dog-info">
+        <div class="dog-name">Rocco</div>
+        <span class="dog-breed">Boxer Mix &middot; Adult &middot; Male &middot; Large</span>
+        <div class="dog-tags"><span class="dog-tag">Playful</span><span class="dog-tag">Good with Kids</span><span class="dog-tag">Neutered</span></div>
+        <p class="dog-bio">Rocco plays hard and loves harder. He's the dog that makes every room louder and every day better. Families with kids and backyards &mdash; he's been waiting for you specifically.</p>
+        <a href="mailto:adopt@underdogheroes.org?subject=Adopt Rocco" class="dog-cta">Adopt Rocco</a>
+      </div>
+    </div>
+
+    <div class="dog-card">
+      <div class="dog-photo">
+        <div class="dog-photo-placeholder">
+          <span class="dog-photo-icon">Photo Coming Soon</span>
+        </div>
+        <div class="avail-badge">Available</div>
+      </div>
+      <div class="dog-info">
+        <div class="dog-name">Stella</div>
+        <span class="dog-breed">American Bulldog Mix &middot; Young &middot; Female &middot; Medium</span>
+        <div class="dog-tags"><span class="dog-tag">Affectionate</span><span class="dog-tag">Loyal</span><span class="dog-tag">Spayed</span></div>
+        <p class="dog-bio">Stella doesn't need much &mdash; just your time and your couch. She gives back everything you put in and then some. The kind of dog that becomes part of your routine before you realize it.</p>
+        <a href="mailto:adopt@underdogheroes.org?subject=Adopt Stella" class="dog-cta">Adopt Stella</a>
+      </div>
+    </div>
+
+    <div class="dog-card">
+      <div class="dog-photo">
+        <div class="dog-photo-placeholder">
+          <span class="dog-photo-icon">Photo Coming Soon</span>
+        </div>
+        <div class="avail-badge">Available</div>
+      </div>
+      <div class="dog-info">
+        <div class="dog-name">King</div>
+        <span class="dog-breed">German Shepherd Mix &middot; Adult &middot; Male &middot; Large</span>
+        <div class="dog-tags"><span class="dog-tag">Protective</span><span class="dog-tag">Intelligent</span><span class="dog-tag">Neutered</span></div>
+        <p class="dog-bio">King carries himself like he knows his worth. He needs someone who does too. An experienced dog owner, a patient hand, and a home where he can finally settle &mdash; that's all he's asking for.</p>
+        <a href="mailto:adopt@underdogheroes.org?subject=Adopt King" class="dog-cta">Adopt King</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="guardian">
+  <div class="guardian-inner">
+    <span class="section-label" style="text-align:center;margin-bottom:24px;">The Guardian Protocol</span>
+    <h2>A portion of every pet tag sale supports Underdog Heroes rescue operations.</h2>
+    <p class="guardian-body">Every rescue dog gets a permanent profile &mdash; free. When a dog gets adopted, the page stays live. That's a legacy, not a listing. These dogs came from somewhere. Their stories deserve to stay on record.</p>
+    <div class="contact-links">
+      <a href="mailto:adopt@underdogheroes.org" class="contact-link">adopt@underdogheroes.org</a>
+      <a href="https://underdogheroes.org" target="_blank" class="contact-link">underdogheroes.org</a>
+    </div>
+  </div>
+</div>
+
+<div class="cta">
+  <div class="cta-inner">
+    <p>Get a permanent QR pet tag &mdash; every sale supports rescue.</p>
+    <a href="https://mylegacycontinues.com">Order a Pet Tag</a>
+  </div>
+</div>
+
+<footer class="footer">
+  <p>Powered by <a href="https://mylegacycontinues.com">My Legacy Continues</a> &mdash; Santa Maria, CA</p>
+  <p class="footer-tagline">Long Live Your Legacy</p>
+</footer>
 
 </body>
 </html>
