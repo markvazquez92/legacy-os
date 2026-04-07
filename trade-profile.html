@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bears Concrete Pumping — Mark Vazquez — Santa Maria, CA</title>
+<meta name="description" content="Bears Concrete Pumping — Founded by Mark Vazquez, Lic. #42702, Santa Maria CA. Concrete pumping, boom truck operations, commercial and residential. A Business Founder Profile by My Legacy Continues.">
+<link rel="icon" href="logo.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+
+:root {
+  --bg:          #0a0a0a;
+  --bg-card:     #111111;
+  --bg-card2:    #141414;
+  --gold:        #D4AF37;
+  --gold-light:  #E8C84A;
+  --gold-dim:    rgba(212,175,55,0.55);
+  --gold-border: rgba(212,175,55,0.22);
+  --gold-wash:   rgba(212,175,55,0.07);
+  --white:       #ffffff;
+  --text-muted:  rgba(255,255,255,0.65);
+  --text-dim:    rgba(255,255,255,0.38);
+  --cinzel: 'Cinzel', Georgia, serif;
+  --lora:   'Lora', Georgia, serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: var(--lora); background: var(--bg); color: var(--white); line-height: 1.8; -webkit-font-smoothing: antialiased; }
+a { color: inherit; text-decoration: none; }
+
+.btn { display: inline-block; font-family: var(--cinzel); font-size: 0.72rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; padding: 16px 34px; min-height: 44px; border: none; cursor: pointer; transition: all 0.22s ease; text-decoration: none; white-space: nowrap; border-radius: 2px; }
+.btn-gold { background: var(--gold); color: #0a0a0a; box-shadow: 0 4px 20px rgba(212,175,55,0.28); }
+.btn-gold:hover { background: var(--gold-light); transform: translateY(-2px); }
+.btn-outline { background: transparent; color: var(--gold); border: 1.5px solid var(--gold-border); }
+.btn-outline:hover { border-color: var(--gold); background: var(--gold-wash); }
+.btn-call { background: var(--gold); color: #0a0a0a; font-family: var(--cinzel); font-size: 1rem; font-weight: 700; letter-spacing: 0.08em; padding: 20px 40px; min-height: 56px; border: none; cursor: pointer; border-radius: 2px; transition: all 0.22s; text-decoration: none; display: inline-block; box-shadow: 0 6px 24px rgba(212,175,55,0.32); width: 100%; text-align: center; }
+.btn-call:hover { background: var(--gold-light); transform: translateY(-2px); }
+
+/* NAV */
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 900; height: 66px; background: rgba(10,10,10,0.96); backdrop-filter: blur(20px); border-bottom: 1px solid var(--gold-border); display: flex; align-items: center; justify-content: space-between; padding: 0 48px; }
+.nav-brand { font-family: var(--cinzel); font-size: 0.82rem; font-weight: 700; color: var(--gold); letter-spacing: 0.1em; text-decoration: none; white-space: nowrap; }
+.nav-center { display: flex; align-items: center; gap: 28px; list-style: none; }
+.nav-center a { font-family: var(--lora); font-size: 0.8rem; color: var(--text-muted); letter-spacing: 0.02em; transition: color 0.2s; }
+.nav-center a:hover { color: var(--gold); }
+.nav-right { display: flex; align-items: center; gap: 12px; }
+.nav-lang { font-family: var(--cinzel); font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-dim); border: 1px solid var(--gold-border); padding: 6px 14px; border-radius: 2px; cursor: pointer; background: none; transition: all 0.2s; }
+.nav-lang:hover { color: var(--gold); border-color: var(--gold); }
+.nav-vault-link { font-family: var(--cinzel); font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); border: 1px solid var(--gold-border); padding: 8px 16px; border-radius: 2px; transition: all 0.22s; }
+.nav-vault-link:hover { background: var(--gold-wash); border-color: var(--gold); }
+.nav-toggle { display: none; background: none; border: none; cursor: pointer; flex-direction: column; gap: 5px; padding: 4px; }
+.nav-toggle span { display: block; width: 22px; height: 1.5px; background: var(--gold); }
+@media (max-width: 960px) {
+  nav { padding: 0 20px; }
+  .nav-center { display: none; flex-direction: column; position: fixed; top: 66px; left: 0; right: 0; background: rgba(10,10,10,0.99); padding: 24px 20px; gap: 0; border-bottom: 1px solid var(--gold-border); }
+  .nav-center.open { display: flex; }
+  .nav-center li { width: 100%; }
+  .nav-center a { display: block; padding: 14px 0; border-bottom: 1px solid rgba(212,175,55,0.07); font-size: 0.92rem; }
+  .nav-toggle { display: flex; }
+}
+
+/* PROFILE HEADER */
+.profile-header { padding: 120px 48px 56px; max-width: 1060px; margin: 0 auto; }
+.profile-badge { font-family: var(--cinzel); font-size: 0.54rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(--gold); border: 1px solid var(--gold-border); padding: 6px 16px; border-radius: 2px; display: inline-block; margin-bottom: 24px; }
+.profile-name { font-family: var(--cinzel); font-size: clamp(2.2rem, 5vw, 4rem); font-weight: 700; color: var(--white); line-height: 1.05; margin-bottom: 12px; }
+.profile-sub { font-family: var(--lora); font-style: italic; font-size: clamp(0.9rem, 1.8vw, 1.05rem); color: var(--gold-dim); margin-bottom: 20px; }
+.verified-badge { display: inline-flex; align-items: center; gap: 8px; background: var(--gold-wash); border: 1px solid var(--gold-border); border-radius: 2px; padding: 8px 16px; font-family: var(--cinzel); font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); }
+.verified-badge::before { content: ''; width: 8px; height: 8px; background: var(--gold); border-radius: 50%; flex-shrink: 0; }
+@media (max-width: 600px) { .profile-header { padding: 100px 20px 40px; } }
+
+/* LAYOUT */
+.profile-body { max-width: 1060px; margin: 0 auto; padding: 0 48px 80px; display: grid; grid-template-columns: 1fr 320px; gap: 40px; align-items: start; }
+@media (max-width: 820px) { .profile-body { grid-template-columns: 1fr; padding: 0 20px 60px; } }
+
+/* STORY */
+.story-block { margin-bottom: 40px; }
+.block-label { font-family: var(--cinzel); font-size: 0.56rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); display: block; margin-bottom: 14px; }
+.story-block p { font-size: 0.92rem; color: var(--text-muted); line-height: 1.95; margin-bottom: 18px; }
+.story-block p:last-child { margin-bottom: 0; }
+
+/* SERVICES */
+.services-block { margin-bottom: 40px; }
+.services-list { list-style: none; }
+.services-list li { font-size: 0.88rem; color: var(--text-muted); padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.05); display: flex; gap: 12px; align-items: flex-start; }
+.services-list li::before { content: '—'; color: var(--gold); flex-shrink: 0; margin-top: 2px; }
+
+/* PORTFOLIO */
+.portfolio-block { margin-bottom: 0; }
+.portfolio-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 14px; }
+@media (max-width: 500px) { .portfolio-grid { grid-template-columns: 1fr; } }
+.portfolio-card { background: var(--bg-card); border: 1px solid var(--gold-border); border-radius: 4px; aspect-ratio: 4/3; display: flex; align-items: flex-end; padding: 14px; position: relative; overflow: hidden; }
+.portfolio-card-label { font-family: var(--cinzel); font-size: 0.52rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-dim); }
+.portfolio-placeholder { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
+.portfolio-placeholder span { font-family: var(--cinzel); font-size: 0.58rem; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(212,175,55,0.2); }
+
+/* CONTACT SIDEBAR */
+.contact-sidebar { position: sticky; top: 90px; }
+.contact-card { background: var(--bg-card); border: 1px solid var(--gold-border); border-radius: 4px; padding: 28px 24px; margin-bottom: 20px; }
+.contact-card h3 { font-family: var(--cinzel); font-size: 0.62rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; }
+.contact-actions { display: flex; flex-direction: column; gap: 12px; margin-bottom: 20px; }
+.contact-email { display: block; text-align: center; font-family: var(--cinzel); font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold-dim); padding: 13px 20px; border: 1px solid var(--gold-border); border-radius: 2px; transition: all 0.2s; min-height: 44px; }
+.contact-email:hover { border-color: var(--gold); color: var(--gold); }
+
+/* QUOTE FORM */
+.quote-form { display: flex; flex-direction: column; gap: 12px; }
+.form-group label { font-family: var(--cinzel); font-size: 0.56rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); display: block; margin-bottom: 6px; }
+.form-group input,
+.form-group textarea { background: #0d0d0d; border: 1px solid var(--gold-border); border-radius: 2px; color: var(--white); font-family: var(--lora); font-size: 0.88rem; padding: 12px 16px; min-height: 44px; width: 100%; transition: border-color 0.2s; }
+.form-group input:focus,
+.form-group textarea:focus { outline: none; border-color: var(--gold); }
+.form-group textarea { min-height: 88px; resize: vertical; }
+.form-group input::placeholder,
+.form-group textarea::placeholder { color: var(--text-dim); }
+
+/* LEGACY NOTE */
+.legacy-note { padding: 24px 28px; border: 1px solid var(--gold-border); border-left: 3px solid var(--gold); background: var(--gold-wash); border-radius: 2px; font-family: var(--lora); font-style: italic; font-size: 0.86rem; color: var(--text-muted); line-height: 1.85; margin-top: 32px; }
+
+/* BOTTOM CTA */
+.bottom-cta { background: var(--bg-card2); border-top: 1px solid var(--gold-border); padding: 64px 48px; text-align: center; }
+.bottom-cta p { font-family: var(--cinzel); font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 20px; }
+@media (max-width: 600px) { .bottom-cta { padding: 48px 20px; } }
+
+/* FOOTER */
+footer { background: #050505; border-top: 1px solid var(--gold-border); padding: 32px 48px; }
+.footer-inner { max-width: 1060px; margin: 0 auto; }
+.footer-copy { font-family: var(--cinzel); font-size: 0.58rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-dim); }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-brand">My Legacy Continues</a>
+  <ul class="nav-center" id="navLinks">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="index.html#cemetery">Cemetery Plaque</a></li>
+    <li><a href="index.html#heritage">Heritage Book</a></li>
+    <li><a href="index.html#pet-tag">Pet Tag</a></li>
+    <li><a href="index.html#business">Business Profile</a></li>
+    <li><a href="rescue-registry.html">Rescue Registry</a></li>
+    <li><a href="portal.html" class="nav-vault-link">Vault</a></li>
+  </ul>
+  <div class="nav-right">
+    <button class="nav-lang" onclick="alert('Spanish version coming soon.')">EN | ES</button>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- PROFILE HEADER -->
+<div class="profile-header">
+  <span class="profile-badge">Business Founder Profile — Live Example</span>
+  <h1 class="profile-name">Bears Concrete Pumping</h1>
+  <p class="profile-sub">Founded by Mark Vazquez &mdash; Lic. #42702 &mdash; Santa Maria, CA</p>
+  <span class="verified-badge">Verified by My Legacy Continues</span>
+</div>
+
+<!-- PROFILE BODY -->
+<div class="profile-body">
+
+  <!-- MAIN COLUMN -->
+  <div>
+
+    <!-- STORY -->
+    <div class="story-block">
+      <span class="block-label">The Founder Story</span>
+      <p>Mark Vazquez didn't start with a fleet. He started with a pump truck, a license, and the kind of work ethic that gets passed down, not taught. For over 20 years, he's been the contractor Santa Maria calls when the job has to be done right the first time.</p>
+      <p>He built Bears Concrete Pumping the same way his ancestors built everything — with his hands, his reputation, and a standard that doesn't move.</p>
+      <p style="font-size:0.82rem;color:var(--text-dim);font-style:italic;">This is a live example of the Business Founder Profile product from My Legacy Continues. Scan the QR on Mark's business card and this is what you see.</p>
+    </div>
+
+    <!-- SERVICES -->
+    <div class="services-block">
+      <span class="block-label">Services</span>
+      <ul class="services-list">
+        <li>Concrete pumping and boom truck operations</li>
+        <li>Commercial and residential slab pours</li>
+        <li>Line pumping for tight access jobs</li>
+        <li>Serving: Santa Maria, Lompoc, Orcutt, Five Cities area</li>
+      </ul>
+    </div>
+
+    <!-- PORTFOLIO -->
+    <div class="portfolio-block">
+      <span class="block-label">The Work Speaks</span>
+      <div class="portfolio-grid">
+        <div class="portfolio-card">
+          <div class="portfolio-placeholder"><span>Photo</span></div>
+          <span class="portfolio-card-label">Commercial pour — Santa Maria 2024</span>
+        </div>
+        <div class="portfolio-card">
+          <div class="portfolio-placeholder"><span>Photo</span></div>
+          <span class="portfolio-card-label">Residential slab — Lompoc 2023</span>
+        </div>
+        <div class="portfolio-card">
+          <div class="portfolio-placeholder"><span>Photo</span></div>
+          <span class="portfolio-card-label">Custom project — Central Coast 2022</span>
+        </div>
+      </div>
+
+      <div class="legacy-note">
+        The Vazquez family line traces to 1547 Galicia, Spain. The concrete work is just the latest chapter.
+      </div>
+    </div>
+
+  </div>
+
+  <!-- SIDEBAR -->
+  <div class="contact-sidebar">
+
+    <div class="contact-card">
+      <h3>Contact Mark</h3>
+      <div class="contact-actions">
+        <a href="tel:8058633794" class="btn-call">Call (805) 863-3794</a>
+        <a href="mailto:mark.vazquez92@gmail.com" class="contact-email">Email Mark</a>
+      </div>
+    </div>
+
+    <div class="contact-card">
+      <h3>Request a Quote</h3>
+      <form class="quote-form" action="https://formspree.io/f/xzzpqjle" method="POST">
+        <input type="hidden" name="source" value="trade-profile-quote">
+        <div class="form-group">
+          <label for="q-name">Your Name</label>
+          <input type="text" id="q-name" name="name" placeholder="Full name">
+        </div>
+        <div class="form-group">
+          <label for="q-phone">Phone</label>
+          <input type="tel" id="q-phone" name="phone" placeholder="(805) 000-0000">
+        </div>
+        <div class="form-group">
+          <label for="q-job">Job Description</label>
+          <textarea id="q-job" name="job" placeholder="Tell us about your project..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-gold" style="width:100%;text-align:center;">Send Request</button>
+      </form>
+    </div>
+
+  </div>
+
+</div>
+
+<!-- BOTTOM CTA -->
+<section class="bottom-cta">
+  <p>Want a profile like this for your business?</p>
+  <a href="https://buy.stripe.com/4gM14odSLaK8asI9CIfQI03" class="btn btn-gold">Get Your Business Founder Profile — $79</a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <span class="footer-copy">Long Live Your Legacy &mdash; mylegacycontinues.com &mdash; &copy; 2026 My Legacy Continues &mdash; Santa Maria, CA</span>
+  </div>
+</footer>
+
+<script>
+const toggle = document.getElementById('navToggle');
+const links = document.getElementById('navLinks');
+toggle.addEventListener('click', () => links.classList.toggle('open'));
+document.querySelectorAll('#navLinks a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
+</script>
+
+</body>
+</html>

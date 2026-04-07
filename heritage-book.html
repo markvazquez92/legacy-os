@@ -8,31 +8,31 @@
 <meta name="description" content="Professional genealogy research + a custom written family narrative. Physical book shipped to your door. Permanent digital profile. $199 one-time. My Legacy Continues.">
 <link rel="icon" href="logo.png" type="image/png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=Karla:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Karla:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 
 :root {
-  --bg:          #1B3A2D;
-  --bg-card:     rgba(0,0,0,0.2);
-  --bg-warm:     rgba(0,0,0,0.2);
-  --bg-nav:      rgba(27,58,45,0.97);
-  --forest:      #1B3A2D;
-  --forest-dark: #162f24;
-  --gold:        #C9A84C;
-  --gold-light:  #d9bc6a;
-  --gold-dim:    rgba(201,168,76,0.55);
-  --gold-border: rgba(201,168,76,0.2);
-  --gold-wash:   rgba(201,168,76,0.08);
-  --heading:     #E8DFC8;
-  --heading-hover: #d4c9a8;
-  --text:        #F0EAD6;
-  --text-muted:  rgba(240,234,214,0.65);
-  --text-dim:    rgba(240,234,214,0.4);
-  --im-fell: 'IM Fell English', serif;
+  --bg:          #0a0a0a;
+  --bg-card:     #141414;
+  --bg-warm:     #141414;
+  --bg-nav:      #0d0d0d;
+  --forest:      #0a0a0a;
+  --forest-dark: #0d0d0d;
+  --gold:        #C9920A;
+  --gold-light:  #E5A812;
+  --gold-dim:    rgba(201,146,10,0.55);
+  --gold-border: rgba(201,146,10,0.25);
+  --gold-wash:   rgba(201,146,10,0.08);
+  --heading:     #F5F0E8;
+  --heading-hover: #D4C9A8;
+  --text:        #F5F0E8;
+  --text-muted:  #B5A98A;
+  --text-dim:    #B5A98A;
+  --im-fell: 'Cormorant Garamond', Georgia, serif;
   --sans: 'Karla', sans-serif;
-  --cinzel: 'Karla', sans-serif;
+  --cinzel: 'Cormorant Garamond', Georgia, serif;
   --lora: 'Karla', sans-serif;
-  --serif: 'IM Fell English', serif;
+  --serif: 'Cormorant Garamond', Georgia, serif;
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -47,34 +47,34 @@ img { max-width: 100%; height: auto; display: block; }
 .btn-outline { background: transparent; color: var(–forest); border: 1.5px solid var(–forest); }
 .btn-outline:hover { background: var(–forest); color: var(–gold); }
 
-nav { position: fixed; top: 0; left: 0; right: 0; z-index: 900; height: 68px; background: var(–forest); border-bottom: 1px solid rgba(201,168,76,0.25); display: flex; align-items: center; justify-content: space-between; padding: 0 48px; }
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 900; height: 68px; background: var(–forest); border-bottom: 1px solid rgba(201,146,10,0.25); display: flex; align-items: center; justify-content: space-between; padding: 0 48px; }
 .nav-logo { height: 40px; width: auto; }
 .nav-center { display: flex; align-items: center; gap: 26px; list-style: none; }
 .nav-center a { font-family: var(–sans); font-size: 0.78rem; color: rgba(244,239,230,0.75); letter-spacing: 0.02em; transition: color 0.2s; }
 .nav-center a:hover { color: var(–gold); }
 .nav-right { display: flex; align-items: center; gap: 12px; }
-.nav-lang { font-family: var(–cinzel); font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(244,239,230,0.5); border: 1px solid rgba(201,168,76,0.3); padding: 6px 14px; border-radius: 2px; cursor: pointer; background: none; transition: all 0.2s; }
+.nav-lang { font-family: var(–cinzel); font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(244,239,230,0.5); border: 1px solid rgba(201,146,10,0.3); padding: 6px 14px; border-radius: 2px; cursor: pointer; background: none; transition: all 0.2s; }
 .nav-lang:hover { color: var(–gold); border-color: var(–gold); }
-.nav-vault-link { font-family: var(–cinzel); font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(–gold); border: 1px solid rgba(201,168,76,0.4); padding: 8px 16px; border-radius: 2px; transition: all 0.22s; }
-.nav-vault-link:hover { background: rgba(201,168,76,0.12); }
+.nav-vault-link { font-family: var(–cinzel); font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(–gold); border: 1px solid rgba(201,146,10,0.4); padding: 8px 16px; border-radius: 2px; transition: all 0.22s; }
+.nav-vault-link:hover { background: rgba(201,146,10,0.12); }
 .nav-toggle { display: none; background: none; border: none; cursor: pointer; flex-direction: column; gap: 5px; padding: 4px; }
 .nav-toggle span { display: block; width: 22px; height: 1.5px; background: var(–gold); }
 @media (max-width: 960px) {
 nav { padding: 0 20px; }
-.nav-center { display: none; flex-direction: column; position: fixed; top: 68px; left: 0; right: 0; background: var(–forest); padding: 24px 20px; gap: 0; border-bottom: 1px solid rgba(201,168,76,0.2); }
+.nav-center { display: none; flex-direction: column; position: fixed; top: 68px; left: 0; right: 0; background: var(–forest); padding: 24px 20px; gap: 0; border-bottom: 1px solid rgba(201,146,10,0.2); }
 .nav-center.open { display: flex; }
 .nav-center li { width: 100%; }
-.nav-center a { display: block; padding: 14px 0; border-bottom: 1px solid rgba(201,168,76,0.1); font-size: 0.92rem; color: rgba(244,239,230,0.8); }
+.nav-center a { display: block; padding: 14px 0; border-bottom: 1px solid rgba(201,146,10,0.1); font-size: 0.92rem; color: rgba(244,239,230,0.8); }
 .nav-toggle { display: flex; }
 }
 
 .page-hero { background: var(–forest); padding: 130px 48px 72px; }
 .page-hero-inner { max-width: 860px; margin: 0 auto; }
-.back-link { font-family: var(–cinzel); font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(201,168,76,0.65); display: inline-flex; align-items: center; gap: 8px; margin-bottom: 28px; transition: color 0.2s; }
+.back-link { font-family: var(–cinzel); font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(201,146,10,0.65); display: inline-flex; align-items: center; gap: 8px; margin-bottom: 28px; transition: color 0.2s; }
 .back-link:hover { color: var(–gold); }
 .back-link::before { content: ‘←’; font-size: 0.9rem; }
 .page-eyebrow { font-family: var(–cinzel); font-size: 0.56rem; letter-spacing: 0.32em; text-transform: uppercase; color: var(–gold); display: block; margin-bottom: 18px; }
-.page-title { font-family: var(–cinzel); font-size: clamp(2rem, 4.5vw, 3.2rem); font-weight: 700; color: #F4EFE6; line-height: 1.1; margin-bottom: 18px; }
+.page-title { font-family: var(–cinzel); font-size: clamp(2rem, 4.5vw, 3.2rem); font-weight: 700; color: #F5F0E8; line-height: 1.1; margin-bottom: 18px; }
 .page-sub { font-size: 1rem; color: rgba(244,239,230,0.7); line-height: 1.85; max-width: 600px; margin-bottom: 28px; }
 .price-badge { display: inline-block; font-family: var(–cinzel); font-size: 2.2rem; font-weight: 700; color: var(–gold); margin-bottom: 28px; }
 .price-note { font-size: 0.8rem; color: rgba(244,239,230,0.5); margin-top: -20px; margin-bottom: 28px; }
@@ -115,16 +115,16 @@ nav { padding: 0 20px; }
 .form-group select { background: var(–bg-card); border: 1px solid var(–gold-border); border-radius: 2px; color: var(–text); font-family: var(–lora); font-size: 0.9rem; padding: 13px 16px; min-height: 44px; transition: border-color 0.2s; width: 100%; }
 .form-group input:focus,
 .form-group textarea:focus,
-.form-group select:focus { outline: none; border-color: var(–gold); box-shadow: 0 0 0 3px rgba(201,168,76,0.1); }
+.form-group select:focus { outline: none; border-color: var(–gold); box-shadow: 0 0 0 3px rgba(201,146,10,0.1); }
 .form-group input::placeholder,
 .form-group textarea::placeholder { color: var(–text-dim); }
 .form-group textarea { min-height: 110px; resize: vertical; }
-.form-group select { appearance: none; background-image: url(“data:image/svg+xml,%3Csvg xmlns=‘http://www.w3.org/2000/svg’ width=‘12’ height=‘8’ viewBox=‘0 0 12 8’%3E%3Cpath d=‘M1 1l5 5 5-5’ stroke=’%23C9A84C’ stroke-width=‘1.5’ fill=‘none’ stroke-linecap=‘round’/%3E%3C/svg%3E”); background-repeat: no-repeat; background-position: right 16px center; padding-right: 40px; }
+.form-group select { appearance: none; background-image: url(“data:image/svg+xml,%3Csvg xmlns=‘http://www.w3.org/2000/svg’ width=‘12’ height=‘8’ viewBox=‘0 0 12 8’%3E%3Cpath d=‘M1 1l5 5 5-5’ stroke=’%23C9920A’ stroke-width=‘1.5’ fill=‘none’ stroke-linecap=‘round’/%3E%3C/svg%3E”); background-repeat: no-repeat; background-position: right 16px center; padding-right: 40px; }
 .form-divider { height: 1px; background: var(–gold-border); margin: 8px 0; }
 .form-submit-row { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; margin-top: 8px; }
 .form-submit-note { font-size: 0.78rem; color: var(–text-dim); line-height: 1.6; }
 
-footer { background: var(–forest); border-top: 1px solid rgba(201,168,76,0.2); padding: 40px 48px 28px; }
+footer { background: var(–forest); border-top: 1px solid rgba(201,146,10,0.2); padding: 40px 48px 28px; }
 .footer-inner { max-width: 1060px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 20px; }
 .footer-logo { height: 48px; width: auto; opacity: 0.8; }
 .footer-copy { font-family: var(–cinzel); font-size: 0.56rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(244,239,230,0.4); text-align: center; }
@@ -170,32 +170,32 @@ footer { background: var(–forest); border-top: 1px solid rgba(201,168,76,0.2);
     <h2>What You're Getting</h2>
     <div class="includes-grid">
       <div class="include-item">
-        <div class="include-item-icon">📜</div>
+        <div class="include-item-icon"></div>
         <div class="include-item-title">Deep Genealogy Research</div>
         <div class="include-item-desc">4+ generations minimum. We search FamilySearch, Spanish nobility registries, border crossing records, census documents, and church archives.</div>
       </div>
       <div class="include-item">
-        <div class="include-item-icon">✍️</div>
+        <div class="include-item-icon"></div>
         <div class="include-item-title">Custom Written Narrative</div>
         <div class="include-item-desc">Not a template. Not a chart. A real written story — your family's history told like it deserves to be told.</div>
       </div>
       <div class="include-item">
-        <div class="include-item-icon">🗺️</div>
+        <div class="include-item-icon"></div>
         <div class="include-item-title">Migration Map & Timeline</div>
         <div class="include-item-desc">Visual journey from origin to where you are now. Spain, Mexico, Texas, California — we trace the route.</div>
       </div>
       <div class="include-item">
-        <div class="include-item-icon">🎶</div>
+        <div class="include-item-icon"></div>
         <div class="include-item-title">Cultural Guide</div>
         <div class="include-item-desc">The music, food, traditions, and celebrations of your family's region of origin. Who they were, not just where they were.</div>
       </div>
       <div class="include-item">
-        <div class="include-item-icon">📖</div>
+        <div class="include-item-icon"></div>
         <div class="include-item-title">Physical Book — Shipped</div>
         <div class="include-item-desc">Professionally printed and bound. Shipped to your door. Something your family will hold for generations.</div>
       </div>
       <div class="include-item">
-        <div class="include-item-icon">🔗</div>
+        <div class="include-item-icon"></div>
         <div class="include-item-title">Permanent Digital Profile</div>
         <div class="include-item-desc">A digital version hosted at mylegacycontinues.com forever, linked to a QR code for your family to share.</div>
       </div>
