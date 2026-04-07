@@ -4,20 +4,33 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Pet QR Tag — My Legacy Continues</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=Karla:wght@400;500;700&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --bg: #0b0c10;
-      --surface: #13141a;
-      --border: #2a2b33;
-      --gold: #c9a84c;
+      --bg: #1B3A2D;
+      --surface: rgba(0,0,0,0.2);
+      --border: rgba(201,168,76,0.2);
+      --border-nav: rgba(201,168,76,0.3);
+      --gold: #C9A84C;
       --gold-dim: #a07c32;
-      --text: #e8e4dc;
-      --muted: #8a8790;
-      --font-display: 'Playfair Display', Georgia, serif;
-      --font-body: 'DM Sans', sans-serif;
+      --text: #F0EAD6;
+      --heading: #E8DFC8;
+      --muted: rgba(240,234,214,0.6);
+      --font-display: 'IM Fell English', Georgia, serif;
+      --font-body: 'Karla', sans-serif;
+    }
+
+    /* FILM GRAIN */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 9999;
+      opacity: 0.035;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='grain'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23grain)' opacity='1'/%3E%3C/svg%3E");
     }
 
     body {
@@ -28,13 +41,17 @@
       line-height: 1.6;
     }
 
+    /* DIVIDERS */
+    .divider { border: none; border-top: 1px solid rgba(201,168,76,0.35); margin: 0; }
+
     /* NAV */
     nav {
       display: flex;
       align-items: center;
       justify-content: space-between;
       padding: 1.25rem 2rem;
-      border-bottom: 1px solid var(--border);
+      background: rgba(27,58,45,0.97);
+      border-bottom: 1px solid var(--border-nav);
       flex-wrap: wrap;
       gap: 1rem;
     }
@@ -77,6 +94,7 @@
       font-size: clamp(2rem, 5vw, 3rem);
       line-height: 1.2;
       margin-bottom: 1rem;
+      color: var(--heading);
     }
     h1 em { font-style: italic; color: var(--gold); }
     .hero p {
@@ -116,6 +134,7 @@
     .card h2 {
       font-family: var(--font-display);
       font-size: 1.4rem;
+      color: var(--heading);
       margin-bottom: 0.25rem;
     }
     .price {
@@ -150,15 +169,16 @@
       display: block;
       text-align: center;
       background: var(--gold);
-      color: #0b0c10;
+      color: var(--bg);
       font-family: var(--font-body);
       font-weight: 700;
-      font-size: 0.95rem;
-      padding: 0.85rem 1.5rem;
+      font-size: 0.875rem;
+      padding: 12px 28px;
       border-radius: 3px;
       text-decoration: none;
       transition: background 0.2s;
-      letter-spacing: 0.02em;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
     }
     .btn:hover { background: var(--gold-dim); }
     .btn.outline {
@@ -173,9 +193,10 @@
     .section-title {
       font-family: var(--font-display);
       font-size: 1.6rem;
+      color: var(--heading);
       margin-bottom: 2rem;
       padding-bottom: 0.75rem;
-      border-bottom: 1px solid var(--border);
+      border-bottom: 1px solid rgba(201,168,76,0.35);
     }
 
     .steps {
@@ -282,15 +303,16 @@
     .submit-btn {
       width: 100%;
       background: var(--gold);
-      color: #0b0c10;
+      color: var(--bg);
       border: none;
       font-family: var(--font-body);
       font-weight: 700;
-      font-size: 1rem;
-      padding: 1rem;
+      font-size: 0.875rem;
+      padding: 12px 28px;
       border-radius: 3px;
       cursor: pointer;
-      letter-spacing: 0.03em;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
       margin-top: 1.5rem;
       transition: background 0.2s;
     }
@@ -548,3 +570,4 @@
 
 </body>
 </html>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             

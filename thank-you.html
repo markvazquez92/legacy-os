@@ -4,13 +4,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Thank You — My Legacy Continues</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=Karla:wght@400;500;700&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
     body {
-      background: #0b0c10;
-      color: #e8e4dc;
-      font-family: 'DM Sans', sans-serif;
+      background: #1B3A2D;
+      color: #F0EAD6;
+      font-family: 'Karla', sans-serif;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
@@ -19,48 +20,77 @@
       text-align: center;
       padding: 2rem;
     }
-    img { height: 48px; margin-bottom: 2rem; }
-    .check {
-      font-size: 3rem;
-      margin-bottom: 1rem;
+
+    /* FILM GRAIN */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 9999;
+      opacity: 0.035;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='grain'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23grain)' opacity='1'/%3E%3C/svg%3E");
     }
+
+    img { height: 48px; margin-bottom: 2.5rem; display: block; }
+
+    .label {
+      display: inline-block;
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #C9A84C;
+      border: 1px solid #C9A84C;
+      padding: 4px 12px;
+      margin-bottom: 1.75rem;
+    }
+
     h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(1.8rem, 4vw, 2.5rem);
-      margin-bottom: 1rem;
-      color: #c9a84c;
+      font-family: 'IM Fell English', Georgia, serif;
+      font-size: clamp(2rem, 5vw, 3rem);
+      color: #E8DFC8;
+      margin-bottom: 1.25rem;
+      line-height: 1.2;
     }
+
     p {
-      color: #8a8790;
+      color: rgba(240,234,214,0.65);
       font-size: 1rem;
       max-width: 480px;
-      line-height: 1.7;
-      margin-bottom: 2rem;
+      line-height: 1.75;
+      margin-bottom: 2.5rem;
     }
-    a {
+
+    a.btn {
       display: inline-block;
-      background: #c9a84c;
-      color: #0b0c10;
+      background: #C9A84C;
+      color: #1B3A2D;
+      font-family: 'Karla', sans-serif;
       font-weight: 700;
-      font-size: 0.95rem;
-      padding: 0.8rem 2rem;
+      font-size: 0.875rem;
+      padding: 12px 28px;
       border-radius: 3px;
       text-decoration: none;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      transition: background 0.2s;
     }
-    a:hover { background: #a07c32; }
+    a.btn:hover { background: #a07c32; }
+
     .footer-note {
-      margin-top: 3rem;
+      margin-top: 3.5rem;
       font-size: 0.75rem;
-      color: #4a4a55;
+      color: rgba(240,234,214,0.3);
+      letter-spacing: 0.04em;
     }
   </style>
 </head>
 <body>
   <img src="https://mylegacycontinues.com/logo.png" alt="My Legacy Continues" />
-  <div class="check">✓</div>
+  <div class="label">Order Received</div>
   <h1>We Got It.</h1>
   <p>Your information is in. Bear will confirm by email within 24 hours and get to work. Long live your legacy.</p>
-  <a href="https://mylegacycontinues.com">Back to Home</a>
-  <div class="footer-note">My Legacy Continues · Santa Maria, CA · mylegacycontinues.com</div>
+  <a href="https://mylegacycontinues.com" class="btn">Back to Home</a>
+  <div class="footer-note">My Legacy Continues &nbsp;&middot;&nbsp; Santa Maria, CA &nbsp;&middot;&nbsp; mylegacycontinues.com</div>
 </body>
 </html>
