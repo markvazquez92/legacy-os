@@ -718,7 +718,7 @@
           Where they were found. What condition they were in. Who saved them. The rescue origin story lives on the profile forever — not in a Facebook caption that disappears from the algorithm, but in a permanent URL that can be shared, linked, and remembered.
         </p>
         <span class="feature-tag-live">Live Now</span>
-        &nbsp;<a href="https://forms.gle/QP7jkWMpam4cDW3D9" style="display:inline-block; margin-top:14px; font-size:10px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--gold); text-decoration:underline; text-underline-offset:3px;">Submit a Dog →</a>
+        &nbsp;<a href="#rescue-forms" onclick="showTab('dog-intake')" style="display:inline-block; margin-top:14px; font-size:10px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--gold); text-decoration:underline; text-underline-offset:3px;">Submit a Dog →</a>
       </div>
 
       <div class="feature-card">
@@ -755,7 +755,7 @@
           Fosters stay connected to the dogs they raised — getting updates, celebrating gotcha days, sharing in the dog's story long after adoption. Fosters can also request backup coverage for weekends when things get hard. No more burning out in silence.
         </p>
         <span class="feature-tag-live">Live Now</span>
-        &nbsp;<a href="https://docs.google.com/forms/d/e/1FAIpQLSchKHM1LmPbcOZJP0PoHLomLUQMqdWBIQomy7-HxhVd94S0_A/viewform" style="display:inline-block; margin-top:14px; font-size:10px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--gold); text-decoration:underline; text-underline-offset:3px;">Become a Foster →</a>
+        &nbsp;<a href="#rescue-forms" onclick="showTab('foster-signup')" style="display:inline-block; margin-top:14px; font-size:10px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--gold); text-decoration:underline; text-underline-offset:3px;">Become a Foster →</a>
       </div>
 
       <div class="feature-card">
@@ -792,7 +792,7 @@
           Adopters post updates, photos, birthday posts, and milestones directly to the dog's profile. The foster who raised them sees it. The rescue team sees it. The dog's story keeps growing long after adoption day — not in a Facebook comment thread, but on a permanent page that belongs to that dog.
         </p>
         <span class="feature-tag-live">Live Now</span>
-        &nbsp;<a href="https://forms.gle/qpPXknVDW5YNgXkDA" style="display:inline-block; margin-top:14px; font-size:10px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--gold); text-decoration:underline; text-underline-offset:3px;">Submit an Update →</a>
+        &nbsp;<a href="#rescue-forms" onclick="showTab('adoption-followup')" style="display:inline-block; margin-top:14px; font-size:10px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--gold); text-decoration:underline; text-underline-offset:3px;">Submit an Update →</a>
       </div>
 
       <div class="feature-card">
@@ -1035,6 +1035,250 @@
     <p class="cta-fine">Available to rescue organizations across California — expanding nationally.</p>
   </div>
 </section>
+
+<!-- RESCUE FORMS -->
+<section class="section" id="rescue-forms" style="background: rgba(0,0,0,0.15);">
+  <div class="section-inner" style="max-width: 680px;">
+    <p class="section-eyebrow">Get Involved</p>
+    <h2 class="section-title">Submit a Dog, Foster, or Update</h2>
+    <p class="section-body">Fill out the form below that matches what you need. We review every submission and respond within 24 hours.</p>
+
+    <!-- TAB NAV -->
+    <div id="form-tabs" style="display:flex; gap:0; margin-bottom:32px; border-bottom:1px solid rgba(201,168,76,0.35);">
+      <button onclick="showTab('dog-intake')" id="tab-dog-intake"
+        style="flex:1; padding:12px 8px; background:rgba(201,168,76,0.15); border:none; border-bottom:2px solid #C9A84C; color:#C9A84C; font-family:Karla,sans-serif; font-size:12px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; cursor:pointer;">
+        Submit a Dog
+      </button>
+      <button onclick="showTab('foster-signup')" id="tab-foster-signup"
+        style="flex:1; padding:12px 8px; background:transparent; border:none; border-bottom:2px solid transparent; color:#F0EAD6; font-family:Karla,sans-serif; font-size:12px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; cursor:pointer; opacity:0.6;">
+        Become a Foster
+      </button>
+      <button onclick="showTab('adoption-followup')" id="tab-adoption-followup"
+        style="flex:1; padding:12px 8px; background:transparent; border:none; border-bottom:2px solid transparent; color:#F0EAD6; font-family:Karla,sans-serif; font-size:12px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; cursor:pointer; opacity:0.6;">
+        Adoption Update
+      </button>
+    </div>
+
+    <!-- FORM 1: DOG INTAKE -->
+    <div id="pane-dog-intake">
+      <form
+        action="https://formspree.io/f/xqo1rkea"
+        method="POST"
+        id="dog-intake-form"
+      >
+        <input type="hidden" name="_subject" value="New Dog Intake — My Legacy Continues Rescue" />
+        <input type="hidden" name="form_type" value="Dog Intake" />
+
+        <div style="margin-bottom: 14px;">
+          <label style="display:block; margin-bottom:4px;">Dog's Name *</label>
+          <input type="text" name="dog_name" required style="width:100%;padding:10px;box-sizing:border-box;" />
+        </div>
+        <div style="margin-bottom: 14px;">
+          <label style="display:block; margin-bottom:4px;">Breed / Mix</label>
+          <input type="text" name="breed" style="width:100%;padding:10px;box-sizing:border-box;" />
+        </div>
+        <div style="margin-bottom: 14px;">
+          <label style="display:block; margin-bottom:4px;">Age (approximate)</label>
+          <input type="text" name="age" placeholder="e.g. 3 years, puppy, senior" style="width:100%;padding:10px;box-sizing:border-box;" />
+        </div>
+        <div style="margin-bottom: 14px;">
+          <label style="display:block; margin-bottom:4px;">Sex</label>
+          <select name="sex" style="width:100%;padding:10px;box-sizing:border-box;">
+            <option value="">-- Select --</option>
+            <option>Male</option>
+            <option>Female</option>
+            <option>Unknown</option>
+          </select>
+        </div>
+        <div style="margin-bottom: 14px;">
+          <label style="display:block; margin-bottom:4px;">Spayed / Neutered?</label>
+          <select name="fixed" style="width:100%;padding:10px;box-sizing:border-box;">
+            <option value="">-- Select --</option>
+            <option>Yes</option>
+            <option>No</option>
+            <option>Unknown</option>
+          </select>
+        </div>
+        <div style="margin-bottom: 14px;">
+          <label style="display:block; margin-bottom:4px;">Current Location / Situation *</label>
+          <textarea name="situation" rows="3" required placeholder="Where is this dog now? Shelter, stray, owner surrender..." style="width:100%;padding:10px;box-sizing:border-box;"></textarea>
+        </div>
+        <div style="margin-bottom: 14px;">
+          <label style="display:block; margin-bottom:4px;">Known Health Issues</label>
+          <textarea name="health" rows="2" style="width:100%;padding:10px;box-sizing:border-box;"></textarea>
+        </div>
+        <div style="margin-bottom: 14px;">
+          <label style="display:block; margin-bottom:4px;">Temperament / Behavior Notes</label>
+          <textarea name="temperament" rows="2" placeholder="Good with kids? Other dogs? Cats? Energy level?" style="width:100%;padding:10px;box-sizing:border-box;"></textarea>
+        </div>
+        <div style="margin-bottom: 14px;">
+          <label style="display:block; margin-bottom:4px;">Your Name *</label>
+          <input type="text" name="contact_name" required style="width:100%;padding:10px;box-sizing:border-box;" />
+        </div>
+        <div style="margin-bottom: 14px;">
+          <label style="display:block; margin-bottom:4px;">Your Email *</label>
+          <input type="email" name="email" required style="width:100%;padding:10px;box-sizing:border-box;" />
+        </div>
+        <div style="margin-bottom: 14px;">
+          <label style="display:block; margin-bottom:4px;">Your Phone</label>
+          <input type="tel" name="phone" style="width:100%;padding:10px;box-sizing:border-box;" />
+        </div>
+        <div style="margin-bottom: 14px;">
+          <label style="display:block; margin-bottom:4px;">Urgency Level</label>
+          <select name="urgency" style="width:100%;padding:10px;box-sizing:border-box;">
+            <option value="">-- Select --</option>
+            <option>Critical — at risk immediately</option>
+            <option>Urgent — within a week</option>
+            <option>Standard — within a month</option>
+          </select>
+        </div>
+        <input type="text" name="_gotcha" style="display:none;" />
+        <input type="hidden" name="_next" value="https://mylegacycontinues.com/thank-you.html" />
+        <button type="submit" style="background:#C9A84C;color:#1B3A2D;padding:14px 32px;border:none;width:100%;font-family:Karla,sans-serif;font-size:13px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;border-radius:3px;">
+          Submit Dog Intake
+        </button>
+      </form>
+    </div>
+
+    <!-- FORM 2: FOSTER SIGN-UP -->
+    <div id="pane-foster-signup" style="display:none;">
+      <form
+        action="https://formspree.io/f/xqo1rkea"
+        method="POST"
+        id="foster-signup-form"
+      >
+        <input type="hidden" name="_subject" value="New Foster Application — My Legacy Continues Rescue" />
+        <input type="hidden" name="form_type" value="Foster Sign-Up" />
+
+        <div style="margin-bottom: 14px;">
+          <label style="display:block; margin-bottom:4px;">Your Full Name *</label>
+          <input type="text" name="full_name" required style="width:100%;padding:10px;box-sizing:border-box;" />
+        </div>
+        <div style="margin-bottom: 14px;">
+          <label style="display:block; margin-bottom:4px;">Email *</label>
+          <input type="email" name="email" required style="width:100%;padding:10px;box-sizing:border-box;" />
+        </div>
+        <div style="margin-bottom: 14px;">
+          <label style="display:block; margin-bottom:4px;">Phone *</label>
+          <input type="tel" name="phone" required style="width:100%;padding:10px;box-sizing:border-box;" />
+        </div>
+        <div style="margin-bottom: 14px;">
+          <label style="display:block; margin-bottom:4px;">City / Zip Code *</label>
+          <input type="text" name="location" required placeholder="e.g. Lompoc, CA 93436" style="width:100%;padding:10px;box-sizing:border-box;" />
+        </div>
+        <div style="margin-bottom: 14px;">
+          <label style="display:block; margin-bottom:4px;">Home Type</label>
+          <select name="home_type" style="width:100%;padding:10px;box-sizing:border-box;">
+            <option value="">-- Select --</option>
+            <option>House with yard</option>
+            <option>House without yard</option>
+            <option>Apartment/Condo</option>
+          </select>
+        </div>
+        <div style="margin-bottom: 14px;">
+          <label style="display:block; margin-bottom:4px;">Do you have other pets?</label>
+          <textarea name="other_pets" rows="2" placeholder="e.g. 2 cats, 1 dog (friendly)" style="width:100%;padding:10px;box-sizing:border-box;"></textarea>
+        </div>
+        <div style="margin-bottom: 14px;">
+          <label style="display:block; margin-bottom:4px;">Do you have children at home?</label>
+          <select name="children" style="width:100%;padding:10px;box-sizing:border-box;">
+            <option value="">-- Select --</option>
+            <option>Yes</option>
+            <option>No</option>
+          </select>
+        </div>
+        <div style="margin-bottom: 14px;">
+          <label style="display:block; margin-bottom:4px;">What types of dogs can you foster?</label>
+          <label style="display:block;"><input type="checkbox" name="foster_type" value="Puppies" /> Puppies</label>
+          <label style="display:block;"><input type="checkbox" name="foster_type" value="Adults" /> Adults</label>
+          <label style="display:block;"><input type="checkbox" name="foster_type" value="Seniors" /> Seniors</label>
+          <label style="display:block;"><input type="checkbox" name="foster_type" value="Medical needs" /> Medical needs</label>
+          <label style="display:block;"><input type="checkbox" name="foster_type" value="Large breeds" /> Large breeds</label>
+        </div>
+        <div style="margin-bottom: 14px;">
+          <label style="display:block; margin-bottom:4px;">Anything else we should know?</label>
+          <textarea name="notes" rows="3" style="width:100%;padding:10px;box-sizing:border-box;"></textarea>
+        </div>
+        <input type="text" name="_gotcha" style="display:none;" />
+        <input type="hidden" name="_next" value="https://mylegacycontinues.com/thank-you.html" />
+        <button type="submit" style="background:#C9A84C;color:#1B3A2D;padding:14px 32px;border:none;width:100%;font-family:Karla,sans-serif;font-size:13px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;border-radius:3px;">
+          Submit Foster Application
+        </button>
+      </form>
+    </div>
+
+    <!-- FORM 3: ADOPTION FOLLOW-UP -->
+    <div id="pane-adoption-followup" style="display:none;">
+      <form
+        action="https://formspree.io/f/xqo1rkea"
+        method="POST"
+        id="adoption-followup-form"
+      >
+        <input type="hidden" name="_subject" value="Adoption Follow-Up — My Legacy Continues Rescue" />
+        <input type="hidden" name="form_type" value="Adoption Follow-Up" />
+
+        <div style="margin-bottom: 14px;">
+          <label style="display:block; margin-bottom:4px;">Your Name *</label>
+          <input type="text" name="adopter_name" required style="width:100%;padding:10px;box-sizing:border-box;" />
+        </div>
+        <div style="margin-bottom: 14px;">
+          <label style="display:block; margin-bottom:4px;">Your Email *</label>
+          <input type="email" name="email" required style="width:100%;padding:10px;box-sizing:border-box;" />
+        </div>
+        <div style="margin-bottom: 14px;">
+          <label style="display:block; margin-bottom:4px;">Dog's Name *</label>
+          <input type="text" name="dog_name" required style="width:100%;padding:10px;box-sizing:border-box;" />
+        </div>
+        <div style="margin-bottom: 14px;">
+          <label style="display:block; margin-bottom:4px;">Adoption Date (approximate)</label>
+          <input type="text" name="adoption_date" placeholder="e.g. March 2025" style="width:100%;padding:10px;box-sizing:border-box;" />
+        </div>
+        <div style="margin-bottom: 14px;">
+          <label style="display:block; margin-bottom:4px;">How is your dog doing? *</label>
+          <select name="overall_status" required style="width:100%;padding:10px;box-sizing:border-box;">
+            <option value="">-- Select --</option>
+            <option>Thriving — couldn't be better</option>
+            <option>Good — still adjusting</option>
+            <option>Some challenges — need support</option>
+            <option>Serious concern — need help urgently</option>
+          </select>
+        </div>
+        <div style="margin-bottom: 14px;">
+          <label style="display:block; margin-bottom:4px;">Tell us how things are going *</label>
+          <textarea name="update" rows="5" required placeholder="How has the dog settled in? Any changes? Happy moments? Challenges?" style="width:100%;padding:10px;box-sizing:border-box;"></textarea>
+        </div>
+        <div style="margin-bottom: 14px;">
+          <label style="display:block; margin-bottom:4px;">Would you like to share a photo update? (paste a URL)</label>
+          <input type="text" name="photo_url" placeholder="https://..." style="width:100%;padding:10px;box-sizing:border-box;" />
+        </div>
+        <div style="margin-bottom: 14px;">
+          <label style="display:block; margin-bottom:4px;">Do you need any support or resources?</label>
+          <textarea name="support_needed" rows="2" style="width:100%;padding:10px;box-sizing:border-box;"></textarea>
+        </div>
+        <input type="text" name="_gotcha" style="display:none;" />
+        <input type="hidden" name="_next" value="https://mylegacycontinues.com/thank-you.html" />
+        <button type="submit" style="background:#C9A84C;color:#1B3A2D;padding:14px 32px;border:none;width:100%;font-family:Karla,sans-serif;font-size:13px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;border-radius:3px;">
+          Submit My Update
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<script>
+function showTab(id) {
+  ['dog-intake','foster-signup','adoption-followup'].forEach(function(t) {
+    var pane = document.getElementById('pane-' + t);
+    var tab = document.getElementById('tab-' + t);
+    var active = t === id;
+    pane.style.display = active ? 'block' : 'none';
+    tab.style.background = active ? 'rgba(201,168,76,0.15)' : 'transparent';
+    tab.style.borderBottomColor = active ? '#C9A84C' : 'transparent';
+    tab.style.color = active ? '#C9A84C' : '#F0EAD6';
+    tab.style.opacity = active ? '1' : '0.6';
+  });
+}
+</script>
 
 <!-- FOOTER -->
 <footer>

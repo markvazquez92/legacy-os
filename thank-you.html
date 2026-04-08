@@ -3,203 +3,61 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>You're In — My Legacy Continues</title>
-  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;600;700&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet" />
+  <title>Thank You — My Legacy Continues</title>
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
-      background: #0a0f0a;
-      color: #f0ede6;
-      font-family: 'DM Sans', sans-serif;
+      font-family: Georgia, serif;
+      background: #f8f5f0;
+      color: #2c2c2c;
       min-height: 100vh;
       display: flex;
-      flex-direction: column;
-    }
-
-    nav {
-      padding: 20px 32px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      border-bottom: 1px solid rgba(212,175,55,0.2);
-    }
-
-    nav a img { height: 48px; }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 24px;
-    }
-
-    nav ul li a {
-      color: #f0ede6;
-      text-decoration: none;
-      font-size: 13px;
-      letter-spacing: 0.5px;
-      opacity: 0.8;
-      transition: opacity 0.2s;
-    }
-
-    nav ul li a:hover { opacity: 1; color: #D4AF37; }
-
-    main {
-      flex: 1;
-      display: flex;
       align-items: center;
       justify-content: center;
-      padding: 60px 24px;
+      padding: 40px 20px;
     }
-
-    .card {
-      max-width: 520px;
-      width: 100%;
+    .container {
       text-align: center;
-      animation: fadeUp 0.7s ease forwards;
-      opacity: 0;
+      max-width: 520px;
     }
-
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(24px); }
-      to   { opacity: 1; transform: translateY(0); }
+    .icon {
+      font-size: 56px;
+      margin-bottom: 24px;
     }
-
-    .seal {
-      width: 72px;
-      height: 72px;
-      border: 2px solid #D4AF37;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto 28px;
-      font-size: 28px;
-    }
-
     h1 {
-      font-family: 'Chakra Petch', sans-serif;
-      font-size: clamp(28px, 5vw, 40px);
-      color: #D4AF37;
-      letter-spacing: 1px;
+      font-size: 32px;
+      color: #2c4a3e;
       margin-bottom: 16px;
     }
-
     p {
       font-size: 17px;
       line-height: 1.7;
-      color: #c8c4bc;
-      margin-bottom: 12px;
+      color: #555;
+      margin-bottom: 20px;
     }
-
-    .divider {
-      width: 48px;
-      height: 2px;
-      background: #D4AF37;
-      margin: 28px auto;
-    }
-
-    .next-steps {
-      text-align: left;
-      background: rgba(212,175,55,0.05);
-      border: 1px solid rgba(212,175,55,0.2);
-      border-radius: 6px;
-      padding: 24px 28px;
-      margin-bottom: 32px;
-    }
-
-    .next-steps p {
-      font-size: 13px;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      color: #D4AF37;
-      margin-bottom: 14px;
-    }
-
-    .next-steps ul {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-
-    .next-steps ul li {
-      font-size: 15px;
-      color: #f0ede6;
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-    }
-
-    .next-steps ul li::before {
-      content: '→';
-      color: #D4AF37;
-      flex-shrink: 0;
-    }
-
-    .btn {
+    .back-link {
       display: inline-block;
-      padding: 14px 36px;
-      background: #D4AF37;
-      color: #111;
-      font-family: 'Chakra Petch', sans-serif;
-      font-size: 14px;
-      font-weight: 700;
-      letter-spacing: 1.5px;
-      text-decoration: none;
-      border-radius: 4px;
-      transition: opacity 0.2s;
+      margin-top: 12px;
+      color: #2c4a3e;
+      text-decoration: underline;
+      font-size: 15px;
     }
-
-    .btn:hover { opacity: 0.88; }
-
-    footer {
-      text-align: center;
-      padding: 24px;
-      font-size: 12px;
-      color: rgba(240,237,230,0.4);
-      border-top: 1px solid rgba(212,175,55,0.1);
-    }
+    .back-link:hover { opacity: 0.7; }
   </style>
 </head>
 <body>
-
-<nav>
-  <a href="/index.html"><img src="/logo.png" alt="My Legacy Continues" /></a>
-  <ul>
-    <li><a href="/index.html">Home</a></li>
-    <li><a href="/heritage-book.html">Heritage Book</a></li>
-    <li><a href="/cemetery-plaque.html">Cemetery Plaque</a></li>
-    <li><a href="/pet-tag.html">Pet Tag</a></li>
-    <li><a href="/business-profile.html">Business Profile</a></li>
-  </ul>
-</nav>
-
-<main>
-  <div class="card">
-    <div class="seal">✓</div>
-    <h1>You're In.</h1>
-    <p>Your vault access request was received. Bear will personally reach out within 48 hours to get your family's record set up.</p>
-
-    <div class="divider"></div>
-
-    <div class="next-steps">
-      <p>What happens next</p>
-      <ul>
-        <li>You'll get a confirmation email shortly</li>
-        <li>Bear reviews your request personally</li>
-        <li>We reach out to gather your family's info</li>
-        <li>Your vault is built and linked to your QR products</li>
-      </ul>
-    </div>
-
-    <a href="/index.html" class="btn">BACK TO HOME</a>
+  <div class="container">
+    <div class="icon">🕊️</div>
+    <h1>Thank You</h1>
+    <p>
+      We received your information and we'll be in touch shortly.<br />
+      Your story matters — and we're honored to help you preserve it.
+    </p>
+    <p style="font-size:15px; color:#888;">
+      Expect a response within 1–2 business days.<br />
+      Questions? Email us at <strong>bear@mylegacycontinues.com</strong>
+    </p>
+    <a href="https://mylegacycontinues.com" class="back-link">← Back to My Legacy Continues</a>
   </div>
-</main>
-
-<footer>
-  Long Live Your Legacy — mylegacycontinues.com — © 2026 My Legacy Continues — Santa Maria, CA
-</footer>
-
 </body>
 </html>
