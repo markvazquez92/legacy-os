@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Active Transports — My Legacy Continues</title>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #0a0a0a; --bg-deep: #202e1f;
+  --surface: rgba(240,237,230,0.04); --border: rgba(212,175,55,0.15);
+  --gold: #D4AF37; --cream: #f0ede6; --muted: rgba(240,237,230,0.6);
+  --green: #4ade80; --orange: #fb923c; --red: #f87171;
+  --font-head: 'Chakra Petch', sans-serif;
+  --font-emotion: 'Cormorant Garamond', serif;
+  --font-body: 'DM Sans', sans-serif;
+}
+body { background: linear-gradient(180deg, var(--bg) 0%, var(--bg-deep) 100%); color: var(--cream); font-family: var(--font-body); font-size: 16px; line-height: 1.6; min-height: 100vh; }
+nav { display: flex; align-items: center; justify-content: space-between; padding: 1.25rem 2rem; border-bottom: 1px solid rgba(240,237,230,0.08); flex-wrap: wrap; gap: 1rem; }
+nav a.logo img { height: 40px; }
+nav ul { list-style: none; display: flex; flex-wrap: wrap; gap: 1.5rem; }
+nav ul a { color: var(--muted); text-decoration: none; font-size: 0.875rem; transition: color 0.2s; }
+nav ul a:hover { color: var(--gold); }
+
+.hero { text-align: center; padding: 60px 24px 20px; max-width: 700px; margin: 0 auto; }
+.hero-badge { display: inline-block; font-family: var(--font-head); font-size: 0.7rem; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); border: 1px solid var(--border); padding: 6px 16px; border-radius: 2px; margin-bottom: 20px; }
+.hero h1 { font-family: var(--font-head); font-size: 2rem; font-weight: 700; color: var(--cream); margin-bottom: 16px; line-height: 1.2; }
+.hero h1 em { font-family: var(--font-emotion); font-style: italic; font-weight: 400; }
+.hero p { font-size: 1rem; color: var(--muted); max-width: 540px; margin: 0 auto 24px; }
+.hero-buttons { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
+.btn-gold { display: inline-block; padding: 12px 24px; background: var(--gold); color: #0a0a0a; font-family: var(--font-head); font-size: 0.85rem; font-weight: 600; letter-spacing: 1px; text-decoration: none; border-radius: 4px; transition: background 0.2s; }
+.btn-gold:hover { background: #e6c04a; }
+.btn-outline { display: inline-block; padding: 12px 24px; border: 1px solid var(--border); color: var(--gold); font-family: var(--font-head); font-size: 0.85rem; letter-spacing: 1px; text-decoration: none; border-radius: 4px; transition: all 0.2s; }
+.btn-outline:hover { border-color: var(--gold); }
+
+/* HOW IT WORKS */
+.how-it-works { max-width: 800px; margin: 0 auto; padding: 40px 24px; }
+.how-it-works h2 { font-family: var(--font-head); font-size: 1.1rem; color: var(--gold); text-align: center; margin-bottom: 24px; letter-spacing: 1px; }
+.steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; }
+.step { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 20px 16px; text-align: center; }
+.step-num { font-family: var(--font-head); font-size: 1.4rem; color: var(--gold); font-weight: 700; margin-bottom: 8px; }
+.step h3 { font-family: var(--font-head); font-size: 0.9rem; color: var(--cream); margin-bottom: 6px; }
+.step p { font-size: 0.8rem; color: var(--muted); line-height: 1.4; }
+
+.divider { max-width: 800px; margin: 0 auto; height: 1px; background: linear-gradient(90deg, transparent, rgba(212,175,55,0.2), transparent); }
+
+/* ACTIVE TRANSPORTS */
+.transports { max-width: 800px; margin: 0 auto; padding: 48px 24px; }
+.transports h2 { font-family: var(--font-head); font-size: 1.2rem; color: var(--cream); text-align: center; margin-bottom: 8px; }
+.transports .subtitle { text-align: center; font-size: 0.9rem; color: var(--muted); margin-bottom: 32px; }
+
+/* TRANSPORT CARD */
+.transport-card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 28px 24px; margin-bottom: 24px; }
+.transport-header { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 12px; margin-bottom: 16px; }
+.transport-dog h3 { font-family: var(--font-head); font-size: 1.1rem; color: var(--cream); margin-bottom: 4px; }
+.transport-dog p { font-size: 0.85rem; color: var(--muted); }
+.transport-status { font-family: var(--font-head); font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; padding: 5px 12px; border-radius: 3px; white-space: nowrap; }
+.status-urgent { background: rgba(248,113,113,0.15); color: var(--red); border: 1px solid rgba(248,113,113,0.3); }
+.status-active { background: rgba(251,146,60,0.15); color: var(--orange); border: 1px solid rgba(251,146,60,0.3); }
+.status-complete { background: rgba(74,222,128,0.15); color: var(--green); border: 1px solid rgba(74,222,128,0.3); }
+
+.transport-route { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; flex-wrap: wrap; }
+.route-city { font-family: var(--font-head); font-size: 0.95rem; color: var(--cream); }
+.route-arrow { color: var(--gold); font-size: 1.2rem; }
+.route-date { font-size: 0.8rem; color: var(--muted); margin-left: auto; }
+
+.legs-container { margin-bottom: 16px; }
+.leg { display: flex; align-items: center; gap: 12px; padding: 10px 14px; border-radius: 6px; margin-bottom: 6px; flex-wrap: wrap; }
+.leg-open { background: rgba(240,237,230,0.03); border: 1px solid rgba(240,237,230,0.08); }
+.leg-claimed { background: rgba(251,146,60,0.06); border: 1px solid rgba(251,146,60,0.15); }
+.leg-complete { background: rgba(74,222,128,0.06); border: 1px solid rgba(74,222,128,0.15); }
+.leg-label { font-family: var(--font-head); font-size: 0.7rem; letter-spacing: 1px; text-transform: uppercase; min-width: 50px; }
+.leg-label-open { color: var(--cream); }
+.leg-label-claimed { color: var(--orange); }
+.leg-label-complete { color: var(--green); }
+.leg-route { font-size: 0.85rem; color: var(--cream); flex: 1; }
+.leg-status { font-family: var(--font-head); font-size: 0.65rem; letter-spacing: 1px; text-transform: uppercase; padding: 3px 8px; border-radius: 2px; }
+.leg-status-open { background: rgba(212,175,55,0.15); color: var(--gold); }
+.leg-status-claimed { background: rgba(251,146,60,0.15); color: var(--orange); }
+.leg-status-complete { background: rgba(74,222,128,0.15); color: var(--green); }
+
+.transport-notes { font-size: 0.85rem; color: var(--muted); margin-bottom: 16px; font-style: italic; }
+.transport-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+
+/* EMPTY STATE */
+.empty-state { text-align: center; padding: 60px 24px; }
+.empty-state h3 { font-family: var(--font-emotion); font-style: italic; font-size: 1.3rem; color: var(--cream); margin-bottom: 12px; }
+.empty-state p { font-size: 0.95rem; color: var(--muted); margin-bottom: 24px; }
+
+/* WALL OF FAME */
+.fame { max-width: 800px; margin: 0 auto; padding: 48px 24px; }
+.fame h2 { font-family: var(--font-head); font-size: 1.1rem; color: var(--gold); text-align: center; margin-bottom: 24px; letter-spacing: 1px; }
+.fame-card { background: var(--surface); border: 1px solid rgba(74,222,128,0.15); border-radius: 10px; padding: 20px 24px; margin-bottom: 16px; display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+.fame-card .fame-check { font-size: 1.5rem; color: var(--green); }
+.fame-card h4 { font-family: var(--font-head); font-size: 0.95rem; color: var(--cream); margin-bottom: 2px; }
+.fame-card p { font-size: 0.85rem; color: var(--muted); }
+
+footer { text-align: center; padding: 40px 24px; border-top: 1px solid rgba(240,237,230,0.08); font-size: 0.8rem; color: var(--muted); }
+footer img { height: 32px; display: block; margin: 0 auto 12px; }
+footer a { color: var(--gold); text-decoration: none; }
+
+@media (max-width: 600px) {
+  .transport-header { flex-direction: column; }
+  .transport-route { flex-direction: column; align-items: flex-start; }
+  .route-date { margin-left: 0; }
+  .steps { grid-template-columns: 1fr 1fr; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="logo" href="https://mylegacycontinues.com/index.html"><img src="https://mylegacycontinues.com/logo.png" alt="My Legacy Continues"/></a>
+  <ul>
+    <li><a href="https://mylegacycontinues.com/rescue-registry.html">Registry</a></li>
+    <li><a href="https://mylegacycontinues.com/rescue-portal.html">Portal</a></li>
+    <li><a href="https://mylegacycontinues.com/pet-tag.html">Pet Tag</a></li>
+    <li><a href="https://mylegacycontinues.com/index.html">Home</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-badge">Transport Network</div>
+  <h1>Help a Dog <em>Get Home</em></h1>
+  <p>Dogs get pulled from shelters but need to reach fosters and adopters in other cities. Volunteers drive legs of the route. One relay at a time, they get home.</p>
+  <div class="hero-buttons">
+    <a href="https://mylegacycontinues.com/rescue-portal.html" class="btn-gold" onclick="localStorage.setItem('openTab','volunteer')">I Can Drive →</a>
+    <a href="https://mylegacycontinues.com/rescue-portal.html" class="btn-outline" onclick="localStorage.setItem('openTab','transport')">Submit a Transport Request</a>
+  </div>
+</div>
+
+<!-- HOW IT WORKS -->
+<div class="how-it-works">
+  <h2>How the Relay Works</h2>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">01</div>
+      <h3>Rescue Posts a Need</h3>
+      <p>A dog needs to get from City A to City B. The rescue submits a transport request.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">02</div>
+      <h3>We Map the Route</h3>
+      <p>We break the trip into legs — usually 1-2 hours each. Each leg gets posted here.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">03</div>
+      <h3>Volunteers Claim Legs</h3>
+      <p>You pick a leg near you. Show up, pick up the dog, drive your stretch, hand off to the next volunteer.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">04</div>
+      <h3>Dog Gets Home</h3>
+      <p>Every handoff is confirmed. The dog's profile updates with their journey. They make it to their new life.</p>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ACTIVE TRANSPORTS -->
+<div class="transports">
+  <h2>Active Transports</h2>
+  <p class="subtitle">Dogs that need a ride right now. Claim a leg below.</p>
+
+  <!-- ═══════════════════════════════════════════════ -->
+  <!-- SAMPLE TRANSPORT — REPLACE WITH REAL DATA      -->
+  <!-- Copy this card block and edit for each new      -->
+  <!-- transport. Delete the sample when real ones     -->
+  <!-- come in.                                        -->
+  <!-- ═══════════════════════════════════════════════ -->
+
+  <div class="transport-card">
+    <div class="transport-header">
+      <div class="transport-dog">
+        <h3>Sample Dog — Edit Me</h3>
+        <p>Breed · Size · Rescue Name</p>
+      </div>
+      <div class="transport-status status-active">Needs Drivers</div>
+    </div>
+    <div class="transport-route">
+      <span class="route-city">Riverside, CA</span>
+      <span class="route-arrow">→</span>
+      <span class="route-city">Santa Maria, CA</span>
+      <span class="route-date">Needed by: April 15, 2026</span>
+    </div>
+    <div class="legs-container">
+      <div class="leg leg-open">
+        <span class="leg-label leg-label-open">Leg 1</span>
+        <span class="leg-route">Riverside → Bakersfield (~2 hrs)</span>
+        <span class="leg-status leg-status-open">Open</span>
+      </div>
+      <div class="leg leg-open">
+        <span class="leg-label leg-label-open">Leg 2</span>
+        <span class="leg-route">Bakersfield → Santa Maria (~2 hrs)</span>
+        <span class="leg-status leg-status-open">Open</span>
+      </div>
+    </div>
+    <p class="transport-notes">This is a sample transport. Replace this card with real transport needs as they come in. Delete this entire card once you have a real one.</p>
+    <div class="transport-actions">
+      <a href="https://mylegacycontinues.com/rescue-portal.html" class="btn-gold">I Can Drive a Leg →</a>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════ -->
+  <!-- WHEN NO ACTIVE TRANSPORTS — show this instead  -->
+  <!-- Uncomment this and delete/comment out the       -->
+  <!-- sample card above when there's nothing active   -->
+  <!-- ═══════════════════════════════════════════════ -->
+  <!--
+  <div class="empty-state">
+    <h3>No active transports right now.</h3>
+    <p>All dogs are where they need to be — for now. Sign up as a volunteer and we'll reach out when the next transport comes in.</p>
+    <a href="https://mylegacycontinues.com/rescue-portal.html" class="btn-gold">Sign Up to Volunteer →</a>
+  </div>
+  -->
+
+</div>
+
+<div class="divider"></div>
+
+<!-- COMPLETED TRANSPORTS — WALL OF FAME -->
+<div class="fame">
+  <h2>Completed Transports — Wall of Fame</h2>
+
+  <!-- ═══════════════════════════════════════════════ -->
+  <!-- ADD COMPLETED TRANSPORTS HERE                   -->
+  <!-- Copy this card for each completed transport     -->
+  <!-- ═══════════════════════════════════════════════ -->
+
+  <div class="empty-state">
+    <h3>First transport hasn't happened yet.</h3>
+    <p>When the first dog makes it home through our relay network, their story goes right here. Be the first volunteer to make it happen.</p>
+    <a href="https://mylegacycontinues.com/rescue-portal.html" class="btn-gold">Join the Network →</a>
+  </div>
+
+  <!-- SAMPLE COMPLETED CARD — uncomment when you have a real one:
+  <div class="fame-card">
+    <div class="fame-check">&#10003;</div>
+    <div>
+      <h4>Duke — Riverside to Fresno</h4>
+      <p>3 legs. 4 volunteers. Made it home April 10, 2026. Now with the Martinez family.</p>
+    </div>
+  </div>
+  -->
+
+</div>
+
+<footer>
+  <img src="https://mylegacycontinues.com/logo.png" alt="My Legacy Continues"/>
+  Long Live Your Legacy · <a href="https://mylegacycontinues.com">mylegacycontinues.com</a> · © 2026 My Legacy Continues · Santa Maria, CA<br/>
+  Partner: <a href="https://www.underdogheroes.org" style="color: var(--muted);">Underdog Heroes Rescue</a> · Riverside, CA
+</footer>
+
+</body>
+</html>
