@@ -1,0 +1,249 @@
+<!--
+  ============================================================
+  RESCUE PORTAL FORMS — FORMSPREE VERSION (All 3)
+  ============================================================
+  Create 3 separate Formspree forms for these:
+    1. Dog Intake → replace INTAKE_FORM_ID
+    2. Foster Sign-Up → replace FOSTER_FORM_ID
+    3. Adoption Follow-Up → replace ADOPTION_FORM_ID
+  ============================================================
+-->
+
+
+<!-- ======================== -->
+<!-- FORM 1: DOG INTAKE       -->
+<!-- ======================== -->
+<form
+  action="https://formspree.io/f/INTAKE_FORM_ID"
+  method="POST"
+  id="dog-intake-form"
+>
+  <input type="hidden" name="_subject" value="New Dog Intake — My Legacy Continues Rescue" />
+  <input type="hidden" name="form_type" value="Dog Intake" />
+
+  <div style="margin-bottom: 14px;">
+    <label>Dog's Name *</label><br />
+    <input type="text" name="dog_name" required style="width:100%;padding:8px;box-sizing:border-box;" />
+  </div>
+
+  <div style="margin-bottom: 14px;">
+    <label>Breed / Mix</label><br />
+    <input type="text" name="breed" style="width:100%;padding:8px;box-sizing:border-box;" />
+  </div>
+
+  <div style="margin-bottom: 14px;">
+    <label>Age (approximate)</label><br />
+    <input type="text" name="age" placeholder="e.g. 3 years, puppy, senior" style="width:100%;padding:8px;box-sizing:border-box;" />
+  </div>
+
+  <div style="margin-bottom: 14px;">
+    <label>Sex</label><br />
+    <select name="sex" style="width:100%;padding:8px;box-sizing:border-box;">
+      <option value="">-- Select --</option>
+      <option>Male</option>
+      <option>Female</option>
+      <option>Unknown</option>
+    </select>
+  </div>
+
+  <div style="margin-bottom: 14px;">
+    <label>Spayed / Neutered?</label><br />
+    <select name="fixed" style="width:100%;padding:8px;box-sizing:border-box;">
+      <option value="">-- Select --</option>
+      <option>Yes</option>
+      <option>No</option>
+      <option>Unknown</option>
+    </select>
+  </div>
+
+  <div style="margin-bottom: 14px;">
+    <label>Current Location / Situation *</label><br />
+    <textarea name="situation" rows="3" required placeholder="Where is this dog now? Shelter, stray, owner surrender..." style="width:100%;padding:8px;box-sizing:border-box;"></textarea>
+  </div>
+
+  <div style="margin-bottom: 14px;">
+    <label>Known Health Issues</label><br />
+    <textarea name="health" rows="2" style="width:100%;padding:8px;box-sizing:border-box;"></textarea>
+  </div>
+
+  <div style="margin-bottom: 14px;">
+    <label>Temperament / Behavior Notes</label><br />
+    <textarea name="temperament" rows="2" placeholder="Good with kids? Other dogs? Cats? Energy level?" style="width:100%;padding:8px;box-sizing:border-box;"></textarea>
+  </div>
+
+  <div style="margin-bottom: 14px;">
+    <label>Your Name *</label><br />
+    <input type="text" name="contact_name" required style="width:100%;padding:8px;box-sizing:border-box;" />
+  </div>
+
+  <div style="margin-bottom: 14px;">
+    <label>Your Email *</label><br />
+    <input type="email" name="email" required style="width:100%;padding:8px;box-sizing:border-box;" />
+  </div>
+
+  <div style="margin-bottom: 14px;">
+    <label>Your Phone</label><br />
+    <input type="tel" name="phone" style="width:100%;padding:8px;box-sizing:border-box;" />
+  </div>
+
+  <div style="margin-bottom: 14px;">
+    <label>Urgency Level</label><br />
+    <select name="urgency" style="width:100%;padding:8px;box-sizing:border-box;">
+      <option value="">-- Select --</option>
+      <option>Critical — at risk immediately</option>
+      <option>Urgent — within a week</option>
+      <option>Standard — within a month</option>
+    </select>
+  </div>
+
+  <input type="text" name="_gotcha" style="display:none;" />
+  <input type="hidden" name="_next" value="https://mylegacycontinues.com/rescue-portal.html?submitted=true" />
+
+  <button type="submit" style="background:#2c4a3e;color:white;padding:12px 24px;border:none;width:100%;font-size:15px;cursor:pointer;border-radius:4px;">
+    Submit Dog Intake
+  </button>
+</form>
+
+
+<!-- ========================== -->
+<!-- FORM 2: FOSTER SIGN-UP     -->
+<!-- ========================== -->
+<form
+  action="https://formspree.io/f/FOSTER_FORM_ID"
+  method="POST"
+  id="foster-signup-form"
+>
+  <input type="hidden" name="_subject" value="New Foster Application — My Legacy Continues Rescue" />
+  <input type="hidden" name="form_type" value="Foster Sign-Up" />
+
+  <div style="margin-bottom: 14px;">
+    <label>Your Full Name *</label><br />
+    <input type="text" name="full_name" required style="width:100%;padding:8px;box-sizing:border-box;" />
+  </div>
+
+  <div style="margin-bottom: 14px;">
+    <label>Email *</label><br />
+    <input type="email" name="email" required style="width:100%;padding:8px;box-sizing:border-box;" />
+  </div>
+
+  <div style="margin-bottom: 14px;">
+    <label>Phone *</label><br />
+    <input type="tel" name="phone" required style="width:100%;padding:8px;box-sizing:border-box;" />
+  </div>
+
+  <div style="margin-bottom: 14px;">
+    <label>City / Zip Code *</label><br />
+    <input type="text" name="location" required placeholder="e.g. Lompoc, CA 93436" style="width:100%;padding:8px;box-sizing:border-box;" />
+  </div>
+
+  <div style="margin-bottom: 14px;">
+    <label>Home Type</label><br />
+    <select name="home_type" style="width:100%;padding:8px;box-sizing:border-box;">
+      <option value="">-- Select --</option>
+      <option>House with yard</option>
+      <option>House without yard</option>
+      <option>Apartment/Condo</option>
+    </select>
+  </div>
+
+  <div style="margin-bottom: 14px;">
+    <label>Do you have other pets?</label><br />
+    <textarea name="other_pets" rows="2" placeholder="e.g. 2 cats, 1 dog (friendly)" style="width:100%;padding:8px;box-sizing:border-box;"></textarea>
+  </div>
+
+  <div style="margin-bottom: 14px;">
+    <label>Do you have children at home?</label><br />
+    <select name="children" style="width:100%;padding:8px;box-sizing:border-box;">
+      <option value="">-- Select --</option>
+      <option>Yes</option>
+      <option>No</option>
+    </select>
+  </div>
+
+  <div style="margin-bottom: 14px;">
+    <label>What types of dogs can you foster? (check all that apply)</label><br />
+    <label><input type="checkbox" name="foster_type" value="Puppies" /> Puppies</label><br />
+    <label><input type="checkbox" name="foster_type" value="Adults" /> Adults</label><br />
+    <label><input type="checkbox" name="foster_type" value="Seniors" /> Seniors</label><br />
+    <label><input type="checkbox" name="foster_type" value="Medical needs" /> Medical needs</label><br />
+    <label><input type="checkbox" name="foster_type" value="Large breeds" /> Large breeds</label><br />
+  </div>
+
+  <div style="margin-bottom: 14px;">
+    <label>Anything else we should know?</label><br />
+    <textarea name="notes" rows="3" style="width:100%;padding:8px;box-sizing:border-box;"></textarea>
+  </div>
+
+  <input type="text" name="_gotcha" style="display:none;" />
+  <input type="hidden" name="_next" value="https://mylegacycontinues.com/rescue-portal.html?submitted=true" />
+
+  <button type="submit" style="background:#2c4a3e;color:white;padding:12px 24px;border:none;width:100%;font-size:15px;cursor:pointer;border-radius:4px;">
+    Submit Foster Application
+  </button>
+</form>
+
+
+<!-- ============================== -->
+<!-- FORM 3: ADOPTION FOLLOW-UP     -->
+<!-- ============================== -->
+<form
+  action="https://formspree.io/f/ADOPTION_FORM_ID"
+  method="POST"
+  id="adoption-followup-form"
+>
+  <input type="hidden" name="_subject" value="Adoption Follow-Up — My Legacy Continues Rescue" />
+  <input type="hidden" name="form_type" value="Adoption Follow-Up" />
+
+  <div style="margin-bottom: 14px;">
+    <label>Your Name *</label><br />
+    <input type="text" name="adopter_name" required style="width:100%;padding:8px;box-sizing:border-box;" />
+  </div>
+
+  <div style="margin-bottom: 14px;">
+    <label>Your Email *</label><br />
+    <input type="email" name="email" required style="width:100%;padding:8px;box-sizing:border-box;" />
+  </div>
+
+  <div style="margin-bottom: 14px;">
+    <label>Dog's Name *</label><br />
+    <input type="text" name="dog_name" required style="width:100%;padding:8px;box-sizing:border-box;" />
+  </div>
+
+  <div style="margin-bottom: 14px;">
+    <label>Adoption Date (approximate)</label><br />
+    <input type="text" name="adoption_date" placeholder="e.g. March 2025" style="width:100%;padding:8px;box-sizing:border-box;" />
+  </div>
+
+  <div style="margin-bottom: 14px;">
+    <label>How is your dog doing? *</label><br />
+    <select name="overall_status" required style="width:100%;padding:8px;box-sizing:border-box;">
+      <option value="">-- Select --</option>
+      <option>Thriving — couldn't be better</option>
+      <option>Good — still adjusting</option>
+      <option>Some challenges — need support</option>
+      <option>Serious concern — need help urgently</option>
+    </select>
+  </div>
+
+  <div style="margin-bottom: 14px;">
+    <label>Tell us how things are going *</label><br />
+    <textarea name="update" rows="5" required placeholder="How has the dog settled in? Any changes? Happy moments? Challenges?" style="width:100%;padding:8px;box-sizing:border-box;"></textarea>
+  </div>
+
+  <div style="margin-bottom: 14px;">
+    <label>Would you like to share a photo update? (paste a URL or describe)</label><br />
+    <input type="text" name="photo_url" placeholder="https://..." style="width:100%;padding:8px;box-sizing:border-box;" />
+  </div>
+
+  <div style="margin-bottom: 14px;">
+    <label>Do you need any support or resources?</label><br />
+    <textarea name="support_needed" rows="2" style="width:100%;padding:8px;box-sizing:border-box;"></textarea>
+  </div>
+
+  <input type="text" name="_gotcha" style="display:none;" />
+  <input type="hidden" name="_next" value="https://mylegacycontinues.com/rescue-portal.html?submitted=true" />
+
+  <button type="submit" style="background:#2c4a3e;color:white;padding:12px 24px;border:none;width:100%;font-size:15px;cursor:pointer;border-radius:4px;">
+    Submit My Update
+  </button>
+</form>
