@@ -1,329 +1,468 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Debbie Garcia — My Legacy Continues</title>
-  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root {
-      --bg: #0a0a0a;
-      --bg2: #111111;
-      --gold: #D4AF37;
-      --cream: #f0ede6;
-      --muted: rgba(240,237,230,0.6);
-      --border: rgba(212,175,55,0.25);
-    }
-    body {
-      background: var(--bg);
-      color: var(--cream);
-      font-family: 'DM Sans', sans-serif;
-      font-weight: 300;
-      line-height: 1.8;
-    }
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Deborah Mahony — Heritage Profile — My Legacy Continues</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Chakra+Petch:wght@300;400;600&family=DM+Sans:wght@300;400&display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    --bg: #0a0a0a;
+    --green: #202e1f;
+    --gold: #D4AF37;
+    --cream: #f0ede6;
+    --muted: #888;
+    --card: #141414;
+    --border: rgba(212,175,55,0.2);
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    background: var(--bg);
+    color: var(--cream);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+  }
 
-    /* NAV */
-    nav {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: rgba(32,46,31,0.95);
-      backdrop-filter: blur(8px);
-      border-bottom: 1px solid var(--border);
-      padding: 16px 40px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    nav a { color: var(--gold); text-decoration: none; font-family: 'DM Sans', sans-serif; font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase; }
-    nav .site-name { font-family: 'Chakra Petch', sans-serif; font-size: 1.1rem; font-weight: 400; letter-spacing: 0.08em; }
+  /* NAV */
+  nav {
+    position: fixed; top:0; left:0; right:0; z-index:100;
+    display:flex; align-items:center; justify-content:space-between;
+    padding: 16px 32px;
+    background: rgba(10,10,10,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+  nav a.logo { display:flex; align-items:center; gap:10px; text-decoration:none; }
+  nav a.logo img { width:32px; height:32px; border-radius:50%; }
+  nav a.logo span { font-family:'Chakra Petch',sans-serif; font-size:13px; color:var(--gold); letter-spacing:0.08em; }
+  nav a.back { font-family:'Chakra Petch',sans-serif; font-size:11px; color:var(--muted); text-decoration:none; letter-spacing:0.1em; text-transform:uppercase; transition:color 0.2s; }
+  nav a.back:hover { color:var(--gold); }
 
-    /* HERO */
-    .hero {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 80px 24px;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-    .hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(ellipse at center top, rgba(212,175,55,0.06) 0%, transparent 70%);
-      pointer-events: none;
-    }
-    .hero-photo-wrap {
-      width: 220px;
-      height: 220px;
-      border-radius: 50%;
-      border: 3px solid var(--gold);
-      overflow: hidden;
-      margin-bottom: 32px;
-      box-shadow: 0 0 40px rgba(212,175,55,0.2);
-    }
-    .hero-photo-wrap img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center top;
-    }
-    .label {
-      font-size: 0.7rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 12px;
-    }
-    .hero h1 {
-      font-family: 'Chakra Petch', sans-serif;
-      font-size: clamp(2.8rem, 6vw, 4.5rem);
-      font-weight: 300;
-      color: var(--cream);
-      line-height: 1.1;
-      margin-bottom: 16px;
-    }
-    .hero-tagline {
-      font-size: 1rem;
-      color: var(--muted);
-      max-width: 480px;
-      margin: 0 auto 32px;
-    }
-    .gold-rule {
-      width: 60px;
-      height: 1px;
-      background: var(--gold);
-      margin: 0 auto;
-      opacity: 0.6;
-    }
+  /* HERO */
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: flex-end;
+    padding: 0 0 80px 0;
+    overflow: hidden;
+  }
+  .hero-photo {
+    position: absolute;
+    inset: 0;
+    background-image: url('debbie-mahony-photo.jpg');
+    background-size: cover;
+    background-position: center top;
+  }
+  /* multi-layer fade so photo blends into black */
+  .hero-photo::after {
+    content:'';
+    position:absolute;
+    inset:0;
+    background:
+      linear-gradient(to bottom,
+        rgba(10,10,10,0.25) 0%,
+        rgba(10,10,10,0.1) 25%,
+        rgba(10,10,10,0.4) 55%,
+        rgba(10,10,10,0.88) 75%,
+        rgba(10,10,10,1) 100%
+      ),
+      linear-gradient(to right,
+        rgba(10,10,10,0.5) 0%,
+        transparent 40%,
+        transparent 60%,
+        rgba(10,10,10,0.5) 100%
+      );
+  }
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 860px;
+    padding: 0 48px;
+  }
+  .hero-tag {
+    font-family:'Chakra Petch',sans-serif;
+    font-size:11px;
+    color:var(--gold);
+    letter-spacing:0.15em;
+    text-transform:uppercase;
+    margin-bottom:16px;
+  }
+  .hero h1 {
+    font-family:'Cormorant Garamond',serif;
+    font-size: clamp(52px, 7vw, 88px);
+    font-weight:300;
+    line-height:1.0;
+    color:var(--cream);
+    margin-bottom:8px;
+  }
+  .hero h1 em { font-style:italic; color:var(--gold); }
+  .hero-sub {
+    font-family:'DM Sans',sans-serif;
+    font-size:15px;
+    color:rgba(240,237,230,0.65);
+    font-weight:300;
+    margin-bottom:32px;
+    letter-spacing:0.03em;
+  }
+  .hero-stats {
+    display:flex; gap:40px; flex-wrap:wrap;
+  }
+  .stat { display:flex; flex-direction:column; gap:4px; }
+  .stat-label { font-family:'Chakra Petch',sans-serif; font-size:10px; color:var(--gold); letter-spacing:0.12em; text-transform:uppercase; }
+  .stat-val { font-family:'Cormorant Garamond',serif; font-size:18px; color:var(--cream); font-weight:400; }
 
-    /* SECTIONS */
-    .section {
-      max-width: 760px;
-      margin: 0 auto;
-      padding: 80px 24px;
-      border-bottom: 1px solid var(--border);
-    }
-    .section:last-of-type { border-bottom: none; }
-    .section .label { margin-bottom: 8px; }
-    .section h2 {
-      font-family: 'Chakra Petch', sans-serif;
-      font-size: clamp(1.8rem, 4vw, 2.8rem);
-      font-weight: 300;
-      color: var(--gold);
-      margin-bottom: 24px;
-      line-height: 1.2;
-    }
-    .section p {
-      color: var(--muted);
-      margin-bottom: 16px;
-      font-size: 1rem;
-    }
-    .section p:last-child { margin-bottom: 0; }
+  /* SECTIONS */
+  .section { max-width:860px; margin:0 auto; padding:80px 48px; }
+  .section-rule {
+    display:flex; align-items:center; gap:16px;
+    margin-bottom:40px;
+  }
+  .section-rule h2 {
+    font-family:'Chakra Petch',sans-serif;
+    font-size:11px; letter-spacing:0.15em;
+    text-transform:uppercase; color:var(--gold);
+    white-space:nowrap;
+  }
+  .section-rule::after {
+    content:''; flex:1; height:1px;
+    background: linear-gradient(to right, var(--gold), transparent);
+    opacity:0.3;
+  }
 
-    /* INFO ROWS */
-    .info-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
-      margin-top: 32px;
-    }
-    @media (max-width: 600px) { .info-grid { grid-template-columns: 1fr; } }
-    .info-card {
-      background: rgba(0,0,0,0.2);
-      border: 1px solid var(--border);
-      border-radius: 4px;
-      padding: 20px;
-    }
-    .info-card .info-label {
-      font-size: 0.65rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 6px;
-    }
-    .info-card .info-value {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.1rem;
-      color: var(--cream);
-    }
+  /* FAMILY TREE */
+  .family-grid {
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap:24px;
+  }
+  @media(max-width:600px){ .family-grid { grid-template-columns:1fr; } }
+  .family-card {
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:4px;
+    padding:24px;
+  }
+  .family-card .fc-label {
+    font-family:'Chakra Petch',sans-serif;
+    font-size:10px; letter-spacing:0.12em;
+    text-transform:uppercase; color:var(--gold);
+    margin-bottom:16px;
+  }
+  .family-member {
+    padding: 10px 0;
+    border-bottom:1px solid rgba(255,255,255,0.05);
+  }
+  .family-member:last-child { border-bottom:none; }
+  .fm-name {
+    font-family:'Cormorant Garamond',serif;
+    font-size:18px; color:var(--cream); font-weight:400;
+  }
+  .fm-note {
+    font-size:12px; color:var(--muted); margin-top:2px;
+  }
 
-    /* FAMILY TAGS */
-    .family-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 24px;
-    }
-    .ftag {
-      background: rgba(212,175,55,0.08);
-      border: 1px solid var(--border);
-      border-radius: 3px;
-      padding: 8px 16px;
-      font-size: 0.85rem;
-      color: var(--cream);
-    }
+  /* STORY */
+  .story-card {
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:4px;
+    padding:40px;
+  }
+  .story-card p {
+    font-family:'Cormorant Garamond',serif;
+    font-size:20px; font-weight:300;
+    line-height:1.75;
+    color:rgba(240,237,230,0.85);
+    margin-bottom:20px;
+  }
+  .story-card p:last-child { margin-bottom:0; }
 
-    /* CONNECTIONS */
-    .connections {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 16px;
-      margin-top: 32px;
-    }
-    .conn-card {
-      background: rgba(0,0,0,0.2);
-      border: 1px solid var(--border);
-      border-radius: 4px;
-      padding: 20px;
-      text-decoration: none;
-      transition: border-color 0.2s, box-shadow 0.2s;
-    }
-    .conn-card:hover {
-      border-color: var(--gold);
-      box-shadow: 0 0 20px rgba(212,175,55,0.1);
-    }
-    .conn-card .conn-label {
-      font-size: 0.6rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 8px;
-    }
-    .conn-card .conn-name {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.15rem;
-      color: var(--cream);
-      margin-bottom: 4px;
-    }
-    .conn-card .conn-desc {
-      font-size: 0.8rem;
-      color: var(--muted);
-    }
+  /* MATERNAL ROOTS */
+  .roots-grid {
+    display:grid;
+    grid-template-columns:repeat(auto-fill, minmax(200px,1fr));
+    gap:16px;
+  }
+  .root-card {
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:4px;
+    padding:20px;
+  }
+  .root-num {
+    font-family:'Chakra Petch',sans-serif;
+    font-size:28px; color:var(--green);
+    font-weight:600; margin-bottom:8px;
+    opacity:0.6;
+  }
+  .root-name {
+    font-family:'Cormorant Garamond',serif;
+    font-size:17px; color:var(--cream); font-weight:400;
+  }
+  .root-note { font-size:12px; color:var(--muted); margin-top:4px; }
 
-    /* FOOTER */
-    footer {
-      text-align: center;
-      padding: 60px 24px;
-      border-top: 1px solid var(--border);
-    }
-    footer a { color: var(--gold); text-decoration: none; }
-    footer .tagline {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.3rem;
-      font-style: italic;
-      color: var(--gold);
-      margin-bottom: 12px;
-    }
-    footer .site-link { font-size: 0.8rem; letter-spacing: 0.1em; color: var(--muted); }
-  </style>
+  /* CONNECTED PROFILES */
+  .connected-grid {
+    display:grid;
+    grid-template-columns:repeat(auto-fill, minmax(220px,1fr));
+    gap:16px;
+  }
+  .connected-card {
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:4px;
+    padding:24px;
+    text-decoration:none;
+    display:block;
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .connected-card:hover {
+    border-color:var(--gold);
+    background:#1a1a1a;
+  }
+  .cc-type {
+    font-family:'Chakra Petch',sans-serif;
+    font-size:10px; letter-spacing:0.12em;
+    text-transform:uppercase; color:var(--gold);
+    margin-bottom:10px;
+  }
+  .cc-name {
+    font-family:'Cormorant Garamond',serif;
+    font-size:20px; color:var(--cream); font-weight:400;
+    margin-bottom:4px;
+  }
+  .cc-sub { font-size:12px; color:var(--muted); }
+  .cc-arrow { float:right; color:var(--gold); font-size:18px; margin-top:-28px; }
+
+  /* CTA */
+  .cta-block {
+    background: linear-gradient(135deg, var(--green) 0%, #0f1a0f 100%);
+    border:1px solid var(--border);
+    border-radius:4px;
+    padding:48px;
+    text-align:center;
+    margin:0 48px 80px;
+    max-width:860px;
+    margin-left:auto; margin-right:auto;
+  }
+  .cta-block h3 {
+    font-family:'Cormorant Garamond',serif;
+    font-size:32px; font-weight:300;
+    color:var(--cream); margin-bottom:12px;
+  }
+  .cta-block p { font-size:14px; color:var(--muted); margin-bottom:24px; }
+  .cta-btn {
+    display:inline-block;
+    background:var(--gold);
+    color:#0a0a0a;
+    font-family:'Chakra Petch',sans-serif;
+    font-size:12px; letter-spacing:0.1em;
+    text-transform:uppercase;
+    padding:14px 32px;
+    text-decoration:none;
+    border-radius:2px;
+    font-weight:600;
+  }
+
+  /* FOOTER */
+  footer {
+    border-top:1px solid var(--border);
+    padding:40px 48px;
+    text-align:center;
+  }
+  footer img { width:32px; height:32px; border-radius:50%; opacity:0.5; margin-bottom:12px; }
+  footer p { font-size:12px; color:var(--muted); line-height:1.8; }
+  footer a { color:var(--gold); text-decoration:none; }
+</style>
 </head>
 <body>
 
 <nav>
-  <a href="https://mylegacycontinues.com" class="site-name">My Legacy Continues</a>
-  <a href="vazquez-profile.html">The Vázquez Family</a>
+  <a class="logo" href="https://mylegacycontinues.com/index.html">
+    <img src="logo.png" alt="My Legacy Continues"/>
+    <span>My Legacy Continues</span>
+  </a>
+  <a class="back" href="https://mylegacycontinues.com/index.html">← Home</a>
 </nav>
 
 <!-- HERO -->
-<section class="hero">
-  <div class="hero-photo-wrap">
-    <img src="mom.JPG" alt="Debbie Garcia" />
-  </div>
-  <p class="label">Family Legacy Profile</p>
-  <h1>Debbie Garcia</h1>
-  <p class="hero-tagline">Santa Maria, California &mdash; Central Coast born and raised. Mother. Sister. Daughter of the Garcia line.</p>
-  <div class="gold-rule"></div>
-</section>
-
-<!-- HER STORY -->
-<section class="section">
-  <p class="label">Her Story</p>
-  <h2>Central Coast Roots</h2>
-  <p>Debbie Garcia was born and raised on the Central Coast of California — the youngest generation of a Garcia family that put down deep roots in Santa Maria and never left. Her grandmother Elvira, born September 7, 1944, was the youngest of 18 children raised by Francisco and Clara Garcia in Sinton, Texas before the family made their way west.</p>
-  <p>Debbie grew up surrounded by family — cousins, aunts, uncles, the whole Garcia tree gathered under one sky. That's the kind of upbringing that shapes a person. She carried that warmth into everything she built: her family, her community, her son.</p>
-  <p>She is the mother of Mark "Bear" Vázquez — founder of My Legacy Continues — and the living link between the Garcia and Vázquez lines on the Central Coast.</p>
-
-  <div class="info-grid">
-    <div class="info-card">
-      <div class="info-label">Hometown</div>
-      <div class="info-value">Santa Maria, California</div>
-    </div>
-    <div class="info-card">
-      <div class="info-label">Birthday</div>
-      <div class="info-value">August 31</div>
-    </div>
-    <div class="info-card">
-      <div class="info-label">Heritage</div>
-      <div class="info-value">Garcia &mdash; Sinton, Texas &rarr; Central Coast</div>
-    </div>
-    <div class="info-card">
-      <div class="info-label">Family Line</div>
-      <div class="info-value">Daughter of Elvira "Barbara" Garcia</div>
+<div class="hero">
+  <div class="hero-photo"></div>
+  <div class="hero-content">
+    <div class="hero-tag">Heritage Profile · My Legacy Continues</div>
+    <h1>Deborah <em>Mahony</em></h1>
+    <div class="hero-sub">Santa Maria, California · Born August 30, 1969 · Garcia · Montemayor</div>
+    <div class="hero-stats">
+      <div class="stat">
+        <span class="stat-label">Mother</span>
+        <span class="stat-val">Elvira Garcia</span>
+      </div>
+      <div class="stat">
+        <span class="stat-label">Father</span>
+        <span class="stat-val">John Garcia</span>
+      </div>
+      <div class="stat">
+        <span class="stat-label">Heritage</span>
+        <span class="stat-val">Garcia · Montemayor</span>
+      </div>
+      <div class="stat">
+        <span class="stat-label">Home</span>
+        <span class="stat-val">Santa Maria, CA</span>
+      </div>
     </div>
   </div>
-</section>
+</div>
 
-<!-- THE GARCIA LINE -->
-<section class="section">
-  <p class="label">Where She Comes From</p>
-  <h2>The Garcia Line</h2>
-  <p>The Garcia family traces back to Faustino Montemayor, born 1852 in Texas, who lived 98 years and saw the entire arc of Mexican-American history in the Southwest. His granddaughter Clara married Francisco Garcia and together they raised 18 children — a family so large the 1940 US Census recorded them all in Sinton, Texas.</p>
-  <p>Elvira "Barbara" Garcia — Debbie's mother and Bear's grandmother — was the youngest of those 18. Born September 7, 1944, she eventually married John Garcia and raised her family on the Central Coast. That line runs straight through Debbie and into Bear.</p>
-  <p>The Garcia name itself carries Basque-Galician roots — some linguists trace it to the Basque word for "bear." Bear Vázquez carries both names in his blood.</p>
-</section>
-
-<!-- FAMILY -->
-<section class="section">
-  <p class="label">Her People</p>
-  <h2>Family</h2>
-  <p>The people who make up her world.</p>
-  <div class="family-tags">
-    <span class="ftag">Mark "Bear" Vázquez &mdash; Son</span>
-    <span class="ftag">Elvira "Barbara" Garcia &mdash; Mother</span>
-    <span class="ftag">John Garcia &mdash; Father</span>
-    <span class="ftag">Anthony Raygoza Sr. &mdash; Brother</span>
-    <span class="ftag">Eddie Garcia &mdash; Brother</span>
-    <span class="ftag">Jack Garcia &mdash; Brother</span>
-    <span class="ftag">Ginger Garcia &mdash; Sister</span>
-    <span class="ftag">Marlene Garcia &mdash; Sister</span>
-    <span class="ftag">Antoinette Raygoza &mdash; Niece</span>
+<!-- STORY -->
+<div class="section">
+  <div class="section-rule"><h2>Her Story</h2></div>
+  <div class="story-card">
+    <p>Deborah Mahony was born August 30, 1969 — the daughter of John Garcia and Elvira Garcia, and part of a family line that runs deep through the Central Coast of California. She is the mother of three: Mark, Joseph, and Stephanie Vazquez.</p>
+    <p>Her mother, Elvira Garcia, was born September 7, 1944, the youngest of eighteen children born to Clara and Francisco Garcia in Sinton, Texas. The Garcia and Montemayor lines are documented back to the 1940 Census — a family that built roots across Texas and California across generations.</p>
+    <p>Deborah's story is part of a larger legacy — one that connects the Vazquez family, the Garcia line, and everything being preserved here at My Legacy Continues. This profile lives permanently so her children and grandchildren always have a place to come back to.</p>
   </div>
-</section>
+</div>
 
-<!-- CONNECTED PROFILES -->
-<section class="section">
-  <p class="label">Connected Profiles</p>
-  <h2>The Family Network</h2>
-  <p>Every profile connects to the ones that came before and the ones that come after.</p>
-  <div class="connections">
-    <a href="vazquez-profile.html" class="conn-card">
-      <div class="conn-label">Son &mdash; Heritage Profile</div>
-      <div class="conn-name">Mark "Bear" Vázquez</div>
-      <div class="conn-desc">Founder. Concrete. Santa Maria.</div>
+<!-- FAMILY TREE -->
+<div class="section" style="padding-top:0">
+  <div class="section-rule"><h2>Family</h2></div>
+  <div class="family-grid">
+
+    <div class="family-card">
+      <div class="fc-label">Her Children</div>
+      <div class="family-member">
+        <div class="fm-name">Mark David Vazquez</div>
+        <div class="fm-note">Santa Maria, CA · Founder, My Legacy Continues</div>
+      </div>
+      <div class="family-member">
+        <div class="fm-name">Joseph Vazquez</div>
+        <div class="fm-note">Santa Maria, CA</div>
+      </div>
+      <div class="family-member">
+        <div class="fm-name">Stephanie Vazquez</div>
+        <div class="fm-note">Santa Maria, CA</div>
+      </div>
+    </div>
+
+    <div class="family-card">
+      <div class="fc-label">Her Brothers</div>
+      <div class="family-member">
+        <div class="fm-name">David Garcia</div>
+        <div class="fm-note">Brother</div>
+      </div>
+      <div class="family-member">
+        <div class="fm-name">Anthony Raygoza</div>
+        <div class="fm-note">Brother</div>
+      </div>
+    </div>
+
+    <div class="family-card">
+      <div class="fc-label">Her Parents</div>
+      <div class="family-member">
+        <div class="fm-name">John Garcia</div>
+        <div class="fm-note">Father</div>
+      </div>
+      <div class="family-member">
+        <div class="fm-name">Elvira Garcia</div>
+        <div class="fm-note">Mother · Born September 7, 1944 · Youngest of 18</div>
+      </div>
+    </div>
+
+    <div class="family-card">
+      <div class="fc-label">Grandma Elvira's Siblings</div>
+      <div class="family-member">
+        <div class="fm-name">Simon Garcia</div>
+        <div class="fm-note">Brother</div>
+      </div>
+      <div class="family-member">
+        <div class="fm-name">Raymond Garcia</div>
+        <div class="fm-note">Brother · Still Living</div>
+      </div>
+      <div class="family-member">
+        <div class="fm-name">Patricio "Pat" Garcia</div>
+        <div class="fm-note">Brother · Deceased</div>
+      </div>
+      <div class="family-member">
+        <div class="fm-name">Feliz Garcia</div>
+        <div class="fm-note">Sister</div>
+      </div>
+      <div class="family-member">
+        <div class="fm-name">Josie Villalobos</div>
+        <div class="fm-note">Sister</div>
+      </div>
+      <div class="family-member">
+        <div class="fm-name">+ More Brothers & Sisters</div>
+        <div class="fm-note">18 children total · Garcia family · Sinton, TX</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- MATERNAL ROOTS -->
+<div class="section" style="padding-top:0">
+  <div class="section-rule"><h2>Maternal Roots</h2></div>
+  <div class="roots-grid">
+    <div class="root-card">
+      <div class="root-num">01</div>
+      <div class="root-name">Faustino Montemayor</div>
+      <div class="root-note">Born 1852 · Died 1950 · Sinton, Texas · Age 98</div>
+    </div>
+    <div class="root-card">
+      <div class="root-num">02</div>
+      <div class="root-name">Clara & Francisco Garcia</div>
+      <div class="root-note">18 children · 1940 Census · Sinton, TX</div>
+    </div>
+    <div class="root-card">
+      <div class="root-num">03</div>
+      <div class="root-name">Elvira "Barbara" Garcia</div>
+      <div class="root-note">Born Sept 7, 1944 · Youngest of 18 · Deborah's mother</div>
+    </div>
+    <div class="root-card">
+      <div class="root-num">04</div>
+      <div class="root-name">Garcia Line</div>
+      <div class="root-note">Central Coast California · Santa Maria roots</div>
+    </div>
+  </div>
+</div>
+
+<!-- CONNECTED -->
+<div class="section" style="padding-top:0">
+  <div class="section-rule"><h2>Connected Profiles</h2></div>
+  <div class="connected-grid">
+    <a class="connected-card" href="https://mylegacycontinues.com/vazquez-profile.html">
+      <div class="cc-type">Heritage Profile</div>
+      <div class="cc-name">Mark "Bear" Vazquez</div>
+      <div class="cc-sub">Son · Founder, My Legacy Continues</div>
+      <div class="cc-arrow">→</div>
     </a>
-    <a href="anthony-raygoza-memorial.html" class="conn-card">
-      <div class="conn-label">Brother &mdash; Memorial</div>
-      <div class="conn-name">Anthony Raygoza Sr.</div>
-      <div class="conn-desc">In loving memory.</div>
+    <a class="connected-card" href="https://mylegacycontinues.com/anthony-raygoza-memorial.html">
+      <div class="cc-type">Memorial Profile</div>
+      <div class="cc-name">Anthony Raygoza</div>
+      <div class="cc-sub">Brother · In Memoriam</div>
+      <div class="cc-arrow">→</div>
     </a>
-    <a href="raygoza-memorial.html" class="conn-card">
-      <div class="conn-label">Niece &mdash; Memorial</div>
-      <div class="conn-name">Antoinette Raygoza</div>
-      <div class="conn-desc">Forever in her family's hearts.</div>
+    <a class="connected-card" href="https://mylegacycontinues.com/index.html">
+      <div class="cc-type">My Legacy Continues</div>
+      <div class="cc-name">Preserve Your Family</div>
+      <div class="cc-sub">Heritage books · Memorial plaques · Pet tags</div>
+      <div class="cc-arrow">→</div>
     </a>
   </div>
-</section>
+</div>
 
-<!-- FOOTER -->
+<!-- CTA -->
+<div class="cta-block">
+  <h3>Every family deserves a permanent record.</h3>
+  <p>One-time purchase. No subscriptions. Hosted forever.</p>
+  <a class="cta-btn" href="https://mylegacycontinues.com/heritage-book.html">Order a Heritage Book — $199</a>
+</div>
+
 <footer>
-  <p class="tagline">Long Live Your Legacy.</p>
-  <p class="site-link"><a href="https://mylegacycontinues.com">mylegacycontinues.com</a> &nbsp;&middot;&nbsp; Santa Maria, California &nbsp;&middot;&nbsp; Est. 2024</p>
+  <img src="logo.png" alt="My Legacy Continues"/>
+  <p>Deborah Mahony · Santa Maria, California · Born August 30, 1969</p>
+  <p>Heritage profile by <a href="https://mylegacycontinues.com">My Legacy Continues</a> · Santa Maria, CA · Long Live Your Legacy.</p>
 </footer>
 
 </body>
