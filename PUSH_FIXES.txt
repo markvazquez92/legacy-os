@@ -1,0 +1,14 @@
+FIXES READY TO PUSH
+==================
+
+Commit: 2420871 (Fix logo paths and enhance mobile nav styling)
+
+CHANGES:
+1. Logo paths fixed: logo.png → /logo.png (2 occurrences)
+2. Mobile nav CSS enhanced (complete dropdown menu styling)
+
+TO PUSH FROM YOUR MACHINE:
+$ cd /path/to/legacy-os
+$ git push origin main
+
+Verify at: https://github.com/markvazquez92/legacy-os/commits/main
