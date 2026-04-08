@@ -1,0 +1,1476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Legacy Continues</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;400;700;900&family=Instrument+Serif:ital@0;1&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;font-size:16px;}
+
+:root{
+  --off-white: #F5F0E8;
+  --paper:     #EEE6D6;
+  --bone:      #E0D5C0;
+  --warm-mid:  #C8A96E;   /* new — warm sand/caramel tone */
+  --ink:       #100E0B;
+  --ink2:      #1E1B16;
+  --ink3:      #342E25;
+  --muted:     #6E6458;
+  --faint:     #A09080;
+  --accent:    #B83208;   /* deep burnt sienna — slightly warmer */
+  --accent2:   #8E2406;
+  --accent-dim:rgba(184,50,8,0.1);
+  --caramel:   #9A6A20;   /* new — warm amber for secondary moments */
+  --caramel-dim:rgba(154,106,32,0.12);
+  --serif:     'Instrument Serif', Georgia, serif;
+  --display:   'Unbounded', sans-serif;
+  --body:      'Manrope', sans-serif;
+}
+
+body{
+  background: var(--off-white);
+  color: var(--ink);
+  font-family: var(--body);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+a{color:inherit;text-decoration:none;}
+img{max-width:100%;display:block;}
+
+/* ══ GRAIN ══ */
+body::after{
+  content:'';
+  position:fixed;inset:0;z-index:9999;
+  pointer-events:none;opacity:0.022;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23g)'/%3E%3C/svg%3E");
+}
+
+/* ══════════════════════
+   NAV
+══════════════════════ */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:800;
+  height:64px;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 40px;
+  background:rgba(244,241,236,0.94);
+  border-bottom:1px solid rgba(13,13,13,0.08);
+  backdrop-filter:blur(16px);
+  transition:background 0.3s;
+}
+.nav-wordmark{
+  font-family:var(--display);
+  font-size:0.62rem;
+  font-weight:700;
+  letter-spacing:0.12em;
+  text-transform:uppercase;
+  color:var(--ink);
+}
+.nav-center{
+  display:flex;gap:36px;list-style:none;
+}
+.nav-center a{
+  font-family:var(--body);
+  font-size:0.7rem;
+  font-weight:500;
+  letter-spacing:0.06em;
+  color:var(--muted);
+  transition:color 0.2s;
+}
+.nav-center a:hover{color:var(--ink);}
+.nav-action{
+  font-family:var(--display);
+  font-size:0.56rem;
+  font-weight:700;
+  letter-spacing:0.14em;
+  text-transform:uppercase;
+  color:var(--off-white);
+  background:var(--ink);
+  padding:10px 22px;
+  border:none;cursor:pointer;
+  transition:background 0.2s;
+  display:inline-block;
+}
+.nav-action:hover{background:var(--ink2);}
+.nav-burger{display:none;background:none;border:none;cursor:pointer;flex-direction:column;gap:4px;padding:4px;}
+.nav-burger span{display:block;width:20px;height:1.5px;background:var(--ink);}
+@media(max-width:860px){
+  .nav-center{display:none;}
+  .nav-burger{display:flex;}
+}
+@media(max-width:500px){nav{padding:0 20px;}}
+
+/* ══════════════════════
+   HERO — FULL VIEWPORT
+══════════════════════ */
+.hero{
+  min-height:100vh;
+  display:flex;flex-direction:column;
+  justify-content:flex-end;
+  padding:0 0 80px;
+  position:relative;
+  overflow:hidden;
+  background:var(--ink);
+}
+
+/* The large background number — CULTURAL POSTER ENERGY */
+.hero-bg-text{
+  position:absolute;
+  top:50%;left:50%;
+  transform:translate(-50%,-50%);
+  font-family:var(--display);
+  font-size:clamp(18rem, 35vw, 42rem);
+  font-weight:900;
+  line-height:0.85;
+  color:rgba(255,255,255,0.025);
+  white-space:nowrap;
+  pointer-events:none;
+  user-select:none;
+  letter-spacing:-0.05em;
+}
+
+/* Accent color slash — the movement mark */
+.hero-slash{
+  position:absolute;
+  top:0;right:0;
+  width:6px;
+  height:100%;
+  background:var(--accent);
+}
+
+/* Logo — natural, not centered, not boxed */
+.hero-logo{
+  position:absolute;
+  top:50%;left:60%;
+  transform:translateY(-50%);
+  width:clamp(200px, 28vw, 340px);
+  opacity:0.18;
+  filter:invert(1);
+  pointer-events:none;
+}
+
+.hero-content{
+  position:relative;z-index:2;
+  padding:0 40px;
+  max-width:1100px;
+}
+
+.hero-overline{
+  font-family:var(--body);
+  font-size:0.62rem;
+  font-weight:600;
+  letter-spacing:0.28em;
+  text-transform:uppercase;
+  color:var(--accent);
+  margin-bottom:28px;
+  display:flex;align-items:center;gap:14px;
+}
+.hero-overline::before{
+  content:'';
+  display:block;
+  width:32px;height:1px;
+  background:var(--accent);
+}
+
+.hero-h1{
+  font-family:var(--display);
+  font-size:clamp(3.2rem, 8vw, 10rem);
+  font-weight:900;
+  line-height:0.92;
+  letter-spacing:-0.03em;
+  color:var(--off-white);
+  margin-bottom:0;
+}
+.hero-h1 .italic-line{
+  font-family:var(--serif);
+  font-style:italic;
+  font-weight:400;
+  font-size:0.72em;
+  letter-spacing:0;
+  color:rgba(244,241,236,0.55);
+  display:block;
+  margin-left:6px;
+}
+
+.hero-bottom{
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+  padding:0 40px;
+  position:relative;z-index:2;
+  margin-top:60px;
+  flex-wrap:wrap;
+  gap:24px;
+}
+.hero-desc{
+  font-family:var(--body);
+  font-size:0.92rem;
+  font-weight:300;
+  line-height:1.85;
+  color:rgba(244,241,236,0.55);
+  max-width:400px;
+}
+.hero-ctas{
+  display:flex;align-items:center;gap:16px;flex-wrap:wrap;
+}
+.btn-light{
+  font-family:var(--display);
+  font-size:0.58rem;
+  font-weight:700;
+  letter-spacing:0.14em;
+  text-transform:uppercase;
+  color:var(--ink);
+  background:var(--off-white);
+  padding:14px 30px;
+  border:none;cursor:pointer;
+  transition:all 0.2s;
+  display:inline-block;
+}
+.btn-light:hover{background:#fff;transform:translateY(-2px);}
+.btn-wire{
+  font-family:var(--display);
+  font-size:0.58rem;
+  font-weight:600;
+  letter-spacing:0.14em;
+  text-transform:uppercase;
+  color:rgba(244,241,236,0.6);
+  background:transparent;
+  padding:13px 30px;
+  border:1px solid rgba(244,241,236,0.2);
+  cursor:pointer;
+  transition:all 0.2s;
+  display:inline-block;
+}
+.btn-wire:hover{border-color:rgba(244,241,236,0.6);color:var(--off-white);}
+
+@media(max-width:600px){
+  .hero{padding-bottom:60px;}
+  .hero-content,.hero-bottom{padding:0 20px;}
+  .hero-h1{font-size:clamp(2.8rem,14vw,5rem);}
+}
+
+/* ══════════════════════
+   STATEMENT BAND
+══════════════════════ */
+.statement{
+  background:var(--accent);
+  padding:36px 40px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px;
+  flex-wrap:wrap;
+}
+.statement-text{
+  font-family:var(--display);
+  font-size:clamp(1rem, 2.2vw, 1.6rem);
+  font-weight:700;
+  letter-spacing:-0.01em;
+  color:#fff;
+  max-width:780px;
+  line-height:1.3;
+}
+.statement-link{
+  font-family:var(--display);
+  font-size:0.58rem;
+  font-weight:700;
+  letter-spacing:0.14em;
+  text-transform:uppercase;
+  color:#fff;
+  white-space:nowrap;
+  display:inline-flex;align-items:center;gap:10px;
+  opacity:0.75;
+  transition:opacity 0.2s;
+}
+.statement-link:hover{opacity:1;}
+.statement-link::after{content:'→';}
+@media(max-width:600px){.statement{padding:28px 20px;}}
+
+/* ══════════════════════
+   TICKER
+══════════════════════ */
+.ticker{
+  background:var(--ink);
+  padding:14px 0;
+  overflow:hidden;
+  border-bottom:1px solid rgba(255,255,255,0.04);
+}
+.ticker-inner{
+  display:flex;
+  white-space:nowrap;
+  animation:ticker 28s linear infinite;
+}
+@keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.tick{
+  font-family:var(--display);
+  font-size:0.6rem;
+  font-weight:400;
+  letter-spacing:0.2em;
+  text-transform:uppercase;
+  color:rgba(244,241,236,0.3);
+  padding:0 36px;
+  flex-shrink:0;
+}
+.tick-sep{color:var(--accent);opacity:0.7;}
+
+/* ══════════════════════
+   WHAT WE DO — EDITORIAL
+══════════════════════ */
+.what{
+  padding:120px 40px;
+  background:var(--off-white);
+}
+.what-inner{max-width:1200px;margin:0 auto;}
+
+.what-header{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:60px;
+  align-items:end;
+  margin-bottom:100px;
+  padding-bottom:60px;
+  border-bottom:1px solid rgba(13,13,13,0.1);
+}
+.what-label{
+  font-family:var(--display);
+  font-size:0.58rem;
+  font-weight:700;
+  letter-spacing:0.22em;
+  text-transform:uppercase;
+  color:var(--caramel);
+  margin-bottom:24px;
+}
+.what-title{
+  font-family:var(--display);
+  font-size:clamp(2.4rem,4.5vw,5.5rem);
+  font-weight:900;
+  line-height:0.92;
+  letter-spacing:-0.03em;
+  color:var(--ink);
+}
+.what-sub{
+  font-family:var(--serif);
+  font-size:1.15rem;
+  font-style:italic;
+  color:var(--muted);
+  line-height:1.8;
+  max-width:440px;
+  align-self:end;
+}
+
+/* Story entries — NO BOXES, editorial list */
+.story-list{
+  display:flex;
+  flex-direction:column;
+  gap:0;
+}
+.story-entry{
+  display:grid;
+  grid-template-columns:80px 1fr auto;
+  gap:40px;
+  align-items:start;
+  padding:52px 0;
+  border-bottom:1px solid rgba(13,13,13,0.08);
+  transition:background 0.2s;
+  cursor:default;
+}
+.story-entry:hover .story-num{color:var(--accent);}
+.story-entry:hover .story-link{opacity:1;}
+.story-num{
+  font-family:var(--display);
+  font-size:0.62rem;
+  font-weight:700;
+  letter-spacing:0.08em;
+  color:var(--caramel);
+  padding-top:6px;
+  transition:color 0.2s;
+  opacity:0.7;
+}
+.story-body{}
+.story-title{
+  font-family:var(--display);
+  font-size:clamp(1.6rem,2.8vw,2.6rem);
+  font-weight:900;
+  letter-spacing:-0.02em;
+  line-height:1;
+  color:var(--ink);
+  margin-bottom:16px;
+}
+.story-desc{
+  font-family:var(--body);
+  font-size:0.88rem;
+  font-weight:300;
+  line-height:1.9;
+  color:var(--muted);
+  max-width:540px;
+}
+.story-link{
+  font-family:var(--display);
+  font-size:0.56rem;
+  font-weight:700;
+  letter-spacing:0.18em;
+  text-transform:uppercase;
+  color:var(--ink);
+  opacity:0.25;
+  transition:opacity 0.2s;
+  white-space:nowrap;
+  display:inline-flex;align-items:center;gap:8px;
+  padding-top:8px;
+  align-self:start;
+}
+.story-link::after{content:'→';}
+
+@media(max-width:860px){
+  .what{padding:80px 20px;}
+  .what-header{grid-template-columns:1fr;gap:32px;margin-bottom:60px;}
+  .story-entry{grid-template-columns:48px 1fr;gap:20px;}
+  .story-link{display:none;}
+}
+
+/* ══════════════════════
+   HOW IT WORKS — HORIZONTAL STEPS
+══════════════════════ */
+.how{
+  background:var(--ink);
+  padding:120px 40px;
+}
+.how-inner{max-width:1200px;margin:0 auto;}
+.how-top{
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+  margin-bottom:80px;
+  gap:40px;
+  flex-wrap:wrap;
+}
+.how-title{
+  font-family:var(--display);
+  font-size:clamp(2rem,4vw,4.5rem);
+  font-weight:900;
+  letter-spacing:-0.03em;
+  line-height:0.92;
+  color:var(--off-white);
+}
+.how-intro{
+  font-family:var(--body);
+  font-size:0.9rem;
+  font-weight:300;
+  line-height:1.85;
+  color:rgba(244,241,236,0.45);
+  max-width:360px;
+}
+
+.steps{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:1px;
+  background:rgba(255,255,255,0.06);
+}
+.step{
+  background:var(--ink);
+  padding:52px 40px;
+}
+.step-n{
+  font-family:var(--display);
+  font-size:clamp(4rem,6vw,7rem);
+  font-weight:900;
+  letter-spacing:-0.04em;
+  color:rgba(244,241,236,0.06);
+  line-height:1;
+  margin-bottom:24px;
+}
+.step-title{
+  font-family:var(--display);
+  font-size:1rem;
+  font-weight:700;
+  letter-spacing:-0.01em;
+  color:var(--off-white);
+  margin-bottom:12px;
+}
+.step-body{
+  font-family:var(--body);
+  font-size:0.82rem;
+  font-weight:300;
+  line-height:1.9;
+  color:rgba(244,241,236,0.45);
+}
+.step-accent{
+  width:32px;height:2px;
+  background:var(--accent);
+  margin-bottom:28px;
+}
+
+/* Flow steps — replaces 3-column grid */
+.steps-flow{
+  max-width:700px;
+  display:flex;flex-direction:column;gap:0;
+}
+.flow-step{
+  display:grid;
+  grid-template-columns:64px 1fr;
+  gap:32px;
+  align-items:start;
+  padding:44px 0;
+  border-bottom:1px solid rgba(255,255,255,0.06);
+}
+.flow-num{
+  font-family:var(--display);
+  font-size:0.58rem;
+  font-weight:700;
+  letter-spacing:0.14em;
+  color:var(--accent);
+  padding-top:6px;
+}
+.flow-title{
+  font-family:var(--display);
+  font-size:1.05rem;
+  font-weight:700;
+  letter-spacing:-0.01em;
+  color:var(--off-white);
+  margin-bottom:12px;
+  line-height:1.2;
+}
+.flow-desc{
+  font-family:var(--body);
+  font-size:0.85rem;
+  font-weight:300;
+  line-height:1.9;
+  color:rgba(245,240,232,0.45);
+}
+.flow-arrow{
+  font-size:1.4rem;
+  color:rgba(184,50,8,0.4);
+  padding:0 0 0 64px;
+  line-height:1;
+  margin:-8px 0;
+}
+@media(max-width:600px){
+  .flow-step{grid-template-columns:40px 1fr;gap:20px;}
+  .flow-arrow{padding-left:40px;}
+}
+@media(max-width:768px){
+  .how{padding:80px 20px;}
+  .steps{grid-template-columns:1fr;}
+}
+
+/* ══════════════════════
+   MANIFESTO — FULL BLEED
+══════════════════════ */
+.manifesto{
+  padding:160px 40px;
+  background:var(--paper);
+  position:relative;
+  overflow:hidden;
+}
+.manifesto-bg{
+  position:absolute;
+  top:50%;right:-80px;
+  transform:translateY(-50%);
+  font-family:var(--display);
+  font-size:clamp(12rem,22vw,28rem);
+  font-weight:900;
+  letter-spacing:-0.04em;
+  color:rgba(13,13,13,0.03);
+  pointer-events:none;
+  user-select:none;
+  white-space:nowrap;
+}
+.manifesto-inner{
+  max-width:900px;
+  margin:0 auto;
+  position:relative;z-index:1;
+}
+.manifesto-quote{
+  font-family:var(--serif);
+  font-size:clamp(1.8rem,3.5vw,3.8rem);
+  font-style:italic;
+  font-weight:400;
+  line-height:1.35;
+  color:var(--ink);
+  margin-bottom:36px;
+}
+.manifesto-quote strong{
+  font-style:normal;
+  font-family:var(--display);
+  font-weight:900;
+  color:var(--accent);
+  letter-spacing:-0.02em;
+}
+.manifesto-attr{
+  font-family:var(--display);
+  font-size:0.58rem;
+  font-weight:700;
+  letter-spacing:0.2em;
+  text-transform:uppercase;
+  color:var(--muted);
+  display:flex;align-items:center;gap:14px;
+}
+.manifesto-attr::before{
+  content:'';
+  display:block;width:28px;height:1px;
+  background:var(--muted);
+}
+@media(max-width:600px){.manifesto{padding:100px 20px;}}
+
+/* ══════════════════════
+   PROOF — REAL STORIES
+══════════════════════ */
+.proof{
+  padding:120px 40px;
+  background:var(--off-white);
+}
+.proof-inner{max-width:1200px;margin:0 auto;}
+.proof-head{
+  margin-bottom:80px;
+}
+.proof-title{
+  font-family:var(--display);
+  font-size:clamp(2rem,4vw,4.5rem);
+  font-weight:900;
+  letter-spacing:-0.03em;
+  line-height:0.92;
+  color:var(--ink);
+  margin-bottom:20px;
+}
+.proof-sub{
+  font-family:var(--serif);
+  font-size:1.1rem;
+  font-style:italic;
+  color:var(--muted);
+  line-height:1.75;
+  max-width:480px;
+}
+
+/* Story feature — no cards, editorial layout */
+.proof-feature{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:2px;
+  margin-bottom:2px;
+}
+.proof-main{
+  background:var(--ink);
+  padding:64px 52px;
+  position:relative;
+  overflow:hidden;
+}
+.proof-main-bg{
+  position:absolute;bottom:-20px;right:-20px;
+  font-family:var(--display);
+  font-size:12rem;
+  font-weight:900;
+  color:rgba(255,255,255,0.025);
+  line-height:1;
+  pointer-events:none;
+}
+.proof-tag{
+  font-family:var(--display);
+  font-size:0.56rem;
+  font-weight:700;
+  letter-spacing:0.22em;
+  text-transform:uppercase;
+  color:var(--accent);
+  margin-bottom:24px;
+}
+.proof-name{
+  font-family:var(--display);
+  font-size:clamp(2rem,3.5vw,3.5rem);
+  font-weight:900;
+  letter-spacing:-0.03em;
+  line-height:0.95;
+  color:var(--off-white);
+  margin-bottom:20px;
+}
+.proof-quote{
+  font-family:var(--serif);
+  font-size:1.1rem;
+  font-style:italic;
+  color:rgba(244,241,236,0.6);
+  line-height:1.75;
+  margin-bottom:32px;
+}
+.proof-cta{
+  font-family:var(--display);
+  font-size:0.58rem;
+  font-weight:700;
+  letter-spacing:0.14em;
+  text-transform:uppercase;
+  color:var(--off-white);
+  display:inline-flex;align-items:center;gap:10px;
+  opacity:0.5;
+  transition:opacity 0.2s;
+}
+.proof-cta:hover{opacity:1;}
+.proof-cta::after{content:'→';}
+.proof-side{
+  display:flex;flex-direction:column;gap:2px;
+}
+.proof-small{
+  flex:1;
+  background:var(--paper);
+  padding:40px 40px;
+}
+.proof-small-tag{
+  font-family:var(--display);
+  font-size:0.5rem;
+  font-weight:700;
+  letter-spacing:0.22em;
+  text-transform:uppercase;
+  color:var(--muted);
+  margin-bottom:14px;
+}
+.proof-small-name{
+  font-family:var(--display);
+  font-size:1.3rem;
+  font-weight:900;
+  letter-spacing:-0.02em;
+  color:var(--ink);
+  margin-bottom:10px;
+}
+.proof-small-quote{
+  font-family:var(--serif);
+  font-size:0.9rem;
+  font-style:italic;
+  color:var(--muted);
+  line-height:1.7;
+  margin-bottom:16px;
+}
+.proof-small-link{
+  font-family:var(--display);
+  font-size:0.52rem;
+  font-weight:700;
+  letter-spacing:0.16em;
+  text-transform:uppercase;
+  color:var(--ink);
+  opacity:0.35;
+  transition:opacity 0.2s;
+  display:inline-flex;align-items:center;gap:6px;
+}
+.proof-small-link:hover{opacity:1;}
+.proof-small-link::after{content:'→';}
+
+@media(max-width:860px){
+  .proof{padding:80px 20px;}
+  .proof-feature{grid-template-columns:1fr;}
+  .proof-main{padding:48px 28px;}
+}
+
+/* ══════════════════════
+   ECOSYSTEM — CONNECTED
+══════════════════════ */
+.eco{
+  background:var(--bone);
+  padding:120px 40px;
+  border-top:1px solid rgba(13,13,13,0.08);
+}
+.eco-inner{max-width:1200px;margin:0 auto;}
+.eco-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:100px;
+  align-items:center;
+}
+.eco-left .what-label{margin-bottom:24px;}
+.eco-title{
+  font-family:var(--display);
+  font-size:clamp(2.2rem,4vw,4.5rem);
+  font-weight:900;
+  letter-spacing:-0.03em;
+  line-height:0.92;
+  color:var(--ink);
+  margin-bottom:28px;
+}
+.eco-body{
+  font-family:var(--body);
+  font-size:0.92rem;
+  font-weight:300;
+  line-height:1.9;
+  color:var(--muted);
+  margin-bottom:40px;
+  max-width:440px;
+}
+.eco-items{
+  display:flex;flex-direction:column;gap:0;
+}
+.eco-item{
+  display:flex;align-items:center;gap:20px;
+  padding:16px 0;
+  border-bottom:1px solid rgba(13,13,13,0.08);
+}
+.eco-dot{
+  width:8px;height:8px;
+  border-radius:50%;
+  background:var(--accent);
+  flex-shrink:0;
+}
+.eco-item-text{
+  font-family:var(--display);
+  font-size:0.72rem;
+  font-weight:700;
+  letter-spacing:0.06em;
+  text-transform:uppercase;
+  color:var(--ink);
+}
+.eco-item-desc{
+  font-family:var(--body);
+  font-size:0.78rem;
+  font-weight:300;
+  color:var(--muted);
+  margin-left:auto;
+  text-align:right;
+}
+
+/* QR visual */
+.eco-visual{
+  display:flex;align-items:center;justify-content:center;
+}
+.qr-demo{
+  width:clamp(200px,28vw,320px);
+  height:clamp(200px,28vw,320px);
+  border:1px solid rgba(13,13,13,0.12);
+  background:var(--off-white);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:20px;
+  position:relative;
+}
+.qr-demo::before{
+  content:'';
+  position:absolute;top:-1px;left:-1px;
+  width:40px;height:40px;
+  border-top:3px solid var(--ink);
+  border-left:3px solid var(--ink);
+}
+.qr-demo::after{
+  content:'';
+  position:absolute;bottom:-1px;right:-1px;
+  width:40px;height:40px;
+  border-bottom:3px solid var(--ink);
+  border-right:3px solid var(--ink);
+}
+.qr-icon{
+  font-size:4rem;
+  opacity:0.15;
+}
+.qr-label{
+  font-family:var(--display);
+  font-size:0.55rem;
+  font-weight:700;
+  letter-spacing:0.2em;
+  text-transform:uppercase;
+  color:var(--muted);
+  text-align:center;
+  padding:0 24px;
+}
+
+/* Ecosystem rebuild */
+.eco-intro{
+  max-width:800px;
+  margin-bottom:80px;
+}
+.eco-title{
+  font-family:var(--display);
+  font-size:clamp(2.2rem,4vw,4.5rem);
+  font-weight:900;
+  letter-spacing:-0.03em;
+  line-height:0.92;
+  color:var(--ink);
+  margin-bottom:28px;
+}
+.eco-statement{
+  font-family:var(--body);
+  font-size:1rem;
+  font-weight:300;
+  line-height:1.95;
+  color:var(--muted);
+  max-width:680px;
+}
+.eco-statement strong{
+  color:var(--ink);
+  font-weight:600;
+}
+.eco-nodes{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:2px;
+  background:rgba(13,13,13,0.08);
+}
+.eco-node{
+  background:var(--bone);
+  padding:40px 36px;
+  transition:background 0.25s;
+}
+.eco-node:hover{background:var(--paper);}
+.eco-node-accent{
+  background:var(--ink) !important;
+}
+.eco-node-accent .eco-node-label{color:var(--accent) !important;}
+.eco-node-accent .eco-node-desc{color:rgba(245,240,232,0.5) !important;}
+.eco-node-label{
+  font-family:var(--display);
+  font-size:0.72rem;
+  font-weight:700;
+  letter-spacing:0.06em;
+  text-transform:uppercase;
+  color:var(--ink);
+  margin-bottom:12px;
+}
+.eco-node-desc{
+  font-family:var(--body);
+  font-size:0.82rem;
+  font-weight:300;
+  line-height:1.85;
+  color:var(--muted);
+}
+@media(max-width:860px){
+  .eco{padding:80px 20px;}
+  .eco-nodes{grid-template-columns:1fr 1fr;}
+}
+@media(max-width:500px){
+  .eco-nodes{grid-template-columns:1fr;}
+}
+
+/* ══════════════════════
+   CTA — MOVEMENT CLOSE
+══════════════════════ */
+.cta-section{
+  background:var(--ink);
+  padding:160px 40px;
+  position:relative;
+  overflow:hidden;
+}
+.cta-bg{
+  position:absolute;
+  top:50%;left:50%;
+  transform:translate(-50%,-50%);
+  font-family:var(--display);
+  font-size:clamp(10rem,20vw,28rem);
+  font-weight:900;
+  color:rgba(255,255,255,0.02);
+  white-space:nowrap;
+  pointer-events:none;
+  letter-spacing:-0.04em;
+}
+.cta-slash{
+  position:absolute;
+  left:0;top:0;bottom:0;
+  width:6px;
+  background:var(--accent);
+}
+.cta-inner{
+  max-width:900px;
+  margin:0 auto;
+  position:relative;z-index:1;
+  text-align:center;
+}
+.cta-overline{
+  font-family:var(--display);
+  font-size:0.58rem;
+  font-weight:700;
+  letter-spacing:0.28em;
+  text-transform:uppercase;
+  color:var(--accent);
+  margin-bottom:32px;
+}
+.cta-title{
+  font-family:var(--display);
+  font-size:clamp(2.8rem,6vw,7rem);
+  font-weight:900;
+  letter-spacing:-0.03em;
+  line-height:0.92;
+  color:var(--off-white);
+  margin-bottom:24px;
+}
+.cta-title em{
+  font-family:var(--serif);
+  font-style:italic;
+  font-weight:400;
+  letter-spacing:0;
+}
+.cta-body{
+  font-family:var(--body);
+  font-size:0.95rem;
+  font-weight:300;
+  line-height:1.9;
+  color:rgba(244,241,236,0.45);
+  max-width:520px;
+  margin:0 auto 52px;
+}
+.cta-btns{
+  display:flex;gap:16px;justify-content:center;flex-wrap:wrap;
+}
+@media(max-width:600px){.cta-section{padding:100px 20px;}}
+
+/* ══════════════════════
+   FOOTER
+══════════════════════ */
+footer{
+  background:var(--ink2);
+  padding:64px 40px 40px;
+  border-top:1px solid rgba(255,255,255,0.04);
+}
+.footer-grid{
+  max-width:1200px;margin:0 auto;
+  display:grid;
+  grid-template-columns:2fr 1fr 1fr 1fr;
+  gap:60px;
+  margin-bottom:60px;
+}
+.footer-brand{
+  font-family:var(--display);
+  font-size:0.7rem;
+  font-weight:700;
+  letter-spacing:0.14em;
+  text-transform:uppercase;
+  color:var(--off-white);
+  margin-bottom:16px;
+}
+.footer-tagline{
+  font-family:var(--serif);
+  font-size:0.95rem;
+  font-style:italic;
+  color:rgba(244,241,236,0.35);
+  line-height:1.7;
+  margin-bottom:20px;
+}
+.footer-loc{
+  font-family:var(--display);
+  font-size:0.52rem;
+  font-weight:700;
+  letter-spacing:0.18em;
+  text-transform:uppercase;
+  color:rgba(244,241,236,0.2);
+}
+.footer-col-head{
+  font-family:var(--display);
+  font-size:0.52rem;
+  font-weight:700;
+  letter-spacing:0.22em;
+  text-transform:uppercase;
+  color:rgba(244,241,236,0.25);
+  margin-bottom:20px;
+}
+.footer-links{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.footer-links a{
+  font-family:var(--body);
+  font-size:0.82rem;
+  font-weight:300;
+  color:rgba(244,241,236,0.45);
+  transition:color 0.2s;
+}
+.footer-links a:hover{color:var(--off-white);}
+.footer-bottom{
+  max-width:1200px;margin:0 auto;
+  display:flex;align-items:center;justify-content:space-between;
+  padding-top:28px;
+  border-top:1px solid rgba(255,255,255,0.04);
+  flex-wrap:wrap;gap:12px;
+}
+.footer-copy{
+  font-family:var(--body);
+  font-size:0.68rem;
+  color:rgba(244,241,236,0.2);
+  letter-spacing:0.04em;
+}
+.footer-mark{
+  font-family:var(--display);
+  font-size:0.52rem;
+  font-weight:700;
+  letter-spacing:0.2em;
+  text-transform:uppercase;
+  color:var(--accent);
+  opacity:0.6;
+}
+@media(max-width:900px){
+  footer{padding:48px 20px 28px;}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:40px;}
+}
+@media(max-width:500px){
+  .footer-grid{grid-template-columns:1fr;}
+  .footer-bottom{justify-content:center;text-align:center;}
+}
+
+/* ══════════════════════
+   SCROLL REVEAL
+══════════════════════ */
+.reveal{opacity:0;transform:translateY(30px);transition:opacity 0.75s ease,transform 0.75s ease;}
+.reveal.on{opacity:1;transform:translateY(0);}
+.d1{transition-delay:0.1s;}
+.d2{transition-delay:0.2s;}
+.d3{transition-delay:0.3s;}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <span class="nav-wordmark">My Legacy Continues</span>
+  <ul class="nav-center">
+    <li><a href="#what">What We Do</a></li>
+    <li><a href="#how">How It Works</a></li>
+    <li><a href="#stories">Real Stories</a></li>
+    <li><a href="#ecosystem">The Ecosystem</a></li>
+  </ul>
+  <a href="#start" class="nav-action">Start Your Legacy</a>
+  <button class="nav-burger" id="burger"><span></span><span></span><span></span></button>
+</nav>
+
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg-text">LEGACY</div>
+  <div class="hero-slash"></div>
+
+  <img src="logo.png" alt="" class="hero-logo" aria-hidden="true">
+
+  <div class="hero-content">
+    <div class="hero-overline">Santa Maria, CA &nbsp;·&nbsp; Heritage Preservation</div>
+    <h1 class="hero-h1">
+      YOUR<br>
+      STORY<br>
+      NEVER<br>
+      <span class="italic-line">disappears.</span>
+    </h1>
+  </div>
+
+  <div class="hero-bottom">
+    <p class="hero-desc">
+      Your family's story. Your animals. The business you built
+      from nothing. The people you lost. All of it — in one place
+      that never closes, never deletes, and never forgets.
+    </p>
+    <div class="hero-ctas">
+      <a href="#start" class="btn-light">Start Your Chapter</a>
+      <a href="#what" class="btn-wire">See What We Build</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- STATEMENT BAND -->
+<div class="statement">
+  <span class="statement-text">
+    Facebook closes accounts. Instagram buries posts. Hard drives die.
+    Your family's story deserves better than that.
+  </span>
+  <a href="#what" class="statement-link">See how we preserve it</a>
+</div>
+
+
+<!-- TICKER -->
+<div class="ticker">
+  <div class="ticker-inner">
+    <span class="tick">Family Heritage Books</span><span class="tick tick-sep">✦</span>
+    <span class="tick">Memorial Plaques</span><span class="tick tick-sep">✦</span>
+    <span class="tick">Business Legacy Profiles</span><span class="tick tick-sep">✦</span>
+    <span class="tick">Pet Legacy Tags</span><span class="tick tick-sep">✦</span>
+    <span class="tick">Rescue Animal Registry</span><span class="tick tick-sep">✦</span>
+    <span class="tick">Legacy Vault</span><span class="tick tick-sep">✦</span>
+    <span class="tick">QR Permanent Profiles</span><span class="tick tick-sep">✦</span>
+    <span class="tick">Family Heritage Books</span><span class="tick tick-sep">✦</span>
+    <span class="tick">Memorial Plaques</span><span class="tick tick-sep">✦</span>
+    <span class="tick">Business Legacy Profiles</span><span class="tick tick-sep">✦</span>
+    <span class="tick">Pet Legacy Tags</span><span class="tick tick-sep">✦</span>
+    <span class="tick">Rescue Animal Registry</span><span class="tick tick-sep">✦</span>
+    <span class="tick">Legacy Vault</span><span class="tick tick-sep">✦</span>
+    <span class="tick">QR Permanent Profiles</span><span class="tick tick-sep">✦</span>
+  </div>
+</div>
+
+
+<!-- WHAT WE DO -->
+<section class="what" id="what">
+  <div class="what-inner">
+    <div class="what-header reveal">
+      <div>
+        <div class="what-label">What We Build</div>
+        <h2 class="what-title">Four ways<br>to stay<br>forever.</h2>
+      </div>
+      <p class="what-sub">
+        Every product we make connects to a permanent digital profile through a QR code.
+        Physical object in the real world. Story that lives online forever.
+        One purchase. No expiration date.
+      </p>
+    </div>
+
+    <div class="story-list">
+      <div class="story-entry reveal">
+        <span class="story-num">01</span>
+        <div class="story-body">
+          <h3 class="story-title">Your Family's Real Story — In Print</h3>
+          <p class="story-desc">Not a scrapbook. Not a template. We dig into the actual records — Spanish ancestry, border crossings, census documents, FamilySearch archives — and we write your family's story the way it actually happened. Chapter by chapter. Your grandchildren will read this book. Their grandchildren will too.</p>
+        </div>
+        <a href="heritage-book.html" class="story-link">Start a Book</a>
+      </div>
+
+      <div class="story-entry reveal d1">
+        <span class="story-num">02</span>
+        <div class="story-body">
+          <h3 class="story-title">Your Business Has a Story Too</h3>
+          <p class="story-desc">You didn't just start a company — you built something from nothing, with your hands, for your family. Put a QR code on your truck or your job sign. Someone scans it before they ever call you. They see 20 years of work. They see who you are. That's how you win before you walk in the door.</p>
+        </div>
+        <a href="business-profile.html" class="story-link">Build a Profile</a>
+      </div>
+
+      <div class="story-entry reveal d2">
+        <span class="story-num">03</span>
+        <div class="story-body">
+          <h3 class="story-title">They Deserve More Than Two Lines on a Plaque</h3>
+          <p class="story-desc">A name and two dates doesn't tell anyone who they were. A QR code on a headstone or memorial plaque does. Scan it and walk into a full life — their voice, their photos, their story told the right way. What used to fit on two lines now has no limit.</p>
+        </div>
+        <a href="cemetery-plaque.html" class="story-link">Create a Memorial</a>
+      </div>
+
+      <div class="story-entry reveal d3">
+        <span class="story-num">04</span>
+        <div class="story-body">
+          <h3 class="story-title">Every Animal That Comes Through Gets Remembered</h3>
+          <p class="story-desc">Every rescue dog we work with gets a free permanent profile — from the day they come in to the day they find a forever home. Scan the tag on the collar and the whole journey opens up. You'll sleep better knowing there are eyes on every animal in the system. Shoshi is already here. Underdog Heroes is our first partner.</p>
+        </div>
+        <a href="rescue-registry.html" class="story-link">View the Registry</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- HOW IT WORKS -->
+<section class="how" id="how">
+  <div class="how-inner">
+    <div class="how-top reveal">
+      <h2 class="how-title">Here's how<br>it works.</h2>
+      <p class="how-intro">No tech experience needed. No monthly fees. No app required to view it.</p>
+    </div>
+    <div class="steps-flow reveal">
+      <div class="flow-step">
+        <div class="flow-num">01</div>
+        <div class="flow-body">
+          <h3 class="flow-title">You tell us the story.</h3>
+          <p class="flow-desc">Fill out our intake form or sit down with us directly. Photos, names, memories — whatever you have. If you don't have much, we help you find what's missing.</p>
+        </div>
+      </div>
+      <div class="flow-arrow">↓</div>
+      <div class="flow-step">
+        <div class="flow-num">02</div>
+        <div class="flow-body">
+          <h3 class="flow-title">We build the permanent profile.</h3>
+          <p class="flow-desc">Photos, stories, timelines, connections to other people and places in the ecosystem. Then we tie it to a physical QR code on a real object — a plaque, a tag, a truck decal, a business card.</p>
+        </div>
+      </div>
+      <div class="flow-arrow">↓</div>
+      <div class="flow-step">
+        <div class="flow-num">03</div>
+        <div class="flow-body">
+          <h3 class="flow-title">Anyone who scans it walks straight in. Forever.</h3>
+          <p class="flow-desc">No login. No app. No subscription. Scan the QR on a headstone, a truck, a collar, or a business card and the full story opens right there on your phone. That profile lives as long as we do.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- MANIFESTO -->
+<section class="manifesto">
+  <div class="manifesto-bg">MARATHON</div>
+  <div class="manifesto-inner reveal">
+    <p class="manifesto-quote">
+      "The giants are gonna be the ones who create the business models.
+      <strong>Fuck the middleman.</strong>
+      That's what we trying to do."
+    </p>
+    <div class="manifesto-attr">Nipsey Hussle &nbsp;·&nbsp; The Marathon Continues</div>
+  </div>
+</section>
+
+
+<!-- REAL STORIES -->
+<section class="proof" id="stories">
+  <div class="proof-inner">
+    <div class="proof-head reveal">
+      <h2 class="proof-title">Real profiles.<br>Real people.</h2>
+      <p class="proof-sub">These aren't demos. These are lives that live here permanently right now.</p>
+    </div>
+
+    <div class="proof-feature">
+      <div class="proof-main reveal">
+        <div class="proof-main-bg">V</div>
+        <p class="proof-tag">Heritage Book</p>
+        <h3 class="proof-name">The Vazquez<br>Family</h3>
+        <p class="proof-quote">"Four generations. We never knew how much history we had until we saw it all together in one place. Now it belongs to everyone who comes after us."</p>
+        <a href="vazquez-profile.html" class="proof-cta">View Profile</a>
+      </div>
+      <div class="proof-side">
+        <div class="proof-small reveal d1">
+          <p class="proof-small-tag">Business Legacy · Santa Maria, CA</p>
+          <h4 class="proof-small-name">Bears Concrete<br>Pumping</h4>
+          <p class="proof-small-quote">20 years of work on a QR code. Scan it on the truck before you ever meet Bear and you already know exactly who you're hiring and why it matters to him.</p>
+          <a href="bears-concrete-profile.html" class="proof-small-link">See the Profile</a>
+        </div>
+        <div class="proof-small reveal d2">
+          <p class="proof-small-tag">Rescue Registry · Underdog Heroes</p>
+          <h4 class="proof-small-name">Shoshi</h4>
+          <p class="proof-small-quote">Rescued. Rehabilitated. Adopted. Her entire journey — from intake day to forever home — lives on her profile. Scan the tag on her collar and the whole story is right there.</p>
+          <a href="rescue-registry.html" class="proof-small-link">See Her Story</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ECOSYSTEM -->
+<section class="eco" id="ecosystem">
+  <div class="eco-inner">
+
+    <div class="eco-intro reveal">
+      <div class="what-label">The Ecosystem</div>
+      <h2 class="eco-title">This isn't a website.<br>It's a world.</h2>
+      <p class="eco-statement">
+        Think about how real life actually works. Your grandmother is connected to your uncle.
+        Your uncle built a business. That business hired people from the community.
+        A rescue dog from the neighborhood ended up in your cousin's family.
+        The cemetery down the street has people from all of your lives in it.
+        <strong>Everything is connected. Now it all lives in one place.</strong>
+      </p>
+    </div>
+
+    <div class="eco-nodes reveal d1">
+      <div class="eco-node">
+        <div class="eco-node-label">Family Heritage Books</div>
+        <p class="eco-node-desc">Your family's history — written, archived, and linked to everyone else in the tree.</p>
+      </div>
+      <div class="eco-node eco-node-accent">
+        <div class="eco-node-label">The QR Code</div>
+        <p class="eco-node-desc">The physical bridge. Put it anywhere in the real world. It opens the story every single time.</p>
+      </div>
+      <div class="eco-node">
+        <div class="eco-node-label">Business Profiles</div>
+        <p class="eco-node-desc">Your work lives permanently. Linked to your family, your crew, your community.</p>
+      </div>
+      <div class="eco-node">
+        <div class="eco-node-label">Memorial Plaques</div>
+        <p class="eco-node-desc">The people you lost get a full profile, not just a stone. Their story connects to yours.</p>
+      </div>
+      <div class="eco-node">
+        <div class="eco-node-label">Rescue Animals</div>
+        <p class="eco-node-desc">Every dog that comes through gets tracked, celebrated, and remembered by the whole network.</p>
+      </div>
+      <div class="eco-node">
+        <div class="eco-node-label">The Legacy Vault</div>
+        <p class="eco-node-desc">Your private archive. The full picture. Every profile, every connection, every story in one place.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- CTA -->
+<section class="cta-section" id="start">
+  <div class="cta-bg">NOW</div>
+  <div class="cta-slash"></div>
+  <div class="cta-inner">
+    <p class="cta-overline reveal">Santa Maria, CA · mylegacycontinues.com</p>
+    <h2 class="cta-title reveal d1">
+      Start your<br>
+      <em>chapter today.</em>
+    </h2>
+    <p class="cta-body reveal d2">
+      You make one purchase. We build the profile. We connect it to a QR code on something real.
+      That profile lives permanently — no renewals, no fees, no platform that can take it away.
+      Ten years from now someone scans that code and the whole story is still right there.
+    </p>
+    <div class="cta-btns reveal d3">
+      <a href="heritage-book.html" class="btn-light">Start Your Heritage Book</a>
+      <a href="portal.html" class="btn-wire">Enter the Legacy Vault</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <p class="footer-brand">My Legacy Continues</p>
+      <p class="footer-tagline">Every life deserves a permanent home. Every story deserves to be told.</p>
+      <p class="footer-loc">Santa Maria, CA · The 805 · mylegacycontinues.com</p>
+    </div>
+    <div>
+      <p class="footer-col-head">Products</p>
+      <ul class="footer-links">
+        <li><a href="heritage-book.html">Heritage Book</a></li>
+        <li><a href="cemetery-plaque.html">Memorial Plaque</a></li>
+        <li><a href="pet-tag.html">Pet Tag</a></li>
+        <li><a href="business-profile.html">Business Profile</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="footer-col-head">Community</p>
+      <ul class="footer-links">
+        <li><a href="rescue-registry.html">Rescue Registry</a></li>
+        <li><a href="portal.html">The Legacy Vault</a></li>
+        <li><a href="rescue-portal.html">Rescue Portal</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="footer-col-head">The Story</p>
+      <ul class="footer-links">
+        <li><a href="vazquez-profile.html">Our Family</a></li>
+        <li><a href="bears-concrete-profile.html">Bears Concrete</a></li>
+        <li><a href="trade-profile.html">Trade Profiles</a></li>
+        <li><a href="success.html">Get Started</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-copy">© 2026 My Legacy Continues. Santa Maria, CA. All rights reserved.</p>
+    <p class="footer-mark">Long Live Your Legacy</p>
+  </div>
+</footer>
+
+
+<script>
+// Scroll reveal
+const items = document.querySelectorAll('.reveal');
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('on'); });
+}, {threshold: 0.1});
+items.forEach(el => io.observe(el));
+
+// Nav burger
+const burger = document.getElementById('burger');
+const navCenter = document.querySelector('.nav-center');
+if(burger && navCenter){
+  burger.addEventListener('click', () => {
+    const open = navCenter.style.display === 'flex';
+    navCenter.style.display = open ? 'none' : 'flex';
+    if(!open){
+      navCenter.style.flexDirection = 'column';
+      navCenter.style.position = 'fixed';
+      navCenter.style.top = '64px';
+      navCenter.style.left = '0';
+      navCenter.style.right = '0';
+      navCenter.style.background = 'rgba(244,241,236,0.98)';
+      navCenter.style.padding = '20px 40px';
+      navCenter.style.gap = '0';
+      navCenter.style.borderBottom = '1px solid rgba(13,13,13,0.08)';
+    }
+  });
+}
+
+// Nav solidify on scroll
+window.addEventListener('scroll', () => {
+  document.querySelector('nav').style.background =
+    window.scrollY > 60 ? 'rgba(244,241,236,0.98)' : 'rgba(244,241,236,0.94)';
+});
+</script>
+</body>
+</html>
