@@ -69,6 +69,32 @@
     .dog-card:hover { border-color: #333; }
     .dog-img-wrap { position: relative; height: 240px; background: var(--surface2); overflow: hidden; }
     .dog-img-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    /* Image fallback with gold initial */
+    .dog-img-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, rgba(212,160,32,0.15), rgba(212,160,32,0.08));
+    }
+    .dog-img-wrap img {
+      background: var(--surface2);
+    }
+    .dog-img-wrap img:after {
+      content: attr(alt);
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--surface2);
+      color: var(--gold);
+      font-size: 3rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+    }
     .dog-badge { position: absolute; top: 12px; right: 12px; background: rgba(10,10,10,0.85); border: 1px solid var(--border); color: var(--gold); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; padding: 4px 10px; border-radius: 2px; }
     .dog-body { padding: 20px; }
     .dog-name { font-size: 1.3rem; font-weight: 700; color: var(--text); margin-bottom: 4px; }
