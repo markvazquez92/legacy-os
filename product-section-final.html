@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MLC — Product Section Final</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,700;0,800;1,400;1,600&family=DM+Serif+Display:ital@0;1&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+
+:root{
+  --navy:      #1A2B3C;
+  --navy-deep: #0F1A26;
+  --gold:      #D4A020;
+  --gold-light:#E8B840;
+  --coral:     #E89560;
+  --cream:     #F5F0E8;
+  --charcoal:  #2C2C2C;
+}
+
+body{
+  background:var(--cream);
+  font-family:'Jost',sans-serif;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+
+/* Film grain */
+body::before{
+  content:'';position:fixed;inset:0;z-index:9999;
+  pointer-events:none;opacity:0.025;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='grain'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.72' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23grain)'/%3E%3C/svg%3E");
+  background-repeat:repeat;background-size:200px 200px;
+}
+
+/* ── SECTION ── */
+.products-section{
+  padding:5rem 0 5.5rem;
+  position:relative;
+  overflow:hidden;
+}
+.products-section::before{
+  content:'LEGACY';
+  position:absolute;top:50%;left:50%;
+  transform:translate(-50%,-50%) rotate(-4deg);
+  font-family:'Cormorant',serif;font-weight:800;
+  font-size:clamp(8rem,14vw,14rem);
+  color:rgba(212,160,32,0.035);
+  line-height:1;pointer-events:none;
+  white-space:nowrap;
+}
+
+/* Section header */
+.section-header{
+  padding:0 2rem;
+  max-width:1200px;
+  margin:0 auto 3rem;
+}
+.sh-eyebrow{
+  display:flex;align-items:center;gap:0.8rem;
+  margin-bottom:1rem;
+}
+.sh-rule{width:2rem;height:1px;background:var(--gold);}
+.sh-label{
+  font-size:0.62rem;letter-spacing:0.32em;text-transform:uppercase;
+  color:var(--gold);
+}
+.sh-title{
+  font-family:'DM Serif Display',serif;
+  font-size:clamp(2rem,4.5vw,3rem);
+  color:var(--navy);line-height:1.1;
+  margin-bottom:0.6rem;
+}
+.sh-sub{
+  font-family:'DM Serif Display',serif;
+  font-style:italic;font-size:0.95rem;
+  color:var(--charcoal);opacity:0.7;
+  max-width:480px;line-height:1.6;
+}
+
+/* ── SWIPE TRACK ── */
+.swipe-track{
+  display:flex;
+  gap:0;
+  overflow-x:auto;
+  scroll-snap-type:x mandatory;
+  -webkit-overflow-scrolling:touch;
+  scrollbar-width:none;
+  padding:0 1.5rem;
+}
+.swipe-track::-webkit-scrollbar{display:none;}
+
+/* ── SLIDE ── */
+.slide{
+  flex:0 0 calc(100vw - 3rem);
+  max-width:400px;
+  scroll-snap-align:center;
+  padding:0 0.5rem;
+}
+
+/* ── CARD ── */
+.card{
+  position:relative;
+  background:white;
+  border:1px solid rgba(212,160,32,0.18);
+  overflow:hidden;
+  transition:transform 0.3s ease, box-shadow 0.3s ease;
+  height:100%;
+  display:flex;
+  flex-direction:column;
+}
+.card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 16px 48px rgba(26,43,60,0.12);
+}
+
+/* Corner accents */
+.card::before{
+  content:'';position:absolute;top:0;left:0;
+  width:24px;height:24px;
+  border-top:2px solid var(--gold);
+  border-left:2px solid var(--gold);
+  pointer-events:none;opacity:0.5;z-index:2;
+}
+.card::after{
+  content:'';position:absolute;bottom:0;right:0;
+  width:24px;height:24px;
+  border-bottom:2px solid var(--gold);
+  border-right:2px solid var(--gold);
+  pointer-events:none;opacity:0.5;z-index:2;
+}
+
+/* Gold accent strip */
+.card-accent{
+  height:3px;
+  background:linear-gradient(90deg, var(--gold), var(--gold-light), var(--coral));
+  flex-shrink:0;
+}
+
+/* ── CARD HEADER — Logo float ── */
+.card-header{
+  background:var(--navy);
+  padding:1.8rem 1.8rem 1.4rem;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  position:relative;
+  overflow:hidden;
+}
+.card-header::before{
+  content:'';position:absolute;inset:0;
+  background:repeating-linear-gradient(
+    -45deg,
+    transparent,transparent 8px,
+    rgba(212,160,32,0.03) 8px,
+    rgba(212,160,32,0.03) 9px
+  );
+  pointer-events:none;
+}
+
+.card-logo{
+  width:56px;height:56px;
+  object-fit:contain;
+  opacity:0.3;
+  position:relative;z-index:1;
+}
+
+.card-num{
+  font-family:'Cormorant',serif;font-weight:800;
+  font-size:3.5rem;line-height:1;
+  color:rgba(245,240,232,0.08);
+  position:relative;z-index:1;
+}
+
+/* ── CARD BODY ── */
+.card-body{
+  padding:1.6rem 1.8rem 1.8rem;
+  flex:1;
+  display:flex;
+  flex-direction:column;
+}
+
+.card-cat{
+  font-family:'Cormorant',serif;font-weight:700;
+  font-size:0.6rem;letter-spacing:0.25em;text-transform:uppercase;
+  color:var(--gold);
+  margin-bottom:0.9rem;
+}
+
+.card-name{
+  font-family:'DM Serif Display',serif;
+  font-size:1.35rem;color:var(--navy);
+  line-height:1.2;margin-bottom:0.8rem;
+}
+
+.card-desc{
+  font-size:0.85rem;color:var(--charcoal);
+  line-height:1.75;opacity:0.72;
+  margin-bottom:auto;
+  padding-bottom:1.4rem;
+}
+
+/* Price + CTA */
+.card-footer{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  border-top:1px solid rgba(212,160,32,0.15);
+  padding-top:1.2rem;
+}
+.card-price{
+  font-family:'Cormorant',serif;font-weight:800;
+  font-size:1.4rem;color:var(--gold);
+  line-height:1;
+}
+.card-price-sub{
+  display:block;
+  font-family:'Jost',sans-serif;
+  font-size:0.58rem;font-weight:400;
+  letter-spacing:0.08em;
+  color:rgba(44,44,44,0.5);
+  margin-top:0.2rem;
+}
+.card-cta{
+  font-family:'Jost',sans-serif;
+  font-size:0.66rem;font-weight:500;
+  letter-spacing:0.14em;text-transform:uppercase;
+  color:white;background:var(--navy);
+  text-decoration:none;
+  padding:0.7rem 1.3rem;
+  transition:all 0.2s;
+  display:inline-block;
+}
+.card-cta:hover{
+  background:var(--navy-deep);
+  transform:translateY(-1px);
+}
+
+/* ── DOT NAV ── */
+.dot-nav{
+  display:flex;
+  justify-content:center;
+  gap:0.6rem;
+  margin-top:2.2rem;
+  padding:0 2rem;
+}
+.dot{
+  width:8px;height:8px;
+  border-radius:50%;
+  background:rgba(212,160,32,0.2);
+  border:1px solid rgba(212,160,32,0.3);
+  cursor:pointer;
+  transition:all 0.3s;
+  padding:0;
+}
+.dot.active{
+  background:var(--gold);
+  border-color:var(--gold);
+  width:28px;
+  border-radius:4px;
+}
+
+/* Swipe hint */
+.swipe-hint{
+  text-align:center;
+  margin-top:1.2rem;
+  font-size:0.58rem;letter-spacing:0.22em;text-transform:uppercase;
+  color:rgba(212,160,32,0.45);
+  transition:opacity 0.4s;
+}
+.swipe-hint span{
+  display:inline-block;
+  animation:nudge 2.5s ease-in-out infinite;
+}
+@keyframes nudge{
+  0%,100%{transform:translateX(0);}
+  50%{transform:translateX(8px);}
+}
+
+.slide-count{
+  text-align:center;
+  margin-top:0.6rem;
+  font-family:'Cormorant',serif;font-weight:700;
+  font-size:0.72rem;
+  color:rgba(212,160,32,0.4);
+  letter-spacing:0.1em;
+}
+
+/* ── DESKTOP ── */
+@media(min-width:769px){
+  .swipe-track{
+    padding:0 calc((100vw - 1200px)/2 + 1rem);
+  }
+  .slide{
+    flex:0 0 320px;
+    max-width:320px;
+    padding:0 0.5rem;
+  }
+  .swipe-hint{display:none;}
+  .slide-count{display:none;}
+}
+
+@media(min-width:1100px){
+  .swipe-track{
+    max-width:1260px;
+    margin:0 auto;
+    padding:0 1.5rem;
+    overflow-x:visible;
+    scroll-snap-type:none;
+  }
+  .slide{
+    flex:1 1 0;
+    max-width:none;
+    padding:0 0.45rem;
+  }
+  .dot-nav{display:none;}
+  .card-name{font-size:1.2rem;}
+  .card-desc{font-size:0.82rem;}
+  .card-logo{width:44px;height:44px;}
+  .card-num{font-size:2.8rem;}
+}
+
+@media(max-width:380px){
+  .slide{flex:0 0 calc(100vw - 2.5rem);}
+  .swipe-track{padding:0 1.25rem;}
+  .card-body{padding:1.4rem 1.4rem 1.5rem;}
+  .card-header{padding:1.4rem;}
+}
+</style>
+</head>
+<body>
+
+<section class="products-section" id="products">
+  
+  <div class="section-header">
+    <div class="sh-eyebrow">
+      <div class="sh-rule"></div>
+      <span class="sh-label">What We Build</span>
+    </div>
+    <h2 class="sh-title">Every Product<br>Earns Its Place.</h2>
+    <p class="sh-sub">Physical. Digital. Permanent. Each piece stacks into a legacy system built to outlast all of us.</p>
+  </div>
+
+  <div class="swipe-track" id="swipeTrack">
+
+    <!-- 01 -->
+    <div class="slide">
+      <div class="card">
+        <div class="card-accent"></div>
+        <div class="card-header">
+          <div class="card-num">01</div>
+        </div>
+        <div class="card-body">
+          <div class="card-cat">Heritage · Family</div>
+          <h3 class="card-name">Heritage Culture Book</h3>
+          <p class="card-desc">Premium hardcover family histories. We sit down with your family, pull the real stories, and bind them forever. Your marathon in print.</p>
+          <div class="card-footer">
+            <div class="card-price">$199
+              <span class="card-price-sub">One-time · No subscription</span>
+            </div>
+            <a href="heritage-book.html" class="card-cta">Start a Book</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 02 -->
+    <div class="slide">
+      <div class="card">
+        <div class="card-accent"></div>
+        <div class="card-header">
+          <div class="card-num">02</div>
+        </div>
+        <div class="card-body">
+          <div class="card-cat">Business · Founder</div>
+          <h3 class="card-name">Business Founder Profile</h3>
+          <p class="card-desc">The business you built is legacy too. A permanent record of why you started, who you did it for, and what it meant to the community.</p>
+          <div class="card-footer">
+            <div class="card-price">$79
+              <span class="card-price-sub">One-time · Permanent</span>
+            </div>
+            <a href="business-profile.html" class="card-cta">Tell Your Story</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 03 -->
+    <div class="slide">
+      <div class="card">
+        <div class="card-accent"></div>
+        <div class="card-header">
+          <div class="card-num">03</div>
+        </div>
+        <div class="card-body">
+          <div class="card-cat">Memorial · Forever</div>
+          <h3 class="card-name">Cemetery Memorial Plaque</h3>
+          <p class="card-desc">QR code plaques that link to full memorial pages. Physical and digital stacked — a tribute that speaks their name forever.</p>
+          <div class="card-footer">
+            <div class="card-price">$129
+              <span class="card-price-sub">Plaque + Digital Memorial</span>
+            </div>
+            <a href="cemetery-plaque.html" class="card-cta">Get a Quote</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 04 -->
+    <div class="slide">
+      <div class="card">
+        <div class="card-accent"></div>
+        <div class="card-header">
+          <div class="card-num">04</div>
+        </div>
+        <div class="card-body">
+          <div class="card-cat">Rescue · 805</div>
+          <h3 class="card-name">Pet Legacy Tag</h3>
+          <p class="card-desc">Smart QR tags for your rescue dog. Scan to see their full story, update contact info, connect with local rescue. Legacy includes everyone.</p>
+          <div class="card-footer">
+            <div class="card-price">$24.99 <span style="font-size:0.85em;opacity:0.6;">/ $49.99</span>
+              <span class="card-price-sub">Basic or Premium</span>
+            </div>
+            <a href="pet-tag.html" class="card-cta">Get a Tag</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 05 -->
+    <div class="slide">
+      <div class="card">
+        <div class="card-accent"></div>
+        <div class="card-header">
+          <div class="card-num">05</div>
+        </div>
+        <div class="card-body">
+          <div class="card-cat">Contractor · Legacy</div>
+          <h3 class="card-name">Contractor Legacy Bundle</h3>
+          <p class="card-desc">Full business profile plus 100 QR-coded cards. Hand one out at every job — your work speaks, the card connects them to your story.</p>
+          <div class="card-footer">
+            <div class="card-price">$129
+              <span class="card-price-sub">Profile + 100 QR Cards</span>
+            </div>
+            <a href="business-profile.html" class="card-cta">Get the Bundle</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="dot-nav" id="dotNav">
+    <button class="dot active" data-index="0" aria-label="Product 1"></button>
+    <button class="dot" data-index="1" aria-label="Product 2"></button>
+    <button class="dot" data-index="2" aria-label="Product 3"></button>
+    <button class="dot" data-index="3" aria-label="Product 4"></button>
+    <button class="dot" data-index="4" aria-label="Product 5"></button>
+  </div>
+  <div class="slide-count" id="slideCount">1 / 5</div>
+  <div class="swipe-hint"><span>Swipe to explore</span></div>
+
+</section>
+
+<script>
+const track = document.getElementById('swipeTrack');
+const dots = document.querySelectorAll('.dot');
+const slides = document.querySelectorAll('.slide');
+const countEl = document.getElementById('slideCount');
+let hintDismissed = false;
+
+function updateNav(){
+  const scrollLeft = track.scrollLeft;
+  const slideWidth = slides[0].offsetWidth;
+  const idx = Math.round(scrollLeft / slideWidth);
+  dots.forEach((d,i) => d.classList.toggle('active', i === idx));
+  if(countEl) countEl.textContent = (idx + 1) + ' / ' + slides.length;
+}
+
+track.addEventListener('scroll', () => {
+  updateNav();
+  if(!hintDismissed){
+    hintDismissed = true;
+    const hint = document.querySelector('.swipe-hint');
+    if(hint) hint.style.opacity = '0';
+  }
+}, {passive:true});
+
+dots.forEach(dot => {
+  dot.addEventListener('click', () => {
+    const idx = parseInt(dot.dataset.index);
+    const slideWidth = slides[0].offsetWidth;
+    track.scrollTo({left: slideWidth * idx, behavior:'smooth'});
+  });
+});
+</script>
+
+</body>
+</html>

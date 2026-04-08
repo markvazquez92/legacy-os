@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rescue Registry Portal — My Legacy Continues</title>
+  <meta name="description" content="Complete rescue dog management system. Track behavior, medical history, foster network, and create permanent memorial records.">
+  <link rel="icon" href="logo.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,700;0,800;1,400;1,600&family=DM+Serif+Display:ital@0;1&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* Rescue Portal Specific Styles */
+    .page-hero {
+      background: #1A2B3C;
+      color: #F5F0E8;
+      padding: 130px 3rem 60px;
+    }
+
+    .page-hero h1 {
+      color: #F5F0E8;
+    }
+
+    .page-hero h2 {
+      color: #F5F0E8;
+    }
+
+    .page-subtitle {
+      color: rgba(245,240,232,0.8);
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin: 3rem 0;
+    }
+
+    .feature-card {
+      background: rgba(212,160,32,0.08);
+      border: 1px solid #D4A020;
+      border-radius: 4px;
+      padding: 2rem;
+      transition: all 0.3s;
+    }
+
+    .feature-card:hover {
+      border-color: #E8B840;
+      box-shadow: 0 8px 24px rgba(212,160,32,0.15);
+      transform: translateY(-4px);
+    }
+
+    .feature-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .feature-title {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: 1.2rem;
+      color: #1A2B3C;
+      margin-bottom: 0.8rem;
+      font-weight: 700;
+    }
+
+    .feature-desc {
+      color: #2C2C2C;
+      line-height: 1.7;
+      font-size: 0.95rem;
+    }
+
+    .benefits-section {
+      background: #1A2B3C;
+      color: #F5F0E8;
+      padding: 4rem 3rem;
+      margin: 4rem 0;
+    }
+
+    .benefits-section h2 {
+      color: #F5F0E8;
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+
+    .benefit-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .benefit-item {
+      border-left: 3px solid #D4A020;
+      padding-left: 1.5rem;
+    }
+
+    .benefit-item h3 {
+      color: #E8B840;
+      margin-bottom: 0.5rem;
+    }
+
+    .benefit-item p {
+      color: rgba(245,240,232,0.85);
+      line-height: 1.7;
+    }
+
+    .pricing-section {
+      background: #F5F0E8;
+      padding: 4rem 3rem;
+      text-align: center;
+    }
+
+    .pricing-section h2 {
+      color: #1A2B3C;
+      margin-bottom: 1rem;
+    }
+
+    .price-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      max-width: 1000px;
+      margin: 3rem auto;
+    }
+
+    .price-card {
+      background: white;
+      border: 2px solid #D4A020;
+      border-radius: 4px;
+      padding: 2rem;
+      transition: all 0.3s;
+    }
+
+    .price-card:hover {
+      border-color: #E8B840;
+      box-shadow: 0 12px 40px rgba(212,160,32,0.2);
+      transform: translateY(-4px);
+    }
+
+    .price-card h3 {
+      color: #1A2B3C;
+      margin-bottom: 0.8rem;
+    }
+
+    .price-amount {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: 2rem;
+      color: #D4A020;
+      font-weight: 700;
+      margin: 1.5rem 0;
+    }
+
+    .price-desc {
+      color: #2C2C2C;
+      margin-bottom: 1.5rem;
+      font-size: 0.95rem;
+    }
+
+    .cta-section {
+      background: linear-gradient(135deg, #1A2B3C 0%, #0F1A26 100%);
+      color: #F5F0E8;
+      padding: 4rem 3rem;
+      text-align: center;
+    }
+
+    .cta-section h2 {
+      color: #F5F0E8;
+      margin-bottom: 1.5rem;
+    }
+
+    @media (max-width: 768px) {
+      .page-hero {
+        padding: 100px 1.5rem 60px;
+      }
+
+      .feature-grid,
+      .benefit-list,
+      .price-grid {
+        gap: 1.5rem;
+      }
+
+      .benefits-section,
+      .pricing-section,
+      .cta-section {
+        padding: 3rem 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- NAVIGATION -->
+  <nav>
+    <div class="nav-brand">
+      <img src="logo.png" alt="My Legacy Continues" class="nav-logo">
+      <div class="nav-wordmark">Rescue <em>Registry</em></div>
+    </div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="#features">Features</a>
+      <a href="#benefits">Benefits</a>
+      <a href="#pricing">Pricing</a>
+    </div>
+    <button class="nav-cta" onclick="scrollTo('#contact')">Get Started</button>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div style="max-width: 900px; margin: 0 auto;">
+      <h1 style="font-size: clamp(2rem, 5vw, 3.5rem); margin-bottom: 1rem;">
+        Every Rescue Deserves a <span style="color: #E8B840;">Permanent Record</span>
+      </h1>
+
+      <p class="page-subtitle" style="font-size: 1.1rem; max-width: 700px; margin-bottom: 2rem;">
+        Complete rescue management system. Track behavioral history, medical records, foster networks, and create lasting memorial profiles for dogs. From first rescue to final rest.
+      </p>
+
+      <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+        <button class="btn btn-primary" onclick="scrollTo('#contact')">Request Demo</button>
+        <button class="btn btn-secondary" onclick="scrollTo('#pricing')">View Pricing</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES SECTION -->
+  <section id="features" style="padding: 5rem 3rem; background: #F5F0E8;">
+    <div style="max-width: 1200px; margin: 0 auto;">
+      <h2 style="color: #1A2B3C; text-align: center; margin-bottom: 1rem;">Core Features</h2>
+      <p style="color: #2C2C2C; text-align: center; max-width: 700px; margin: 0 auto 3rem;">
+        Everything your rescue organization needs to track, manage, and memorialize rescue dogs.
+      </p>
+
+      <div class="feature-grid">
+        <div class="feature-card">
+          <div class="feature-icon">🐕</div>
+          <div class="feature-title">Behavioral Journal</div>
+          <div class="feature-desc">Track temperament, training progress, triggers, and personality notes. Build a complete behavioral profile for every dog.</div>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">⚕️</div>
+          <div class="feature-title">Medical History</div>
+          <div class="feature-desc">Complete medical records, vaccinations, surgeries, medications, and vet notes. All in one secure location.</div>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">👥</div>
+          <div class="feature-title">Foster Network</div>
+          <div class="feature-desc">Manage foster families, track placements, communication logs, and adoption updates. Accountability at every step.</div>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">📋</div>
+          <div class="feature-title">Accountability Ledger</div>
+          <div class="feature-desc">Timeline of every decision, every placement, every care change. Complete transparency and documentation.</div>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">🌈</div>
+          <div class="feature-title">Memorial Profiles</div>
+          <div class="feature-desc">Create lasting tribute pages. When a rescue dog passes, their story lives on forever in a beautiful memorial profile.</div>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">🔒</div>
+          <div class="feature-title">Secure & Private</div>
+          <div class="feature-desc">Your rescue data is protected. No ads. No data selling. Just secure storage of what matters.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BENEFITS SECTION -->
+  <section id="benefits" class="benefits-section">
+    <h2>Why Rescue Organizations Choose Us</h2>
+
+    <div class="benefit-list">
+      <div class="benefit-item">
+        <h3>Complete Documentation</h3>
+        <p>Every dog's story from rescue to adoption (or rest). Accountability you can be proud of.</p>
+      </div>
+
+      <div class="benefit-item">
+        <h3>Behavioral Insights</h3>
+        <p>Detailed notes help find the perfect match. Reduce returns. Match dogs with forever homes.</p>
+      </div>
+
+      <div class="benefit-item">
+        <h3>Medical Continuity</h3>
+        <p>Vets, fosters, adopters—everyone has access to complete medical history. Better care from day one.</p>
+      </div>
+
+      <div class="benefit-item">
+        <h3>Foster Coordination</h3>
+        <p>Organize your network. Track placements. Communicate updates. All in one system.</p>
+      </div>
+
+      <div class="benefit-item">
+        <h3>Memorial Legacy</h3>
+        <p>When a rescue dog passes, celebrate their life. Create a permanent tribute they deserve.</p>
+      </div>
+
+      <div class="benefit-item">
+        <h3>Peace of Mind</h3>
+        <p>Rest assured your data is safe, secure, and protected. No ads. No commercialization of rescue work.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING SECTION -->
+  <section id="pricing" class="pricing-section">
+    <h2>Pricing for Rescue Organizations</h2>
+
+    <div class="price-grid">
+      <div class="price-card">
+        <h3>Startup</h3>
+        <p style="color: #2C2C2C; font-size: 0.9rem; margin-bottom: 1rem;">Up to 10 dogs</p>
+        <div class="price-amount">$199<span style="font-size: 0.6rem; color: #2C2C2C;">/mo</span></div>
+        <div class="price-desc">
+          ✓ Behavioral journal<br>
+          ✓ Medical records<br>
+          ✓ Basic reporting<br>
+          ✓ Email support
+        </div>
+        <button class="btn btn-primary" style="width: 100%;">Get Started</button>
+      </div>
+
+      <div class="price-card" style="border-color: #E8B840; transform: scale(1.05);">
+        <h3>Growth</h3>
+        <p style="color: #2C2C2C; font-size: 0.9rem; margin-bottom: 1rem;">Up to 50 dogs</p>
+        <div class="price-amount">$399<span style="font-size: 0.6rem; color: #2C2C2C;">/mo</span></div>
+        <div class="price-desc">
+          ✓ Everything in Startup<br>
+          ✓ Foster network management<br>
+          ✓ Advanced reporting<br>
+          ✓ Multi-user accounts<br>
+          ✓ Priority support
+        </div>
+        <button class="btn btn-primary" style="width: 100%;">Get Started</button>
+      </div>
+
+      <div class="price-card">
+        <h3>Enterprise</h3>
+        <p style="color: #2C2C2C; font-size: 0.9rem; margin-bottom: 1rem;">50+ dogs</p>
+        <div class="price-amount">$799<span style="font-size: 0.6rem; color: #2C2C2C;">/mo</span></div>
+        <div class="price-desc">
+          ✓ Everything in Growth<br>
+          ✓ Unlimited profiles<br>
+          ✓ Custom reporting<br>
+          ✓ Integration support<br>
+          ✓ Dedicated account manager
+        </div>
+        <button class="btn btn-primary" style="width: 100%;">Contact Us</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT / CTA SECTION -->
+  <section id="contact" class="cta-section">
+    <div style="max-width: 700px; margin: 0 auto;">
+      <h2>Ready to Transform Your Rescue Operations?</h2>
+      <p style="margin-bottom: 2rem; font-size: 1.05rem;">
+        Every rescue dog deserves a complete record. Every foster family deserves transparency. Let's build something better.
+      </p>
+
+      <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+        <button class="btn btn-primary" onclick="window.location='mailto:hello@mylegacycontinues.com'">Email For Demo</button>
+        <button class="btn btn-secondary" onclick="window.location='index.html'">Back to Home</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div style="max-width: 1200px; margin: 0 auto;">
+      <img src="logo.png" alt="My Legacy Continues" style="height: 50px; margin-bottom: 1.5rem;">
+
+      <div style="display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap; margin-bottom: 2rem;">
+        <a href="index.html">Home</a>
+        <a href="faq.html">FAQ</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="mailto:hello@mylegacycontinues.com">hello@mylegacycontinues.com</a>
+      </div>
+
+      <div style="border-top: 1px solid rgba(212,160,32,0.2); padding-top: 1.5rem; text-align: center; color: rgba(245,240,232,0.7);">
+        <p style="font-size: 0.85rem;">© 2026 My Legacy Continues. Heritage Preservation & Legacy Services. Santa Maria, CA.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function scrollTo(selector) {
+      const element = document.querySelector(selector);
+      if (element) element.scrollIntoView({ behavior: 'smooth' });
+    }
+  </script>
+</body>
+</html>
