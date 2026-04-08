@@ -1,0 +1,188 @@
+<!--
+  ============================================================
+  HERITAGE BOOK ORDER FORM — FORMSPREE VERSION
+  ============================================================
+  SETUP STEPS:
+  1. Go to formspree.io → sign up free
+  2. Click "New Form" → name it "Heritage Book Orders"
+  3. Copy your form ID (looks like: xyzabcde)
+  4. Replace xqo1rkea below with that ID
+  NOTE: You can use ONE Formspree account for all forms —
+        just create separate forms for each product.
+  ============================================================
+-->
+
+<form
+  action="https://formspree.io/f/xqo1rkea"
+  method="POST"
+  id="heritage-book-form"
+  style="max-width: 600px; margin: 0 auto;"
+>
+  <input type="hidden" name="_subject" value="New Heritage Book Order — My Legacy Continues" />
+  <input type="hidden" name="product" value="Heritage Book" />
+
+  <div style="margin-bottom: 16px;">
+    <label for="family_name">Family Name / Last Name to Feature *</label><br />
+    <input
+      type="text"
+      id="family_name"
+      name="family_name"
+      required
+      placeholder="e.g. The Vazquez Family"
+      style="width: 100%; padding: 10px; margin-top: 4px; box-sizing: border-box;"
+    />
+  </div>
+
+  <div style="margin-bottom: 16px;">
+    <label for="primary_subject">Primary Person(s) This Book Is About *</label><br />
+    <textarea
+      id="primary_subject"
+      name="primary_subject"
+      rows="2"
+      required
+      placeholder="e.g. Maria Elena Vazquez, born 1942 in Jalisco Mexico"
+      style="width: 100%; padding: 10px; margin-top: 4px; box-sizing: border-box;"
+    ></textarea>
+  </div>
+
+  <div style="margin-bottom: 16px;">
+    <label for="time_period">Time Period / Generations to Cover</label><br />
+    <input
+      type="text"
+      id="time_period"
+      name="time_period"
+      placeholder="e.g. 1940s–present, 3 generations"
+      style="width: 100%; padding: 10px; margin-top: 4px; box-sizing: border-box;"
+    />
+  </div>
+
+  <div style="margin-bottom: 16px;">
+    <label for="package">Package Selected *</label><br />
+    <select
+      id="package"
+      name="package"
+      required
+      style="width: 100%; padding: 10px; margin-top: 4px; box-sizing: border-box;"
+    >
+      <option value="">-- Select a Package --</option>
+      <option value="Starter — $297">Starter — $297</option>
+      <option value="Standard — $497">Standard — $497</option>
+      <option value="Premium — $797">Premium — $797</option>
+      <option value="Not sure yet">Not sure yet — I want a consultation</option>
+    </select>
+  </div>
+
+  <div style="margin-bottom: 16px;">
+    <label for="story_summary">Brief Story Summary *</label><br />
+    <textarea
+      id="story_summary"
+      name="story_summary"
+      rows="5"
+      required
+      placeholder="Tell us a little about the story you want to preserve. Where did they come from? What do you want people to remember about them?"
+      style="width: 100%; padding: 10px; margin-top: 4px; box-sizing: border-box;"
+    ></textarea>
+  </div>
+
+  <div style="margin-bottom: 16px;">
+    <label for="photos_available">Do you have photos available? *</label><br />
+    <select
+      id="photos_available"
+      name="photos_available"
+      required
+      style="width: 100%; padding: 10px; margin-top: 4px; box-sizing: border-box;"
+    >
+      <option value="">-- Select --</option>
+      <option value="Yes — many photos">Yes — many photos</option>
+      <option value="Yes — a few photos">Yes — a few photos</option>
+      <option value="No photos — just stories">No photos — just stories</option>
+    </select>
+  </div>
+
+  <div style="margin-bottom: 16px;">
+    <label for="contact_name">Your Name *</label><br />
+    <input
+      type="text"
+      id="contact_name"
+      name="contact_name"
+      required
+      placeholder="Your full name"
+      style="width: 100%; padding: 10px; margin-top: 4px; box-sizing: border-box;"
+    />
+  </div>
+
+  <div style="margin-bottom: 16px;">
+    <label for="email">Your Email *</label><br />
+    <input
+      type="email"
+      id="email"
+      name="email"
+      required
+      placeholder="your@email.com"
+      style="width: 100%; padding: 10px; margin-top: 4px; box-sizing: border-box;"
+    />
+  </div>
+
+  <div style="margin-bottom: 16px;">
+    <label for="phone">Phone Number</label><br />
+    <input
+      type="tel"
+      id="phone"
+      name="phone"
+      placeholder="(805) 000-0000"
+      style="width: 100%; padding: 10px; margin-top: 4px; box-sizing: border-box;"
+    />
+  </div>
+
+  <div style="margin-bottom: 16px;">
+    <label for="timeline">Desired Timeline</label><br />
+    <select
+      id="timeline"
+      name="timeline"
+      style="width: 100%; padding: 10px; margin-top: 4px; box-sizing: border-box;"
+    >
+      <option value="">-- Select --</option>
+      <option value="ASAP">ASAP</option>
+      <option value="Within 1 month">Within 1 month</option>
+      <option value="Within 3 months">Within 3 months</option>
+      <option value="No rush">No rush</option>
+    </select>
+  </div>
+
+  <div style="margin-bottom: 16px;">
+    <label for="notes">Anything Else We Should Know?</label><br />
+    <textarea
+      id="notes"
+      name="notes"
+      rows="3"
+      placeholder="Special requests, dedicated to someone, anniversary deadline, etc."
+      style="width: 100%; padding: 10px; margin-top: 4px; box-sizing: border-box;"
+    ></textarea>
+  </div>
+
+  <div style="margin-bottom: 16px;">
+    <label>
+      <input type="checkbox" name="stripe_paid" value="yes" />
+      I have already paid via Stripe
+    </label>
+  </div>
+
+  <input type="text" name="_gotcha" style="display: none;" />
+  <input type="hidden" name="_next" value="https://mylegacycontinues.com/thank-you.html" />
+
+  <button
+    type="submit"
+    style="
+      background: #2c4a3e;
+      color: white;
+      padding: 14px 32px;
+      border: none;
+      font-size: 16px;
+      cursor: pointer;
+      width: 100%;
+      border-radius: 4px;
+    "
+  >
+    Submit My Order Details
+  </button>
+</form>
