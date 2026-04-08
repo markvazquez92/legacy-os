@@ -1,1286 +1,369 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Rescue Portal — My Legacy Continues</title>
-  <meta name="description" content="Every rescue dog deserves a permanent record. Behavioral journey, medical history, foster network, accountability ledger — from first rescue to final rest. My Legacy Continues." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Karla:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Rescue Partner Portal — My Legacy Continues</title>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #0a0a0a; --bg-deep: #202e1f;
+  --surface: rgba(240,237,230,0.04); --border: rgba(212,175,55,0.15);
+  --gold: #D4AF37; --gold-dim: rgba(212,175,55,0.6);
+  --cream: #f0ede6; --muted: rgba(240,237,230,0.6);
+  --font-head: 'Chakra Petch', sans-serif;
+  --font-emotion: 'Cormorant Garamond', serif;
+  --font-body: 'DM Sans', sans-serif;
+}
+body { background: linear-gradient(180deg, var(--bg) 0%, var(--bg-deep) 100%); color: var(--cream); font-family: var(--font-body); font-size: 16px; line-height: 1.6; min-height: 100vh; }
+nav { display: flex; align-items: center; justify-content: space-between; padding: 1.25rem 2rem; border-bottom: 1px solid rgba(240,237,230,0.08); flex-wrap: wrap; gap: 1rem; }
+nav a.logo img { height: 40px; }
+nav ul { list-style: none; display: flex; flex-wrap: wrap; gap: 1.5rem; }
+nav ul a { color: var(--muted); text-decoration: none; font-size: 0.875rem; transition: color 0.2s; }
+nav ul a:hover { color: var(--gold); }
 
-    :root {
-      --bg:          #0a0a0a;
-      --bg-card:     #111111;
-      --bg-surface:  #141414;
-      --bg-nav:      #0d0d0d;
-      --gold:        #C9920A;
-      --gold-light:  #E5A812;
-      --gold-dim:    rgba(201,146,10,0.5);
-      --gold-border: rgba(201,146,10,0.22);
-      --gold-wash:   rgba(201,146,10,0.07);
-      --heading:     #F5F0E8;
-      --text:        #D8D0BF;
-      --text-muted:  #8A8070;
-      --border:      rgba(255,255,255,0.07);
-      --border-gold: rgba(201,146,10,0.2);
-      --serif: 'Cormorant Garamond', Georgia, serif;
-      --sans: 'Karla', sans-serif;
-      --red-alert: #C94A0A;
-    }
+.hero { text-align: center; padding: 60px 24px 20px; max-width: 750px; margin: 0 auto; }
+.hero-badge { display: inline-block; font-family: var(--font-head); font-size: 0.7rem; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); border: 1px solid var(--border); padding: 6px 16px; border-radius: 2px; margin-bottom: 20px; }
+.hero h1 { font-family: var(--font-head); font-size: 2rem; font-weight: 700; color: var(--cream); margin-bottom: 16px; line-height: 1.2; }
+.hero h1 em { font-family: var(--font-emotion); font-style: italic; font-weight: 400; }
+.hero p { font-size: 1rem; color: var(--muted); max-width: 560px; margin: 0 auto; }
 
-    body {
-      font-family: var(--sans);
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.75;
-      -webkit-font-smoothing: antialiased;
-    }
+/* WHAT WE OFFER SECTION */
+.offer-section { max-width: 800px; margin: 0 auto; padding: 40px 24px 20px; }
+.offer-section h2 { font-family: var(--font-head); font-size: 1.2rem; color: var(--gold); text-align: center; margin-bottom: 24px; letter-spacing: 1px; }
+.offer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-bottom: 32px; }
+.offer-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 20px 18px; text-align: center; }
+.offer-card h3 { font-family: var(--font-head); font-size: 0.95rem; color: var(--cream); margin-bottom: 8px; }
+.offer-card p { font-size: 0.85rem; color: var(--muted); line-height: 1.5; }
+.offer-card .price-tag { display: inline-block; font-family: var(--font-head); font-size: 0.75rem; color: var(--gold); border: 1px solid var(--border); padding: 3px 10px; border-radius: 2px; margin-top: 8px; }
 
-    a { color: inherit; text-decoration: none; }
-    img { max-width: 100%; height: auto; display: block; }
+/* MISSION */
+.mission { max-width: 700px; margin: 0 auto; padding: 20px 24px 40px; text-align: center; }
+.mission p { font-family: var(--font-emotion); font-style: italic; font-size: 1.1rem; color: var(--muted); line-height: 1.6; }
+.mission-divider { max-width: 700px; margin: 0 auto; height: 1px; background: linear-gradient(90deg, transparent, rgba(212,175,55,0.2), transparent); }
 
-    /* ── NAV ── */
-    nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 900;
-      height: 68px;
-      background: rgba(10,10,10,0.96);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border);
-      display: flex; align-items: center;
-      padding: 0 32px;
-      gap: 32px;
-    }
-    .nav-logo { height: 34px; }
-    .nav-links { display: flex; gap: 28px; list-style: none; margin-left: auto; }
-    .nav-links a { font-size: 12px; letter-spacing: 0.08em; color: var(--text-muted); transition: color 0.2s; }
-    .nav-links a:hover { color: var(--heading); }
-    .nav-links a.active { color: var(--gold); }
+/* TAB NAV */
+.tab-nav { display: flex; justify-content: center; gap: 0; max-width: 800px; margin: 40px auto 40px; border-bottom: 1px solid rgba(240,237,230,0.1); flex-wrap: wrap; }
+.tab-btn { background: none; border: none; color: var(--muted); font-family: var(--font-head); font-size: 0.8rem; letter-spacing: 1px; padding: 14px 18px; cursor: pointer; border-bottom: 2px solid transparent; transition: all 0.2s; white-space: nowrap; }
+.tab-btn:hover { color: var(--cream); }
+.tab-btn.active { color: var(--gold); border-bottom-color: var(--gold); }
 
-    /* ── HERO ── */
-    .hero {
-      padding: 160px 24px 100px;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-      border-bottom: 1px solid var(--border);
-    }
-    .hero::before {
-      content: '';
-      position: absolute; inset: 0;
-      background:
-        radial-gradient(ellipse 60% 50% at 50% 0%, rgba(201,146,10,0.08) 0%, transparent 70%),
-        radial-gradient(ellipse 40% 60% at 20% 80%, rgba(201,74,10,0.04) 0%, transparent 60%);
-      pointer-events: none;
-    }
-    .hero-paw {
-      font-size: 48px;
-      margin-bottom: 24px;
-      opacity: 0.6;
-    }
-    .hero-eyebrow {
-      font-family: var(--sans);
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 20px;
-    }
-    .hero h1 {
-      font-family: var(--serif);
-      font-size: clamp(2.6rem, 6vw, 4.4rem);
-      font-weight: 700;
-      color: var(--heading);
-      line-height: 1.1;
-      max-width: 820px;
-      margin: 0 auto 24px;
-    }
-    .hero h1 em {
-      font-style: italic;
-      color: var(--gold);
-    }
-    .hero-sub {
-      font-size: 1.1rem;
-      color: var(--text-muted);
-      max-width: 580px;
-      margin: 0 auto 16px;
-      line-height: 1.7;
-    }
-    .hero-mission {
-      font-family: var(--serif);
-      font-size: 1.2rem;
-      font-style: italic;
-      color: var(--text);
-      max-width: 640px;
-      margin: 0 auto 40px;
-      padding: 20px 0;
-      border-top: 1px solid var(--border-gold);
-      border-bottom: 1px solid var(--border-gold);
-    }
-    .hero-ctas { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+.tab-panel { display: none; max-width: 700px; margin: 0 auto; padding: 0 24px 60px; }
+.tab-panel.active { display: block; }
+.form-section { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 32px 28px; margin-bottom: 24px; }
+.form-section-title { font-family: var(--font-head); font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; padding-bottom: 10px; border-bottom: 1px solid rgba(212,175,55,0.1); }
+.field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+.field-group { margin-bottom: 16px; }
+.field-group label { display: block; font-size: 0.85rem; color: var(--cream); margin-bottom: 6px; }
+.req { color: var(--gold); }
+.field-group input, .field-group select, .field-group textarea { width: 100%; background: rgba(240,237,230,0.06); border: 1px solid rgba(240,237,230,0.12); border-radius: 6px; padding: 10px 14px; color: var(--cream); font-family: var(--font-body); font-size: 0.95rem; transition: border-color 0.2s; }
+.field-group input:focus, .field-group select:focus, .field-group textarea:focus { outline: none; border-color: var(--gold); }
+.field-group textarea { min-height: 80px; resize: vertical; }
+.field-group select { cursor: pointer; }
+.field-group select option { background: #1a1a1a; }
+.submit-btn { display: block; width: 100%; background: var(--gold); color: #0a0a0a; font-family: var(--font-head); font-size: 0.95rem; font-weight: 600; letter-spacing: 1px; border: none; padding: 14px 24px; border-radius: 6px; cursor: pointer; transition: background 0.2s; margin-top: 8px; }
+.submit-btn:hover { background: #e6c04a; }
+.form-note { text-align: center; font-size: 0.85rem; color: var(--muted); margin-top: 12px; }
 
-    .btn {
-      display: inline-block;
-      font-family: var(--sans);
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      padding: 16px 32px;
-      border: none;
-      cursor: pointer;
-      transition: all 0.22s ease;
-      text-decoration: none;
-      white-space: nowrap;
-      border-radius: 2px;
-    }
-    .btn-gold { background: var(--gold); color: #0a0a0a; }
-    .btn-gold:hover { background: var(--gold-light); transform: translateY(-2px); }
-    .btn-outline { background: transparent; color: var(--gold); border: 1.5px solid var(--gold-border); }
-    .btn-outline:hover { border-color: var(--gold); background: var(--gold-wash); }
+footer { text-align: center; padding: 40px 24px; border-top: 1px solid rgba(240,237,230,0.08); font-size: 0.8rem; color: var(--muted); }
+footer img { height: 32px; display: block; margin: 0 auto 12px; }
+footer a { color: var(--gold); text-decoration: none; }
 
-    /* ── STAT BAR ── */
-    .stat-bar {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      border-bottom: 1px solid var(--border);
-    }
-    .stat-cell {
-      padding: 36px 20px;
-      text-align: center;
-      border-right: 1px solid var(--border);
-    }
-    .stat-cell:last-child { border-right: none; }
-    .stat-num {
-      display: block;
-      font-family: var(--serif);
-      font-size: 2.4rem;
-      font-weight: 700;
-      color: var(--gold);
-      line-height: 1;
-      margin-bottom: 6px;
-    }
-    .stat-label {
-      font-size: 11px;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-    }
-
-    /* ── SECTION WRAPPER ── */
-    .section { padding: 80px 24px; }
-    .section-inner { max-width: 1080px; margin: 0 auto; }
-    .section-eyebrow {
-      font-size: 11px;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 12px;
-    }
-    .section-title {
-      font-family: var(--serif);
-      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
-      font-weight: 700;
-      color: var(--heading);
-      line-height: 1.2;
-      margin-bottom: 16px;
-    }
-    .section-title em { font-style: italic; color: var(--gold); }
-    .section-body {
-      font-size: 1rem;
-      color: var(--text-muted);
-      max-width: 560px;
-      line-height: 1.8;
-      margin-bottom: 48px;
-    }
-    .section-divider {
-      border: none;
-      border-top: 1px solid var(--border);
-      margin: 0;
-    }
-
-    /* ── CRISIS ALERT BANNER ── */
-    .crisis-banner {
-      background: rgba(201,74,10,0.08);
-      border: 1px solid rgba(201,74,10,0.25);
-      border-radius: 4px;
-      padding: 28px 32px;
-      margin-bottom: 48px;
-      display: flex;
-      gap: 20px;
-      align-items: flex-start;
-    }
-    .crisis-icon { font-size: 28px; flex-shrink: 0; margin-top: 2px; }
-    .crisis-title {
-      font-family: var(--serif);
-      font-size: 1.2rem;
-      font-weight: 700;
-      color: #E87040;
-      margin-bottom: 6px;
-    }
-    .crisis-text {
-      font-size: 0.92rem;
-      color: var(--text-muted);
-      line-height: 1.7;
-    }
-    .crisis-text strong { color: var(--text); }
-
-    /* ── FEATURE GRID ── */
-    .feature-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 2px;
-      background: var(--border);
-      border: 1px solid var(--border);
-      border-radius: 4px;
-      overflow: hidden;
-    }
-    .feature-card {
-      background: var(--bg-card);
-      padding: 36px 32px;
-      transition: background 0.2s;
-    }
-    .feature-card:hover { background: var(--bg-surface); }
-    .feature-num {
-      font-family: var(--serif);
-      font-size: 2.2rem;
-      font-weight: 700;
-      color: var(--gold-dim);
-      line-height: 1;
-      margin-bottom: 16px;
-    }
-    .feature-title {
-      font-family: var(--serif);
-      font-size: 1.15rem;
-      font-weight: 700;
-      color: var(--heading);
-      margin-bottom: 10px;
-    }
-    .feature-desc {
-      font-size: 0.88rem;
-      color: var(--text-muted);
-      line-height: 1.7;
-    }
-    .feature-tag {
-      display: inline-block;
-      margin-top: 14px;
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--gold);
-      background: var(--gold-wash);
-      border: 1px solid var(--gold-border);
-      padding: 4px 10px;
-      border-radius: 2px;
-    }
-    .feature-tag-live {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      margin-top: 14px;
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: #4CAF7D;
-      background: rgba(10,140,60,0.08);
-      border: 1px solid rgba(10,140,60,0.25);
-      padding: 4px 10px;
-      border-radius: 2px;
-    }
-    .feature-tag-live::before {
-      content: '';
-      width: 6px; height: 6px;
-      border-radius: 50%;
-      background: #4CAF7D;
-      animation: pulse-green 2s infinite;
-      flex-shrink: 0;
-    }
-    @keyframes pulse-green {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.3; }
-    }
-    .feature-tag-soon {
-      display: inline-block;
-      margin-top: 14px;
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.1);
-      padding: 4px 10px;
-      border-radius: 2px;
-    }
-    .feature-card-soon {
-      opacity: 0.7;
-    }
-    .feature-card-soon:hover { opacity: 0.85; }
-
-    /* ── JOURNEY TIMELINE ── */
-    .journey-section {
-      background: var(--bg-surface);
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-    }
-    .timeline {
-      display: flex;
-      flex-direction: column;
-      gap: 0;
-      position: relative;
-    }
-    .timeline::before {
-      content: '';
-      position: absolute;
-      left: 28px;
-      top: 0; bottom: 0;
-      width: 1px;
-      background: var(--border-gold);
-    }
-    .timeline-item {
-      display: flex;
-      gap: 28px;
-      padding: 32px 0;
-      border-bottom: 1px solid var(--border);
-      align-items: flex-start;
-      position: relative;
-    }
-    .timeline-item:last-child { border-bottom: none; }
-    .timeline-dot {
-      width: 56px;
-      height: 56px;
-      border-radius: 50%;
-      background: var(--bg-card);
-      border: 1.5px solid var(--gold-border);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 22px;
-      flex-shrink: 0;
-      position: relative;
-      z-index: 1;
-    }
-    .timeline-content { flex: 1; padding-top: 6px; }
-    .timeline-phase {
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 6px;
-    }
-    .timeline-title {
-      font-family: var(--serif);
-      font-size: 1.3rem;
-      font-weight: 700;
-      color: var(--heading);
-      margin-bottom: 8px;
-    }
-    .timeline-desc {
-      font-size: 0.9rem;
-      color: var(--text-muted);
-      line-height: 1.7;
-    }
-
-    /* ── 3-3-3 SECTION ── */
-    .checkin-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-      gap: 16px;
-    }
-    .checkin-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 3px;
-      padding: 28px 24px;
-      position: relative;
-    }
-    .checkin-card.active {
-      border-color: var(--gold-border);
-      background: var(--gold-wash);
-    }
-    .checkin-time {
-      font-family: var(--serif);
-      font-size: 1.6rem;
-      font-weight: 700;
-      color: var(--gold);
-      margin-bottom: 8px;
-    }
-    .checkin-title {
-      font-size: 0.92rem;
-      font-weight: 700;
-      color: var(--heading);
-      margin-bottom: 6px;
-    }
-    .checkin-desc {
-      font-size: 0.82rem;
-      color: var(--text-muted);
-      line-height: 1.6;
-    }
-
-    /* ── ACCOUNTABILITY SECTION ── */
-    .accountability-section {
-      background: var(--bg);
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-    }
-    .ledger-preview {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 4px;
-      overflow: hidden;
-      font-size: 13px;
-    }
-    .ledger-header {
-      display: grid;
-      grid-template-columns: 2fr 1fr 1.5fr 1fr 1fr;
-      background: var(--bg-surface);
-      border-bottom: 1px solid var(--border);
-      padding: 12px 20px;
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      gap: 12px;
-    }
-    .ledger-row {
-      display: grid;
-      grid-template-columns: 2fr 1fr 1.5fr 1fr 1fr;
-      padding: 16px 20px;
-      border-bottom: 1px solid var(--border);
-      align-items: center;
-      gap: 12px;
-      transition: background 0.15s;
-    }
-    .ledger-row:last-child { border-bottom: none; }
-    .ledger-row:hover { background: var(--bg-surface); }
-    .ledger-dog { font-weight: 600; color: var(--heading); }
-    .ledger-status {
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      padding: 3px 8px;
-      border-radius: 2px;
-      display: inline-block;
-    }
-    .status-adopted { background: rgba(10,140,60,0.15); color: #4CAF7D; border: 1px solid rgba(10,140,60,0.25); }
-    .status-foster  { background: rgba(201,146,10,0.1); color: var(--gold); border: 1px solid var(--gold-border); }
-    .status-intake  { background: rgba(100,100,180,0.12); color: #9090D0; border: 1px solid rgba(100,100,180,0.25); }
-    .status-memorial{ background: rgba(180,100,180,0.1); color: #C090C0; border: 1px solid rgba(180,100,180,0.2); }
-    .ledger-muted { color: var(--text-muted); font-size: 12px; }
-
-    /* ── PARTNER SECTION ── */
-    .partner-section {
-      background: var(--bg-surface);
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-    }
-    .partner-inner {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 64px;
-      align-items: center;
-    }
-    .partner-quote {
-      font-family: var(--serif);
-      font-size: 1.5rem;
-      font-style: italic;
-      color: var(--heading);
-      line-height: 1.5;
-      margin-bottom: 20px;
-    }
-    .partner-attrib {
-      font-size: 12px;
-      letter-spacing: 0.1em;
-      color: var(--text-muted);
-      text-transform: uppercase;
-    }
-    .partner-benefits { list-style: none; display: flex; flex-direction: column; gap: 14px; }
-    .partner-benefit {
-      display: flex;
-      gap: 14px;
-      align-items: flex-start;
-      font-size: 0.92rem;
-      color: var(--text);
-      line-height: 1.6;
-    }
-    .benefit-check {
-      color: var(--gold);
-      font-size: 16px;
-      flex-shrink: 0;
-      margin-top: 2px;
-    }
-
-    /* ── REVENUE SHARE ── */
-    .revenue-block {
-      background: var(--gold-wash);
-      border: 1px solid var(--gold-border);
-      border-radius: 4px;
-      padding: 36px 40px;
-      text-align: center;
-      margin-top: 48px;
-    }
-    .revenue-pct {
-      font-family: var(--serif);
-      font-size: 4rem;
-      font-weight: 700;
-      color: var(--gold);
-      line-height: 1;
-      margin-bottom: 8px;
-    }
-    .revenue-label {
-      font-size: 14px;
-      color: var(--text-muted);
-      max-width: 400px;
-      margin: 0 auto;
-      line-height: 1.6;
-    }
-
-    /* ── CTA SECTION ── */
-    .cta-section {
-      padding: 100px 24px;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-    .cta-section::before {
-      content: '';
-      position: absolute; inset: 0;
-      background: radial-gradient(ellipse 60% 60% at 50% 50%, rgba(201,146,10,0.06) 0%, transparent 70%);
-      pointer-events: none;
-    }
-    .cta-title {
-      font-family: var(--serif);
-      font-size: clamp(2rem, 4vw, 3.2rem);
-      font-weight: 700;
-      color: var(--heading);
-      line-height: 1.2;
-      margin-bottom: 20px;
-    }
-    .cta-title em { font-style: italic; color: var(--gold); }
-    .cta-sub {
-      font-size: 1rem;
-      color: var(--text-muted);
-      max-width: 480px;
-      margin: 0 auto 36px;
-      line-height: 1.7;
-    }
-    .cta-fine {
-      font-size: 12px;
-      color: var(--text-muted);
-      margin-top: 20px;
-      letter-spacing: 0.04em;
-    }
-
-    /* ── FOOTER ── */
-    footer {
-      border-top: 1px solid var(--border);
-      padding: 40px 24px;
-      text-align: center;
-    }
-    .footer-logo { height: 28px; margin: 0 auto 16px; }
-    .footer-copy {
-      font-size: 12px;
-      color: var(--text-muted);
-      letter-spacing: 0.06em;
-    }
-
-    /* ── RESPONSIVE ── */
-    @media (max-width: 768px) {
-      .stat-bar { grid-template-columns: repeat(2, 1fr); }
-      .stat-cell:nth-child(2) { border-right: none; }
-      .stat-cell:nth-child(3) { border-right: 1px solid var(--border); }
-      .timeline::before { left: 20px; }
-      .timeline-dot { width: 44px; height: 44px; font-size: 18px; }
-      .ledger-header, .ledger-row { grid-template-columns: 2fr 1fr 1fr; }
-      .ledger-header span:nth-child(3),
-      .ledger-header span:nth-child(5),
-      .ledger-row div:nth-child(3),
-      .ledger-row div:nth-child(5) { display: none; }
-      .partner-inner { grid-template-columns: 1fr; gap: 40px; }
-      nav { padding: 0 16px; }
-      .nav-links { display: none; }
-    }
-
-    /* ── ANIMATIONS ── */
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-    .hero > * { animation: fadeUp 0.6s ease both; }
-    .hero-paw          { animation-delay: 0.05s; }
-    .hero-eyebrow      { animation-delay: 0.1s; }
-    .hero h1           { animation-delay: 0.18s; }
-    .hero-sub          { animation-delay: 0.26s; }
-    .hero-mission      { animation-delay: 0.32s; }
-    .hero-ctas         { animation-delay: 0.4s; }
-  </style>
+@media (max-width: 600px) {
+  .field-row { grid-template-columns: 1fr; }
+  .tab-btn { font-size: 0.7rem; padding: 10px 10px; }
+  .hero h1 { font-size: 1.5rem; }
+  .offer-grid { grid-template-columns: 1fr; }
+}
+</style>
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
-  <a href="index.html"><img src="logo.png" alt="My Legacy Continues" class="nav-logo" /></a>
-  <ul class="nav-links">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="cemetery-plaque.html">Cemetery Plaque</a></li>
-    <li><a href="heritage-book.html">Heritage Book</a></li>
-    <li><a href="pet-tag.html">Pet Tag</a></li>
-    <li><a href="business-profile.html">Business Profile</a></li>
-    <li><a href="rescue-portal.html" class="active">Rescue Portal</a></li>
-    <li><a href="portal.html">Vault</a></li>
+  <a class="logo" href="https://mylegacycontinues.com/index.html"><img src="https://mylegacycontinues.com/logo.png" alt="My Legacy Continues"/></a>
+  <ul>
+    <li><a href="https://mylegacycontinues.com/index.html">Home</a></li>
+    <li><a href="https://mylegacycontinues.com/rescue-registry.html">Rescue Registry</a></li>
+    <li><a href="https://mylegacycontinues.com/pet-tag.html">Pet Tag</a></li>
+    <li><a href="https://mylegacycontinues.com/portal.html">Vault</a></li>
   </ul>
 </nav>
 
 <!-- HERO -->
-<section class="hero">
-  <div class="hero-paw">🐾</div>
-  <p class="hero-eyebrow">My Legacy Continues — Rescue Portal</p>
-  <h1>Every Dog Deserves a<br><em>Permanent Story.</em></h1>
-  <p class="hero-sub">
-    Not a shelter listing. Not a Facebook post. A permanent, living record — from the day they were rescued to the day they're remembered. Free for every rescue. Forever.
-  </p>
-  <p class="hero-mission">
-    "Our support does not end at adoption. We remain active in our dogs' lives." — That's the mission. This is the infrastructure to make it real.
-  </p>
-  <div class="hero-ctas">
-    <a href="/cdn-cgi/l/email-protection#c6abbfaaa3a1a7a5bfa5a9a8b2afa8b3a3b586a1aba7afaae8a5a9abf9b5b3a4aca3a5b2fb94a3b5a5b3a3e696a7b4b2a8a3b4e68fa8b7b3afb4bf" class="btn btn-gold">Become a Rescue Partner</a>
-    <a href="#features" class="btn btn-outline">See What We Built</a>
-  </div>
-</section>
+<div class="hero">
+  <div class="hero-badge">Rescue Partner Portal</div>
+  <h1>Tools for Rescues. <em>Built for Free.</em></h1>
+  <p>Submit new dogs, sign up fosters, coordinate transport, track adoptions, and sponsor care — all from one page. Every rescue partner gets full access. No cost. No catch.</p>
+</div>
 
-<!-- STAT BAR -->
-<div class="stat-bar">
-  <div class="stat-cell">
-    <span class="stat-num">35%</span>
-    <span class="stat-label">of returns caused by lost behavioral history</span>
-  </div>
-  <div class="stat-cell">
-    <span class="stat-num">8.68</span>
-    <span class="stat-label">Days avg — when most dogs are returned</span>
-  </div>
-  <div class="stat-cell">
-    <span class="stat-num">316</span>
-    <span class="stat-label">Animals seized at Rock N Pawz — 3 yrs of ignored complaints</span>
-  </div>
-  <div class="stat-cell">
-    <span class="stat-num">$0</span>
-    <span class="stat-label">Cost to rescue partners. Always.</span>
+<!-- WHAT WE OFFER RESCUES -->
+<div class="offer-section">
+  <h2>What Every Rescue Partner Gets</h2>
+  <div class="offer-grid">
+    <div class="offer-card">
+      <h3>Free Dog Profiles</h3>
+      <p>Every dog in your care gets a permanent profile page — photos, personality, medical info, adoption link. We build it. You just submit the info.</p>
+      <div class="price-tag">Free — Always</div>
+    </div>
+    <div class="offer-card">
+      <h3>QR Tag Transfer</h3>
+      <p>When a dog gets adopted, the profile stays live. New owner gets a QR tag for the collar — one scan brings them home if they ever get lost.</p>
+      <div class="price-tag">Tag at cost to adopter</div>
+    </div>
+    <div class="offer-card">
+      <h3>Transport Coordination</h3>
+      <p>Post transport needs. Volunteers claim legs of the route. Every handoff confirmed. No more organizing relays through DMs and Facebook groups.</p>
+      <div class="price-tag">Free — Always</div>
+    </div>
+    <div class="offer-card">
+      <h3>Revenue Share</h3>
+      <p>A portion of every pet tag sale goes directly to our rescue partners. No middleman. No platform fees. Your dogs generate support just by being listed.</p>
+      <div class="price-tag">Direct to you</div>
+    </div>
+    <div class="offer-card">
+      <h3>Sponsor a Dog</h3>
+      <p>Supporters can sponsor a specific dog's medical care, transport, or training. Full transparency. Their name goes on the profile as a guardian.</p>
+      <div class="price-tag">Coming Soon</div>
+    </div>
+    <div class="offer-card">
+      <h3>Adoption Follow-Up</h3>
+      <p>Automated check-ins at 2 weeks, 1 month, 3 months. New owners submit updates and photos. You stay connected to every dog you placed.</p>
+      <div class="price-tag">Free — Always</div>
+    </div>
   </div>
 </div>
 
-<!-- WHY THIS EXISTS -->
-<section class="section">
-  <div class="section-inner">
-    <p class="section-eyebrow">Why We Built This</p>
-    <h2 class="section-title">Adoption Was Never<br>the <em>End</em> of the Story.</h2>
-    <p class="section-body">
-      Every rescue platform in existence treats adoption as the finish line — the dog's record closes, the foster's connection disappears, the community scatters. The dog's full story — where they came from, how far they came, who saved them — gets lost.
-      <br><br>
-      My Legacy Continues is different. We built the infrastructure that the rescue world has been asking for but nobody has ever built: a dog-centric platform where every profile stays open, every person in that dog's journey stays connected, and the story never disappears — even after the dog is gone.
-    </p>
+<!-- MISSION -->
+<div class="mission">
+  <p>When the Lake Hughes fire hit, animals were displaced with no coordination system. No profiles. No tracking. No way to reunite families with their pets. We built My Legacy Continues so that never happens again. Every rescue dog gets a permanent record. Every transport gets tracked. Every adoption gets followed up. This is the system that should have existed years ago — and we're giving it to rescues for free.</p>
+</div>
+<div class="mission-divider"></div>
 
-    <div class="crisis-banner">
-      <div class="crisis-icon">⚠️</div>
-      <div>
-        <p class="crisis-title">Rock N Pawz — What Accountability Looks Like When It Fails</p>
-        <p class="crisis-text">
-          On March 20, 2026, LA County seized <strong>316 animals</strong> from a property zoned for four. Neighbors had been filing complaints since 2023. Three years. The rescue had a website, Instagram, and a 501(c)(3) — appearing completely legitimate while animals suffered. <strong>This is what happens when there's no public record of intake vs. outcome.</strong> Our Accountability Ledger exists so this never goes unnoticed again.
-        </p>
+<!-- TAB NAVIGATION -->
+<div class="tab-nav">
+  <button class="tab-btn active" onclick="showTab('intake')">Dog Intake</button>
+  <button class="tab-btn" onclick="showTab('foster')">Foster Sign-Up</button>
+  <button class="tab-btn" onclick="showTab('followup')">Adoption Follow-Up</button>
+  <button class="tab-btn" onclick="showTab('transport')">Transport Request</button>
+  <button class="tab-btn" onclick="showTab('volunteer')">Volunteer</button>
+</div>
+
+<!-- FORM 1: DOG INTAKE -->
+<div class="tab-panel active" id="panel-intake">
+  <form action="https://formspree.io/f/xzzpqjle" method="POST">
+    <input type="hidden" name="_form_type" value="Dog Intake"/>
+    <div class="form-section">
+      <div class="form-section-title">Dog Information</div>
+      <div class="field-row">
+        <div class="field-group"><label>Dog's Name <span class="req">*</span></label><input type="text" name="dog_name" required placeholder="Name or shelter name"/></div>
+        <div class="field-group"><label>Breed <span class="req">*</span></label><input type="text" name="breed" required placeholder="e.g. American Bully / Pit Mix"/></div>
+      </div>
+      <div class="field-row">
+        <div class="field-group"><label>Age</label><input type="text" name="age" placeholder="e.g. 3 years, puppy, senior"/></div>
+        <div class="field-group"><label>Sex</label><select name="sex"><option value="">Select</option><option>Male</option><option>Female</option><option>Unknown</option></select></div>
+      </div>
+      <div class="field-row">
+        <div class="field-group"><label>Size</label><select name="size"><option value="">Select</option><option>Small (under 25 lbs)</option><option>Medium (25-50 lbs)</option><option>Large (50-80 lbs)</option><option>XL (80+ lbs)</option></select></div>
+        <div class="field-group"><label>Color / Markings</label><input type="text" name="color" placeholder="e.g. Brindle, white chest"/></div>
+      </div>
+      <div class="field-row">
+        <div class="field-group"><label>Spayed / Neutered</label><select name="fixed"><option value="">Select</option><option>Yes</option><option>No</option><option>Unknown</option></select></div>
+        <div class="field-group"><label>Intake Date</label><input type="date" name="intake_date"/></div>
+      </div>
+      <div class="field-group"><label>Current Location</label><input type="text" name="location" placeholder="City, State or shelter name"/></div>
+    </div>
+    <div class="form-section">
+      <div class="form-section-title">Medical & Behavior</div>
+      <div class="field-group"><label>Medical Notes</label><textarea name="medical" placeholder="Vaccines, heartworm status, injuries, medications, allergies, special needs"></textarea></div>
+      <div class="field-group"><label>Personality & Behavior</label><textarea name="personality" placeholder="Friendly? Shy? Good with kids? Energy level? Training? Any behavioral notes the adopter should know?"></textarea></div>
+      <div class="field-row">
+        <div class="field-group"><label>Good With Kids</label><select name="good_with_kids"><option value="">Select</option><option>Yes</option><option>No</option><option>Unknown</option></select></div>
+        <div class="field-group"><label>Good With Dogs</label><select name="good_with_dogs"><option value="">Select</option><option>Yes</option><option>No</option><option>Unknown</option></select></div>
+      </div>
+      <div class="field-row">
+        <div class="field-group"><label>Good With Cats</label><select name="good_with_cats"><option value="">Select</option><option>Yes</option><option>No</option><option>Unknown</option></select></div>
+        <div class="field-group"><label>Energy Level</label><select name="energy"><option value="">Select</option><option>Low</option><option>Medium</option><option>High</option></select></div>
+      </div>
+      <div class="field-group"><label>Special Needs</label><textarea name="special_needs" placeholder="Behavioral issues, dietary restrictions, ongoing medical treatment, anything a foster or adopter needs to know"></textarea></div>
+    </div>
+    <div class="form-section">
+      <div class="form-section-title">Rescue Partner Info</div>
+      <div class="field-row">
+        <div class="field-group"><label>Rescue / Organization <span class="req">*</span></label><input type="text" name="rescue_name" required placeholder="e.g. Underdog Heroes"/></div>
+        <div class="field-group"><label>Contact Name <span class="req">*</span></label><input type="text" name="contact_name" required/></div>
+      </div>
+      <div class="field-row">
+        <div class="field-group"><label>Email <span class="req">*</span></label><input type="email" name="email" required/></div>
+        <div class="field-group"><label>Phone</label><input type="tel" name="phone" placeholder="(000) 000-0000"/></div>
+      </div>
+      <div class="field-group"><label>Adoption Listing URL (Petfinder, Adopt-a-Pet, etc.)</label><input type="url" name="adoption_url" placeholder="https://..."/></div>
+      <div class="field-group"><label>Photo Link or Notes</label><textarea name="photo_notes" placeholder="Google Drive, Dropbox, Instagram — paste a link to photos or tell us what you'll send"></textarea></div>
+      <div class="field-group"><label>Does this dog need transport?</label><select name="needs_transport"><option value="">Select</option><option>Yes — submit a transport request after this form</option><option>No — dog is at the rescue location</option><option>Maybe — still figuring it out</option></select></div>
+    </div>
+    <button type="submit" class="submit-btn">Submit Dog Intake →</button>
+    <p class="form-note">We'll build their profile within 48 hours and send you the live link for review.</p>
+  </form>
+</div>
+
+<!-- FORM 2: FOSTER SIGN-UP -->
+<div class="tab-panel" id="panel-foster">
+  <form action="https://formspree.io/f/xzzpqjle" method="POST">
+    <input type="hidden" name="_form_type" value="Foster Sign-Up"/>
+    <div class="form-section">
+      <div class="form-section-title">Your Information</div>
+      <div class="field-row">
+        <div class="field-group"><label>Full Name <span class="req">*</span></label><input type="text" name="foster_name" required/></div>
+        <div class="field-group"><label>Phone <span class="req">*</span></label><input type="tel" name="phone" required placeholder="(000) 000-0000"/></div>
+      </div>
+      <div class="field-group"><label>Email <span class="req">*</span></label><input type="email" name="email" required/></div>
+      <div class="field-group"><label>City / Area</label><input type="text" name="city" placeholder="e.g. Riverside, CA"/></div>
+    </div>
+    <div class="form-section">
+      <div class="form-section-title">Your Home Setup</div>
+      <div class="field-row">
+        <div class="field-group"><label>Home Type</label><select name="home_type"><option value="">Select</option><option>House with yard</option><option>House without yard</option><option>Apartment / Condo</option><option>Other</option></select></div>
+        <div class="field-group"><label>Other Pets</label><select name="other_pets"><option value="">Select</option><option>None</option><option>Dogs only</option><option>Cats only</option><option>Dogs and cats</option><option>Other animals</option></select></div>
+      </div>
+      <div class="field-row">
+        <div class="field-group"><label>Kids in Home</label><select name="kids"><option value="">Select</option><option>No kids</option><option>Kids under 5</option><option>Kids 5-12</option><option>Teens</option></select></div>
+        <div class="field-group"><label>Foster Experience</label><select name="experience"><option value="">Select</option><option>First time foster</option><option>Fostered 1-3 dogs</option><option>Experienced (4+)</option></select></div>
+      </div>
+      <div class="field-row">
+        <div class="field-group"><label>What size dog?</label><select name="size_pref"><option value="">Select</option><option>Small (under 25 lbs)</option><option>Medium (25-50 lbs)</option><option>Large (50-80 lbs)</option><option>XL (80+ lbs)</option><option>Any size</option></select></div>
+        <div class="field-group"><label>How long can you foster?</label><select name="duration"><option value="">Select</option><option>Short-term (1-2 weeks)</option><option>Medium (2-6 weeks)</option><option>Long-term (6+ weeks)</option><option>Until adopted</option></select></div>
+      </div>
+      <div class="field-group"><label>Anything else we should know?</label><textarea name="notes" placeholder="Work schedule, medical foster experience, breed preferences, special skills"></textarea></div>
+    </div>
+    <div class="form-section">
+      <div class="form-section-title">Connected Rescue (optional)</div>
+      <div class="field-group"><label>Which rescue are you applying through?</label><input type="text" name="rescue_name" placeholder="e.g. Underdog Heroes — or leave blank if open"/></div>
+    </div>
+    <button type="submit" class="submit-btn">Sign Up to Foster →</button>
+    <p class="form-note">We'll connect you with a rescue partner within 48 hours.</p>
+  </form>
+</div>
+
+<!-- FORM 3: ADOPTION FOLLOW-UP -->
+<div class="tab-panel" id="panel-followup">
+  <form action="https://formspree.io/f/xzzpqjle" method="POST">
+    <input type="hidden" name="_form_type" value="Adoption Follow-Up"/>
+    <div class="form-section">
+      <div class="form-section-title">Your Info</div>
+      <div class="field-row">
+        <div class="field-group"><label>Your Name <span class="req">*</span></label><input type="text" name="adopter_name" required/></div>
+        <div class="field-group"><label>Email <span class="req">*</span></label><input type="email" name="email" required/></div>
+      </div>
+      <div class="field-group"><label>Phone</label><input type="tel" name="phone" placeholder="(000) 000-0000"/></div>
+    </div>
+    <div class="form-section">
+      <div class="form-section-title">Dog Info</div>
+      <div class="field-row">
+        <div class="field-group"><label>Dog's Name <span class="req">*</span></label><input type="text" name="dog_name" required/></div>
+        <div class="field-group"><label>Adoption Date</label><input type="date" name="adoption_date"/></div>
+      </div>
+      <div class="field-group"><label>Which rescue did you adopt from?</label><input type="text" name="rescue_name" placeholder="e.g. Underdog Heroes"/></div>
+    </div>
+    <div class="form-section">
+      <div class="form-section-title">How Are They Doing?</div>
+      <div class="field-group"><label>How is the dog adjusting? <span class="req">*</span></label><select name="adjustment" required><option value="">Select</option><option>Amazing — settled right in</option><option>Good — still warming up</option><option>Some challenges — need advice</option><option>Struggling — need help</option></select></div>
+      <div class="field-group"><label>Tell us how it's going</label><textarea name="update" placeholder="Favorite spot? Funny moments? Any concerns? This may be added to their permanent profile with your permission."></textarea></div>
+      <div class="field-group"><label>Photo Link (optional)</label><input type="url" name="photo_url" placeholder="Google Drive, Dropbox, Instagram — paste a link"/></div>
+      <div class="field-group"><label>Can we add this update to their profile?</label><select name="permission"><option value="">Select</option><option>Yes — share publicly</option><option>Yes — but keep my name private</option><option>No — just for the rescue</option></select></div>
+      <div class="field-group"><label>Would you like a Pet QR Tag for them?</label><select name="wants_tag"><option value="">Select</option><option>Yes — Basic ($24.99)</option><option>Yes — Premium with AirTag holder ($49.99)</option><option>Not right now</option><option>Tell me more</option></select></div>
+    </div>
+    <button type="submit" class="submit-btn">Submit Follow-Up →</button>
+    <p class="form-note">Thank you for updating us. Their story continues because of you.</p>
+  </form>
+</div>
+
+<!-- FORM 4: TRANSPORT REQUEST -->
+<div class="tab-panel" id="panel-transport">
+  <form action="https://formspree.io/f/xzzpqjle" method="POST">
+    <input type="hidden" name="_form_type" value="Transport Request"/>
+    <div class="form-section">
+      <div class="form-section-title">Dog Being Transported</div>
+      <div class="field-row">
+        <div class="field-group"><label>Dog's Name <span class="req">*</span></label><input type="text" name="dog_name" required/></div>
+        <div class="field-group"><label>Breed</label><input type="text" name="breed" placeholder="e.g. Pit Bull mix"/></div>
+      </div>
+      <div class="field-row">
+        <div class="field-group"><label>Size</label><select name="size"><option value="">Select</option><option>Small (under 25 lbs)</option><option>Medium (25-50 lbs)</option><option>Large (50-80 lbs)</option><option>XL (80+ lbs)</option></select></div>
+        <div class="field-group"><label>Temperament on Car Rides</label><select name="car_temperament"><option value="">Select</option><option>Great — loves the car</option><option>Okay — gets a little anxious</option><option>Nervous — needs a crate</option><option>Unknown</option></select></div>
+      </div>
+      <div class="field-group"><label>Medical notes for transport (crate needed, medication schedule, etc.)</label><textarea name="transport_medical" placeholder="Anything the volunteer driver needs to know during transport"></textarea></div>
+    </div>
+    <div class="form-section">
+      <div class="form-section-title">Route Details</div>
+      <div class="field-row">
+        <div class="field-group"><label>Pickup City <span class="req">*</span></label><input type="text" name="pickup_city" required placeholder="e.g. Riverside, CA"/></div>
+        <div class="field-group"><label>Drop-off City <span class="req">*</span></label><input type="text" name="dropoff_city" required placeholder="e.g. Santa Maria, CA"/></div>
+      </div>
+      <div class="field-row">
+        <div class="field-group"><label>Needed by Date <span class="req">*</span></label><input type="date" name="needed_by" required/></div>
+        <div class="field-group"><label>How many relay legs?</label><select name="legs_needed"><option value="">Select</option><option>1 — direct (under 2 hours)</option><option>2 — one handoff</option><option>3 — two handoffs</option><option>4+ — long distance relay</option><option>Not sure — help me plan</option></select></div>
+      </div>
+      <div class="field-group"><label>Pickup Contact Name & Phone</label><input type="text" name="pickup_contact" placeholder="Who the volunteer meets at pickup"/></div>
+      <div class="field-group"><label>Drop-off Contact Name & Phone</label><input type="text" name="dropoff_contact" placeholder="Who receives the dog at destination"/></div>
+      <div class="field-group"><label>Additional notes about this transport</label><textarea name="transport_notes" placeholder="Specific timing needs, rest stops, anything else"></textarea></div>
+    </div>
+    <div class="form-section">
+      <div class="form-section-title">Requesting Rescue</div>
+      <div class="field-row">
+        <div class="field-group"><label>Rescue Organization <span class="req">*</span></label><input type="text" name="rescue_name" required placeholder="e.g. Underdog Heroes"/></div>
+        <div class="field-group"><label>Contact Name <span class="req">*</span></label><input type="text" name="contact_name" required/></div>
+      </div>
+      <div class="field-row">
+        <div class="field-group"><label>Email <span class="req">*</span></label><input type="email" name="email" required/></div>
+        <div class="field-group"><label>Phone</label><input type="tel" name="phone" placeholder="(000) 000-0000"/></div>
       </div>
     </div>
-  </div>
-</section>
+    <button type="submit" class="submit-btn">Submit Transport Request →</button>
+    <p class="form-note">We'll post this to our volunteer network within 24 hours and connect drivers to your route.</p>
+  </form>
+</div>
 
-<hr class="section-divider" />
-
-<!-- FEATURES -->
-<section class="section" id="features">
-  <div class="section-inner">
-    <p class="section-eyebrow">The Full Platform</p>
-    <h2 class="section-title">10 Features Nobody Has<br>Built Into <em>One Place.</em></h2>
-    <p class="section-body">
-      No more switching between 5 different apps. No more Facebook groups as your only community. No more profiles that vanish after adoption. Every feature below is built for the full lifecycle — from intake to forever home to final memory.
-    </p>
-
-    <div class="feature-grid">
-      <div class="feature-card">
-        <div class="feature-num">01</div>
-        <h3 class="feature-title">Permanent Story Profile</h3>
-        <p class="feature-desc">
-          Where they were found. What condition they were in. Who saved them. The rescue origin story lives on the profile forever — not in a Facebook caption that disappears from the algorithm, but in a permanent URL that can be shared, linked, and remembered.
-        </p>
-        <span class="feature-tag-live">Live Now</span>
-        &nbsp;<a href="#rescue-forms" onclick="showTab('dog-intake')" style="display:inline-block; margin-top:14px; font-size:10px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--gold); text-decoration:underline; text-underline-offset:3px;">Submit a Dog →</a>
+<!-- FORM 5: VOLUNTEER SIGN-UP -->
+<div class="tab-panel" id="panel-volunteer">
+  <form action="https://formspree.io/f/xzzpqjle" method="POST">
+    <input type="hidden" name="_form_type" value="Volunteer Sign-Up"/>
+    <div class="form-section">
+      <div class="form-section-title">Your Information</div>
+      <div class="field-row">
+        <div class="field-group"><label>Full Name <span class="req">*</span></label><input type="text" name="volunteer_name" required/></div>
+        <div class="field-group"><label>Phone <span class="req">*</span></label><input type="tel" name="phone" required placeholder="(000) 000-0000"/></div>
       </div>
-
-      <div class="feature-card">
-        <div class="feature-num">02</div>
-        <h3 class="feature-title">Behavioral Journey Tracker</h3>
-        <p class="feature-desc">
-          Fearful → trusting → thriving. Every behavioral note from intake through foster care gets documented in structured form — specific triggers, what worked in training, known fears, daily routine. Adopters receive this full history, not vague coded phrases like "needs patient owner."
-        </p>
-        <span class="feature-tag-live">Live Now</span>
-      </div>
-
-      <div class="feature-card">
-        <div class="feature-num">03</div>
-        <h3 class="feature-title">Medical History Timeline</h3>
-        <p class="feature-desc">
-          Vaccines, treatments, vet visits, medications — all in one portable record that travels with the dog forever. No more fragmented records scattered across shelters, foster homes, and new vets. One profile. One complete history.
-        </p>
-        <span class="feature-tag-live">Live Now</span>
-      </div>
-
-      <div class="feature-card">
-        <div class="feature-num">04</div>
-        <h3 class="feature-title">3-3-3 Post-Adoption Check-In System</h3>
-        <p class="feature-desc">
-          The first 3 days, 3 weeks, and 3 months after adoption are when most dogs get returned — and when adopters feel most alone. Automated check-ins at day 2, day 10, week 3, month 1.5, and month 3 provide behavioral guidance and a direct escalation path before the dog ends up back at a shelter.
-        </p>
-        <span class="feature-tag-live">Live Now</span>
-      </div>
-
-      <div class="feature-card">
-        <div class="feature-num">05</div>
-        <h3 class="feature-title">Foster Network & Backup System</h3>
-        <p class="feature-desc">
-          Fosters stay connected to the dogs they raised — getting updates, celebrating gotcha days, sharing in the dog's story long after adoption. Fosters can also request backup coverage for weekends when things get hard. No more burning out in silence.
-        </p>
-        <span class="feature-tag-live">Live Now</span>
-        &nbsp;<a href="#rescue-forms" onclick="showTab('foster-signup')" style="display:inline-block; margin-top:14px; font-size:10px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--gold); text-decoration:underline; text-underline-offset:3px;">Become a Foster →</a>
-      </div>
-
-      <div class="feature-card">
-        <div class="feature-num">06</div>
-        <h3 class="feature-title">Rescue Accountability Ledger</h3>
-        <p class="feature-desc">
-          Every dog that enters a rescue organization is logged publicly — intake date, condition, status, outcome. When intake consistently exceeds outcomes, the system flags it. Legitimate rescuers like Shoshi get a verified public record of every dog they've saved. Bad actors can't hide behind a website and a nonprofit ID.
-        </p>
-        <span class="feature-tag-live">Live Now</span>
-      </div>
-
-      <div class="feature-card feature-card-soon">
-        <div class="feature-num">07</div>
-        <h3 class="feature-title">Red List Alert Network</h3>
-        <p class="feature-desc">
-          When a shelter puts a dog on the euthanasia list, rescue partners get an immediate notification — not a vague "check the website" message, not a call 24 hours too late. Real-time alerts so rescues like Underdog Heroes can respond before it's over.
-        </p>
-        <span class="feature-tag-soon">Coming Soon</span>
-      </div>
-
-      <div class="feature-card feature-card-soon">
-        <div class="feature-num">08</div>
-        <h3 class="feature-title">Transport Coordination Network</h3>
-        <p class="feature-desc">
-          Volunteer drivers connect across counties to move dogs to safety. Real-time relay tracking, volunteer leg claiming, automated backup matching when someone drops a leg, and digital handoff verification. Not duct-taped together with Facebook posts and phone calls.
-        </p>
-        <span class="feature-tag-soon">Coming Soon</span>
-      </div>
-
-      <div class="feature-card">
-        <div class="feature-num">09</div>
-        <h3 class="feature-title">Adoption Follow-Through — Forever</h3>
-        <p class="feature-desc">
-          Adopters post updates, photos, birthday posts, and milestones directly to the dog's profile. The foster who raised them sees it. The rescue team sees it. The dog's story keeps growing long after adoption day — not in a Facebook comment thread, but on a permanent page that belongs to that dog.
-        </p>
-        <span class="feature-tag-live">Live Now</span>
-        &nbsp;<a href="#rescue-forms" onclick="showTab('adoption-followup')" style="display:inline-block; margin-top:14px; font-size:10px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--gold); text-decoration:underline; text-underline-offset:3px;">Submit an Update →</a>
-      </div>
-
-      <div class="feature-card">
-        <div class="feature-num">10</div>
-        <h3 class="feature-title">Memorial Profile</h3>
-        <p class="feature-desc">
-          When the dog passes, the profile becomes a tribute. The rescue story, the behavioral journey, the adoption day, the years of life — all preserved. The foster, the transporter, the shelter staff, and the adopter can all contribute memories. Grief support resources integrate directly. The dog's full community is notified.
-        </p>
-        <span class="feature-tag-live">Live Now</span>
-      </div>
+      <div class="field-group"><label>Email <span class="req">*</span></label><input type="email" name="email" required/></div>
+      <div class="field-group"><label>City / Area</label><input type="text" name="city" placeholder="e.g. Santa Maria, CA"/></div>
     </div>
-  </div>
-</section>
-
-<hr class="section-divider" />
-
-<!-- LIFECYCLE JOURNEY -->
-<section class="section journey-section">
-  <div class="section-inner">
-    <p class="section-eyebrow">The Dog's Complete Journey</p>
-    <h2 class="section-title">One Profile.<br><em>A Whole Life.</em></h2>
-    <p class="section-body">
-      Every other platform has a beginning and an end. Ours has a beginning and a memorial — with everything in between documented and preserved.
-    </p>
-
-    <div class="timeline">
-      <div class="timeline-item">
-        <div class="timeline-dot">📍</div>
-        <div class="timeline-content">
-          <p class="timeline-phase">Phase 1 — Intake</p>
-          <h3 class="timeline-title">Rescue Origin & First Assessment</h3>
-          <p class="timeline-desc">Where they were found. The condition they arrived in. The first behavioral assessment. This is the origin story — documented permanently from day one, not reconstructed from memory months later.</p>
-        </div>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-dot">🏠</div>
-        <div class="timeline-content">
-          <p class="timeline-phase">Phase 2 — Foster Care</p>
-          <h3 class="timeline-title">Behavioral Journey in Real Time</h3>
-          <p class="timeline-desc">Daily notes, photo updates, training milestones, behavioral breakthroughs. The foster documents the full rehabilitation arc — so the adopter receives a real portrait of who this dog is becoming, not a shelter bio written in 90 seconds.</p>
-        </div>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-dot">🚗</div>
-        <div class="timeline-content">
-          <p class="timeline-phase">Phase 3 — Transport</p>
-          <h3 class="timeline-title">Relay Coordination & Safe Transfer</h3>
-          <p class="timeline-desc">Each transport leg is logged to the profile. Volunteer drivers are tracked in real time. When the dog arrives at their destination, the handoff is verified digitally — and the profile reflects the full journey across counties and states.</p>
-        </div>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-dot">🏡</div>
-        <div class="timeline-content">
-          <p class="timeline-phase">Phase 4 — Adoption</p>
-          <h3 class="timeline-title">Adoption Day + The 3-3-3 Support Window</h3>
-          <p class="timeline-desc">Adoption is not the end. The profile stays active. Check-ins begin automatically. The full behavioral history is now in the adopter's hands — so they know exactly what to expect and who to call if things get hard.</p>
-        </div>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-dot">🎂</div>
-        <div class="timeline-content">
-          <p class="timeline-phase">Phase 5 — Life</p>
-          <h3 class="timeline-title">Milestones, Updates & Community</h3>
-          <p class="timeline-desc">Gotcha days. Birthdays. Adventures. The adopter posts directly to the profile. The foster who raised this dog sees every update. The rescue team sees the impact of their work — years later. The community that saved this dog stays connected to the dog.</p>
-        </div>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-dot">🕯️</div>
-        <div class="timeline-content">
-          <p class="timeline-phase">Phase 6 — Memorial</p>
-          <h3 class="timeline-title">The Profile Becomes a Tribute</h3>
-          <p class="timeline-desc">When the dog passes, the page doesn't close. It transitions into a memorial that holds the full story — rescue to forever home to final rest. Everyone who contributed to this dog's survival can leave a memory. The rescue's legacy is preserved forever.</p>
-        </div>
-      </div>
+    <div class="form-section">
+      <div class="form-section-title">How Can You Help?</div>
+      <div class="field-group"><label>What can you volunteer for? <span class="req">*</span></label><select name="volunteer_type" required><option value="">Select</option><option>Transport driver — I can drive dogs between cities</option><option>Foster — I can house dogs temporarily</option><option>Event help — I can help at adoption events</option><option>Photography — I can take photos of rescue dogs</option><option>Social media — I can share and promote dogs</option><option>Anything — put me where you need me</option></select></div>
+      <div class="field-group"><label>How far are you willing to drive?</label><select name="drive_distance"><option value="">Select</option><option>Under 30 minutes</option><option>30 minutes to 1 hour</option><option>1-2 hours</option><option>2-4 hours</option><option>Whatever it takes</option></select></div>
+      <div class="field-group"><label>Do you have a vehicle that can transport a large dog?</label><select name="vehicle"><option value="">Select</option><option>Yes — SUV, truck, or van</option><option>Yes — sedan (small/medium dogs only)</option><option>No vehicle — but I can help other ways</option></select></div>
+      <div class="field-group"><label>Do you have a crate for transport?</label><select name="has_crate"><option value="">Select</option><option>Yes</option><option>No — but I can get one</option><option>No</option></select></div>
+      <div class="field-group"><label>Anything else?</label><textarea name="notes" placeholder="Experience with dogs, availability, special skills, connected to a specific rescue"></textarea></div>
     </div>
-  </div>
-</section>
+    <button type="submit" class="submit-btn">Sign Up to Volunteer →</button>
+    <p class="form-note">We'll add you to our volunteer network and reach out when there's a match near you.</p>
+  </form>
+</div>
 
-<hr class="section-divider" />
-
-<!-- 3-3-3 CHECK-IN -->
-<section class="section">
-  <div class="section-inner">
-    <p class="section-eyebrow">The 3-3-3 Check-In System</p>
-    <h2 class="section-title">The Window When<br>Dogs Get <em>Returned.</em></h2>
-    <p class="section-body">
-      Most dogs are returned within 8 days. Behavioral issues drive 35% of all returns — and most adopters never contacted the rescue for help before giving up. Our automated check-in system meets adopters exactly when they need it most.
-    </p>
-
-    <div class="checkin-grid">
-      <div class="checkin-card active">
-        <div class="checkin-time">Day 2</div>
-        <h4 class="checkin-title">First Check-In</h4>
-        <p class="checkin-desc">How's the first night? Eating? Hiding? This is normal — here's what to expect and what to watch for.</p>
-      </div>
-      <div class="checkin-card">
-        <div class="checkin-time">Day 10</div>
-        <h4 class="checkin-title">Honeymoon Ends</h4>
-        <p class="checkin-desc">Real personality is emerging. Check for separation anxiety, resource guarding, reactivity — and guidance for each.</p>
-      </div>
-      <div class="checkin-card">
-        <div class="checkin-time">Week 3</div>
-        <h4 class="checkin-title">Adjustment Phase</h4>
-        <p class="checkin-desc">The dog is learning the rules. Training tips, routine recommendations, and trainer access if needed.</p>
-      </div>
-      <div class="checkin-card">
-        <div class="checkin-time">Month 1.5</div>
-        <h4 class="checkin-title">ASPCA Checkpoint</h4>
-        <p class="checkin-desc">The recommended follow-up point. Behavioral progress review and resource check-in.</p>
-      </div>
-      <div class="checkin-card">
-        <div class="checkin-time">Month 3</div>
-        <h4 class="checkin-title">Hidden Behaviors Window</h4>
-        <p class="checkin-desc">Behaviors suppressed by stress now surface. Final check-in covers adolescent regression, advanced training, and long-term bonding.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<hr class="section-divider" />
-
-<!-- ACCOUNTABILITY LEDGER -->
-<section class="section accountability-section">
-  <div class="section-inner">
-    <p class="section-eyebrow">Rescue Accountability Ledger</p>
-    <h2 class="section-title">Public Record.<br><em>No Exceptions.</em></h2>
-    <p class="section-body">
-      Every dog that enters a rescue is publicly logged. Every outcome is timestamped. When intake exceeds outcomes over time, the system flags it automatically. Legitimate rescuers get their verified track record. Bad actors can't hide.
-    </p>
-
-    <div class="ledger-preview">
-      <div class="ledger-header">
-        <span>Dog</span>
-        <span>Rescue Org</span>
-        <span>Intake Date</span>
-        <span>Status</span>
-        <span>Days Active</span>
-      </div>
-      <div class="ledger-row">
-        <div class="ledger-dog">Walter — Bulldog Mix</div>
-        <div class="ledger-muted">Underdog Heroes</div>
-        <div class="ledger-muted">Jan 14, 2026</div>
-        <div><span class="ledger-status status-adopted">Adopted</span></div>
-        <div class="ledger-muted">47 days</div>
-      </div>
-      <div class="ledger-row">
-        <div class="ledger-dog">Luna — Brindle Pit Mix</div>
-        <div class="ledger-muted">Underdog Heroes</div>
-        <div class="ledger-muted">Feb 3, 2026</div>
-        <div><span class="ledger-status status-foster">In Foster</span></div>
-        <div class="ledger-muted">62 days</div>
-      </div>
-      <div class="ledger-row">
-        <div class="ledger-dog">Butters — Lab Mix</div>
-        <div class="ledger-muted">My Legacy Continues</div>
-        <div class="ledger-muted">Dec 1, 2025</div>
-        <div><span class="ledger-status status-adopted">Adopted</span></div>
-        <div class="ledger-muted">29 days</div>
-      </div>
-      <div class="ledger-row">
-        <div class="ledger-dog">Rex — German Shepherd</div>
-        <div class="ledger-muted">Partner Rescue</div>
-        <div class="ledger-muted">Mar 20, 2026</div>
-        <div><span class="ledger-status status-intake">New Intake</span></div>
-        <div class="ledger-muted">18 days</div>
-      </div>
-      <div class="ledger-row">
-        <div class="ledger-dog">Coco — Chihuahua Mix</div>
-        <div class="ledger-muted">Underdog Heroes</div>
-        <div class="ledger-muted">Sep 12, 2023</div>
-        <div><span class="ledger-status status-memorial">Memorial</span></div>
-        <div class="ledger-muted">Forever</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<hr class="section-divider" />
-
-<!-- PARTNER BENEFITS -->
-<section class="section partner-section">
-  <div class="section-inner">
-    <div class="partner-inner">
-      <div>
-        <p class="section-eyebrow">For Rescuers Like You</p>
-        <p class="partner-quote">"With everything the day brings you in rescue, post-adoption follow-ups can fall through the cracks."</p>
-        <p class="partner-attrib">— Rescue Allies Inc. — This is exactly the problem we solve.</p>
-      </div>
-      <div>
-        <ul class="partner-benefits">
-          <li class="partner-benefit">
-            <span class="benefit-check">✦</span>
-            <span><strong style="color:var(--heading)">Free permanent profiles</strong> for every dog you rescue. No cap. No subscription. No cost — ever.</span>
-          </li>
-          <li class="partner-benefit">
-            <span class="benefit-check">✦</span>
-            <span><strong style="color:var(--heading)">Your accountability record</strong> — every dog you've saved, publicly verified. Nobody can question what you've built.</span>
-          </li>
-          <li class="partner-benefit">
-            <span class="benefit-check">✦</span>
-            <span><strong style="color:var(--heading)">Adopters arrive prepared</strong> — full behavioral history so they know who they're bringing home and what to expect.</span>
-          </li>
-          <li class="partner-benefit">
-            <span class="benefit-check">✦</span>
-            <span><strong style="color:var(--heading)">Foster community stays connected</strong> — fosters see updates from the dogs they raised, forever.</span>
-          </li>
-          <li class="partner-benefit">
-            <span class="benefit-check">✦</span>
-            <span><strong style="color:var(--heading)">Red list alerts</strong> — real-time notification when a dog hits the euthanasia list so you can respond before it's too late.</span>
-          </li>
-          <li class="partner-benefit">
-            <span class="benefit-check">✦</span>
-            <span><strong style="color:var(--heading)">Your legacy, preserved</strong> — every dog you saved becomes part of a permanent public record of your rescue's impact.</span>
-          </li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="revenue-block">
-      <div class="revenue-pct">10%</div>
-      <p class="revenue-label">
-        10% of every pet tag sold through My Legacy Continues goes back to our rescue partners. You help dogs find forever homes — we make sure that work is financially supported.
-      </p>
-    </div>
-  </div>
-</section>
-
-<!-- CTA -->
-<section class="cta-section">
-  <div style="position:relative; z-index:1;">
-    <p class="section-eyebrow">Ready to Preserve Their Story</p>
-    <h2 class="cta-title">Your Dogs Deserve<br>a <em>Permanent Home</em> Online.</h2>
-    <p class="cta-sub">
-      No cost. No contract. No catch. You bring the rescues — we build the platform that preserves every story, connects every person, and keeps your legacy alive.
-    </p>
-    <div style="display:flex; gap:14px; justify-content:center; flex-wrap:wrap;">
-      <a href="/cdn-cgi/l/email-protection#117c687d7476707268727e7f65787f64746251767c70787d3f727e7c2e6264737b7472652c43746272647431417063657f746331f39185315d746536623145707d7a" class="btn btn-gold">Start the Conversation</a>
-      <a href="pet-tag.html" class="btn btn-outline">See the Pet Tag</a>
-    </div>
-    <p class="cta-fine">Available to rescue organizations across California — expanding nationally.</p>
-  </div>
-</section>
-
-<!-- RESCUE FORMS -->
-<section class="section" id="rescue-forms" style="background: rgba(0,0,0,0.15);">
-  <div class="section-inner" style="max-width: 680px;">
-    <p class="section-eyebrow">Get Involved</p>
-    <h2 class="section-title">Submit a Dog, Foster, or Update</h2>
-    <p class="section-body">Fill out the form below that matches what you need. We review every submission and respond within 24 hours.</p>
-
-    <!-- TAB NAV -->
-    <div id="form-tabs" style="display:flex; gap:0; margin-bottom:32px; border-bottom:1px solid rgba(201,168,76,0.35);">
-      <button onclick="showTab('dog-intake')" id="tab-dog-intake"
-        style="flex:1; padding:12px 8px; background:rgba(201,168,76,0.15); border:none; border-bottom:2px solid #C9A84C; color:#C9A84C; font-family:Karla,sans-serif; font-size:12px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; cursor:pointer;">
-        Submit a Dog
-      </button>
-      <button onclick="showTab('foster-signup')" id="tab-foster-signup"
-        style="flex:1; padding:12px 8px; background:transparent; border:none; border-bottom:2px solid transparent; color:#F0EAD6; font-family:Karla,sans-serif; font-size:12px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; cursor:pointer; opacity:0.6;">
-        Become a Foster
-      </button>
-      <button onclick="showTab('adoption-followup')" id="tab-adoption-followup"
-        style="flex:1; padding:12px 8px; background:transparent; border:none; border-bottom:2px solid transparent; color:#F0EAD6; font-family:Karla,sans-serif; font-size:12px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; cursor:pointer; opacity:0.6;">
-        Adoption Update
-      </button>
-    </div>
-
-    <!-- FORM 1: DOG INTAKE -->
-    <div id="pane-dog-intake">
-      <form
-        action="https://formspree.io/f/xqo1rkea"
-        method="POST"
-        id="dog-intake-form"
-      >
-        <input type="hidden" name="_subject" value="New Dog Intake — My Legacy Continues Rescue" />
-        <input type="hidden" name="form_type" value="Dog Intake" />
-
-        <div style="margin-bottom: 14px;">
-          <label style="display:block; margin-bottom:4px;">Dog's Name *</label>
-          <input type="text" name="dog_name" required style="width:100%;padding:10px;box-sizing:border-box;" />
-        </div>
-        <div style="margin-bottom: 14px;">
-          <label style="display:block; margin-bottom:4px;">Breed / Mix</label>
-          <input type="text" name="breed" style="width:100%;padding:10px;box-sizing:border-box;" />
-        </div>
-        <div style="margin-bottom: 14px;">
-          <label style="display:block; margin-bottom:4px;">Age (approximate)</label>
-          <input type="text" name="age" placeholder="e.g. 3 years, puppy, senior" style="width:100%;padding:10px;box-sizing:border-box;" />
-        </div>
-        <div style="margin-bottom: 14px;">
-          <label style="display:block; margin-bottom:4px;">Sex</label>
-          <select name="sex" style="width:100%;padding:10px;box-sizing:border-box;">
-            <option value="">-- Select --</option>
-            <option>Male</option>
-            <option>Female</option>
-            <option>Unknown</option>
-          </select>
-        </div>
-        <div style="margin-bottom: 14px;">
-          <label style="display:block; margin-bottom:4px;">Spayed / Neutered?</label>
-          <select name="fixed" style="width:100%;padding:10px;box-sizing:border-box;">
-            <option value="">-- Select --</option>
-            <option>Yes</option>
-            <option>No</option>
-            <option>Unknown</option>
-          </select>
-        </div>
-        <div style="margin-bottom: 14px;">
-          <label style="display:block; margin-bottom:4px;">Current Location / Situation *</label>
-          <textarea name="situation" rows="3" required placeholder="Where is this dog now? Shelter, stray, owner surrender..." style="width:100%;padding:10px;box-sizing:border-box;"></textarea>
-        </div>
-        <div style="margin-bottom: 14px;">
-          <label style="display:block; margin-bottom:4px;">Known Health Issues</label>
-          <textarea name="health" rows="2" style="width:100%;padding:10px;box-sizing:border-box;"></textarea>
-        </div>
-        <div style="margin-bottom: 14px;">
-          <label style="display:block; margin-bottom:4px;">Temperament / Behavior Notes</label>
-          <textarea name="temperament" rows="2" placeholder="Good with kids? Other dogs? Cats? Energy level?" style="width:100%;padding:10px;box-sizing:border-box;"></textarea>
-        </div>
-        <div style="margin-bottom: 14px;">
-          <label style="display:block; margin-bottom:4px;">Your Name *</label>
-          <input type="text" name="contact_name" required style="width:100%;padding:10px;box-sizing:border-box;" />
-        </div>
-        <div style="margin-bottom: 14px;">
-          <label style="display:block; margin-bottom:4px;">Your Email *</label>
-          <input type="email" name="email" required style="width:100%;padding:10px;box-sizing:border-box;" />
-        </div>
-        <div style="margin-bottom: 14px;">
-          <label style="display:block; margin-bottom:4px;">Your Phone</label>
-          <input type="tel" name="phone" style="width:100%;padding:10px;box-sizing:border-box;" />
-        </div>
-        <div style="margin-bottom: 14px;">
-          <label style="display:block; margin-bottom:4px;">Urgency Level</label>
-          <select name="urgency" style="width:100%;padding:10px;box-sizing:border-box;">
-            <option value="">-- Select --</option>
-            <option>Critical — at risk immediately</option>
-            <option>Urgent — within a week</option>
-            <option>Standard — within a month</option>
-          </select>
-        </div>
-        <input type="text" name="_gotcha" style="display:none;" />
-        <input type="hidden" name="_next" value="https://mylegacycontinues.com/thank-you.html" />
-        <button type="submit" style="background:#C9A84C;color:#1B3A2D;padding:14px 32px;border:none;width:100%;font-family:Karla,sans-serif;font-size:13px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;border-radius:3px;">
-          Submit Dog Intake
-        </button>
-      </form>
-    </div>
-
-    <!-- FORM 2: FOSTER SIGN-UP -->
-    <div id="pane-foster-signup" style="display:none;">
-      <form
-        action="https://formspree.io/f/xqo1rkea"
-        method="POST"
-        id="foster-signup-form"
-      >
-        <input type="hidden" name="_subject" value="New Foster Application — My Legacy Continues Rescue" />
-        <input type="hidden" name="form_type" value="Foster Sign-Up" />
-
-        <div style="margin-bottom: 14px;">
-          <label style="display:block; margin-bottom:4px;">Your Full Name *</label>
-          <input type="text" name="full_name" required style="width:100%;padding:10px;box-sizing:border-box;" />
-        </div>
-        <div style="margin-bottom: 14px;">
-          <label style="display:block; margin-bottom:4px;">Email *</label>
-          <input type="email" name="email" required style="width:100%;padding:10px;box-sizing:border-box;" />
-        </div>
-        <div style="margin-bottom: 14px;">
-          <label style="display:block; margin-bottom:4px;">Phone *</label>
-          <input type="tel" name="phone" required style="width:100%;padding:10px;box-sizing:border-box;" />
-        </div>
-        <div style="margin-bottom: 14px;">
-          <label style="display:block; margin-bottom:4px;">City / Zip Code *</label>
-          <input type="text" name="location" required placeholder="e.g. Lompoc, CA 93436" style="width:100%;padding:10px;box-sizing:border-box;" />
-        </div>
-        <div style="margin-bottom: 14px;">
-          <label style="display:block; margin-bottom:4px;">Home Type</label>
-          <select name="home_type" style="width:100%;padding:10px;box-sizing:border-box;">
-            <option value="">-- Select --</option>
-            <option>House with yard</option>
-            <option>House without yard</option>
-            <option>Apartment/Condo</option>
-          </select>
-        </div>
-        <div style="margin-bottom: 14px;">
-          <label style="display:block; margin-bottom:4px;">Do you have other pets?</label>
-          <textarea name="other_pets" rows="2" placeholder="e.g. 2 cats, 1 dog (friendly)" style="width:100%;padding:10px;box-sizing:border-box;"></textarea>
-        </div>
-        <div style="margin-bottom: 14px;">
-          <label style="display:block; margin-bottom:4px;">Do you have children at home?</label>
-          <select name="children" style="width:100%;padding:10px;box-sizing:border-box;">
-            <option value="">-- Select --</option>
-            <option>Yes</option>
-            <option>No</option>
-          </select>
-        </div>
-        <div style="margin-bottom: 14px;">
-          <label style="display:block; margin-bottom:4px;">What types of dogs can you foster?</label>
-          <label style="display:block;"><input type="checkbox" name="foster_type" value="Puppies" /> Puppies</label>
-          <label style="display:block;"><input type="checkbox" name="foster_type" value="Adults" /> Adults</label>
-          <label style="display:block;"><input type="checkbox" name="foster_type" value="Seniors" /> Seniors</label>
-          <label style="display:block;"><input type="checkbox" name="foster_type" value="Medical needs" /> Medical needs</label>
-          <label style="display:block;"><input type="checkbox" name="foster_type" value="Large breeds" /> Large breeds</label>
-        </div>
-        <div style="margin-bottom: 14px;">
-          <label style="display:block; margin-bottom:4px;">Anything else we should know?</label>
-          <textarea name="notes" rows="3" style="width:100%;padding:10px;box-sizing:border-box;"></textarea>
-        </div>
-        <input type="text" name="_gotcha" style="display:none;" />
-        <input type="hidden" name="_next" value="https://mylegacycontinues.com/thank-you.html" />
-        <button type="submit" style="background:#C9A84C;color:#1B3A2D;padding:14px 32px;border:none;width:100%;font-family:Karla,sans-serif;font-size:13px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;border-radius:3px;">
-          Submit Foster Application
-        </button>
-      </form>
-    </div>
-
-    <!-- FORM 3: ADOPTION FOLLOW-UP -->
-    <div id="pane-adoption-followup" style="display:none;">
-      <form
-        action="https://formspree.io/f/xqo1rkea"
-        method="POST"
-        id="adoption-followup-form"
-      >
-        <input type="hidden" name="_subject" value="Adoption Follow-Up — My Legacy Continues Rescue" />
-        <input type="hidden" name="form_type" value="Adoption Follow-Up" />
-
-        <div style="margin-bottom: 14px;">
-          <label style="display:block; margin-bottom:4px;">Your Name *</label>
-          <input type="text" name="adopter_name" required style="width:100%;padding:10px;box-sizing:border-box;" />
-        </div>
-        <div style="margin-bottom: 14px;">
-          <label style="display:block; margin-bottom:4px;">Your Email *</label>
-          <input type="email" name="email" required style="width:100%;padding:10px;box-sizing:border-box;" />
-        </div>
-        <div style="margin-bottom: 14px;">
-          <label style="display:block; margin-bottom:4px;">Dog's Name *</label>
-          <input type="text" name="dog_name" required style="width:100%;padding:10px;box-sizing:border-box;" />
-        </div>
-        <div style="margin-bottom: 14px;">
-          <label style="display:block; margin-bottom:4px;">Adoption Date (approximate)</label>
-          <input type="text" name="adoption_date" placeholder="e.g. March 2025" style="width:100%;padding:10px;box-sizing:border-box;" />
-        </div>
-        <div style="margin-bottom: 14px;">
-          <label style="display:block; margin-bottom:4px;">How is your dog doing? *</label>
-          <select name="overall_status" required style="width:100%;padding:10px;box-sizing:border-box;">
-            <option value="">-- Select --</option>
-            <option>Thriving — couldn't be better</option>
-            <option>Good — still adjusting</option>
-            <option>Some challenges — need support</option>
-            <option>Serious concern — need help urgently</option>
-          </select>
-        </div>
-        <div style="margin-bottom: 14px;">
-          <label style="display:block; margin-bottom:4px;">Tell us how things are going *</label>
-          <textarea name="update" rows="5" required placeholder="How has the dog settled in? Any changes? Happy moments? Challenges?" style="width:100%;padding:10px;box-sizing:border-box;"></textarea>
-        </div>
-        <div style="margin-bottom: 14px;">
-          <label style="display:block; margin-bottom:4px;">Would you like to share a photo update? (paste a URL)</label>
-          <input type="text" name="photo_url" placeholder="https://..." style="width:100%;padding:10px;box-sizing:border-box;" />
-        </div>
-        <div style="margin-bottom: 14px;">
-          <label style="display:block; margin-bottom:4px;">Do you need any support or resources?</label>
-          <textarea name="support_needed" rows="2" style="width:100%;padding:10px;box-sizing:border-box;"></textarea>
-        </div>
-        <input type="text" name="_gotcha" style="display:none;" />
-        <input type="hidden" name="_next" value="https://mylegacycontinues.com/thank-you.html" />
-        <button type="submit" style="background:#C9A84C;color:#1B3A2D;padding:14px 32px;border:none;width:100%;font-family:Karla,sans-serif;font-size:13px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;border-radius:3px;">
-          Submit My Update
-        </button>
-      </form>
-    </div>
-  </div>
-</section>
+<footer>
+  <img src="https://mylegacycontinues.com/logo.png" alt="My Legacy Continues"/>
+  Long Live Your Legacy · <a href="https://mylegacycontinues.com">mylegacycontinues.com</a> · © 2026 My Legacy Continues · Santa Maria, CA<br/>
+  Partner: <a href="https://www.underdogheroes.org" style="color: var(--muted);">Underdog Heroes Rescue</a> · Riverside, CA · <a href="mailto:adopt@underdogheroes.org" style="color: var(--muted);">adopt@underdogheroes.org</a>
+</footer>
 
 <script>
-function showTab(id) {
-  ['dog-intake','foster-signup','adoption-followup'].forEach(function(t) {
-    var pane = document.getElementById('pane-' + t);
-    var tab = document.getElementById('tab-' + t);
-    var active = t === id;
-    pane.style.display = active ? 'block' : 'none';
-    tab.style.background = active ? 'rgba(201,168,76,0.15)' : 'transparent';
-    tab.style.borderBottomColor = active ? '#C9A84C' : 'transparent';
-    tab.style.color = active ? '#C9A84C' : '#F0EAD6';
-    tab.style.opacity = active ? '1' : '0.6';
-  });
+function showTab(tab) {
+  document.querySelectorAll('.tab-panel').forEach(function(p) { p.classList.remove('active'); });
+  document.querySelectorAll('.tab-btn').forEach(function(b) { b.classList.remove('active'); });
+  document.getElementById('panel-' + tab).classList.add('active');
+  event.target.classList.add('active');
+  window.scrollTo({ top: document.querySelector('.tab-nav').offsetTop - 20, behavior: 'smooth' });
 }
 </script>
 
-<!-- FOOTER -->
-<footer>
-  <img src="logo.png" alt="My Legacy Continues" class="footer-logo" />
-  <
+</body>
+</html>
