@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact My Legacy Continues — Heritage Preservation Services</title>
+  <meta name="description" content="Get in touch with My Legacy Continues. Contact us for heritage preservation, family documentation, concrete services, or general inquiries.">
+  <link rel="icon" href="logo.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,700;0,800;1,400;1,600&family=DM+Serif+Display:ital@0;1&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Jost', sans-serif;
+      background: #F5F0E8;
+      color: #2C2C2C;
+    }
+
+    header {
+      background: #1A2B3C;
+      padding: 1.5rem 3rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      height: 40px;
+      width: auto;
+    }
+
+    nav a {
+      color: #F5F0E8;
+      text-decoration: none;
+      margin: 0 1.5rem;
+      font-size: 0.95rem;
+    }
+
+    nav a:hover {
+      color: #D4A020;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #F5F0E8 0%, #FCFBF7 100%);
+      padding: 4rem 3rem;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-family: 'DM Serif Display', Georgia, serif;
+      color: #1A2B3C;
+      font-size: 2.5rem;
+      margin: 0 0 1rem 0;
+    }
+
+    .hero p {
+      color: #2C2C2C;
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .content {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 3rem;
+    }
+
+    .contact-methods {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin: 2rem 0;
+    }
+
+    .contact-card {
+      background: #FFF;
+      border: 2px solid #D4A020;
+      border-radius: 4px;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .contact-card h3 {
+      font-family: 'DM Serif Display', Georgia, serif;
+      color: #1A2B3C;
+      font-size: 1.3rem;
+      margin: 0 0 0.5rem 0;
+    }
+
+    .contact-card p {
+      color: #555;
+      margin: 0.5rem 0;
+    }
+
+    .contact-card a {
+      color: #D4A020;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .contact-card a:hover {
+      text-decoration: underline;
+    }
+
+    .form-section {
+      background: #FFF;
+      border: 2px solid #D4A020;
+      border-radius: 4px;
+      padding: 2.5rem;
+      margin: 2rem 0;
+    }
+
+    .form-section h2 {
+      font-family: 'DM Serif Display', Georgia, serif;
+      color: #1A2B3C;
+      font-size: 1.8rem;
+      margin: 0 0 1.5rem 0;
+    }
+
+    .form-group {
+      margin: 1.5rem 0;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+      color: #1A2B3C;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 0.75rem;
+      border: 1px solid #DDD;
+      border-radius: 2px;
+      font-family: 'Jost', sans-serif;
+      font-size: 1rem;
+      color: #2C2C2C;
+    }
+
+    textarea {
+      min-height: 150px;
+      resize: vertical;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      outline: none;
+      border-color: #D4A020;
+      box-shadow: 0 0 0 2px rgba(212, 160, 32, 0.1);
+    }
+
+    .submit-btn {
+      background: #D4A020;
+      color: #1A2B3C;
+      padding: 1rem 2.5rem;
+      border: none;
+      border-radius: 2px;
+      font-family: 'Jost', sans-serif;
+      font-weight: 600;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      width: 100%;
+    }
+
+    .submit-btn:hover {
+      background: #E8B840;
+      transform: translateY(-2px);
+    }
+
+    .business-hours {
+      background: #FFF;
+      border: 2px solid #D4A020;
+      border-radius: 4px;
+      padding: 2rem;
+      margin: 2rem 0;
+    }
+
+    .business-hours h3 {
+      font-family: 'DM Serif Display', Georgia, serif;
+      color: #1A2B3C;
+      font-size: 1.3rem;
+      margin: 0 0 1rem 0;
+    }
+
+    .hours-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .hours-item {
+      padding: 1rem;
+      border-left: 3px solid #D4A020;
+      padding-left: 1.5rem;
+    }
+
+    .hours-item strong {
+      color: #1A2B3C;
+      display: block;
+      margin-bottom: 0.3rem;
+    }
+
+    footer {
+      background: #1A2B3C;
+      color: #F5F0E8;
+      padding: 2rem 3rem;
+      text-align: center;
+      margin-top: 3rem;
+    }
+
+    footer a {
+      color: #D4A020;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="index.html"><img src="logo.png" alt="My Legacy Continues" class="logo"></a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about-us.html">About Us</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <div class="hero">
+    <h1>Get In Touch</h1>
+    <p>Have questions? Ready to preserve your legacy? We're here to help.</p>
+  </div>
+
+  <div class="content">
+    <div class="contact-methods">
+      <div class="contact-card">
+        <h3>Email</h3>
+        <p><a href="mailto:contact@mylegacycontinues.com">contact@mylegacycontinues.com</a></p>
+        <p>Best for detailed inquiries about heritage packages</p>
+      </div>
+
+      <div class="contact-card">
+        <h3>Phone</h3>
+        <p><a href="tel:+18055551234">(805) 555-1234</a></p>
+        <p>Quick questions or to schedule a consultation</p>
+      </div>
+
+      <div class="contact-card">
+        <h3>Location</h3>
+        <p>Santa Maria, California</p>
+        <p>Serving all of Central California and beyond</p>
+      </div>
+    </div>
+
+    <div class="business-hours">
+      <h3>Business Hours</h3>
+      <div class="hours-list">
+        <div class="hours-item">
+          <strong>Monday - Friday</strong>
+          <span>9:00 AM - 6:00 PM</span>
+        </div>
+        <div class="hours-item">
+          <strong>Saturday</strong>
+          <span>10:00 AM - 4:00 PM</span>
+        </div>
+        <div class="hours-item">
+          <strong>Sunday</strong>
+          <span>Closed</span>
+        </div>
+        <div class="hours-item">
+          <strong>Emergencies</strong>
+          <span>Call anytime</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-section">
+      <h2>Send us a Message</h2>
+      <form action="https://formspree.io/f/xzzpqjle" method="POST">
+        <div class="form-group">
+          <label for="name">Name *</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email *</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Phone</label>
+          <input type="tel" id="phone" name="phone">
+        </div>
+
+        <div class="form-group">
+          <label for="service">What can we help you with? *</label>
+          <select id="service" name="service" required>
+            <option value="">Select a service...</option>
+            <option value="heritage-book">Heritage Culture Book</option>
+            <option value="cemetery-plaque">Cemetery Plaque</option>
+            <option value="pet-tag">Pet Legacy Tag</option>
+            <option value="business-profile">Business Profile</option>
+            <option value="baby-legacy">Baby Legacy</option>
+            <option value="concrete">Concrete Services (Bears Concrete)</option>
+            <option value="other">Other / General Inquiry</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="message">Message *</label>
+          <textarea id="message" name="message" required placeholder="Tell us about your project or question..."></textarea>
+        </div>
+
+        <button type="submit" class="submit-btn">Send Message</button>
+      </form>
+    </div>
+
+    <div class="business-hours">
+      <h3>Divisions</h3>
+      <p style="margin-bottom: 1rem;">My Legacy Continues operates multiple service lines:</p>
+      <ul style="list-style: none; padding: 0;">
+        <li style="margin: 0.5rem 0;"><strong>Heritage Preservation:</strong> Family documentation, genealogy research, luxury heritage books</li>
+        <li style="margin: 0.5rem 0;"><strong>Memorials & Legacy:</strong> Cemetery plaques, pet legacy tags, memorial services</li>
+        <li style="margin: 0.5rem 0;"><strong>Professional Profiles:</strong> Business profiles, family heritage profiles, legacy documentation</li>
+        <li style="margin: 0.5rem 0;"><strong>Baby Legacy:</strong> New life legacy packages, family story preservation</li>
+        <li style="margin: 0.5rem 0;"><strong>Bears Concrete Pumping:</strong> Full-service concrete construction, patios, walkways, pool decks, commercial work</li>
+      </ul>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2026 My Legacy Continues. All rights reserved.</p>
+    <p><a href="legal/privacy.html">Privacy Policy</a></p>
+  </footer>
+</body>
+</html>
