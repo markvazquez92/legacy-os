@@ -58,27 +58,6 @@ img { max-width: 100%; height: auto; display: block; }
 .btn-outline { background: transparent; color: #1A5C55; border: 1.5px solid #1A5C55; }
 .btn-outline:hover { background: #1A5C55; color: #E8C97A; }
 
-nav { position: fixed; top: 0; left: 0; right: 0; z-index: 900; height: 68px; background: #FAF3E6; border-bottom: 1px solid rgba(232,201,122,0.2); display: flex; align-items: center; justify-content: space-between; padding: 0 48px; }
-.nav-logo { height: 40px; width: auto; }
-.nav-center { display: flex; align-items: center; gap: 26px; list-style: none; }
-.nav-center a { font-family: var(–sans); font-size: 0.78rem; color: #1C1C1C; letter-spacing: 0.02em; transition: color 0.2s; }
-.nav-center a:hover { color: #E8C97A; }
-.nav-right { display: flex; align-items: center; gap: 12px; }
-.nav-lang { font-family: var(–cinzel); font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; color: #1C1C1C; border: 1px solid rgba(232,201,122,0.3); padding: 6px 14px; border-radius: 2px; cursor: pointer; background: none; transition: all 0.2s; }
-.nav-lang:hover { color: #E8C97A; border-color: #E8C97A; }
-.nav-vault-link { font-family: var(–cinzel); font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; color: #E8C97A; border: 1px solid rgba(232,201,122,0.4); padding: 8px 16px; border-radius: 2px; transition: all 0.22s; }
-.nav-vault-link:hover { background: rgba(232,201,122,0.12); }
-.nav-toggle { display: none; background: none; border: none; cursor: pointer; flex-direction: column; gap: 5px; padding: 4px; }
-.nav-toggle span { display: block; width: 22px; height: 1.5px; background: var(–gold); }
-@media (max-width: 960px) {
-nav { padding: 0 20px; }
-.nav-center { display: none; flex-direction: column; position: fixed; top: 68px; left: 0; right: 0; background: #FAF3E6; padding: 24px 20px; gap: 0; border-bottom: 1px solid rgba(232,201,122,0.2); }
-.nav-center.open { display: flex; }
-.nav-center li { width: 100%; }
-.nav-center a { display: block; padding: 14px 0; border-bottom: 1px solid rgba(232,201,122,0.1); font-size: 0.92rem; color: #1C1C1C; }
-.nav-toggle { display: flex; }
-}
-
 /* PAGE HERO */
 .page-hero { background: #1A5C55; padding: 130px 48px 72px; }
 .page-hero-inner { max-width: 860px; margin: 0 auto; }
