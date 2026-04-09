@@ -107,7 +107,7 @@ p { margin-bottom: 1.2rem; }
   left: 0;
   right: 0;
   z-index: 200;
-  height: 68px;
+  height: 78px;
   background: rgba(250, 243, 230, 0.96);
   border-bottom: 1px solid rgba(232, 201, 122, 0.2);
   backdrop-filter: blur(12px);
@@ -223,7 +223,7 @@ p { margin-bottom: 1.2rem; }
   display: grid;
   grid-template-columns: 1fr 1fr;
   min-height: 100vh;
-  margin-top: 68px;
+  margin-top: 78px;
 }
 
 .hero-left {
@@ -274,7 +274,7 @@ p { margin-bottom: 1.2rem; }
   position: relative;
   min-height: 60vh;
   padding: clamp(6rem, 10vw, 10rem) 2rem clamp(3rem, 5vw, 5rem);
-  margin-top: 68px;
+  margin-top: 78px;
   display: flex;
   align-items: center;
   justify-content: center;
