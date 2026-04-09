@@ -1,463 +1,306 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"><!-- Cache bust -->
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>My Legacy Continues — Permanent Digital Assets. Zero Subscriptions.</title>
-<meta name="description" content="Heritage books. Cemetery memorials. Pet tags. Business legacies. One-time purchase. Hosted forever. No subscriptions. My Legacy Continues — Santa Maria, CA.">
-<link rel="icon" href="logo.png" type="image/png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Karla:wght@300;400;500;600&display=swap" rel="stylesheet">
-<style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Legacy Continues — Heritage Preservation & Legacy Services</title>
+  <meta name="description" content="Professional heritage preservation, genealogy research, memorial plaques, and legacy preservation services.">
+  <link rel="icon" href="logo.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,700;0,800;1,400;1,600&family=DM+Serif+Display:ital@0;1&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Jost', sans-serif;
+      background: #f0ebe0;
+    }
 
-:root {
-  --bg:          #0a0a0a;
-  --bg-card:     #141414;
-  --bg-warm:     #141414;
-  --bg-nav:      #0d0d0d;
-  --forest:      #0a0a0a;
-  --forest-dark: #0d0d0d;
-  --gold:        #C9920A;
-  --gold-light:  #E5A812;
-  --gold-dim:    rgba(201,146,10,0.55);
-  --gold-border: rgba(201,146,10,0.25);
-  --gold-wash:   rgba(201,146,10,0.08);
-  --heading:     #F5F0E8;
-  --heading-hover: #D4C9A8;
-  --text:        #F5F0E8;
-  --text-muted:  #B5A98A;
-  --text-dim:    #B5A98A;
-  --im-fell: 'Cormorant Garamond', Georgia, serif;
-  --sans: 'Karla', sans-serif;
-  --cinzel: 'Cormorant Garamond', Georgia, serif;
-  --lora: 'Karla', sans-serif;
-  --serif: 'Cormorant Garamond', Georgia, serif;
-}
+    header {
+      background: #1a2744;
+      padding: 1.5rem 3rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
 
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
-body { font-family: var(--lora); background: var(--bg); color: var(--text); line-height: 1.8; -webkit-font-smoothing: antialiased; }
-a { color: inherit; text-decoration: none; }
-img { max-width: 100%; height: auto; display: block; }
+    .logo {
+      height: 40px;
+      width: auto;
+    }
 
-.btn {
-  display: inline-block;
-  font-family: var(--cinzel);
-  font-size: 0.72rem;
-  font-weight: 600;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  padding: 16px 34px;
-  min-height: 44px;
-  border: none;
-  cursor: pointer;
-  transition: all 0.22s ease;
-  text-decoration: none;
-  white-space: nowrap;
-  border-radius: 2px;
-}
-.btn-primary { background: var(--forest); color: var(--gold); box-shadow: 0 4px 20px rgba(30,45,31,0.22); }
-.btn-primary:hover { background: var(--forest-dark); transform: translateY(-2px); box-shadow: 0 8px 28px rgba(30,45,31,0.32); }
-.btn-outline { background: transparent; color: var(--heading); border: 1.5px solid var(--forest); }
-.btn-outline:hover { background: var(--forest); color: var(--gold); }
-.btn-gold-outline { background: transparent; color: var(--gold); border: 1.5px solid rgba(201,146,10,0.5); }
-.btn-gold-outline:hover { border-color: var(--gold); background: var(--gold-wash); }
-.btn-sm { padding: 12px 24px; font-size: 0.68rem; }
+    nav a {
+      color: #f0ebe0;
+      text-decoration: none;
+      margin: 0 1.5rem;
+      font-size: 0.95rem;
+    }
 
-/* ── NAV ── */
-nav {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 900;
-  height: 68px;
-  background: #0d0d0d;
-  border-bottom: 1px solid rgba(201,146,10,0.25);
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 0 48px;
-}
-.nav-logo { height: 40px; width: auto; }
-.nav-center { display: flex; align-items: center; gap: 26px; list-style: none; }
-.nav-center a { font-family: var(--sans); font-size: 0.78rem; color: rgba(244,239,230,0.75); letter-spacing: 0.02em; transition: color 0.2s; }
-.nav-center a:hover { color: var(--gold); }
-.nav-right { display: flex; align-items: center; gap: 12px; }
-.nav-lang { font-family: var(--cinzel); font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(244,239,230,0.5); border: 1px solid rgba(201,146,10,0.3); padding: 6px 14px; border-radius: 2px; cursor: pointer; background: none; transition: all 0.2s; }
-.nav-lang:hover { color: var(--gold); border-color: var(--gold); }
-.nav-vault-link { font-family: var(--cinzel); font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); border: 1px solid rgba(201,146,10,0.4); padding: 8px 16px; border-radius: 2px; transition: all 0.22s; }
-.nav-vault-link:hover { background: rgba(201,146,10,0.12); border-color: var(--gold); }
-.nav-toggle { display: none; background: none; border: none; cursor: pointer; flex-direction: column; gap: 5px; padding: 4px; }
-.nav-toggle span { display: block; width: 22px; height: 1.5px; background: var(--gold); }
-@media (max-width: 960px) {
-  nav { padding: 0 20px; }
-  .nav-center { display: none; flex-direction: column; position: fixed; top: 68px; left: 0; right: 0; background: var(--forest); padding: 24px 20px; gap: 0; border-bottom: 1px solid rgba(201,146,10,0.2); }
-  .nav-center.open { display: flex; }
-  .nav-center li { width: 100%; }
-  .nav-center a { display: block; padding: 14px 0; border-bottom: 1px solid rgba(201,146,10,0.1); font-size: 0.92rem; color: rgba(244,239,230,0.8); }
-  .nav-toggle { display: flex; }
-}
+    nav a:hover {
+      color: #b8962e;
+    }
 
-/* ── HERO ── */
-.hero {
-  background: var(--forest);
-  min-height: 100vh;
-  display: flex; align-items: center; justify-content: center;
-  padding: 120px 48px 80px;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-}
-.hero::before {
-  content: '';
-  position: absolute; inset: 0;
-  background: radial-gradient(ellipse at center top, rgba(201,146,10,0.06) 0%, transparent 65%);
-  pointer-events: none;
-}
-.hero-content { position: relative; z-index: 1; max-width: 760px; }
-.hero-logo { width: 160px; height: 160px; object-fit: contain; margin: 0 auto 36px; filter: drop-shadow(0 4px 24px rgba(201,146,10,0.35)); }
-.hero-eyebrow { font-family: var(--cinzel); font-size: 0.58rem; letter-spacing: 0.32em; text-transform: uppercase; color: var(--gold); display: block; margin-bottom: 22px; }
-.hero-title { font-family: var(--cinzel); font-size: clamp(2rem, 5vw, 3.8rem); font-weight: 700; line-height: 1.12; color: #F5F0E8; margin-bottom: 24px; letter-spacing: 0.01em; }
-.hero-subtitle { font-family: var(--lora); font-size: clamp(0.9rem, 1.8vw, 1.05rem); color: rgba(244,239,230,0.72); line-height: 1.9; max-width: 560px; margin: 0 auto 44px; }
-.hero-ctas { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
-.hero-divider { width: 60px; height: 1px; background: var(--gold); margin: 0 auto 32px; opacity: 0.5; }
-@media (max-width: 600px) { .hero { padding: 110px 24px 64px; } .hero-logo { width: 120px; height: 120px; } }
+    .hero {
+      background: linear-gradient(135deg, #f0ebe0 0%, #f0ebe0 100%);
+      padding: 4rem 3rem;
+      text-align: center;
+    }
 
-/* ── GOLD RULE ── */
-.gold-rule { height: 1px; background: var(--gold-border); margin: 0; }
+    .hero h1 {
+      font-family: 'DM Serif Display', Georgia, serif;
+      color: #1a2744;
+      font-size: 2.5rem;
+      margin: 0 0 1rem 0;
+    }
 
-/* ── SECTIONS ── */
-.section { padding: 88px 48px; }
-.section-inner { max-width: 1060px; margin: 0 auto; }
-.section-eyebrow { font-family: var(--cinzel); font-size: 0.56rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); display: block; margin-bottom: 14px; }
-.section-title { font-family: var(--cinzel); font-size: clamp(1.6rem, 3.5vw, 2.5rem); font-weight: 700; color: var(--heading); line-height: 1.18; margin-bottom: 14px; }
-.section-sub { font-size: 0.95rem; color: var(--text-muted); line-height: 1.9; max-width: 600px; margin-bottom: 52px; }
-@media (max-width: 600px) { .section { padding: 56px 20px; } }
+    .hero p {
+      color: #2C2C2C;
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 0 auto 2rem;
+    }
 
-/* ── PRODUCTS ── */
-.products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 22px; }
-.product-card {
-  background: var(--bg-card);
-  border: 1px solid var(--gold-border);
-  border-radius: 4px;
-  padding: 36px 28px 30px;
-  display: flex; flex-direction: column;
-  transition: border-color 0.22s, transform 0.2s, box-shadow 0.22s;
-  box-shadow: 0 2px 16px rgba(44,28,0,0.06);
-}
-.product-card:hover { border-color: rgba(201,146,10,0.55); transform: translateY(-4px); box-shadow: 0 12px 40px rgba(44,28,0,0.12); }
-.product-tag { font-family: var(--cinzel); font-size: 0.54rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; display: block; }
-.product-name { font-family: var(--cinzel); font-size: 1.05rem; font-weight: 700; color: var(--heading); margin-bottom: 8px; line-height: 1.3; }
-.product-sub { font-family: var(--lora); font-style: italic; font-size: 0.84rem; color: var(--text-muted); margin-bottom: 16px; }
-.product-desc { font-size: 0.84rem; color: var(--text-muted); line-height: 1.85; flex: 1; margin-bottom: 22px; }
-.product-bullets { list-style: none; margin-bottom: 24px; }
-.product-bullets li { font-size: 0.78rem; color: var(--text-muted); padding: 5px 0; display: flex; gap: 10px; align-items: flex-start; border-bottom: 1px solid rgba(44,28,0,0.06); }
-.product-bullets li::before { content: '—'; color: var(--gold); font-size: 0.68rem; margin-top: 3px; flex-shrink: 0; }
-.product-price { font-family: var(--cinzel); font-size: 2rem; font-weight: 700; color: var(--heading); margin-bottom: 18px; }
-.product-price-note { font-size: 0.72rem; color: var(--text-dim); margin-top: 10px; line-height: 1.6; }
-.btn-row { display: flex; gap: 10px; flex-wrap: wrap; }
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      padding: 4rem 3rem;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
 
-/* ── ABOUT ── */
-.about-section { background: var(--forest); border-top: 1px solid rgba(201,146,10,0.2); border-bottom: 1px solid rgba(201,146,10,0.2); padding: 88px 48px; }
-.about-inner { max-width: 1060px; margin: 0 auto; display: grid; grid-template-columns: 1.2fr 1fr; gap: 64px; align-items: center; }
-@media (max-width: 760px) { .about-inner { grid-template-columns: 1fr; } .about-section { padding: 56px 20px; } }
-.about-section .section-eyebrow { color: rgba(201,146,10,0.8); }
-.about-section .section-title { color: #F5F0E8; }
-.about-section p { font-size: 0.92rem; color: rgba(244,239,230,0.72); line-height: 1.95; margin-bottom: 20px; max-width: 560px; }
-.about-section p strong { color: #F5F0E8; font-weight: 600; }
-.about-stat { text-align: center; border: 1px solid rgba(201,146,10,0.25); padding: 28px 20px; border-radius: 4px; background: rgba(244,239,230,0.04); }
-.about-stat-num { font-family: var(--cinzel); font-size: 2.8rem; font-weight: 700; color: var(--gold); display: block; }
-.about-stat-label { font-family: var(--cinzel); font-size: 0.54rem; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(244,239,230,0.45); display: block; margin-top: 8px; }
-.about-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .product-card {
+      background: #f0ebe0;
+      border: 2px solid #b8962e;
+      border-radius: 4px;
+      padding: 2rem;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
 
-/* ── RESCUE ── */
-.rescue-section { background: var(--bg-warm); border-top: 1px solid var(--gold-border); padding: 72px 48px; }
-.rescue-inner { max-width: 1060px; margin: 0 auto; display: grid; grid-template-columns: 1fr auto; gap: 40px; align-items: center; }
-@media (max-width: 680px) { .rescue-inner { grid-template-columns: 1fr; } .rescue-section { padding: 52px 20px; } }
-.rescue-eyebrow { font-family: var(--cinzel); font-size: 0.56rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 14px; display: block; }
-.rescue-title { font-family: var(--cinzel); font-size: clamp(1.3rem, 3vw, 2rem); font-weight: 700; color: var(--heading); margin-bottom: 14px; }
-.rescue-text { font-size: 0.88rem; color: var(--text-muted); line-height: 1.85; max-width: 560px; margin-bottom: 24px; }
-.rescue-btns { display: flex; gap: 12px; flex-wrap: wrap; }
+    .product-card:hover {
+      border-color: #b8962e;
+      box-shadow: 0 12px 40px rgba(212, 160, 32, 0.15);
+      transform: translateY(-4px);
+    }
 
-/* ── STATS BAR ── */
-.stats-bar { background: var(--forest); border-top: 1px solid rgba(201,146,10,0.2); border-bottom: 1px solid rgba(201,146,10,0.2); padding: 52px 48px; }
-.stats-inner { max-width: 1060px; margin: 0 auto; display: grid; grid-template-columns: repeat(4,1fr); gap: 24px; text-align: center; }
-@media (max-width: 640px) { .stats-inner { grid-template-columns: 1fr 1fr; } .stats-bar { padding: 40px 20px; } }
-.stat-num { font-family: var(--cinzel); font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 700; color: var(--gold); display: block; }
-.stat-label { font-family: var(--cinzel); font-size: 0.52rem; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(244,239,230,0.45); display: block; margin-top: 8px; line-height: 1.5; }
+    .product-name {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: 1.4rem;
+      color: #1a2744;
+      margin: 0 0 0.8rem 0;
+      font-weight: 700;
+    }
 
-/* ── FOOTER ── */
-footer { background: var(--forest); border-top: 1px solid rgba(201,146,10,0.2); padding: 48px 48px 32px; }
-.footer-inner { max-width: 1060px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 24px; }
-.footer-logo { height: 56px; width: auto; opacity: 0.85; }
-.footer-bottom { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; width: 100%; border-top: 1px solid rgba(201,146,10,0.15); padding-top: 24px; }
-.footer-copy { font-family: var(--cinzel); font-size: 0.58rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(244,239,230,0.4); }
+    .product-desc {
+      color: #2C2C2C;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin: 0 0 1.5rem 0;
+    }
 
-</style>
-<link rel="stylesheet" href="style.css">
+    .product-price {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: 1.8rem;
+      color: #b8962e;
+      font-weight: 700;
+      margin: 0 0 1.5rem 0;
+    }
+
+    .product-btn {
+      background: #b8962e;
+      color: #1a2744;
+      padding: 0.8rem 2rem;
+      border: none;
+      border-radius: 2px;
+      font-family: 'Jost', sans-serif;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: all 0.3s ease;
+    }
+
+    .product-btn:hover {
+      background: #b8962e;
+    }
+
+    footer {
+      background: #1a2744;
+      color: #f0ebe0;
+      padding: 2rem 3rem;
+      text-align: center;
+    }
+
+    footer a {
+      color: #b8962e;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      flex-direction: column;
+      gap: 6px;
+      padding: 0;
+    }
+
+    .nav-toggle span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: #f0ebe0;
+      transition: all 0.3s;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        position: fixed;
+        top: 68px;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        background: #1a2744;
+        padding: 1rem 0;
+        border-bottom: 2px solid #b8962e;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s;
+      }
+
+      nav.open {
+        max-height: 300px;
+      }
+
+      nav a {
+        display: block;
+        padding: 1rem 2rem;
+        margin: 0;
+        border-bottom: 1px solid rgba(184,150,46,0.2);
+      }
+
+      .nav-toggle {
+        display: flex;
+      }
+
+      header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 999;
+        height: 68px;
+      }
+
+      body {
+        padding-top: 68px;
+      }
+    }
+  </style>
 </head>
 <body>
+  <header>
+    <img src="logo.png" alt="My Legacy Continues" class="logo">
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <nav id="navMenu">
+      <a href="index.html">Home</a>
+      <a href="about-us.html">About Us</a>
+      <a href="contact.html">Contact</a>
+      <a href="legal/privacy.html">Privacy</a>
+    </nav>
+  </header>
 
-<!-- NAV -->
-<nav>
-  <a href="index.html"><img src="logo.png" alt="My Legacy Continues" class="nav-logo"></a>
-  <ul class="nav-center" id="navLinks">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="cemetery-plaque.html">Cemetery Plaque</a></li>
-    <li><a href="heritage-book.html">Heritage Book</a></li>
-    <li><a href="pet-tag.html">Pet Tag</a></li>
-    <li><a href="business-profile.html">Business Profile</a></li>
-    <li><a href="rescue-registry.html">Rescue Registry</a></li>
-    <li><a href="portal.html" class="nav-vault-link">Vault</a></li>
-  </ul>
-  <div class="nav-right">
-    <button class="nav-lang" onclick="alert('Spanish version coming soon.')">EN | ES</button>
-    <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
-  </div>
-</nav>
+  <section class="hero">
+    <h1>My Legacy Continues</h1>
+    <p>Professional heritage preservation, genealogy research, memorial services, and legacy preservation for families and organizations throughout California.</p>
+    <p style="font-weight: 600; color: #b8962e; font-size: 1.1rem; margin-top: 1.5rem;">Zero Subscriptions. Hosted Forever.</p>
+  </section>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-content">
-    <img src="logo.png" alt="My Legacy Continues" class="hero-logo">
-    <div class="hero-divider"></div>
-    <span class="hero-eyebrow">Santa Maria, CA &mdash; Est. 2024</span>
-    <h1 class="hero-title">Your Family's Story Deserves to Last Forever.</h1>
-    <p class="hero-subtitle">Heritage books. Cemetery memorials. Pet tags. Business legacies. One-time purchase. Hosted forever. No subscriptions.</p>
-    <div class="hero-ctas">
-      <a href="#products" class="btn btn-primary">See Our Products</a>
-      <a href="#about" class="btn btn-gold-outline">Our Story</a>
+  <section class="products-grid">
+    <div class="product-card">
+      <h2 class="product-name">Heritage Culture Book</h2>
+      <p class="product-desc">Professionally curated genealogy and heritage documentation with binding and archival preservation.</p>
+      <div class="product-price">$199</div>
+      <a href="heritage-book.html" class="product-btn">Learn More</a>
     </div>
-  </div>
-</section>
 
-<div class="gold-rule"></div>
-
-<!-- PRODUCTS -->
-<section class="section" id="products">
-  <div class="section-inner">
-    <span class="section-eyebrow">What We Build</span>
-    <h2 class="section-title">Five Ways to Preserve What Matters</h2>
-    <p class="section-sub">Every product is a one-time purchase. No renewals. No login to view. Permanent.</p>
-    <div class="products-grid">
-
-      <!-- HERITAGE BOOK -->
-      <div class="product-card">
-        <span class="product-tag">Heritage</span>
-        <div class="product-name">Heritage Culture Book</div>
-        <div class="product-sub">Your Family's Story, Researched and Written</div>
-        <p class="product-desc">We dig into the archives — FamilySearch, Spanish nobility records, border crossing documents, census records — and write your family's story chapter by chapter.</p>
-        <ul class="product-bullets">
-          <li>Professional genealogy research — 4 generations minimum</li>
-          <li>Custom written narrative — not a template</li>
-          <li>Cultural guide: food, music, traditions of your region</li>
-          <li>Family timeline and migration map</li>
-          <li>Physical book printed and shipped to your door</li>
-          <li>Permanent digital profile linked to a QR code</li>
-          <li>English and Spanish available</li>
-        </ul>
-        <div class="product-price">$199</div>
-        <a href="https://buy.stripe.com/bJe14o2a35pO6csg16fQI02" class="btn btn-primary">Order Heritage Book — $199</a>
-      </div>
-
-      <!-- PET TAG -->
-      <div class="product-card">
-        <span class="product-tag">Pet Legacy</span>
-        <div class="product-name">Pet QR Legacy Tag</div>
-        <div class="product-sub">If They Get Lost, This Brings Them Home</div>
-        <p class="product-desc">A durable metal QR tag for your pet's collar. Scan to see contact info, medical needs, and how to reach you — no app required.</p>
-        <ul class="product-bullets">
-          <li>Scan instantly — no app needed</li>
-          <li>Owner contact shown as call/text button — your number stays private</li>
-          <li>Medical info visible: medications, allergies, vet contact</li>
-          <li>Personality notes so finders know how to handle your pet</li>
-          <li>Connects to your family's account on the platform</li>
-        </ul>
-        <div class="btn-row">
-          <a href="https://buy.stripe.com/eVq7sM9CvdWk9oE4iofQI07" class="btn btn-primary">Basic Tag — $24.99</a>
-          <a href="https://buy.stripe.com/bJe28s15ZcSgdEU9CIfQI09" class="btn btn-outline">Premium + AirTag — $49.99</a>
-        </div>
-        <p class="product-price-note">Premium includes an AirTag-compatible collar holder. AirTag sold separately.</p>
-      </div>
-
-      <!-- CEMETERY PLAQUE -->
-      <div class="product-card">
-        <span class="product-tag">Memorial</span>
-        <div class="product-name">Cemetery Memorial QR Plaque</div>
-        <div class="product-sub">Give Them a Voice at the Gravesite</div>
-        <p class="product-desc">A stainless steel QR plaque attaches to any headstone. Scan to hear their songs, see photos, leave voice tributes. Not mourning. Visiting.</p>
-        <ul class="product-bullets">
-          <li>Physical stainless steel plaque — weatherproof, permanent adhesive</li>
-          <li>We build the memorial profile — you just send us the info</li>
-          <li>Playlist of their favorite songs</li>
-          <li>Photo and video gallery</li>
-          <li>Tribute wall — family and friends leave messages</li>
-          <li>Remembrance Mode — candle glow on birthdays</li>
-          <li>English and Spanish on every profile</li>
-        </ul>
-        <div class="product-price">$129</div>
-        <a href="https://buy.stripe.com/6oU3cw15Z5pO7gw5msfQI06" class="btn btn-primary">Order Memorial Plaque — $129</a>
-      </div>
-
-      <!-- BUSINESS PROFILE -->
-      <div class="product-card">
-        <span class="product-tag">Business</span>
-        <div class="product-name">Business Founder Profile</div>
-        <div class="product-sub">Your Business Card Should Tell the Whole Story</div>
-        <p class="product-desc">Scan your card and they see your real story — 20 years of work, your best jobs, your license number, and why you started. Done for you. Permanent.</p>
-        <ul class="product-bullets">
-          <li>We write your founder story — you just answer a few questions</li>
-          <li>Portfolio of your best work — up to 10 photos</li>
-          <li>Tap-to-call and quote request button built in</li>
-          <li>License number and certifications displayed</li>
-          <li>QR code for business cards, truck decals, job signs</li>
-          <li>English and Spanish available</li>
-        </ul>
-        <div class="product-price">$79</div>
-        <a href="https://buy.stripe.com/4gM14odSLaK8asI9CIfQI03" class="btn btn-primary">Get Your Business Profile — $79</a>
-      </div>
-
-      <!-- CONTRACTOR BUNDLE -->
-      <div class="product-card">
-        <span class="product-tag">Contractor Bundle</span>
-        <div class="product-name">Contractor Bundle</div>
-        <div class="product-sub">Everything a Tradesperson Needs in One Package</div>
-        <p class="product-desc">Custom digital portfolio, 500 metal QR identity cards, and a verified founder profile — all permanent, all linked.</p>
-        <ul class="product-bullets">
-          <li>Custom permanent digital portfolio page</li>
-          <li>500 metal QR identity cards shipped to you</li>
-          <li>Verified by My Legacy Continues badge</li>
-          <li>Project gallery — before and after</li>
-          <li>Services listed, coverage area mapped</li>
-          <li>Direct contact and quote request buttons</li>
-        </ul>
-        <div class="product-price">$650</div>
-        <a href="https://buy.stripe.com/dRm3cwdSL05u58o6qwfQI01" class="btn btn-primary">Build Your Profile — $650</a>
-      </div>
-
+    <div class="product-card">
+      <h2 class="product-name">Cemetery Plaque</h2>
+      <p class="product-desc">Custom memorial plaque for gravesites with engraving, installation, and perpetual care.</p>
+      <div class="product-price">$129</div>
+      <a href="cemetery-plaque.html" class="product-btn">Learn More</a>
     </div>
-  </div>
-</section>
 
-<div class="gold-rule"></div>
-
-<!-- ABOUT -->
-<section class="about-section" id="about">
-  <div class="about-inner">
-    <div>
-      <span class="section-eyebrow">Our Story</span>
-      <h2 class="section-title" style="color:#F5F0E8;font-family:var(--cinzel);font-size:clamp(1.6rem,3.5vw,2.4rem);margin-bottom:28px;">Most families lose their history.</h2>
-      <p>Not because they don't care. Because no one built a system to hold it. Papers get thrown out. Grandparents die before they're recorded.</p>
-      <p><strong>We started My Legacy Continues</strong> in Santa Maria because we almost lost ours. The Vazquez family line goes back to <strong>1547 in Galicia, Spain</strong> — a confirmed hidalgo line from the Reconquista.</p>
-      <p>Every product we build is built to make sure that doesn't happen. Physical. Digital. Permanent. No subscription required.</p>
-      <a href="https://buy.stripe.com/bJe14o2a35pO6csg16fQI02" class="btn btn-primary" style="margin-top:8px;">Start With the Heritage Book — $199</a>
+    <div class="product-card">
+      <h2 class="product-name">Pet Legacy Tag</h2>
+      <p class="product-desc">Memorial tag for beloved pets with engraving. Choose single tag or combo pack.</p>
+      <div class="product-price">$24.99 / $49.99</div>
+      <a href="pet-tag.html" class="product-btn">Learn More</a>
     </div>
-  </div>
-</section>
 
-<!-- RESCUE / GUARDIAN PROTOCOL -->
-<section class="rescue-section" id="rescue">
-  <div class="rescue-inner">
-    <div>
-      <span class="rescue-eyebrow">Guardian Protocol</span>
-      <h2 class="rescue-title">Every pet deserves a record too.</h2>
-      <p class="rescue-text">A portion of every pet tag sale supports local rescue operations. Every rescue dog gets a permanent profile — free.</p>
-      <div class="rescue-btns">
-        <a href="https://buy.stripe.com/eVq7sM9CvdWk9oE4iofQI07" class="btn btn-primary btn-sm">Basic Pet Tag — $24.99</a>
-        <a href="https://buy.stripe.com/bJe28s15ZcSgdEU9CIfQI09" class="btn btn-outline btn-sm">Premium Bundle — $49.99</a>
-      </div>
+    <div class="product-card">
+      <h2 class="product-name">Business Profile</h2>
+      <p class="product-desc">Professional business legacy documentation and succession planning service.</p>
+      <div class="product-price">$79</div>
+      <a href="business-profile.html" class="product-btn">Learn More</a>
     </div>
-    <div><a href="rescue-registry.html" class="btn btn-outline" style="white-space:nowrap;">View Rescue Registry</a></div>
-  </div>
-</section>
 
-<!-- REAL EXAMPLES SECTION -->
-<section style="padding: 72px 48px; background: #141414;">
-  <div style="max-width: 1060px; margin: 0 auto;">
-    <div style="text-align: center; margin-bottom: 48px;">
-      <span style="font-family: var(--cinzel); font-size: 0.56rem; letter-spacing: 0.32em; text-transform: uppercase; color: var(--gold); display: block; margin-bottom: 14px;">Real Stories Built With Our Platform</span>
-      <h2 style="font-family: var(--cinzel); font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 700; color: var(--heading); margin-bottom: 12px;">See What Permanent Looks Like</h2>
-      <p style="font-size: 0.95rem; color: var(--text-muted); line-height: 1.8; max-width: 580px; margin: 0 auto;">These are real families, real pets, and real businesses using My Legacy Continues. Click any to see their full profile.</p>
+    <div class="product-card">
+      <h2 class="product-name">Baby Legacy</h2>
+      <p class="product-desc">First year memory book and heritage documentation for newborns and children.</p>
+      <div class="product-price">$79</div>
+      <a href="baby-legacy.html" class="product-btn">Learn More</a>
     </div>
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px;">
-      <!-- Vazquez Profile -->
-      <a href="vazquez-profile.html" style="text-decoration: none; color: inherit;">
-        <div style="background: white; border: 1px solid rgba(201,146,10,0.28); border-radius: 4px; padding: 28px; transition: all 0.22s; cursor: pointer;" onmouseover="this.style.boxShadow='0 8px 20px rgba(30,45,31,0.15)'" onmouseout="this.style.boxShadow='none'">
-          <span style="font-family: var(--cinzel); font-size: 0.56rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); display: block; margin-bottom: 10px;">Heritage Profile</span>
-          <h3 style="font-family: var(--cinzel); font-size: 1.2rem; font-weight: 700; color: var(--heading); margin-bottom: 6px;">The Vázquez Legacy</h3>
-          <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 16px;">From Galicia, Spain to Santa Maria — 1547 to today.</p>
-          <span style="font-family: var(--cinzel); font-size: 0.65rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); font-weight: 600;">View Profile →</span>
-        </div>
-      </a>
-      <!-- Butters Profile -->
-      <a href="butters-profile.html" style="text-decoration: none; color: inherit;">
-        <div style="background: white; border: 1px solid rgba(201,146,10,0.28); border-radius: 4px; padding: 28px; transition: all 0.22s; cursor: pointer;" onmouseover="this.style.boxShadow='0 8px 20px rgba(30,45,31,0.15)'" onmouseout="this.style.boxShadow='none'">
-          <span style="font-family: var(--cinzel); font-size: 0.56rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); display: block; margin-bottom: 10px;">Pet Profile</span>
-          <h3 style="font-family: var(--cinzel); font-size: 1.2rem; font-weight: 700; color: var(--heading); margin-bottom: 6px;">Butters</h3>
-          <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 16px;">Orange tabby. 5 years. Santa Maria. Permanently recorded.</p>
-          <span style="font-family: var(--cinzel); font-size: 0.65rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); font-weight: 600;">View Profile →</span>
-        </div>
-      </a>
-      <!-- Nick McNeal Profile -->
-      <a href="mcneal-construction-profile.html" style="text-decoration: none; color: inherit;">
-        <div style="background: white; border: 1px solid rgba(201,146,10,0.28); border-radius: 4px; padding: 28px; transition: all 0.22s; cursor: pointer;" onmouseover="this.style.boxShadow='0 8px 20px rgba(30,45,31,0.15)'" onmouseout="this.style.boxShadow='none'">
-          <span style="font-family: var(--cinzel); font-size: 0.56rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); display: block; margin-bottom: 10px;">Business Profile</span>
-          <h3 style="font-family: var(--cinzel); font-size: 1.2rem; font-weight: 700; color: var(--heading); margin-bottom: 6px;">Nick McNeal</h3>
-          <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 16px;">Licensed contractor. 20+ years. Santa Barbara County. Permanent record.</p>
-          <span style="font-family: var(--cinzel); font-size: 0.65rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); font-weight: 600;">View Profile →</span>
-        </div>
-      </a>
-      <!-- Carlos Macias Profile -->
-      <a href="carlos-macias-profile.html" style="text-decoration: none; color: inherit;">
-        <div style="background: white; border: 1px solid rgba(201,146,10,0.28); border-radius: 4px; padding: 28px; transition: all 0.22s; cursor: pointer;" onmouseover="this.style.boxShadow='0 8px 20px rgba(30,45,31,0.15)'" onmouseout="this.style.boxShadow='none'">
-          <span style="font-family: var(--cinzel); font-size: 0.56rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); display: block; margin-bottom: 10px;">Business Profile</span>
-          <h3 style="font-family: var(--cinzel); font-size: 1.2rem; font-weight: 700; color: var(--heading); margin-bottom: 6px;">Carlos Macias</h3>
-          <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 16px;">Creative property manager. Portfolio-driven. Santa Maria. Scan to see his work.</p>
-          <span style="font-family: var(--cinzel); font-size: 0.65rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); font-weight: 600;">View Profile →</span>
-        </div>
-      </a>
-      <!-- Bears Concrete Profile -->
-      <a href="bears-concrete-profile.html" style="text-decoration: none; color: inherit;">
-        <div style="background: white; border: 1px solid rgba(201,146,10,0.28); border-radius: 4px; padding: 28px; transition: all 0.22s; cursor: pointer;" onmouseover="this.style.boxShadow='0 8px 20px rgba(30,45,31,0.15)'" onmouseout="this.style.boxShadow='none'">
-          <span style="font-family: var(--cinzel); font-size: 0.56rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); display: block; margin-bottom: 10px;">Business Profile</span>
-          <h3 style="font-family: var(--cinzel); font-size: 1.2rem; font-weight: 700; color: var(--heading); margin-bottom: 6px;">Bears Concrete</h3>
-          <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 16px;">Concrete pumping. Central Coast. Founded by Mark Vazquez. The founder's own profile.</p>
-          <span style="font-family: var(--cinzel); font-size: 0.65rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); font-weight: 600;">View Profile →</span>
-        </div>
-      </a>
-      <!-- Rescue Registry -->
-      <a href="rescue-registry.html" style="text-decoration: none; color: inherit;">
-        <div style="background: white; border: 1px solid rgba(201,146,10,0.28); border-radius: 4px; padding: 28px; transition: all 0.22s; cursor: pointer;" onmouseover="this.style.boxShadow='0 8px 20px rgba(30,45,31,0.15)'" onmouseout="this.style.boxShadow='none'">
-          <span style="font-family: var(--cinzel); font-size: 0.56rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); display: block; margin-bottom: 10px;">Rescue Registry</span>
-          <h3 style="font-family: var(--cinzel); font-size: 1.2rem; font-weight: 700; color: var(--heading); margin-bottom: 6px;">Underdog Heroes</h3>
-          <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 16px;">8 rescue dogs from Lompoc. Every one has a permanent profile — free.</p>
-          <span style="font-family: var(--cinzel); font-size: 0.65rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); font-weight: 600;">View Registry →</span>
-        </div>
-      </a>
-    </div>
-  </div>
-</section>
+  </section>
 
-<!-- STATS BAR -->
-<section class="stats-bar">
-  <div class="stats-inner">
-    <div><span class="stat-num">1547</span><span class="stat-label">Earliest Confirmed Family Record</span></div>
-    <div><span class="stat-num">5</span><span class="stat-label">Products Built to Preserve Your Legacy</span></div>
-    <div><span class="stat-num">$0</span><span class="stat-label">Subscriptions Required</span></div>
-    <div><span class="stat-num">Forever</span><span class="stat-label">Years Your Legacy Stays Online</span></div>
-  </div>
-</section>
+  <section style="background: #1a2744; color: #f0ede6; padding: 4rem 3rem; text-align: center;">
+    <h2 style="font-family: 'DM Serif Display', Georgia, serif; color: #b8962e; font-size: 2rem; margin-bottom: 1.5rem;">Why We Built This</h2>
+    <p style="max-width: 700px; margin: 0 auto 1rem; line-height: 1.8; font-size: 1rem;">
+      In Santa Maria, California, we see families working hard—concrete workers, ranchers, service workers—building their legacies with their hands. They deserve a simple, honest way to preserve what matters: stories, photos, memories. No subscriptions. No AI. No walls of text. Just one-time, forever-hosted digital memorials that work for generations.
+    </p>
+  </section>
 
-<!-- FOOTER -->
-<footer>
-  <div class="footer-inner">
-    <img src="logo.png" alt="My Legacy Continues" class="footer-logo">
-    <div class="footer-bottom">
-      <span class="footer-copy">Long Live Your Legacy &mdash; mylegacycontinues.com &mdash; &copy; 2026 My Legacy Continues &mdash; Santa Maria, CA</span>
-    </div>
-  </div>
-</footer>
+  <footer>
+    <p>&copy; 2026 My Legacy Continues. All rights reserved.</p>
+    <p>
+      <a href="legal/privacy.html">Privacy Policy</a> |
+      <a href="legal/terms-of-service.html">Terms of Service</a> |
+      <a href="contact.html">Contact</a> |
+      <a href="mailto:contact@mylegacycontinues.com">contact@mylegacycontinues.com</a>
+    </p>
+  </footer>
 
-<script>
-const toggle = document.getElementById('navToggle');
-const links = document.getElementById('navLinks');
-toggle.addEventListener('click', () => links.classList.toggle('open'));
-document.querySelectorAll('#navLinks a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
-</script>
+  <script>
+    const navToggle = document.getElementById('navToggle');
+    const navMenu = document.getElementById('navMenu');
+
+    navToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('open');
+    });
+
+    // Close menu when a link is clicked
+    navMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('open');
+      });
+    });
+  </script>
 </body>
 </html>

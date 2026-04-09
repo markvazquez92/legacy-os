@@ -1,355 +1,227 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Pet QR Tag Demo — My Legacy Continues</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Karla:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pet Legacy Tag — Memorial QR Tag — $24.99 / $49.99 — My Legacy Continues</title>
+  <meta name="description" content="Memorial QR tag for beloved pets. Single tag $24.99 or combo pack $49.99. Scan to share photos, memories, and tributes. Hosted forever. My Legacy Continues.">
+  <link rel="icon" href="logo.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,700;0,800;1,400;1,600&family=DM+Serif+Display:ital@0;1&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
     :root {
-  --bg:#0a0a0a;--bg-card:#141414;--bg-warm:#141414;--bg-nav:#0d0d0d;
-  --forest:#0a0a0a;--forest-dark:#0d0d0d;--gold:#C9920A;--gold-light:#E5A812;
-  --gold-dim:rgba(201,146,10,0.55);--gold-border:rgba(201,146,10,0.25);--gold-wash:rgba(201,146,10,0.08);
-  --heading:#F5F0E8;--heading-hover:#D4C9A8;--text:#F5F0E8;--text-muted:#B5A98A;--text-dim:#B5A98A;
-  --im-fell:'Cormorant Garamond', Georgia, serif;--sans:'Karla', sans-serif;
-  --cinzel:'Cormorant Garamond', Georgia, serif;--lora:'Karla', sans-serif;--serif:'Cormorant Garamond', Georgia, serif;
-}
-    * { margin:0; padding:0; box-sizing:border-box; }
-    body { background:var(--bg); color:var(--cream); font-family:'Karla',sans-serif; font-weight:300; line-height:1.7; }
-
-    .nav { background:var(--dark); border-bottom:1px solid var(--border); padding:16px 28px; display:flex; justify-content:space-between; align-items:center; }
-    .nav a { color:var(--gold); text-decoration:none; font-size:11px; letter-spacing:0.14em; text-transform:uppercase; font-weight:600; }
-    .nav-right { font-size:11px; color:var(--muted); }
-
-    .hero { background:var(--dark); border-bottom:1px solid var(--border); padding:64px 28px 48px; text-align:center; }
-    .badge { display:inline-block; border:1px solid var(--gold); color:var(--gold); font-size:9px; letter-spacing:0.2em; text-transform:uppercase; padding:5px 14px; margin-bottom:22px; }
-    .hero h1 { font-family:'Cormorant Garamond',serif; font-size:clamp(36px,6vw,56px); font-weight:700; line-height:1.05; color:var(--cream); margin-bottom:12px; }
-    .hero h1 em { color:var(--gold); font-style:normal; }
-    .hero p { font-size:15px; color:var(--muted); max-width:500px; margin:0 auto; line-height:1.75; }
-
-    .wrap { max-width:860px; margin:0 auto; padding:0 28px 64px; }
-    .sec { display:flex; align-items:center; gap:18px; margin:52px 0 36px; }
-    .sec h2 { font-family:'Cormorant Garamond',serif; font-size:26px; font-weight:700; white-space:nowrap; }
-    .sec-rule { flex:1; height:1px; background:var(--border); }
-
-    /* TAG COMPARISON */
-    .tag-compare { display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--border); margin-bottom:40px; }
-    @media(max-width:580px){ .tag-compare{ grid-template-columns:1fr; } }
-
-    .tag-option { background:var(--card); padding:36px 28px; display:flex; flex-direction:column; align-items:center; }
-    .tag-option.premium { background:#1c271b; }
-
-    .tag-tier { font-size:9px; letter-spacing:0.2em; text-transform:uppercase; color:var(--gold); margin-bottom:6px; }
-    .tag-price { font-family:'Cormorant Garamond',serif; font-size:40px; font-weight:700; color:var(--cream); margin-bottom:4px; line-height:1; }
-    .tag-price-sub { font-size:11px; color:var(--muted); margin-bottom:28px; }
-
-    /* PHYSICAL TAG MOCKUP */
-    .tag-visual { margin-bottom:28px; position:relative; }
-
-    /* BASIC TAG */
-    .basic-tag {
-      width:160px; height:180px;
-      background:linear-gradient(145deg, #2a2a2a, #1a1a1a);
-      border-radius:50% 50% 50% 50% / 40% 40% 60% 60%;
-      display:flex; flex-direction:column; align-items:center; justify-content:center;
-      padding:16px 12px;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.05);
-      position:relative; margin:0 auto;
-      border:1px solid #3a3a3a;
-    }
-    .basic-tag::before {
-      content:'';
-      position:absolute; top:-12px; left:50%; transform:translateX(-50%);
-      width:18px; height:14px;
-      background:#333;
-      border-radius:3px;
-      border:1px solid #444;
-    }
-    .basic-tag::after {
-      content:'';
-      position:absolute; top:-18px; left:50%; transform:translateX(-50%);
-      width:10px; height:10px;
-      border-radius:50%;
-      border:2px solid #555;
+      --navy:         #1a2744;
+      --navy-deep:    #0f1620;
+      --gold:         #b8962e;
+      --gold-light:   #cba83c;
+      --cream:        #f0ebe0;
+      --charcoal:     #2C2C2C;
+      --charcoal2:    #1A1A1A;
+      --gold-bright:  #cba83c;
+      --gold-dim:     rgba(184,150,46,0.4);
+      --gold-wash:    rgba(184,150,46,0.08);
+      --gold-border:  rgba(184,150,46,0.25);
+      --heading:      #2C2C2C;
+      --body:         #2C2C2C;
+      --muted:        rgba(44,44,44,0.65);
+      --card-bg:      rgba(184,150,46,0.08);
+      --nav-bg:       #f0ebe0;
+      --bg:           #f0ebe0;
+      --text:         #2C2C2C;
+      --text-muted:   rgba(44,44,44,0.65);
+      --text-dim:     rgba(44,44,44,0.5);
     }
 
-    /* PREMIUM TAG */
-    .premium-tag {
-      width:160px; height:180px;
-      background:linear-gradient(145deg, #2c2c1a, #1a1a0a);
-      border-radius:50% 50% 50% 50% / 40% 40% 60% 60%;
-      display:flex; flex-direction:column; align-items:center; justify-content:center;
-      padding:16px 12px;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.5), 0 0 0 1px rgba(201,146,10,0.3), inset 0 1px 0 rgba(201,146,10,0.1);
-      position:relative; margin:0 auto;
-      border:1px solid var(--gold);
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Jost', sans-serif; background: var(--bg); color: var(--text); line-height: 1.8; -webkit-font-smoothing: antialiased; }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; height: auto; display: block; }
+
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 900; height: 68px; background: #f0ebe0; border-bottom: 1px solid rgba(184,150,46,0.2); display: flex; align-items: center; justify-content: space-between; padding: 0 48px; }
+    .nav-logo { height: 40px; width: auto; }
+    .nav-center { display: flex; align-items: center; gap: 26px; list-style: none; }
+    .nav-center a { font-family: 'Jost', sans-serif; font-size: 0.78rem; color: #2C2C2C; letter-spacing: 0.02em; transition: color 0.2s; }
+    .nav-center a:hover { color: #b8962e; }
+    .nav-right { display: flex; align-items: center; gap: 12px; }
+    .nav-vault-link { font-family: 'DM Serif Display', Georgia, serif; font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; color: #b8962e; border: 1px solid rgba(184,150,46,0.4); padding: 8px 16px; border-radius: 2px; transition: all 0.22s; }
+    .nav-vault-link:hover { background: rgba(184,150,46,0.12); }
+    .nav-toggle { display: none; background: none; border: none; cursor: pointer; flex-direction: column; gap: 5px; padding: 4px; }
+    .nav-toggle span { display: block; width: 22px; height: 1.5px; background: var(--gold); }
+    @media (max-width: 960px) {
+      nav { padding: 0 20px; }
+      .nav-center { display: none; flex-direction: column; position: fixed; top: 68px; left: 0; right: 0; background: #f0ebe0; padding: 24px 20px; gap: 0; border-bottom: 1px solid rgba(184,150,46,0.2); }
+      .nav-center.open { display: flex; }
+      .nav-center li { width: 100%; }
+      .nav-center a { display: block; padding: 14px 0; border-bottom: 1px solid rgba(184,150,46,0.1); font-size: 0.92rem; color: #2C2C2C; }
+      .nav-toggle { display: flex; }
     }
-    .premium-tag::before {
-      content:'';
-      position:absolute; top:-12px; left:50%; transform:translateX(-50%);
-      width:18px; height:14px;
-      background:linear-gradient(145deg,#C9920A,#a88b25);
-      border-radius:3px;
+
+    .page-hero { background: #1a2744; padding: 130px 48px 72px; }
+    .page-hero-inner { max-width: 860px; margin: 0 auto; }
+    .back-link { font-family: 'DM Serif Display', Georgia, serif; font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(184,150,46,0.8); display: inline-flex; align-items: center; gap: 8px; margin-bottom: 28px; transition: color 0.2s; }
+    .back-link:hover { color: #cba83c; }
+    .back-link::before { content: '←'; font-size: 0.9rem; }
+    .page-eyebrow { font-family: 'DM Serif Display', Georgia, serif; font-size: 0.56rem; letter-spacing: 0.32em; text-transform: uppercase; color: #b8962e; display: block; margin-bottom: 18px; }
+    .page-title { font-family: 'DM Serif Display', Georgia, serif; font-size: clamp(2rem, 4.5vw, 3.2rem); font-weight: 700; color: #f0ebe0; line-height: 1.1; margin-bottom: 18px; }
+    .page-sub { font-size: 1rem; color: rgba(240,235,224,0.8); line-height: 1.85; max-width: 600px; margin-bottom: 32px; }
+    .price-badge { display: inline-block; font-family: 'DM Serif Display', Georgia, serif; font-size: 2.2rem; font-weight: 700; color: #cba83c; margin-bottom: 32px; }
+    .price-note { font-size: 0.8rem; color: rgba(240,235,224,0.6); margin-top: -20px; margin-bottom: 28px; }
+    @media (max-width: 600px) { .page-hero { padding: 116px 20px 56px; } }
+
+    .gold-rule { height: 1px; background: var(--gold-border); }
+
+    .what-section { padding: 72px 48px; background: #f0ebe0; }
+    .what-inner { max-width: 860px; margin: 0 auto; }
+    .what-section h2 { font-family: 'DM Serif Display', Georgia, serif; font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 700; color: #1a2744; margin-bottom: 32px; }
+    .includes-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin-bottom: 40px; }
+    .include-item { background: rgba(184,150,46,0.08); border: 1px solid rgba(184,150,46,0.2); border-radius: 4px; padding: 22px 20px; box-shadow: 0 2px 12px rgba(184,150,46,0.05); }
+    .include-item-icon { font-size: 1.4rem; margin-bottom: 10px; }
+    .include-item-title { font-family: 'DM Serif Display', Georgia, serif; font-size: 0.72rem; font-weight: 700; color: #1a2744; margin-bottom: 6px; }
+    .include-item-desc { font-size: 0.8rem; color: #2C2C2C; line-height: 1.7; }
+    @media (max-width: 600px) { .what-section { padding: 52px 20px; } }
+
+    .options-section { padding: 0 48px 80px; background: #f0ebe0; }
+    .options-inner { max-width: 860px; margin: 0 auto; }
+    .options-title { font-family: 'DM Serif Display', Georgia, serif; font-size: 1.8rem; color: #1a2744; margin-bottom: 32px; }
+    .option-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 40px; }
+    @media (max-width: 600px) { .option-cards { grid-template-columns: 1fr; } .options-section { padding: 0 20px 64px; } }
+
+    .option-card { background: rgba(184,150,46,0.08); border: 2px solid rgba(184,150,46,0.2); border-radius: 4px; padding: 32px; text-align: center; transition: all 0.3s ease; }
+    .option-card:hover { border-color: #b8962e; box-shadow: 0 8px 32px rgba(184,150,46,0.15); }
+    .option-card.featured { border-color: #b8962e; background: rgba(184,150,46,0.12); }
+    .option-label { font-family: 'DM Serif Display', Georgia, serif; font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: #b8962e; display: block; margin-bottom: 12px; }
+    .option-name { font-family: 'DM Serif Display', Georgia, serif; font-size: 1.6rem; color: #1a2744; margin-bottom: 12px; font-weight: 700; }
+    .option-price { font-family: 'DM Serif Display', Georgia, serif; font-size: 2.4rem; font-weight: 700; color: #b8962e; margin-bottom: 20px; }
+    .option-desc { font-size: 0.95rem; color: #2C2C2C; line-height: 1.6; margin-bottom: 24px; }
+    .btn { display: inline-block; font-family: 'DM Serif Display', Georgia, serif; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; padding: 16px 34px; min-height: 44px; border: none; cursor: pointer; transition: all 0.22s ease; text-decoration: none; white-space: nowrap; border-radius: 2px; }
+    .btn-primary { background: #b8962e; color: #f0ebe0; box-shadow: 0 4px 20px rgba(184,150,46,0.2); }
+    .btn-primary:hover { background: #cba83c; transform: translateY(-2px); }
+
+    footer { background: #1a2744; border-top: 1px solid rgba(184,150,46,0.2); padding: 40px 48px 28px; }
+    .footer-inner { max-width: 1060px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 20px; }
+    .footer-logo { height: 48px; width: auto; opacity: 0.8; }
+    .footer-copy { font-family: 'DM Serif Display', Georgia, serif; font-size: 0.56rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(240,235,224,0.4); text-align: center; }
+
+    @media (max-width: 600px) {
+      nav { padding: 0 20px; }
     }
-    .premium-tag::after {
-      content:'';
-      position:absolute; top:-18px; left:50%; transform:translateX(-50%);
-      width:10px; height:10px;
-      border-radius:50%;
-      border:2px solid var(--gold);
-    }
-
-    .tag-engraved-name {
-      font-family:'Cormorant Garamond',serif;
-      font-size:20px; font-weight:700; letter-spacing:0.04em;
-      margin-bottom:6px; text-align:center;
-    }
-    .basic-tag .tag-engraved-name { color:#ccc; text-shadow:0 1px 0 #000, 0 -1px 0 #555; }
-    .premium-tag .tag-engraved-name { color:var(--gold); text-shadow:0 1px 2px rgba(0,0,0,0.8); }
-
-    .tag-qr-box {
-      width:68px; height:68px;
-      background:white;
-      display:flex; align-items:center; justify-content:center;
-      margin-bottom:6px;
-      position:relative;
-    }
-    .qr-pattern {
-      width:56px; height:56px;
-      display:grid;
-      grid-template-columns:repeat(7,1fr);
-      grid-template-rows:repeat(7,1fr);
-      gap:1px;
-    }
-    .qr-cell { background:#111; }
-    .qr-cell.w { background:white; }
-
-    .tag-scan-text { font-size:7px; letter-spacing:0.1em; text-transform:uppercase; }
-    .basic-tag .tag-scan-text { color:#777; }
-    .premium-tag .tag-scan-text { color:rgba(201,146,10,0.6); }
-
-    .tag-phone-line { font-size:10px; font-weight:600; margin-top:4px; }
-    .basic-tag .tag-phone-line { color:#aaa; }
-    .premium-tag .tag-phone-line { color:var(--gold); }
-
-    /* AIRTAG HOLDER */
-    .airtag-holder {
-      width:80px; height:80px;
-      background:linear-gradient(145deg,#e8e8e8,#c0c0c0);
-      border-radius:50%;
-      display:flex; align-items:center; justify-content:center;
-      margin:12px auto 0;
-      box-shadow:0 4px 12px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.5);
-      position:relative;
-    }
-    .airtag-inner {
-      width:60px; height:60px;
-      background:linear-gradient(145deg,#f5f5f5,#d0d0d0);
-      border-radius:50%;
-      display:flex; flex-direction:column; align-items:center; justify-content:center;
-      box-shadow:inset 0 2px 4px rgba(0,0,0,0.2);
-    }
-    .airtag-logo { font-size:16px; line-height:1; }
-    .airtag-label { font-size:6px; letter-spacing:0.1em; text-transform:uppercase; color:#555; margin-top:2px; }
-    .airtag-note { font-size:10px; color:var(--muted); text-align:center; margin-top:6px; }
-
-    /* FEATURES LIST */
-    .features { list-style:none; width:100%; margin-top:20px; }
-    .features li { padding:9px 0; border-bottom:1px solid var(--border); font-size:13px; display:flex; align-items:center; gap:10px; }
-    .features li:last-child { border-bottom:none; }
-    .feat-check { color:var(--gold); font-size:12px; font-weight:700; flex-shrink:0; }
-    .feat-check.dim { color:var(--border); }
-
-    .order-btn {
-      display:block; text-align:center; margin-top:24px; width:100%;
-      background:var(--gold); color:#0a0e0a;
-      padding:14px; font-size:11px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; text-decoration:none;
-      transition:background 0.2s;
-    }
-    .order-btn:hover { background:var(--gold2); }
-    .order-btn.outline {
-      background:transparent; border:1px solid var(--gold); color:var(--gold);
-    }
-    .order-btn.outline:hover { background:var(--gold); color:#0a0e0a; }
-
-    /* HOW IT WORKS */
-    .how-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(180px,1fr)); gap:1px; background:var(--border); margin-bottom:40px; }
-    .how-step { background:var(--card); padding:24px 20px; }
-    .step-n { font-family:'Cormorant Garamond',serif; font-size:36px; font-weight:700; color:var(--border); line-height:1; margin-bottom:10px; }
-    .step-title { font-size:14px; font-weight:600; color:var(--cream); margin-bottom:6px; }
-    .step-desc { font-size:12px; color:var(--muted); line-height:1.65; }
-
-    /* SAMPLE PROFILE LINK */
-    .sample-link { background:var(--card); border:1px solid var(--gold); display:flex; align-items:center; justify-content:space-between; gap:20px; padding:24px 28px; text-decoration:none; transition:background 0.2s; margin-bottom:0; }
-    .sample-link:hover { background:#243222; }
-    .sl-left .sl-tag { font-size:9px; letter-spacing:0.14em; text-transform:uppercase; color:var(--gold); margin-bottom:4px; }
-    .sl-left .sl-name { font-family:'Cormorant Garamond',serif; font-size:20px; font-weight:700; color:var(--cream); margin-bottom:2px; }
-    .sl-left .sl-sub { font-size:12px; color:var(--muted); }
-    .sl-arrow { font-size:22px; color:var(--gold); }
-
-    .cta { background:var(--gold); }
-    .cta-inner { max-width:860px; margin:0 auto; padding:32px 28px; display:flex; justify-content:space-between; align-items:center; gap:20px; flex-wrap:wrap; }
-    .cta p { font-size:15px; font-weight:600; color:#0a0e0a; }
-    .cta a { display:inline-block; background:#0a0e0a; color:var(--gold); padding:12px 24px; font-size:10px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; text-decoration:none; }
-
-    .footer { background:var(--dark); border-top:1px solid var(--border); padding:28px; text-align:center; }
-    .footer p { font-size:12px; color:var(--muted); margin-bottom:4px; }
-    .footer a { color:var(--gold); text-decoration:none; }
-    .footer-credit { font-size:10px; color:#4a5e49; margin-top:8px; }
   </style>
-<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<nav class="nav">
-  <a href="https://mylegacycontinues.com">My Legacy Continues</a>
-  <span class="nav-right">Pet QR Legacy Tags</span>
+<nav>
+  <a href="index.html"><img src="logo.png" alt="My Legacy Continues" class="nav-logo"></a>
+  <ul class="nav-center" id="navLinks">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="heritage-book.html">Heritage Books</a></li>
+    <li><a href="cemetery-plaque.html">Plaques</a></li>
+    <li><a href="pet-tag.html">Pet Tags</a></li>
+    <li><a href="business-profile.html">Business Profile</a></li>
+  </ul>
+  <div class="nav-right">
+    <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
 </nav>
 
-<section class="hero">
-  <div class="badge">Pet QR Legacy Tag</div>
-  <h1>If They Get Lost,<br/>This Brings Them <em>Home</em></h1>
-  <p>A durable metal QR tag on their collar. Scan it — no app needed — and your contact info, medical details, and a call button show up instantly. One-time purchase. Permanent profile. No subscription.</p>
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <a href="index.html" class="back-link">Back to All Products</a>
+    <span class="page-eyebrow">Memorial</span>
+    <h1 class="page-title">Pet Legacy<br>QR Tag</h1>
+    <p class="page-sub">A weatherproof QR tag for your beloved pet's memorial. Scan to share photos, favorite songs, and tributes. Not saying goodbye — keeping them close.</p>
+    <div class="price-badge">$24.99 / $49.99</div>
+    <p class="price-note">One-time purchase. Hosted forever at mylegacycontinues.com. No subscriptions.</p>
+  </div>
+</div>
+
+<div class="gold-rule"></div>
+
+<section class="what-section">
+  <div class="what-inner">
+    <h2>What You're Getting</h2>
+    <div class="includes-grid">
+      <div class="include-item">
+        <div class="include-item-icon">🏷️</div>
+        <div class="include-item-title">Weatherproof QR Tag</div>
+        <div class="include-item-desc">Durable stainless steel or premium aluminum. Attaches to collar, grave marker, or anywhere you want. Built to last.</div>
+      </div>
+      <div class="include-item">
+        <div class="include-item-icon">🎵</div>
+        <div class="include-item-title">Favorite Songs</div>
+        <div class="include-item-desc">Add up to 5 songs that meant something to your pet's life. Visitors scan and hear the music you choose.</div>
+      </div>
+      <div class="include-item">
+        <div class="include-item-icon">📸</div>
+        <div class="include-item-title">Photo Gallery</div>
+        <div class="include-item-desc">Digital gallery of your pet's best moments. Family photos and memories preserved forever.</div>
+      </div>
+      <div class="include-item">
+        <div class="include-item-icon">💌</div>
+        <div class="include-item-title">Tribute Wall</div>
+        <div class="include-item-desc">Friends and family leave memories and stories. A living memorial for your pet.</div>
+      </div>
+    </div>
+  </div>
 </section>
 
-<div class="wrap">
+<div class="gold-rule"></div>
 
-  <div class="sec"><h2>Choose Your Tag</h2><div class="sec-rule"></div></div>
-
-  <div class="tag-compare">
-
-    <!-- BASIC TAG -->
-    <div class="tag-option">
-      <div class="tag-tier">Basic Tag</div>
-      <div class="tag-price">$24.99</div>
-      <div class="tag-price-sub">One-time &middot; No subscription</div>
-
-      <div class="tag-visual">
-        <div class="basic-tag">
-          <div class="tag-engraved-name">Butters</div>
-          <div class="tag-qr-box">
-            <div class="qr-pattern">
-              <div class="qr-cell"></div><div class="qr-cell"></div><div class="qr-cell"></div><div class="qr-cell w"></div><div class="qr-cell"></div><div class="qr-cell"></div><div class="qr-cell"></div>
-              <div class="qr-cell"></div><div class="qr-cell w"></div><div class="qr-cell"></div><div class="qr-cell w"></div><div class="qr-cell"></div><div class="qr-cell w"></div><div class="qr-cell"></div>
-              <div class="qr-cell"></div><div class="qr-cell w"></div><div class="qr-cell"></div><div class="qr-cell"></div><div class="qr-cell"></div><div class="qr-cell w"></div><div class="qr-cell"></div>
-              <div class="qr-cell w"></div><div class="qr-cell"></div><div class="qr-cell w"></div><div class="qr-cell"></div><div class="qr-cell w"></div><div class="qr-cell"></div><div class="qr-cell w"></div>
-              <div class="qr-cell"></div><div class="qr-cell w"></div><div class="qr-cell"></div><div class="qr-cell"></div><div class="qr-cell"></div><div class="qr-cell w"></div><div class="qr-cell"></div>
-              <div class="qr-cell"></div><div class="qr-cell w"></div><div class="qr-cell"></div><div class="qr-cell w"></div><div class="qr-cell"></div><div class="qr-cell w"></div><div class="qr-cell"></div>
-              <div class="qr-cell"></div><div class="qr-cell"></div><div class="qr-cell"></div><div class="qr-cell w"></div><div class="qr-cell"></div><div class="qr-cell"></div><div class="qr-cell"></div>
-            </div>
-          </div>
-          <div class="tag-scan-text">Scan — No App Needed</div>
-          <div class="tag-phone-line">(805) 863-3794</div>
-        </div>
+<section class="options-section">
+  <div class="options-inner">
+    <h2 class="options-title">Choose Your Package</h2>
+    <div class="option-cards">
+      <div class="option-card">
+        <span class="option-label">Basic</span>
+        <h3 class="option-name">Single Tag</h3>
+        <div class="option-price">$24.99</div>
+        <p class="option-desc">One beautiful QR tag with lifetime memorial profile.</p>
+        <a href="https://buy.stripe.com/eVq7sM9CvdWk9oE4iofQI07" class="btn btn-primary">Choose Single Tag</a>
       </div>
 
-      <ul class="features">
-        <li><span class="feat-check">+</span> Durable metal QR tag</li>
-        <li><span class="feat-check">+</span> Permanent digital profile</li>
-        <li><span class="feat-check">+</span> Tap-to-call owner button</li>
-        <li><span class="feat-check">+</span> Medical info visible on scan</li>
-        <li><span class="feat-check">+</span> No app needed to scan</li>
-        <li><span class="feat-check">+</span> No subscription, ever</li>
-        <li><span class="feat-check dim">+</span> <span style="color:var(--border)">AirTag holder (Premium only)</span></li>
-      </ul>
-      <a class="order-btn outline" href="https://buy.stripe.com/eVq7sM9CvdWk9oE4iofQI07">Order Basic Tag — $24.99</a>
-    </div>
-
-    <!-- PREMIUM TAG -->
-    <div class="tag-option premium">
-      <div class="tag-tier">Premium Tag</div>
-      <div class="tag-price">$49.99</div>
-      <div class="tag-price-sub">Includes AirTag collar holder</div>
-
-      <div class="tag-visual">
-        <div class="premium-tag">
-          <div class="tag-engraved-name">Butters</div>
-          <div class="tag-qr-box">
-            <div class="qr-pattern">
-              <div class="qr-cell"></div><div class="qr-cell"></div><div class="qr-cell"></div><div class="qr-cell w"></div><div class="qr-cell"></div><div class="qr-cell"></div><div class="qr-cell"></div>
-              <div class="qr-cell"></div><div class="qr-cell w"></div><div class="qr-cell"></div><div class="qr-cell w"></div><div class="qr-cell"></div><div class="qr-cell w"></div><div class="qr-cell"></div>
-              <div class="qr-cell"></div><div class="qr-cell w"></div><div class="qr-cell"></div><div class="qr-cell"></div><div class="qr-cell"></div><div class="qr-cell w"></div><div class="qr-cell"></div>
-              <div class="qr-cell w"></div><div class="qr-cell"></div><div class="qr-cell w"></div><div class="qr-cell"></div><div class="qr-cell w"></div><div class="qr-cell"></div><div class="qr-cell w"></div>
-              <div class="qr-cell"></div><div class="qr-cell w"></div><div class="qr-cell"></div><div class="qr-cell"></div><div class="qr-cell"></div><div class="qr-cell w"></div><div class="qr-cell"></div>
-              <div class="qr-cell"></div><div class="qr-cell w"></div><div class="qr-cell"></div><div class="qr-cell w"></div><div class="qr-cell"></div><div class="qr-cell w"></div><div class="qr-cell"></div>
-              <div class="qr-cell"></div><div class="qr-cell"></div><div class="qr-cell"></div><div class="qr-cell w"></div><div class="qr-cell"></div><div class="qr-cell"></div><div class="qr-cell"></div>
-            </div>
-          </div>
-          <div class="tag-scan-text">Scan — No App Needed</div>
-          <div class="tag-phone-line">(805) 863-3794</div>
-        </div>
-        <div class="airtag-holder">
-          <div class="airtag-inner">
-            <div class="airtag-logo">&#9201;</div>
-            <div class="airtag-label">AirTag</div>
-          </div>
-        </div>
-        <div class="airtag-note">AirTag holder included<br/>AirTag sold separately</div>
+      <div class="option-card featured">
+        <span class="option-label">Popular</span>
+        <h3 class="option-name">Combo Pack</h3>
+        <div class="option-price">$49.99</div>
+        <p class="option-desc">Two tags for different locations (grave, home, car) same memorial profile.</p>
+        <a href="https://buy.stripe.com/eVq7sM9CvdWk9oE4iofQI07" class="btn btn-primary">Choose Combo Pack</a>
       </div>
-
-      <ul class="features">
-        <li><span class="feat-check">+</span> Durable metal QR tag</li>
-        <li><span class="feat-check">+</span> Permanent digital profile</li>
-        <li><span class="feat-check">+</span> Tap-to-call owner button</li>
-        <li><span class="feat-check">+</span> Medical info visible on scan</li>
-        <li><span class="feat-check">+</span> No app needed to scan</li>
-        <li><span class="feat-check">+</span> No subscription, ever</li>
-        <li><span class="feat-check">+</span> AirTag collar holder included</li>
-      </ul>
-      <a class="order-btn" href="https://buy.stripe.com/bJe28s15ZcSgdEU9CIfQI09">Order Premium Tag — $49.99</a>
     </div>
 
-  </div>
-
-  <!-- HOW IT WORKS -->
-  <div class="sec"><h2>How It Works</h2><div class="sec-rule"></div></div>
-  <div class="how-grid">
-    <div class="how-step">
-      <div class="step-n">01</div>
-      <div class="step-title">Order Your Tag</div>
-      <div class="step-desc">One-time purchase. We build your pet's permanent profile and ship the metal QR tag to your door.</div>
-    </div>
-    <div class="how-step">
-      <div class="step-n">02</div>
-      <div class="step-title">We Build the Profile</div>
-      <div class="step-desc">Photos, personality, medical info, owner contact. A real profile — not just a name and phone number.</div>
-    </div>
-    <div class="how-step">
-      <div class="step-n">03</div>
-      <div class="step-title">Attach It to the Collar</div>
-      <div class="step-desc">Tag goes on. Profile goes live. Anyone who finds your pet scans it and reaches you directly. No app needed.</div>
-    </div>
-    <div class="how-step">
-      <div class="step-n">04</div>
-      <div class="step-title">Permanent. Forever.</div>
-      <div class="step-desc">No subscription. No renewal. No login required to view the profile. It lives online as long as we do.</div>
+    <div style="background: #1a2744; border-radius: 4px; padding: 32px 36px; margin-bottom: 0; color: rgba(240,235,224,0.85); text-align: center;">
+      <p style="font-size: 0.9rem; line-height: 1.85; margin-bottom: 16px;">
+        <strong style="color: #f0ebe0;">Both options include:</strong> Lifetime digital memorial profile, unlimited photos & stories, family access, hosted forever.
+      </p>
+      <p style="font-size: 0.85rem; color: rgba(240,235,224,0.7);">
+        One-time purchase. Your pet's memory is never deleted.
+      </p>
     </div>
   </div>
+</section>
 
-  <!-- SAMPLE PROFILE -->
-  <div class="sec"><h2>See a Real Profile</h2><div class="sec-rule"></div></div>
-  <a class="sample-link" href="https://mylegacycontinues.com/butters-profile.html">
-    <div class="sl-left">
-      <div class="sl-tag">Live Sample Profile</div>
-      <div class="sl-name">Butters — Orange Tabby &middot; 5 Years</div>
-      <div class="sl-sub">Santa Maria, CA &middot; Owner: Bear Vazquez &middot; Microchipped &middot; Sterilized</div>
-    </div>
-    <div class="sl-arrow">&rarr;</div>
-  </a>
-
-</div>
-
-<div class="cta">
-  <div class="cta-inner">
-    <p>A portion of every tag sale supports local rescue operations.</p>
-    <a href="https://mylegacycontinues.com/rescue-registry.html">View Rescue Registry</a>
+<footer>
+  <div class="footer-inner">
+    <img src="logo.png" alt="My Legacy Continues" class="footer-logo">
+    <p class="footer-copy">
+      <a href="legal/privacy.html" style="color: #b8962e;">Privacy Policy</a> |
+      <a href="legal/terms-of-service.html" style="color: #b8962e;">Terms of Service</a> |
+      <a href="contact.html" style="color: #b8962e;">Contact</a> |
+      <a href="mailto:contact@mylegacycontinues.com" style="color: #b8962e;">contact@mylegacycontinues.com</a>
+    </p>
+    <p class="footer-copy">&copy; 2026 My Legacy Continues. All rights reserved.</p>
   </div>
-</div>
-
-<footer class="footer">
-  <p>My Legacy Continues &middot; Santa Maria, California &middot; <a href="https://mylegacycontinues.com">mylegacycontinues.com</a></p>
-  <p class="footer-credit">Long Live Your Legacy &middot; Est. 2024</p>
 </footer>
+
+<script>
+  // Mobile nav toggle
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+  if (navToggle) {
+    navToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+    });
+  }
+</script>
 
 </body>
 </html>

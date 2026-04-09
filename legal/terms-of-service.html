@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terms of Service — My Legacy Continues</title>
+  <meta name="description" content="Terms of Service for My Legacy Continues. Learn about our service terms, guarantees, and how we protect your legacy.">
+  <link rel="icon" href="../logo.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,700;0,800;1,400;1,600&family=DM+Serif+Display:ital@0;1&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy:         #1a2744;
+      --navy-deep:    #0f1620;
+      --gold:         #b8962e;
+      --gold-light:   #b8962e;
+      --cream:        #f0ebe0;
+      --charcoal:     #2C2C2C;
+      --bg:           #f0ebe0;
+      --text:         #2C2C2C;
+      --text-muted:   rgba(44,44,44,0.65);
+      --text-dim:     rgba(44,44,44,0.5);
+      --gold-border:  rgba(184,150,46,0.25);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Jost', sans-serif; background: var(--bg); color: var(--text); line-height: 1.8; -webkit-font-smoothing: antialiased; }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; height: auto; display: block; }
+
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 900; height: 68px; background: #f0ebe0; border-bottom: 1px solid rgba(184,150,46,0.2); display: flex; align-items: center; justify-content: space-between; padding: 0 48px; }
+    .nav-logo { height: 40px; width: auto; }
+    .nav-center { display: flex; align-items: center; gap: 26px; list-style: none; }
+    .nav-center a { font-family: 'Jost', sans-serif; font-size: 0.78rem; color: #2C2C2C; letter-spacing: 0.02em; transition: color 0.2s; }
+    .nav-center a:hover { color: #b8962e; }
+    .nav-right { display: flex; align-items: center; gap: 12px; }
+    .nav-vault-link { font-family: 'DM Serif Display', Georgia, serif; font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; color: #b8962e; border: 1px solid rgba(184,150,46,0.4); padding: 8px 16px; border-radius: 2px; transition: all 0.22s; }
+    .nav-vault-link:hover { background: rgba(184,150,46,0.12); }
+    .nav-toggle { display: none; background: none; border: none; cursor: pointer; flex-direction: column; gap: 5px; padding: 4px; }
+    .nav-toggle span { display: block; width: 22px; height: 1.5px; background: #b8962e; }
+    @media (max-width: 960px) {
+      nav { padding: 0 20px; }
+      .nav-center { display: none; flex-direction: column; position: fixed; top: 68px; left: 0; right: 0; background: #f0ebe0; padding: 24px 20px; gap: 0; border-bottom: 1px solid rgba(184,150,46,0.2); }
+      .nav-center.open { display: flex; }
+      .nav-center li { width: 100%; }
+      .nav-center a { display: block; padding: 14px 0; border-bottom: 1px solid rgba(184,150,46,0.1); font-size: 0.92rem; color: #2C2C2C; }
+      .nav-toggle { display: flex; }
+    }
+
+    .policy-header { background: #1a2744; color: #E8DFC8; padding: 130px 48px 60px; text-align: center; margin-top: 68px; }
+    .policy-header h1 { font-family: 'DM Serif Display', Georgia, serif; font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 700; margin-bottom: 16px; line-height: 1.2; }
+    .policy-header p { font-size: 1.05rem; max-width: 600px; margin: 0 auto; opacity: 0.9; }
+
+    .policy-body { max-width: 800px; margin: 0 auto; padding: 64px 48px; }
+    .policy-section { margin-bottom: 48px; }
+    .policy-section h2 { font-family: 'DM Serif Display', Georgia, serif; font-size: 1.8rem; color: var(--navy); margin-bottom: 16px; margin-top: 32px; }
+    .policy-section h2:first-child { margin-top: 0; }
+    .policy-section h3 { font-family: 'DM Serif Display', Georgia, serif; font-size: 1.2rem; color: var(--navy); margin: 24px 0 12px; }
+    .policy-section p { margin-bottom: 16px; line-height: 1.8; color: var(--text); }
+    .policy-section ul { margin: 16px 0 16px 24px; }
+    .policy-section li { margin-bottom: 12px; line-height: 1.7; }
+
+    footer { border-top: 1px solid rgba(184,150,46,0.2); background: #1a2744; padding: 40px 48px 28px; }
+    .footer-inner { max-width: 1060px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 20px; }
+    .footer-logo { height: 48px; width: auto; opacity: 0.8; }
+    .footer-copy { font-family: 'DM Serif Display', Georgia, serif; font-size: 0.56rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(240,235,224,0.4); text-align: center; }
+
+    @media (max-width: 600px) {
+      .policy-header { padding: 116px 20px 48px; }
+      .policy-body { padding: 40px 20px 64px; }
+      nav { padding: 0 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="../index.html"><img src="../logo.png" alt="My Legacy Continues" class="nav-logo"></a>
+  <ul class="nav-center" id="navLinks">
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="../about-us.html">About Us</a></li>
+    <li><a href="../contact.html">Contact</a></li>
+    <li><a href="./privacy.html">Privacy</a></li>
+  </ul>
+  <div class="nav-right">
+    <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div class="policy-header">
+  <h1>Terms of Service</h1>
+  <p>Effective Date: January 1, 2026</p>
+</div>
+
+<div class="policy-body">
+  <div class="policy-section">
+    <h2>1. Agreement to Terms</h2>
+    <p>By accessing and using mylegacycontinues.com ("Service"), you accept and agree to be bound by the terms and provision of this agreement. If you do not agree to abide by the above, please do not use this service.</p>
+  </div>
+
+  <div class="policy-section">
+    <h2>2. Use License</h2>
+    <p>Permission is granted to temporarily download one copy of the materials (information or software) on mylegacycontinues.com for personal, non-commercial transitory viewing only. This is the grant of a license, not a transfer of title, and under this license you may not:</p>
+    <ul>
+      <li>Modify or copy the materials</li>
+      <li>Use the materials for any commercial purpose or for any public display</li>
+      <li>Attempt to decompile or reverse engineer any software contained on the site</li>
+      <li>Remove any copyright or other proprietary notations from the materials</li>
+      <li>Transfer the materials to another person or "mirror" the materials on any other server</li>
+    </ul>
+  </div>
+
+  <div class="policy-section">
+    <h2>3. Disclaimer of Warranties and Limitation of Liability</h2>
+    <p>The materials on mylegacycontinues.com are provided on an 'as is' basis. My Legacy Continues makes no warranties, expressed or implied, and hereby disclaims and negates all other warranties including, without limitation, implied warranties or conditions of merchantability, fitness for a particular purpose, or non-infringement of intellectual property or other violation of rights.</p>
+  </div>
+
+  <div class="policy-section">
+    <h2>4. One-Time Purchase Terms</h2>
+    <p>All products and services listed on mylegacycontinues.com are one-time purchases. After payment is received and processed:</p>
+    <ul>
+      <li><strong>No refunds are offered</strong> for completed transactions</li>
+      <li>Your digital legacy profile or service will be established and hosted indefinitely</li>
+      <li>Access to your created content is provided to designated family members as specified</li>
+      <li>Your data is stored securely and maintained in our systems</li>
+    </ul>
+  </div>
+
+  <div class="policy-section">
+    <h2>5. Hosted Forever Guarantee</h2>
+    <p>Once you purchase a service from My Legacy Continues, we commit to hosting your legacy profile, memorial, or data indefinitely. This includes:</p>
+    <ul>
+      <li>Permanent digital storage of your content</li>
+      <li>Ongoing server maintenance and security</li>
+      <li>No expiration or automatic deletion of your legacy profile</li>
+      <li>Continued access for authorized family members even if My Legacy Continues ceases operations (with appropriate succession planning)</li>
+    </ul>
+    <p>In the event My Legacy Continues ceases operations, we will provide reasonable notice and facilitate the transfer of your data to a successor service or provide you with a complete backup of your legacy profile.</p>
+  </div>
+
+  <div class="policy-section">
+    <h2>6. No Subscriptions</h2>
+    <p>My Legacy Continues does not offer subscription-based services. All products are one-time purchases with no recurring charges. You will not be billed multiple times for a single purchase.</p>
+  </div>
+
+  <div class="policy-section">
+    <h2>7. User-Generated Content</h2>
+    <p>You retain all rights to any content (photos, stories, documents) that you upload to your legacy profile. By uploading content, you grant My Legacy Continues a license to store, maintain, and display this content as part of your legacy service. You represent and warrant that you have the right to upload and share any content you provide.</p>
+  </div>
+
+  <div class="policy-section">
+    <h2>8. Limitation of Liability</h2>
+    <p>In no event shall My Legacy Continues, or its suppliers be liable for any damages (including, without limitation, damages for loss of data or profit, or due to business interruption) arising out of the use or inability to use the materials on mylegacycontinues.com, even if My Legacy Continues or an authorized representative has been notified orally or in writing of the possibility of such damage.</p>
+  </div>
+
+  <div class="policy-section">
+    <h2>9. Accuracy of Materials</h2>
+    <p>The materials appearing on mylegacycontinues.com could include technical, typographical, or photographic errors. My Legacy Continues does not warrant that any of the materials on the site are accurate, complete, or current. We may make changes to the materials contained on this website at any time without notice.</p>
+  </div>
+
+  <div class="policy-section">
+    <h2>10. Links</h2>
+    <p>My Legacy Continues has not reviewed all of the sites linked to this website and is not responsible for the contents of any such linked site. The inclusion of any link does not imply endorsement by My Legacy Continues of the site. Use of any such linked website is at the user's own risk.</p>
+  </div>
+
+  <div class="policy-section">
+    <h2>11. Modifications</h2>
+    <p>My Legacy Continues may revise these terms of service at any time without notice. By using this website, you are agreeing to be bound by the then current version of these terms of service.</p>
+  </div>
+
+  <div class="policy-section">
+    <h2>12. Governing Law</h2>
+    <p>These terms and conditions are governed by and construed in accordance with the laws of the State of California, and you irrevocably submit to the exclusive jurisdiction of the courts in that location.</p>
+  </div>
+
+  <div class="policy-section">
+    <h2>13. Contact</h2>
+    <p>If you have any questions about these Terms of Service, please contact us at <a href="mailto:hello@mylegacycontinues.com" style="color: #b8962e;">hello@mylegacycontinues.com</a></p>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <img src="../logo.png" alt="My Legacy Continues" class="footer-logo">
+    <p class="footer-copy">&copy; 2026 My Legacy Continues. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+  // Mobile nav toggle
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+  if (navToggle) {
+    navToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+    });
+  }
+</script>
+
+</body>
+</html>

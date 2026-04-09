@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Baby Legacy Starter — $79 — My Legacy Continues</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Karla:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{--green:#202e1f;--green-dark:#182318;--green-card:#243023;--gold:#b8962e;--gold-hover:#c49b2e;--cream:#f0ede6;--cream-muted:#c8c4bc;--border:rgba(184,150,46,0.18)}
+    body{background:var(--green);color:var(--cream);font-family:'Karla',sans-serif;font-size:17px;line-height:1.7}
+    a{color:var(--gold);text-decoration:none}
+    a:hover{color:var(--gold-hover)}
+    nav{position:sticky;top:0;z-index:100;background:var(--green-dark);border-bottom:1px solid var(--border);padding:0 40px;display:flex;align-items:center;justify-content:space-between;height:64px}
+    nav img{height:36px}
+    .nav-links{display:flex;gap:28px;list-style:none}
+    .nav-links a{font-size:13px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:var(--cream-muted)}
+    .nav-links a:hover{color:var(--gold)}
+    .hero{background:var(--green-dark);border-bottom:3px solid var(--gold);padding:72px 40px;position:relative;overflow:hidden}
+    .hero::after{content:'';position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--gold)}
+    .hero-inner{max-width:1100px;margin:0 auto;padding-left:32px}
+    .hero-badge{display:inline-block;background:rgba(184,150,46,0.12);color:var(--gold);font-size:11px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;padding:6px 14px;border-radius:3px;margin-bottom:20px}
+    .hero h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(52px,8vw,96px);letter-spacing:0.04em;color:var(--cream);line-height:0.95;margin-bottom:16px}
+    .hero h1 span{color:var(--gold)}
+    .hero-sub{font-family:'Cormorant Garamond',serif;font-size:22px;font-style:italic;color:var(--cream-muted);margin-bottom:32px;max-width:600px;line-height:1.5}
+    .hero-price{font-family:'Bebas Neue',sans-serif;font-size:48px;color:var(--gold);letter-spacing:0.06em;margin-bottom:6px}
+    .hero-note{font-size:14px;color:var(--cream-muted);margin-bottom:32px}
+    .btn-gold{background:var(--gold);color:var(--green-dark);font-family:'Karla',sans-serif;font-size:13px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;padding:16px 40px;border-radius:4px;display:inline-block;border:none;cursor:pointer;transition:background 0.2s,transform 0.15s}
+    .btn-gold:hover{background:var(--gold-hover);transform:translateY(-1px);color:var(--green-dark)}
+    .btn-outline{background:transparent;color:var(--cream);border:1px solid var(--border);font-family:'Karla',sans-serif;font-size:13px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;padding:16px 36px;border-radius:4px;display:inline-block;transition:border-color 0.2s,color 0.2s}
+    .btn-outline:hover{border-color:var(--gold);color:var(--gold)}
+    section{padding:80px 40px}
+    .inner{max-width:1100px;margin:0 auto}
+    .section-label{font-size:11px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
+    .section-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(36px,5vw,56px);letter-spacing:0.06em;color:var(--cream);margin-bottom:20px}
+    .section-title span{color:var(--gold)}
+    .divider{width:48px;height:2px;background:var(--gold);margin:20px 0 32px}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:40px}
+    .card{background:var(--green-card);border:1px solid var(--border);border-top:3px solid var(--gold);padding:32px 28px}
+    .card-num{font-family:'Bebas Neue',sans-serif;font-size:40px;color:rgba(184,150,46,0.2);line-height:1;margin-bottom:8px}
+    .card h3{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:700;color:var(--cream);margin-bottom:10px}
+    .card p{font-size:15px;color:var(--cream-muted);line-height:1.7}
+    .story-block{background:var(--green-dark);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+    .story-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+    .story-copy p{font-size:17px;color:var(--cream-muted);line-height:1.85;margin-bottom:20px}
+    .story-copy p strong{color:var(--cream)}
+    .story-pull{background:var(--green-card);border-left:4px solid var(--gold);padding:32px}
+    .story-pull p{font-family:'Cormorant Garamond',serif;font-size:22px;font-style:italic;color:var(--cream);line-height:1.5;margin-bottom:12px}
+    .story-pull cite{font-size:12px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);font-style:normal}
+    .form-section{background:var(--green-dark);border-top:1px solid var(--border)}
+    .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+    .form-side h2{font-family:'Bebas Neue',sans-serif;font-size:40px;color:var(--cream);letter-spacing:0.06em;margin-bottom:12px}
+    .form-side p{font-size:15px;color:var(--cream-muted);line-height:1.75;margin-bottom:16px}
+    .form-side ul{list-style:none;margin-bottom:28px}
+    .form-side ul li{font-size:14px;color:var(--cream-muted);padding:6px 0;padding-left:18px;position:relative;border-bottom:1px solid var(--border)}
+    .form-side ul li::before{content:'—';position:absolute;left:0;color:var(--gold)}
+    form .field{margin-bottom:20px}
+    form label{display:block;font-size:12px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);margin-bottom:6px}
+    form input,form textarea,form select{width:100%;background:var(--green);border:1px solid var(--border);border-radius:4px;padding:12px 16px;color:var(--cream);font-family:'Karla',sans-serif;font-size:15px}
+    form input::placeholder,form textarea::placeholder{color:var(--cream-muted);opacity:0.5}
+    form input:focus,form textarea:focus,form select:focus{outline:none;border-color:var(--gold)}
+    form select option{background:var(--green-dark)}
+    form textarea{min-height:100px;resize:vertical}
+    .form-note{font-size:13px;color:var(--cream-muted);margin-bottom:24px;line-height:1.6}
+    footer{background:var(--green-dark);border-top:1px solid var(--border);padding:40px;text-align:center}
+    footer img{height:28px;margin-bottom:16px;opacity:0.7}
+    footer p{font-size:13px;color:var(--cream-muted)}
+    footer a{color:var(--gold)}
+    @media(max-width:768px){nav{padding:0 20px}.hero{padding:56px 24px}.hero-inner{padding-left:20px}section{padding:56px 24px}.cards,.story-grid,.form-grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="/index.html"><img src="https://mylegacycontinues.com/logo.png" alt="My Legacy Continues"/></a>
+  <ul class="nav-links">
+    <li><a href="/heritage-book.html">Heritage Book</a></li>
+    <li><a href="/cemetery-plaque.html">Memorial Plaque</a></li>
+    <li><a href="/pet-tag.html">Pet Tag</a></li>
+    <li><a href="/business-profile.html">Business Profile</a></li>
+    <li><a href="/rescue-registry.html">Rescue Registry</a></li>
+  </ul>
+  <a href="/index.html" style="font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:var(--cream-muted)">← Back to Home</a>
+</nav>
+
+<div class="hero">
+  <div class="hero-inner">
+    <span class="hero-badge">New · Launching May 1</span>
+    <h1>Baby Legacy<br/><span>Starter</span></h1>
+    <p class="hero-sub">Start your child's story on day one. If your house burns down, you can't lose it. It lives online, forever.</p>
+    <div class="hero-price">$79</div>
+    <p class="hero-note">One-time purchase. Permanent digital profile. Private family access only. No subscriptions.</p>
+    <div style="display:flex;gap:16px;flex-wrap:wrap">
+      <a href="#order" class="btn-gold">Pre-Order — $79</a>
+      <a href="/vazquez-profile.html" class="btn-outline">See a Heritage Profile Example →</a>
+    </div>
+  </div>
+</div>
+
+<section>
+  <div class="inner">
+    <p class="section-label">What You Get</p>
+    <h2 class="section-title">Start the Story <span>Before They Can Talk.</span></h2>
+    <div class="divider"></div>
+    <div class="cards">
+      <div class="card">
+        <div class="card-num">01</div>
+        <h3>Permanent QR Profile</h3>
+        <p>A digital page at mylegacycontinues.com — baby's name, photo, date of birth, the family around them. Scannable forever. No app needed.</p>
+      </div>
+      <div class="card">
+        <div class="card-num">02</div>
+        <h3>Family Tree Starter</h3>
+        <p>Grandparents down to baby. Both sides. Names, origins, where they came from. The roots your child will want to know about someday.</p>
+      </div>
+      <div class="card">
+        <div class="card-num">03</div>
+        <h3>Letter to My Child</h3>
+        <p>You write it now. We hold it. It unlocks on the date you choose — their 5th birthday, their 18th, whenever you decide. Your words, delivered in your time.</p>
+      </div>
+      <div class="card">
+        <div class="card-num">04</div>
+        <h3>Private Family Access</h3>
+        <p>Not public. Only the people you share the link with can see it. Family only. Protected.</p>
+      </div>
+      <div class="card">
+        <div class="card-num">05</div>
+        <h3>PDF Backup Delivered</h3>
+        <p>We email you a full PDF backup of everything on the profile. Keep it. Print it. Store it. You have it even if the internet doesn't.</p>
+      </div>
+      <div class="card">
+        <div class="card-num">06</div>
+        <h3>Grows With Them</h3>
+        <p>As they get older, the profile grows. Add milestones, photos, memories. When they're ready, it's theirs to carry forward.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="story-block">
+  <section>
+    <div class="inner">
+      <div class="story-grid">
+        <div class="story-copy">
+          <p class="section-label">Why This Exists</p>
+          <h2 class="section-title" style="font-size:clamp(32px,4vw,48px)">Most families lose the early years <span>before they even realize it.</span></h2>
+          <div class="divider"></div>
+          <p>A phone dies. A hard drive crashes. Photos get lost in a move. <strong>The first five years disappear faster than any other.</strong></p>
+          <p>My Legacy Continues was built for working families who want something permanent — not a cloud app that charges you monthly, not a social media page that deletes your account. One page. One payment. Lives there forever.</p>
+          <p>This is also the foundation for a Heritage Book later. When your child grows up and wants to know where they came from — the profile is already there, ready to become something bigger.</p>
+        </div>
+        <blockquote class="story-pull">
+          <p>"If the house burned down, you couldn't lose it. Because the digital lives separate from the physical. That was the whole idea."</p>
+          <cite>— Bear Vázquez, Founder · My Legacy Continues</cite>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+</div>
+
+<div class="form-section">
+  <section id="order">
+    <div class="inner">
+      <div class="form-grid">
+        <div class="form-side">
+          <p class="section-label">Pre-Order</p>
+          <h2>Launching May 1</h2>
+          <div class="divider"></div>
+          <p>Pre-order now and you'll be first when we launch. Fill out the form — we'll reach out to confirm your spot and start gathering what we need to build the profile.</p>
+          <ul>
+            <li>Permanent QR profile — private, family only</li>
+            <li>Family tree — both sides, grandparents to baby</li>
+            <li>"Letter to My Child" — unlocks when you choose</li>
+            <li>PDF backup delivered to your email</li>
+            <li>Delivered within 5–7 days of launch</li>
+          </ul>
+          <p class="form-note">This is a pre-order. We'll confirm by email and reach out before building. Your card is not charged until we confirm the order.</p>
+          <a href="https://buy.stripe.com/bJe14o2a35pO6csg16fQI02" class="btn-gold" style="margin-bottom:8px">Pre-Order — $79</a>
+          <p style="font-size:12px;color:var(--cream-muted);margin-top:8px">After paying, fill out the form and submit. We'll reach out within 48 hours.</p>
+        </div>
+        <div>
+          <form action="https://formspree.io/f/xzzpqjle" method="POST">
+            <input type="hidden" name="_subject" value="Baby Legacy Starter Pre-Order — $79"/>
+            <input type="hidden" name="product" value="Baby Legacy Starter"/>
+            <div class="field"><label>Baby's Full Name *</label><input type="text" name="baby_name" required/></div>
+            <div class="field"><label>Date of Birth</label><input type="text" name="dob" placeholder="Month Day, Year"/></div>
+            <div class="field"><label>Your Name (Parent / Guardian) *</label><input type="text" name="parent_name" required/></div>
+            <div class="field"><label>Your Email *</label><input type="email" name="email" required/></div>
+            <div class="field"><label>Your Phone</label><input type="tel" name="phone"/></div>
+            <div class="field"><label>Maternal Grandparents Names</label><input type="text" name="maternal_gp" placeholder="Grandma and Grandpa on mom's side"/></div>
+            <div class="field"><label>Paternal Grandparents Names</label><input type="text" name="paternal_gp" placeholder="Grandma and Grandpa on dad's side"/></div>
+            <div class="field"><label>Family Origins (Countries / Regions)</label><input type="text" name="origins" placeholder="Mexico, California, Texas, etc."/></div>
+            <div class="field"><label>When Should the Letter Unlock?</label>
+              <select name="letter_unlock">
+                <option>5th Birthday</option>
+                <option>13th Birthday</option>
+                <option>18th Birthday</option>
+                <option>21st Birthday</option>
+                <option>I'll decide later</option>
+              </select>
+            </div>
+            <div class="field"><label>Anything Else You Want on the Profile?</label><textarea name="notes" placeholder="Special memories, people to include, etc."></textarea></div>
+            <button type="submit" class="btn-gold" style="width:100%;font-size:14px">Submit My Pre-Order</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<footer>
+  <img src="https://mylegacycontinues.com/logo.png" alt="My Legacy Continues"/>
+  <p>Long Live Your Legacy &nbsp;·&nbsp; <a href="https://mylegacycontinues.com">mylegacycontinues.com</a> &nbsp;·&nbsp; &copy; 2026 My Legacy Continues &nbsp;·&nbsp; Santa Maria, CA</p>
+</footer>
+
+</body>
+</html>

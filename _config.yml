@@ -1,0 +1,21 @@
+# GitHub Pages configuration for My Legacy Continues
+# Tell GitHub Pages to skip Jekyll processing and serve HTML directly
+
+# Exclude files from Jekyll processing
+exclude:
+  - README.md
+  - LICENSE
+  - .git
+  - .gitignore
+
+# Don't process these files
+safe: false
+lsi: false
+incremental: false
+
+# Set timezone
+timezone: America/Los_Angeles
+
+# URL configuration
+url: https://mylegacycontinues.com
+baseurl: ""

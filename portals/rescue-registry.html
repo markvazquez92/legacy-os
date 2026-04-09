@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rescue Registry — My Legacy Continues</title>
+  <meta name="description" content="Every rescue dog gets a permanent profile — free. Powered by My Legacy Continues in partnership with Underdog Heroes, Riverside CA." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,700;0,800;1,400;1,600&family=DM+Serif+Display:ital@0;1&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy:         #1a2744;
+      --navy-deep:    #0f1620;
+      --gold:         #b8962e;
+      --gold-bright:  #b8962e;
+      --gold-dim:     rgba(184,150,46,0.4);
+      --gold-wash:    rgba(184,150,46,0.08);
+      --gold-border:  rgba(184,150,46,0.25);
+      --heading:      #1a2744;
+      --body:         #2C2C2C;
+      --muted:        rgba(44,44,44,0.65);
+      --card-bg:      rgba(184,150,46,0.08);
+      --nav-bg:       #f0ebe0;
+      /* legacy aliases so existing CSS still works */
+      --bg:           #f0ebe0;
+      --surface:      rgba(184,150,46,0.08);
+      --surface2:     rgba(184,150,46,0.15);
+      --border:       rgba(184,150,46,0.25);
+      --text:         #2C2C2C;
+      --dim:          rgba(44,44,44,0.5);
+      --gold-light:   #b8962e;
+      --cream:        #f0ebe0;
+      --charcoal:     #2C2C2C;
+    }
+    body { background: var(--bg); color: var(--text); font-family: 'Jost', sans-serif; line-height: 1.6; }
+    a { color: inherit; text-decoration: none; }
+
+    nav { background: #f0ebe0; border-bottom: 1px solid var(--border); padding: 20px 24px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+    .nav-logo img { height: 36px; display: block; }
+    .nav-links { display: flex; gap: 24px; list-style: none; flex-wrap: wrap; }
+    .nav-links a { font-size: 13px; letter-spacing: 0.05em; color: #2C2C2C; transition: color 0.2s; }
+    .nav-links a:hover { color: #b8962e; }
+
+    .hero { text-align: center; padding: 80px 24px 60px; border-bottom: 1px solid var(--border); }
+    .hero-eyebrow { font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
+    .hero h1 { font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 700; color: var(--text); line-height: 1.2; margin-bottom: 20px; }
+    .hero h1 em { font-style: italic; color: var(--gold); }
+    .hero p { color: var(--muted); font-size: 1.05rem; max-width: 540px; margin: 0 auto 32px; }
+    .hero-ctas { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .btn-primary { background: #b8962e; color: #f0ebe0; padding: 14px 28px; border-radius: 4px; font-size: 0.9rem; font-weight: 700; letter-spacing: 0.04em; transition: background 0.2s; display: inline-block; }
+    .btn-primary:hover { background: #b8962e; }
+    .btn-secondary { border: 1px solid var(--border); color: #2C2C2C; padding: 14px 28px; border-radius: 4px; font-size: 0.9rem; letter-spacing: 0.04em; transition: border-color 0.2s, color 0.2s; display: inline-block; }
+    .btn-secondary:hover { border-color: #2C2C2C; color: #b8962e; }
+
+    .stats { display: grid; grid-template-columns: repeat(4, 1fr); border-bottom: 1px solid var(--border); }
+    .stat { padding: 32px 20px; text-align: center; border-right: 1px solid var(--border); }
+    .stat:last-child { border-right: none; }
+    .stat-num { display: block; font-size: 2rem; font-weight: 700; color: var(--gold); margin-bottom: 4px; }
+    .stat-label { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+
+    .registry { padding: 64px 24px; max-width: 1100px; margin: 0 auto; }
+    .registry-header { margin-bottom: 48px; }
+    .registry-header h2 { font-size: 1.6rem; font-weight: 700; color: var(--text); }
+    .registry-sub { font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-top: 6px; display: block; }
+
+    .dog-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 24px; }
+    .dog-card { background: var(--surface); border: 1px solid var(--border); border-radius: 6px; overflow: hidden; transition: border-color 0.2s; }
+    .dog-card:hover { border-color: #333; }
+    .dog-img-wrap { position: relative; height: 240px; background: var(--surface2); overflow: hidden; }
+    .dog-img-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    /* Image fallback with gold initial */
+    .dog-img-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, rgba(184,150,46,0.15), rgba(184,150,46,0.08));
+    }
+    .dog-img-wrap img {
+      background: var(--surface2);
+    }
+    .dog-img-wrap img:after {
+      content: attr(alt);
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--surface2);
+      color: var(--gold);
+      font-size: 3rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+    }
+    .dog-badge { position: absolute; top: 12px; right: 12px; background: rgba(10,10,10,0.85); border: 1px solid var(--border); color: var(--gold); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; padding: 4px 10px; border-radius: 2px; }
+    .dog-body { padding: 20px; }
+    .dog-name { font-size: 1.3rem; font-weight: 700; color: var(--text); margin-bottom: 4px; }
+    .dog-meta { font-size: 12px; color: var(--muted); letter-spacing: 0.04em; margin-bottom: 12px; }
+    .dog-desc { font-size: 0.9rem; color: #aaa; line-height: 1.6; margin-bottom: 16px; }
+    .dog-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 20px; }
+    .dog-tag { background: var(--surface2); border: 1px solid var(--border); color: var(--muted); font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; padding: 4px 10px; border-radius: 2px; }
+    .dog-adopt-btn { display: block; background: transparent; border: 1px solid var(--gold); color: var(--gold); text-align: center; padding: 11px 20px; border-radius: 4px; font-size: 0.85rem; font-weight: 600; letter-spacing: 0.05em; transition: background 0.2s, color 0.2s; }
+    .dog-adopt-btn:hover { background: var(--gold); color: #0a0a0a; }
+
+    .how-it-works { background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 64px 24px; }
+    .how-inner { max-width: 900px; margin: 0 auto; }
+    .section-eyebrow { font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
+    .how-it-works h2 { font-size: 1.8rem; font-weight: 700; margin-bottom: 48px; }
+    .how-steps { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 32px; }
+    .step-num { font-size: 2rem; font-weight: 700; color: var(--gold); margin-bottom: 12px; }
+    .step-title { font-size: 1rem; font-weight: 700; color: var(--text); margin-bottom: 8px; }
+    .step-desc { font-size: 0.88rem; color: var(--muted); line-height: 1.6; }
+
+    .partner-section { padding: 64px 24px; border-bottom: 1px solid var(--border); }
+    .partner-inner { max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
+    .partner-links { display: flex; flex-direction: column; gap: 10px; margin-top: 20px; }
+    .partner-link { color: var(--muted); font-size: 0.9rem; transition: color 0.2s; }
+    .partner-link:hover { color: var(--gold); }
+    .partner-link.gold { color: var(--gold); }
+
+    footer { border-top: 1px solid var(--border); padding: 32px 24px; text-align: center; color: var(--dim); font-size: 13px; }
+    footer a { color: var(--muted); }
+    footer a:hover { color: var(--text); }
+
+    @media (max-width: 700px) {
+      .stats { grid-template-columns: repeat(2, 1fr); }
+      .stat:nth-child(2) { border-right: none; }
+      .stat:nth-child(3) { border-right: 1px solid var(--border); }
+      .partner-inner { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html"><img src="logo.png" alt="My Legacy Continues" class="nav-logo"></a>
+  <ul class="nav-center" id="navLinks">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="heritage-book.html">Heritage Books</a></li>
+    <li><a href="cemetery-plaque.html">Plaques</a></li>
+    <li><a href="pet-tag.html">Pet Tags</a></li>
+    <li><a href="business-profile.html">Business Profile</a></li>
+    <li><a href="rescue-registry.html">Rescue Registry</a></li>
+    <li><a href="portal.html" class="nav-vault-link">Family Vault</a></li>
+  </ul>
+  <div class="nav-right">
+    <a href="portal.html" class="nav-vault-link" style="margin-left: 12px;">Start Your Legacy</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-eyebrow">Guardian Protocol — Active</div>
+  <h1>Every Dog Deserves a<br /><em>Permanent Story</em></h1>
+  <p>These dogs are waiting. Each one has a profile that lives on this site — free, permanent, and shareable — until they find their home. A portion of every pet tag sale supports Underdog Heroes rescue operations.</p>
+  <div class="hero-ctas">
+    <a href="https://www.underdogheroes.org/applytoadopt" target="_blank" rel="noopener" class="btn-primary">Apply to Adopt</a>
+    <a href="https://www.instagram.com/underdogheroes_/" target="_blank" rel="noopener" class="btn-secondary">Follow @underdogheroes_</a>
+  </div>
+</section>
+
+<div class="stats">
+  <div class="stat"><span class="stat-num">8</span><span class="stat-label">Dogs in Registry</span></div>
+  <div class="stat"><span class="stat-num">Free</span><span class="stat-label">Profile for Every Dog</span></div>
+  <div class="stat"><span class="stat-num">Forever</span><span class="stat-label">Page Stays Live After Adoption</span></div>
+  <div class="stat"><span class="stat-num">$0</span><span class="stat-label">No Subscriptions Ever</span></div>
+</div>
+
+<section class="registry">
+  <div class="registry-header">
+    <h2>Underdog Heroes — Available for Adoption</h2>
+    <span class="registry-sub">Riverside, CA · Updated April 2026</span>
+  </div>
+
+  <div class="dog-grid">
+
+    <div class="dog-card">
+      <div class="dog-img-wrap">
+        <img src="https://dbw3zep4prcju.cloudfront.net/animal/51883119-38ef-4a3e-a181-2405b328df0f/image/62f61f8f-19de-4f8f-a6b4-7d088583256e.jpg" alt="Roy — American Bully" loading="lazy" />
+        <span class="dog-badge">Available</span>
+      </div>
+      <div class="dog-body">
+        <div class="dog-name">Roy</div>
+        <div class="dog-meta">American Bully · Adult · Male</div>
+        <p class="dog-desc">Roy is strong, loyal, and full of personality. He's been through a lot and still leads with love. The right home will see exactly who he is.</p>
+        <div class="dog-tags"><span class="dog-tag">American Bully</span><span class="dog-tag">Neutered</span><span class="dog-tag">Vaccinated</span></div>
+        <a href="https://www.petfinder.com/dog/roy-51883119-38ef-4a3e-a181-2405b328df0f/ca/riverside/underdog-heroes-ca2813/details/" target="_blank" rel="noopener" class="dog-adopt-btn">Adopt Roy →</a>
+      </div>
+    </div>
+
+    <div class="dog-card">
+      <div class="dog-img-wrap">
+        <img src="https://dbw3zep4prcju.cloudfront.net/animal/ce8a22e5-0516-4c74-a90c-23a036b30411/image/12b9b9e4-f008-4739-803b-e813c1e8b15d.jpg" alt="Mamas — Boston Terrier French Bulldog Mix" loading="lazy" />
+        <span class="dog-badge">Available</span>
+      </div>
+      <div class="dog-body">
+        <div class="dog-name">Mamas</div>
+        <div class="dog-meta">Boston Terrier / French Bulldog · Adult · Female</div>
+        <p class="dog-desc">Mamas is small but has enough heart for a house full of people. She bonds hard and loves harder. Compact. Devoted. The real deal.</p>
+        <div class="dog-tags"><span class="dog-tag">Frenchie Mix</span><span class="dog-tag">Spayed</span><span class="dog-tag">Good with People</span></div>
+        <a href="https://www.petfinder.com/dog/mamas-ce8a22e5-0516-4c74-a90c-23a036b30411/ca/riverside/underdog-heroes-ca2813/details/" target="_blank" rel="noopener" class="dog-adopt-btn">Adopt Mamas →</a>
+      </div>
+    </div>
+
+    <div class="dog-card">
+      <div class="dog-img-wrap">
+        <img src="https://dbw3zep4prcju.cloudfront.net/animal/36006f52-bb70-4954-96c1-b01012b39fab/image/2d30b800-4039-458d-935a-62e810f57c1c.jpg" alt="Dalia — American Bully" loading="lazy" />
+        <span class="dog-badge">Available</span>
+      </div>
+      <div class="dog-body">
+        <div class="dog-name">Dalia</div>
+        <div class="dog-meta">American Bully · Adult · Female</div>
+        <p class="dog-desc">Dalia is calm, confident, and deeply affectionate once she trusts you. She carries herself with dignity. She's earned a home that matches her character.</p>
+        <div class="dog-tags"><span class="dog-tag">American Bully</span><span class="dog-tag">Spayed</span><span class="dog-tag">Calm</span></div>
+        <a href="https://www.petfinder.com/dog/dalia-36006f52-bb70-4954-96c1-b01012b39fab/ca/san-diego/underdog-heroes-ca2813/details/" target="_blank" rel="noopener" class="dog-adopt-btn">Adopt Dalia →</a>
+      </div>
+    </div>
+
+    <div class="dog-card">
+      <div class="dog-img-wrap">
+        <img src="https://dbw3zep4prcju.cloudfront.net/animal/87ce0d52-11d0-4308-a317-4885ead9cb0b/image/3e24f4ca-4b1a-4eb4-af76-d94e937bffe0.jpg" alt="Cash — Pit Bull American Bully" loading="lazy" />
+        <span class="dog-badge">Available</span>
+      </div>
+      <div class="dog-body">
+        <div class="dog-name">Cash</div>
+        <div class="dog-meta">Pit Bull / American Bully · Adult · Male</div>
+        <p class="dog-desc">Cash is the dog who earns his name. Steady. Dependable. He's not asking for much — just someone willing to show up the way he will.</p>
+        <div class="dog-tags"><span class="dog-tag">Pit Mix</span><span class="dog-tag">Neutered</span><span class="dog-tag">Loyal</span></div>
+        <a href="https://www.petfinder.com/dog/cash-87ce0d52-11d0-4308-a317-4885ead9cb0b/oh/columbus/underdog-heroes-ca2813/details/" target="_blank" rel="noopener" class="dog-adopt-btn">Adopt Cash →</a>
+      </div>
+    </div>
+
+    <div class="dog-card">
+      <div class="dog-img-wrap">
+        <img src="https://dbw3zep4prcju.cloudfront.net/animal/606a58d4-b3ed-4700-8702-536a704672a1/image/053a1c17-7311-47f7-99e6-8dd2259dd945.jpg" alt="Maggie — Bulldog" loading="lazy" />
+        <span class="dog-badge">Available</span>
+      </div>
+      <div class="dog-body">
+        <div class="dog-name">Maggie</div>
+        <div class="dog-meta">Bulldog · Adult · Female</div>
+        <p class="dog-desc">Maggie is easy. She doesn't ask for much — a warm spot, some company, someone who gets that bulldogs move at their own pace. Best part of your day.</p>
+        <div class="dog-tags"><span class="dog-tag">Bulldog</span><span class="dog-tag">Spayed</span><span class="dog-tag">Easygoing</span></div>
+        <a href="https://www.petfinder.com/dog/maggie-606a58d4-b3ed-4700-8702-536a704672a1/ca/los-angeles/underdog-heroes-ca2813/details/" target="_blank" rel="noopener" class="dog-adopt-btn">Adopt Maggie →</a>
+      </div>
+    </div>
+
+    <div class="dog-card">
+      <div class="dog-img-wrap">
+        <img src="https://dbw3zep4prcju.cloudfront.net/animal/24c5ec45-58b7-4073-851b-f92c1e12e4ae/image/a106d4b3-2134-429b-8d0b-1ed33d58687c.jpg" alt="Victor — Husky German Shepherd" loading="lazy" />
+        <span class="dog-badge">Available</span>
+      </div>
+      <div class="dog-body">
+        <div class="dog-name">Victor</div>
+        <div class="dog-meta">Husky / German Shepherd · Adult · Male</div>
+        <p class="dog-desc">Victor is sharp and curious. He watches everything, learns fast, and needs someone who matches his energy. Smart dogs need smart homes.</p>
+        <div class="dog-tags"><span class="dog-tag">Husky Mix</span><span class="dog-tag">Neutered</span><span class="dog-tag">High Energy</span><span class="dog-tag">Intelligent</span></div>
+        <a href="https://www.petfinder.com/dog/victor-24c5ec45-58b7-4073-851b-f92c1e12e4ae/ca/riverside/underdog-heroes-ca2813/details/" target="_blank" rel="noopener" class="dog-adopt-btn">Adopt Victor →</a>
+      </div>
+    </div>
+
+    <div class="dog-card">
+      <div class="dog-img-wrap">
+        <img src="https://dbw3zep4prcju.cloudfront.net/animal/fbba6465-3344-44c0-b66d-d96a0795f780/image/6c78df53-dc2f-4256-9248-d7de66d029e0.jpg" alt="Fiona — Neapolitan Mastiff" loading="lazy" />
+        <span class="dog-badge">Available</span>
+      </div>
+      <div class="dog-body">
+        <div class="dog-name">Fiona</div>
+        <div class="dog-meta">Neapolitan Mastiff · Adult · Female</div>
+        <p class="dog-desc">Fiona is a gentle giant who carries herself quietly. Calm, observant, deeply bonded to the people she trusts. She just wants peace and a real home.</p>
+        <div class="dog-tags"><span class="dog-tag">Mastiff</span><span class="dog-tag">Spayed</span><span class="dog-tag">Gentle</span><span class="dog-tag">Giant Breed</span></div>
+        <a href="https://www.petfinder.com/dog/fiona-fbba6465-3344-44c0-b66d-d96a0795f780/ca/riverside/underdog-heroes-ca2813/details/" target="_blank" rel="noopener" class="dog-adopt-btn">Adopt Fiona →</a>
+      </div>
+    </div>
+
+    <div class="dog-card">
+      <div class="dog-img-wrap">
+        <img src="https://dbw3zep4prcju.cloudfront.net/animal/f6574807-a37e-4649-aafb-bda1d6d6ee65/image/d5a5aa02-25dd-413c-8771-2ef35ae8222b.jpg" alt="Tabitha — American Bulldog" loading="lazy" />
+        <span class="dog-badge">Available</span>
+      </div>
+      <div class="dog-body">
+        <div class="dog-name">Tabitha</div>
+        <div class="dog-meta">American Bulldog · Adult · Female</div>
+        <p class="dog-desc">Tabitha is steady and sweet. She settles into a home like she was always supposed to be there. Patient, warm, ready for her people.</p>
+        <div class="dog-tags"><span class="dog-tag">American Bulldog</span><span class="dog-tag">Spayed</span><span class="dog-tag">Steady</span></div>
+        <a href="https://www.petfinder.com/dog/tabitha-f6574807-a37e-4649-aafb-bda1d6d6ee65/ca/riverside/underdog-heroes-ca2813/details/" target="_blank" rel="noopener" class="dog-adopt-btn">Adopt Tabitha →</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="how-it-works">
+  <div class="how-inner">
+    <div class="section-eyebrow">The Guardian Protocol</div>
+    <h2>How Every Dog Gets a Permanent Profile</h2>
+    <div class="how-steps">
+      <div class="how-step">
+        <div class="step-num">01</div>
+        <div class="step-title">Dog Enters the Rescue</div>
+        <p class="step-desc">When Underdog Heroes takes in a dog, My Legacy Continues builds them a free permanent profile — photos, personality, medical info, adoption link.</p>
+      </div>
+      <div class="how-step">
+        <div class="step-num">02</div>
+        <div class="step-title">Profile Goes Live</div>
+        <p class="step-desc">Hosted at mylegacycontinues.com. Shareable. No login to view. Anyone can scan or click to see the full record.</p>
+      </div>
+      <div class="how-step">
+        <div class="step-num">03</div>
+        <div class="step-title">Dog Gets Adopted</div>
+        <p class="step-desc">The profile stays live — updated with their new family. This is a legacy, not a listing. The story doesn't end at adoption.</p>
+      </div>
+      <div class="how-step">
+        <div class="step-num">04</div>
+        <div class="step-title">Tag Transferred to Owner</div>
+        <p class="step-desc">The new owner gets a QR tag for the collar. Same profile, now with their contact info. One scan brings the dog home if they get lost.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="partner-section">
+  <div class="partner-inner">
+    <div>
+      <div class="section-eyebrow">Partnership</div>
+      <h2 style="font-size:1.8rem;font-weight:700;margin-bottom:16px;">Underdog Heroes</h2>
+      <p style="color:var(--muted);line-height:1.7;margin-bottom:16px;">A Riverside, CA nonprofit rescuing abused, injured, and neglected dogs from high-kill shelters. Founded by Shoshi Gamliel — they provide medical care, rehabilitation, and training before placing dogs in permanent homes.</p>
+      <p style="color:var(--muted);line-height:1.7;">My Legacy Continues provides every dog in their care a free permanent profile. A portion of every pet tag sale supports their operations directly.</p>
+      <div class="partner-links">
+        <a href="https://www.underdogheroes.org" target="_blank" rel="noopener" class="partner-link gold">underdogheroes.org →</a>
+        <a href="https://www.instagram.com/underdogheroes_/" target="_blank" rel="noopener" class="partner-link">@underdogheroes_ on Instagram →</a>
+        <a href="mailto:adopt@underdogheroes.org" class="partner-link">adopt@underdogheroes.org →</a>
+        <a href="https://www.underdogheroes.org/applytoadopt" target="_blank" rel="noopener" class="partner-link">Adoption Application →</a>
+        <a href="https://www.underdogheroes.org/foster-application" target="_blank" rel="noopener" class="partner-link">Foster Application →</a>
+        <a href="https://www.underdogheroes.org/volunteer" target="_blank" rel="noopener" class="partner-link">Volunteer →</a>
+      </div>
+    </div>
+    <div>
+      <div class="section-eyebrow">Get a Tag for Your Pet</div>
+      <h2 style="font-size:1.8rem;font-weight:700;margin-bottom:16px;">Every Purchase Helps</h2>
+      <p style="color:var(--muted);line-height:1.7;margin-bottom:24px;">Every Pet QR Tag sold sends a portion to Underdog Heroes and builds free profiles for their rescue dogs. Your pet gets protected. Their dogs get a story.</p>
+      <a href="/pet-tag.html" class="btn-primary">Get a Pet QR Tag — Starting at $24.99</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <img src="logo.png" alt="My Legacy Continues" class="footer-logo">
+    <div style="margin: 1.5rem 0; font-size: 0.56rem; color: var(--gold); letter-spacing: 0.12em; text-transform: uppercase;">Your Privacy Matters</div>
+    <p style="font-size: 0.8rem; color: rgba(244,239,230,0.6); max-width: 600px; margin: 0 auto 1.5rem; line-height: 1.6;">All family profiles are password protected (optional), encrypted in transit, never sold or shared, hosted permanently, and yours to control forever.</p>
+    <div style="border-top: 1px solid rgba(201,146,10,0.2); margin: 1.5rem 0;"></div>
+    <div style="margin-bottom: 1rem;">
+      <a href="privacy.html" style="font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold); text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#b8962e'" onmouseout="this.style.color='#b8962e'">Privacy Policy</a>
+    </div>
+    <div class="footer-copy">Long Live Your Legacy &mdash; mylegacycontinues.com &mdash; &copy; 2026 My Legacy Continues &mdash; Santa Maria, CA</div>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mark "Bear" Vazquez — Heritage Profile</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Karla:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#0a0a0a;--green:#0a0a0a;--dark:#141414;--dark-green:#0d0d0d;--card:#141414;--border:rgba(201,146,10,0.25);--gold:#C9920A;--gold2:#E5A812;--cream:#f0ebe0;--heading:#f0ebe0;--muted:#B5A98A;--sage:#B5A98A;--im-fell:'Cormorant Garamond', Georgia, serif;--sans:'Karla', sans-serif;}
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { background:var(--bg); color:var(--cream); font-family:'Karla',sans-serif; font-weight:300; line-height:1.7; }
+
+    .nav { background:var(--dark); border-bottom:1px solid var(--border); padding:16px 28px; display:flex; justify-content:space-between; align-items:center; }
+    .nav a { color:var(--gold); text-decoration:none; font-size:11px; letter-spacing:0.14em; text-transform:uppercase; font-weight:600; }
+    .nav a:hover { color:var(--cream); }
+    .nav-right { font-size:11px; color:var(--muted); }
+
+    /* HERO */
+    .hero { background:var(--dark); border-bottom:1px solid var(--border); padding:72px 28px 56px; text-align:center; }
+    .badge { display:inline-block; border:1px solid var(--gold); color:var(--gold); font-size:9px; letter-spacing:0.2em; text-transform:uppercase; padding:5px 14px; margin-bottom:24px; }
+    .hero h1 { font-family:'Cormorant Garamond',serif; font-size:clamp(44px,8vw,72px); font-weight:700; line-height:1.0; color:var(--cream); margin-bottom:10px; }
+    .hero h1 em { color:var(--gold); font-style:italic; }
+    .hero-sub { font-size:14px; color:var(--muted); margin-bottom:6px; letter-spacing:0.04em; }
+    .hero-location { font-size:11px; color:var(--muted); letter-spacing:0.14em; text-transform:uppercase; margin-bottom:36px; }
+
+    .lineage { display:flex; justify-content:center; flex-wrap:wrap; border-top:1px solid var(--border); border-bottom:1px solid var(--border); max-width:680px; margin:0 auto; }
+    .lin-item { padding:14px 24px; text-align:center; border-right:1px solid var(--border); }
+    .lin-item:last-child { border-right:none; }
+    .lin-label { font-size:9px; letter-spacing:0.14em; text-transform:uppercase; color:var(--gold); display:block; margin-bottom:3px; }
+    .lin-val { font-size:13px; color:var(--cream); }
+
+    /* CONNECTED PROFILES */
+    .connected { background:var(--dark); border-bottom:1px solid var(--border); padding:32px 28px; }
+    .connected-inner { max-width:820px; margin:0 auto; }
+    .conn-label { font-size:9px; letter-spacing:0.18em; text-transform:uppercase; color:var(--gold); margin-bottom:16px; }
+    .conn-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--border); }
+    @media(max-width:600px){ .conn-grid{ grid-template-columns:1fr; } }
+    .conn-card { background:var(--card); padding:20px; text-decoration:none; display:block; transition:background 0.2s; }
+    .conn-card:hover { background:#243222; }
+    .conn-type { font-size:9px; letter-spacing:0.14em; text-transform:uppercase; color:var(--gold); margin-bottom:6px; }
+    .conn-name { font-family:'Cormorant Garamond',serif; font-size:18px; font-weight:700; color:var(--cream); margin-bottom:3px; }
+    .conn-sub { font-size:11px; color:var(--muted); }
+    .conn-arrow { color:var(--gold); float:right; font-size:18px; margin-top:-28px; }
+
+    /* CONTENT */
+    .wrap { max-width:820px; margin:0 auto; padding:0 28px 64px; }
+    .sec { display:flex; align-items:center; gap:18px; margin:52px 0 26px; }
+    .sec h2 { font-family:'Cormorant Garamond',serif; font-size:26px; font-weight:700; white-space:nowrap; color:var(--cream); }
+    .sec-rule { flex:1; height:1px; background:var(--border); }
+
+    /* CHAPTERS */
+    .chapter { background:var(--card); border-top:2px solid var(--gold); padding:30px; margin-bottom:10px; }
+    .ch-tag { font-size:9px; letter-spacing:0.18em; text-transform:uppercase; color:var(--gold); margin-bottom:8px; }
+    .chapter h3 { font-family:'Cormorant Garamond',serif; font-size:22px; font-weight:700; margin-bottom:14px; }
+    .chapter p { font-size:15px; color:#ccc; line-height:1.85; margin-bottom:12px; }
+    .chapter p:last-child { margin-bottom:0; }
+
+    /* FAMILY TREE */
+    .tree-grid { display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--border); margin-bottom:0; }
+    @media(max-width:520px){ .tree-grid{ grid-template-columns:1fr; } }
+    .tree-side-card { background:var(--card); padding:24px; }
+    .tree-side-label { font-size:9px; letter-spacing:0.14em; text-transform:uppercase; color:var(--gold); margin-bottom:14px; }
+    .tree-entry { padding:10px 0; border-bottom:1px solid var(--border); }
+    .tree-entry:last-child { border-bottom:none; padding-bottom:0; }
+    .tree-name { font-size:14px; color:var(--cream); font-weight:500; margin-bottom:2px; }
+    .tree-detail { font-size:11px; color:var(--muted); }
+
+    /* TIMELINE */
+    .timeline { position:relative; padding-left:24px; }
+    .timeline::before { content:""; position:absolute; left:0; top:0; bottom:0; width:1px; background:var(--border); }
+    .tl-item { position:relative; padding:0 0 28px 24px; }
+    .tl-item::before { content:""; position:absolute; left:-5px; top:5px; width:10px; height:10px; background:var(--gold); border-radius:50%; }
+    .tl-year { font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--gold); margin-bottom:4px; }
+    .tl-event { font-size:15px; color:var(--cream); font-weight:500; margin-bottom:2px; font-family:'Cormorant Garamond',serif; }
+    .tl-detail { font-size:12px; color:var(--muted); }
+
+    /* CULTURE GUIDE */
+    .culture-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:1px; background:var(--border); }
+    .culture-card { background:var(--card); padding:22px 20px; transition:background 0.2s; }
+    .culture-card:hover { background:#243222; }
+    .cult-n { font-family:'Cormorant Garamond',serif; font-size:28px; font-weight:700; color:var(--border); line-height:1; margin-bottom:8px; }
+    .cult-cat { font-size:9px; letter-spacing:0.14em; text-transform:uppercase; color:var(--gold); margin-bottom:6px; }
+    .culture-card h4 { font-size:14px; font-weight:600; color:var(--cream); margin-bottom:6px; }
+    .culture-card p { font-size:12px; color:var(--muted); line-height:1.65; margin-bottom:8px; }
+    .culture-card a { color:var(--gold); text-decoration:none; font-size:11px; letter-spacing:0.06em; }
+    .culture-card a:hover { color:var(--cream); }
+
+    /* PLAYLIST */
+    .playlist-block { background:var(--card); border-top:2px solid var(--gold); padding:28px; margin-bottom:0; }
+    .pl-tag { font-size:9px; letter-spacing:0.18em; text-transform:uppercase; color:var(--gold); margin-bottom:8px; }
+    .playlist-block h3 { font-family:'Cormorant Garamond',serif; font-size:22px; font-weight:700; margin-bottom:6px; }
+    .playlist-block p { font-size:13px; color:var(--muted); margin-bottom:18px; line-height:1.7; }
+
+    /* LINKED PROFILES — big cards */
+    .profile-links { display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--border); margin-bottom:10px; }
+    @media(max-width:520px){ .profile-links{ grid-template-columns:1fr; } }
+    .prof-card { background:var(--card); padding:26px; text-decoration:none; display:block; transition:background 0.2s; position:relative; }
+    .prof-card:hover { background:#243222; }
+    .prof-type { font-size:9px; letter-spacing:0.14em; text-transform:uppercase; color:var(--gold); margin-bottom:8px; }
+    .prof-card h3 { font-family:'Cormorant Garamond',serif; font-size:20px; font-weight:700; color:var(--cream); margin-bottom:4px; }
+    .prof-card p { font-size:12px; color:var(--muted); line-height:1.6; }
+    .prof-arrow { position:absolute; top:26px; right:26px; color:var(--gold); font-size:20px; }
+
+    /* RESCUE REGISTRY BLOCK */
+    .rescue-block { background:var(--card); border:1px solid var(--gold); padding:30px; margin-bottom:10px; display:grid; grid-template-columns:1fr auto; gap:24px; align-items:center; }
+    @media(max-width:520px){ .rescue-block{ grid-template-columns:1fr; } }
+    .rescue-block .rb-tag { font-size:9px; letter-spacing:0.18em; text-transform:uppercase; color:var(--gold); margin-bottom:8px; }
+    .rescue-block h3 { font-family:'Cormorant Garamond',serif; font-size:20px; font-weight:700; margin-bottom:10px; }
+    .rescue-block p { font-size:13px; color:var(--muted); line-height:1.75; margin-bottom:16px; }
+    .rescue-block a.btn {
+      display:inline-block; background:var(--gold); color:#0a0e0a;
+      padding:11px 22px; font-size:10px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; text-decoration:none;
+    }
+    .rescue-block a.btn:hover { background:var(--gold2); }
+    .rescue-stat { text-align:center; }
+    .rescue-stat .rs-num { font-family:'Cormorant Garamond',serif; font-size:48px; font-weight:700; color:var(--gold); line-height:1; display:block; }
+    .rescue-stat .rs-label { font-size:10px; color:var(--muted); letter-spacing:0.1em; text-transform:uppercase; }
+
+    /* CTA */
+    .cta { background:var(--gold); }
+    .cta-inner { max-width:820px; margin:0 auto; padding:32px 28px; display:flex; justify-content:space-between; align-items:center; gap:20px; flex-wrap:wrap; }
+    .cta p { font-size:15px; font-weight:600; color:#0a0e0a; }
+    .cta a { display:inline-block; background:#0a0e0a; color:var(--gold); padding:12px 24px; font-size:10px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; text-decoration:none; }
+
+    .footer { background:var(--dark); border-top:1px solid var(--border); padding:28px; text-align:center; }
+    .footer p { font-size:12px; color:var(--muted); margin-bottom:4px; }
+    .footer a { color:var(--gold); text-decoration:none; }
+    .footer-credit { font-size:10px; color:#4a5e49; margin-top:8px; letter-spacing:0.06em; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html"><img src="logo.png" alt="My Legacy Continues" class="nav-logo"></a>
+  <ul class="nav-center" id="navLinks">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="heritage-book.html">Heritage Books</a></li>
+    <li><a href="cemetery-plaque.html">Plaques</a></li>
+    <li><a href="pet-tag.html">Pet Tags</a></li>
+    <li><a href="business-profile.html">Business Profile</a></li>
+    <li><a href="rescue-registry.html">Rescue Registry</a></li>
+    <li><a href="portal.html" class="nav-vault-link">Family Vault</a></li>
+  </ul>
+  <div class="nav-right">
+    <a href="portal.html" class="nav-vault-link" style="margin-left: 12px;">Start Your Legacy</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+
+
+<nav class="nav">
+  <a href="https://mylegacycontinues.com">My Legacy Continues</a>
+  <span class="nav-right">Heritage Profile &middot; Vazquez Family</span>
+</nav>
+
+<section class="hero">
+  <div class="badge">Heritage Book — Vazquez Family</div>
+  <h1>Mark <em>"Bear"</em><br/>Vazquez</h1>
+  <p class="hero-sub">Concrete Pumping Operator &middot; Heritage Preservationist &middot; Animal Rescue Advocate</p>
+  <p class="hero-location">Santa Maria, California &middot; Est. 2026</p>
+  <div class="lineage">
+    <div class="lin-item"><span class="lin-label">Paternal</span><span class="lin-val">Vazquez &middot; Alba</span></div>
+    <div class="lin-item"><span class="lin-label">Origin</span><span class="lin-val">Galicia, Spain &middot; 1547</span></div>
+    <div class="lin-item"><span class="lin-label">Maternal</span><span class="lin-val">Garcia &middot; Montemayor</span></div>
+    <div class="lin-item"><span class="lin-label">Settled</span><span class="lin-val">Santa Maria, CA</span></div>
+  </div>
+</section>
+
+<!-- CONNECTED PROFILES HUB -->
+<div class="connected">
+  <div class="connected-inner">
+    <div class="conn-label">Bear's World — Everything Connected</div>
+    <div class="conn-grid">
+      <a class="conn-card" href="https://mylegacycontinues.com/bears-concrete-profile.html">
+        <div class="conn-type">Business</div>
+        <div class="conn-name">Bears Concrete Pumping</div>
+        <div class="conn-sub">Santa Maria, CA &middot; (805) 863-3794</div>
+        <div class="conn-arrow">&rarr;</div>
+      </a>
+      <a class="conn-card" href="https://mylegacycontinues.com/butters-profile.html">
+        <div class="conn-type">Pet Legacy</div>
+        <div class="conn-name">Butters</div>
+        <div class="conn-sub">Orange Tabby &middot; 5 Years &middot; The Champ</div>
+        <div class="conn-arrow">&rarr;</div>
+      </a>
+      <a class="conn-card" href="https://mylegacycontinues.com/rescue-registry.html">
+        <div class="conn-type">Rescue Registry</div>
+        <div class="conn-name">Underdog Heroes</div>
+        <div class="conn-sub">8 Dogs &middot; Permanent Profiles &middot; Free</div>
+        <div class="conn-arrow">&rarr;</div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <!-- CHAPTER 1 -->
+  <div class="sec"><h2>Chapter 1 — The Soil</h2><div class="sec-rule"></div></div>
+  <div class="chapter">
+    <div class="ch-tag">The Ancient Homeland</div>
+    <h3>Galicia, Spain</h3>
+    <p>Long before the name Vazquez appeared in any registry, the land that would shape this family already had its character. Galicia — the green, rain-soaked corner of northwestern Spain — is a place of granite coastlines, ancient oak forests, and river valleys so lush they seem painted. This is Atlantic Spain, not the arid Castile of legend. It is a land of fishermen, farmers, and fighters, where the sea is never far and the mountains rise sudden and steep behind every village.</p>
+    <p>Vazquez is not simply a surname. It is a record of lineage encoded in language. The name is Galician in origin — a patronymic meaning "son of Vasco," derived from the ancient pre-Roman name Velascus, believed to carry the Basque root meaning crow or raven. The raven: a bird associated across cultures with intelligence, memory, and the guardianship of the dead. In Iberian mythology, the raven was a messenger between worlds. The family that carries this name has always moved between worlds.</p>
+  </div>
+
+  <!-- CHAPTER 2 -->
+  <div class="sec"><h2>Chapter 2 — The Journey</h2><div class="sec-rule"></div></div>
+  <div class="chapter">
+    <div class="ch-tag">Mexico City to California</div>
+    <h3>The Crossing</h3>
+    <p>In the first decades of the twentieth century, Mexico City was not a place of peace. The Mexican Revolution had fractured the country along lines of land, class, and loyalty. For urban families in the capital, the threat was economic collapse, conscription, and a future that offered no horizon. Families like the Vazquez family faced an impossible choice: stay and watch everything erode, or leave everything they built and walk north. They chose north.</p>
+    <p>Grandpa Joe Vazquez made rings. In the tradition of the skilled craftsman, he shaped metal by hand. He understood material. He knew how metal behaved under heat, under pressure, under the intention of a craftsman's eye. That knowledge — that DNA of precision — traveled with him from Mexico City to the Central Coast of California.</p>
+  </div>
+
+  <!-- CHAPTER 3 -->
+  <div class="sec"><h2>Chapter 3 — The Legacy</h2><div class="sec-rule"></div></div>
+  <div class="chapter">
+    <div class="ch-tag">The DNA of Excellence</div>
+    <h3>From Metal to Concrete</h3>
+    <p>Today, Bear Vazquez runs Bears Concrete Pumping — shaping the foundations of the same California that his grandfather's generation first entered with callused hands and a craftsman's eye. Grandpa Joe shaped metal. Bear moves concrete. The scale changed. The standard didn't.</p>
+    <p>The Vazquez family has always known how to move material with intention. From the metalworking shops of Mexico City to the construction sites of the Central Coast — the thread is unbroken. The family's inheritance isn't money or land. It's the knowledge of how things are built to last. And now Bear is building something else too: a company dedicated to making sure no family loses their story the way so many already have.</p>
+  </div>
+
+  <!-- FAMILY TREE -->
+  <div class="sec"><h2>Family Tree</h2><div class="sec-rule"></div></div>
+  <div class="tree-grid">
+    <div class="tree-side-card">
+      <div class="tree-side-label">Paternal Line</div>
+      <div class="tree-entry">
+        <div class="tree-name">Grandpa Joe Vazquez</div>
+        <div class="tree-detail">Ring &amp; investment caster &middot; Mexico City</div>
+      </div>
+      <div class="tree-entry">
+        <div class="tree-name">Grandma Juanita (nee Alba)</div>
+        <div class="tree-detail">Her father: Isaac Esparza Alba</div>
+      </div>
+      <div class="tree-entry">
+        <div class="tree-name">Dad Joseph Vazquez</div>
+        <div class="tree-detail">Born Santa Barbara, CA</div>
+      </div>
+      <div class="tree-entry">
+        <div class="tree-name">Mark "Bear" Vazquez</div>
+        <div class="tree-detail">Santa Maria, CA &middot; Founder, My Legacy Continues</div>
+      </div>
+    </div>
+    <div class="tree-side-card">
+      <div class="tree-side-label">Maternal Line</div>
+      <div class="tree-entry">
+        <div class="tree-name">Faustino Montemayor</div>
+        <div class="tree-detail">Born 1852 &middot; Died 1950 age 98 &middot; Sinton, TX</div>
+      </div>
+      <div class="tree-entry">
+        <div class="tree-name">Clara Montemayor + Francisco Garcia</div>
+        <div class="tree-detail">18 children &middot; 1940 Census, Sinton TX</div>
+      </div>
+      <div class="tree-entry">
+        <div class="tree-name">Grandma Elvira "Barbara" Garcia</div>
+        <div class="tree-detail">Born Sept 7, 1944 &middot; Youngest of 18</div>
+      </div>
+      <div class="tree-entry">
+        <div class="tree-name">Mom Deborah Mahoney (Mahoney)</div>
+        <div class="tree-detail">Santa Maria, CA</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TIMELINE -->
+  <div class="sec"><h2>Family Timeline</h2><div class="sec-rule"></div></div>
+  <div class="timeline">
+    <div class="tl-item">
+      <div class="tl-year">~1300 AD</div>
+      <div class="tl-event">Gonzalo Vazquez — Galicia, Spain</div>
+      <div class="tl-detail">Earliest documented ancestor of the Vazquez line</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-year">1535</div>
+      <div class="tl-event">Francisco Vazquez de Coronado crosses to New Spain</div>
+      <div class="tl-detail">The Vazquez name plants roots in Mexico</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-year">1852</div>
+      <div class="tl-event">Faustino Montemayor born — Sinton, Texas</div>
+      <div class="tl-detail">Great-great-grandfather on maternal side &middot; Lived to age 98</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-year">1910–1929</div>
+      <div class="tl-event">Mexican Revolution &amp; Cristero War</div>
+      <div class="tl-detail">The push that sent the Vazquez family north toward California</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-year">Mid 1900s</div>
+      <div class="tl-event">Grandpa Joe arrives in California</div>
+      <div class="tl-detail">Settles Santa Barbara area &middot; Craftsman &middot; Builds the foundation</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-year">Sept 7, 1944</div>
+      <div class="tl-event">Grandma Elvira "Barbara" Garcia born</div>
+      <div class="tl-detail">Youngest of 18 children &middot; Sinton, TX &middot; Maternal line</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-year">Present</div>
+      <div class="tl-event">Bear Vazquez — Santa Maria, CA</div>
+      <div class="tl-detail">Bears Concrete Pumping &middot; My Legacy Continues &middot; Two lines, one story</div>
+    </div>
+  </div>
+
+  <!-- CULTURE GUIDE -->
+  <div class="sec"><h2>Culture Guide</h2><div class="sec-rule"></div></div>
+  <div class="culture-grid">
+    <div class="culture-card">
+      <div class="cult-n">01</div>
+      <div class="cult-cat">Music</div>
+      <h4>Galician Traditional Music</h4>
+      <p>Galicia shares Celtic roots with Ireland and Scotland. The gaita — the Galician bagpipe — is the sound of your ancestral homeland.</p>
+      <a href="https://www.youtube.com/results?search_query=galician+traditional+music+gaita" target="_blank">Listen on YouTube &rarr;</a>
+    </div>
+    <div class="culture-card">
+      <div class="cult-n">02</div>
+      <div class="cult-cat">Food</div>
+      <h4>Galician &amp; Mexico City Heritage</h4>
+      <p>Galicia: pulpo a la gallega, empanada gallega, pimientos de Padron. Mexico City: tamales, pozole, chiles en nogada — the real ones.</p>
+      <a href="https://www.youtube.com/results?search_query=galician+food+recipes" target="_blank">Explore recipes &rarr;</a>
+    </div>
+    <div class="culture-card">
+      <div class="cult-n">03</div>
+      <div class="cult-cat">History</div>
+      <h4>The Camino de Santiago</h4>
+      <p>The world's most famous pilgrimage ends in Santiago de Compostela, Galicia — the spiritual heart of your ancestral homeland.</p>
+      <a href="https://www.caminodesantiago.gal/en" target="_blank">Learn more &rarr;</a>
+    </div>
+    <div class="culture-card">
+      <div class="cult-n">04</div>
+      <div class="cult-cat">Film</div>
+      <h4>Stories of the Migration North</h4>
+      <p>El Norte (1983), A Better Life (2011), Harvest of Empire (2012) — the films that document what your family lived.</p>
+      <a href="https://www.imdb.com/title/tt0085975/" target="_blank">Watch El Norte &rarr;</a>
+    </div>
+    <div class="culture-card">
+      <div class="cult-n">05</div>
+      <div class="cult-cat">Research</div>
+      <h4>FamilySearch — Mexico City Records</h4>
+      <p>Mexico City Catholic Church Records 1514–1970. Search: Vazquez + Distrito Federal. Free access. Your family is in there.</p>
+      <a href="https://www.familysearch.org" target="_blank">Search records &rarr;</a>
+    </div>
+    <div class="culture-card">
+      <div class="cult-n">06</div>
+      <div class="cult-cat">Craft Tradition</div>
+      <h4>The Platero — Mexican Metalwork</h4>
+      <p>The silversmithing and metal casting tradition that Grandpa Joe mastered in Mexico City. A master's knowledge that passed forward through blood.</p>
+      <a href="https://www.youtube.com/results?search_query=mexican+silversmith+platero+tradition" target="_blank">Learn more &rarr;</a>
+    </div>
+  </div>
+
+  <!-- PLAYLIST -->
+  <div class="sec"><h2>My Legacy Playlist</h2><div class="sec-rule"></div></div>
+  <div class="playlist-block">
+    <div class="pl-tag">Apple Music &middot; Curated by Bear Vazquez</div>
+    <h3>My Legacy Continues</h3>
+    <p>The soundtrack to the story. Music that shaped the journey — from the Central Coast to the legacy being built right now.</p>
+    <iframe allow="autoplay *; encrypted-media *;" frameborder="0" height="450" style="width:100%;max-width:100%;overflow:hidden;background:transparent;border:none;" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.music.apple.com/us/playlist/my-legacy-continues/pl.u-55D6XV5c8WBg0d"></iframe>
+  </div>
+
+  <!-- LINKED PROFILES -->
+  <div class="sec"><h2>Bear's World</h2><div class="sec-rule"></div></div>
+  <div class="profile-links">
+    <a class="prof-card" href="https://mylegacycontinues.com/bears-concrete-profile.html">
+      <div class="prof-type">Business Profile</div>
+      <h3>Bears Concrete Pumping</h3>
+      <p>No middleman. Real work on the Central Coast. Before and after portfolio, tap-to-call, the full story.</p>
+      <div class="prof-arrow">&rarr;</div>
+    </a>
+    <a class="prof-card" href="https://mylegacycontinues.com/butters-profile.html">
+      <div class="prof-type">Pet Legacy Profile</div>
+      <h3>Butters</h3>
+      <p>Orange tabby. 5 years old. Microchipped. Professional napper. The Champ of Santa Maria.</p>
+      <div class="prof-arrow">&rarr;</div>
+    </a>
+  </div>
+
+  <!-- RESCUE REGISTRY -->
+  <div class="sec"><h2>Rescue Registry</h2><div class="sec-rule"></div></div>
+  <div class="rescue-block">
+    <div>
+      <div class="rb-tag">Guardian Protocol &middot; Underdog Heroes</div>
+      <h3>Every rescue dog gets a permanent profile. Free.</h3>
+      <p>A portion of every Pet QR Tag sale goes directly to local rescue operations. Every dog that comes through Underdog Heroes gets their own permanent profile — so their story lives on even after they're adopted.</p>
+      <a class="btn" href="https://mylegacycontinues.com/rescue-registry.html">View the Registry</a>
+    </div>
+    <div class="rescue-stat">
+      <span class="rs-num">8</span>
+      <span class="rs-label">Dogs with<br/>Permanent Profiles</span>
+    </div>
+  </div>
+
+</div>
+
+<div class="cta">
+  <div class="cta-inner">
+    <p>Want your family's story preserved like this?</p>
+    <a href="https://mylegacycontinues.com/heritage-book.html">Order a Heritage Book — $199</a>
+  </div>
+</div>
+
+<footer class="footer">
+  <p>Mark "Bear" Vazquez &middot; Santa Maria, California &middot; mylegacycontinues.com</p>
+  <p class="footer-credit">Heritage profile by <a href="https://mylegacycontinues.com">My Legacy Continues</a> &middot; Santa Maria, CA &middot; Long Live Your Legacy</p>
+</footer>
+
+</body>
+</html>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                

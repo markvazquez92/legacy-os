@@ -8,116 +8,141 @@
 <meta name="description" content="A stainless steel QR plaque for any headstone. Scan to hear their songs, see photos, leave tributes. One-time $129. Hosted forever. My Legacy Continues.">
 <link rel="icon" href="logo.png" type="image/png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Karla:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,700;0,800;1,400;1,600&family=DM+Serif+Display:ital@0;1&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 
 :root {
-  --bg:#0a0a0a;--bg-card:#141414;--bg-warm:#141414;--bg-nav:#0d0d0d;
-  --forest:#0a0a0a;--forest-dark:#0d0d0d;--gold:#C9920A;--gold-light:#E5A812;
-  --gold-dim:rgba(201,146,10,0.55);--gold-border:rgba(201,146,10,0.25);--gold-wash:rgba(201,146,10,0.08);
-  --heading:#F5F0E8;--heading-hover:#D4C9A8;--text:#F5F0E8;--text-muted:#B5A98A;--text-dim:#B5A98A;
-  --im-fell:'Cormorant Garamond', Georgia, serif;--sans:'Karla', sans-serif;
-  --cinzel:'Cormorant Garamond', Georgia, serif;--lora:'Karla', sans-serif;--serif:'Cormorant Garamond', Georgia, serif;
+  --navy:         #1a2744;
+  --navy-deep:    #0f1620;
+  --gold:         #b8962e;
+  --gold-light:   #b8962e;
+  --coral:        #E89560;
+  --cream:        #f0ebe0;
+  --charcoal:     #2C2C2C;
+  --charcoal2:    #1A1A1A;
+  --gold-bright:  #b8962e;
+  --gold-dim:     rgba(184,150,46,0.4);
+  --gold-wash:    rgba(184,150,46,0.08);
+  --gold-border:  rgba(184,150,46,0.25);
+  --heading:      #2C2C2C;
+  --body:         #2C2C2C;
+  --muted:        rgba(44,44,44,0.65);
+  --card-bg:      rgba(184,150,46,0.08);
+  --nav-bg:       #f0ebe0;
+  /* legacy aliases so existing CSS still works */
+  --bg:           #f0ebe0;
+  --bg-card:      rgba(184,150,46,0.08);
+  --bg-warm:      #f0ebe0;
+  --bg-nav:       #f0ebe0;
+  --forest:       #1a2744;
+  --forest-dark:  #0f1620;
+  --im-fell:      'DM Serif Display', Georgia, serif;
+  --cinzel:       'DM Serif Display', Georgia, serif;
+  --serif:        'DM Serif Display', Georgia, serif;
+  --sans:         'Jost', sans-serif;
+  --lora:         'Jost', sans-serif;
+  --text:         #2C2C2C;
+  --text-muted:   rgba(44,44,44,0.65);
+  --text-dim:     rgba(44,44,44,0.5);
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
-body { font-family: var(–lora); background: var(–bg); color: var(–text); line-height: 1.8; -webkit-font-smoothing: antialiased; }
+body { font-family: var(–sans); background: var(–bg); color: var(–text); line-height: 1.8; -webkit-font-smoothing: antialiased; }
 a { color: inherit; text-decoration: none; }
 img { max-width: 100%; height: auto; display: block; }
 
 .btn { display: inline-block; font-family: var(–cinzel); font-size: 0.72rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; padding: 16px 34px; min-height: 44px; border: none; cursor: pointer; transition: all 0.22s ease; text-decoration: none; white-space: nowrap; border-radius: 2px; }
-.btn-primary { background: var(–forest); color: var(–gold); box-shadow: 0 4px 20px rgba(30,45,31,0.22); }
-.btn-primary:hover { background: var(–forest-dark); transform: translateY(-2px); }
-.btn-outline { background: transparent; color: var(–forest); border: 1.5px solid var(–forest); }
-.btn-outline:hover { background: var(–forest); color: var(–gold); }
+.btn-primary { background: #b8962e; color: #f0ebe0; box-shadow: 0 4px 20px rgba(184,150,46,0.2); }
+.btn-primary:hover { background: #b8962e; transform: translateY(-2px); }
+.btn-outline { background: transparent; color: #1a2744; border: 1.5px solid #1a2744; }
+.btn-outline:hover { background: #1a2744; color: #b8962e; }
 
-nav { position: fixed; top: 0; left: 0; right: 0; z-index: 900; height: 68px; background: var(–forest); border-bottom: 1px solid rgba(201,146,10,0.25); display: flex; align-items: center; justify-content: space-between; padding: 0 48px; }
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 900; height: 68px; background: #f0ebe0; border-bottom: 1px solid rgba(184,150,46,0.2); display: flex; align-items: center; justify-content: space-between; padding: 0 48px; }
 .nav-logo { height: 40px; width: auto; }
 .nav-center { display: flex; align-items: center; gap: 26px; list-style: none; }
-.nav-center a { font-family: var(–sans); font-size: 0.78rem; color: rgba(244,239,230,0.75); letter-spacing: 0.02em; transition: color 0.2s; }
-.nav-center a:hover { color: var(–gold); }
+.nav-center a { font-family: var(–sans); font-size: 0.78rem; color: #2C2C2C; letter-spacing: 0.02em; transition: color 0.2s; }
+.nav-center a:hover { color: #b8962e; }
 .nav-right { display: flex; align-items: center; gap: 12px; }
-.nav-lang { font-family: var(–cinzel); font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(244,239,230,0.5); border: 1px solid rgba(201,146,10,0.3); padding: 6px 14px; border-radius: 2px; cursor: pointer; background: none; transition: all 0.2s; }
-.nav-lang:hover { color: var(–gold); border-color: var(–gold); }
-.nav-vault-link { font-family: var(–cinzel); font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(–gold); border: 1px solid rgba(201,146,10,0.4); padding: 8px 16px; border-radius: 2px; transition: all 0.22s; }
-.nav-vault-link:hover { background: rgba(201,146,10,0.12); }
+.nav-lang { font-family: var(–cinzel); font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; color: #2C2C2C; border: 1px solid rgba(184,150,46,0.3); padding: 6px 14px; border-radius: 2px; cursor: pointer; background: none; transition: all 0.2s; }
+.nav-lang:hover { color: #b8962e; border-color: #b8962e; }
+.nav-vault-link { font-family: var(–cinzel); font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; color: #b8962e; border: 1px solid rgba(184,150,46,0.4); padding: 8px 16px; border-radius: 2px; transition: all 0.22s; }
+.nav-vault-link:hover { background: rgba(184,150,46,0.12); }
 .nav-toggle { display: none; background: none; border: none; cursor: pointer; flex-direction: column; gap: 5px; padding: 4px; }
 .nav-toggle span { display: block; width: 22px; height: 1.5px; background: var(–gold); }
 @media (max-width: 960px) {
 nav { padding: 0 20px; }
-.nav-center { display: none; flex-direction: column; position: fixed; top: 68px; left: 0; right: 0; background: var(–forest); padding: 24px 20px; gap: 0; border-bottom: 1px solid rgba(201,146,10,0.2); }
+.nav-center { display: none; flex-direction: column; position: fixed; top: 68px; left: 0; right: 0; background: #f0ebe0; padding: 24px 20px; gap: 0; border-bottom: 1px solid rgba(184,150,46,0.2); }
 .nav-center.open { display: flex; }
 .nav-center li { width: 100%; }
-.nav-center a { display: block; padding: 14px 0; border-bottom: 1px solid rgba(201,146,10,0.1); font-size: 0.92rem; color: rgba(244,239,230,0.8); }
+.nav-center a { display: block; padding: 14px 0; border-bottom: 1px solid rgba(184,150,46,0.1); font-size: 0.92rem; color: #2C2C2C; }
 .nav-toggle { display: flex; }
 }
 
 /* PAGE HERO */
-.page-hero { background: var(–forest); padding: 130px 48px 72px; }
+.page-hero { background: #1a2744; padding: 130px 48px 72px; }
 .page-hero-inner { max-width: 860px; margin: 0 auto; }
-.back-link { font-family: var(–cinzel); font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(201,146,10,0.65); display: inline-flex; align-items: center; gap: 8px; margin-bottom: 28px; transition: color 0.2s; }
-.back-link:hover { color: var(–gold); }
+.back-link { font-family: var(–cinzel); font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(184,150,46,0.8); display: inline-flex; align-items: center; gap: 8px; margin-bottom: 28px; transition: color 0.2s; }
+.back-link:hover { color: #b8962e; }
 .back-link::before { content: ‘←’; font-size: 0.9rem; }
-.page-eyebrow { font-family: var(–cinzel); font-size: 0.56rem; letter-spacing: 0.32em; text-transform: uppercase; color: var(–gold); display: block; margin-bottom: 18px; }
-.page-title { font-family: var(–cinzel); font-size: clamp(2rem, 4.5vw, 3.2rem); font-weight: 700; color: #F5F0E8; line-height: 1.1; margin-bottom: 18px; }
-.page-sub { font-size: 1rem; color: rgba(244,239,230,0.7); line-height: 1.85; max-width: 600px; margin-bottom: 32px; }
-.price-badge { display: inline-block; font-family: var(–cinzel); font-size: 2.2rem; font-weight: 700; color: var(–gold); margin-bottom: 32px; }
-.price-note { font-size: 0.8rem; color: rgba(244,239,230,0.5); margin-top: -20px; margin-bottom: 28px; }
+.page-eyebrow { font-family: var(–cinzel); font-size: 0.56rem; letter-spacing: 0.32em; text-transform: uppercase; color: #b8962e; display: block; margin-bottom: 18px; }
+.page-title { font-family: var(–cinzel); font-size: clamp(2rem, 4.5vw, 3.2rem); font-weight: 700; color: #f0ebe0; line-height: 1.1; margin-bottom: 18px; }
+.page-sub { font-size: 1rem; color: rgba(240,235,224,0.8); line-height: 1.85; max-width: 600px; margin-bottom: 32px; }
+.price-badge { display: inline-block; font-family: var(–cinzel); font-size: 2.2rem; font-weight: 700; color: #b8962e; margin-bottom: 32px; }
+.price-note { font-size: 0.8rem; color: rgba(240,235,224,0.6); margin-top: -20px; margin-bottom: 28px; }
 @media (max-width: 600px) { .page-hero { padding: 116px 20px 56px; } }
 
 .gold-rule { height: 1px; background: var(–gold-border); }
 
 /* WHAT YOU GET */
-.what-section { padding: 72px 48px; background: var(–bg); }
+.what-section { padding: 72px 48px; background: #f0ebe0; }
 .what-inner { max-width: 860px; margin: 0 auto; }
-.what-section h2 { font-family: var(–cinzel); font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 700; color: var(–forest); margin-bottom: 32px; }
+.what-section h2 { font-family: var(–cinzel); font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 700; color: #1a2744; margin-bottom: 32px; }
 .includes-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin-bottom: 40px; }
-.include-item { background: var(–bg-card); border: 1px solid var(–gold-border); border-radius: 4px; padding: 22px 20px; box-shadow: 0 2px 12px rgba(44,28,0,0.05); }
+.include-item { background: rgba(184,150,46,0.08); border: 1px solid rgba(184,150,46,0.2); border-radius: 4px; padding: 22px 20px; box-shadow: 0 2px 12px rgba(184,150,46,0.05); }
 .include-item-icon { font-size: 1.4rem; margin-bottom: 10px; }
-.include-item-title { font-family: var(–cinzel); font-size: 0.72rem; font-weight: 700; color: var(–forest); margin-bottom: 6px; }
-.include-item-desc { font-size: 0.8rem; color: var(–text-muted); line-height: 1.7; }
+.include-item-title { font-family: var(–cinzel); font-size: 0.72rem; font-weight: 700; color: #1a2744; margin-bottom: 6px; }
+.include-item-desc { font-size: 0.8rem; color: #2C2C2C; line-height: 1.7; }
 @media (max-width: 600px) { .what-section { padding: 52px 20px; } }
 
 /* ORDER + FORM */
-.order-section { padding: 0 48px 80px; background: var(–bg); }
+.order-section { padding: 0 48px 80px; background: #f0ebe0; }
 .order-inner { max-width: 860px; margin: 0 auto; }
-.order-intro { background: var(–forest); border-radius: 4px; padding: 32px 36px; margin-bottom: 40px; }
-.order-intro p { font-size: 0.9rem; color: rgba(244,239,230,0.75); line-height: 1.85; margin-bottom: 16px; }
+.order-intro { background: #1a2744; border-radius: 4px; padding: 32px 36px; margin-bottom: 40px; }
+.order-intro p { font-size: 0.9rem; color: rgba(240,235,224,0.85); line-height: 1.85; margin-bottom: 16px; }
 .order-intro p:last-child { margin-bottom: 0; }
-.order-intro a { color: var(–gold); }
-.order-intro strong { color: #F5F0E8; }
+.order-intro a { color: #b8962e; }
+.order-intro strong { color: #f0ebe0; }
 
-.form-section-title { font-family: var(–cinzel); font-size: 0.6rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(–gold); margin-bottom: 20px; padding-bottom: 10px; border-bottom: 1px solid var(–gold-border); }
+.form-section-title { font-family: var(–cinzel); font-size: 0.6rem; letter-spacing: 0.24em; text-transform: uppercase; color: #b8962e; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 1px solid rgba(184,150,46,0.25); }
 .intake-form { display: flex; flex-direction: column; gap: 18px; }
 .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
 @media (max-width: 600px) { .form-row { grid-template-columns: 1fr; } .order-section { padding: 0 20px 64px; } }
 .form-group { display: flex; flex-direction: column; gap: 8px; }
-.form-group label { font-family: var(–cinzel); font-size: 0.58rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(–text-muted); }
+.form-group label { font-family: var(–cinzel); font-size: 0.58rem; letter-spacing: 0.2em; text-transform: uppercase; color: #2C2C2C; }
 .form-group input,
 .form-group textarea,
-.form-group select { background: var(–bg-card); border: 1px solid var(–gold-border); border-radius: 2px; color: var(–text); font-family: var(–lora); font-size: 0.9rem; padding: 13px 16px; min-height: 44px; transition: border-color 0.2s; width: 100%; }
+.form-group select { background: #f0ebe0; border: 1px solid rgba(184,150,46,0.2); border-radius: 2px; color: #2C2C2C; font-family: var(–lora); font-size: 0.9rem; padding: 13px 16px; min-height: 44px; transition: border-color 0.2s; width: 100%; }
 .form-group input:focus,
 .form-group textarea:focus,
-.form-group select:focus { outline: none; border-color: var(–gold); box-shadow: 0 0 0 3px rgba(201,146,10,0.1); }
+.form-group select:focus { outline: none; border-color: #b8962e; box-shadow: 0 0 0 3px rgba(184,150,46,0.1); }
 .form-group input::placeholder,
-.form-group textarea::placeholder { color: var(–text-dim); }
+.form-group textarea::placeholder { color: #2C2C2C; }
 .form-group textarea { min-height: 110px; resize: vertical; }
-.form-group select { appearance: none; background-image: url(“data:image/svg+xml,%3Csvg xmlns=‘http://www.w3.org/2000/svg’ width=‘12’ height=‘8’ viewBox=‘0 0 12 8’%3E%3Cpath d=‘M1 1l5 5 5-5’ stroke=’%23C9920A’ stroke-width=‘1.5’ fill=‘none’ stroke-linecap=‘round’/%3E%3C/svg%3E”); background-repeat: no-repeat; background-position: right 16px center; padding-right: 40px; }
-.form-divider { height: 1px; background: var(–gold-border); margin: 8px 0; }
+.form-group select { appearance: none; background-image: url(“data:image/svg+xml,%3Csvg xmlns=’http://www.w3.org/2000/svg’ width=’12’ height=’8’ viewBox=’0 0 12 8’%3E%3Cpath d=’M1 1l5 5 5-5’ stroke=’%23D4A020’ stroke-width=’1.5’ fill=’none’ stroke-linecap=’round’/%3E%3C/svg%3E”); background-repeat: no-repeat; background-position: right 16px center; padding-right: 40px; }
+.form-divider { height: 1px; background: rgba(184,150,46,0.25); margin: 8px 0; }
 .form-submit-row { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; margin-top: 8px; }
-.form-submit-note { font-size: 0.78rem; color: var(–text-dim); line-height: 1.6; }
-.stripe-cta { text-align: center; background: var(–bg-card); border: 1px solid var(–gold-border); border-radius: 4px; padding: 28px 32px; margin-bottom: 32px; box-shadow: 0 2px 12px rgba(44,28,0,0.05); }
-.stripe-cta p { font-size: 0.88rem; color: var(–text-muted); margin-bottom: 18px; line-height: 1.7; }
-.stripe-cta .price-label { font-family: var(–cinzel); font-size: 1.6rem; font-weight: 700; color: var(–forest); display: block; margin-bottom: 18px; }
+.form-submit-note { font-size: 0.78rem; color: #2C2C2C; line-height: 1.6; }
+.stripe-cta { text-align: center; background: rgba(184,150,46,0.08); border: 1px solid rgba(184,150,46,0.2); border-radius: 4px; padding: 28px 32px; margin-bottom: 32px; box-shadow: 0 2px 12px rgba(184,150,46,0.05); }
+.stripe-cta p { font-size: 0.88rem; color: #2C2C2C; margin-bottom: 18px; line-height: 1.7; }
+.stripe-cta .price-label { font-family: var(–cinzel); font-size: 1.6rem; font-weight: 700; color: #1a2744; display: block; margin-bottom: 18px; }
 
-footer { background: var(–forest); border-top: 1px solid rgba(201,146,10,0.2); padding: 40px 48px 28px; }
+footer { background: #1a2744; border-top: 1px solid rgba(184,150,46,0.2); padding: 40px 48px 28px; }
 .footer-inner { max-width: 1060px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 20px; }
 .footer-logo { height: 48px; width: auto; opacity: 0.8; }
-.footer-copy { font-family: var(–cinzel); font-size: 0.56rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(244,239,230,0.4); text-align: center; }
+.footer-copy { font-family: var(–cinzel); font-size: 0.56rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(240,235,224,0.5); text-align: center; }
 </style>
 
-<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -125,15 +150,15 @@ footer { background: var(–forest); border-top: 1px solid rgba(201,146,10,0.2);
   <a href="index.html"><img src="logo.png" alt="My Legacy Continues" class="nav-logo"></a>
   <ul class="nav-center" id="navLinks">
     <li><a href="index.html">Home</a></li>
-    <li><a href="cemetery-plaque.html">Cemetery Plaque</a></li>
-    <li><a href="heritage-book.html">Heritage Book</a></li>
-    <li><a href="pet-tag.html">Pet Tag</a></li>
+    <li><a href="heritage-book.html">Heritage Books</a></li>
+    <li><a href="cemetery-plaque.html">Plaques</a></li>
+    <li><a href="pet-tag.html">Pet Tags</a></li>
     <li><a href="business-profile.html">Business Profile</a></li>
     <li><a href="rescue-registry.html">Rescue Registry</a></li>
-    <li><a href="portal.html" class="nav-vault-link">Vault</a></li>
+    <li><a href="portal.html" class="nav-vault-link">Family Vault</a></li>
   </ul>
   <div class="nav-right">
-    <button class="nav-lang" onclick="alert('Spanish version coming soon.')">EN | ES</button>
+    <a href="portal.html" class="nav-vault-link" style="margin-left: 12px;">Start Your Legacy</a>
     <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
   </div>
 </nav>
@@ -211,86 +236,172 @@ footer { background: var(–forest); border-top: 1px solid rgba(201,146,10,0.2);
   <a href="https://buy.stripe.com/6oU3cw15Z5pO7gw5msfQI06" class="btn btn-primary">Pay $129 — Secure Checkout</a>
 </div>
 
-<form class="intake-form" action="https://formspree.io/f/xzzpqjle" method="POST">
-  <input type="hidden" name="_subject" value="New Cemetery Plaque Order">
+<form
+  action="https://formspree.io/f/xzzpqjle"
+  method="POST"
+  id="cemetery-plaque-form"
+  style="max-width: 600px; margin: 0 auto;"
+>
+  <!-- Hidden field so you know which product this is -->
+  <input type="hidden" name="_subject" value="New Cemetery Plaque Order — My Legacy Continues" />
+  <input type="hidden" name="product" value="Cemetery Plaque" />
 
-  <div class="form-section-title">About the Person Being Honored</div>
-
-  <div class="form-row">
-    <div class="form-group">
-      <label for="deceased-name">Full Name of Deceased *</label>
-      <input type="text" id="deceased-name" name="deceased_name" placeholder="e.g. Maria Elena Montemayor" required>
-    </div>
-    <div class="form-group">
-      <label for="birth-year">Birth Year *</label>
-      <input type="text" id="birth-year" name="birth_year" placeholder="e.g. 1932">
-    </div>
+  <div style="margin-bottom: 16px;">
+    <label for="full_name">Full Name of Deceased *</label><br />
+    <input
+      type="text"
+      id="full_name"
+      name="full_name"
+      required
+      placeholder="e.g. Maria Elena Vazquez"
+      style="width: 100%; padding: 10px; margin-top: 4px; box-sizing: border-box;"
+    />
   </div>
 
-  <div class="form-row">
-    <div class="form-group">
-      <label for="death-year">Year of Passing *</label>
-      <input type="text" id="death-year" name="death_year" placeholder="e.g. 2019">
-    </div>
-    <div class="form-group">
-      <label for="hometown">Hometown / Where They Were From</label>
-      <input type="text" id="hometown" name="hometown" placeholder="e.g. Sinton, Texas">
-    </div>
+  <div style="margin-bottom: 16px;">
+    <label for="birth_year">Birth Year *</label><br />
+    <input
+      type="text"
+      id="birth_year"
+      name="birth_year"
+      required
+      placeholder="e.g. 1942"
+      style="width: 100%; padding: 10px; margin-top: 4px; box-sizing: border-box;"
+    />
   </div>
 
-  <div class="form-group">
-    <label for="songs">Favorite Songs (up to 5) — Title and Artist</label>
-    <textarea id="songs" name="favorite_songs" placeholder="e.g. Cielito Lindo — traditional / La Bamba — Ritchie Valens / ..." style="min-height:90px;"></textarea>
+  <div style="margin-bottom: 16px;">
+    <label for="death_year">Year of Passing *</label><br />
+    <input
+      type="text"
+      id="death_year"
+      name="death_year"
+      required
+      placeholder="e.g. 2021"
+      style="width: 100%; padding: 10px; margin-top: 4px; box-sizing: border-box;"
+    />
   </div>
 
-  <div class="form-group">
-    <label for="memory">A Memory or Story — Tell Us About Them</label>
-    <textarea id="memory" name="memory_story" placeholder="Share a favorite memory, what they meant to the family, how they lived — anything that captures who they were."></textarea>
+  <div style="margin-bottom: 16px;">
+    <label for="cemetery_name">Cemetery Name & Location *</label><br />
+    <input
+      type="text"
+      id="cemetery_name"
+      name="cemetery_name"
+      required
+      placeholder="e.g. Santa Barbara Cemetery, Santa Barbara CA"
+      style="width: 100%; padding: 10px; margin-top: 4px; box-sizing: border-box;"
+    />
   </div>
 
-  <div class="form-group">
-    <label for="language">Language Preference for the Profile</label>
-    <select id="language" name="language_preference">
-      <option value="" disabled selected>Select preference</option>
-      <option value="English">English</option>
-      <option value="Spanish">Spanish</option>
-      <option value="Both">Both English and Spanish</option>
-    </select>
+  <div style="margin-bottom: 16px;">
+    <label for="plaque_text">Plaque Text / Short Inscription</label><br />
+    <textarea
+      id="plaque_text"
+      name="plaque_text"
+      rows="3"
+      placeholder="e.g. Beloved mother, forever in our hearts"
+      style="width: 100%; padding: 10px; margin-top: 4px; box-sizing: border-box;"
+    ></textarea>
   </div>
 
-  <div class="form-divider"></div>
-  <div class="form-section-title">Your Contact Information</div>
-
-  <div class="form-row">
-    <div class="form-group">
-      <label for="your-name">Your Full Name *</label>
-      <input type="text" id="your-name" name="your_name" placeholder="Your name" required>
-    </div>
-    <div class="form-group">
-      <label for="your-email">Your Email *</label>
-      <input type="email" id="your-email" name="your_email" placeholder="your@email.com" required>
-    </div>
+  <div style="margin-bottom: 16px;">
+    <label for="contact_name">Your Name *</label><br />
+    <input
+      type="text"
+      id="contact_name"
+      name="contact_name"
+      required
+      placeholder="Your full name"
+      style="width: 100%; padding: 10px; margin-top: 4px; box-sizing: border-box;"
+    />
   </div>
 
-  <div class="form-group">
-    <label for="your-phone">Your Phone</label>
-    <input type="tel" id="your-phone" name="your_phone" placeholder="(805) 000-0000">
+  <div style="margin-bottom: 16px;">
+    <label for="email">Your Email *</label><br />
+    <input
+      type="email"
+      id="email"
+      name="email"
+      required
+      placeholder="your@email.com"
+      style="width: 100%; padding: 10px; margin-top: 4px; box-sizing: border-box;"
+    />
   </div>
 
-  <div class="form-submit-row">
-    <button type="submit" class="btn btn-primary">Start Their Memorial</button>
-    <p class="form-submit-note">We'll confirm by email within 24 hours and follow up with any questions.</p>
+  <div style="margin-bottom: 16px;">
+    <label for="phone">Phone Number</label><br />
+    <input
+      type="tel"
+      id="phone"
+      name="phone"
+      placeholder="(805) 000-0000"
+      style="width: 100%; padding: 10px; margin-top: 4px; box-sizing: border-box;"
+    />
   </div>
+
+  <div style="margin-bottom: 16px;">
+    <label for="notes">Additional Notes or Special Requests</label><br />
+    <textarea
+      id="notes"
+      name="notes"
+      rows="4"
+      placeholder="Anything else we should know..."
+      style="width: 100%; padding: 10px; margin-top: 4px; box-sizing: border-box;"
+    ></textarea>
+  </div>
+
+  <div style="margin-bottom: 16px;">
+    <label>
+      <input type="checkbox" name="stripe_paid" value="yes" />
+      I have already paid via Stripe
+    </label>
+  </div>
+
+  <!-- Formspree honeypot spam protection -->
+  <input type="text" name="_gotcha" style="display: none;" />
+
+  <!-- Redirect after submit -->
+  <input type="hidden" name="_next" value="https://mylegacycontinues.com/thank-you.html" />
+
+  <button
+    type="submit"
+    style="
+      background: #b8962e;
+      color: #f0ebe0;
+      padding: 14px 32px;
+      border: none;
+      font-size: 16px;
+      cursor: pointer;
+      width: 100%;
+      border-radius: 3px;
+      font-family: Jost, sans-serif;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    "
+  >
+    Submit My Order Details
+  </button>
 </form>
-```
 
   </div>
 </section>
 
+<div style="background: rgba(184,150,46,0.08); padding: 2rem 3rem; text-align: center;">
+  <p style="font-size: 0.95rem; color: #1a2744; font-weight: 500;">One-time payment. No recurring fees. Your memories stay online forever.</p>
+</div>
+
 <footer>
   <div class="footer-inner">
     <img src="logo.png" alt="My Legacy Continues" class="footer-logo">
-    <div class="footer-copy">Long Live Your Legacy &mdash; mylegacycontinues.com &mdash; &copy; 2026 My Legacy Continues &mdash; Santa Maria, CA</div>
+    <div style="margin: 1.5rem 0; font-size: 0.56rem; color: var(--gold); letter-spacing: 0.12em; text-transform: uppercase;">Your Privacy Matters</div>
+    <p style="font-size: 0.8rem; color: rgba(244,239,230,0.6); max-width: 600px; margin: 0 auto 1.5rem; line-height: 1.6;">All family profiles are password protected (optional), encrypted in transit, never sold or shared, hosted permanently, and yours to control forever.</p>
+    <div style="border-top: 1px solid rgba(201,146,10,0.2); margin: 1.5rem 0;"></div>
+    <div style="margin-bottom: 1rem;">
+      <a href="privacy.html" style="font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold); text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#b8962e'" onmouseout="this.style.color='#b8962e'">Privacy Policy</a>
+    </div>
+    <div class="footer-copy">Long Live Your Legacy &mdash; mylegacycontinues.com &mdash; <a href="mailto:contact@mylegacycontinues.com" style="color: var(--gold); text-decoration: none;">contact@mylegacycontinues.com</a> &mdash; &copy; 2026 My Legacy Continues &mdash; Santa Maria, CA</div>
   </div>
 </footer>
 
