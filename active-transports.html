@@ -8,7 +8,7 @@
 <link rel="icon" href="logo.png" type="image/png">
 <link rel="stylesheet" href="style.css">
 <style>
-  /* Transport-specific styles (candy paint palette) */
+  /* Transport-specific styles */
   .transport-hero {
     text-align: center;
     padding: clamp(6rem, 10vw, 8rem) 2rem clamp(2rem, 4vw, 3rem);
@@ -132,14 +132,14 @@
     background: linear-gradient(90deg, transparent, rgba(232,201,122,0.3), transparent);
   }
 
-  /* Active transports section */
-  .transports {
-    max-width: 800px;
+  /* Transport table */
+  .transport-table-wrap {
+    max-width: 900px;
     margin: 0 auto;
     padding: var(--section-pad) 2rem;
   }
 
-  .transports h2 {
+  .transport-table-wrap h2 {
     font-family: var(--font-headline);
     font-size: 1.2rem;
     color: var(--navy);
@@ -148,134 +148,63 @@
     text-transform: uppercase;
   }
 
-  .transports .subtitle {
+  .transport-table-wrap .subtitle {
     text-align: center;
     font-size: 0.9rem;
     color: rgba(28,28,28,0.6);
     margin-bottom: 32px;
   }
 
-  /* Transport card */
-  .transport-card {
-    background: var(--white);
-    border: 2px solid var(--gold);
-    padding: 28px 24px;
-    margin-bottom: 24px;
-  }
-
-  .transport-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    gap: 12px;
-    margin-bottom: 16px;
-  }
-
-  .transport-dog h3 {
-    font-family: var(--font-headline);
-    font-size: 1.1rem;
-    color: var(--navy);
-    margin-bottom: 4px;
-    text-transform: uppercase;
-  }
-
-  .transport-dog p {
+  .transport-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: var(--font-body);
     font-size: 0.85rem;
-    color: rgba(28,28,28,0.6);
   }
 
-  .transport-status {
+  .transport-table thead th {
     font-family: var(--font-headline);
-    font-size: 0.7rem;
-    letter-spacing: 2px;
+    font-size: 0.75rem;
+    letter-spacing: 1px;
     text-transform: uppercase;
-    padding: 5px 12px;
+    color: var(--teal);
+    padding: 12px 10px;
+    border-bottom: 2px solid var(--gold);
+    text-align: left;
+  }
+
+  .transport-table tbody td {
+    padding: 12px 10px;
+    border-bottom: 1px solid rgba(232,201,122,0.2);
+    color: var(--navy);
+    vertical-align: middle;
+  }
+
+  .transport-table tbody tr:hover {
+    background: rgba(232,201,122,0.06);
+  }
+
+  .status-badge {
+    font-family: var(--font-headline);
+    font-size: 0.65rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    display: inline-block;
     white-space: nowrap;
   }
 
   .status-urgent { background: rgba(248,113,113,0.12); color: #dc2626; border: 1px solid rgba(248,113,113,0.3); }
   .status-active { background: rgba(251,146,60,0.12); color: #c2410c; border: 1px solid rgba(251,146,60,0.3); }
   .status-complete { background: rgba(74,222,128,0.12); color: #15803d; border: 1px solid rgba(74,222,128,0.3); }
+  .status-scheduled { background: rgba(232,201,122,0.15); color: var(--teal); border: 1px solid rgba(232,201,122,0.3); }
 
-  .transport-route {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 20px;
-    flex-wrap: wrap;
+  /* Volunteer form section */
+  .volunteer-section {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 2.5rem;
   }
-
-  .route-city {
-    font-family: var(--font-headline);
-    font-size: 0.95rem;
-    color: var(--navy);
-  }
-
-  .route-arrow { color: var(--gold); font-size: 1.2rem; }
-  .route-date { font-size: 0.8rem; color: rgba(28,28,28,0.5); margin-left: auto; }
-
-  .legs-container { margin-bottom: 16px; }
-
-  .leg {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 10px 14px;
-    margin-bottom: 6px;
-    flex-wrap: wrap;
-  }
-
-  .leg-open { background: rgba(232,201,122,0.06); border: 1px solid rgba(232,201,122,0.2); }
-  .leg-claimed { background: rgba(251,146,60,0.06); border: 1px solid rgba(251,146,60,0.2); }
-  .leg-complete { background: rgba(74,222,128,0.06); border: 1px solid rgba(74,222,128,0.2); }
-
-  .leg-label {
-    font-family: var(--font-headline);
-    font-size: 0.7rem;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    min-width: 50px;
-  }
-
-  .leg-label-open { color: var(--navy); }
-  .leg-label-claimed { color: #c2410c; }
-  .leg-label-complete { color: #15803d; }
-
-  .leg-route { font-size: 0.85rem; color: var(--navy); flex: 1; }
-
-  .leg-status {
-    font-family: var(--font-headline);
-    font-size: 0.65rem;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    padding: 3px 8px;
-  }
-
-  .leg-status-open { background: rgba(232,201,122,0.15); color: var(--teal); }
-  .leg-status-claimed { background: rgba(251,146,60,0.15); color: #c2410c; }
-  .leg-status-complete { background: rgba(74,222,128,0.15); color: #15803d; }
-
-  .transport-notes {
-    font-family: var(--font-emotion);
-    font-style: italic;
-    font-size: 0.85rem;
-    color: rgba(28,28,28,0.5);
-    margin-bottom: 16px;
-  }
-
-  .transport-actions { display: flex; gap: 10px; flex-wrap: wrap; }
-
-  /* Empty state */
-  .empty-state { text-align: center; padding: 60px 24px; }
-  .empty-state h3 {
-    font-family: var(--font-emotion);
-    font-style: italic;
-    font-size: 1.3rem;
-    color: var(--navy);
-    margin-bottom: 12px;
-  }
-  .empty-state p { font-size: 0.95rem; color: rgba(28,28,28,0.6); margin-bottom: 24px; }
 
   /* Wall of Fame */
   .fame {
@@ -309,12 +238,22 @@
   .fame-card h4 { font-family: var(--font-headline); font-size: 0.95rem; color: var(--navy); margin-bottom: 2px; text-transform: uppercase; }
   .fame-card p { font-size: 0.85rem; color: rgba(28,28,28,0.6); }
 
+  .empty-state { text-align: center; padding: 40px 24px; }
+  .empty-state h3 {
+    font-family: var(--font-emotion);
+    font-style: italic;
+    font-size: 1.3rem;
+    color: var(--navy);
+    margin-bottom: 12px;
+  }
+  .empty-state p { font-size: 0.95rem; color: rgba(28,28,28,0.6); margin-bottom: 24px; }
+
   @media (max-width: 600px) {
-    .transport-header { flex-direction: column; }
-    .transport-route { flex-direction: column; align-items: flex-start; }
-    .route-date { margin-left: 0; }
     .transport-step-grid { grid-template-columns: 1fr 1fr; }
     .transport-hero { padding-top: 5rem; margin-top: 60px; }
+    .transport-table { font-size: 0.75rem; }
+    .transport-table thead th { font-size: 0.65rem; padding: 8px 6px; }
+    .transport-table tbody td { padding: 8px 6px; }
   }
 </style>
 </head>
@@ -347,8 +286,8 @@
     <h1>Help a Dog <em>Get Home</em></h1>
     <p>Dogs get pulled from shelters but need to reach fosters and adopters in other cities. Volunteers drive legs of the route. One relay at a time, they get home.</p>
     <div class="hero-buttons">
-      <a href="rescue-registry.html" class="btn btn-gold" onclick="localStorage.setItem('openTab','volunteer')">I Can Drive</a>
-      <a href="rescue-registry.html" class="btn btn-outline-gold" onclick="localStorage.setItem('openTab','transport')">Submit a Transport Request</a>
+      <a href="#volunteer" class="btn btn-gold">I Can Drive</a>
+      <a href="#transports" class="btn btn-outline-gold">View Active Transports</a>
     </div>
   </div>
 
@@ -381,73 +320,152 @@
 
   <div class="t-divider"></div>
 
-  <!-- ACTIVE TRANSPORTS -->
-  <div class="transports">
+  <!-- ACTIVE TRANSPORTS TABLE -->
+  <div class="transport-table-wrap" id="transports">
     <h2>Active Transports</h2>
-    <p class="subtitle">Dogs that need a ride right now. Claim a leg below.</p>
+    <p class="subtitle">Dogs that need a ride right now. Contact us to claim a leg.</p>
 
-    <div class="transport-card">
-      <div class="transport-header">
-        <div class="transport-dog">
-          <h3>Sample Dog &mdash; Edit Me</h3>
-          <p>Breed / Size / Rescue Name</p>
-        </div>
-        <div class="transport-status status-active">Needs Drivers</div>
-      </div>
-      <div class="transport-route">
-        <span class="route-city">Riverside, CA</span>
-        <span class="route-arrow">&rarr;</span>
-        <span class="route-city">Santa Maria, CA</span>
-        <span class="route-date">Needed by: April 15, 2026</span>
-      </div>
-      <div class="legs-container">
-        <div class="leg leg-open">
-          <span class="leg-label leg-label-open">Leg 1</span>
-          <span class="leg-route">Riverside &rarr; Bakersfield (~2 hrs)</span>
-          <span class="leg-status leg-status-open">Open</span>
-        </div>
-        <div class="leg leg-open">
-          <span class="leg-label leg-label-open">Leg 2</span>
-          <span class="leg-route">Bakersfield &rarr; Santa Maria (~2 hrs)</span>
-          <span class="leg-status leg-status-open">Open</span>
-        </div>
-      </div>
-      <p class="transport-notes">This is a sample transport. Replace this card with real transport needs as they come in.</p>
-      <div class="transport-actions">
-        <a href="rescue-registry.html" class="btn btn-gold">I Can Drive a Leg</a>
-      </div>
-    </div>
-
-    <!--
-    <div class="empty-state">
-      <h3>No active transports right now.</h3>
-      <p>All dogs are where they need to be — for now. Sign up as a volunteer and we'll reach out when the next transport comes in.</p>
-      <a href="rescue-registry.html" class="btn btn-gold">Sign Up to Volunteer</a>
-    </div>
-    -->
+    <table class="transport-table">
+      <thead>
+        <tr>
+          <th>Dog</th>
+          <th>Route</th>
+          <th>Date Needed</th>
+          <th>Legs</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Duke</strong><br><span style="font-size: 0.75rem; opacity: 0.6;">Shepherd Mix / Underdog Heroes</span></td>
+          <td>Riverside, CA &rarr; Santa Maria, CA</td>
+          <td>April 18, 2026</td>
+          <td>2 open</td>
+          <td><span class="status-badge status-urgent">Urgent</span></td>
+        </tr>
+        <tr>
+          <td><strong>Rosie</strong><br><span style="font-size: 0.75rem; opacity: 0.6;">Terrier Mix / Central Coast Rescue</span></td>
+          <td>Bakersfield, CA &rarr; San Luis Obispo, CA</td>
+          <td>April 20, 2026</td>
+          <td>1 open</td>
+          <td><span class="status-badge status-active">Needs Driver</span></td>
+        </tr>
+        <tr>
+          <td><strong>Penny</strong><br><span style="font-size: 0.75rem; opacity: 0.6;">Lab Mix / Valley Paws Rescue</span></td>
+          <td>Fresno, CA &rarr; Santa Barbara, CA</td>
+          <td>April 22, 2026</td>
+          <td>3 open</td>
+          <td><span class="status-badge status-active">Needs Driver</span></td>
+        </tr>
+        <tr>
+          <td><strong>Tank</strong><br><span style="font-size: 0.75rem; opacity: 0.6;">Bulldog Mix / Underdog Heroes</span></td>
+          <td>Los Angeles, CA &rarr; Lompoc, CA</td>
+          <td>April 25, 2026</td>
+          <td>2 open</td>
+          <td><span class="status-badge status-scheduled">Scheduled</span></td>
+        </tr>
+        <tr>
+          <td><strong>Daisy</strong><br><span style="font-size: 0.75rem; opacity: 0.6;">Hound Mix / Underdog Heroes</span></td>
+          <td>San Diego, CA &rarr; Santa Maria, CA</td>
+          <td>April 28, 2026</td>
+          <td>3 open</td>
+          <td><span class="status-badge status-scheduled">Scheduled</span></td>
+        </tr>
+        <tr>
+          <td><strong>Bella</strong><br><span style="font-size: 0.75rem; opacity: 0.6;">Pit Mix / Underdog Heroes</span></td>
+          <td>Riverside, CA &rarr; Paso Robles, CA</td>
+          <td>April 12, 2026</td>
+          <td>2 of 2</td>
+          <td><span class="status-badge status-complete">Complete</span></td>
+        </tr>
+      </tbody>
+    </table>
   </div>
+
+  <div class="t-divider"></div>
+
+  <!-- VOLUNTEER SIGNUP FORM -->
+  <section class="section-teal metalflake full-width fade-in" id="volunteer">
+    <div class="section-inner text-center" style="margin-bottom: 2rem;">
+      <h2 style="color: var(--gold);">Volunteer to Drive</h2>
+      <p style="color: var(--cream); opacity: 0.85;">Sign up and we'll match you with transport legs in your area.</p>
+    </div>
+    <div class="section-inner">
+      <div class="form-container">
+        <form action="https://formspree.io/f/xzzpqjle" method="POST">
+          <input type="hidden" name="_subject" value="Transport Volunteer Signup">
+          <input type="hidden" name="form_type" value="Transport Volunteer">
+          <div class="form-group">
+            <label for="vol-name">Full Name</label>
+            <input type="text" id="vol-name" name="name" required>
+          </div>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+            <div class="form-group">
+              <label for="vol-email">Email</label>
+              <input type="email" id="vol-email" name="email" required>
+            </div>
+            <div class="form-group">
+              <label for="vol-phone">Phone</label>
+              <input type="tel" id="vol-phone" name="phone" required>
+            </div>
+          </div>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+            <div class="form-group">
+              <label for="vol-city">City / Region</label>
+              <input type="text" id="vol-city" name="city_region" placeholder="e.g. Santa Maria, CA">
+            </div>
+            <div class="form-group">
+              <label for="vol-range">Max Drive Distance</label>
+              <select id="vol-range" name="max_distance">
+                <option value="30 miles">Up to 30 miles</option>
+                <option value="60 miles" selected>Up to 60 miles</option>
+                <option value="100 miles">Up to 100 miles</option>
+                <option value="150+ miles">150+ miles</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="vol-vehicle">Vehicle Type</label>
+            <input type="text" id="vol-vehicle" name="vehicle_type" placeholder="e.g. SUV, Sedan, Truck with crate space">
+          </div>
+          <div class="form-group">
+            <label for="vol-availability">Availability</label>
+            <select id="vol-availability" name="availability">
+              <option value="Weekdays">Weekdays</option>
+              <option value="Weekends">Weekends</option>
+              <option value="Both" selected>Both</option>
+              <option value="Flexible">Flexible / On-call</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="vol-experience">Experience with Dogs (optional)</label>
+            <textarea id="vol-experience" name="experience" rows="2" placeholder="Any relevant experience — fostering, rescue work, pet ownership..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-gold" style="width: 100%;">Sign Up to Drive</button>
+        </form>
+      </div>
+    </div>
+  </section>
 
   <div class="t-divider"></div>
 
   <!-- COMPLETED TRANSPORTS — WALL OF FAME -->
   <div class="fame">
-    <h2>Completed Transports &mdash; Wall of Fame</h2>
+    <h2>Completed Transports — Wall of Fame</h2>
 
-    <div class="empty-state">
-      <h3>First transport hasn't happened yet.</h3>
-      <p>When the first dog makes it home through our relay network, their story goes right here. Be the first volunteer to make it happen.</p>
-      <a href="rescue-registry.html" class="btn btn-gold">Join the Network</a>
-    </div>
-
-    <!--
     <div class="fame-card">
       <div class="fame-check">&#10003;</div>
       <div>
-        <h4>Duke — Riverside to Fresno</h4>
-        <p>3 legs. 4 volunteers. Made it home April 10, 2026. Now with the Martinez family.</p>
+        <h4>Bella — Riverside to Paso Robles</h4>
+        <p>2 legs. 2 volunteers. Made it home April 12, 2026. Now with her forever family.</p>
       </div>
     </div>
-    -->
+
+    <div class="empty-state">
+      <h3>More coming soon.</h3>
+      <p>Every completed transport gets documented here. Be the next volunteer to make it happen.</p>
+      <a href="#volunteer" class="btn btn-gold">Join the Network</a>
+    </div>
   </div>
 
   <!-- FOOTER -->
@@ -455,7 +473,7 @@
     <div class="footer-inner">
       <img src="logo.png" alt="My Legacy Continues" class="footer-logo">
       <div class="footer-contact">
-        contact@mylegacycontinues.com | Santa Maria, CA
+        info@mylegacycontinues.com | Santa Maria, CA
       </div>
       <ul class="footer-links">
         <li><a href="index.html">Home</a></li>
@@ -480,6 +498,10 @@
         link.addEventListener('click', () => navLinks.classList.remove('open'));
       });
     }
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
   </script>
 </body>
 </html>
