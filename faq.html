@@ -501,21 +501,43 @@ section+section{border-top:1px solid var(--border)}
 </main>
 
 <footer>
-  <img src="logo.png" alt="My Legacy Continues"/>
-  <div class="footer-tagline">Long Live Your Legacy.</div>
-  <p><a href="https://mylegacycontinues.com">mylegacycontinues.com</a> &middot; &copy; 2026 My Legacy Continues &middot; Santa Maria, CA</p>
+  <div class="footer-inner">
+    <img src="logo.png" alt="My Legacy Continues" class="footer-logo">
+    <div class="footer-contact">contact@mylegacycontinues.com | (805) 863-3794 | Santa Maria, CA</div>
+    <ul class="footer-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="heritage-book.html">Heritage</a></li>
+      <li><a href="rescue-registry.html">Rescue Registry</a></li>
+      <li><a href="active-transports.html">Transport</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="legal/privacy.html">Privacy</a></li>
+      <li><a href="legal/terms-of-service.html">Terms</a></li>
+    </ul>
+    <p class="footer-copy">&copy; 2026 My Legacy Continues. All rights reserved.</p>
+  </div>
 </footer>
 
 <script>
-function toggleMenu(){
-  document.getElementById('mobileMenu').classList.toggle('open');
-}
-function toggle(btn){
-  const item = btn.closest('.faq-item');
-  const isOpen = item.classList.contains('open');
-  document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
-  if(!isOpen) item.classList.add('open');
-}
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+  if (navToggle) {
+    navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => navLinks.classList.remove('open'));
+    });
+  }
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+  function toggle(btn){
+    const item = btn.closest('.faq-item');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
+    if(!isOpen) item.classList.add('open');
+  }
 </script>
 </body>
 </html>
