@@ -202,39 +202,29 @@ section+section{border-top:1px solid var(--border)}
 }
 .btn-outline:hover{background:var(--gold-dim);transform:translateY(-1px)}
 
-.page-header{
-  margin-top: 68px;
-}
 </style>
 </head>
 <body>
 
 <nav class="site-nav">
-  <div class="nav-left">
-    <img src="logo.png" alt="MLC" class="nav-logo"/>
-    <span class="nav-brand">My Legacy Continues</span>
-  </div>
-  <ul class="nav-links">
-    <li><a href="/heritage-book.html">Heritage Book</a></li>
-    <li><a href="/cemetery-plaque.html">Memorial Plaque</a></li>
-    <li><a href="/pet-tag.html">Pet Tag</a></li>
-    <li><a href="/business-profile.html">Business Profile</a></li>
-    <li><a href="/rescue-registry.html">Rescue Registry</a></li>
-    <li><a href="/portal.html">Vault</a></li>
+  <a href="index.html" class="nav-brand">
+    <img src="logo.png" alt="My Legacy Continues" class="nav-logo">
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="heritage-book.html">Heritage</a></li>
+    <li><a href="rescue-registry.html">Rescue Registry</a></li>
+    <li><a href="active-transports.html">Transport</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
   </ul>
-  <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
-    <span></span><span></span><span></span>
-  </button>
+  <div class="nav-right">
+    <a href="index.html#products" class="btn btn-gold" style="padding: 0.5rem 1.2rem; font-size: 0.7rem;">Start Your Legacy</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
 </nav>
-
-<div class="mobile-menu" id="mobileMenu">
-  <a href="/heritage-book.html" onclick="toggleMenu()">Heritage Book</a>
-  <a href="/cemetery-plaque.html" onclick="toggleMenu()">Memorial Plaque</a>
-  <a href="/pet-tag.html" onclick="toggleMenu()">Pet Tag</a>
-  <a href="/business-profile.html" onclick="toggleMenu()">Business Profile</a>
-  <a href="/rescue-registry.html" onclick="toggleMenu()">Rescue Registry</a>
-  <a href="/portal.html" onclick="toggleMenu()">Vault</a>
-</div>
 
 <div class="page-header">
   <div class="page-tag">Support</div>
