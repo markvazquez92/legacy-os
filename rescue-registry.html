@@ -3,425 +3,264 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Underdog Heroes Rescue Registry — My Legacy Continues</title>
-  <meta name="description" content="Every rescue dog gets a permanent profile. Free QR profiles for rescue dogs through Underdog Heroes partnership.">
+  <title>Rescue Registry — My Legacy Continues</title>
+  <meta name="description" content="Every rescue dog gets a permanent profile. Free QR profiles, behavioral journey tracking, foster updates, and forever records through Underdog Heroes.">
   <link rel="icon" href="logo.png" type="image/png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-
-    body {
-      font-family: 'DM Sans', sans-serif;
-      background: #f0ebe0;
-      color: #2C2C2C;
-      line-height: 1.7;
-    }
-
-    header {
-      background: #1a2744;
-      padding: 1.5rem 3rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-
-    .logo { height: 40px; width: auto; }
-
-    nav { display: flex; gap: 2rem; align-items: center; }
-    nav a { color: #f0ebe0; text-decoration: none; font-size: 0.95rem; transition: color 0.2s; }
-    nav a:hover { color: #b8962e; }
-
-    .nav-toggle { display: none; background: none; border: none; cursor: pointer; flex-direction: column; gap: 5px; padding: 8px; }
-    .nav-toggle span { display: block; width: 24px; height: 2px; background: #f0ebe0; }
-
-    @media (max-width: 768px) {
-      nav { position: fixed; top: 68px; left: 0; right: 0; flex-direction: column; background: #1a2744; padding: 1rem; gap: 0; max-height: 0; overflow: hidden; transition: max-height 0.3s; z-index: 99; }
-      nav.open { max-height: 300px; }
-      nav a { display: block; padding: 1rem 0; border-bottom: 1px solid rgba(212,150,46,0.2); }
-      .nav-toggle { display: flex; }
-      header { padding: 1rem 1.5rem; }
-    }
-
-    .page-header {
-      background: #1a2744;
-      color: #f0ebe0;
-      padding: 5rem 3rem 3rem;
-      text-align: center;
-    }
-
-    .page-header h1 {
-      font-family: 'Chakra Petch', sans-serif;
-      font-size: 2.5rem;
-      font-weight: 700;
-      letter-spacing: 0.02em;
-      text-transform: uppercase;
-      margin-bottom: 0.5rem;
-      color: #b8962e;
-    }
-
-    .page-header .subtitle {
-      font-family: 'Cormorant Garamond', serif;
-      font-style: italic;
-      font-size: 1.3rem;
-      color: #f0ebe0;
-      margin-bottom: 1rem;
-    }
-
-    .page-header p {
-      font-size: 1rem;
-      color: rgba(245, 235, 224, 0.9);
-      max-width: 700px;
-      margin: 0 auto;
-    }
-
-    .content {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 4rem 3rem;
-    }
-
-    .section-header {
-      text-align: center;
-      margin-bottom: 3rem;
-    }
-
-    .section-header h2 {
-      font-family: 'Chakra Petch', sans-serif;
-      font-size: 1.8rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: #1a2744;
-      margin-bottom: 0.5rem;
-    }
-
-    .registry-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-      margin-bottom: 4rem;
-    }
-
-    .dog-card {
-      background: white;
-      border: 2px solid #b8962e;
-      padding: 2rem;
-      text-align: center;
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-
-    .dog-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 8px 24px rgba(184, 150, 46, 0.15);
-    }
-
-    .dog-card h3 {
-      font-family: 'Chakra Petch', sans-serif;
-      font-size: 1.3rem;
-      font-weight: 700;
-      color: #1a2744;
-      margin-bottom: 0.5rem;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
-
-    .dog-card p {
-      font-size: 0.95rem;
-      color: #2C2C2C;
-      margin-bottom: 1.5rem;
-    }
-
-    .btn-cta {
-      display: inline-block;
-      background: #b8962e;
-      color: #f0ebe0;
-      padding: 0.8rem 2rem;
-      border: none;
-      border-radius: 2px;
-      font-family: 'Chakra Petch', sans-serif;
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      text-decoration: none;
-      cursor: pointer;
-      transition: background 0.2s;
-    }
-
-    .btn-cta:hover { background: #cba83c; }
-
-    .dog-photo-placeholder {
-      width: 100%;
-      height: 200px;
-      background: #1a2744;
-      color: #b8962e;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      margin-bottom: 1.5rem;
-      font-size: 0.95rem;
-      font-weight: 500;
-      padding: 1rem;
-      box-sizing: border-box;
-    }
-
-    .partnership {
-      background: rgba(184, 150, 46, 0.08);
-      border: 2px solid #b8962e;
-      padding: 3rem;
-      text-align: center;
-      margin: 4rem 0;
-    }
-
-    .partnership h3 {
-      font-family: 'Chakra Petch', sans-serif;
-      font-size: 1.3rem;
-      font-weight: 700;
-      color: #1a2744;
-      margin-bottom: 1rem;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-    }
-
-    .partnership p {
-      font-size: 1rem;
-      color: #2C2C2C;
-      margin: 0.5rem 0;
-    }
-
-    .partnership .partner-name {
-      font-family: 'Cormorant Garamond', serif;
-      font-style: italic;
-      font-size: 1.2rem;
-      color: #b8962e;
-      font-weight: 600;
-    }
-
-    .volunteer-section {
-      background: rgba(184, 150, 46, 0.08);
-      border: 2px solid #b8962e;
-      padding: 3rem;
-      margin: 4rem 0;
-    }
-
-    .volunteer-section h3 {
-      font-family: 'Chakra Petch', sans-serif;
-      font-size: 1.3rem;
-      font-weight: 700;
-      color: #1a2744;
-      margin-bottom: 1.5rem;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      text-align: center;
-    }
-
-    .volunteer-form {
-      max-width: 500px;
-      margin: 0 auto;
-    }
-
-    .form-group {
-      margin-bottom: 1.5rem;
-    }
-
-    .form-group label {
-      display: block;
-      font-family: 'Chakra Petch', sans-serif;
-      font-weight: 600;
-      color: #1a2744;
-      margin-bottom: 0.5rem;
-      font-size: 0.9rem;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
-
-    .form-group input,
-    .form-group select {
-      width: 100%;
-      padding: 0.8rem;
-      border: 2px solid #b8962e;
-      background: white;
-      font-family: 'DM Sans', sans-serif;
-      font-size: 1rem;
-      color: #2C2C2C;
-      box-sizing: border-box;
-    }
-
-    .form-group input:focus,
-    .form-group select:focus {
-      outline: none;
-      background: #f9f7f3;
-      border-color: #cba83c;
-    }
-
-    .form-message {
-      text-align: center;
-      font-size: 0.95rem;
-      color: #2C2C2C;
-      margin-top: 2rem;
-      font-style: italic;
-    }
-
-    footer {
-      background: #1a2744;
-      color: #f0ebe0;
-      padding: 3rem;
-      text-align: center;
-    }
-
-    footer a { color: #b8962e; text-decoration: none; }
-    footer a:hover { text-decoration: underline; }
-
-    @media (max-width: 768px) {
-      .page-header { padding: 3rem 1.5rem 2rem; }
-      .page-header h1 { font-size: 1.8rem; }
-      .content { padding: 2rem 1.5rem; }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header>
-  <a href="index.html"><img src="logo.png" alt="My Legacy Continues" class="logo"></a>
-  <nav id="navMenu">
-    <a href="index.html">Home</a>
-    <a href="pet-tag.html">Pet Tags</a>
-    <a href="heritage-book.html">Heritage Books</a>
-    <a href="rescue-registry.html">Rescue Registry</a>
+  <!-- NAVIGATION -->
+  <nav class="site-nav">
+    <a href="index.html" class="nav-brand">
+      <img src="logo.png" alt="My Legacy Continues" class="nav-logo">
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="heritage-book.html">Heritage</a></li>
+      <li><a href="rescue-registry.html" class="active">Rescue Registry</a></li>
+      <li><a href="active-transports.html">Transport</a></li>
+      <li><a href="about-us.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <span class="lang-toggle">EN / ES</span>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
   </nav>
-  <button class="nav-toggle" id="navToggle" aria-label="Menu">
-    <span></span><span></span><span></span>
-  </button>
-</header>
 
-<div class="page-header">
-  <h1>Underdog Heroes</h1>
-  <div class="subtitle">Rescue Registry</div>
-  <p>Every rescue dog gets a permanent profile. Free. Forever hosted at My Legacy Continues in partnership with Underdog Heroes.</p>
-</div>
-
-<div class="content">
-
-<div class="section-header">
-  <h2>Our Rescue Dogs</h2>
-  <p style="color: #2C2C2C; font-size: 1rem;">Each profile is a QR link that lives forever. Scan to see the dog's story, photos, and care information.</p>
-</div>
-
-<div class="section-header" style="margin-top: 2rem; margin-bottom: 3rem;">
-  <h2 style="font-size: 1.5rem;">How It Works</h2>
-  <p style="color: #2C2C2C; font-size: 1rem; max-width: 800px; margin: 1rem auto 0;">Each dog on this registry gets a permanent profile. Before adoption, rescuers and fosters document their behavioral journey. After adoption, the profile transfers to the new owner. Photos, updates, milestones — all stay on the profile forever. When the dog passes, the profile becomes a memorial.</p>
-</div>
-
-<div class="registry-grid">
-  <div class="dog-card">
-    <div class="dog-photo-placeholder">Dog 1<br/>Photo Coming Soon</div>
-    <h3>Dog 1</h3>
-    <p>Underdog Heroes · Lompoc CA</p>
-    <a href="#" class="btn-cta">View Profile</a>
-  </div>
-  <div class="dog-card">
-    <div class="dog-photo-placeholder">Dog 2<br/>Photo Coming Soon</div>
-    <h3>Dog 2</h3>
-    <p>Underdog Heroes · Lompoc CA</p>
-    <a href="#" class="btn-cta">View Profile</a>
-  </div>
-  <div class="dog-card">
-    <div class="dog-photo-placeholder">Dog 3<br/>Photo Coming Soon</div>
-    <h3>Dog 3</h3>
-    <p>Underdog Heroes · Lompoc CA</p>
-    <a href="#" class="btn-cta">View Profile</a>
-  </div>
-  <div class="dog-card">
-    <div class="dog-photo-placeholder">Dog 4<br/>Photo Coming Soon</div>
-    <h3>Dog 4</h3>
-    <p>Underdog Heroes · Lompoc CA</p>
-    <a href="#" class="btn-cta">View Profile</a>
-  </div>
-  <div class="dog-card">
-    <div class="dog-photo-placeholder">Dog 5<br/>Photo Coming Soon</div>
-    <h3>Dog 5</h3>
-    <p>Underdog Heroes · Lompoc CA</p>
-    <a href="#" class="btn-cta">View Profile</a>
-  </div>
-  <div class="dog-card">
-    <div class="dog-photo-placeholder">Dog 6<br/>Photo Coming Soon</div>
-    <h3>Dog 6</h3>
-    <p>Underdog Heroes · Lompoc CA</p>
-    <a href="#" class="btn-cta">View Profile</a>
-  </div>
-  <div class="dog-card">
-    <div class="dog-photo-placeholder">Dog 7<br/>Photo Coming Soon</div>
-    <h3>Dog 7</h3>
-    <p>Underdog Heroes · Lompoc CA</p>
-    <a href="#" class="btn-cta">View Profile</a>
-  </div>
-  <div class="dog-card">
-    <div class="dog-photo-placeholder">Dog 8<br/>Photo Coming Soon</div>
-    <h3>Dog 8</h3>
-    <p>Underdog Heroes · Lompoc CA</p>
-    <a href="#" class="btn-cta">View Profile</a>
-  </div>
-</div>
-
-<div class="volunteer-section">
-  <h3>Want to volunteer or foster?</h3>
-  <form class="volunteer-form" action="https://formspree.io/f/xzzpqjle" method="POST">
-    <div class="form-group">
-      <label for="name">Name</label>
-      <input type="text" id="name" name="name" required>
+  <!-- SECTION 1: HERO -->
+  <section class="hero section-teal metalflake" style="text-align: center;">
+    <div class="hero-content">
+      <h1 style="color: var(--gold);">Rescue Stories</h1>
+      <p class="tagline" style="color: var(--cream); font-size: clamp(1.1rem, 2.5vw, 1.4rem); margin-top: 1rem;">Every dog deserves a permanent record.</p>
+      <p style="color: var(--cream); opacity: 0.85; max-width: 600px; margin: 1rem auto 0;">Free, forever-hosted profiles for rescue dogs. In partnership with Underdog Heroes, Lompoc CA.</p>
     </div>
-    <div class="form-group">
-      <label for="email">Email</label>
-      <input type="email" id="email" name="email" required>
+  </section>
+
+  <!-- SECTION 2: HOW IT WORKS -->
+  <section class="section-cream fade-in">
+    <div class="section-inner text-center" style="margin-bottom: 3rem;">
+      <h2>How It Works</h2>
     </div>
-    <div class="form-group">
-      <label for="phone">Phone</label>
-      <input type="tel" id="phone" name="phone" required>
+    <div class="section-inner grid-3">
+      <div class="card text-center">
+        <div style="width: 80px; height: 80px; border-radius: 50%; border: 2px solid var(--gold); margin: 0 auto 1.5rem; display: flex; align-items: center; justify-content: center;">
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M8 26V6h16v20L16 22l-8 4z" stroke="#E8C97A" stroke-width="2"/></svg>
+        </div>
+        <h3>Behavioral Journey</h3>
+        <p>Rescuers and fosters document behavior, temperament, and progress. A complete picture before adoption.</p>
+      </div>
+      <div class="card text-center">
+        <div style="width: 80px; height: 80px; border-radius: 50%; border: 2px solid var(--gold); margin: 0 auto 1.5rem; display: flex; align-items: center; justify-content: center;">
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="10" stroke="#E8C97A" stroke-width="2"/><path d="M16 10v8l4 4" stroke="#E8C97A" stroke-width="2"/></svg>
+        </div>
+        <h3>Foster Updates</h3>
+        <p>Real-time updates from foster families. Photos, milestones, medical records. All in one permanent profile.</p>
+      </div>
+      <div class="card text-center">
+        <div style="width: 80px; height: 80px; border-radius: 50%; border: 2px solid var(--gold); margin: 0 auto 1.5rem; display: flex; align-items: center; justify-content: center;">
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M6 16l8 8L26 8" stroke="#E8C97A" stroke-width="2.5"/></svg>
+        </div>
+        <h3>Forever Profile</h3>
+        <p>After adoption, the profile transfers to the new owner. Updates continue forever. When the dog passes, it becomes a memorial.</p>
+      </div>
     </div>
-    <div class="form-group">
-      <label for="interest">Interest</label>
-      <select id="interest" name="interest" required>
-        <option value="">Select an option</option>
-        <option value="Foster">Foster</option>
-        <option value="Transport">Transport</option>
-        <option value="Donate">Donate</option>
-        <option value="Other">Other</option>
-      </select>
+  </section>
+
+  <!-- SECTION 3: DOG GRID — 8 Rescue Dogs -->
+  <section class="section-cream fade-in">
+    <div class="section-inner text-center" style="margin-bottom: 2rem;">
+      <h2>Our Rescue Dogs</h2>
+      <p style="opacity: 0.7;">Each profile is a QR link that lives forever. Scan to see the dog's story, photos, and care information.</p>
     </div>
-    <button type="submit" class="btn-cta" style="width: 100%; cursor: pointer;">Join the Network</button>
-  </form>
-  <p class="form-message">Join the Underdog Heroes transport and foster network. We'll be in touch soon.</p>
-</div>
+    <div class="section-inner dog-grid">
+      <div class="dog-card">
+        <div class="dog-photo"><span>Photo Coming</span></div>
+        <div class="dog-info">
+          <h3>Bella</h3>
+          <p class="dog-meta">Pit Mix / 3 yrs / Available</p>
+          <p class="dog-personality">Sweet, gentle soul who loves belly rubs and long walks. Great with kids.</p>
+          <a href="#" class="btn btn-gold" style="font-size: 0.75rem; padding: 0.6rem 1.2rem;">View Profile</a>
+        </div>
+      </div>
+      <div class="dog-card">
+        <div class="dog-photo"><span>Photo Coming</span></div>
+        <div class="dog-info">
+          <h3>Duke</h3>
+          <p class="dog-meta">Shepherd Mix / 5 yrs / In Foster</p>
+          <p class="dog-personality">Loyal protector with a calm demeanor. Thrives with routine and structure.</p>
+          <a href="#" class="btn btn-gold" style="font-size: 0.75rem; padding: 0.6rem 1.2rem;">View Profile</a>
+        </div>
+      </div>
+      <div class="dog-card">
+        <div class="dog-photo"><span>Photo Coming</span></div>
+        <div class="dog-info">
+          <h3>Luna</h3>
+          <p class="dog-meta">Lab Mix / 2 yrs / Available</p>
+          <p class="dog-personality">Energetic and playful. Loves fetch, swimming, and making new friends.</p>
+          <a href="#" class="btn btn-gold" style="font-size: 0.75rem; padding: 0.6rem 1.2rem;">View Profile</a>
+        </div>
+      </div>
+      <div class="dog-card">
+        <div class="dog-photo"><span>Photo Coming</span></div>
+        <div class="dog-info">
+          <h3>Butters</h3>
+          <p class="dog-meta">Chihuahua Mix / 4 yrs / Adopted</p>
+          <p class="dog-personality">Three fosters, one forever home. A survivor with the biggest personality.</p>
+          <a href="butters-profile.html" class="btn btn-gold" style="font-size: 0.75rem; padding: 0.6rem 1.2rem;">View Profile</a>
+        </div>
+      </div>
+      <div class="dog-card">
+        <div class="dog-photo"><span>Photo Coming</span></div>
+        <div class="dog-info">
+          <h3>Rosie</h3>
+          <p class="dog-meta">Terrier Mix / 6 yrs / Available</p>
+          <p class="dog-personality">Quiet companion who loves curling up on the couch. Senior dog, young heart.</p>
+          <a href="#" class="btn btn-gold" style="font-size: 0.75rem; padding: 0.6rem 1.2rem;">View Profile</a>
+        </div>
+      </div>
+      <div class="dog-card">
+        <div class="dog-photo"><span>Photo Coming</span></div>
+        <div class="dog-info">
+          <h3>Tank</h3>
+          <p class="dog-meta">Bulldog Mix / 3 yrs / In Foster</p>
+          <p class="dog-personality">Big dog, bigger heart. Gentle with everyone. Loves car rides and treats.</p>
+          <a href="#" class="btn btn-gold" style="font-size: 0.75rem; padding: 0.6rem 1.2rem;">View Profile</a>
+        </div>
+      </div>
+      <div class="dog-card">
+        <div class="dog-photo"><span>Photo Coming</span></div>
+        <div class="dog-info">
+          <h3>Daisy</h3>
+          <p class="dog-meta">Hound Mix / 1 yr / Available</p>
+          <p class="dog-personality">Puppy energy with a hound nose. Curious, adventurous, and full of love.</p>
+          <a href="#" class="btn btn-gold" style="font-size: 0.75rem; padding: 0.6rem 1.2rem;">View Profile</a>
+        </div>
+      </div>
+      <div class="dog-card">
+        <div class="dog-photo"><span>Photo Coming</span></div>
+        <div class="dog-info">
+          <h3>Scout</h3>
+          <p class="dog-meta">Cattle Dog Mix / 2 yrs / Available</p>
+          <p class="dog-personality">Smart, athletic, and eager to please. Needs an active family who loves outdoors.</p>
+          <a href="#" class="btn btn-gold" style="font-size: 0.75rem; padding: 0.6rem 1.2rem;">View Profile</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<a href="pet-tag.html" class="btn-cta" style="display: inline-block; margin-top: 2rem;">Get a Pet QR Tag — Starting at $24.99</a>
+  <!-- SECTION 4: VOLUNTEER FORM -->
+  <section class="section-cream fade-in">
+    <div class="section-inner">
+      <div class="card" style="max-width: 600px; margin: 0 auto; padding: 2.5rem;">
+        <h3 class="text-center" style="margin-bottom: 1.5rem;">Join The Rescue Network</h3>
+        <form action="https://formspree.io/f/xzzpqjle" method="POST">
+          <input type="hidden" name="_subject" value="Rescue Volunteer Signup">
+          <div class="form-group">
+            <label for="vol-name">Name</label>
+            <input type="text" id="vol-name" name="name" required>
+          </div>
+          <div class="form-group">
+            <label for="vol-email">Email</label>
+            <input type="email" id="vol-email" name="email" required>
+          </div>
+          <div class="form-group">
+            <label for="vol-phone">Phone</label>
+            <input type="tel" id="vol-phone" name="phone">
+          </div>
+          <div class="form-group">
+            <label for="vol-interest">How Can You Help?</label>
+            <select id="vol-interest" name="interest" required>
+              <option value="">Select an option</option>
+              <option value="Foster">Foster a dog</option>
+              <option value="Transport">Drive transport legs</option>
+              <option value="Donate">Donate supplies or funds</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-gold" style="width: 100%;">Join the Rescue Network</button>
+        </form>
+        <p class="tagline text-center" style="margin-top: 1.5rem; font-size: 0.95rem; color: var(--teal);">We follow the animal from rescue to forever home to final rest.</p>
+      </div>
+    </div>
+  </section>
 
-<div class="partnership">
-  <h3>Our Partnership</h3>
-  <p style="margin: 1rem 0;">In partnership with</p>
-  <p class="partner-name">Shoshi / Underdog Heroes</p>
-  <p>Lompoc, California</p>
-  <p style="margin-top: 1.5rem; font-size: 0.95rem;">A portion of every pet tag sale supports local rescue organizations. Every profile helps dogs find homes.</p>
-</div>
+  <!-- SECTION 5: RED LIST ALERT NETWORK (Coming Soon) -->
+  <section class="section-navy film-grain full-width fade-in">
+    <div class="section-inner text-center">
+      <h2 style="color: var(--gold);">Red List Alert Network</h2>
+      <p class="tagline" style="color: var(--cream); font-size: 1.15rem; margin: 1rem auto; max-width: 700px;">Coming Soon: Real-time euthanasia notifications sent directly to rescues and fosters.</p>
+      <p style="color: var(--cream); opacity: 0.75; max-width: 600px; margin: 0 auto 2rem;">Inspired by Bowie's Law and the work of shelter reform advocates. When a dog is placed on a euthanasia list, nearby rescues and qualified fosters get an immediate alert. No more missed saves.</p>
+      <form action="https://formspree.io/f/xzzpqjle" method="POST" style="max-width: 400px; margin: 0 auto; display: flex; gap: 0.75rem; flex-wrap: wrap; justify-content: center;">
+        <input type="hidden" name="_subject" value="Red List Alert Waitlist">
+        <input type="email" name="email" placeholder="Enter your email" required style="flex: 1; min-width: 200px;">
+        <button type="submit" class="btn btn-gold">Notify Me</button>
+      </form>
+    </div>
+  </section>
 
-</div>
+  <!-- SECTION 6: HOW YOUR PURCHASE SUPPORTS RESCUE -->
+  <section class="section-teal metalflake full-width fade-in">
+    <div class="section-inner text-center" style="margin-bottom: 2rem;">
+      <h2 style="color: var(--gold);">How Your Purchase Supports Rescue</h2>
+    </div>
+    <div class="section-inner grid-2" style="max-width: 900px;">
+      <div class="card">
+        <h3>10% of Tags to Rescue</h3>
+        <p>Every pet tag sale sends 10% directly to Underdog Heroes. Your purchase funds food, medical care, and transport for rescue dogs.</p>
+      </div>
+      <div class="card">
+        <h3>Heritage Books Fund Rescue Families</h3>
+        <p>When rescue families purchase heritage books, part of that goes right back into the rescue ecosystem. Community funding community.</p>
+      </div>
+      <div class="card">
+        <h3>Business Profiles Empower Coordinators</h3>
+        <p>Rescue coordinators get free business profiles to document their organizations. Permanent records, zero cost.</p>
+      </div>
+      <div class="card">
+        <h3>QR Codes = Accountability</h3>
+        <p>Every QR profile creates a permanent, public record. Transparency in rescue. Every dog tracked from intake to forever home.</p>
+      </div>
+    </div>
+  </section>
 
-<footer>
-  <p>&copy; 2026 My Legacy Continues. All rights reserved.</p>
-  <p><a href="index.html">Home</a> | <a href="heritage-book.html">Heritage Books</a> | <a href="pet-tag.html">Pet Tags</a> | <a href="contact.html">Contact</a></p>
-</footer>
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <img src="logo.png" alt="My Legacy Continues" class="footer-logo">
+      <div class="footer-contact">
+        contact@mylegacycontinues.com | Santa Maria, CA
+      </div>
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="heritage-book.html">Heritage</a></li>
+        <li><a href="rescue-registry.html">Rescue Registry</a></li>
+        <li><a href="active-transports.html">Transport</a></li>
+        <li><a href="about-us.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="legal/privacy.html">Privacy</a></li>
+        <li><a href="legal/terms-of-service.html">Terms</a></li>
+      </ul>
+      <p class="footer-copy">&copy; 2026 My Legacy Continues. All rights reserved.</p>
+    </div>
+  </footer>
 
-<script>
-  const navToggle = document.getElementById('navToggle');
-  const navMenu = document.getElementById('navMenu');
-  navToggle.addEventListener('click', () => navMenu.classList.toggle('open'));
-  navMenu.querySelectorAll('a').forEach(link => link.addEventListener('click', () => navMenu.classList.remove('open')));
-</script>
-
+  <script>
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    if (navToggle) {
+      navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+      navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => navLinks.classList.remove('open'));
+      });
+    }
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  </script>
 </body>
 </html>
