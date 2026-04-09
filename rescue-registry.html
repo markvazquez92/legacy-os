@@ -203,6 +203,71 @@
       font-weight: 600;
     }
 
+    .volunteer-section {
+      background: rgba(184, 150, 46, 0.08);
+      border: 2px solid #b8962e;
+      padding: 3rem;
+      margin: 4rem 0;
+    }
+
+    .volunteer-section h3 {
+      font-family: 'Chakra Petch', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #1a2744;
+      margin-bottom: 1.5rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      text-align: center;
+    }
+
+    .volunteer-form {
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .form-group label {
+      display: block;
+      font-family: 'Chakra Petch', sans-serif;
+      font-weight: 600;
+      color: #1a2744;
+      margin-bottom: 0.5rem;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .form-group input,
+    .form-group select {
+      width: 100%;
+      padding: 0.8rem;
+      border: 2px solid #b8962e;
+      background: white;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1rem;
+      color: #2C2C2C;
+      box-sizing: border-box;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus {
+      outline: none;
+      background: #f9f7f3;
+      border-color: #cba83c;
+    }
+
+    .form-message {
+      text-align: center;
+      font-size: 0.95rem;
+      color: #2C2C2C;
+      margin-top: 2rem;
+      font-style: italic;
+    }
+
     footer {
       background: #1a2744;
       color: #f0ebe0;
@@ -246,6 +311,11 @@
 <div class="section-header">
   <h2>Our Rescue Dogs</h2>
   <p style="color: #2C2C2C; font-size: 1rem;">Each profile is a QR link that lives forever. Scan to see the dog's story, photos, and care information.</p>
+</div>
+
+<div class="section-header" style="margin-top: 2rem; margin-bottom: 3rem;">
+  <h2 style="font-size: 1.5rem;">How It Works</h2>
+  <p style="color: #2C2C2C; font-size: 1rem; max-width: 800px; margin: 1rem auto 0;">Each dog on this registry gets a permanent profile. Before adoption, rescuers and fosters document their behavioral journey. After adoption, the profile transfers to the new owner. Photos, updates, milestones — all stay on the profile forever. When the dog passes, the profile becomes a memorial.</p>
 </div>
 
 <div class="registry-grid">
@@ -297,6 +367,36 @@
     <p>Underdog Heroes · Lompoc CA</p>
     <a href="#" class="btn-cta">View Profile</a>
   </div>
+</div>
+
+<div class="volunteer-section">
+  <h3>Want to volunteer or foster?</h3>
+  <form class="volunteer-form" action="https://formspree.io/f/xzzpqjle" method="POST">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" required>
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required>
+    </div>
+    <div class="form-group">
+      <label for="phone">Phone</label>
+      <input type="tel" id="phone" name="phone" required>
+    </div>
+    <div class="form-group">
+      <label for="interest">Interest</label>
+      <select id="interest" name="interest" required>
+        <option value="">Select an option</option>
+        <option value="Foster">Foster</option>
+        <option value="Transport">Transport</option>
+        <option value="Donate">Donate</option>
+        <option value="Other">Other</option>
+      </select>
+    </div>
+    <button type="submit" class="btn-cta" style="width: 100%; cursor: pointer;">Join the Network</button>
+  </form>
+  <p class="form-message">Join the Underdog Heroes transport and foster network. We'll be in touch soon.</p>
 </div>
 
 <a href="pet-tag.html" class="btn-cta" style="display: inline-block; margin-top: 2rem;">Get a Pet QR Tag — Starting at $24.99</a>
