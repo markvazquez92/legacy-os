@@ -363,17 +363,7 @@ img { max-width: 100%; height: auto; display: block; }
     />
   </div>
 
-  <div style="margin-bottom: 16px;">
-    <label for="package">Package Selected *</label><br />
-    <select
-      id="package"
-      name="package"
-      required
-      style="width: 100%; padding: 10px; margin-top: 4px; box-sizing: border-box;"
-    >
-      <option value="$199 — Heritage Culture Book">$199 — Heritage Culture Book</option>
-    </select>
-  </div>
+  <input type="hidden" name="package" value="$199 — Heritage Culture Book">
 
   <div style="margin-bottom: 16px;">
     <label for="story_summary">Brief Story Summary *</label><br />
@@ -535,5 +525,6 @@ img { max-width: 100%; height: auto; display: block; }
   document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 </script>
 
+<script src="metalflake.js"></script>
 </body>
 </html>
