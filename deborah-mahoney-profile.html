@@ -4,22 +4,22 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Deborah Mahoney — Heritage Profile — My Legacy Continues</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Chakra+Petch:wght@300;400;600&family=DM+Sans:wght@300;400&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet"/>
 <style>
   :root {
-    --bg: #1a2744;
-    --green: #1a2744;
-    --gold: #b8962e;
-    --cream: #f0ede6;
-    --muted: #888;
-    --card: #141414;
-    --border: rgba(184,150,46,0.2);
+    --bg: #1A5C55;
+    --green: #1A5C55;
+    --gold: #E8C97A;
+    --cream: #FAF3E6;
+    --muted: rgba(28,28,28,0.6);
+    --card: #1A5C55;
+    --border: rgba(232,201,122,0.2);
   }
   * { margin:0; padding:0; box-sizing:border-box; }
   body {
     background: var(--bg);
     color: var(--cream);
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'Outfit', sans-serif;
     font-weight: 300;
   }
 
@@ -28,14 +28,14 @@
     position: fixed; top:0; left:0; right:0; z-index:100;
     display:flex; align-items:center; justify-content:space-between;
     padding: 16px 32px;
-    background: rgba(10,10,10,0.92);
+    background: rgba(26,92,85,0.92);
     backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--border);
   }
   nav a.logo { display:flex; align-items:center; gap:10px; text-decoration:none; }
   nav a.logo img { width:32px; height:32px; border-radius:50%; }
-  nav a.logo span { font-family:'Chakra Petch',sans-serif; font-size:13px; color:var(--gold); letter-spacing:0.08em; }
-  nav a.back { font-family:'Chakra Petch',sans-serif; font-size:11px; color:var(--muted); text-decoration:none; letter-spacing:0.1em; text-transform:uppercase; transition:color 0.2s; }
+  nav a.logo span { font-family:'Oswald',sans-serif; font-size:13px; color:var(--gold); letter-spacing:0.08em; }
+  nav a.back { font-family:'Oswald',sans-serif; font-size:11px; color:var(--muted); text-decoration:none; letter-spacing:0.1em; text-transform:uppercase; transition:color 0.2s; }
   nav a.back:hover { color:var(--gold); }
 
   /* HERO */
@@ -50,13 +50,13 @@
   .hero-photo {
     position: absolute;
     inset: 0;
-    background: #1a2744;
+    background: #1A5C55;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Oswald', serif;
     font-size: 1.3rem;
-    color: #b8962e;
+    color: #E8C97A;
     text-align: center;
     padding: 2rem;
   }
@@ -67,17 +67,17 @@
     inset:0;
     background:
       linear-gradient(to bottom,
-        rgba(10,10,10,0.25) 0%,
-        rgba(10,10,10,0.1) 25%,
-        rgba(10,10,10,0.4) 55%,
-        rgba(10,10,10,0.88) 75%,
-        rgba(10,10,10,1) 100%
+        rgba(26,92,85,0.25) 0%,
+        rgba(26,92,85,0.1) 25%,
+        rgba(26,92,85,0.4) 55%,
+        rgba(26,92,85,0.88) 75%,
+        rgba(26,92,85,1) 100%
       ),
       linear-gradient(to right,
-        rgba(10,10,10,0.5) 0%,
+        rgba(26,92,85,0.5) 0%,
         transparent 40%,
         transparent 60%,
-        rgba(10,10,10,0.5) 100%
+        rgba(26,92,85,0.5) 100%
       );
   }
   .hero-content {
@@ -87,7 +87,7 @@
     padding: 0 48px;
   }
   .hero-tag {
-    font-family:'Chakra Petch',sans-serif;
+    font-family:'Oswald',sans-serif;
     font-size:11px;
     color:var(--gold);
     letter-spacing:0.15em;
@@ -95,7 +95,7 @@
     margin-bottom:16px;
   }
   .hero h1 {
-    font-family:'Cormorant Garamond',serif;
+    font-family:'Oswald',serif;
     font-size: clamp(52px, 7vw, 88px);
     font-weight:300;
     line-height:1.0;
@@ -104,7 +104,7 @@
   }
   .hero h1 em { font-style:italic; color:var(--gold); }
   .hero-sub {
-    font-family:'DM Sans',sans-serif;
+    font-family:'Outfit',sans-serif;
     font-size:15px;
     color:rgba(240,237,230,0.65);
     font-weight:300;
@@ -115,8 +115,8 @@
     display:flex; gap:40px; flex-wrap:wrap;
   }
   .stat { display:flex; flex-direction:column; gap:4px; }
-  .stat-label { font-family:'Chakra Petch',sans-serif; font-size:10px; color:var(--gold); letter-spacing:0.12em; text-transform:uppercase; }
-  .stat-val { font-family:'Cormorant Garamond',serif; font-size:18px; color:var(--cream); font-weight:400; }
+  .stat-label { font-family:'Oswald',sans-serif; font-size:10px; color:var(--gold); letter-spacing:0.12em; text-transform:uppercase; }
+  .stat-val { font-family:'Oswald',serif; font-size:18px; color:var(--cream); font-weight:400; }
 
   /* SECTIONS */
   .section { max-width:860px; margin:0 auto; padding:80px 48px; }
@@ -125,7 +125,7 @@
     margin-bottom:40px;
   }
   .section-rule h2 {
-    font-family:'Chakra Petch',sans-serif;
+    font-family:'Oswald',sans-serif;
     font-size:11px; letter-spacing:0.15em;
     text-transform:uppercase; color:var(--gold);
     white-space:nowrap;
@@ -150,7 +150,7 @@
     padding:24px;
   }
   .family-card .fc-label {
-    font-family:'Chakra Petch',sans-serif;
+    font-family:'Oswald',sans-serif;
     font-size:10px; letter-spacing:0.12em;
     text-transform:uppercase; color:var(--gold);
     margin-bottom:16px;
@@ -161,7 +161,7 @@
   }
   .family-member:last-child { border-bottom:none; }
   .fm-name {
-    font-family:'Cormorant Garamond',serif;
+    font-family:'Oswald',serif;
     font-size:18px; color:var(--cream); font-weight:400;
   }
   .fm-note {
@@ -176,7 +176,7 @@
     padding:40px;
   }
   .story-card p {
-    font-family:'Cormorant Garamond',serif;
+    font-family:'Oswald',serif;
     font-size:20px; font-weight:300;
     line-height:1.75;
     color:rgba(240,237,230,0.85);
@@ -197,13 +197,13 @@
     padding:20px;
   }
   .root-num {
-    font-family:'Chakra Petch',sans-serif;
+    font-family:'Oswald',sans-serif;
     font-size:28px; color:var(--green);
     font-weight:600; margin-bottom:8px;
     opacity:0.6;
   }
   .root-name {
-    font-family:'Cormorant Garamond',serif;
+    font-family:'Oswald',serif;
     font-size:17px; color:var(--cream); font-weight:400;
   }
   .root-note { font-size:12px; color:var(--muted); margin-top:4px; }
@@ -228,13 +228,13 @@
     background:#1a1a1a;
   }
   .cc-type {
-    font-family:'Chakra Petch',sans-serif;
+    font-family:'Oswald',sans-serif;
     font-size:10px; letter-spacing:0.12em;
     text-transform:uppercase; color:var(--gold);
     margin-bottom:10px;
   }
   .cc-name {
-    font-family:'Cormorant Garamond',serif;
+    font-family:'Oswald',serif;
     font-size:20px; color:var(--cream); font-weight:400;
     margin-bottom:4px;
   }
@@ -253,7 +253,7 @@
     margin-left:auto; margin-right:auto;
   }
   .cta-block h3 {
-    font-family:'Cormorant Garamond',serif;
+    font-family:'Oswald',serif;
     font-size:32px; font-weight:300;
     color:var(--cream); margin-bottom:12px;
   }
@@ -261,8 +261,8 @@
   .cta-btn {
     display:inline-block;
     background:var(--gold);
-    color:#1a2744;
-    font-family:'Chakra Petch',sans-serif;
+    color:#1A5C55;
+    font-family:'Oswald',sans-serif;
     font-size:12px; letter-spacing:0.1em;
     text-transform:uppercase;
     padding:14px 32px;
@@ -481,7 +481,7 @@
     <p style="font-size: 0.8rem; color: rgba(244,239,230,0.6); max-width: 600px; margin: 0 auto 1.5rem; line-height: 1.6;">All family profiles are password protected (optional), encrypted in transit, never sold or shared, hosted permanently, and yours to control forever.</p>
     <div style="border-top: 1px solid rgba(201,146,10,0.2); margin: 1.5rem 0;"></div>
     <div style="margin-bottom: 1rem;">
-      <a href="privacy.html" style="font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold); text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#b8962e'" onmouseout="this.style.color='#b8962e'">Privacy Policy</a>
+      <a href="privacy.html" style="font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold); text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#E8C97A'" onmouseout="this.style.color='#E8C97A'">Privacy Policy</a>
     </div>
     <div class="footer-copy">Long Live Your Legacy &mdash; mylegacycontinues.com &mdash; <a href="mailto:info@mylegacycontinues.com" style="color: var(--gold); text-decoration: none;">info@mylegacycontinues.com</a> &mdash; &copy; 2026 My Legacy Continues &mdash; Santa Maria, CA</div>
   </div>
