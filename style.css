@@ -5,21 +5,21 @@
 
 :root {
   /* LOCKED PALETTE — DO NOT CHANGE */
-  --navy:         #1A2B3C;      /* Navy background */
-  --navy-deep:    #0F1A26;      /* Darker navy for depth */
-  --gold:         #D4A020;      /* Gold ship logo + accents */
-  --gold-light:   #E8B840;      /* Lighter gold for hover */
-  --cream:        #F5F0E8;      /* Cream text + light backgrounds */
+  --navy:         #1a2744;      /* Navy background */
+  --navy-deep:    #0f1620;      /* Darker navy for depth */
+  --gold:         #b8962e;      /* Gold ship logo + accents */
+  --gold-light:   #cba83c;      /* Lighter gold for hover */
+  --cream:        #f0ebe0;      /* Cream text + light backgrounds */
   --charcoal:     #2C2C2C;      /* Dark text on cream */
   --charcoal2:    #1A1A1A;      /* Darkest text */
   --coral:        #E89560;      /* Accent color for CTAs */
 
   /* Semantic colors */
-  --bg-primary:   #F5F0E8;      /* Primary background = cream */
-  --bg-card:      rgba(212,160,32,0.08);
+  --bg-primary:   #f0ebe0;      /* Primary background = cream */
+  --bg-card:      rgba(184,150,46,0.08);
   --text-muted:   rgba(44,44,44,0.65);
-  --border:       rgba(212,160,32,0.2);
-  --border-light: rgba(212,160,32,0.1);
+  --border:       rgba(184,150,46,0.2);
+  --border-light: rgba(184,150,46,0.1);
 
   /* Fonts */
   --serif:        'DM Serif Display', Georgia, serif;
@@ -86,13 +86,13 @@ p { margin-bottom: 1.2rem; }
 .btn-primary {
   background: var(--gold);
   color: var(--cream);
-  box-shadow: 0 4px 20px rgba(212,160,32,0.2);
+  box-shadow: 0 4px 20px rgba(184,150,46,0.2);
 }
 
 .btn-primary:hover {
   background: var(--gold-light);
   transform: translateY(-2px);
-  box-shadow: 0 6px 28px rgba(212,160,32,0.3);
+  box-shadow: 0 6px 28px rgba(184,150,46,0.3);
 }
 
 .btn-secondary {
@@ -128,7 +128,7 @@ nav {
   right: 0;
   z-index: 200;
   height: 68px;
-  background: rgba(245,240,232,0.96);
+  background: rgba(240,235,224,0.96);
   border-bottom: 1px solid var(--border-light);
   backdrop-filter: blur(12px);
   display: flex;
@@ -298,7 +298,7 @@ section {
 
 .card:hover {
   border-color: var(--gold);
-  box-shadow: 0 8px 24px rgba(212,160,32,0.1);
+  box-shadow: 0 8px 24px rgba(184,150,46,0.1);
 }
 
 .card-navy {
@@ -330,7 +330,7 @@ input, textarea, select {
 input:focus, textarea:focus, select:focus {
   outline: none;
   border-color: var(--gold);
-  box-shadow: 0 0 8px rgba(212,160,32,0.2);
+  box-shadow: 0 0 8px rgba(184,150,46,0.2);
 }
 
 label {

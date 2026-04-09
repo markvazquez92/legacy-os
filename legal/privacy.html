@@ -10,17 +10,17 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,700;0,800;1,400;1,600&family=DM+Serif+Display:ital@0;1&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
     :root {
-      --navy:         #1A2B3C;
-      --navy-deep:    #0F1A26;
-      --gold:         #D4AF37;
-      --gold-light:   #D4AF37;
-      --cream:        #F5F0E8;
+      --navy:         #1a2744;
+      --navy-deep:    #0f1620;
+      --gold:         #b8962e;
+      --gold-light:   #b8962e;
+      --cream:        #f0ebe0;
       --charcoal:     #2C2C2C;
-      --bg:           #F5F0E8;
+      --bg:           #f0ebe0;
       --text:         #2C2C2C;
       --text-muted:   rgba(44,44,44,0.65);
       --text-dim:     rgba(44,44,44,0.5);
-      --gold-border:  rgba(212,175,55,0.25);
+      --gold-border:  rgba(184,150,46,0.25);
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -29,26 +29,26 @@
     a { color: inherit; text-decoration: none; }
     img { max-width: 100%; height: auto; display: block; }
 
-    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 900; height: 68px; background: #F5F0E8; border-bottom: 1px solid rgba(212,175,55,0.2); display: flex; align-items: center; justify-content: space-between; padding: 0 48px; }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 900; height: 68px; background: #f0ebe0; border-bottom: 1px solid rgba(184,150,46,0.2); display: flex; align-items: center; justify-content: space-between; padding: 0 48px; }
     .nav-logo { height: 40px; width: auto; }
     .nav-center { display: flex; align-items: center; gap: 26px; list-style: none; }
     .nav-center a { font-family: 'Jost', sans-serif; font-size: 0.78rem; color: #2C2C2C; letter-spacing: 0.02em; transition: color 0.2s; }
-    .nav-center a:hover { color: #D4AF37; }
+    .nav-center a:hover { color: #b8962e; }
     .nav-right { display: flex; align-items: center; gap: 12px; }
-    .nav-vault-link { font-family: 'DM Serif Display', Georgia, serif; font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; color: #D4AF37; border: 1px solid rgba(212,175,55,0.4); padding: 8px 16px; border-radius: 2px; transition: all 0.22s; }
-    .nav-vault-link:hover { background: rgba(212,175,55,0.12); }
+    .nav-vault-link { font-family: 'DM Serif Display', Georgia, serif; font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; color: #b8962e; border: 1px solid rgba(184,150,46,0.4); padding: 8px 16px; border-radius: 2px; transition: all 0.22s; }
+    .nav-vault-link:hover { background: rgba(184,150,46,0.12); }
     .nav-toggle { display: none; background: none; border: none; cursor: pointer; flex-direction: column; gap: 5px; padding: 4px; }
-    .nav-toggle span { display: block; width: 22px; height: 1.5px; background: #D4AF37; }
+    .nav-toggle span { display: block; width: 22px; height: 1.5px; background: #b8962e; }
     @media (max-width: 960px) {
       nav { padding: 0 20px; }
-      .nav-center { display: none; flex-direction: column; position: fixed; top: 68px; left: 0; right: 0; background: #F5F0E8; padding: 24px 20px; gap: 0; border-bottom: 1px solid rgba(212,175,55,0.2); }
+      .nav-center { display: none; flex-direction: column; position: fixed; top: 68px; left: 0; right: 0; background: #f0ebe0; padding: 24px 20px; gap: 0; border-bottom: 1px solid rgba(184,150,46,0.2); }
       .nav-center.open { display: flex; }
       .nav-center li { width: 100%; }
-      .nav-center a { display: block; padding: 14px 0; border-bottom: 1px solid rgba(212,175,55,0.1); font-size: 0.92rem; color: #2C2C2C; }
+      .nav-center a { display: block; padding: 14px 0; border-bottom: 1px solid rgba(184,150,46,0.1); font-size: 0.92rem; color: #2C2C2C; }
       .nav-toggle { display: flex; }
     }
 
-    .policy-header { background: #1A2B3C; color: #E8DFC8; padding: 130px 48px 60px; text-align: center; margin-top: 68px; }
+    .policy-header { background: #1a2744; color: #E8DFC8; padding: 130px 48px 60px; text-align: center; margin-top: 68px; }
     .policy-header h1 { font-family: 'DM Serif Display', Georgia, serif; font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 700; margin-bottom: 16px; line-height: 1.2; }
     .policy-header p { font-size: 1.05rem; max-width: 600px; margin: 0 auto; opacity: 0.9; }
 
@@ -61,10 +61,10 @@
     .policy-section ul { margin: 16px 0 16px 24px; }
     .policy-section li { margin-bottom: 12px; line-height: 1.7; }
 
-    footer { border-top: 1px solid rgba(212,175,55,0.2); background: #1A2B3C; padding: 40px 48px 28px; }
+    footer { border-top: 1px solid rgba(184,150,46,0.2); background: #1a2744; padding: 40px 48px 28px; }
     .footer-inner { max-width: 1060px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 20px; }
     .footer-logo { height: 48px; width: auto; opacity: 0.8; }
-    .footer-copy { font-family: 'DM Serif Display', Georgia, serif; font-size: 0.56rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(245,240,232,0.4); text-align: center; }
+    .footer-copy { font-family: 'DM Serif Display', Georgia, serif; font-size: 0.56rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(240,235,224,0.4); text-align: center; }
 
     @media (max-width: 600px) {
       .policy-header { padding: 116px 20px 48px; }
@@ -200,7 +200,7 @@
     <p style="font-size: 0.8rem; color: rgba(244,239,230,0.6); max-width: 600px; margin: 0 auto 1.5rem; line-height: 1.6;">All family profiles are password protected (optional), encrypted in transit, never sold or shared, hosted permanently, and yours to control forever.</p>
     <div style="border-top: 1px solid rgba(201,146,10,0.2); margin: 1.5rem 0;"></div>
     <div style="margin-bottom: 1rem;">
-      <a href="privacy.html" style="font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold); text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#D4AF37'" onmouseout="this.style.color='#D4AF37'">Privacy Policy</a>
+      <a href="privacy.html" style="font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold); text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#b8962e'" onmouseout="this.style.color='#b8962e'">Privacy Policy</a>
     </div>
     <div class="footer-copy">Long Live Your Legacy &mdash; mylegacycontinues.com &mdash; &copy; 2026 My Legacy Continues &mdash; Santa Maria, CA</div>
   </div>

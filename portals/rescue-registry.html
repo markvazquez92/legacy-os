@@ -10,37 +10,37 @@
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --navy:         #1A2B3C;
-      --navy-deep:    #0F1A26;
-      --gold:         #D4AF37;
-      --gold-bright:  #D4AF37;
-      --gold-dim:     rgba(212,175,55,0.4);
-      --gold-wash:    rgba(212,175,55,0.08);
-      --gold-border:  rgba(212,175,55,0.25);
-      --heading:      #1A2B3C;
+      --navy:         #1a2744;
+      --navy-deep:    #0f1620;
+      --gold:         #b8962e;
+      --gold-bright:  #b8962e;
+      --gold-dim:     rgba(184,150,46,0.4);
+      --gold-wash:    rgba(184,150,46,0.08);
+      --gold-border:  rgba(184,150,46,0.25);
+      --heading:      #1a2744;
       --body:         #2C2C2C;
       --muted:        rgba(44,44,44,0.65);
-      --card-bg:      rgba(212,175,55,0.08);
-      --nav-bg:       #F5F0E8;
+      --card-bg:      rgba(184,150,46,0.08);
+      --nav-bg:       #f0ebe0;
       /* legacy aliases so existing CSS still works */
-      --bg:           #F5F0E8;
-      --surface:      rgba(212,175,55,0.08);
-      --surface2:     rgba(212,175,55,0.15);
-      --border:       rgba(212,175,55,0.25);
+      --bg:           #f0ebe0;
+      --surface:      rgba(184,150,46,0.08);
+      --surface2:     rgba(184,150,46,0.15);
+      --border:       rgba(184,150,46,0.25);
       --text:         #2C2C2C;
       --dim:          rgba(44,44,44,0.5);
-      --gold-light:   #D4AF37;
-      --cream:        #F5F0E8;
+      --gold-light:   #b8962e;
+      --cream:        #f0ebe0;
       --charcoal:     #2C2C2C;
     }
     body { background: var(--bg); color: var(--text); font-family: 'Jost', sans-serif; line-height: 1.6; }
     a { color: inherit; text-decoration: none; }
 
-    nav { background: #F5F0E8; border-bottom: 1px solid var(--border); padding: 20px 24px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+    nav { background: #f0ebe0; border-bottom: 1px solid var(--border); padding: 20px 24px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
     .nav-logo img { height: 36px; display: block; }
     .nav-links { display: flex; gap: 24px; list-style: none; flex-wrap: wrap; }
     .nav-links a { font-size: 13px; letter-spacing: 0.05em; color: #2C2C2C; transition: color 0.2s; }
-    .nav-links a:hover { color: #D4AF37; }
+    .nav-links a:hover { color: #b8962e; }
 
     .hero { text-align: center; padding: 80px 24px 60px; border-bottom: 1px solid var(--border); }
     .hero-eyebrow { font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
@@ -48,10 +48,10 @@
     .hero h1 em { font-style: italic; color: var(--gold); }
     .hero p { color: var(--muted); font-size: 1.05rem; max-width: 540px; margin: 0 auto 32px; }
     .hero-ctas { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
-    .btn-primary { background: #D4AF37; color: #F5F0E8; padding: 14px 28px; border-radius: 4px; font-size: 0.9rem; font-weight: 700; letter-spacing: 0.04em; transition: background 0.2s; display: inline-block; }
-    .btn-primary:hover { background: #D4AF37; }
+    .btn-primary { background: #b8962e; color: #f0ebe0; padding: 14px 28px; border-radius: 4px; font-size: 0.9rem; font-weight: 700; letter-spacing: 0.04em; transition: background 0.2s; display: inline-block; }
+    .btn-primary:hover { background: #b8962e; }
     .btn-secondary { border: 1px solid var(--border); color: #2C2C2C; padding: 14px 28px; border-radius: 4px; font-size: 0.9rem; letter-spacing: 0.04em; transition: border-color 0.2s, color 0.2s; display: inline-block; }
-    .btn-secondary:hover { border-color: #2C2C2C; color: #D4AF37; }
+    .btn-secondary:hover { border-color: #2C2C2C; color: #b8962e; }
 
     .stats { display: grid; grid-template-columns: repeat(4, 1fr); border-bottom: 1px solid var(--border); }
     .stat { padding: 32px 20px; text-align: center; border-right: 1px solid var(--border); }
@@ -74,7 +74,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      background: linear-gradient(135deg, rgba(212,175,55,0.15), rgba(212,175,55,0.08));
+      background: linear-gradient(135deg, rgba(184,150,46,0.15), rgba(184,150,46,0.08));
     }
     .dog-img-wrap img {
       background: var(--surface2);
@@ -353,7 +353,7 @@
     <p style="font-size: 0.8rem; color: rgba(244,239,230,0.6); max-width: 600px; margin: 0 auto 1.5rem; line-height: 1.6;">All family profiles are password protected (optional), encrypted in transit, never sold or shared, hosted permanently, and yours to control forever.</p>
     <div style="border-top: 1px solid rgba(201,146,10,0.2); margin: 1.5rem 0;"></div>
     <div style="margin-bottom: 1rem;">
-      <a href="privacy.html" style="font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold); text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#D4AF37'" onmouseout="this.style.color='#D4AF37'">Privacy Policy</a>
+      <a href="privacy.html" style="font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold); text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#b8962e'" onmouseout="this.style.color='#b8962e'">Privacy Policy</a>
     </div>
     <div class="footer-copy">Long Live Your Legacy &mdash; mylegacycontinues.com &mdash; &copy; 2026 My Legacy Continues &mdash; Santa Maria, CA</div>
   </div>

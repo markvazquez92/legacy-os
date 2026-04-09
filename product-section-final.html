@@ -12,12 +12,12 @@
 *{margin:0;padding:0;box-sizing:border-box;}
 
 :root{
-  --navy:      #1A2B3C;
-  --navy-deep: #0F1A26;
-  --gold:      #D4AF37;
-  --gold-light:#D4AF37;
+  --navy:      #1a2744;
+  --navy-deep: #0f1620;
+  --gold:      #b8962e;
+  --gold-light:#b8962e;
   --coral:     #E89560;
-  --cream:     #F5F0E8;
+  --cream:     #f0ebe0;
   --charcoal:  #2C2C2C;
 }
 
@@ -48,7 +48,7 @@ body::before{
   transform:translate(-50%,-50%) rotate(-4deg);
   font-family:'Cormorant',serif;font-weight:800;
   font-size:clamp(8rem,14vw,14rem);
-  color:rgba(212,175,55,0.035);
+  color:rgba(184,150,46,0.035);
   line-height:1;pointer-events:none;
   white-space:nowrap;
 }
@@ -105,7 +105,7 @@ body::before{
 .card{
   position:relative;
   background:white;
-  border:1px solid rgba(212,175,55,0.18);
+  border:1px solid rgba(184,150,46,0.18);
   overflow:hidden;
   transition:transform 0.3s ease, box-shadow 0.3s ease;
   height:100%;
@@ -155,8 +155,8 @@ body::before{
   background:repeating-linear-gradient(
     -45deg,
     transparent,transparent 8px,
-    rgba(212,175,55,0.03) 8px,
-    rgba(212,175,55,0.03) 9px
+    rgba(184,150,46,0.03) 8px,
+    rgba(184,150,46,0.03) 9px
   );
   pointer-events:none;
 }
@@ -171,7 +171,7 @@ body::before{
 .card-num{
   font-family:'Cormorant',serif;font-weight:800;
   font-size:3.5rem;line-height:1;
-  color:rgba(245,240,232,0.08);
+  color:rgba(240,235,224,0.08);
   position:relative;z-index:1;
 }
 
@@ -208,7 +208,7 @@ body::before{
   display:flex;
   align-items:center;
   justify-content:space-between;
-  border-top:1px solid rgba(212,175,55,0.15);
+  border-top:1px solid rgba(184,150,46,0.15);
   padding-top:1.2rem;
 }
 .card-price{
@@ -250,8 +250,8 @@ body::before{
 .dot{
   width:8px;height:8px;
   border-radius:50%;
-  background:rgba(212,175,55,0.2);
-  border:1px solid rgba(212,175,55,0.3);
+  background:rgba(184,150,46,0.2);
+  border:1px solid rgba(184,150,46,0.3);
   cursor:pointer;
   transition:all 0.3s;
   padding:0;
@@ -268,7 +268,7 @@ body::before{
   text-align:center;
   margin-top:1.2rem;
   font-size:0.58rem;letter-spacing:0.22em;text-transform:uppercase;
-  color:rgba(212,175,55,0.45);
+  color:rgba(184,150,46,0.45);
   transition:opacity 0.4s;
 }
 .swipe-hint span{
@@ -285,7 +285,7 @@ body::before{
   margin-top:0.6rem;
   font-family:'Cormorant',serif;font-weight:700;
   font-size:0.72rem;
-  color:rgba(212,175,55,0.4);
+  color:rgba(184,150,46,0.4);
   letter-spacing:0.1em;
 }
 
