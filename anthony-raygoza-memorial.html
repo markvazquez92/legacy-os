@@ -55,6 +55,23 @@
 
     .nav-links a:hover { color: var(--text); }
 
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      flex-direction: column;
+      gap: 5px;
+      padding: 8px;
+    }
+    .nav-toggle span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--text);
+      transition: all 0.3s;
+    }
+
     /* HERO */
     .memorial-hero {
       padding: 80px 24px 60px;
@@ -265,6 +282,10 @@
     footer a { color: var(--muted); }
 
     @media (max-width: 600px) {
+      .nav-toggle { display: flex; }
+      .nav-links { display: none; position: fixed; top: 60px; left: 0; right: 0; flex-direction: column; background: var(--bg); border-bottom: 1px solid var(--border); padding: 1rem; gap: 0; z-index: 99; max-height: 0; overflow: hidden; transition: max-height 0.3s; }
+      .nav-links.open { display: flex; max-height: 300px; }
+      .nav-links a { display: block; padding: 1rem 0; border-bottom: 1px solid var(--border); }
       .facts { grid-template-columns: 1fr; }
       .fact { border-right: none !important; }
       .fact:last-child { border-bottom: none; }
@@ -279,12 +300,13 @@
   <a href="/index.html" class="nav-logo">
     <img src="/logo.png" alt="My Legacy Continues" />
   </a>
-  <ul class="nav-links">
+  <ul class="nav-links" id="navLinks">
     <li><a href="/index.html">Home</a></li>
     <li><a href="/vazquez-profile.html">Bear</a></li>
     <li><a href="/antoinette-raygoza-memorial.html">Antoinette</a></li>
     <li><a href="/debbie-garcia-profile.html">Debbie</a></li>
   </ul>
+  <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
 </nav>
 
 <!-- HERO -->
@@ -378,6 +400,13 @@
   <p style="margin-top: 8px;">Preserved by <a href="https://mylegacycontinues.com">My Legacy Continues</a> · mylegacycontinues.com</p>
   <p style="margin-top: 8px;">Long Live Your Legacy.</p>
 </footer>
+
+<script>
+const navToggle = document.getElementById('navToggle');
+const navLinks = document.getElementById('navLinks');
+navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => navLinks.classList.remove('open')));
+</script>
 
 </body>
 </html>
