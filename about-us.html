@@ -190,16 +190,75 @@
     footer a:hover {
       text-decoration: underline;
     }
+
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      flex-direction: column;
+      gap: 5px;
+      padding: 8px;
+    }
+
+    .nav-toggle span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: #f0ebe0;
+      transition: all 0.3s;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        position: fixed;
+        top: 68px;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        background: #1a2744;
+        padding: 1rem 0;
+        border-bottom: 1px solid rgba(184, 150, 46, 0.2);
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s;
+        z-index: 99;
+      }
+
+      nav.open {
+        max-height: 300px;
+      }
+
+      nav a {
+        display: block;
+        padding: 1rem 2rem;
+        margin: 0;
+        border-bottom: 1px solid rgba(184, 150, 46, 0.1);
+      }
+
+      .nav-toggle {
+        display: flex;
+      }
+
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+      }
+    }
   </style>
 </head>
 <body>
   <header>
     <a href="index.html"><img src="logo.png" alt="My Legacy Continues" class="logo"></a>
-    <nav>
+    <nav id="navMenu">
       <a href="index.html">Home</a>
       <a href="about-us.html">About Us</a>
       <a href="contact.html">Contact</a>
     </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
   </header>
 
   <div class="hero">
@@ -292,5 +351,12 @@
     <p>&copy; 2026 My Legacy Continues. All rights reserved.</p>
     <p><a href="legal/privacy.html">Privacy Policy</a></p>
   </footer>
+
+  <script>
+    const navToggle = document.getElementById('navToggle');
+    const navMenu = document.getElementById('navMenu');
+    navToggle.addEventListener('click', () => navMenu.classList.toggle('open'));
+    navMenu.querySelectorAll('a').forEach(link => link.addEventListener('click', () => navMenu.classList.remove('open')));
+  </script>
 </body>
 </html>

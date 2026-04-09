@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Underdog Heroes Rescue Registry — My Legacy Continues</title>
+  <meta name="description" content="Every rescue dog gets a permanent profile. Free QR profiles for rescue dogs through Underdog Heroes partnership.">
+  <link rel="icon" href="logo.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: #f0ebe0;
+      color: #2C2C2C;
+      line-height: 1.7;
+    }
+
+    header {
+      background: #1a2744;
+      padding: 1.5rem 3rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .logo { height: 40px; width: auto; }
+
+    nav { display: flex; gap: 2rem; align-items: center; }
+    nav a { color: #f0ebe0; text-decoration: none; font-size: 0.95rem; transition: color 0.2s; }
+    nav a:hover { color: #b8962e; }
+
+    .nav-toggle { display: none; background: none; border: none; cursor: pointer; flex-direction: column; gap: 5px; padding: 8px; }
+    .nav-toggle span { display: block; width: 24px; height: 2px; background: #f0ebe0; }
+
+    @media (max-width: 768px) {
+      nav { position: fixed; top: 68px; left: 0; right: 0; flex-direction: column; background: #1a2744; padding: 1rem; gap: 0; max-height: 0; overflow: hidden; transition: max-height 0.3s; z-index: 99; }
+      nav.open { max-height: 300px; }
+      nav a { display: block; padding: 1rem 0; border-bottom: 1px solid rgba(212,150,46,0.2); }
+      .nav-toggle { display: flex; }
+      header { padding: 1rem 1.5rem; }
+    }
+
+    .page-header {
+      background: #1a2744;
+      color: #f0ebe0;
+      padding: 5rem 3rem 3rem;
+      text-align: center;
+    }
+
+    .page-header h1 {
+      font-family: 'Chakra Petch', sans-serif;
+      font-size: 2.5rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+      color: #b8962e;
+    }
+
+    .page-header .subtitle {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1.3rem;
+      color: #f0ebe0;
+      margin-bottom: 1rem;
+    }
+
+    .page-header p {
+      font-size: 1rem;
+      color: rgba(245, 235, 224, 0.9);
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 4rem 3rem;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .section-header h2 {
+      font-family: 'Chakra Petch', sans-serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #1a2744;
+      margin-bottom: 0.5rem;
+    }
+
+    .registry-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-bottom: 4rem;
+    }
+
+    .dog-card {
+      background: white;
+      border: 2px solid #b8962e;
+      padding: 2rem;
+      text-align: center;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .dog-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(184, 150, 46, 0.15);
+    }
+
+    .dog-card h3 {
+      font-family: 'Chakra Petch', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #1a2744;
+      margin-bottom: 0.5rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .dog-card p {
+      font-size: 0.95rem;
+      color: #2C2C2C;
+      margin-bottom: 1.5rem;
+    }
+
+    .btn-cta {
+      display: inline-block;
+      background: #b8962e;
+      color: #f0ebe0;
+      padding: 0.8rem 2rem;
+      border: none;
+      border-radius: 2px;
+      font-family: 'Chakra Petch', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .btn-cta:hover { background: #cba83c; }
+
+    .partnership {
+      background: rgba(184, 150, 46, 0.08);
+      border: 2px solid #b8962e;
+      padding: 3rem;
+      text-align: center;
+      margin: 4rem 0;
+    }
+
+    .partnership h3 {
+      font-family: 'Chakra Petch', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #1a2744;
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .partnership p {
+      font-size: 1rem;
+      color: #2C2C2C;
+      margin: 0.5rem 0;
+    }
+
+    .partnership .partner-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1.2rem;
+      color: #b8962e;
+      font-weight: 600;
+    }
+
+    footer {
+      background: #1a2744;
+      color: #f0ebe0;
+      padding: 3rem;
+      text-align: center;
+    }
+
+    footer a { color: #b8962e; text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+
+    @media (max-width: 768px) {
+      .page-header { padding: 3rem 1.5rem 2rem; }
+      .page-header h1 { font-size: 1.8rem; }
+      .content { padding: 2rem 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <a href="index.html"><img src="logo.png" alt="My Legacy Continues" class="logo"></a>
+  <nav id="navMenu">
+    <a href="index.html">Home</a>
+    <a href="pet-tag.html">Pet Tags</a>
+    <a href="heritage-book.html">Heritage Books</a>
+    <a href="rescue-registry.html">Rescue Registry</a>
+  </nav>
+  <button class="nav-toggle" id="navToggle" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<div class="page-header">
+  <h1>Underdog Heroes</h1>
+  <div class="subtitle">Rescue Registry</div>
+  <p>Every rescue dog gets a permanent profile. Free. Forever hosted at My Legacy Continues in partnership with Underdog Heroes.</p>
+</div>
+
+<div class="content">
+
+<div class="section-header">
+  <h2>Our Rescue Dogs</h2>
+  <p style="color: #2C2C2C; font-size: 1rem;">Each profile is a QR link that lives forever. Scan to see the dog's story, photos, and care information.</p>
+</div>
+
+<div class="registry-grid">
+  <div class="dog-card">
+    <h3>Dog 1</h3>
+    <p>A loving companion waiting for their forever home. Every dog's story matters.</p>
+    <a href="#" class="btn-cta">View Profile</a>
+  </div>
+  <div class="dog-card">
+    <h3>Dog 2</h3>
+    <p>A loving companion waiting for their forever home. Every dog's story matters.</p>
+    <a href="#" class="btn-cta">View Profile</a>
+  </div>
+  <div class="dog-card">
+    <h3>Dog 3</h3>
+    <p>A loving companion waiting for their forever home. Every dog's story matters.</p>
+    <a href="#" class="btn-cta">View Profile</a>
+  </div>
+  <div class="dog-card">
+    <h3>Dog 4</h3>
+    <p>A loving companion waiting for their forever home. Every dog's story matters.</p>
+    <a href="#" class="btn-cta">View Profile</a>
+  </div>
+  <div class="dog-card">
+    <h3>Dog 5</h3>
+    <p>A loving companion waiting for their forever home. Every dog's story matters.</p>
+    <a href="#" class="btn-cta">View Profile</a>
+  </div>
+  <div class="dog-card">
+    <h3>Dog 6</h3>
+    <p>A loving companion waiting for their forever home. Every dog's story matters.</p>
+    <a href="#" class="btn-cta">View Profile</a>
+  </div>
+  <div class="dog-card">
+    <h3>Dog 7</h3>
+    <p>A loving companion waiting for their forever home. Every dog's story matters.</p>
+    <a href="#" class="btn-cta">View Profile</a>
+  </div>
+  <div class="dog-card">
+    <h3>Dog 8</h3>
+    <p>A loving companion waiting for their forever home. Every dog's story matters.</p>
+    <a href="#" class="btn-cta">View Profile</a>
+  </div>
+</div>
+
+<a href="pet-tag.html" class="btn-cta" style="display: inline-block; margin-top: 2rem;">Get a Pet QR Tag — Starting at $24.99</a>
+
+<div class="partnership">
+  <h3>Our Partnership</h3>
+  <p style="margin: 1rem 0;">In partnership with</p>
+  <p class="partner-name">Shoshi / Underdog Heroes</p>
+  <p>Lompoc, California</p>
+  <p style="margin-top: 1.5rem; font-size: 0.95rem;">A portion of every pet tag sale supports local rescue organizations. Every profile helps dogs find homes.</p>
+</div>
+
+</div>
+
+<footer>
+  <p>&copy; 2026 My Legacy Continues. All rights reserved.</p>
+  <p><a href="index.html">Home</a> | <a href="heritage-book.html">Heritage Books</a> | <a href="pet-tag.html">Pet Tags</a> | <a href="contact.html">Contact</a></p>
+</footer>
+
+<script>
+  const navToggle = document.getElementById('navToggle');
+  const navMenu = document.getElementById('navMenu');
+  navToggle.addEventListener('click', () => navMenu.classList.toggle('open'));
+  navMenu.querySelectorAll('a').forEach(link => link.addEventListener('click', () => navMenu.classList.remove('open')));
+</script>
+
+</body>
+</html>
