@@ -1,30 +1,25 @@
 /* ════════════════════════════════════════════════════════════════
    METALFLAKE CANVAS — 64 Impala Candy Paint
-   Diamonds embedded in glass. You look INTO the paint.
-   Deep solid color with tiny flat mirror chips inside.
-   Nothing moves. Individual flakes randomly flash bright
-   then go dark — like sunlight hitting a parked car as
-   you walk past it. Fast flash, then back to dark.
-   88% gold #E8C97A, 12% teal #1A5C55
+   Deep glossy surface. No individual flakes visible.
+   Slow rolling shimmer — a wave of light sweeping across
+   the surface like sunlight moving across wet paint.
+   Areas brighten then fade back. Nothing moves.
+   Subtle. Deep. Premium.
    ════════════════════════════════════════════════════════════════ */
 
 (function () {
   'use strict';
 
-  var GOLD = [232, 201, 122];
-  var TEAL = [26, 92, 85];
-  var DENSITY = 1800;       // px² per cluster — tight coverage
-  var MIN_PER_CLUSTER = 2;
-  var MAX_PER_CLUSTER = 6;
-  var FLAKE_MIN = 1.0;      // tiny mirror chips
-  var FLAKE_MAX = 2.8;
-  var CLUSTER_SPREAD = 16;
-
-  // Flash timing
-  var FLASH_CHANCE = 0.003;  // probability per flake per frame to start flashing
-  var FLASH_IN = 80;         // ms to reach peak brightness
-  var FLASH_HOLD = 40;       // ms at peak
-  var FLASH_OUT = 300;       // ms to fade back to dark
+  // Shimmer wave settings
+  var WAVE_COUNT = 3;         // overlapping waves for organic feel
+  var WAVE_SPEED_MIN = 0.015; // pixels per ms — slow crawl
+  var WAVE_SPEED_MAX = 0.035;
+  var WAVE_WIDTH_MIN = 200;   // px — how wide each bright band is
+  var WAVE_WIDTH_MAX = 500;
+  var BASE_ALPHA = 0.0;       // fully transparent at rest
+  var PEAK_ALPHA = 0.08;      // subtle brightening at wave crest
+  var GOLD = 'rgba(232, 201, 122, ';
+  var TEAL_LIGHT = 'rgba(40, 120, 110, ';
 
   function initMetalflake() {
     var sections = document.querySelectorAll('.metalflake');
@@ -39,12 +34,12 @@
     section.insertBefore(canvas, section.firstChild);
 
     var ctx = canvas.getContext('2d');
-    var flakes = [];
     var w = 0;
     var h = 0;
     var running = false;
     var rafId = null;
     var lastTime = 0;
+    var waves = [];
 
     function resize() {
       w = section.offsetWidth;
@@ -53,41 +48,25 @@
       canvas.width = w * dpr;
       canvas.height = h * dpr;
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-      generateFlakes();
+      initWaves();
     }
 
-    function generateFlakes() {
-      flakes = [];
-      var area = w * h;
-      var clusterCount = Math.max(4, Math.round(area / DENSITY));
-
-      for (var c = 0; c < clusterCount; c++) {
-        var cx = Math.random() * w;
-        var cy = Math.random() * h;
-        var count = MIN_PER_CLUSTER + Math.floor(Math.random() * (MAX_PER_CLUSTER - MIN_PER_CLUSTER + 1));
-
-        for (var f = 0; f < count; f++) {
-          var isGold = Math.random() < 0.88;
-          var rgb = isGold ? GOLD : TEAL;
-          var rx = FLAKE_MIN + Math.random() * (FLAKE_MAX - FLAKE_MIN);
-          var ry = rx * (0.25 + Math.random() * 0.2); // very flat ellipse
-
-          flakes.push({
-            x: cx + (Math.random() - 0.5) * CLUSTER_SPREAD * 2,
-            y: cy + (Math.random() - 0.5) * CLUSTER_SPREAD * 2,
-            rx: rx,
-            ry: ry,
-            rotation: Math.random() * Math.PI * 2,
-            r: rgb[0],
-            g: rgb[1],
-            b: rgb[2],
-            // Rest state: almost invisible, embedded deep in paint
-            restAlpha: 0.04 + Math.random() * 0.06,
-            // Flash state
-            flashTime: -1,  // -1 = not flashing
-            flashPeak: 0.5 + Math.random() * 0.5  // how bright this flake can get
-          });
-        }
+    function initWaves() {
+      waves = [];
+      for (var i = 0; i < WAVE_COUNT; i++) {
+        waves.push({
+          // Position along diagonal axis
+          pos: Math.random() * (w + h),
+          // Angle of wave travel (radians) — slight variation
+          angle: -0.3 + Math.random() * 0.6,
+          speed: WAVE_SPEED_MIN + Math.random() * (WAVE_SPEED_MAX - WAVE_SPEED_MIN),
+          width: WAVE_WIDTH_MIN + Math.random() * (WAVE_WIDTH_MAX - WAVE_WIDTH_MIN),
+          peak: PEAK_ALPHA * (0.6 + Math.random() * 0.4),
+          // Gold or teal-tinted shimmer
+          color: Math.random() < 0.85 ? GOLD : TEAL_LIGHT,
+          // Total travel distance before reset
+          travel: w + h + 600
+        });
       }
     }
 
@@ -95,52 +74,50 @@
       if (!lastTime) lastTime = now;
       var dt = now - lastTime;
       lastTime = now;
-      if (dt > 100) dt = 16; // cap after tab switch
+      if (dt > 100) dt = 16;
 
       ctx.clearRect(0, 0, w, h);
 
-      for (var i = 0; i < flakes.length; i++) {
-        var fl = flakes[i];
+      for (var i = 0; i < waves.length; i++) {
+        var wave = waves[i];
 
-        // Randomly trigger a flash
-        if (fl.flashTime < 0 && Math.random() < FLASH_CHANCE) {
-          fl.flashTime = 0;
+        // Advance wave position
+        wave.pos += wave.speed * dt;
+
+        // Reset when wave has fully crossed
+        if (wave.pos > wave.travel) {
+          wave.pos = -wave.width * 2;
+          wave.angle = -0.3 + Math.random() * 0.6;
+          wave.speed = WAVE_SPEED_MIN + Math.random() * (WAVE_SPEED_MAX - WAVE_SPEED_MIN);
+          wave.width = WAVE_WIDTH_MIN + Math.random() * (WAVE_WIDTH_MAX - WAVE_WIDTH_MIN);
+          wave.peak = PEAK_ALPHA * (0.6 + Math.random() * 0.4);
+          wave.color = Math.random() < 0.85 ? GOLD : TEAL_LIGHT;
         }
 
-        // Calculate alpha
-        var alpha = fl.restAlpha;
+        // Draw the wave as a gradient band
+        var cos = Math.cos(wave.angle);
+        var sin = Math.sin(wave.angle);
 
-        if (fl.flashTime >= 0) {
-          fl.flashTime += dt;
-          var t = fl.flashTime;
+        // Wave center point projected onto canvas
+        var cx = wave.pos * cos;
+        var cy = wave.pos * sin;
 
-          if (t < FLASH_IN) {
-            // Ramp up — fast
-            var p = t / FLASH_IN;
-            alpha = fl.restAlpha + (fl.flashPeak - fl.restAlpha) * p * p;
-          } else if (t < FLASH_IN + FLASH_HOLD) {
-            // Hold at peak
-            alpha = fl.flashPeak;
-          } else if (t < FLASH_IN + FLASH_HOLD + FLASH_OUT) {
-            // Fade out — slower
-            var p = (t - FLASH_IN - FLASH_HOLD) / FLASH_OUT;
-            alpha = fl.flashPeak - (fl.flashPeak - fl.restAlpha) * p;
-          } else {
-            // Done
-            fl.flashTime = -1;
-            alpha = fl.restAlpha;
-          }
-        }
+        // Gradient perpendicular to wave direction
+        var halfW = wave.width;
+        var x0 = cx - cos * halfW;
+        var y0 = cy - sin * halfW;
+        var x1 = cx + cos * halfW;
+        var y1 = cy + sin * halfW;
 
-        ctx.save();
-        ctx.translate(fl.x, fl.y);
-        ctx.rotate(fl.rotation);
-        ctx.globalAlpha = alpha;
-        ctx.fillStyle = 'rgb(' + fl.r + ',' + fl.g + ',' + fl.b + ')';
-        ctx.beginPath();
-        ctx.ellipse(0, 0, fl.rx, fl.ry, 0, 0, Math.PI * 2);
-        ctx.fill();
-        ctx.restore();
+        var grad = ctx.createLinearGradient(x0, y0, x1, y1);
+        grad.addColorStop(0, wave.color + '0)');
+        grad.addColorStop(0.3, wave.color + wave.peak + ')');
+        grad.addColorStop(0.5, wave.color + (wave.peak * 1.2) + ')');
+        grad.addColorStop(0.7, wave.color + wave.peak + ')');
+        grad.addColorStop(1, wave.color + '0)');
+
+        ctx.fillStyle = grad;
+        ctx.fillRect(0, 0, w, h);
       }
 
       if (running) {
