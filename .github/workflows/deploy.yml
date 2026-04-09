@@ -1,4 +1,4 @@
-name: Build and Deploy
+name: Verify Site
 
 on:
   push:
@@ -6,14 +6,9 @@ on:
       - main
 
 jobs:
-  deploy:
+  verify:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./
-          cname: mylegacycontinues.com
+      - name: Verify CNAME exists
+        run: test -f CNAME && cat CNAME
