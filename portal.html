@@ -114,88 +114,11 @@
       background: #d4b96e;
     }
 
-    footer {
-      background: #1A5C55;
-      color: #FAF3E6;
-      padding: 2rem 3rem;
-      text-align: center;
-      margin-top: 4rem;
-    }
-
-    footer a {
-      color: #E8C97A;
-      text-decoration: none;
-    }
-
-    footer a:hover {
-      text-decoration: underline;
-    }
-
-    .nav-toggle {
-      display: none;
-      background: none;
-      border: none;
-      cursor: pointer;
-      flex-direction: column;
-      gap: 6px;
-      padding: 0;
-    }
-
-    .nav-toggle span {
-      display: block;
-      width: 24px;
-      height: 2px;
-      background: #FAF3E6;
-      transition: all 0.3s;
+    .page-header {
+      margin-top: 68px;
     }
 
     @media (max-width: 768px) {
-      header {
-        padding: 1rem 1.5rem;
-      }
-
-      nav {
-        position: fixed;
-        top: 68px;
-        left: 0;
-        right: 0;
-        flex-direction: column;
-        background: #1A5C55;
-        padding: 1rem 0;
-        border-bottom: 2px solid #E8C97A;
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.3s;
-      }
-
-      nav.open {
-        max-height: 300px;
-      }
-
-      nav a {
-        display: block;
-        padding: 1rem 2rem;
-        margin: 0;
-        border-bottom: 1px solid rgba(232, 201, 122, 0.2);
-      }
-
-      .nav-toggle {
-        display: flex;
-      }
-
-      header {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        z-index: 999;
-        height: 68px;
-      }
-
-      body {
-        padding-top: 68px;
-      }
-
       .page-header {
         padding: 5rem 1.5rem 2.5rem;
       }
