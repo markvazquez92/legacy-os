@@ -363,20 +363,33 @@ section { padding: 70px 2.5rem; }
   </div>
 </section>
 
-<!-- FOOTER -->
-<footer>
-  <p>In memory of Antoinette Raygoza &mdash; Central Coast, California</p>
-  <p>A permanent page. No ads. No expiration.</p>
-  <div class="footer-tagline">
-    <a href="https://mylegacycontinues.com" style="color: inherit; text-decoration: none;">My Legacy Continues</a>
+<footer style="background: var(--navy, #1C1C1C); border-top: 1px solid rgba(232,201,122,0.2); padding: 40px 48px 28px;">
+  <div class="footer-inner">
+    <img src="logo.png" alt="My Legacy Continues" class="footer-logo">
+    <div class="footer-contact">contact@mylegacycontinues.com | (805) 863-3794 | Santa Maria, CA</div>
+    <ul class="footer-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="heritage-book.html">Heritage</a></li>
+      <li><a href="rescue-registry.html">Rescue Registry</a></li>
+      <li><a href="active-transports.html">Transport</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="legal/privacy.html">Privacy</a></li>
+      <li><a href="legal/terms-of-service.html">Terms</a></li>
+    </ul>
+    <p class="footer-copy">&copy; 2026 My Legacy Continues. All rights reserved.</p>
   </div>
 </footer>
 
 <script>
-const navToggle = document.getElementById('navToggle');
-const navLinks = document.getElementById('navLinks');
-navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
-navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => navLinks.classList.remove('open')));
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+  if (navToggle) {
+    navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => navLinks.classList.remove('open'));
+    });
+  }
 </script>
 
 </body>
