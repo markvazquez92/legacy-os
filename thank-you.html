@@ -1,63 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Thank You — My Legacy Continues</title>
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      font-family: Georgia, serif;
-      background: #f8f5f0;
-      color: #2c2c2c;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 40px 20px;
-    }
-    .container {
-      text-align: center;
-      max-width: 520px;
-    }
-    .icon {
-      font-size: 56px;
-      margin-bottom: 24px;
-    }
-    h1 {
-      font-size: 32px;
-      color: #2c4a3e;
-      margin-bottom: 16px;
-    }
-    p {
-      font-size: 17px;
-      line-height: 1.7;
-      color: #555;
-      margin-bottom: 20px;
-    }
-    .back-link {
-      display: inline-block;
-      margin-top: 12px;
-      color: #2c4a3e;
-      text-decoration: underline;
-      font-size: 15px;
-    }
-    .back-link:hover { opacity: 0.7; }
-  </style>
+  <meta name="description" content="Thank you for your order. We'll be in touch within 24-48 hours.">
+  <link rel="icon" href="logo.png" type="image/png">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
-    <div class="icon">🕊️</div>
-    <h1>Thank You</h1>
-    <p>
-      We received your information and we'll be in touch shortly.<br />
-      Your story matters — and we're honored to help you preserve it.
-    </p>
-    <p style="font-size:15px; color:#888;">
-      Expect a response within 1–2 business days.<br />
-      Questions? Email us at <strong>bear@mylegacycontinues.com</strong>
-    </p>
-    <a href="https://mylegacycontinues.com" class="back-link">← Back to My Legacy Continues</a>
-  </div>
+
+  <nav class="site-nav">
+    <a href="index.html" class="nav-brand">
+      <img src="logo.png" alt="My Legacy Continues" class="nav-logo">
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="heritage-book.html">Heritage</a></li>
+      <li><a href="rescue-registry.html">Rescue Registry</a></li>
+      <li><a href="active-transports.html">Transport</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <span class="lang-toggle">EN / ES</span>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <section class="hero section-teal metalflake" style="text-align: center; min-height: 70vh;">
+    <div class="hero-content">
+      <h1 style="color: var(--gold);">You're Part of the Legacy Now</h1>
+      <p style="color: var(--cream); font-size: 1.1rem; margin: 1.5rem auto; max-width: 600px; opacity: 0.9;">We received your order. You'll hear from us within 24-48 hours to confirm everything and get started.</p>
+      <p style="color: var(--cream); opacity: 0.7; margin-bottom: 2.5rem;">Check your email — including spam just in case.</p>
+      <p style="color: var(--cream); opacity: 0.85; margin-bottom: 2rem;">While you wait — explore the site and see what other families have built.</p>
+      <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+        <a href="portal.html" class="btn btn-gold">View the Family Vault</a>
+        <a href="index.html" class="btn btn-outline-gold">Back to Home</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <img src="logo.png" alt="My Legacy Continues" class="footer-logo">
+      <div class="footer-contact">contact@mylegacycontinues.com | (805) 863-3794 | Santa Maria, CA</div>
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="heritage-book.html">Heritage</a></li>
+        <li><a href="rescue-registry.html">Rescue Registry</a></li>
+        <li><a href="active-transports.html">Transport</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="legal/privacy.html">Privacy</a></li>
+        <li><a href="legal/terms-of-service.html">Terms</a></li>
+      </ul>
+      <p class="footer-copy">&copy; 2026 My Legacy Continues. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    if (navToggle) {
+      navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+      navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => navLinks.classList.remove('open'));
+      });
+    }
+  </script>
 </body>
 </html>
