@@ -3,225 +3,258 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pet Legacy Tag — Memorial QR Tag — $24.99 / $49.99 — My Legacy Continues</title>
-  <meta name="description" content="Memorial QR tag for beloved pets. Single tag $24.99 or combo pack $49.99. Scan to share photos, memories, and tributes. Hosted forever. My Legacy Continues.">
+  <title>Pet Legacy QR Tag — $24.99 / $49.99 — My Legacy Continues</title>
+  <meta name="description" content="QR-enabled pet tags with complete profiles. Medical history, rescue journey, emergency contacts. Basic $24.99, Premium $49.99. One-time purchase, hosted forever.">
   <link rel="icon" href="logo.png" type="image/png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,700;0,800;1,400;1,600&family=DM+Serif+Display:ital@0;1&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --navy:         #1a2744;
-      --navy-deep:    #0f1620;
-      --gold:         #b8962e;
-      --gold-light:   #cba83c;
-      --cream:        #f0ebe0;
-      --charcoal:     #2C2C2C;
-      --charcoal2:    #1A1A1A;
-      --gold-bright:  #cba83c;
-      --gold-dim:     rgba(184,150,46,0.4);
-      --gold-wash:    rgba(184,150,46,0.08);
-      --gold-border:  rgba(184,150,46,0.25);
-      --heading:      #2C2C2C;
-      --body:         #2C2C2C;
-      --muted:        rgba(44,44,44,0.65);
-      --card-bg:      rgba(184,150,46,0.08);
-      --nav-bg:       #f0ebe0;
-      --bg:           #f0ebe0;
-      --text:         #2C2C2C;
-      --text-muted:   rgba(44,44,44,0.65);
-      --text-dim:     rgba(44,44,44,0.5);
-    }
-
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body { font-family: 'Jost', sans-serif; background: var(--bg); color: var(--text); line-height: 1.8; -webkit-font-smoothing: antialiased; }
-    a { color: inherit; text-decoration: none; }
-    img { max-width: 100%; height: auto; display: block; }
-
-    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 900; height: 68px; background: #f0ebe0; border-bottom: 1px solid rgba(184,150,46,0.2); display: flex; align-items: center; justify-content: space-between; padding: 0 48px; }
-    .nav-logo { height: 40px; width: auto; }
-    .nav-center { display: flex; align-items: center; gap: 26px; list-style: none; }
-    .nav-center a { font-family: 'Jost', sans-serif; font-size: 0.78rem; color: #2C2C2C; letter-spacing: 0.02em; transition: color 0.2s; }
-    .nav-center a:hover { color: #b8962e; }
-    .nav-right { display: flex; align-items: center; gap: 12px; }
-    .nav-vault-link { font-family: 'DM Serif Display', Georgia, serif; font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; color: #b8962e; border: 1px solid rgba(184,150,46,0.4); padding: 8px 16px; border-radius: 2px; transition: all 0.22s; }
-    .nav-vault-link:hover { background: rgba(184,150,46,0.12); }
-    .nav-toggle { display: none; background: none; border: none; cursor: pointer; flex-direction: column; gap: 5px; padding: 4px; }
-    .nav-toggle span { display: block; width: 22px; height: 1.5px; background: var(--gold); }
-    @media (max-width: 960px) {
-      nav { padding: 0 20px; }
-      .nav-center { display: none; flex-direction: column; position: fixed; top: 68px; left: 0; right: 0; background: #f0ebe0; padding: 24px 20px; gap: 0; border-bottom: 1px solid rgba(184,150,46,0.2); }
-      .nav-center.open { display: flex; }
-      .nav-center li { width: 100%; }
-      .nav-center a { display: block; padding: 14px 0; border-bottom: 1px solid rgba(184,150,46,0.1); font-size: 0.92rem; color: #2C2C2C; }
-      .nav-toggle { display: flex; }
-    }
-
-    .page-hero { background: #1a2744; padding: 130px 48px 72px; }
-    .page-hero-inner { max-width: 860px; margin: 0 auto; }
-    .back-link { font-family: 'DM Serif Display', Georgia, serif; font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(184,150,46,0.8); display: inline-flex; align-items: center; gap: 8px; margin-bottom: 28px; transition: color 0.2s; }
-    .back-link:hover { color: #cba83c; }
-    .back-link::before { content: '←'; font-size: 0.9rem; }
-    .page-eyebrow { font-family: 'DM Serif Display', Georgia, serif; font-size: 0.56rem; letter-spacing: 0.32em; text-transform: uppercase; color: #b8962e; display: block; margin-bottom: 18px; }
-    .page-title { font-family: 'DM Serif Display', Georgia, serif; font-size: clamp(2rem, 4.5vw, 3.2rem); font-weight: 700; color: #f0ebe0; line-height: 1.1; margin-bottom: 18px; }
-    .page-sub { font-size: 1rem; color: rgba(240,235,224,0.8); line-height: 1.85; max-width: 600px; margin-bottom: 32px; }
-    .price-badge { display: inline-block; font-family: 'DM Serif Display', Georgia, serif; font-size: 2.2rem; font-weight: 700; color: #cba83c; margin-bottom: 32px; }
-    .price-note { font-size: 0.8rem; color: rgba(240,235,224,0.6); margin-top: -20px; margin-bottom: 28px; }
-    @media (max-width: 600px) { .page-hero { padding: 116px 20px 56px; } }
-
-    .gold-rule { height: 1px; background: var(--gold-border); }
-
-    .what-section { padding: 72px 48px; background: #f0ebe0; }
-    .what-inner { max-width: 860px; margin: 0 auto; }
-    .what-section h2 { font-family: 'DM Serif Display', Georgia, serif; font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 700; color: #1a2744; margin-bottom: 32px; }
-    .includes-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin-bottom: 40px; }
-    .include-item { background: rgba(184,150,46,0.08); border: 1px solid rgba(184,150,46,0.2); border-radius: 4px; padding: 22px 20px; box-shadow: 0 2px 12px rgba(184,150,46,0.05); }
-    .include-item-icon { font-size: 1.4rem; margin-bottom: 10px; }
-    .include-item-title { font-family: 'DM Serif Display', Georgia, serif; font-size: 0.72rem; font-weight: 700; color: #1a2744; margin-bottom: 6px; }
-    .include-item-desc { font-size: 0.8rem; color: #2C2C2C; line-height: 1.7; }
-    @media (max-width: 600px) { .what-section { padding: 52px 20px; } }
-
-    .options-section { padding: 0 48px 80px; background: #f0ebe0; }
-    .options-inner { max-width: 860px; margin: 0 auto; }
-    .options-title { font-family: 'DM Serif Display', Georgia, serif; font-size: 1.8rem; color: #1a2744; margin-bottom: 32px; }
-    .option-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 40px; }
-    @media (max-width: 600px) { .option-cards { grid-template-columns: 1fr; } .options-section { padding: 0 20px 64px; } }
-
-    .option-card { background: rgba(184,150,46,0.08); border: 2px solid rgba(184,150,46,0.2); border-radius: 4px; padding: 32px; text-align: center; transition: all 0.3s ease; }
-    .option-card:hover { border-color: #b8962e; box-shadow: 0 8px 32px rgba(184,150,46,0.15); }
-    .option-card.featured { border-color: #b8962e; background: rgba(184,150,46,0.12); }
-    .option-label { font-family: 'DM Serif Display', Georgia, serif; font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: #b8962e; display: block; margin-bottom: 12px; }
-    .option-name { font-family: 'DM Serif Display', Georgia, serif; font-size: 1.6rem; color: #1a2744; margin-bottom: 12px; font-weight: 700; }
-    .option-price { font-family: 'DM Serif Display', Georgia, serif; font-size: 2.4rem; font-weight: 700; color: #b8962e; margin-bottom: 20px; }
-    .option-desc { font-size: 0.95rem; color: #2C2C2C; line-height: 1.6; margin-bottom: 24px; }
-    .btn { display: inline-block; font-family: 'DM Serif Display', Georgia, serif; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; padding: 16px 34px; min-height: 44px; border: none; cursor: pointer; transition: all 0.22s ease; text-decoration: none; white-space: nowrap; border-radius: 2px; }
-    .btn-primary { background: #b8962e; color: #f0ebe0; box-shadow: 0 4px 20px rgba(184,150,46,0.2); }
-    .btn-primary:hover { background: #cba83c; transform: translateY(-2px); }
-
-    footer { background: #1a2744; border-top: 1px solid rgba(184,150,46,0.2); padding: 40px 48px 28px; }
-    .footer-inner { max-width: 1060px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 20px; }
-    .footer-logo { height: 48px; width: auto; opacity: 0.8; }
-    .footer-copy { font-family: 'DM Serif Display', Georgia, serif; font-size: 0.56rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(240,235,224,0.4); text-align: center; }
-
-    @media (max-width: 600px) {
-      nav { padding: 0 20px; }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<nav>
-  <a href="index.html"><img src="logo.png" alt="My Legacy Continues" class="nav-logo"></a>
-  <ul class="nav-center" id="navLinks">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="heritage-book.html">Heritage Books</a></li>
-    <li><a href="cemetery-plaque.html">Plaques</a></li>
-    <li><a href="pet-tag.html">Pet Tags</a></li>
-    <li><a href="business-profile.html">Business Profile</a></li>
-  </ul>
-  <div class="nav-right">
-    <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
-  </div>
-</nav>
+  <!-- NAVIGATION -->
+  <nav class="site-nav">
+    <a href="index.html" class="nav-brand">
+      <img src="logo.png" alt="My Legacy Continues" class="nav-logo">
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="heritage-book.html">Heritage</a></li>
+      <li><a href="rescue-registry.html">Rescue Registry</a></li>
+      <li><a href="active-transports.html">Transport</a></li>
+      <li><a href="about-us.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <span class="lang-toggle">EN / ES</span>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
 
-<div class="page-hero">
-  <div class="page-hero-inner">
-    <a href="index.html" class="back-link">Back to All Products</a>
-    <span class="page-eyebrow">Memorial</span>
-    <h1 class="page-title">Pet Legacy<br>QR Tag</h1>
-    <p class="page-sub">A weatherproof QR tag for your beloved pet's memorial. Scan to share photos, favorite songs, and tributes. Not saying goodbye — keeping them close.</p>
-    <div class="price-badge">$24.99 / $49.99</div>
-    <p class="price-note">One-time purchase. Hosted forever at mylegacycontinues.com. No subscriptions.</p>
-  </div>
-</div>
-
-<div class="gold-rule"></div>
-
-<section class="what-section">
-  <div class="what-inner">
-    <h2>What You're Getting</h2>
-    <div class="includes-grid">
-      <div class="include-item">
-        <div class="include-item-icon">🏷️</div>
-        <div class="include-item-title">Weatherproof QR Tag</div>
-        <div class="include-item-desc">Durable stainless steel or premium aluminum. Attaches to collar, grave marker, or anywhere you want. Built to last.</div>
-      </div>
-      <div class="include-item">
-        <div class="include-item-icon">🎵</div>
-        <div class="include-item-title">Favorite Songs</div>
-        <div class="include-item-desc">Add up to 5 songs that meant something to your pet's life. Visitors scan and hear the music you choose.</div>
-      </div>
-      <div class="include-item">
-        <div class="include-item-icon">📸</div>
-        <div class="include-item-title">Photo Gallery</div>
-        <div class="include-item-desc">Digital gallery of your pet's best moments. Family photos and memories preserved forever.</div>
-      </div>
-      <div class="include-item">
-        <div class="include-item-icon">💌</div>
-        <div class="include-item-title">Tribute Wall</div>
-        <div class="include-item-desc">Friends and family leave memories and stories. A living memorial for your pet.</div>
+  <!-- SECTION 1: SPLIT HERO -->
+  <section class="hero-split">
+    <div class="hero-left metalflake">
+      <h1 style="color: var(--gold);">Forever Tags For Forever Friends</h1>
+      <p style="color: var(--cream); font-size: 1.1rem; margin: 1rem 0; opacity: 0.9;">More than ID. Your pet's complete story.</p>
+      <p class="tagline" style="color: var(--cream); font-size: clamp(1.2rem, 2.5vw, 1.5rem);">Lost. Found. Home.</p>
+      <div style="margin-top: 2rem;">
+        <span style="font-family: var(--font-headline); font-size: 2rem; font-weight: 700; color: var(--gold);">$24.99 / $49.99</span>
+        <p style="color: var(--cream); opacity: 0.7; font-size: 0.85rem; margin-top: 0.5rem;">One-time purchase. Hosted forever.</p>
       </div>
     </div>
-  </div>
-</section>
-
-<div class="gold-rule"></div>
-
-<section class="options-section">
-  <div class="options-inner">
-    <h2 class="options-title">Choose Your Package</h2>
-    <div class="option-cards">
-      <div class="option-card">
-        <span class="option-label">Basic</span>
-        <h3 class="option-name">Single Tag</h3>
-        <div class="option-price">$24.99</div>
-        <p class="option-desc">One beautiful QR tag with lifetime memorial profile.</p>
-        <a href="https://buy.stripe.com/eVq7sM9CvdWk9oE4iofQI07" class="btn btn-primary">Choose Single Tag</a>
-      </div>
-
-      <div class="option-card featured">
-        <span class="option-label">Popular</span>
-        <h3 class="option-name">Combo Pack</h3>
-        <div class="option-price">$49.99</div>
-        <p class="option-desc">Two tags for different locations (grave, home, car) same memorial profile.</p>
-        <a href="https://buy.stripe.com/eVq7sM9CvdWk9oE4iofQI07" class="btn btn-primary">Choose Combo Pack</a>
+    <div class="hero-right">
+      <div style="text-align: center;">
+        <svg width="120" height="120" viewBox="0 0 120 120" fill="none">
+          <circle cx="60" cy="52" r="36" stroke="#E8C97A" stroke-width="3"/>
+          <circle cx="60" cy="18" r="8" stroke="#E8C97A" stroke-width="3"/>
+          <line x1="44" y1="48" x2="76" y2="48" stroke="#E8C97A" stroke-width="2"/>
+          <line x1="48" y1="58" x2="72" y2="58" stroke="#E8C97A" stroke-width="2"/>
+          <rect x="40" y="72" width="40" height="40" rx="4" stroke="#E8C97A" stroke-width="2"/>
+          <rect x="48" y="80" width="10" height="10" fill="#E8C97A" opacity="0.4"/>
+          <rect x="62" y="80" width="10" height="10" fill="#E8C97A" opacity="0.4"/>
+          <rect x="48" y="94" width="10" height="10" fill="#E8C97A" opacity="0.4"/>
+          <rect x="62" y="94" width="10" height="10" fill="#E8C97A" opacity="0.2"/>
+        </svg>
+        <p style="font-family: var(--font-emotion); font-style: italic; color: var(--cream); font-size: 1.1rem; margin-top: 1.5rem;">QR Tag + Digital Profile</p>
       </div>
     </div>
+  </section>
 
-    <div style="background: #1a2744; border-radius: 4px; padding: 32px 36px; margin-bottom: 0; color: rgba(240,235,224,0.85); text-align: center;">
-      <p style="font-size: 0.9rem; line-height: 1.85; margin-bottom: 16px;">
-        <strong style="color: #f0ebe0;">Both options include:</strong> Lifetime digital memorial profile, unlimited photos & stories, family access, hosted forever.
-      </p>
-      <p style="font-size: 0.85rem; color: rgba(240,235,224,0.7);">
-        One-time purchase. Your pet's memory is never deleted.
-      </p>
+  <!-- SECTION 2: WHY CHOOSE US -->
+  <section class="section-cream fade-in">
+    <div class="section-inner text-center" style="margin-bottom: 3rem;">
+      <h2>Why Choose Us</h2>
     </div>
-  </div>
-</section>
+    <div class="section-inner grid-3">
+      <div class="card text-center">
+        <h3>What Competitors Offer</h3>
+        <p>Basic ID tags with a name and phone number. No medical info. No story. Lost dog? Hope for the best.</p>
+      </div>
+      <div class="card text-center" style="border-color: var(--teal); border-width: 3px;">
+        <h3 style="color: var(--teal);">What We Offer</h3>
+        <p>QR-linked permanent profile. Medical history, behavioral context, rescue journey, emergency contacts, and your pet's full story. Updated forever.</p>
+      </div>
+      <div class="card text-center">
+        <h3>The Difference</h3>
+        <p>When someone scans your pet's tag, they get everything they need. Not just a name. A complete picture. That's how pets get home safe.</p>
+      </div>
+    </div>
+  </section>
 
-<footer>
-  <div class="footer-inner">
-    <img src="logo.png" alt="My Legacy Continues" class="footer-logo">
-    <p class="footer-copy">
-      <a href="legal/privacy.html" style="color: #b8962e;">Privacy Policy</a> |
-      <a href="legal/terms-of-service.html" style="color: #b8962e;">Terms of Service</a> |
-      <a href="contact.html" style="color: #b8962e;">Contact</a> |
-      <a href="mailto:contact@mylegacycontinues.com" style="color: #b8962e;">contact@mylegacycontinues.com</a>
-    </p>
-    <p class="footer-copy">&copy; 2026 My Legacy Continues. All rights reserved.</p>
-  </div>
-</footer>
+  <!-- SECTION 3: TIER SELECTION -->
+  <section class="section-cream fade-in">
+    <div class="section-inner text-center" style="margin-bottom: 2rem;">
+      <h2>Choose Your Tier</h2>
+    </div>
+    <div class="section-inner grid-2" style="max-width: 800px; margin-left: auto; margin-right: auto;">
+      <!-- Basic -->
+      <div class="card text-center">
+        <h3>Basic</h3>
+        <div class="product-price" style="margin: 1rem 0;">$24.99</div>
+        <ul style="list-style: none; text-align: left; margin-bottom: 1.5rem;">
+          <li style="padding: 0.5rem 0; border-bottom: 1px solid rgba(232,201,122,0.2); font-size: 0.9rem;">Weatherproof QR tag</li>
+          <li style="padding: 0.5rem 0; border-bottom: 1px solid rgba(232,201,122,0.2); font-size: 0.9rem;">Pet name + contact info</li>
+          <li style="padding: 0.5rem 0; border-bottom: 1px solid rgba(232,201,122,0.2); font-size: 0.9rem;">Digital memorial profile</li>
+          <li style="padding: 0.5rem 0; font-size: 0.9rem;">Hosted forever</li>
+        </ul>
+        <a href="https://buy.stripe.com/eVq7sM9CvdWk9oE4iofQI07" class="btn btn-gold">Get Basic</a>
+      </div>
+      <!-- Premium -->
+      <div class="card text-center" style="border-color: var(--teal); border-width: 3px; position: relative;">
+        <div style="position: absolute; top: -1px; left: 50%; transform: translateX(-50%); background: var(--gold); color: var(--navy); font-family: var(--font-headline); font-size: 0.7rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.3rem 1rem;">Popular</div>
+        <h3 style="margin-top: 1rem;">Premium</h3>
+        <div class="product-price" style="margin: 1rem 0;">$49.99</div>
+        <ul style="list-style: none; text-align: left; margin-bottom: 1.5rem;">
+          <li style="padding: 0.5rem 0; border-bottom: 1px solid rgba(232,201,122,0.2); font-size: 0.9rem;">Everything in Basic</li>
+          <li style="padding: 0.5rem 0; border-bottom: 1px solid rgba(232,201,122,0.2); font-size: 0.9rem;">Medical history</li>
+          <li style="padding: 0.5rem 0; border-bottom: 1px solid rgba(232,201,122,0.2); font-size: 0.9rem;">Behavioral context</li>
+          <li style="padding: 0.5rem 0; border-bottom: 1px solid rgba(232,201,122,0.2); font-size: 0.9rem;">Adoption timeline</li>
+          <li style="padding: 0.5rem 0; border-bottom: 1px solid rgba(232,201,122,0.2); font-size: 0.9rem;">Emergency contact</li>
+          <li style="padding: 0.5rem 0; border-bottom: 1px solid rgba(232,201,122,0.2); font-size: 0.9rem;">Foster story</li>
+          <li style="padding: 0.5rem 0; border-bottom: 1px solid rgba(232,201,122,0.2); font-size: 0.9rem;">Updates forever</li>
+          <li style="padding: 0.5rem 0; font-size: 0.9rem;">AirTag bundle compatible</li>
+        </ul>
+        <a href="https://buy.stripe.com/eVq7sM9CvdWk9oE4iofQI07" class="btn btn-gold">Get Premium</a>
+      </div>
+    </div>
+  </section>
 
-<script>
-  // Mobile nav toggle
-  const navToggle = document.getElementById('navToggle');
-  const navLinks = document.getElementById('navLinks');
-  if (navToggle) {
-    navToggle.addEventListener('click', () => {
-      navLinks.classList.toggle('open');
-    });
-  }
-</script>
+  <!-- SECTION 4: ORDER FORM -->
+  <section class="section-teal full-width fade-in">
+    <div class="section-inner text-center" style="margin-bottom: 2rem;">
+      <h2 style="color: var(--gold);">Order Your Pet Tag</h2>
+      <p style="color: var(--cream); opacity: 0.85;">Fill out the form below. We'll create your pet's profile and ship the tag.</p>
+    </div>
+    <div class="section-inner">
+      <div class="form-container">
+        <form action="https://formspree.io/f/xzzpqjle" method="POST">
+          <input type="hidden" name="_subject" value="Pet Tag Order">
+          <div class="form-group">
+            <label for="pet-name">Pet Name</label>
+            <input type="text" id="pet-name" name="pet_name" required>
+          </div>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+            <div class="form-group">
+              <label for="pet-breed">Breed</label>
+              <input type="text" id="pet-breed" name="breed">
+            </div>
+            <div class="form-group">
+              <label for="pet-age">Age</label>
+              <input type="text" id="pet-age" name="age">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="owner-name">Your Name</label>
+            <input type="text" id="owner-name" name="owner_name" required>
+          </div>
+          <div class="form-group">
+            <label for="owner-email">Email</label>
+            <input type="email" id="owner-email" name="email" required>
+          </div>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+            <div class="form-group">
+              <label for="owner-phone">Phone</label>
+              <input type="tel" id="owner-phone" name="phone" required>
+            </div>
+            <div class="form-group">
+              <label for="city-state">City / State</label>
+              <input type="text" id="city-state" name="city_state">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="rescue-story">Rescue Story (optional)</label>
+            <textarea id="rescue-story" name="rescue_story" rows="3" placeholder="Tell us your pet's story..."></textarea>
+          </div>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+            <div class="form-group">
+              <label for="emergency-name">Emergency Contact Name</label>
+              <input type="text" id="emergency-name" name="emergency_name">
+            </div>
+            <div class="form-group">
+              <label for="emergency-phone">Emergency Contact Phone</label>
+              <input type="tel" id="emergency-phone" name="emergency_phone">
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Tier</label>
+            <div class="radio-group">
+              <label><input type="radio" name="tier" value="Basic - $24.99" required> Basic ($24.99)</label>
+              <label><input type="radio" name="tier" value="Premium - $49.99"> Premium ($49.99)</label>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-gold" style="width: 100%; margin-top: 1rem;">Create Profile &amp; Order Tag</button>
+        </form>
+      </div>
+    </div>
+  </section>
 
+  <!-- SECTION 5: FAQ -->
+  <section class="section-cream fade-in">
+    <div class="section-inner text-center" style="margin-bottom: 2rem;">
+      <h2>Frequently Asked Questions</h2>
+    </div>
+    <div class="section-inner accordion">
+      <details>
+        <summary>How does the QR code work?</summary>
+        <div class="faq-answer">
+          <p>Each tag has a unique QR code laser-etched onto it. When scanned with any smartphone camera, it opens your pet's permanent digital profile. The profile includes their name, photo gallery, medical info, emergency contacts, and their story. No app required.</p>
+        </div>
+      </details>
+      <details>
+        <summary>What happens if my dog goes missing?</summary>
+        <div class="faq-answer">
+          <p>Anyone who finds your pet can scan the QR tag immediately. They'll see your contact information, your pet's medical needs, and emergency contacts. This is faster and more complete than a standard ID tag. For Premium tags, they'll also see behavioral notes so the finder knows how to handle your pet safely.</p>
+        </div>
+      </details>
+      <details>
+        <summary>Can I update the profile later?</summary>
+        <div class="faq-answer">
+          <p>Yes. Your pet's profile is permanently hosted and can be updated anytime. Add new photos, update medical records, change emergency contacts. Premium tier includes unlimited updates forever. Basic tier includes core profile updates.</p>
+        </div>
+      </details>
+      <details>
+        <summary>How long does the tag last?</summary>
+        <div class="faq-answer">
+          <p>The physical tag is made from weatherproof stainless steel or premium aluminum. It's built to last years on a collar, grave marker, or anywhere outdoors. The digital profile is hosted permanently at mylegacycontinues.com with no expiration or subscription fees.</p>
+        </div>
+      </details>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <img src="logo.png" alt="My Legacy Continues" class="footer-logo">
+      <div class="footer-contact">
+        contact@mylegacycontinues.com | Santa Maria, CA
+      </div>
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="heritage-book.html">Heritage</a></li>
+        <li><a href="rescue-registry.html">Rescue Registry</a></li>
+        <li><a href="active-transports.html">Transport</a></li>
+        <li><a href="about-us.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="legal/privacy.html">Privacy</a></li>
+        <li><a href="legal/terms-of-service.html">Terms</a></li>
+      </ul>
+      <p class="footer-copy">&copy; 2026 My Legacy Continues. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    if (navToggle) {
+      navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+      navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => navLinks.classList.remove('open'));
+      });
+    }
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  </script>
 </body>
 </html>
