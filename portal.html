@@ -224,29 +224,37 @@
     </div>
   </section>
 
-  <footer>
-    <p>&copy; 2026 My Legacy Continues. All rights reserved.</p>
-    <p>
-      <a href="legal/privacy.html">Privacy Policy</a> |
-      <a href="legal/terms-of-service.html">Terms of Service</a> |
-      <a href="contact.html">Contact</a> |
-      <a href="mailto:contact@mylegacycontinues.com">contact@mylegacycontinues.com</a>
-    </p>
-  </footer>
+<footer>
+  <div class="footer-inner">
+    <img src="logo.png" alt="My Legacy Continues" class="footer-logo">
+    <div class="footer-contact">contact@mylegacycontinues.com | (805) 863-3794 | Santa Maria, CA</div>
+    <ul class="footer-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="heritage-book.html">Heritage</a></li>
+      <li><a href="rescue-registry.html">Rescue Registry</a></li>
+      <li><a href="active-transports.html">Transport</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="legal/privacy.html">Privacy</a></li>
+      <li><a href="legal/terms-of-service.html">Terms</a></li>
+    </ul>
+    <p class="footer-copy">&copy; 2026 My Legacy Continues. All rights reserved.</p>
+  </div>
+</footer>
 
-  <script>
-    const navToggle = document.getElementById('navToggle');
-    const navMenu = document.getElementById('navMenu');
-
-    navToggle.addEventListener('click', () => {
-      navMenu.classList.toggle('open');
+<script>
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+  if (navToggle) {
+    navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => navLinks.classList.remove('open'));
     });
-
-    navMenu.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        navMenu.classList.remove('open');
-      });
-    });
-  </script>
+  }
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
 </body>
 </html>
