@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Bears Concrete Pumping — Business Profile</title>
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css">
   <style>
     :root {
       --bg:       #1A5C55;
@@ -18,16 +19,6 @@
     }
     * { margin:0; padding:0; box-sizing:border-box; }
     body { background:var(--bg); color:var(--cream); font-family:'Outfit',sans-serif; font-weight:300; line-height:1.7; }
-
-    /* NAV */
-    .site-nav {
-      background:var(--dark); border-bottom:1px solid var(--border);
-      padding:16px 28px; display:flex; justify-content:space-between; align-items:center;
-    }
-    .nav-back { color:var(--gold); text-decoration:none; font-size:11px; letter-spacing:0.14em; text-transform:uppercase; font-weight:600; }
-    .nav-back:hover { color:var(--cream); }
-    .nav-powered { font-size:11px; color:var(--muted); }
-    .nav-powered a { color:var(--gold); text-decoration:none; }
 
     /* HERO */
     .hero { background:var(--dark); border-bottom:1px solid var(--border); padding:64px 28px 52px; }
@@ -194,37 +185,28 @@
       padding:12px 24px; font-size:10px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; text-decoration:none;
     }
 
-    /* FOOTER */
-    .footer { background:var(--dark); border-top:1px solid var(--border); padding:28px; text-align:center; }
-    .footer p { font-size:12px; color:var(--muted); margin-bottom:4px; }
-    .footer a { color:var(--gold); text-decoration:none; }
-    .footer-credit { font-size:10px; color:#4a5e49; margin-top:8px; letter-spacing:0.06em; }
   </style>
 </head>
 <body>
 
-<nav>
-  <a href="index.html"><img src="logo.png" alt="My Legacy Continues" class="nav-logo"></a>
-  <ul class="nav-center" id="navLinks">
+<nav class="site-nav">
+  <a href="index.html" class="nav-brand">
+    <img src="logo.png" alt="My Legacy Continues" class="nav-logo">
+  </a>
+  <ul class="nav-links" id="navLinks">
     <li><a href="index.html">Home</a></li>
-    <li><a href="heritage-book.html">Heritage Books</a></li>
-    <li><a href="cemetery-plaque.html">Plaques</a></li>
-    <li><a href="pet-tag.html">Pet Tags</a></li>
-    <li><a href="business-profile.html">Business Profile</a></li>
+    <li><a href="heritage-book.html">Heritage</a></li>
     <li><a href="rescue-registry.html">Rescue Registry</a></li>
-    <li><a href="portal.html" class="nav-vault-link">Family Vault</a></li>
+    <li><a href="active-transports.html">Transport</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
   </ul>
   <div class="nav-right">
-    <a href="portal.html" class="nav-vault-link" style="margin-left: 12px;">Start Your Legacy</a>
-    <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    <a href="index.html#products" class="btn btn-gold" style="padding: 0.5rem 1.2rem; font-size: 0.7rem;">Start Your Legacy</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
   </div>
-</nav>
-
-
-
-<nav class="site-nav">
-  <a class="nav-back" href="https://mylegacycontinues.com/business-profile.html">My Legacy Continues</a>
-  <span class="nav-powered">Powered by <a href="https://mylegacycontinues.com">mylegacycontinues.com</a> &nbsp;·&nbsp; <a href="mailto:info@mylegacycontinues.com">info@mylegacycontinues.com</a></span>
 </nav>
 
 <section class="hero">
@@ -393,10 +375,34 @@
   </div>
 </div>
 
-<footer class="footer">
-  <p>Bears Concrete Pumping &middot; Santa Maria, California &middot; (805) 863-3794</p>
-  <p class="footer-credit">Business profile by <a href="https://mylegacycontinues.com">My Legacy Continues</a> &middot; Santa Maria, CA &middot; Long Live Your Legacy</p>
+<footer style="background: var(--navy, #1C1C1C); border-top: 1px solid rgba(232,201,122,0.2); padding: 40px 48px 28px;">
+  <div class="footer-inner">
+    <img src="logo.png" alt="My Legacy Continues" class="footer-logo">
+    <div class="footer-contact">contact@mylegacycontinues.com | (805) 863-3794 | Santa Maria, CA</div>
+    <ul class="footer-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="heritage-book.html">Heritage</a></li>
+      <li><a href="rescue-registry.html">Rescue Registry</a></li>
+      <li><a href="active-transports.html">Transport</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="legal/privacy.html">Privacy</a></li>
+      <li><a href="legal/terms-of-service.html">Terms</a></li>
+    </ul>
+    <p class="footer-copy">&copy; 2026 My Legacy Continues. All rights reserved.</p>
+  </div>
 </footer>
+
+<script>
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+  if (navToggle) {
+    navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => navLinks.classList.remove('open'));
+    });
+  }
+</script>
 
 </body>
 </html>

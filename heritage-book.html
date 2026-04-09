@@ -505,21 +505,34 @@ img { max-width: 100%; height: auto; display: block; }
 <footer>
   <div class="footer-inner">
     <img src="logo.png" alt="My Legacy Continues" class="footer-logo">
-    <div style="margin: 1.5rem 0; font-size: 0.56rem; color: var(--gold); letter-spacing: 0.12em; text-transform: uppercase;">Your Privacy Matters</div>
-    <p style="font-size: 0.8rem; color: rgba(244,239,230,0.6); max-width: 600px; margin: 0 auto 1.5rem; line-height: 1.6;">All family profiles are password protected (optional), encrypted in transit, never sold or shared, hosted permanently, and yours to control forever.</p>
-    <div style="border-top: 1px solid rgba(201,146,10,0.2); margin: 1.5rem 0;"></div>
-    <div style="margin-bottom: 1rem;">
-      <a href="privacy.html" style="font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold); text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#E8C97A'" onmouseout="this.style.color='#E8C97A'">Privacy Policy</a>
-    </div>
-    <div class="footer-copy">Long Live Your Legacy &mdash; mylegacycontinues.com &mdash; <a href="mailto:contact@mylegacycontinues.com" style="color: var(--gold); text-decoration: none;">contact@mylegacycontinues.com</a> &mdash; &copy; 2026 My Legacy Continues &mdash; Santa Maria, CA</div>
+    <div class="footer-contact">contact@mylegacycontinues.com | (805) 863-3794 | Santa Maria, CA</div>
+    <ul class="footer-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="heritage-book.html">Heritage</a></li>
+      <li><a href="rescue-registry.html">Rescue Registry</a></li>
+      <li><a href="active-transports.html">Transport</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="legal/privacy.html">Privacy</a></li>
+      <li><a href="legal/terms-of-service.html">Terms</a></li>
+    </ul>
+    <p class="footer-copy">&copy; 2026 My Legacy Continues. All rights reserved.</p>
   </div>
 </footer>
 
 <script>
-const toggle = document.getElementById('navToggle');
-const links = document.getElementById('navLinks');
-toggle.addEventListener('click', () => links.classList.toggle('open'));
-document.querySelectorAll('#navLinks a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+  if (navToggle) {
+    navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => navLinks.classList.remove('open'));
+    });
+  }
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 </script>
 
 </body>
