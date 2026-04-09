@@ -1,312 +1,344 @@
 <!DOCTYPE html>
-<html lang="en"><!-- Cache bust -->
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Legacy Continues — Heritage Preservation & Legacy Services</title>
-  <meta name="description" content="Professional heritage preservation, genealogy research, memorial plaques, and legacy preservation services.">
+  <title>My Legacy Continues — Your Story Never Dies</title>
+  <meta name="description" content="Permanent legacy preservation. Heritage books, cemetery plaques, pet profiles, business founder stories. One-time purchase, hosted forever. No subscriptions.">
   <link rel="icon" href="logo.png" type="image/png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,700;0,800;1,400;1,600&family=DM+Serif+Display:ital@0;1&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Jost', sans-serif;
-      background: #f0ebe0;
-    }
-
-    header {
-      background: #1a2744;
-      padding: 1.5rem 3rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .logo {
-      height: 40px;
-      width: auto;
-    }
-
-    nav a {
-      color: #f0ebe0;
-      text-decoration: none;
-      margin: 0 1.5rem;
-      font-size: 0.95rem;
-    }
-
-    nav a:hover {
-      color: #b8962e;
-    }
-
-    .hero {
-      background: linear-gradient(135deg, #f0ebe0 0%, #f0ebe0 100%);
-      padding: 4rem 3rem;
-      text-align: center;
-    }
-
-    .hero h1 {
-      font-family: 'DM Serif Display', Georgia, serif;
-      color: #1a2744;
-      font-size: 2.5rem;
-      margin: 0 0 1rem 0;
-    }
-
-    .hero p {
-      color: #2C2C2C;
-      font-size: 1.1rem;
-      max-width: 600px;
-      margin: 0 auto 2rem;
-    }
-
-    .products-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-      padding: 4rem 3rem;
-      max-width: 1400px;
-      margin: 0 auto;
-    }
-
-    .product-card {
-      background: #f0ebe0;
-      border: 2px solid #b8962e;
-      border-radius: 4px;
-      padding: 2rem;
-      text-align: center;
-      transition: all 0.3s ease;
-    }
-
-    .product-card:hover {
-      border-color: #b8962e;
-      box-shadow: 0 12px 40px rgba(212, 160, 32, 0.15);
-      transform: translateY(-4px);
-    }
-
-    .product-name {
-      font-family: 'DM Serif Display', Georgia, serif;
-      font-size: 1.4rem;
-      color: #1a2744;
-      margin: 0 0 0.8rem 0;
-      font-weight: 700;
-    }
-
-    .product-desc {
-      color: #2C2C2C;
-      font-size: 0.95rem;
-      line-height: 1.6;
-      margin: 0 0 1.5rem 0;
-    }
-
-    .product-price {
-      font-family: 'DM Serif Display', Georgia, serif;
-      font-size: 1.8rem;
-      color: #b8962e;
-      font-weight: 700;
-      margin: 0 0 1.5rem 0;
-    }
-
-    .product-btn {
-      background: #b8962e;
-      color: #1a2744;
-      padding: 0.8rem 2rem;
-      border: none;
-      border-radius: 2px;
-      font-family: 'Jost', sans-serif;
-      font-weight: 600;
-      cursor: pointer;
-      text-decoration: none;
-      display: inline-block;
-      transition: all 0.3s ease;
-    }
-
-    .product-btn:hover {
-      background: #b8962e;
-    }
-
-    footer {
-      background: #1a2744;
-      color: #f0ebe0;
-      padding: 2rem 3rem;
-      text-align: center;
-    }
-
-    footer a {
-      color: #b8962e;
-      text-decoration: none;
-    }
-
-    footer a:hover {
-      text-decoration: underline;
-    }
-
-    .nav-toggle {
-      display: none;
-      background: none;
-      border: none;
-      cursor: pointer;
-      flex-direction: column;
-      gap: 6px;
-      padding: 0;
-    }
-
-    .nav-toggle span {
-      display: block;
-      width: 24px;
-      height: 2px;
-      background: #f0ebe0;
-      transition: all 0.3s;
-    }
-
-    nav {
-      display: flex;
-      align-items: center;
-      gap: 2rem;
-    }
-
-    @media (max-width: 768px) {
-      nav {
-        position: fixed;
-        top: 68px;
-        left: 0;
-        right: 0;
-        flex-direction: column;
-        background: #1a2744;
-        padding: 1rem 0;
-        border-bottom: 2px solid #b8962e;
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.3s;
-      }
-
-      nav.open {
-        max-height: 300px;
-      }
-
-      nav a {
-        display: block;
-        padding: 1rem 2rem;
-        margin: 0;
-        border-bottom: 1px solid rgba(184,150,46,0.2);
-      }
-
-      .nav-toggle {
-        display: flex;
-      }
-
-      header {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        z-index: 999;
-        height: 68px;
-      }
-
-      body {
-        padding-top: 68px;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <img src="logo.png" alt="My Legacy Continues" class="logo">
-    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-    <nav id="navMenu">
-      <a href="index.html">Home</a>
-      <a href="about-us.html">About Us</a>
-      <a href="contact.html">Contact</a>
-      <a href="legal/privacy.html">Privacy</a>
-    </nav>
-  </header>
 
-  <section class="hero">
-    <h1>My Legacy Continues</h1>
-    <p>Professional heritage preservation, genealogy research, memorial services, and legacy preservation for families and organizations throughout California.</p>
-    <p style="font-weight: 600; color: #b8962e; font-size: 1.1rem; margin-top: 1.5rem;">Zero Subscriptions. Hosted Forever.</p>
-  </section>
-
-  <section class="products-grid">
-    <div class="product-card">
-      <h2 class="product-name">Heritage Culture Book</h2>
-      <p class="product-desc">Professionally curated genealogy and heritage documentation with binding and archival preservation.</p>
-      <div class="product-price">$199</div>
-      <a href="heritage-book.html" class="product-btn">Learn More</a>
+  <!-- NAVIGATION -->
+  <nav class="site-nav">
+    <a href="index.html" class="nav-brand">
+      <img src="logo.png" alt="My Legacy Continues" class="nav-logo">
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="heritage-book.html">Heritage</a></li>
+      <li><a href="rescue-registry.html">Rescue Registry</a></li>
+      <li><a href="active-transports.html">Transport</a></li>
+      <li><a href="about-us.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <span class="lang-toggle">EN / ES</span>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
+  </nav>
 
-    <div class="product-card">
-      <h2 class="product-name">Cemetery Plaque</h2>
-      <p class="product-desc">Custom memorial plaque for gravesites with engraving, installation, and perpetual care.</p>
-      <div class="product-price">$129</div>
-      <a href="cemetery-plaque.html" class="product-btn">Learn More</a>
+  <!-- SECTION 1: SPLIT HERO -->
+  <section class="hero-split">
+    <div class="hero-left metalflake">
+      <h1 class="tagline" style="font-size: clamp(2.5rem, 5vw, 4rem); text-transform: none; letter-spacing: 0;">Your Story Never Dies</h1>
+      <p style="font-size: 1.1rem; margin: 1.5rem 0; opacity: 0.9;">Permanent legacy preservation for families, pets, businesses, and communities. One purchase. Hosted forever.</p>
+      <a href="#products" class="btn btn-gold">Begin Your Story</a>
+      <div class="scroll-indicator" style="position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%);"></div>
     </div>
-
-    <div class="product-card">
-      <h2 class="product-name">Pet Legacy Tag</h2>
-      <p class="product-desc">Memorial tag for beloved pets with engraving. Choose single tag or combo pack.</p>
-      <div class="product-price">$24.99 / $49.99</div>
-      <a href="pet-tag.html" class="product-btn">Learn More</a>
-    </div>
-
-    <div class="product-card">
-      <h2 class="product-name">Business Profile</h2>
-      <p class="product-desc">Professional business legacy documentation and succession planning service.</p>
-      <div class="product-price">$79</div>
-      <a href="business-profile.html" class="product-btn">Learn More</a>
-    </div>
-
-    <div class="product-card">
-      <h2 class="product-name">Baby Legacy</h2>
-      <p class="product-desc">First year memory book and heritage documentation for newborns and children.</p>
-      <div class="product-price">$79</div>
-      <a href="baby-legacy.html" class="product-btn">Learn More</a>
+    <div class="hero-right">
+      <img src="logo.png" alt="My Legacy Continues" class="hero-logo-main logo-glow">
+      <p class="tagline" style="color: var(--cream); font-size: 1.2rem; margin-top: 2rem; text-align: center;">Zero subscriptions. Hosted forever.</p>
     </div>
   </section>
 
-  <section style="background: #f0ebe0; padding: 3rem; text-align: center; border-top: 2px solid #b8962e; border-bottom: 2px solid #b8962e;">
-    <p style="max-width: 700px; margin: 0 auto; line-height: 1.8; font-size: 1rem; color: #2C2C2C;">
-      <strong>A portion of every pet tag sale supports local rescue operations.</strong> Every rescue dog gets a permanent profile — free.
-    </p>
+  <!-- SECTION 2: "I ALMOST LOST MINE" — Bear's Story -->
+  <section class="section-cream fade-in">
+    <div class="section-inner" style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;">
+      <div>
+        <h2>I Almost Lost Mine</h2>
+        <p style="margin-top: 1.5rem;">My family came from Galicia, Spain. They settled in South Texas, then moved to California. Along the way, pieces got lost. Photos faded. Names were forgotten. Recipes disappeared. The stories my grandmother told were almost gone forever.</p>
+        <p>I started My Legacy Continues because I realized that if I didn't capture what remained, nobody would. And I knew I wasn't the only one. In Santa Maria, I see families working hard every day &mdash; concrete workers, ranchers, service workers &mdash; building their legacies with their hands. They deserve a simple, honest way to preserve what matters.</p>
+        <div class="pull-quote">
+          The stories. The traditions. The migrations. Almost gone forever.
+        </div>
+        <p style="font-weight: 600; color: var(--teal);">&mdash; Bear Vazquez, Founder</p>
+      </div>
+      <div style="background: linear-gradient(135deg, var(--teal) 0%, rgba(26,92,85,0.7) 100%); aspect-ratio: 4/5; display: flex; align-items: center; justify-content: center; border: 2px solid var(--gold);">
+        <span style="font-family: var(--font-emotion); font-style: italic; color: var(--cream); opacity: 0.5; font-size: 1rem;">Photo Coming</span>
+      </div>
+    </div>
   </section>
 
-  <section style="background: #1a2744; color: #f0ede6; padding: 4rem 3rem; text-align: center;">
-    <h2 style="font-family: 'DM Serif Display', Georgia, serif; color: #b8962e; font-size: 2rem; margin-bottom: 1.5rem;">Why We Built This</h2>
-    <p style="max-width: 700px; margin: 0 auto 1rem; line-height: 1.8; font-size: 1rem;">
-      In Santa Maria, California, we see families working hard—concrete workers, ranchers, service workers—building their legacies with their hands. They deserve a simple, honest way to preserve what matters: stories, photos, memories. No subscriptions. No AI. No walls of text. Just one-time, forever-hosted digital memorials that work for generations.
-    </p>
+  <!-- SECTION 3: GIANTS BUILD THE MODEL — 4 Pillars -->
+  <section class="section-teal metalflake full-width fade-in">
+    <div class="section-inner text-center" style="margin-bottom: 3rem;">
+      <h2 style="color: var(--gold);">Giants Build The Model</h2>
+      <p class="tagline" style="color: var(--cream); font-size: 1.15rem; margin-top: 1rem;">Own it. Stack it. Build for the people.</p>
+    </div>
+    <div class="section-inner pillars">
+      <div class="pillar-row">
+        <div class="card">
+          <h3>Own The Block First</h3>
+          <p>No middlemen. No platforms taking a cut. Your legacy, your terms. We host it, you own it. Direct-to-family, direct-to-community. Every dollar goes toward building something permanent.</p>
+        </div>
+        <div style="display: flex; align-items: center; justify-content: center;">
+          <span class="step-number" style="font-size: 4rem;">01</span>
+        </div>
+      </div>
+      <div class="pillar-row">
+        <div class="card">
+          <h3>Physical + Digital Stacked</h3>
+          <p>A QR code on a cemetery plaque. A tag on your dog's collar. A printed heritage book with a digital companion. We bridge the physical and digital so your story lives in both worlds.</p>
+        </div>
+        <div style="display: flex; align-items: center; justify-content: center;">
+          <span class="step-number" style="font-size: 4rem;">02</span>
+        </div>
+      </div>
+      <div class="pillar-row">
+        <div class="card">
+          <h3>Community Is The Product</h3>
+          <p>10% of every pet tag sale goes directly to Underdog Heroes rescue. Heritage books fund rescue families. When you preserve your story, you help preserve someone else's too.</p>
+        </div>
+        <div style="display: flex; align-items: center; justify-content: center;">
+          <span class="step-number" style="font-size: 4rem;">03</span>
+        </div>
+      </div>
+      <div class="pillar-row">
+        <div class="card">
+          <h3>Your Story, Your Terms</h3>
+          <p>No subscriptions. No monthly fees. No AI-generated filler. Real research. Real writing. Real preservation. One payment, permanent hosting, your legacy on your terms.</p>
+        </div>
+        <div style="display: flex; align-items: center; justify-content: center;">
+          <span class="step-number" style="font-size: 4rem;">04</span>
+        </div>
+      </div>
+    </div>
   </section>
 
+  <!-- SECTION 4: HOW IT WORKS — 3 Steps -->
+  <section class="section-cream fade-in">
+    <div class="section-inner text-center">
+      <h2>How It Works</h2>
+      <p style="margin-top: 0.5rem; opacity: 0.7;">Three steps to a permanent legacy.</p>
+    </div>
+    <div class="section-inner steps-grid" style="margin-top: 3rem;">
+      <div class="step">
+        <div class="step-number">01</div>
+        <h3>Order</h3>
+        <p>Choose your product &mdash; heritage book, plaque, pet tag, business profile, or baby starter. Pay once.</p>
+      </div>
+      <div class="step">
+        <div class="step-number">02</div>
+        <h3>Research</h3>
+        <p>We gather your story. Professional research, writing, and design. Real humans, real care, real detail.</p>
+      </div>
+      <div class="step">
+        <div class="step-number">03</div>
+        <h3>Permanent</h3>
+        <p>Your legacy goes live. QR-accessible, beautifully hosted, preserved forever. No subscriptions. No expiration.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 5: PRODUCT GRID — 6 Products -->
+  <section class="section-cream fade-in" id="products">
+    <div class="section-inner text-center">
+      <h2>Preserve What Matters</h2>
+    </div>
+    <div class="section-inner product-grid" style="margin-top: 3rem;">
+      <!-- Heritage Book -->
+      <div class="product-card">
+        <div class="product-img">
+          <svg viewBox="0 0 64 64" fill="none"><rect x="16" y="8" width="32" height="48" rx="2" stroke="#E8C97A" stroke-width="2"/><line x1="22" y1="20" x2="42" y2="20" stroke="#E8C97A" stroke-width="1.5"/><line x1="22" y1="28" x2="38" y2="28" stroke="#E8C97A" stroke-width="1.5"/><line x1="22" y1="36" x2="40" y2="36" stroke="#E8C97A" stroke-width="1.5"/></svg>
+        </div>
+        <div class="product-body">
+          <h3>Heritage Culture Book</h3>
+          <p>Professionally curated genealogy and heritage documentation. Your family's complete story, permanently preserved.</p>
+          <div class="product-price">$199</div>
+          <a href="heritage-book.html" class="btn btn-gold">Learn More</a>
+        </div>
+      </div>
+      <!-- Cemetery Plaque -->
+      <div class="product-card">
+        <div class="product-img">
+          <svg viewBox="0 0 64 64" fill="none"><rect x="12" y="16" width="40" height="40" rx="4" stroke="#E8C97A" stroke-width="2"/><rect x="26" y="8" width="12" height="12" rx="6" stroke="#E8C97A" stroke-width="2"/><line x1="20" y1="32" x2="44" y2="32" stroke="#E8C97A" stroke-width="1.5"/><line x1="24" y1="40" x2="40" y2="40" stroke="#E8C97A" stroke-width="1.5"/></svg>
+        </div>
+        <div class="product-body">
+          <h3>Cemetery Plaque</h3>
+          <p>Custom QR memorial plaque for gravesites. Visitors scan to see photos, stories, and memories.</p>
+          <div class="product-price">$129</div>
+          <a href="cemetery-plaque.html" class="btn btn-gold">Learn More</a>
+        </div>
+      </div>
+      <!-- Pet Tag -->
+      <div class="product-card">
+        <div class="product-img">
+          <svg viewBox="0 0 64 64" fill="none"><circle cx="32" cy="28" r="16" stroke="#E8C97A" stroke-width="2"/><circle cx="32" cy="10" r="3" stroke="#E8C97A" stroke-width="1.5"/><line x1="26" y1="26" x2="38" y2="26" stroke="#E8C97A" stroke-width="1.5"/><line x1="28" y1="32" x2="36" y2="32" stroke="#E8C97A" stroke-width="1.5"/></svg>
+        </div>
+        <div class="product-body">
+          <h3>Pet Legacy Tag</h3>
+          <p>QR-enabled tag with your pet's complete story. Medical history, rescue journey, and emergency contacts.</p>
+          <div class="product-price">$24.99 / $49.99</div>
+          <a href="pet-tag.html" class="btn btn-gold">Learn More</a>
+        </div>
+      </div>
+      <!-- Business Profile -->
+      <div class="product-card">
+        <div class="product-img">
+          <svg viewBox="0 0 64 64" fill="none"><rect x="14" y="20" width="36" height="32" rx="2" stroke="#E8C97A" stroke-width="2"/><rect x="24" y="12" width="16" height="12" rx="2" stroke="#E8C97A" stroke-width="2"/><line x1="14" y1="36" x2="50" y2="36" stroke="#E8C97A" stroke-width="1.5"/></svg>
+        </div>
+        <div class="product-body">
+          <h3>Business Founder Profile</h3>
+          <p>Professional business legacy documentation. Your company's origin story, permanently preserved.</p>
+          <div class="product-price">$79</div>
+          <a href="business-profile.html" class="btn btn-gold">Learn More</a>
+        </div>
+      </div>
+      <!-- Baby Starter -->
+      <div class="product-card">
+        <div class="product-img">
+          <svg viewBox="0 0 64 64" fill="none"><circle cx="32" cy="24" r="12" stroke="#E8C97A" stroke-width="2"/><path d="M20 40 Q32 56 44 40" stroke="#E8C97A" stroke-width="2" fill="none"/><circle cx="28" cy="22" r="1.5" fill="#E8C97A"/><circle cx="36" cy="22" r="1.5" fill="#E8C97A"/></svg>
+        </div>
+        <div class="product-body">
+          <h3>Baby Legacy Starter</h3>
+          <p>Record your baby's first year. Professional writing, monthly milestones, permanent digital time capsule.</p>
+          <div class="product-price">$79</div>
+          <a href="baby-legacy.html" class="btn btn-gold">Learn More</a>
+        </div>
+      </div>
+      <!-- Rescue Registry -->
+      <div class="product-card">
+        <div class="product-img" style="background: linear-gradient(135deg, var(--sunset) 0%, var(--coral) 100%);">
+          <svg viewBox="0 0 64 64" fill="none"><circle cx="32" cy="30" r="14" stroke="#E8C97A" stroke-width="2"/><circle cx="27" cy="27" r="2" fill="#E8C97A"/><circle cx="37" cy="27" r="2" fill="#E8C97A"/><path d="M26 34 Q32 40 38 34" stroke="#E8C97A" stroke-width="1.5" fill="none"/><path d="M32 16 L32 12" stroke="#E8C97A" stroke-width="2"/><circle cx="32" cy="10" r="2" fill="#E8C97A"/></svg>
+        </div>
+        <div class="product-body">
+          <h3>Rescue Registry</h3>
+          <p>Every rescue dog gets a permanent profile. Behavioral journey, foster updates, forever records. Free.</p>
+          <div class="product-price">Free</div>
+          <a href="rescue-registry.html" class="btn btn-gold">View Registry</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 6: BUNDLE & SAVE -->
+  <section class="section-teal metalflake full-width fade-in">
+    <div class="section-inner text-center" style="margin-bottom: 3rem;">
+      <h2 style="color: var(--gold);">Bundle &amp; Save</h2>
+      <p style="color: var(--cream); opacity: 0.85; margin-top: 0.5rem;">Combine products and save on your legacy package.</p>
+    </div>
+    <div class="section-inner bundle-grid">
+      <div class="bundle-card">
+        <h3>Family Bundle</h3>
+        <div class="bundle-price">$169</div>
+        <div class="bundle-save">Save $30</div>
+        <ul>
+          <li>Heritage Culture Book</li>
+          <li>Cemetery Plaque</li>
+          <li>Priority research</li>
+        </ul>
+        <a href="contact.html" class="btn btn-gold">Get Family Bundle</a>
+      </div>
+      <div class="bundle-card">
+        <h3>Pet + Family</h3>
+        <div class="bundle-price">$215</div>
+        <div class="bundle-save">Save $5</div>
+        <ul>
+          <li>Heritage Culture Book</li>
+          <li>Premium Pet Tag</li>
+          <li>Rescue donation included</li>
+        </ul>
+        <a href="contact.html" class="btn btn-gold">Get Pet + Family</a>
+      </div>
+      <div class="bundle-card">
+        <h3>Contractor Bundle</h3>
+        <div class="bundle-price">$129</div>
+        <div class="bundle-save">Best value for businesses</div>
+        <ul>
+          <li>Business Founder Profile</li>
+          <li>Pet Tag (Basic)</li>
+          <li>QR code package</li>
+        </ul>
+        <a href="contractor-bundle.html" class="btn btn-gold">Get Contractor</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 7: TESTIMONIALS -->
+  <section class="section-navy film-grain full-width fade-in">
+    <div class="section-inner text-center" style="margin-bottom: 3rem;">
+      <h2 style="color: var(--gold);">Real Stories That Changed Lives</h2>
+    </div>
+    <div class="section-inner testimonial-grid">
+      <div class="testimonial-card">
+        <blockquote>"I almost let my family's story disappear. Three generations of migration, from Galicia to South Texas to California. Now it's permanent. My kids will know where they came from."</blockquote>
+        <cite>Bear Vazquez, Santa Maria CA</cite>
+      </div>
+      <div class="testimonial-card">
+        <blockquote>"We lost our grandmother last year. The plaque with the QR code means anyone who visits her grave can see her photos, hear her recipes, read her story. It changed everything for our family."</blockquote>
+        <cite>The Garcia Family, Lompoc CA</cite>
+      </div>
+      <div class="testimonial-card">
+        <blockquote>"Butters went through three fosters before finding his forever home. His Legacy Tag has his complete journey. When people scan it at the park, they see his rescue story. It matters."</blockquote>
+        <cite>Butters, Underdog Heroes Rescue</cite>
+      </div>
+      <div class="testimonial-card">
+        <blockquote>"I've been running McNeal Construction for 22 years. Nobody was going to write my story for me. Now my business profile is permanent. My crew, my projects, my legacy. All documented."</blockquote>
+        <cite>McNeal Construction, Central Coast CA</cite>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 8: JOIN THE LEGACY COMMUNITY — Waitlist -->
+  <section class="section-teal full-width fade-in">
+    <div class="section-inner text-center">
+      <h2 style="color: var(--gold);">Join The Legacy Community</h2>
+      <p style="color: var(--cream); opacity: 0.85; margin-top: 0.5rem; margin-bottom: 2rem;">Be the first to know about new features, community stories, and rescue updates.</p>
+      <form action="https://formspree.io/f/xzzpqjle" method="POST" style="max-width: 500px; margin: 0 auto; display: flex; gap: 0.75rem; flex-wrap: wrap; justify-content: center;">
+        <input type="hidden" name="_subject" value="Legacy Community Waitlist">
+        <input type="email" name="email" placeholder="Enter your email" required style="flex: 1; min-width: 250px;">
+        <button type="submit" class="btn btn-gold">Join Waitlist</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- SECTION 9: FOOTER -->
   <footer>
-    <p>&copy; 2026 My Legacy Continues. All rights reserved.</p>
-    <p>
-      <a href="legal/privacy.html">Privacy Policy</a> |
-      <a href="legal/terms-of-service.html">Terms of Service</a> |
-      <a href="contact.html">Contact</a> |
-      <a href="mailto:contact@mylegacycontinues.com">contact@mylegacycontinues.com</a>
-    </p>
+    <div class="footer-inner">
+      <img src="logo.png" alt="My Legacy Continues" class="footer-logo">
+      <div class="footer-contact">
+        contact@mylegacycontinues.com | Santa Maria, CA
+      </div>
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="heritage-book.html">Heritage</a></li>
+        <li><a href="rescue-registry.html">Rescue Registry</a></li>
+        <li><a href="active-transports.html">Transport</a></li>
+        <li><a href="about-us.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="legal/privacy.html">Privacy</a></li>
+        <li><a href="legal/terms-of-service.html">Terms</a></li>
+      </ul>
+      <p class="footer-copy">&copy; 2026 My Legacy Continues. All rights reserved.</p>
+    </div>
   </footer>
 
   <script>
+    // Hamburger menu
     const navToggle = document.getElementById('navToggle');
-    const navMenu = document.getElementById('navMenu');
-
-    navToggle.addEventListener('click', () => {
-      navMenu.classList.toggle('open');
-    });
-
-    // Close menu when a link is clicked
-    navMenu.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        navMenu.classList.remove('open');
+    const navLinks = document.getElementById('navLinks');
+    if (navToggle) {
+      navToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('open');
       });
-    });
+      navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => navLinks.classList.remove('open'));
+      });
+    }
+
+    // Scroll fade-in
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
   </script>
 </body>
 </html>
