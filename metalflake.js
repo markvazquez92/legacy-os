@@ -1,10 +1,11 @@
 /* ════════════════════════════════════════════════════════════════
-   METALFLAKE CANVAS ANIMATION
-   64 Impala Candy Paint — stationary micro-mirror flake clusters
+   METALFLAKE CANVAS — 64 Impala Candy Paint
+   Diamonds embedded in glass. You look INTO the paint.
+   Deep solid color with tiny flat mirror chips inside.
+   Nothing moves. Individual flakes randomly flash bright
+   then go dark — like sunlight hitting a parked car as
+   you walk past it. Fast flash, then back to dark.
    88% gold #E8C97A, 12% teal #1A5C55
-   Clusters of 2-6 flakes, ~1 cluster per 2000px²
-   Flakes are EMBEDDED in the surface — no movement, no drift.
-   Only brightness changes: cos² opacity simulates light sweep.
    ════════════════════════════════════════════════════════════════ */
 
 (function () {
@@ -12,13 +13,18 @@
 
   var GOLD = [232, 201, 122];
   var TEAL = [26, 92, 85];
-  var DENSITY = 2000; // px² per cluster
+  var DENSITY = 1800;       // px² per cluster — tight coverage
   var MIN_PER_CLUSTER = 2;
   var MAX_PER_CLUSTER = 6;
-  var FLAKE_MIN = 1.5;
-  var FLAKE_MAX = 3.5;
-  var CLUSTER_SPREAD = 18; // px radius
-  var LIGHT_SPEED = 0.0003; // radians per ms — slow light sweep
+  var FLAKE_MIN = 1.0;      // tiny mirror chips
+  var FLAKE_MAX = 2.8;
+  var CLUSTER_SPREAD = 16;
+
+  // Flash timing
+  var FLASH_CHANCE = 0.003;  // probability per flake per frame to start flashing
+  var FLASH_IN = 80;         // ms to reach peak brightness
+  var FLASH_HOLD = 40;       // ms at peak
+  var FLASH_OUT = 300;       // ms to fade back to dark
 
   function initMetalflake() {
     var sections = document.querySelectorAll('.metalflake');
@@ -39,14 +45,14 @@
     var running = false;
     var rafId = null;
     var lastTime = 0;
-    var lightAngle = 0; // global light sweep angle
 
     function resize() {
       w = section.offsetWidth;
       h = section.offsetHeight;
-      canvas.width = w * (window.devicePixelRatio || 1);
-      canvas.height = h * (window.devicePixelRatio || 1);
-      ctx.setTransform((window.devicePixelRatio || 1), 0, 0, (window.devicePixelRatio || 1), 0, 0);
+      var dpr = window.devicePixelRatio || 1;
+      canvas.width = w * dpr;
+      canvas.height = h * dpr;
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
       generateFlakes();
     }
 
@@ -64,23 +70,22 @@
           var isGold = Math.random() < 0.88;
           var rgb = isGold ? GOLD : TEAL;
           var rx = FLAKE_MIN + Math.random() * (FLAKE_MAX - FLAKE_MIN);
-          var ry = rx * (0.3 + Math.random() * 0.25); // flat ellipse
+          var ry = rx * (0.25 + Math.random() * 0.2); // very flat ellipse
 
           flakes.push({
-            // Position — fixed forever
             x: cx + (Math.random() - 0.5) * CLUSTER_SPREAD * 2,
             y: cy + (Math.random() - 0.5) * CLUSTER_SPREAD * 2,
-            // Shape — fixed forever
             rx: rx,
             ry: ry,
-            rotation: Math.random() * Math.PI * 2, // fixed orientation
-            // Light response — each flake catches light at a different phase
-            phase: Math.random() * Math.PI * 2,
-            // Color
+            rotation: Math.random() * Math.PI * 2,
             r: rgb[0],
             g: rgb[1],
             b: rgb[2],
-            baseAlpha: 0.25 + Math.random() * 0.35
+            // Rest state: almost invisible, embedded deep in paint
+            restAlpha: 0.04 + Math.random() * 0.06,
+            // Flash state
+            flashTime: -1,  // -1 = not flashing
+            flashPeak: 0.5 + Math.random() * 0.5  // how bright this flake can get
           });
         }
       }
@@ -90,23 +95,46 @@
       if (!lastTime) lastTime = now;
       var dt = now - lastTime;
       lastTime = now;
-
-      // Advance global light sweep
-      lightAngle += LIGHT_SPEED * dt;
+      if (dt > 100) dt = 16; // cap after tab switch
 
       ctx.clearRect(0, 0, w, h);
 
       for (var i = 0; i < flakes.length; i++) {
         var fl = flakes[i];
 
-        // cos² light-catch: each flake has its own phase offset
-        var catch_ = Math.cos(lightAngle + fl.phase);
-        var brightness = catch_ * catch_; // cos² — 0 to 1
-        var alpha = fl.baseAlpha * (0.15 + 0.85 * brightness);
+        // Randomly trigger a flash
+        if (fl.flashTime < 0 && Math.random() < FLASH_CHANCE) {
+          fl.flashTime = 0;
+        }
+
+        // Calculate alpha
+        var alpha = fl.restAlpha;
+
+        if (fl.flashTime >= 0) {
+          fl.flashTime += dt;
+          var t = fl.flashTime;
+
+          if (t < FLASH_IN) {
+            // Ramp up — fast
+            var p = t / FLASH_IN;
+            alpha = fl.restAlpha + (fl.flashPeak - fl.restAlpha) * p * p;
+          } else if (t < FLASH_IN + FLASH_HOLD) {
+            // Hold at peak
+            alpha = fl.flashPeak;
+          } else if (t < FLASH_IN + FLASH_HOLD + FLASH_OUT) {
+            // Fade out — slower
+            var p = (t - FLASH_IN - FLASH_HOLD) / FLASH_OUT;
+            alpha = fl.flashPeak - (fl.flashPeak - fl.restAlpha) * p;
+          } else {
+            // Done
+            fl.flashTime = -1;
+            alpha = fl.restAlpha;
+          }
+        }
 
         ctx.save();
         ctx.translate(fl.x, fl.y);
-        ctx.rotate(fl.rotation); // fixed rotation — never changes
+        ctx.rotate(fl.rotation);
         ctx.globalAlpha = alpha;
         ctx.fillStyle = 'rgb(' + fl.r + ',' + fl.g + ',' + fl.b + ')';
         ctx.beginPath();
@@ -120,7 +148,6 @@
       }
     }
 
-    // Intersection observer: only animate when visible
     var observer = new IntersectionObserver(function (entries) {
       if (entries[0].isIntersecting) {
         if (!running) {
@@ -136,7 +163,6 @@
 
     observer.observe(section);
 
-    // Debounced resize
     var resizeTimer;
     window.addEventListener('resize', function () {
       clearTimeout(resizeTimer);
