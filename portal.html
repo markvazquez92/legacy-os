@@ -1,21 +1,26 @@
 <!DOCTYPE html>
-<html lang="en"><!-- Cache bust -->
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Legacy Continues — Heritage Preservation & Legacy Services</title>
-  <meta name="description" content="Professional heritage preservation, genealogy research, memorial plaques, and legacy preservation services.">
+  <title>The Legacy Vault — My Legacy Continues</title>
+  <meta name="description" content="A collection of heritage profiles and memorials preserved forever. The Legacy Vault.">
   <link rel="icon" href="logo.png" type="image/png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,700;0,800;1,400;1,600&family=DM+Serif+Display:ital@0;1&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
   <style>
-    body {
+    * {
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
       font-family: 'Jost', sans-serif;
       background: #f0ebe0;
+      color: #2C2C2C;
+      line-height: 1.6;
     }
 
     header {
@@ -24,6 +29,9 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
     }
 
     .logo {
@@ -31,85 +39,94 @@
       width: auto;
     }
 
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
+
     nav a {
       color: #f0ebe0;
       text-decoration: none;
-      margin: 0 1.5rem;
       font-size: 0.95rem;
+      transition: color 0.2s;
     }
 
     nav a:hover {
       color: #b8962e;
     }
 
-    .hero {
-      background: linear-gradient(135deg, #f0ebe0 0%, #f0ebe0 100%);
-      padding: 4rem 3rem;
+    .page-header {
+      background: #1a2744;
+      color: #f0ebe0;
+      padding: 6rem 3rem 4rem;
       text-align: center;
     }
 
-    .hero h1 {
+    .page-header h1 {
       font-family: 'DM Serif Display', Georgia, serif;
-      color: #1a2744;
-      font-size: 2.5rem;
-      margin: 0 0 1rem 0;
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      color: #b8962e;
     }
 
-    .hero p {
-      color: #2C2C2C;
+    .page-header p {
       font-size: 1.1rem;
+      color: rgba(245, 235, 224, 0.9);
       max-width: 600px;
-      margin: 0 auto 2rem;
-    }
-
-    .products-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-      padding: 4rem 3rem;
-      max-width: 1400px;
       margin: 0 auto;
     }
 
-    .product-card {
-      background: #f0ebe0;
+    .content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 4rem 3rem;
+    }
+
+    .vault-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2.5rem;
+      margin-top: 3rem;
+    }
+
+    .legacy-card {
+      background: white;
       border: 2px solid #b8962e;
-      border-radius: 4px;
-      padding: 2rem;
+      border-radius: 0;
+      padding: 2.5rem;
+      display: flex;
+      flex-direction: column;
       text-align: center;
       transition: all 0.3s ease;
     }
 
-    .product-card:hover {
-      border-color: #b8962e;
-      box-shadow: 0 12px 40px rgba(212, 160, 32, 0.15);
+    .legacy-card:hover {
+      box-shadow: 0 12px 40px rgba(184, 150, 46, 0.15);
       transform: translateY(-4px);
     }
 
-    .product-name {
+    .legacy-card h2 {
       font-family: 'DM Serif Display', Georgia, serif;
-      font-size: 1.4rem;
+      font-size: 1.6rem;
       color: #1a2744;
-      margin: 0 0 0.8rem 0;
-      font-weight: 700;
+      margin-bottom: 0.5rem;
     }
 
-    .product-desc {
-      color: #2C2C2C;
+    .legacy-card .location {
       font-size: 0.95rem;
-      line-height: 1.6;
-      margin: 0 0 1.5rem 0;
+      color: #888;
+      margin-bottom: 1.5rem;
     }
 
-    .product-price {
-      font-family: 'DM Serif Display', Georgia, serif;
-      font-size: 1.8rem;
-      color: #b8962e;
-      font-weight: 700;
-      margin: 0 0 1.5rem 0;
+    .legacy-card p {
+      font-size: 0.9rem;
+      color: #2C2C2C;
+      margin-bottom: 2rem;
+      flex-grow: 1;
     }
 
-    .product-btn {
+    .legacy-btn {
       background: #b8962e;
       color: #1a2744;
       padding: 0.8rem 2rem;
@@ -121,10 +138,11 @@
       text-decoration: none;
       display: inline-block;
       transition: all 0.3s ease;
+      font-size: 0.95rem;
     }
 
-    .product-btn:hover {
-      background: #b8962e;
+    .legacy-btn:hover {
+      background: #9d7f24;
     }
 
     footer {
@@ -132,6 +150,7 @@
       color: #f0ebe0;
       padding: 2rem 3rem;
       text-align: center;
+      margin-top: 4rem;
     }
 
     footer a {
@@ -161,13 +180,11 @@
       transition: all 0.3s;
     }
 
-    nav {
-      display: flex;
-      align-items: center;
-      gap: 2rem;
-    }
-
     @media (max-width: 768px) {
+      header {
+        padding: 1rem 1.5rem;
+      }
+
       nav {
         position: fixed;
         top: 68px;
@@ -190,7 +207,7 @@
         display: block;
         padding: 1rem 2rem;
         margin: 0;
-        border-bottom: 1px solid rgba(212,175,55,0.2);
+        border-bottom: 1px solid rgba(184, 150, 46, 0.2);
       }
 
       .nav-toggle {
@@ -208,6 +225,23 @@
 
       body {
         padding-top: 68px;
+      }
+
+      .page-header {
+        padding: 5rem 1.5rem 2.5rem;
+      }
+
+      .page-header h1 {
+        font-size: 2rem;
+      }
+
+      .content {
+        padding: 2rem 1.5rem;
+      }
+
+      .vault-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
       }
     }
   </style>
@@ -228,54 +262,48 @@
     </nav>
   </header>
 
-  <section class="hero">
-    <h1>My Legacy Continues</h1>
-    <p>Professional heritage preservation, genealogy research, memorial services, and legacy preservation for families and organizations throughout California.</p>
-    <p style="font-weight: 600; color: #b8962e; font-size: 1.1rem; margin-top: 1.5rem;">Zero Subscriptions. Hosted Forever.</p>
+  <section class="page-header">
+    <h1>The Legacy Vault</h1>
+    <p>A collection of heritage profiles and memorials preserved forever.</p>
   </section>
 
-  <section class="products-grid">
-    <div class="product-card">
-      <h2 class="product-name">Heritage Culture Book</h2>
-      <p class="product-desc">Professionally curated genealogy and heritage documentation with binding and archival preservation.</p>
-      <div class="product-price">$199</div>
-      <a href="heritage-book.html" class="product-btn">Learn More</a>
-    </div>
+  <section class="content">
+    <div class="vault-grid">
+      <div class="legacy-card">
+        <h2>Mark "Bear" Vazquez</h2>
+        <div class="location">Santa Maria, California</div>
+        <p>Heritage and family legacy preservation.</p>
+        <a href="vazquez-profile.html" class="legacy-btn">View Legacy →</a>
+      </div>
 
-    <div class="product-card">
-      <h2 class="product-name">Cemetery Plaque</h2>
-      <p class="product-desc">Custom memorial plaque for gravesites with engraving, installation, and perpetual care.</p>
-      <div class="product-price">$129</div>
-      <a href="cemetery-plaque.html" class="product-btn">Learn More</a>
-    </div>
+      <div class="legacy-card">
+        <h2>Bears Concrete Pumping</h2>
+        <div class="location">Santa Maria, California</div>
+        <p>Business legacy and founder story.</p>
+        <a href="bears-concrete-profile.html" class="legacy-btn">View Legacy →</a>
+      </div>
 
-    <div class="product-card">
-      <h2 class="product-name">Pet Legacy Tag</h2>
-      <p class="product-desc">Memorial tag for beloved pets with engraving. Choose single tag or combo pack.</p>
-      <div class="product-price">$24.99 / $49.99</div>
-      <a href="pet-tag.html" class="product-btn">Learn More</a>
-    </div>
+      <div class="legacy-card">
+        <h2>Butters</h2>
+        <div class="location">Santa Maria, California</div>
+        <p>Pet memorial and legacy profile.</p>
+        <a href="butters-profile.html" class="legacy-btn">View Legacy →</a>
+      </div>
 
-    <div class="product-card">
-      <h2 class="product-name">Business Profile</h2>
-      <p class="product-desc">Professional business legacy documentation and succession planning service.</p>
-      <div class="product-price">$79</div>
-      <a href="business-profile.html" class="product-btn">Learn More</a>
-    </div>
+      <div class="legacy-card">
+        <h2>McNeal Construction</h2>
+        <div class="location">Santa Maria, California</div>
+        <p>Trade business heritage and legacy.</p>
+        <a href="mcneal-construction-profile.html" class="legacy-btn">View Legacy →</a>
+      </div>
 
-    <div class="product-card">
-      <h2 class="product-name">Baby Legacy</h2>
-      <p class="product-desc">First year memory book and heritage documentation for newborns and children.</p>
-      <div class="product-price">$79</div>
-      <a href="baby-legacy.html" class="product-btn">Learn More</a>
+      <div class="legacy-card">
+        <h2>Raygoza Family</h2>
+        <div class="location">Santa Maria, California</div>
+        <p>Family memorial and heritage vault.</p>
+        <a href="raygoza-profile.html" class="legacy-btn">View Legacy →</a>
+      </div>
     </div>
-  </section>
-
-  <section style="background: #1a2744; color: #f0ede6; padding: 4rem 3rem; text-align: center;">
-    <h2 style="font-family: 'DM Serif Display', Georgia, serif; color: #b8962e; font-size: 2rem; margin-bottom: 1.5rem;">Why We Built This</h2>
-    <p style="max-width: 700px; margin: 0 auto 1rem; line-height: 1.8; font-size: 1rem;">
-      In Santa Maria, California, we see families working hard—concrete workers, ranchers, service workers—building their legacies with their hands. They deserve a simple, honest way to preserve what matters: stories, photos, memories. No subscriptions. No AI. No walls of text. Just one-time, forever-hosted digital memorials that work for generations.
-    </p>
   </section>
 
   <footer>
@@ -296,7 +324,6 @@
       navMenu.classList.toggle('open');
     });
 
-    // Close menu when a link is clicked
     navMenu.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
         navMenu.classList.remove('open');
