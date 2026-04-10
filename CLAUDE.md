@@ -1,17 +1,18 @@
 # MY LEGACY CONTINUES — MASTER SPEC
+
 ## Locked Pricing
 - Heritage Culture Book: $199
 - Cemetery Memorial Plaque: $129
-- Pet Tag Basic: $24.99 / Premium: $49.99
+- Pet Tag: $24.99 Basic / $49.99 Premium
 - Business Founder Profile: $79
-- Contractor Legacy Bundle: $129 (profile + 100 QR cards)
+- Contractor Legacy Bundle: $129
 - Baby Legacy Starter: $79
 
-## Dead — Never Bring Back
+## DEAD — Never Bring Back
 - $650 Contractor Bundle — DEAD
-- Rescue donation percentage language — REMOVED pending agreement
-- portal.html links — page not built yet, remove from all nav
-- active-transports.html links — unverified, remove from nav until confirmed
+- Any specific donation percentage language — REMOVED
+- portal.html nav links — not built yet
+- active-transports.html — unverified, keep out of nav
 
 ## Contact
 - Email: contact@mylegacycontinues.com
@@ -21,23 +22,30 @@
 - Background: #FAF3E6 cream
 - Teal: #1A5C55
 - Gold: #E8C97A
-- Fonts: Oswald (headlines), Outfit (body), Cormorant Garamond italic (emotional)
+- Fonts: Oswald headlines, Outfit body, Cormorant Garamond italic
 - No emojis. Rectangular buttons. No pill buttons.
-- Logo: logo.png — gold ship
+- Logo: logo.png gold ship
 
-## Live Profile Pages
+## Live Pages
 - vazquez-profile.html
 - bears-concrete-profile.html
 - butters-profile.html
 - mcneal-construction-profile.html
 - carlos-macias-profile.html
-- deborah-mahoney-profile.html (NOT debbie-garcia)
 - baby-legacy.html
+- heritage-book.html
+- cemetery-plaque.html
+- pet-tag.html
+- business-profile.html
+- contractor-bundle.html
+- about.html
+- contact.html
 
 ## Still Needed
 - Photo Research Add-On $150 on heritage-book.html
 - Alzheimer Memory Book (Coming Soon)
-- Raygoza memorial pages — confirm live
+- Deborah Mahoney profile confirmed
+- Raygoza memorial pages confirmed
 - Shoshi profile page
-- Rescue registry — confirm live
-- EN/ES toggle — currently cosmetic only
+- EN/ES toggle functional
+- Founder photo on homepage
