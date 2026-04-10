@@ -4,6 +4,7 @@
    They live inside the background color and only flash when
    light catches them — like real metalflake in a candy base coat.
    Flat metal chips. Cos² light catch. Micro-rotation only.
+   Subtle. Deep. Premium. You barely notice until light hits.
    ════════════════════════════════════════════════════════════════ */
 
 (function () {
@@ -39,13 +40,13 @@
   function createFlake(cx, cy, isShowcase) {
     var rx, ry, baseOpacity;
     if (isShowcase) {
-      rx = rand(2.5, 6.5);
-      ry = rand(0.15, 0.9);
-      baseOpacity = rand(0.22, 0.82);
+      rx = rand(1.2, 3.0);
+      ry = rand(0.08, 0.4);
+      baseOpacity = rand(0.10, 0.45);
     } else {
-      rx = rand(1.8, 4.5);
-      ry = rand(0.08, 0.5);
-      baseOpacity = rand(0.12, 0.55);
+      rx = rand(0.6, 2.2);
+      ry = rand(0.04, 0.22);
+      baseOpacity = rand(0.06, 0.35);
     }
     return {
       x: cx,
@@ -60,8 +61,8 @@
 
   function generateFlakes(w, h) {
     var flakes = [];
-    var clusterCount = Math.floor((w * h) / 2000);
-    var showcaseCount = Math.floor((w * h) / 5000);
+    var clusterCount = Math.floor((w * h) / 5000);
+    var showcaseCount = Math.floor((w * h) / 12000);
     var i, j, clusterSize, cx, cy, fx, fy;
 
     // Clustered flakes
