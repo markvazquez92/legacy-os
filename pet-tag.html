@@ -185,6 +185,10 @@
     </div>
     <div class="section-inner">
       <div class="form-container">
+        <div style="text-align: center; margin-bottom: 24px;">
+          <button id="showOrderForm" class="btn btn-gold" onclick="document.getElementById('orderFormWrap').style.display='block';this.style.display='none';" style="margin-bottom:16px">Start Now</button>
+        </div>
+        <div id="orderFormWrap" style="display:none;">
         <form action="https://formspree.io/f/xzzpqjle" method="POST">
           <input type="hidden" name="_subject" value="Pet Tag Order">
           <input type="hidden" name="_next" value="https://mylegacycontinues.com/thank-you.html">
@@ -243,6 +247,7 @@
           </div>
           <button type="submit" class="btn btn-gold" style="width: 100%; margin-top: 1rem;">Create Profile &amp; Order Tag</button>
         </form>
+        </div>
       </div>
     </div>
   </section>
