@@ -1,0 +1,115 @@
+[33mcd73570[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m Lock final design: 64 Impala colors (cream/teal/sunset/gold), Oswald/Outfit fonts, transparent ship logo, metalflake, product mockup images, hero split layout. Ready for marketing push.
+[33m6b5131d[m Lock final design: 64 Impala colors, Oswald/Outfit fonts, ship logo, metalflake, product images, hero split layout. Ready for marketing push.
+[33mba5d2bd[m Nav standardized across all 29 pages — absolute URLs, 8 links, START YOUR LEGACY CTA
+[33m8047feb[m Phase 3 — metalflake dialed back, hero cleaned, nav standardized, bundle links fixed, McNeal updated, photo add-on added
+[33m47ca066[m Phase 2 — candy paint metalflake, logo text removed, hero cleanup, colors corrected
+[33m6234081[m Full homepage rebrand: Lowrider Candy Paint aesthetic
+[33m7893a69[m Update index.html
+[33mb300fbd[m Update McNeal Construction years from 22 to 5
+[33meded7c1[m Site-wide update: colors, emails, content, new sections, CLAUDE.md master spec
+[33m8565db0[m endgame
+[33m6aba604[m mains
+[33mf5d7b02[m okkk
+[33md031696[m Alzheimer Memory Book (coming soon), baby-legacy detail, photo research verified
+[33m0e521b3[m Nav logo — increase to 56px, remove stale TODO comment
+[33mf830db5[m done
+[33mf452ad6[m Update index.html
+[33m24dec45[m dates
+[33m423ec88[m lastlast
+[33md31431f[m Product visuals + color/font palette update across all pages
+[33me3cb908[m rrrr
+[33m75f90e8[m up
+[33md8d8102[m Design system update — deep forest green candy #1a3d2e, candy gold #d4af37, Cinzel/Libre Franklin fonts, gold+copper metalflake
+[33m48836ad[m Homepage + design system — candy paint palette, split hero, product grid, testimonials, waitlist, footer
+[33m2deee02[m Full site build — rescue portal updates, pet tag form, transport network, testimonials, Giants section, bundles, donation strategy, community hub teaser
+[33m8b03746[m Add rescue registry updates and homepage pet tag messaging
+[33m435e637[m mom3
+[33m6e7a9d3[m Remove stale debbie-garcia-profile.html files
+[33m8470dce[m Remove style.css links from product and profile pages
+[33mad21ce7[m Fix index.html rendering — remove conflicting style.css link
+[33mf07c83b[m Update index.html
+[33mf6da2c7[m Full site sweep: portal, rescue registry, image fixes, mobile nav, form fix
+[33mc29f527[m Complete site sweep: Add rescue-registry.html, mobile nav to about-us and contact
+[33mefa24b4[m comp
+[33mda7941d[m Apply locked design spec to all HTML and CSS files
+[33m9c3677a[m refresh
+[33m02ca384[m Apply locked design spec and create Legacy Vault portal
+[33m559236e[m hopeful
+[33m9d5d570[m Add contact email link to footer
+[33mfbdaf0f[m Update index.html
+[33mb4576c3[m Cache bust
+[33md4a056e[m l
+[33m3bc9250[m Final polish: Colors, messaging, mobile nav, Debbie Mahoney profile
+[33mefa13d9[m Update index.html
+[33m96163c9[m Update index.html
+[33mc8ad61e[m wed
+[33m161b1b5[m finn
+[33m2e4cb1a[m Final system integrity lock-in: fix Baby Legacy price, add Terms of Service, rebuild Pet Tag, update footer links
+[33mdba475e[m yay
+[33m2b90726[m Add About Us and Contact pages, update navigation
+[33mf1a37a7[m Move product pages to root and fix homepage links
+[33m7e97cdf[m LOCKED: Clean homepage with 5 products, correct prices, NO emojis
+[33m1cb7396[m Update index.html
+[33m278aaa3[m 🔧 CRITICAL FIX: Correct product prices & products on homepage
+[33m338dd41[m lastfinals
+[33m5954bfd[m 🗂️ FINAL ORGANIZATION: Folder structure + SPEC.md locked in
+[33m96c53d8[m Update profile links and add Raygoza memorials to homepage
+[33md0090fc[m Fix profile pages and footer: extract base64 images from bears-concrete-profile, fix formspree ID, update product count to 4
+[33m163ea58[m Fix pricing: remove 50 Contractor Bundle from index, update Heritage Book dropdown to 99
+[33m057367e[m Update index.html
+[33m20eb9fa[m Sync: merge remote + push brand-updated local files
+[33mce5e5f0[m WIP: save local changes before pull
+[33mc556a3f[m Brand: forest green + IM Fell English — index.html
+[33mb711d6e[m Update index.html
+[33m99156af[m Update index.html
+[33m3d32f40[m Wire Business Profile $79 Stripe link on index.html
+[33mac20ca4[m Wire Stripe buy links on index.html — 5 products wired direct to checkout
+[33m7e54610[m Update index.html
+[33m187a400[m Update index.html and rescue-registry.html — brand refresh
+[33m7b1c100[m Remove duplicate stats bar from about section
+[33mac64ef6[m Full rebrand + 4 product pages + rescue partner signup
+[33mda18db5[m Rebuild index.html — new brand, products, Stripe links
+[33m803174c[m Update index.html
+[33m678eed8[m Update index.html
+[33mc53cab1[m Update index.html
+[33m47c658d[m Update index.html
+[33m9d326ae[m Update index.html
+[33m064726f[m Update index.html
+[33mf5f0123[m Update index.html
+[33m89c15e0[m Update index.html
+[33mf1f70cd[m Update index.html
+[33m316b9b6[m Add files via upload
+[33md11d539[m Delete index.html
+[33m117d29d[m Add files via upload
+[33mb10c732[m Delete index.html
+[33m920ddea[m Add files via upload
+[33mc066f15[m Delete index.html
+[33m5f1e625[m Add files via upload
+[33me38f30b[m Delete index.html
+[33m76b8789[m Add files via upload
+[33m1a98187[m Add files via upload
+[33m7ceba2b[m Update index.html
+[33m38c325b[m Update index.html
+[33md3d26f2[m Update index.html
+[33m941a864[m Update index.html
+[33m6768768[m Update index.html
+[33m3f983ac[m Update index.html
+[33m26b4c24[m Update index.html
+[33m7515c04[m Update index.html
+[33mecabfca[m Update index.html
+[33m9f21403[m Update index.html
+[33mf3581b5[m Update index.html
+[33m2c11e86[m Update index.html
+[33mb050960[m Update index.html
+[33m0a26f52[m Update index.html
+[33ma9b0996[m Update index.html
+[33m42b1471[m Update index.html
+[33m8775715[m Update index.html
+[33ma1d80fc[m Update index.html
+[33md439419[m Update index.html
+[33me3afe85[m Update index.html
+[33m8c39847[m Update index.html
+[33m06615a3[m Update index.html
+[33mb7e0d48[m Update index.html
+[33mcd7ccee[m Update index.html
+[33m1381d2a[m Add files via upload
