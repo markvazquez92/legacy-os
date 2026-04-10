@@ -1,0 +1,60 @@
+<svg width="100%" viewBox="0 0 360 200" xmlns="http://www.w3.org/2000/svg" role="img">
+  <title>Business Founder Profile</title>
+  <desc>QR business card mockup with name, title, and profile link</desc>
+  
+  <!-- Card background -->
+  <rect x="20" y="30" width="320" height="140" fill="#FAF3E6" stroke="#E8C97A" stroke-width="2" rx="3"/>
+  
+  <!-- Left stripe (teal accent) -->
+  <rect x="20" y="30" width="4" height="140" fill="#1A5C55"/>
+  
+  <!-- Gold accent bar -->
+  <rect x="20" y="155" width="320" height="2" fill="#E8C97A"/>
+  
+  <!-- QR Code area (left side) -->
+  <rect x="40" y="50" width="70" height="70" fill="#FFFFFF" stroke="#E8C97A" stroke-width="1.5"/>
+  
+  <!-- QR pattern -->
+  <rect x="47" y="57" width="7" height="7" fill="#1C1C1C"/>
+  <rect x="62" y="57" width="7" height="7" fill="#1C1C1C"/>
+  <rect x="97" y="57" width="7" height="7" fill="#1C1C1C"/>
+  <rect x="47" y="107" width="7" height="7" fill="#1C1C1C"/>
+  <rect x="97" y="107" width="7" height="7" fill="#1C1C1C"/>
+  <circle cx="75" cy="80" r="4" fill="#1A5C55" opacity="0.4"/>
+  <circle cx="85" cy="95" r="2.5" fill="#C8420A" opacity="0.3"/>
+  
+  <!-- QR label -->
+  <text x="75" y="130" text-anchor="middle" font-size="8" fill="#666666" font-family="Outfit, sans-serif">
+    Profile
+  </text>
+  
+  <!-- Name/Business title (right side) -->
+  <text x="135" y="60" font-size="14" fill="#1C1C1C" font-family="Oswald, sans-serif" font-weight="600">
+    [Business Name]
+  </text>
+  
+  <!-- Personal name -->
+  <text x="135" y="80" font-size="12" fill="#1A5C55" font-family="Cormorant Garamond, serif" font-weight="600">
+    [Owner / Founder Name]
+  </text>
+  
+  <!-- Title -->
+  <text x="135" y="98" font-size="10" fill="#666666" font-family="Outfit, sans-serif">
+    Founder & Legacy Builder
+  </text>
+  
+  <!-- Contact info -->
+  <text x="135" y="115" font-size="9" fill="#999999" font-family="Outfit, sans-serif">
+    [Phone] · [Email]
+  </text>
+  
+  <!-- Website/Location -->
+  <text x="135" y="130" font-size="9" fill="#1A5C55" font-family="Outfit, sans-serif" font-weight="500">
+    mylegacycontinues.com
+  </text>
+  
+  <!-- Metalflake accent -->
+  <circle cx="320" cy="60" r="1.2" fill="#E8C97A" opacity="0.5"/>
+  <circle cx="340" cy="90" r="0.9" fill="#E8C97A" opacity="0.4"/>
+  <circle cx="310" cy="105" r="1" fill="#E8C97A" opacity="0.45"/>
+</svg>
