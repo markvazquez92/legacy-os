@@ -13,35 +13,35 @@
 <style>
 
 :root {
-  --navy:         #1A6B5C;
-  --navy-deep:    #145049;
-  --gold:         #D4A017;
-  --gold-light:   #D4A017;
+  --navy:         #1A5C55;
+  --navy-deep:    #0F3D38;
+  --gold:         #E8C97A;
+  --gold-light:   #E8C97A;
   --coral:        #C8420A;
   --cream:        #FAF3E6;
-  --charcoal:     #050d18;
-  --charcoal2:    #050d18;
-  --gold-bright:  #D4A017;
-  --gold-dim:     rgba(212,160,23,0.4);
-  --gold-wash:    rgba(212,160,23,0.08);
-  --gold-border:  rgba(212,160,23,0.25);
-  --heading:      #050d18;
-  --body:         #050d18;
+  --charcoal:     #1C1C1C;
+  --charcoal2:    #1C1C1C;
+  --gold-bright:  #E8C97A;
+  --gold-dim:     rgba(232,201,122,0.4);
+  --gold-wash:    rgba(232,201,122,0.08);
+  --gold-border:  rgba(232,201,122,0.25);
+  --heading:      #1C1C1C;
+  --body:         #1C1C1C;
   --muted:        rgba(28,28,28,0.65);
-  --card-bg:      rgba(212,160,23,0.08);
+  --card-bg:      rgba(232,201,122,0.08);
   --nav-bg:       #FAF3E6;
   --bg:           #FAF3E6;
-  --bg-card:      rgba(212,160,23,0.08);
+  --bg-card:      rgba(232,201,122,0.08);
   --bg-warm:      #FAF3E6;
   --bg-nav:       #FAF3E6;
-  --forest:       #1A6B5C;
-  --forest-dark:  #145049;
+  --forest:       #1A5C55;
+  --forest-dark:  #0F3D38;
   --im-fell:      'Oswald', sans-serif;
   --cinzel:       'Oswald', sans-serif;
   --serif:        'Oswald', sans-serif;
   --sans:         'Outfit', sans-serif;
   --lora:         'Outfit', sans-serif;
-  --text:         #050d18;
+  --text:         #1C1C1C;
   --text-muted:   rgba(28,28,28,0.65);
   --text-dim:     rgba(28,28,28,0.5);
 }
@@ -53,20 +53,20 @@ a { color: inherit; text-decoration: none; }
 img { max-width: 100%; height: auto; display: block; }
 
 .btn { display: inline-block; font-family: var(–cinzel); font-size: 0.72rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; padding: 16px 34px; min-height: 44px; border: none; cursor: pointer; transition: all 0.22s ease; text-decoration: none; white-space: nowrap; border-radius: 2px; }
-.btn-primary { background: #D4A017; color: #FAF3E6; box-shadow: 0 4px 20px rgba(212,160,23,0.2); }
-.btn-primary:hover { background: #D4A017; transform: translateY(-2px); }
-.btn-outline { background: transparent; color: #1A6B5C; border: 1.5px solid #1A6B5C; }
-.btn-outline:hover { background: #1A6B5C; color: #D4A017; }
+.btn-primary { background: #E8C97A; color: #FAF3E6; box-shadow: 0 4px 20px rgba(212,160,23,0.2); }
+.btn-primary:hover { background: #E8C97A; transform: translateY(-2px); }
+.btn-outline { background: transparent; color: #1A5C55; border: 1.5px solid #1A5C55; }
+.btn-outline:hover { background: #1A5C55; color: #E8C97A; }
 
-.page-hero { background: #1A6B5C; padding: 130px 48px 72px; }
+.page-hero { background: #1A5C55; padding: 130px 48px 72px; }
 .page-hero-inner { max-width: 860px; margin: 0 auto; }
 .back-link { font-family: var(–cinzel); font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(212,160,23,0.8); display: inline-flex; align-items: center; gap: 8px; margin-bottom: 28px; transition: color 0.2s; }
-.back-link:hover { color: #D4A017; }
+.back-link:hover { color: #E8C97A; }
 .back-link::before { content: ‘←’; font-size: 0.9rem; }
-.page-eyebrow { font-family: var(–cinzel); font-size: 0.56rem; letter-spacing: 0.32em; text-transform: uppercase; color: #D4A017; display: block; margin-bottom: 18px; }
+.page-eyebrow { font-family: var(–cinzel); font-size: 0.56rem; letter-spacing: 0.32em; text-transform: uppercase; color: #E8C97A; display: block; margin-bottom: 18px; }
 .page-title { font-family: var(–cinzel); font-size: clamp(2rem, 4.5vw, 3.2rem); font-weight: 700; color: #FAF3E6; line-height: 1.1; margin-bottom: 18px; }
 .page-sub { font-size: 1rem; color: rgba(240,235,224,0.8); line-height: 1.85; max-width: 600px; margin-bottom: 28px; }
-.price-badge { display: inline-block; font-family: var(–cinzel); font-size: 2.2rem; font-weight: 700; color: #D4A017; margin-bottom: 28px; }
+.price-badge { display: inline-block; font-family: var(–cinzel); font-size: 2.2rem; font-weight: 700; color: #E8C97A; margin-bottom: 28px; }
 .price-note { font-size: 0.8rem; color: rgba(240,235,224,0.6); margin-top: -20px; margin-bottom: 28px; }
 @media (max-width: 600px) { .page-hero { padding: 116px 20px 56px; } }
 
@@ -74,40 +74,40 @@ img { max-width: 100%; height: auto; display: block; }
 
 .what-section { padding: 72px 48px; background: #FAF3E6; }
 .what-inner { max-width: 860px; margin: 0 auto; }
-.what-section h2 { font-family: var(–cinzel); font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 700; color: #1A6B5C; margin-bottom: 32px; }
+.what-section h2 { font-family: var(–cinzel); font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 700; color: #1A5C55; margin-bottom: 32px; }
 .includes-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin-bottom: 40px; }
 .include-item { background: rgba(212,160,23,0.08); border: 1px solid rgba(212,160,23,0.2); border-radius: 4px; padding: 22px 20px; box-shadow: 0 2px 12px rgba(212,160,23,0.05); }
 .include-item-icon { font-size: 1.4rem; margin-bottom: 10px; }
-.include-item-title { font-family: var(–cinzel); font-size: 0.72rem; font-weight: 700; color: #1A6B5C; margin-bottom: 6px; }
-.include-item-desc { font-size: 0.8rem; color: #050d18; line-height: 1.7; }
+.include-item-title { font-family: var(–cinzel); font-size: 0.72rem; font-weight: 700; color: #1A5C55; margin-bottom: 6px; }
+.include-item-desc { font-size: 0.8rem; color: #1C1C1C; line-height: 1.7; }
 
 /* CASE STUDY BLOCK */
 .case-study { background: #FAF3E6; border: 1px solid rgba(212,160,23,0.2); border-radius: 4px; padding: 36px 40px; margin-bottom: 48px; }
-.case-study-eyebrow { font-family: var(–cinzel); font-size: 0.54rem; letter-spacing: 0.28em; text-transform: uppercase; color: #D4A017; display: block; margin-bottom: 14px; }
-.case-study h3 { font-family: var(–cinzel); font-size: 1.1rem; font-weight: 700; color: #1A6B5C; margin-bottom: 14px; }
-.case-study p { font-size: 0.88rem; color: #050d18; line-height: 1.9; margin-bottom: 12px; }
+.case-study-eyebrow { font-family: var(–cinzel); font-size: 0.54rem; letter-spacing: 0.28em; text-transform: uppercase; color: #E8C97A; display: block; margin-bottom: 14px; }
+.case-study h3 { font-family: var(–cinzel); font-size: 1.1rem; font-weight: 700; color: #1A5C55; margin-bottom: 14px; }
+.case-study p { font-size: 0.88rem; color: #1C1C1C; line-height: 1.9; margin-bottom: 12px; }
 .case-study p:last-child { margin-bottom: 0; }
 @media (max-width: 600px) { .what-section { padding: 52px 20px; } .case-study { padding: 28px 24px; } }
 
 .order-section { padding: 0 48px 80px; background: #FAF3E6; }
 .order-inner { max-width: 860px; margin: 0 auto; }
 .stripe-cta { text-align: center; background: rgba(212,160,23,0.08); border: 1px solid rgba(212,160,23,0.2); border-radius: 4px; padding: 28px 32px; margin-bottom: 32px; box-shadow: 0 2px 12px rgba(212,160,23,0.05); }
-.stripe-cta p { font-size: 0.88rem; color: #050d18; margin-bottom: 18px; line-height: 1.7; }
-.stripe-cta .price-label { font-family: var(–cinzel); font-size: 1.6rem; font-weight: 700; color: #1A6B5C; display: block; margin-bottom: 18px; }
-.form-section-title { font-family: var(–cinzel); font-size: 0.6rem; letter-spacing: 0.24em; text-transform: uppercase; color: #D4A017; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 1px solid rgba(212,160,23,0.25); }
+.stripe-cta p { font-size: 0.88rem; color: #1C1C1C; margin-bottom: 18px; line-height: 1.7; }
+.stripe-cta .price-label { font-family: var(–cinzel); font-size: 1.6rem; font-weight: 700; color: #1A5C55; display: block; margin-bottom: 18px; }
+.form-section-title { font-family: var(–cinzel); font-size: 0.6rem; letter-spacing: 0.24em; text-transform: uppercase; color: #E8C97A; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 1px solid rgba(212,160,23,0.25); }
 .intake-form { display: flex; flex-direction: column; gap: 18px; }
 .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
 @media (max-width: 600px) { .form-row { grid-template-columns: 1fr; } .order-section { padding: 0 20px 64px; } }
 .form-group { display: flex; flex-direction: column; gap: 8px; }
-.form-group label { font-family: var(–cinzel); font-size: 0.58rem; letter-spacing: 0.2em; text-transform: uppercase; color: #050d18; }
+.form-group label { font-family: var(–cinzel); font-size: 0.58rem; letter-spacing: 0.2em; text-transform: uppercase; color: #1C1C1C; }
 .form-group input,
 .form-group textarea,
-.form-group select { background: #FAF3E6; border: 1px solid rgba(212,160,23,0.2); border-radius: 2px; color: #050d18; font-family: var(–lora); font-size: 0.9rem; padding: 13px 16px; min-height: 44px; transition: border-color 0.2s; width: 100%; }
+.form-group select { background: #FAF3E6; border: 1px solid rgba(212,160,23,0.2); border-radius: 2px; color: #1C1C1C; font-family: var(–lora); font-size: 0.9rem; padding: 13px 16px; min-height: 44px; transition: border-color 0.2s; width: 100%; }
 .form-group input:focus,
 .form-group textarea:focus,
-.form-group select:focus { outline: none; border-color: #D4A017; box-shadow: 0 0 0 3px rgba(212,160,23,0.1); }
+.form-group select:focus { outline: none; border-color: #E8C97A; box-shadow: 0 0 0 3px rgba(212,160,23,0.1); }
 .form-group input::placeholder,
-.form-group textarea::placeholder { color: #050d18; }
+.form-group textarea::placeholder { color: #1C1C1C; }
 .form-group textarea { min-height: 110px; resize: vertical; }
 .form-group select { appearance: none; background-image: url(“data:image/svg+xml,%3Csvg xmlns=’http://www.w3.org/2000/svg’ width=’12’ height=’8’ viewBox=’0 0 12 8’%3E%3Cpath d=’M1 1l5 5 5-5’ stroke=’%23D4A020’ stroke-width=’1.5’ fill=’none’ stroke-linecap=’round’/%3E%3C/svg%3E”); background-repeat: no-repeat; background-position: right 16px center; padding-right: 40px; }
 .form-divider { height: 1px; background: rgba(212,160,23,0.25); margin: 8px 0; }
@@ -128,6 +128,8 @@ img { max-width: 100%; height: auto; display: block; }
       <li><a href="heritage-book.html">Heritage</a></li>
       <li><a href="pet-tag.html">Pet Tags</a></li>
       <li><a href="business-profile.html">Business</a></li>
+      <li><a href="rescue-registry.html">Rescue Registry</a></li>
+      <li><a href="active-transports.html">Transport</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
@@ -219,11 +221,11 @@ img { max-width: 100%; height: auto; display: block; }
 <!-- PHOTO RESEARCH ADD-ON -->
 <section style="padding: 72px 48px; background: #FAF3E6;">
   <div style="max-width: 860px; margin: 0 auto;">
-    <h2 style="font-family:var(--cinzel);font-size:clamp(1.4rem,3vw,2rem);font-weight:700;color:#1A6B5C;margin-bottom:8px;">Enhance Your Book</h2>
-    <h3 style="font-family:var(--cinzel);font-size:1.3rem;font-weight:700;color:#D4A017;margin-bottom:16px;">Photo Research Add-On — $150</h3>
+    <h2 style="font-family:var(--cinzel);font-size:clamp(1.4rem,3vw,2rem);font-weight:700;color:#1A5C55;margin-bottom:8px;">Enhance Your Book</h2>
+    <h3 style="font-family:var(--cinzel);font-size:1.3rem;font-weight:700;color:#E8C97A;margin-bottom:16px;">Photo Research Add-On — $150</h3>
     <p style="font-size:0.95rem;color:var(--body);line-height:1.85;max-width:700px;margin-bottom:16px;">Can't find family photos? We search for them.</p>
     <p style="font-size:0.95rem;color:var(--body);line-height:1.85;max-width:700px;margin-bottom:24px;">We dig through historical archives, regional newspapers, church photo collections, immigration records with attached photographs, and public domain collections to find images connected to your family's time, place, and story.</p>
-    <h4 style="font-family:var(--cinzel);font-size:0.85rem;font-weight:700;color:#1A6B5C;margin-bottom:12px;letter-spacing:0.1em;text-transform:uppercase;">What We Search</h4>
+    <h4 style="font-family:var(--cinzel);font-size:0.85rem;font-weight:700;color:#1A5C55;margin-bottom:12px;letter-spacing:0.1em;text-transform:uppercase;">What We Search</h4>
     <ul style="list-style:none;margin-bottom:28px;max-width:700px;">
       <li style="padding:0.5rem 0;border-bottom:1px solid rgba(212,160,23,0.2);font-size:0.9rem;color:var(--body);">FamilySearch photo collections (border crossing cards 1903-1957 include actual photographs)</li>
       <li style="padding:0.5rem 0;border-bottom:1px solid rgba(212,160,23,0.2);font-size:0.9rem;color:var(--body);">California digital newspaper archives</li>
@@ -232,7 +234,7 @@ img { max-width: 100%; height: auto; display: block; }
       <li style="padding:0.5rem 0;font-size:0.9rem;color:var(--body);">PARES archive (Spain — 40.8 million images)</li>
     </ul>
     <p style="font-size:0.95rem;color:var(--body);line-height:1.85;max-width:700px;margin-bottom:24px;"><strong>What you get:</strong> Every image we find that connects to your family's story, delivered with your book. Full sourcing and usage rights documentation included.</p>
-    <a href="https://buy.stripe.com/bJe14o2a35pO6csg16fQI02" class="btn btn-primary" style="margin-bottom:24px;">Add Photo Research — $150</a>
+    <a href="contact.html" class="btn btn-primary" style="margin-bottom:24px;">Add Photo Research — $150</a>
     <p style="font-size:0.85rem;color:var(--muted);line-height:1.7;max-width:700px;margin-top:16px;font-style:italic;">Note: Most families are surprised what exists. Pre-1890 photos are rare for working-class families — we'll tell you honestly what's findable before you add this on.</p>
   </div>
 </section>
@@ -242,7 +244,7 @@ img { max-width: 100%; height: auto; display: block; }
 <!-- CULTURE GUIDE -->
 <section style="padding: 72px 48px; background: rgba(26,107,92,0.05);">
   <div style="max-width: 860px; margin: 0 auto;">
-    <h2 style="font-family:var(--cinzel);font-size:clamp(1.4rem,3vw,2rem);font-weight:700;color:#1A6B5C;margin-bottom:16px;">The Culture Guide — Know Where You Come From</h2>
+    <h2 style="font-family:var(--cinzel);font-size:clamp(1.4rem,3vw,2rem);font-weight:700;color:#1A5C55;margin-bottom:16px;">The Culture Guide — Know Where You Come From</h2>
     <p style="font-size:0.95rem;color:var(--body);line-height:1.85;max-width:700px;margin-bottom:28px;">Every Heritage Book includes a curated guide to the cultures your family lived. Music to listen to. Books to read. Food to cook. Traditions to understand. Specific to YOUR family's regions — not a generic Wikipedia summary. A map back to your roots.</p>
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;">
       <div class="include-item">
@@ -266,7 +268,7 @@ img { max-width: 100%; height: auto; display: block; }
 <!-- FAMILY ECOSYSTEM -->
 <section style="padding: 72px 48px; background: #FAF3E6;">
   <div style="max-width: 860px; margin: 0 auto;">
-    <h2 style="font-family:var(--cinzel);font-size:clamp(1.4rem,3vw,2rem);font-weight:700;color:#1A6B5C;margin-bottom:16px;">Your Family Ecosystem — Everything Connected</h2>
+    <h2 style="font-family:var(--cinzel);font-size:clamp(1.4rem,3vw,2rem);font-weight:700;color:#1A5C55;margin-bottom:16px;">Your Family Ecosystem — Everything Connected</h2>
     <p style="font-size:0.95rem;color:var(--body);line-height:1.85;max-width:700px;margin-bottom:16px;">Your Heritage Book comes with a permanent digital profile. From there, link your family members — memorial pages for those who passed, pet profiles, business founder profiles, even rescue dogs. One family. One permanent home. Everyone connected.</p>
     <p style="font-size:0.95rem;color:var(--muted);line-height:1.85;max-width:700px;font-style:italic;">Coming Soon: Family Tree view — see every linked profile in one place. Your family's own private network.</p>
   </div>
@@ -275,20 +277,20 @@ img { max-width: 100%; height: auto; display: block; }
 <div class="gold-rule"></div>
 
 <!-- WHAT MAKES US DIFFERENT -->
-<section style="padding: 72px 48px; background: #1A6B5C;">
+<section style="padding: 72px 48px; background: #1A5C55;">
   <div style="max-width: 860px; margin: 0 auto;">
-    <h2 style="font-family:var(--cinzel);font-size:clamp(1.4rem,3vw,2rem);font-weight:700;color:#D4A017;margin-bottom:28px;">What Makes Us Different</h2>
+    <h2 style="font-family:var(--cinzel);font-size:clamp(1.4rem,3vw,2rem);font-weight:700;color:#E8C97A;margin-bottom:28px;">What Makes Us Different</h2>
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;">
       <div style="background:rgba(212,160,23,0.08);border:1px solid rgba(212,160,23,0.25);border-radius:4px;padding:22px 20px;">
-        <div style="font-family:var(--cinzel);font-size:0.95rem;font-weight:700;color:#D4A017;margin-bottom:8px;">We Write Your Story — Not a Chart</div>
+        <div style="font-family:var(--cinzel);font-size:0.95rem;font-weight:700;color:#E8C97A;margin-bottom:8px;">We Write Your Story — Not a Chart</div>
         <div style="font-size:0.88rem;color:rgba(250,243,230,0.8);line-height:1.7;">Competitors give you a PDF of names and dates. We write a real narrative your family will actually read.</div>
       </div>
       <div style="background:rgba(212,160,23,0.08);border:1px solid rgba(212,160,23,0.25);border-radius:4px;padding:22px 20px;">
-        <div style="font-family:var(--cinzel);font-size:0.95rem;font-weight:700;color:#D4A017;margin-bottom:8px;">Culture Guide Included</div>
+        <div style="font-family:var(--cinzel);font-size:0.95rem;font-weight:700;color:#E8C97A;margin-bottom:8px;">Culture Guide Included</div>
         <div style="font-size:0.88rem;color:rgba(250,243,230,0.8);line-height:1.7;">Nobody else tells you the music, food, and traditions of where your family came from.</div>
       </div>
       <div style="background:rgba(212,160,23,0.08);border:1px solid rgba(212,160,23,0.25);border-radius:4px;padding:22px 20px;">
-        <div style="font-family:var(--cinzel);font-size:0.95rem;font-weight:700;color:#D4A017;margin-bottom:8px;">Everything Stays Connected</div>
+        <div style="font-family:var(--cinzel);font-size:0.95rem;font-weight:700;color:#E8C97A;margin-bottom:8px;">Everything Stays Connected</div>
         <div style="font-size:0.88rem;color:rgba(250,243,230,0.8);line-height:1.7;">Your book links to your family's digital profiles. Memorial pages. Pet tags. Business profiles. One ecosystem.</div>
       </div>
     </div>
@@ -298,9 +300,9 @@ img { max-width: 100%; height: auto; display: block; }
 <div class="gold-rule"></div>
 
 <!-- ALZHEIMER & DEMENTIA MEMORY BOOK — COMING SOON -->
-<section style="padding: 72px 48px; background: #1A6B5C;" id="memory-book">
+<section style="padding: 72px 48px; background: #1A5C55;" id="memory-book">
   <div style="max-width: 860px; margin: 0 auto;">
-    <h2 style="font-family:var(--cinzel);font-size:clamp(1.4rem,3vw,2rem);font-weight:700;color:#D4A017;margin-bottom:16px;">Alzheimer & Dementia Memory Book — Coming Soon</h2>
+    <h2 style="font-family:var(--cinzel);font-size:clamp(1.4rem,3vw,2rem);font-weight:700;color:#E8C97A;margin-bottom:16px;">Alzheimer & Dementia Memory Book — Coming Soon</h2>
     <p style="font-size:0.95rem;color:rgba(250,243,230,0.9);line-height:1.85;max-width:700px;margin-bottom:16px;">Before the memories fade — we capture them permanently. Stories, recipes, voices, traditions. Written while they can still tell it.</p>
     <p style="font-size:0.95rem;color:rgba(250,243,230,0.8);line-height:1.85;max-width:700px;margin-bottom:16px;">This is the most urgent version of the Heritage Book. When someone you love is losing their memory, every week matters. We come to them, record their stories, and write the book that their family will hold onto forever. The recipes they made by hand. The songs they sang. The places they came from. The things they want their grandchildren to know.</p>
     <p style="font-size:0.95rem;color:rgba(250,243,230,0.7);line-height:1.85;max-width:700px;margin-bottom:28px;">Join the waitlist. We will notify you the moment this is available.</p>
@@ -318,7 +320,7 @@ img { max-width: 100%; height: auto; display: block; }
 <!-- YOUR LIFE TRAILER -->
 <section style="padding: 72px 48px; background: #FAF3E6;">
   <div style="max-width: 860px; margin: 0 auto; text-align: center;">
-    <h2 style="font-family:var(--cinzel);font-size:clamp(1.4rem,3vw,2rem);font-weight:700;color:#1A6B5C;margin-bottom:16px;">Your Life Trailer — Coming Soon</h2>
+    <h2 style="font-family:var(--cinzel);font-size:clamp(1.4rem,3vw,2rem);font-weight:700;color:#1A5C55;margin-bottom:16px;">Your Life Trailer — Coming Soon</h2>
     <p style="font-size:0.95rem;color:var(--body);line-height:1.85;max-width:700px;margin:0 auto 16px;">When your Heritage Book is complete, we produce a short cinematic trailer of your family's story. Photos, music from your culture guide, narration. Like a movie trailer — but for your family's life. Share it. Post it. Play it at reunions. Something nobody has ever seen before.</p>
     <form action="https://formspree.io/f/xzzpqjle" method="POST" style="display:inline-flex;gap:0.75rem;flex-wrap:wrap;justify-content:center;margin-top:24px;">
       <input type="hidden" name="_subject" value="Life Trailer Waitlist — Heritage Book">
@@ -492,7 +494,7 @@ img { max-width: 100%; height: auto; display: block; }
   <button
     type="submit"
     style="
-      background: #D4A017;
+      background: #E8C97A;
       color: #FAF3E6;
       padding: 14px 32px;
       border: none;
@@ -515,7 +517,7 @@ img { max-width: 100%; height: auto; display: block; }
 </section>
 
 <div style="background: rgba(212,160,23,0.08); padding: 2rem 3rem; text-align: center;">
-  <p style="font-size: 0.95rem; color: #1A6B5C; font-weight: 500;">One-time payment. No recurring fees. Your memories stay online forever.</p>
+  <p style="font-size: 0.95rem; color: #1A5C55; font-weight: 500;">One-time payment. No recurring fees. Your memories stay online forever.</p>
 </div>
 
 <!-- PHOTO RESEARCH ADD-ON (CTA) -->
