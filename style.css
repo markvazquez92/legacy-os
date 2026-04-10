@@ -9,13 +9,15 @@
 :root {
   /* Core Palette — Lowrider Candy Paint */
   --cream:           #FAF3E6;
-  --teal:            #1A6B5C;
+  --teal:            #1A5C55;
   --sunset:          #C8420A;
   --coral:           #E8672A;
   --peach:           #F2A06A;
-  --gold:            #D4AF37;
+  --gold:            #E8C97A;
   --navy:            #050d18;
   --white:           #FFFFFF;
+  --charcoal:        #1C1C1C;
+  --gold-glow:       rgba(232, 201, 122, 0.35);
 
   /* New Candy Paint Colors */
   --midnight:        #121212;
@@ -265,6 +267,7 @@ p { margin-bottom: 1.2rem; }
 /* SPLIT HERO                                                   */
 /* ──────────────────────────────────────────────────────────── */
 
+/* Split hero (legacy compat) */
 .hero-split {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -272,47 +275,43 @@ p { margin-bottom: 1.2rem; }
   margin-top: 78px;
 }
 
-.hero-left {
-  background: var(--midnight);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: clamp(2rem, 5vw, 5rem);
-  position: relative;
-  overflow: hidden;
-}
-
-.hero-left h1,
-.hero-left .tagline,
-.hero-left p {
-  color: var(--cream);
-}
-
-.hero-right {
-  background: linear-gradient(160deg, var(--midnight) 0%, rgba(139,0,0,0.3) 40%, rgba(48,0,0,0.5) 100%);
+/* Centered hero — single column, logo focal */
+.hero-centered {
+  background: #0d0d0d;
+  min-height: 100vh;
+  margin-top: 78px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: clamp(2rem, 5vw, 5rem);
+  padding: clamp(3rem, 6vw, 6rem) 2rem;
   position: relative;
   overflow: hidden;
+  text-align: center;
+}
+
+.hero-centered h1,
+.hero-centered .tagline,
+.hero-centered p {
+  color: var(--cream);
 }
 
 .hero-logo-main {
   width: 100%;
-  max-width: 360px;
+  max-width: 400px;
   height: auto;
   animation: glow-pulse 3s ease-in-out infinite;
 }
 
 @media (max-width: 600px) {
-  .hero-split {
-    grid-template-columns: 1fr;
+  .hero-centered {
     min-height: auto;
+    padding: 5rem 1.5rem 3rem;
+    margin-top: 60px;
   }
-  .hero-left { min-height: 60vh; padding: 5rem 1.5rem 3rem; }
-  .hero-right { min-height: 50vh; padding: 3rem 1.5rem; }
+  .hero-logo-main {
+    max-width: 280px;
+  }
 }
 
 /* Standard hero (non-split) */

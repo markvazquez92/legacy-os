@@ -1,157 +1,163 @@
 /* ════════════════════════════════════════════════════════════════
    METALFLAKE CANVAS — 64 Impala Candy Paint
-   Deep glossy surface. No individual flakes visible.
-   Slow rolling shimmer — a wave of light sweeping across
-   the surface like sunlight moving across wet paint.
-   Areas brighten then fade back. Nothing moves.
-   Subtle. Deep. Premium.
+   Flakes are EMBEDDED in the paint. Not floating. Not confetti.
+   They live inside the background color and only flash when
+   light catches them — like real metalflake in a candy base coat.
+   Flat metal chips. Cos² light catch. Micro-rotation only.
    ════════════════════════════════════════════════════════════════ */
 
 (function () {
   'use strict';
 
-  // Shimmer wave settings
-  var WAVE_COUNT = 3;         // overlapping waves for organic feel
-  var WAVE_SPEED_MIN = 0.015; // pixels per ms — slow crawl
-  var WAVE_SPEED_MAX = 0.035;
-  var WAVE_WIDTH_MIN = 200;   // px — how wide each bright band is
-  var WAVE_WIDTH_MAX = 500;
-  var BASE_ALPHA = 0.0;       // fully transparent at rest
-  var PEAK_ALPHA = 0.08;      // subtle brightening at wave crest
-  var GOLD = 'rgba(232, 201, 122, ';
-  var TEAL_LIGHT = 'rgba(40, 120, 110, ';
+  // ── Color Palettes ──
+  var GOLD = [
+    [232, 201, 122],  // #E8C97A — matches logo gold
+    [215, 168, 18],
+    [200, 152, 8],
+    [248, 200, 38],
+    [225, 172, 22],
+    [205, 142, 12]
+  ];
+  var TEAL = [
+    [42, 198, 140],
+    [28, 175, 118]
+  ];
 
-  function initMetalflake() {
-    var sections = document.querySelectorAll('.metalflake');
-    for (var i = 0; i < sections.length; i++) {
-      setupCanvas(sections[i]);
+  // ── Flake generation helpers ──
+
+  function pickColor() {
+    if (Math.random() < 0.88) {
+      return GOLD[Math.floor(Math.random() * GOLD.length)];
     }
+    return TEAL[Math.floor(Math.random() * TEAL.length)];
   }
 
-  function setupCanvas(section) {
+  function rand(min, max) {
+    return min + Math.random() * (max - min);
+  }
+
+  function createFlake(cx, cy, isShowcase) {
+    var rx, ry, baseOpacity;
+    if (isShowcase) {
+      rx = rand(2.5, 6.5);
+      ry = rand(0.15, 0.9);
+      baseOpacity = rand(0.22, 0.82);
+    } else {
+      rx = rand(1.8, 4.5);
+      ry = rand(0.08, 0.5);
+      baseOpacity = rand(0.12, 0.55);
+    }
+    return {
+      x: cx,
+      y: cy,
+      rx: rx,
+      ry: ry,
+      angle: Math.random() * Math.PI * 2,
+      baseOpacity: baseOpacity,
+      color: pickColor()
+    };
+  }
+
+  function generateFlakes(w, h) {
+    var flakes = [];
+    var clusterCount = Math.floor((w * h) / 2000);
+    var showcaseCount = Math.floor((w * h) / 5000);
+    var i, j, clusterSize, cx, cy, fx, fy;
+
+    // Clustered flakes
+    for (i = 0; i < clusterCount; i++) {
+      cx = Math.random() * w;
+      cy = Math.random() * h;
+      clusterSize = Math.floor(rand(2, 7)); // 2–6 flakes per cluster
+      for (j = 0; j < clusterSize; j++) {
+        fx = cx + rand(-15, 15);
+        fy = cy + rand(-15, 15);
+        flakes.push(createFlake(fx, fy, false));
+      }
+    }
+
+    // Showcase flakes — larger, scattered
+    for (i = 0; i < showcaseCount; i++) {
+      fx = Math.random() * w;
+      fy = Math.random() * h;
+      flakes.push(createFlake(fx, fy, true));
+    }
+
+    return flakes;
+  }
+
+  // ── Canvas setup & animation ──
+
+  function init() {
     var canvas = document.createElement('canvas');
-    canvas.className = 'metalflake-canvas';
-    section.insertBefore(canvas, section.firstChild);
+    canvas.style.mixBlendMode = 'screen';
+    canvas.style.position = 'fixed';
+    canvas.style.inset = '0';
+    canvas.style.width = '100%';
+    canvas.style.height = '100%';
+    canvas.style.pointerEvents = 'none';
+    canvas.style.zIndex = '2';
+    document.body.appendChild(canvas);
 
     var ctx = canvas.getContext('2d');
     var w = 0;
     var h = 0;
-    var running = false;
+    var dpr = 1;
+    var flakes = [];
     var rafId = null;
-    var lastTime = 0;
-    var waves = [];
 
     function resize() {
-      w = section.offsetWidth;
-      h = section.offsetHeight;
-      var dpr = window.devicePixelRatio || 1;
+      dpr = window.devicePixelRatio || 1;
+      w = window.innerWidth;
+      h = window.innerHeight;
       canvas.width = w * dpr;
       canvas.height = h * dpr;
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-      initWaves();
+      flakes = generateFlakes(w, h);
     }
 
-    function initWaves() {
-      waves = [];
-      for (var i = 0; i < WAVE_COUNT; i++) {
-        waves.push({
-          // Position along diagonal axis
-          pos: Math.random() * (w + h),
-          // Angle of wave travel (radians) — slight variation
-          angle: -0.3 + Math.random() * 0.6,
-          speed: WAVE_SPEED_MIN + Math.random() * (WAVE_SPEED_MAX - WAVE_SPEED_MIN),
-          width: WAVE_WIDTH_MIN + Math.random() * (WAVE_WIDTH_MAX - WAVE_WIDTH_MIN),
-          peak: PEAK_ALPHA * (0.6 + Math.random() * 0.4),
-          // Gold or teal-tinted shimmer
-          color: Math.random() < 0.85 ? GOLD : TEAL_LIGHT,
-          // Total travel distance before reset
-          travel: w + h + 600
-        });
-      }
-    }
-
-    function draw(now) {
-      if (!lastTime) lastTime = now;
-      var dt = now - lastTime;
-      lastTime = now;
-      if (dt > 100) dt = 16;
-
+    function draw() {
       ctx.clearRect(0, 0, w, h);
 
-      for (var i = 0; i < waves.length; i++) {
-        var wave = waves[i];
+      for (var i = 0; i < flakes.length; i++) {
+        var f = flakes[i];
 
-        // Advance wave position
-        wave.pos += wave.speed * dt;
+        // Micro-rotation — stationary, only angle drifts
+        f.angle += (Math.random() - 0.5) * 0.002;
 
-        // Reset when wave has fully crossed
-        if (wave.pos > wave.travel) {
-          wave.pos = -wave.width * 2;
-          wave.angle = -0.3 + Math.random() * 0.6;
-          wave.speed = WAVE_SPEED_MIN + Math.random() * (WAVE_SPEED_MAX - WAVE_SPEED_MIN);
-          wave.width = WAVE_WIDTH_MIN + Math.random() * (WAVE_WIDTH_MAX - WAVE_WIDTH_MIN);
-          wave.peak = PEAK_ALPHA * (0.6 + Math.random() * 0.4);
-          wave.color = Math.random() < 0.85 ? GOLD : TEAL_LIGHT;
-        }
+        // Cos² light catch — bright face-on, vanishes edge-on
+        var lightCatch = Math.pow(Math.abs(Math.cos(f.angle * 2)), 1.8) * 0.88 + 0.12;
+        var alpha = f.baseOpacity * lightCatch;
 
-        // Draw the wave as a gradient band
-        var cos = Math.cos(wave.angle);
-        var sin = Math.sin(wave.angle);
-
-        // Wave center point projected onto canvas
-        var cx = wave.pos * cos;
-        var cy = wave.pos * sin;
-
-        // Gradient perpendicular to wave direction
-        var halfW = wave.width;
-        var x0 = cx - cos * halfW;
-        var y0 = cy - sin * halfW;
-        var x1 = cx + cos * halfW;
-        var y1 = cy + sin * halfW;
-
-        var grad = ctx.createLinearGradient(x0, y0, x1, y1);
-        grad.addColorStop(0, wave.color + '0)');
-        grad.addColorStop(0.3, wave.color + wave.peak + ')');
-        grad.addColorStop(0.5, wave.color + (wave.peak * 1.2) + ')');
-        grad.addColorStop(0.7, wave.color + wave.peak + ')');
-        grad.addColorStop(1, wave.color + '0)');
-
-        ctx.fillStyle = grad;
-        ctx.fillRect(0, 0, w, h);
+        // Draw rotated ellipse (flat metal chip)
+        ctx.save();
+        ctx.translate(f.x, f.y);
+        ctx.rotate(f.angle);
+        ctx.beginPath();
+        ctx.ellipse(0, 0, f.rx, f.ry, 0, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(' + f.color[0] + ',' + f.color[1] + ',' + f.color[2] + ',' + alpha + ')';
+        ctx.fill();
+        ctx.restore();
       }
 
-      if (running) {
-        rafId = requestAnimationFrame(draw);
-      }
+      rafId = requestAnimationFrame(draw);
     }
 
-    var observer = new IntersectionObserver(function (entries) {
-      if (entries[0].isIntersecting) {
-        if (!running) {
-          running = true;
-          lastTime = 0;
-          rafId = requestAnimationFrame(draw);
-        }
-      } else {
-        running = false;
-        if (rafId) cancelAnimationFrame(rafId);
-      }
-    }, { threshold: 0 });
-
-    observer.observe(section);
-
+    // Debounced resize
     var resizeTimer;
     window.addEventListener('resize', function () {
       clearTimeout(resizeTimer);
-      resizeTimer = setTimeout(resize, 200);
+      resizeTimer = setTimeout(resize, 150);
     });
 
     resize();
+    rafId = requestAnimationFrame(draw);
   }
 
+  // ── Boot ──
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initMetalflake);
+    document.addEventListener('DOMContentLoaded', init);
   } else {
-    initMetalflake();
+    init();
   }
 })();
