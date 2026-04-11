@@ -9,6 +9,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Outfit:wght@400;500&family=Cormorant+Garamond:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="manifest" href="manifest.json">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="My Legacy">
 
   <style>
     * {
@@ -19,9 +23,9 @@
 
     :root {
       --cream: #FAF3E6;
-      --teal: #1A5C55;
+      --teal: #1A6B5C;
       --sunset: #C8420A;
-      --gold: #E8C97A;
+      --gold: #D4A017;
       --text: #1C1C1C;
       --dark: #0F3D38;
       --navy: #020e0c;
@@ -109,6 +113,8 @@
     .hero {
       position: relative;
       height: 100vh;
+      min-height: 100vh;
+      background-color: #1A6B5C;
       overflow: hidden;
       margin-top: 68px;
       display: flex;
@@ -235,7 +241,7 @@
       font-family: 'Oswald', sans-serif;
       font-weight: 700;
       font-size: clamp(3.5rem, 9vw, 5.5rem);
-      color: var(--cream);
+      color: #FAF3E6;
       line-height: 1.1;
       margin-bottom: 2rem;
       letter-spacing: -0.01em;
@@ -870,7 +876,6 @@
       </div>
 
       <div class="product-card">
-        <img src="images/products/pet-tag-mockup.svg" alt="Pet QR Legacy Tags" style="width:100%;max-width:300px;display:block;margin:0 auto 1rem;">
         <div class="product-emotion">Pet Love</div>
         <h3>Pet QR Tag — Basic</h3>
         <p>QR-enabled tag with your pet's complete story. Medical history, rescue journey, emergency contacts.</p>
@@ -879,7 +884,6 @@
       </div>
 
       <div class="product-card">
-        <img src="images/products/pet-tag-mockup.svg" alt="Pet QR Legacy Tags" style="width:100%;max-width:300px;display:block;margin:0 auto 1rem;">
         <div class="product-emotion">Pet Heritage</div>
         <h3>Pet QR Tag — Premium</h3>
         <p>Premium QR tag with video uploads, photo gallery, and lifetime update access. The complete pet legacy.</p>
@@ -926,10 +930,6 @@
       <div class="testimonial">
         <blockquote>"I almost let my family's story disappear. Three generations from Galicia to California. Now it's permanent. My kids will know where they came from."</blockquote>
         <cite>Bear Vazquez, Santa Maria CA</cite>
-      </div>
-      <div class="testimonial">
-        <blockquote>"We lost our grandmother last year. The plaque at her grave with a QR code means anyone can see her photos and stories. It changed everything for our family."</blockquote>
-        <cite>The Garcia Family, Lompoc CA</cite>
       </div>
       <div class="testimonial">
         <blockquote>"I've been running McNeal Construction for 5 years. Nobody was going to write my story for me. Now my legacy is permanent. My crew. My projects. All documented."</blockquote>
