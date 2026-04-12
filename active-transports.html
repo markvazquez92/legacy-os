@@ -28,7 +28,7 @@
     text-align: center;
     padding: clamp(6rem, 10vw, 8rem) 2rem clamp(2rem, 4vw, 3rem);
     margin-top: 68px;
-    background: var(--chrome-silver);
+    background: #2A2A2A;
     position: relative;
     overflow: hidden;
   }
@@ -182,7 +182,7 @@
     font-size: 0.75rem;
     letter-spacing: 1px;
     text-transform: uppercase;
-    color: var(--chrome-silver);
+    color: #D4AF37;
     padding: 12px 10px;
     border-bottom: 2px solid var(--gold);
     text-align: left;
@@ -212,7 +212,7 @@
   .status-urgent { background: rgba(248,113,113,0.12); color: #dc2626; border: 1px solid rgba(248,113,113,0.3); }
   .status-active { background: rgba(251,146,60,0.12); color: #c2410c; border: 1px solid rgba(251,146,60,0.3); }
   .status-complete { background: rgba(74,222,128,0.12); color: #15803d; border: 1px solid rgba(74,222,128,0.3); }
-  .status-scheduled { background: rgba(212,160,23,0.15); color: var(--chrome-silver); border: 1px solid rgba(212,160,23,0.3); }
+  .status-scheduled { background: rgba(212,160,23,0.15); color: #D4AF37; border: 1px solid rgba(212,160,23,0.3); }
 
   /* Volunteer form section */
   .volunteer-section {
@@ -426,7 +426,7 @@
   <div class="t-divider"></div>
 
   <!-- VOLUNTEER SIGNUP FORM -->
-  <section class="section-teal metalflake full-width fade-in" id="volunteer">
+  <section style="background: #2A2A2A;" class="metalflake full-width fade-in" id="volunteer">
     <div class="section-inner text-center" style="margin-bottom: 2rem;">
       <h2 style="color: var(--gold);">Volunteer to Drive</h2>
       <p style="color: var(--cream); opacity: 0.85;">Sign up and we'll match you with transport legs in your area.</p>
@@ -498,8 +498,7 @@
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px;">
         <!-- Dog 1 -->
         <div style="background: #FFF; border: 2px solid #A9202A; padding: 24px; text-align: center;">
-          <div style="font-size: 2.5rem; margin-bottom: 16px;">🐕</div>
-          <h3 style="font-family: var(--font-headline); font-size: 1.3rem; color: #8B0000; margin-bottom: 12px;">Max</h3>
+          <div style="font-size: 1.4rem; margin-bottom: 12px; font-weight: 700; color: #8B0000;"><strong>Max</strong></div>
           <p style="font-size: 0.9rem; color: #1C1C1C; margin-bottom: 8px;"><strong>From:</strong> San Luis Obispo Shelter</p>
           <p style="font-size: 0.9rem; color: #1C1C1C; margin-bottom: 8px;"><strong>To:</strong> Foster in Ventura County</p>
           <p style="font-size: 0.9rem; color: #1C1C1C; margin-bottom: 16px;"><strong>Needed:</strong> April 15, 2026</p>
@@ -507,8 +506,7 @@
         </div>
         <!-- Dog 2 -->
         <div style="background: #FFF; border: 2px solid #A9202A; padding: 24px; text-align: center;">
-          <div style="font-size: 2.5rem; margin-bottom: 16px;">🐕</div>
-          <h3 style="font-family: var(--font-headline); font-size: 1.3rem; color: #8B0000; margin-bottom: 12px;">Luna</h3>
+          <div style="font-size: 1.4rem; margin-bottom: 12px; font-weight: 700; color: #8B0000;"><strong>Luna</strong></div>
           <p style="font-size: 0.9rem; color: #1C1C1C; margin-bottom: 8px;"><strong>From:</strong> Kern County Rescue</p>
           <p style="font-size: 0.9rem; color: #1C1C1C; margin-bottom: 8px;"><strong>To:</strong> Adoption Event (LA)</p>
           <p style="font-size: 0.9rem; color: #1C1C1C; margin-bottom: 16px;"><strong>Needed:</strong> April 17, 2026</p>
@@ -516,8 +514,7 @@
         </div>
         <!-- Dog 3 -->
         <div style="background: #FFF; border: 2px solid #A9202A; padding: 24px; text-align: center;">
-          <div style="font-size: 2.5rem; margin-bottom: 16px;">🐕</div>
-          <h3 style="font-family: var(--font-headline); font-size: 1.3rem; color: #8B0000; margin-bottom: 12px;">Duke</h3>
+          <div style="font-size: 1.4rem; margin-bottom: 12px; font-weight: 700; color: #8B0000;"><strong>Duke</strong></div>
           <p style="font-size: 0.9rem; color: #1C1C1C; margin-bottom: 8px;"><strong>From:</strong> Fresno Animal Control</p>
           <p style="font-size: 0.9rem; color: #1C1C1C; margin-bottom: 8px;"><strong>To:</strong> Foster Home (Bay Area)</p>
           <p style="font-size: 0.9rem; color: #1C1C1C; margin-bottom: 16px;"><strong>Needed:</strong> April 16, 2026</p>
@@ -542,7 +539,7 @@
     </div>
 
     <div class="empty-state">
-      <h3>More coming soon.</h3>
+      <h3>New transports added weekly. Sign up to volunteer.</h3>
       <p>Every completed transport gets documented here. Be the next volunteer to make it happen.</p>
       <a href="#volunteer" class="btn btn-gold">Join the Network</a>
     </div>
