@@ -18,7 +18,11 @@
       --muted:    rgba(250,243,230,0.6);
     }
     * { margin:0; padding:0; box-sizing:border-box; }
-    body { background:var(--bg); color:var(--cream); font-family:'Outfit',sans-serif; font-weight:300; line-height:1.7; }
+    body { background:var(--bg); color:var(--cream); font-family:'Outfit',sans-serif; font-weight:300; line-height:1.7; background-color:#FAF3E6; overflow-x:hidden; }
+
+    /* Mobile background fix */
+    section { background-color: #FAF3E6; }
+    .section { background-color: #FAF3E6; }
 
     /* HERO */
     .hero { background:var(--dark); border-bottom:1px solid var(--border); padding:64px 28px 52px; }
