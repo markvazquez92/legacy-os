@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alzheimer Memory Book — $199 — My Legacy Continues</title>
+<meta name="description" content="Help your loved one preserve their identity as memory fades. A beautiful record of their life, personality, and stories for caregiving and connection. One-time $199. My Legacy Continues.">
+<link rel="icon" href="logo.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+
+:root {
+  --navy:         #1A5C55;
+  --navy-deep:    #145049;
+  --gold:         #E8C97A;
+  --gold-light:   #E8C97A;
+  --coral:        #C8420A;
+  --cream:        #FAF3E6;
+  --charcoal:     #1C1C1C;
+  --charcoal2:    #1C1C1C;
+  --gold-bright:  #E8C97A;
+  --gold-dim:     rgba(212,160,23,0.4);
+  --gold-wash:    rgba(212,160,23,0.08);
+  --gold-border:  rgba(212,160,23,0.25);
+  --heading:      #1C1C1C;
+  --body:         #1C1C1C;
+  --muted:        rgba(28,28,28,0.65);
+  --card-bg:      rgba(212,160,23,0.08);
+  --nav-bg:       #FAF3E6;
+  --bg:           #FAF3E6;
+  --bg-card:      rgba(212,160,23,0.08);
+  --bg-warm:      #FAF3E6;
+  --bg-nav:       #FAF3E6;
+  --forest:       #1A5C55;
+  --forest-dark:  #145049;
+  --im-fell:      'Oswald', sans-serif;
+  --cinzel:       'Oswald', sans-serif;
+  --serif:        'Oswald', sans-serif;
+  --sans:         'Outfit', sans-serif;
+  --lora:         'Outfit', sans-serif;
+  --text:         #1C1C1C;
+  --text-muted:   rgba(28,28,28,0.65);
+  --text-dim:     rgba(28,28,28,0.5);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: var(–sans); background: var(–bg); color: var(–text); line-height: 1.8; -webkit-font-smoothing: antialiased; background-color: #FAF3E6; overflow-x: hidden; }
+
+/* Mobile background fix */
+section { background-color: #FAF3E6; }
+.section { background-color: #FAF3E6; }
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; height: auto; display: block; }
+
+.btn { display: inline-block; font-family: var(–cinzel); font-size: 0.72rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; padding: 16px 34px; min-height: 44px; border: none; cursor: pointer; transition: all 0.22s ease; text-decoration: none; white-space: nowrap; border-radius: 2px; }
+.btn-primary { background: #E8C97A; color: #FAF3E6; box-shadow: 0 4px 20px rgba(212,160,23,0.2); }
+.btn-primary:hover { background: #E8C97A; transform: translateY(-2px); }
+.btn-outline { background: transparent; color: #1A5C55; border: 1.5px solid #1A5C55; }
+.btn-outline:hover { background: #1A5C55; color: #E8C97A; }
+
+/* PAGE HERO */
+.page-hero { background: #1A5C55; padding: 130px 48px 72px; }
+.page-hero-inner { max-width: 860px; margin: 0 auto; }
+.back-link { font-family: var(–cinzel); font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(212,160,23,0.8); display: inline-flex; align-items: center; gap: 8px; margin-bottom: 28px; transition: color 0.2s; }
+.back-link:hover { color: #E8C97A; }
+.back-link::before { content: '←'; font-size: 0.9rem; }
+.page-eyebrow { font-family: var(–cinzel); font-size: 0.56rem; letter-spacing: 0.32em; text-transform: uppercase; color: #E8C97A; display: block; margin-bottom: 18px; }
+.page-title { font-family: var(–cinzel); font-size: clamp(2rem, 4.5vw, 3.2rem); font-weight: 700; color: #FAF3E6; line-height: 1.1; margin-bottom: 18px; }
+.page-sub { font-size: 1rem; color: rgba(240,235,224,0.8); line-height: 1.85; max-width: 600px; margin-bottom: 32px; }
+.price-badge { display: inline-block; font-family: var(–cinzel); font-size: 2.2rem; font-weight: 700; color: #E8C97A; margin-bottom: 32px; }
+.price-note { font-size: 0.8rem; color: rgba(240,235,224,0.6); margin-top: -20px; margin-bottom: 28px; }
+@media (max-width: 600px) { .page-hero { padding: 116px 20px 56px; } }
+
+.gold-rule { height: 1px; background: var(–gold-border); }
+
+/* WHAT YOU GET */
+.what-section { padding: 72px 48px; background: #FAF3E6; }
+.what-inner { max-width: 860px; margin: 0 auto; }
+.what-section h2 { font-family: var(–cinzel); font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 700; color: #1A5C55; margin-bottom: 32px; }
+.includes-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin-bottom: 40px; }
+.include-item { background: rgba(212,160,23,0.08); border: 1px solid rgba(212,160,23,0.2); border-radius: 4px; padding: 22px 20px; box-shadow: 0 2px 12px rgba(212,160,23,0.05); }
+.include-item-icon { font-size: 1.4rem; margin-bottom: 10px; }
+.include-item-title { font-family: var(–cinzel); font-size: 0.72rem; font-weight: 700; color: #1A5C55; margin-bottom: 6px; }
+.include-item-desc { font-size: 0.8rem; color: #1C1C1C; line-height: 1.7; }
+@media (max-width: 600px) { .what-section { padding: 52px 20px; } }
+
+/* ORDER + FORM */
+.order-section { padding: 0 48px 80px; background: #FAF3E6; }
+.order-inner { max-width: 860px; margin: 0 auto; }
+.order-intro { background: #1A5C55; border-radius: 4px; padding: 32px 36px; margin-bottom: 40px; }
+.order-intro p { font-size: 0.9rem; color: rgba(240,235,224,0.85); line-height: 1.85; margin-bottom: 16px; }
+.order-intro p:last-child { margin-bottom: 0; }
+.order-intro a { color: #E8C97A; }
+.order-intro strong { color: #FAF3E6; }
+
+.form-section-title { font-family: var(–cinzel); font-size: 0.6rem; letter-spacing: 0.24em; text-transform: uppercase; color: #E8C97A; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 1px solid rgba(212,160,23,0.25); }
+.intake-form { display: flex; flex-direction: column; gap: 18px; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+@media (max-width: 600px) { .form-row { grid-template-columns: 1fr; } .order-section { padding: 0 20px 64px; } }
+.form-group { display: flex; flex-direction: column; gap: 8px; }
+.form-group label { font-family: var(–cinzel); font-size: 0.58rem; letter-spacing: 0.2em; text-transform: uppercase; color: #1C1C1C; }
+.form-group input,
+.form-group textarea,
+.form-group select { background: #FAF3E6; border: 1px solid rgba(212,160,23,0.2); border-radius: 2px; color: #1C1C1C; font-family: var(–lora); font-size: 0.9rem; padding: 13px 16px; min-height: 44px; transition: border-color 0.2s; width: 100%; }
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus { outline: none; border-color: #E8C97A; box-shadow: 0 0 0 3px rgba(212,160,23,0.1); }
+.form-group input::placeholder,
+.form-group textarea::placeholder { color: #1C1C1C; }
+.form-group textarea { min-height: 110px; resize: vertical; }
+.form-group select { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23D4A020' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 16px center; padding-right: 40px; }
+.form-divider { height: 1px; background: rgba(212,160,23,0.25); margin: 8px 0; }
+.form-submit-row { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; margin-top: 8px; }
+.form-submit-note { font-size: 0.78rem; color: #1C1C1C; line-height: 1.6; }
+.stripe-cta { text-align: center; background: rgba(212,160,23,0.08); border: 1px solid rgba(212,160,23,0.2); border-radius: 4px; padding: 28px 32px; margin-bottom: 32px; box-shadow: 0 2px 12px rgba(212,160,23,0.05); }
+.stripe-cta p { font-size: 0.88rem; color: #1C1C1C; margin-bottom: 18px; line-height: 1.7; }
+.stripe-cta .price-label { font-family: var(–cinzel); font-size: 1.6rem; font-weight: 700; color: #1A5C55; display: block; margin-bottom: 18px; }
+
+</style>
+
+</head>
+<body>
+  <!-- NAVIGATION -->
+  <nav class="site-nav">
+    <a href="https://mylegacycontinues.com/index.html" class="nav-brand">
+      <img src="logo.png" alt="My Legacy Continues" class="nav-logo">
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="heritage-book.html">Heritage</a></li>
+      <li><a href="pet-tag.html">Pet Tags</a></li>
+      <li><a href="business-profile.html">Business</a></li>
+      <li><a href="rescue-registry.html">Rescue Registry</a></li>
+      <li><a href="active-transports.html">Transport</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="https://mylegacycontinues.com/index.html#products" class="btn btn-gold" style="padding: 0.5rem 1.2rem; font-size: 0.7rem;">START YOUR LEGACY</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <a href="index.html" class="back-link">Back to All Products</a>
+    <span class="page-eyebrow">Memory Preservation for Caregivers</span>
+    <h1 class="page-title">Alzheimer Memory<br>Book</h1>
+    <p class="page-sub"><strong>Preserve their identity before memory fades.</strong> A beautiful, organized record of their life, personality, favorite things, and memories. For connecting with them now. For remembering them forever.</p>
+    <div class="price-badge">$199</div>
+    <p class="price-note">One-time purchase. Hosted forever at mylegacycontinues.com. No subscriptions.</p>
+    <a href="https://buy.stripe.com/test_placeholder_alzheimer" class="btn btn-primary">Preserve Their Identity — $199</a>
+  </div>
+</div>
+
+<div class="gold-rule"></div>
+
+<section class="what-section" style="background-color: #FAF3E6;">
+  <div class="what-inner">
+    <h2>What You're Getting</h2>
+    <div class="includes-grid">
+      <div class="include-item">
+        <div class="include-item-icon">📖</div>
+        <div class="include-item-title">Life Story Record</div>
+        <div class="include-item-desc">Organized timeline of their life. Childhood, career, family, milestones. All in one beautiful, easy-to-read format.</div>
+      </div>
+      <div class="include-item">
+        <div class="include-item-icon">❤️</div>
+        <div class="include-item-title">Personality Profile</div>
+        <div class="include-item-desc">Their favorite things, sense of humor, what makes them laugh. For caregivers learning who they really are.</div>
+      </div>
+      <div class="include-item">
+        <div class="include-item-icon">📸</div>
+        <div class="include-item-title">Photo Timeline</div>
+        <div class="include-item-desc">Photos organized by era with captions. Visual storytelling they can recognize and respond to.</div>
+      </div>
+      <div class="include-item">
+        <div class="include-item-icon">🎵</div>
+        <div class="include-item-title">Music & Sound Memories</div>
+        <div class="include-item-desc">Their favorite songs, sounds, voices from their past. Music often reaches people when words don't.</div>
+      </div>
+      <div class="include-item">
+        <div class="include-item-icon">💬</div>
+        <div class="include-item-title">Care Communication</div>
+        <div class="include-item-desc">Medical information, preferences, triggers, what helps them feel safe. For consistent, compassionate care.</div>
+      </div>
+      <div class="include-item">
+        <div class="include-item-icon">👨‍👩‍👧‍👦</div>
+        <div class="include-item-title">Family Access</div>
+        <div class="include-item-desc">Digital + printed versions. Share with care team, family, facility staff. Everyone helps preserve their dignity.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="gold-rule"></div>
+
+<section class="what-section" style="background-color: rgba(26, 107, 92, 0.05);">
+  <div class="what-inner">
+    <h2>For Caregivers. For Connection.</h2>
+    <p style="font-size: 0.95rem; color: var(--body); line-height: 1.85; max-width: 700px; margin-bottom: 28px;"><strong>When memory fades, identity remains.</strong> Caregivers need to know who this person IS, beyond the diagnosis. Their personality. Their laugh. What they loved. What scared them. How to reach them.</p>
+    <p style="font-size: 0.95rem; color: var(--body); line-height: 1.85; max-width: 700px;"><strong>This book becomes your bridge.</strong> To understanding them. To connecting with them. To honoring the person they were and still are. For better care. For more compassionate moments. For dignity preserved.</p>
+    <p style="font-size: 0.95rem; color: var(--body); line-height: 1.85; max-width: 700px; margin-top: 24px;"><strong>It's also for later.</strong> When they're gone. When you remember not just who they became, but who they WERE. The full story. The complete person. Forever.</p>
+  </div>
+</section>
+
+<div class="gold-rule"></div>
+
+<div class="order-section">
+  <div class="order-inner">
+    <div class="order-intro">
+      <p><strong>How it works:</strong> We'll guide you through collecting their life story, favorite photos, music, memories. Family and caregivers contribute what they know. We organize it beautifully into a book designed for connection and care. Physical copy + digital access for all caregivers.</p>
+    </div>
+
+    <h3 class="form-section-title">Start Preserving Their Identity</h3>
+
+    <form action="https://formspree.io/f/xzzpqjle" method="POST" class="intake-form">
+      <input type="hidden" name="_subject" value="Alzheimer Memory Book Inquiry">
+      <input type="hidden" name="_next" value="https://mylegacycontinues.com/thank-you.html">
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="your-name">Your Name</label>
+          <input type="text" id="your-name" name="name" placeholder="Your name" required>
+        </div>
+        <div class="form-group">
+          <label for="your-email">Your Email</label>
+          <input type="email" id="your-email" name="email" placeholder="your@email.com" required>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="loved-one-name">Their Name</label>
+          <input type="text" id="loved-one-name" name="loved_one_name" placeholder="Their name" required>
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" name="phone" placeholder="(555) 123-4567">
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="relationship">Your Relationship</label>
+          <select id="relationship" name="relationship" required>
+            <option value="">Select...</option>
+            <option value="Family Member">Family Member</option>
+            <option value="Caregiver">Caregiver</option>
+            <option value="Care Facility Staff">Care Facility Staff</option>
+            <option value="Healthcare Provider">Healthcare Provider</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="stage">Diagnosis Stage</label>
+          <select id="stage" name="diagnosis_stage" required>
+            <option value="">Select...</option>
+            <option value="Early">Early Stage</option>
+            <option value="Middle">Middle Stage</option>
+            <option value="Late">Late Stage</option>
+            <option value="Not Yet Diagnosed">Not Yet Diagnosed</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="message">What would you most want us to capture about them?</label>
+        <textarea id="message" name="message" placeholder="Their personality, what they loved, how to help them feel safe..." required></textarea>
+      </div>
+
+      <div class="form-submit-row">
+        <button type="submit" class="btn btn-primary">Start Preserving</button>
+        <span class="form-submit-note">We'll email within 24 hours to begin.</span>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer style="background: #1C1C1C; color: #FAF3E6; padding: 3rem; text-align: center;">
+  <div style="max-width: 1200px; margin: 0 auto;">
+    <div style="margin-bottom: 2rem; font-size: 0.95rem;">
+      <p style="margin-bottom: 1rem;"><strong>My Legacy Continues</strong></p>
+      <p style="margin-bottom: 0.5rem;">📧 <a href="mailto:hello@mylegacycontinues.com" style="color: #E8C97A; text-decoration: none;">hello@mylegacycontinues.com</a></p>
+      <p style="margin-bottom: 0.5rem;">📱 Available 9–5 Pacific</p>
+      <p style="opacity: 0.7; font-size: 0.85rem;">No automated responses. Real humans reading your email.</p>
+    </div>
+    <p style="font-size: 0.8rem; opacity: 0.7;">© 2026 My Legacy Continues. All legacies preserved. All stories forever.</p>
+  </div>
+</footer>
+
+<script src="metalflake.js"></script>
+
+<script>
+  // Parallax palm trees on scroll
+  const palms = document.querySelectorAll('.palm');
+  window.addEventListener('scroll', () => {
+    const scrollY = window.scrollY;
+    palms.forEach((palm, i) => {
+      const offset = scrollY * (0.3 + i * 0.1);
+      palm.style.transform = `translateY(${offset}px)`;
+    });
+  });
+
+  // Fade-in sections on scroll
+  const observerOptions = {
+    threshold: 0.2,
+    rootMargin: '0px 0px -50px 0px'
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('fade-in');
+      }
+    });
+  }, observerOptions);
+
+  document.querySelectorAll('section').forEach(el => {
+    if (el.classList.contains('hero')) {
+      el.classList.add('fade-in');
+    } else {
+      observer.observe(el);
+    }
+  });
+
+  // Mobile nav toggle
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.querySelector('.nav-links');
+
+  if (navToggle) {
+    navToggle.addEventListener('click', () => {
+      navLinks?.classList.toggle('active');
+    });
+  }
+
+  // Nav CTA button
+  document.querySelector('.nav-cta')?.addEventListener('click', () => {
+    document.querySelector('.products')?.scrollIntoView({ behavior: 'smooth' });
+  });
+</script>
+
+</body>
+</html>
