@@ -1,5 +1,6 @@
 # GitHub Pages configuration for My Legacy Continues
 # Tell GitHub Pages to skip Jekyll processing and serve HTML directly
+# Force redeployment: 2026-04-11 rebrand commit 6416c11
 
 # Exclude files from Jekyll processing
 exclude:
