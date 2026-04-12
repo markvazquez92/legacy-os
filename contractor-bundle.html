@@ -4,16 +4,16 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Contractor Legacy Bundle — $129 — My Legacy Continues</title>
-  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Lato:wght@400&family=Spline+Sans:wght@700&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="style.css">
   <style>
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
     :root{
-      --green:#C0C0C0;--green-dark:#0F3D38;--green-card:#C0C0C0;
-      --gold:#E8C97A;--gold-hover:#E8C97A;--cream:#FAF3E6;--cream-muted:#c8c4bc;
+      --green:#C0C0C0;--green-dark:#2A2A2A;--green-card:#C0C0C0;
+      --gold:#D4AF37;--gold-hover:#D4AF37;--cream:#FAF3E6;--cream-muted:#c8c4bc;
       --border:rgba(212,160,23,0.18);
     }
-    body{background:var(--green);color:var(--cream);font-family:'Outfit',sans-serif;font-size:17px;line-height:1.7;background-color:#FAF3E6;overflow-x:hidden}
+    body{background:var(--green);color:var(--cream);font-family:'Lato',sans-serif;font-size:17px;line-height:1.7;background-color:#FAF3E6;overflow-x:hidden}
 
     /* Mobile background fix */
     section { background-color: #FAF3E6; }
@@ -25,45 +25,45 @@
     .hero::after{content:'';position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--gold)}
     .hero-inner{max-width:1100px;margin:0 auto;padding-left:32px}
     .hero-tag{font-size:11px;font-weight:700;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;display:block}
-    .hero h1{font-family:'Oswald',sans-serif;font-size:clamp(52px,8vw,96px);letter-spacing:0.04em;color:var(--cream);line-height:0.95;margin-bottom:16px}
+    .hero h1{font-family:'Montserrat',sans-serif;font-size:clamp(52px,8vw,96px);letter-spacing:0.04em;color:var(--cream);line-height:0.95;margin-bottom:16px}
     .hero h1 span{color:var(--gold)}
-    .hero-sub{font-family:'Cormorant Garamond',serif;font-size:22px;font-style:italic;color:var(--cream-muted);margin-bottom:32px;max-width:600px}
-    .hero-price{font-family:'Oswald',sans-serif;font-size:48px;color:var(--gold);letter-spacing:0.06em;margin-bottom:8px}
+    .hero-sub{font-family:'Spline Sans',serif;font-size:22px;font-style:italic;color:var(--cream-muted);margin-bottom:32px;max-width:600px}
+    .hero-price{font-family:'Montserrat',sans-serif;font-size:48px;color:var(--gold);letter-spacing:0.06em;margin-bottom:8px}
     .hero-note{font-size:14px;color:var(--cream-muted);margin-bottom:32px}
 
-    .btn-gold{background:var(--gold);color:var(--green-dark);font-family:'Outfit',sans-serif;font-size:13px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;padding:16px 40px;border-radius:4px;display:inline-block;transition:background 0.2s,transform 0.15s}
+    .btn-gold{background:var(--gold);color:var(--green-dark);font-family:'Lato',sans-serif;font-size:13px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;padding:16px 40px;display:inline-block;transition:background 0.2s,transform 0.15s}
     .btn-gold:hover{background:var(--gold-hover);transform:translateY(-1px);color:var(--green-dark)}
-    .btn-outline{background:transparent;color:var(--cream);border:1px solid var(--border);font-family:'Outfit',sans-serif;font-size:13px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;padding:16px 36px;border-radius:4px;display:inline-block;transition:border-color 0.2s,color 0.2s}
+    .btn-outline{background:transparent;color:var(--cream);border:1px solid var(--border);font-family:'Lato',sans-serif;font-size:13px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;padding:16px 36px;display:inline-block;transition:border-color 0.2s,color 0.2s}
     .btn-outline:hover{border-color:var(--gold);color:var(--gold)}
 
     section{padding:80px 40px}
     .inner{max-width:1100px;margin:0 auto}
     .section-label{font-size:11px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
-    .section-title{font-family:'Oswald',sans-serif;font-size:clamp(36px,5vw,56px);letter-spacing:0.06em;color:var(--cream);margin-bottom:20px}
+    .section-title{font-family:'Montserrat',sans-serif;font-size:clamp(36px,5vw,56px);letter-spacing:0.06em;color:var(--cream);margin-bottom:20px}
     .section-title span{color:var(--gold)}
     .divider{width:48px;height:2px;background:var(--gold);margin:20px 0 32px}
 
     .what-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:40px}
     .what-card{background:var(--green-card);border:1px solid var(--border);border-top:3px solid var(--gold);padding:32px 28px}
-    .what-num{font-family:'Oswald',sans-serif;font-size:40px;color:rgba(212,160,23,0.2);line-height:1;margin-bottom:8px}
-    .what-card h3{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:700;color:var(--cream);margin-bottom:10px}
+    .what-num{font-family:'Montserrat',sans-serif;font-size:40px;color:rgba(212,160,23,0.2);line-height:1;margin-bottom:8px}
+    .what-card h3{font-family:'Spline Sans',serif;font-size:20px;font-weight:700;color:var(--cream);margin-bottom:10px}
     .what-card p{font-size:15px;color:var(--cream-muted);line-height:1.7}
 
     .how-strip{background:var(--green-dark);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
     .how-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:40px}
     .how-step{padding:40px 32px;border-right:1px solid var(--border);text-align:center}
     .how-step:last-child{border-right:none}
-    .step-num{font-family:'Oswald',sans-serif;font-size:56px;color:var(--gold);line-height:1;display:block;margin-bottom:12px}
-    .how-step h3{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:700;color:var(--cream);margin-bottom:8px}
+    .step-num{font-family:'Montserrat',sans-serif;font-size:56px;color:var(--gold);line-height:1;display:block;margin-bottom:12px}
+    .how-step h3{font-family:'Spline Sans',serif;font-size:20px;font-weight:700;color:var(--cream);margin-bottom:8px}
     .how-step p{font-size:14px;color:var(--cream-muted);line-height:1.7}
 
     .demo-strip{background:var(--green-card);border:1px solid var(--border);padding:40px;margin-top:48px;display:flex;gap:40px;align-items:center;flex-wrap:wrap}
-    .demo-strip h3{font-family:'Oswald',sans-serif;font-size:32px;letter-spacing:0.06em;color:var(--cream);margin-bottom:6px}
+    .demo-strip h3{font-family:'Montserrat',sans-serif;font-size:32px;letter-spacing:0.06em;color:var(--cream);margin-bottom:6px}
     .demo-strip p{font-size:15px;color:var(--cream-muted);margin-bottom:16px}
 
     .form-section{background:var(--green-dark);border-top:1px solid var(--border)}
     .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
-    .form-side h2{font-family:'Oswald',sans-serif;font-size:40px;color:var(--cream);letter-spacing:0.06em;margin-bottom:12px}
+    .form-side h2{font-family:'Montserrat',sans-serif;font-size:40px;color:var(--cream);letter-spacing:0.06em;margin-bottom:12px}
     .form-side p{font-size:15px;color:var(--cream-muted);line-height:1.75;margin-bottom:16px}
     .form-side ul{list-style:none;margin-bottom:28px}
     .form-side ul li{font-size:14px;color:var(--cream-muted);padding:6px 0;padding-left:18px;position:relative;border-bottom:1px solid var(--border)}
@@ -71,7 +71,7 @@
 
     form .field{margin-bottom:20px}
     form label{display:block;font-size:12px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);margin-bottom:6px}
-    form input,form textarea,form select{width:100%;background:var(--green);border:1px solid var(--border);border-radius:4px;padding:12px 16px;color:var(--cream);font-family:'Outfit',sans-serif;font-size:15px}
+    form input,form textarea,form select{width:100%;background:var(--green);border:1px solid var(--border);padding:12px 16px;color:var(--cream);font-family:'Lato',sans-serif;font-size:15px}
     form input::placeholder,form textarea::placeholder{color:var(--cream-muted);opacity:0.5}
     form input:focus,form textarea:focus,form select:focus{outline:none;border-color:var(--gold)}
     form select option{background:var(--green-dark)}
@@ -79,7 +79,7 @@
     .form-note{font-size:13px;color:var(--cream-muted);margin-bottom:24px;line-height:1.6}
 
     .cta-strip{background:var(--gold);padding:56px 40px;text-align:center}
-    .cta-strip h2{font-family:'Oswald',sans-serif;font-size:48px;letter-spacing:0.06em;color:var(--green-dark);margin-bottom:10px}
+    .cta-strip h2{font-family:'Montserrat',sans-serif;font-size:48px;letter-spacing:0.06em;color:var(--green-dark);margin-bottom:10px}
     .cta-strip p{font-size:16px;color:rgba(24,35,24,0.75);margin-bottom:28px}
 
     .hero{margin-top:68px}
@@ -286,7 +286,7 @@
 <div class="cta-strip">
   <h2>Just want the profile? Start at $79.</h2>
   <p>The Business Founder Profile without the cards. Same permanent page, same QR code — just no cards.</p>
-  <a href="/business-profile.html" style="background:var(--green-dark);color:var(--gold);font-family:'Outfit',sans-serif;font-size:13px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;padding:14px 36px;border-radius:4px;display:inline-block">Business Profile — $79</a>
+  <a href="/business-profile.html" style="background:var(--green-dark);color:var(--gold);font-family:'Lato',sans-serif;font-size:13px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;padding:14px 36px;display:inline-block">Business Profile — $79</a>
 </div>
 
 <!-- YOUR LEGACY, YOUR CONTROL -->

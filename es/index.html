@@ -9,7 +9,7 @@
   <link rel="alternate" hreflang="en" href="https://mylegacycontinues.com/index.html">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Outfit:wght@400;500&family=Cormorant+Garamond:ital@0;1&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Lato:wght@400&family=Spline+Sans:wght@700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../style.css">
   <link rel="manifest" href="../manifest.json">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -17,18 +17,18 @@
   <meta name="apple-mobile-web-app-title" content="Mi Legado">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    :root { --cream: #FAF3E6; --chrome-silver: #C0C0C0; --sunset: #C61F2B; --gold: #D4A017; --text: #1C1C1C; --dark: #0F3D38; --navy: #020e0c; }
+    :root { --cream: #FAF3E6; --chrome-silver: #C0C0C0; --sunset: #A9202A; --gold: #D4AF37; --text: #1C1C1C; --dark: #2A2A2A; --navy: #2A2A2A; }
     html { scroll-behavior: smooth; }
-    body { font-family: 'Outfit', sans-serif; color: var(--text); line-height: 1.6; background-color: #FAF3E6; overflow-x: hidden; }
+    body { font-family: 'Lato', sans-serif; color: var(--text); line-height: 1.6; background-color: #FAF3E6; overflow-x: hidden; }
     section { background-color: #FAF3E6; }
     .section { background-color: #FAF3E6; }
     nav { position: fixed; top: 0; left: 0; right: 0; display: flex; align-items: center; justify-content: space-between; padding: 1.5rem 3rem; background: #2a2a2a; backdrop-filter: blur(10px); z-index: 1000; border-bottom: 1px solid rgba(232, 201, 122, 0.15); }
     .nav-logo { height: 50px; width: auto; }
     .nav-links { display: flex; list-style: none; gap: 2.5rem; position: absolute; left: 50%; transform: translateX(-50%); }
     .nav-links a { text-decoration: none; color: #FAF3E6; font-weight: 500; font-size: clamp(0.9rem, 1vw, 1rem); transition: color 0.3s; }
-    .nav-links a:hover { color: #E8C97A; }
-    .nav-cta { background: #C61F2B; color: #FAF3E6; border: 2px solid #E8C97A; padding: 0.75rem 1.5rem; text-decoration: none; font-weight: 700; font-size: 0.85rem; letter-spacing: 0.05em; cursor: pointer; transition: all 0.3s; }
-    .nav-cta:hover { background-color: #a01820; box-shadow: 0 4px 8px rgba(198, 31, 43, 0.3); }
+    .nav-links a:hover { color: #D4AF37; }
+    .nav-cta { background: #A9202A; color: #FAF3E6; border: 2px solid #D4AF37; padding: 0.75rem 1.5rem; text-decoration: none; font-weight: 700; font-size: 0.85rem; letter-spacing: 0.05em; cursor: pointer; transition: all 0.3s; }
+    .nav-cta:hover { background-color: #8B0000; box-shadow: 0 4px 8px rgba(198, 31, 43, 0.3); }
     .nav-toggle { display: none; background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--text); }
     .hero { position: relative; height: 100vh; min-height: 100vh; overflow: hidden; margin-top: 68px; display: flex; align-items: center; justify-content: space-between; padding: 0 3rem; }
     .hero::before { display: none; }
@@ -36,66 +36,66 @@
     section.fade-in { opacity: 1; }
     .section-inner { max-width: 1200px; margin: 0 auto; }
     .bears-story { background: var(--cream); color: var(--text); }
-    .bears-story h2 { font-family: 'Oswald', sans-serif; font-weight: 700; font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 2rem; color: var(--text); }
+    .bears-story h2 { font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 2rem; color: var(--text); }
     .bears-story p { font-size: clamp(1rem, 1.2vw, 1.1rem); line-height: 1.8; margin-bottom: 1.5rem; color: var(--text); }
-    .pull-quote { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: clamp(1.3rem, 2vw, 1.8rem); color: var(--gold); margin: 3rem 0; padding-left: 2rem; border-left: 4px solid var(--gold); line-height: 1.6; }
+    .pull-quote { font-family: 'Spline Sans', serif; font-style: italic; font-size: clamp(1.3rem, 2vw, 1.8rem); color: var(--gold); margin: 3rem 0; padding-left: 2rem; border-left: 4px solid var(--gold); line-height: 1.6; }
     .giants { background: var(--chrome-silver); color: var(--cream); }
-    .giants h2 { font-family: 'Oswald', sans-serif; font-weight: 700; font-size: clamp(2rem, 4vw, 3rem); text-align: center; margin-bottom: 3rem; color: var(--gold); }
+    .giants h2 { font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: clamp(2rem, 4vw, 3rem); text-align: center; margin-bottom: 3rem; color: var(--gold); }
     .pillars { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
     .pillar { padding: 2rem; }
-    .pillar h3 { font-family: 'Oswald', sans-serif; font-weight: 700; font-size: clamp(1.2rem, 1.8vw, 1.5rem); color: var(--gold); margin-bottom: 1rem; }
+    .pillar h3 { font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: clamp(1.2rem, 1.8vw, 1.5rem); color: var(--gold); margin-bottom: 1rem; }
     .pillar p { font-size: 1rem; line-height: 1.7; color: var(--cream); }
     .how-it-works { background: var(--cream); color: var(--text); }
-    .how-it-works h2 { font-family: 'Oswald', sans-serif; font-weight: 700; font-size: clamp(2rem, 4vw, 3rem); text-align: center; margin-bottom: 3rem; color: var(--text); }
+    .how-it-works h2 { font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: clamp(2rem, 4vw, 3rem); text-align: center; margin-bottom: 3rem; color: var(--text); }
     .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
     .step { text-align: center; padding: 1.5rem; }
-    .step-number { font-family: 'Oswald', sans-serif; font-weight: 700; font-size: clamp(3rem, 5vw, 4rem); color: var(--gold); line-height: 1; margin-bottom: 1rem; }
-    .step h3 { font-family: 'Oswald', sans-serif; font-weight: 700; font-size: clamp(1.2rem, 1.8vw, 1.5rem); margin-bottom: 0.5rem; color: var(--text); }
+    .step-number { font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: clamp(3rem, 5vw, 4rem); color: var(--gold); line-height: 1; margin-bottom: 1rem; }
+    .step h3 { font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: clamp(1.2rem, 1.8vw, 1.5rem); margin-bottom: 0.5rem; color: var(--text); }
     .step p { font-size: 1rem; color: var(--text); opacity: 0.8; }
     .products { background: var(--dark); color: var(--cream); }
-    .products h2 { font-family: 'Oswald', sans-serif; font-weight: 700; font-size: clamp(2rem, 4vw, 3rem); text-align: center; margin-bottom: 3rem; color: var(--gold); }
+    .products h2 { font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: clamp(2rem, 4vw, 3rem); text-align: center; margin-bottom: 3rem; color: var(--gold); }
     .product-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
     .product-card { padding: 2rem; border: 2px solid #d4d4d4; background: rgba(26, 92, 85, 0.3); transition: transform 0.3s, border-color 0.3s; }
-    .product-card:hover { transform: translateY(-5px); border-color: #C61F2B; }
-    .product-emotion { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 0.9rem; color: var(--gold); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.5rem; }
-    .product-card h3 { font-family: 'Oswald', sans-serif; font-weight: 700; font-size: clamp(1.2rem, 1.8vw, 1.5rem); color: var(--cream); margin-bottom: 0.5rem; }
+    .product-card:hover { transform: translateY(-5px); border-color: #A9202A; }
+    .product-emotion { font-family: 'Spline Sans', serif; font-style: italic; font-size: 0.9rem; color: var(--gold); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.5rem; }
+    .product-card h3 { font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: clamp(1.2rem, 1.8vw, 1.5rem); color: var(--cream); margin-bottom: 0.5rem; }
     .product-card p { font-size: 1rem; color: var(--cream); opacity: 0.8; margin-bottom: 1rem; line-height: 1.6; }
-    .product-price { font-family: 'Oswald', sans-serif; font-weight: 700; font-size: clamp(1.5rem, 2vw, 2rem); background-color: #C61F2B; color: #FAF3E6; padding: 0.5rem; margin-bottom: 1rem; }
-    .product-cta { display: inline-block; background: #C61F2B; color: #FAF3E6; border: 2px solid #E8C97A; padding: 0.75rem 1.5rem; text-decoration: none; font-weight: 700; font-size: 0.85rem; letter-spacing: 0.05em; transition: all 0.3s; cursor: pointer; }
-    .product-cta:hover { background-color: #a01820; box-shadow: 0 4px 8px rgba(198, 31, 43, 0.3); }
+    .product-price { font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: clamp(1.5rem, 2vw, 2rem); background-color: #A9202A; color: #FAF3E6; padding: 0.5rem; margin-bottom: 1rem; }
+    .product-cta { display: inline-block; background: #A9202A; color: #FAF3E6; border: 2px solid #D4AF37; padding: 0.75rem 1.5rem; text-decoration: none; font-weight: 700; font-size: 0.85rem; letter-spacing: 0.05em; transition: all 0.3s; cursor: pointer; }
+    .product-cta:hover { background-color: #8B0000; box-shadow: 0 4px 8px rgba(198, 31, 43, 0.3); }
     .rescue { background: var(--sunset); color: var(--cream); text-align: center; }
-    .rescue h2 { font-family: 'Oswald', sans-serif; font-weight: 700; font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 2rem; color: var(--cream); }
+    .rescue h2 { font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 2rem; color: var(--cream); }
     .rescue p { font-size: clamp(1rem, 1.2vw, 1.2rem); margin-bottom: 2rem; opacity: 0.95; }
     .rescue .cta { display: inline-block; background: var(--cream); color: var(--sunset); padding: 1rem 2.5rem; text-decoration: none; font-weight: 700; font-size: 1rem; letter-spacing: 0.05em; transition: opacity 0.3s; border: none; cursor: pointer; }
     .rescue .cta:hover { opacity: 0.85; }
     .testimonials { background: var(--cream); color: var(--text); }
-    .testimonials h2 { font-family: 'Oswald', sans-serif; font-weight: 700; font-size: clamp(2rem, 4vw, 3rem); text-align: center; margin-bottom: 3rem; color: var(--text); }
+    .testimonials h2 { font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: clamp(2rem, 4vw, 3rem); text-align: center; margin-bottom: 3rem; color: var(--text); }
     .testimonial-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
     .testimonial { background: rgba(26, 92, 85, 0.05); padding: 2rem; border-left: 4px solid var(--gold); }
     .testimonial blockquote { font-size: 1rem; font-style: italic; color: var(--text); margin-bottom: 1rem; line-height: 1.7; }
     .testimonial cite { display: block; font-style: normal; font-weight: 600; color: var(--gold); font-size: 0.9rem; }
     .email-signup { background: var(--dark); color: var(--cream); text-align: center; }
-    .email-signup h2 { font-family: 'Oswald', sans-serif; font-weight: 700; font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 2rem; color: var(--gold); }
+    .email-signup h2 { font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 2rem; color: var(--gold); }
     .email-form { display: flex; gap: 1rem; max-width: 400px; margin: 0 auto; flex-wrap: wrap; justify-content: center; }
-    .email-form input { flex: 1; min-width: 200px; padding: 0.75rem 1rem; border: 1px solid var(--gold); background: transparent; color: var(--cream); font-family: 'Outfit', sans-serif; font-size: 1rem; }
+    .email-form input { flex: 1; min-width: 200px; padding: 0.75rem 1rem; border: 1px solid var(--gold); background: transparent; color: var(--cream); font-family: 'Lato', sans-serif; font-size: 1rem; }
     .email-form input::placeholder { color: rgba(250, 243, 230, 0.6); }
     .email-form button { background: var(--gold); color: var(--chrome-silver); padding: 0.75rem 1.5rem; border: none; font-weight: 700; font-size: 0.85rem; letter-spacing: 0.05em; cursor: pointer; transition: opacity 0.3s; }
     .email-form button:hover { opacity: 0.85; }
     .coming-soon { background: var(--cream); color: var(--text); }
-    .coming-soon h2 { font-family: 'Oswald', sans-serif; font-weight: 700; font-size: clamp(2rem, 4vw, 3rem); text-align: center; margin-bottom: 1rem; color: var(--text); }
-    .coming-soon .subhead { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: clamp(1.2rem, 2vw, 1.5rem); text-align: center; margin-bottom: 3rem; color: var(--chrome-silver); }
+    .coming-soon h2 { font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: clamp(2rem, 4vw, 3rem); text-align: center; margin-bottom: 1rem; color: var(--text); }
+    .coming-soon .subhead { font-family: 'Spline Sans', serif; font-style: italic; font-size: clamp(1.2rem, 2vw, 1.5rem); text-align: center; margin-bottom: 3rem; color: var(--chrome-silver); }
     .coming-soon-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; max-width: 1200px; margin: 0 auto; }
     .coming-soon-item { padding: 1.5rem; border: 2px solid rgba(26, 107, 92, 0.2); text-align: center; }
-    .coming-soon-item h4 { font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 1.1rem; color: var(--text); margin-bottom: 0.5rem; }
+    .coming-soon-item h4 { font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 1.1rem; color: var(--text); margin-bottom: 0.5rem; }
     .coming-soon-badge { display: inline-block; background: var(--gold); color: var(--chrome-silver); padding: 0.25rem 0.75rem; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.05em; margin-top: 0.5rem; }
     .privacy-promise { background: var(--dark); color: var(--cream); }
-    .privacy-promise h2 { font-family: 'Oswald', sans-serif; font-weight: 700; font-size: clamp(2rem, 4vw, 3rem); text-align: center; margin-bottom: 3rem; color: var(--gold); }
+    .privacy-promise h2 { font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: clamp(2rem, 4vw, 3rem); text-align: center; margin-bottom: 3rem; color: var(--gold); }
     .privacy-points { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-bottom: 3rem; max-width: 1200px; margin-left: auto; margin-right: auto; }
     .privacy-point { padding: 1.5rem; border-left: 4px solid var(--gold); }
     .privacy-point p { font-size: 1rem; line-height: 1.7; color: var(--cream); }
     footer { background: var(--dark); color: var(--cream); padding: 3rem; text-align: center; font-size: 0.9rem; }
     footer a { color: var(--gold); text-decoration: none; }
-    .lang-switcher { position: fixed; top: 1.5rem; right: 3rem; background: rgba(198, 31, 43, 0.9); padding: 0.5rem 1rem; border-radius: 2px; }
+    .lang-switcher { position: fixed; top: 1.5rem; right: 3rem; background: rgba(198, 31, 43, 0.9); padding: 0.5rem 1rem;  }
     .lang-switcher a { color: #FAF3E6; text-decoration: none; font-size: 0.85rem; font-weight: 600; }
     @media(max-width:768px){ nav { padding: 1rem 1.5rem; } .nav-links { display: none; } section { padding: 2rem 1.5rem; } .lang-switcher { top: 4.5rem; right: 1.5rem; } }
   </style>
@@ -130,13 +130,13 @@
   <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=2828165625364437&ev=PageView&noscript=1" /></noscript>
   <div class="lang-switcher"><a href="https://mylegacycontinues.com/index.html">English</a></div>
   <nav><img src="../logo.png" class="nav-logo"><ul class="nav-links"><li><a href="index.html">Inicio</a></li><li><a href="heritage-book.html">Herencia</a></li><li><a href="pet-tag.html">Etiquetas</a></li><li><a href="about.html">Acerca de</a></li><li><a href="contact.html">Contacto</a></li></ul><button class="nav-cta">Inicia Tu Legado</button></nav>
-  <section class="hero" style="background:linear-gradient(90deg,#2a2a2a 0%,#2a2a2a 50%,#C61F2B 50%,#C61F2B 100%);display:flex"><div style="background-color:#2a2a2a;color:#FAF3E6;padding:60px 40px;width:50%;display:flex;flex-direction:column;justify-content:center"><h1 style="font-size:48px;font-family:'Oswald',sans-serif;font-weight:700;margin-bottom:1.5rem"><strong>Tu Historia</strong><br><strong>Merece Vivir</strong><br><span style="color:#E8C97A">Para Siempre.</span></h1><p style="font-size:18px;color:#FAF3E6"><strong>Preservación permanente de legado.</strong> Una vez. Para siempre.</p></div><div style="background:linear-gradient(135deg,#C61F2B 0%,#8B1420 100%);width:50%;display:flex;align-items:center;justify-content:center"><img src="../logo.png" style="width:200px;height:auto;filter:drop-shadow(0 4px 8px rgba(0,0,0,0.3))"></div></section>
+  <section class="hero" style="background:linear-gradient(90deg,#2a2a2a 0%,#2a2a2a 50%,#A9202A 50%,#A9202A 100%);display:flex"><div style="background-color:#2a2a2a;color:#FAF3E6;padding:60px 40px;width:50%;display:flex;flex-direction:column;justify-content:center"><h1 style="font-size:48px;font-family:'Montserrat',sans-serif;font-weight:700;margin-bottom:1.5rem"><strong>Tu Historia</strong><br><strong>Merece Vivir</strong><br><span style="color:#D4AF37">Para Siempre.</span></h1><p style="font-size:18px;color:#FAF3E6"><strong>Preservación permanente de legado.</strong> Una vez. Para siempre.</p></div><div style="background:linear-gradient(135deg,#A9202A 0%,#8B1420 100%);width:50%;display:flex;align-items:center;justify-content:center"><img src="../logo.png" style="width:200px;height:auto;filter:drop-shadow(0 4px 8px rgba(0,0,0,0.3))"></div></section>
   <section style="background:var(--cream)" class="fade-in"><div class="section-inner"><h2>¿Por Qué Existe Mi Legado Continúa?</h2><p><strong>Mi abuelo Joe</strong> era trabajador de metales. Hacedor de anillos. Narrador de historias.</p><p>Cuando partió, casi todo se fue con él.</p><p>La <strong>línea Vázquez se remonta a 1547</strong> en Galicia, España. La familia de mi mamá — García y Montemayor — vinieron por el sur de Texas.</p><p><strong>Pero nadie lo había escrito.</strong> Y de repente me di cuenta: <strong>podría desaparecer en una generación</strong>.</p><p><strong>Así que lo construí para mi familia.</strong> Luego lo construí para <strong>la tuya</strong>.</p></div></section>
-  <section style="background:var(--chrome-silver);color:var(--cream);" class="fade-in"><div class="section-inner"><h2 style="text-align:center;color:#E8C97A">Nuestra Misión</h2><div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(1.5rem,3vw,2rem);color:#FAF3E6;text-align:center;line-height:1.8;max-width:900px;margin:0 auto"><strong>Sé dueño de tu historia. Construye directo. Sin intermediarios. La comunidad primero.</strong></div></div></section>
+  <section style="background:var(--chrome-silver);color:var(--cream);" class="fade-in"><div class="section-inner"><h2 style="text-align:center;color:#D4AF37">Nuestra Misión</h2><div style="font-family:'Spline Sans',serif;font-style:italic;font-size:clamp(1.5rem,3vw,2rem);color:#FAF3E6;text-align:center;line-height:1.8;max-width:900px;margin:0 auto"><strong>Sé dueño de tu historia. Construye directo. Sin intermediarios. La comunidad primero.</strong></div></div></section>
   <section style="background:var(--cream)" class="fade-in"><div class="section-inner"><h2 style="text-align:center">Cómo Funciona</h2><div class="steps"><div class="step"><div class="step-number">01</div><h3>Investigar</h3><p>Profundizamos en la historia de tu familia. <strong>Personas reales. Cuidado real.</strong></p></div><div class="step"><div class="step-number">02</div><h3>Preservar</h3><p>Tu legado se <strong>protege profesionalmente. Permanentemente.</strong></p></div><div class="step"><div class="step-number">03</div><h3>Para Siempre</h3><p><strong>Eres dueño. Para siempre.</strong> Sin suscripciones. Sin expiración.</p></div></div></div></section>
   <section class="products fade-in"><div class="section-inner"><h2>Nuestros Productos</h2><div class="product-cards"><div class="product-card"><div class="product-emotion">Familia completa preservada</div><h3>Libro de Herencia Familiar</h3><p>Investigación de genealogía. Narrativa escrita. Libro encuadernado. Tu familia entera en una historia permanente.</p><div class="product-price">$199</div><a href="heritage-book.html" class="product-cta">Ver Detalles</a></div><div class="product-card"><div class="product-emotion">Etiqueta inteligente para mascotas</div><h3>Etiqueta de Mascota QR</h3><p>Código QR duradero. Perfil digital permanente. Historial médico. Historia de rescate. Cuando se pierden, se encuentran.</p><div class="product-price">$24.99 / $49.99</div><a href="pet-tag.html" class="product-cta">Ver Detalles</a></div><div class="product-card"><div class="product-emotion">Legado escrito en piedra</div><h3>Placa Memorial de Cementerio</h3><p>Código QR grabado. Fotos, historias, tributos. Un memorial permanente que honra una vida vivida plenamente.</p><div class="product-price">$129</div><a href="contact.html" class="product-cta">Más Información</a></div></div></div></section>
-  <section style="background:#C0C0C0;padding:3rem 2rem;color:#FAF3E6;" class="fade-in"><div class="section-inner" style="max-width:1000px;text-align:center;"><h2 style="font-family:'Oswald',sans-serif;font-size:clamp(1.6rem,4vw,2.2rem);margin-bottom:2.5rem;">Confiado por Familias, Negocios y Rescates</h2><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:2rem;"><div><div style="font-size:2.8rem;font-weight:700;color:#E8C97A;margin-bottom:0.5rem;">50+</div><div style="font-size:1rem;font-weight:500;">Legados Preservados</div><div style="font-size:0.85rem;color:rgba(250,243,230,0.8);margin-top:0.5rem;">Historias reales, impacto real</div></div><div><div style="font-size:2.8rem;font-weight:700;color:#E8C97A;margin-bottom:0.5rem;">25+</div><div style="font-size:1rem;font-weight:500;">Familias Conectadas</div><div style="font-size:0.85rem;color:rgba(250,243,230,0.8);margin-top:0.5rem;">Entre generaciones</div></div><div><div style="font-size:2.8rem;font-weight:700;color:#E8C97A;margin-bottom:0.5rem;">287+</div><div style="font-size:1rem;font-weight:500;">Perros Rescatados</div><div style="font-size:0.85rem;color:rgba(250,243,230,0.8);margin-top:0.5rem;">Encontraron hogar para siempre</div></div></div></div></section>
-  <section style="background:var(--cream)" class="fade-in"><div class="section-inner"><h2 style="text-align:center">Tu Historia Te Pertenece</h2><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:2rem;margin:2rem 0;"><div style="padding:1.5rem;border-left:4px solid var(--gold);"><p><strong>Nunca vendemos tu información. Nunca.</strong></p></div><div style="padding:1.5rem;border-left:4px solid var(--gold);"><p><strong>Controlas qué es público y qué es privado.</strong></p></div><div style="padding:1.5rem;border-left:4px solid var(--gold);"><p><strong>Tus datos están alojados con seguridad. Solo tú puedes acceder.</strong></p></div><div style="padding:1.5rem;border-left:4px solid var(--gold);"><p><strong>Nuestro proceso de investigación es confidencial. Tu historia te pertenece a ti.</strong></p></div></div><div style="text-align:center;"><a href="contact.html" style="background:#C61F2B;color:#FAF3E6;padding:1rem 2.5rem;text-decoration:none;font-weight:700;display:inline-block;border:2px solid #E8C97A;">Comienza Hoy</a></div></div></section>
+  <section style="background:#C0C0C0;padding:3rem 2rem;color:#FAF3E6;" class="fade-in"><div class="section-inner" style="max-width:1000px;text-align:center;"><h2 style="font-family:'Montserrat',sans-serif;font-size:clamp(1.6rem,4vw,2.2rem);margin-bottom:2.5rem;">Confiado por Familias, Negocios y Rescates</h2><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:2rem;"><div><div style="font-size:2.8rem;font-weight:700;color:#D4AF37;margin-bottom:0.5rem;">50+</div><div style="font-size:1rem;font-weight:500;">Legados Preservados</div><div style="font-size:0.85rem;color:rgba(250,243,230,0.8);margin-top:0.5rem;">Historias reales, impacto real</div></div><div><div style="font-size:2.8rem;font-weight:700;color:#D4AF37;margin-bottom:0.5rem;">25+</div><div style="font-size:1rem;font-weight:500;">Familias Conectadas</div><div style="font-size:0.85rem;color:rgba(250,243,230,0.8);margin-top:0.5rem;">Entre generaciones</div></div><div><div style="font-size:2.8rem;font-weight:700;color:#D4AF37;margin-bottom:0.5rem;">287+</div><div style="font-size:1rem;font-weight:500;">Perros Rescatados</div><div style="font-size:0.85rem;color:rgba(250,243,230,0.8);margin-top:0.5rem;">Encontraron hogar para siempre</div></div></div></div></section>
+  <section style="background:var(--cream)" class="fade-in"><div class="section-inner"><h2 style="text-align:center">Tu Historia Te Pertenece</h2><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:2rem;margin:2rem 0;"><div style="padding:1.5rem;border-left:4px solid var(--gold);"><p><strong>Nunca vendemos tu información. Nunca.</strong></p></div><div style="padding:1.5rem;border-left:4px solid var(--gold);"><p><strong>Controlas qué es público y qué es privado.</strong></p></div><div style="padding:1.5rem;border-left:4px solid var(--gold);"><p><strong>Tus datos están alojados con seguridad. Solo tú puedes acceder.</strong></p></div><div style="padding:1.5rem;border-left:4px solid var(--gold);"><p><strong>Nuestro proceso de investigación es confidencial. Tu historia te pertenece a ti.</strong></p></div></div><div style="text-align:center;"><a href="contact.html" style="background:#A9202A;color:#FAF3E6;padding:1rem 2.5rem;text-decoration:none;font-weight:700;display:inline-block;border:2px solid #D4AF37;">Comienza Hoy</a></div></div></section>
   <footer><p><strong>Mi Legado Continúa</strong></p><p>Contacto: contact@mylegacycontinues.com | (805) 863-3794 | Santa Maria, CA</p><p style="margin-top:2rem;font-size:0.85rem"><a href="about.html">Acerca de</a> | <a href="contact.html">Contacto</a> | <a href="https://mylegacycontinues.com/legal/privacy.html">Privacidad</a></p></footer>
   <script>document.querySelector('.nav-cta').addEventListener('click',()=>{window.location.href='index.html'});</script>
 

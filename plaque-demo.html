@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Cemetery Memorial Plaque — My Legacy Continues</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Karla:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@700&family=Karla:wght@300;400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -55,7 +55,7 @@
       color: var(--gold); margin-bottom: 12px;
     }
     h1 {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: 'Spline Sans', serif;
       font-size: clamp(2.4rem, 5vw, 4rem);
       font-weight: 300; color: var(--cream); line-height: 1.15;
       margin-bottom: 20px;
@@ -68,7 +68,7 @@
     /* SECTIONS */
     .section { max-width: 900px; margin: 0 auto; padding: 80px 24px; border-bottom: 1px solid var(--border); }
     .section h2 {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: 'Spline Sans', serif;
       font-size: clamp(1.8rem, 3.5vw, 2.6rem);
       font-weight: 300; color: var(--gold); margin-bottom: 20px; line-height: 1.2;
     }
@@ -98,7 +98,7 @@
         #b8b8b8 45%, #d2d2d2 60%, #c0c0c0 75%,
         #cccccc 90%, #d4d4d4 100%
       );
-      border-radius: 6px;
+      
       padding: 36px 32px;
       position: relative;
       box-shadow:
@@ -112,7 +112,7 @@
       content: '';
       position: absolute; inset: 6px;
       border: 1px solid rgba(255,255,255,0.3);
-      border-radius: 4px;
+      
       pointer-events: none;
     }
 
@@ -127,7 +127,7 @@
       flex-shrink: 0;
       width: 90px; height: 90px;
       background: #1a1a1a;
-      border-radius: 3px;
+      
       display: flex; align-items: center; justify-content: center;
       position: relative;
       box-shadow: inset 0 1px 3px rgba(0,0,0,0.5);
@@ -137,7 +137,7 @@
     /* TEXT SIDE */
     .plaque-text { flex: 1; }
     .plaque-name {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: 'Spline Sans', serif;
       font-size: 1.5rem;
       font-weight: 600;
       color: var(--engrave);
@@ -154,7 +154,7 @@
       margin-bottom: 10px;
     }
     .plaque-epitaph {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: 'Spline Sans', serif;
       font-style: italic;
       font-size: 0.9rem;
       color: #666;
@@ -175,7 +175,7 @@
     .plaque-specs {
       background: rgba(0,0,0,0.2);
       border: 1px solid var(--border);
-      border-radius: 4px;
+      
       padding: 20px 24px;
       margin-top: 16px;
       display: flex;
@@ -192,7 +192,7 @@
       max-width: 520px;
       background: rgba(0,0,0,0.25);
       border: 1px solid var(--border);
-      border-radius: 4px;
+      
       padding: 24px;
       text-decoration: none;
       transition: border-color 0.2s;
@@ -200,7 +200,7 @@
     }
     .profile-link-preview:hover { border-color: var(--gold); }
     .plp-label { font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; }
-    .plp-name { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; color: var(--cream); margin-bottom: 6px; }
+    .plp-name { font-family: 'Spline Sans', serif; font-size: 1.4rem; color: var(--cream); margin-bottom: 6px; }
     .plp-desc { font-size: 0.85rem; color: var(--muted); }
     .plp-arrow { font-size: 0.75rem; letter-spacing: 0.12em; color: var(--gold); margin-top: 12px; display: block; }
 
@@ -209,23 +209,23 @@
     .step {
       background: rgba(0,0,0,0.2);
       border: 1px solid var(--border);
-      border-radius: 4px;
+      
       padding: 28px 24px;
     }
     .step-num {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: 'Spline Sans', serif;
       font-size: 2.5rem;
       color: var(--gold);
       opacity: 0.4;
       line-height: 1;
       margin-bottom: 12px;
     }
-    .step h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; color: var(--cream); margin-bottom: 8px; }
+    .step h3 { font-family: 'Spline Sans', serif; font-size: 1.15rem; color: var(--cream); margin-bottom: 8px; }
     .step p { font-size: 0.85rem; color: var(--muted); }
 
     /* CTA */
     .cta-wrap { text-align: center; padding: 80px 24px; }
-    .cta-wrap h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 4vw, 3rem); font-weight: 300; color: var(--cream); margin-bottom: 16px; }
+    .cta-wrap h2 { font-family: 'Spline Sans', serif; font-size: clamp(2rem, 4vw, 3rem); font-weight: 300; color: var(--cream); margin-bottom: 16px; }
     .cta-wrap p { color: var(--muted); max-width: 480px; margin: 0 auto 32px; }
     .btn {
       display: inline-block;
@@ -238,7 +238,7 @@
       text-transform: uppercase;
       text-decoration: none;
       padding: 14px 36px;
-      border-radius: 4px;
+      
       transition: background 0.2s;
     }
     .btn:hover { background: #c49b2e; }

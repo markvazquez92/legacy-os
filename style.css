@@ -1,38 +1,34 @@
 /* ════════════════════════════════════════════════════════════════
    MY LEGACY CONTINUES — MASTER STYLESHEET
-   64 Impala Candy Paint Design System
-   Fonts: Oswald | Outfit | Cormorant Garamond
+   New Design System
+   Fonts: Montserrat | Lato | Spline Sans
    ════════════════════════════════════════════════════════════════ */
 
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Outfit:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Lato:wght@400&family=Spline+Sans:wght@700&display=swap');
 
 :root {
-  /* ──── Heritage & Chrome Palette (Candy Red + Chrome Silver Rebrand) ──── */
+  /* ──── New Design Palette ──── */
   --cream-bg:           #FAF3E6;
-  --candy-red:          #C8420A;
-  --chrome-silver:      #E8C97A;
-  --charcoal-dark:      #2a2a2a;
-  --coral:              #E8672A;
-  --peach:              #F2A06A;
-  --champagne-gold:     #E8C97A;
-  --gold:               #E8C97A;
-  --text-primary:       #2a2a2a;
+  --candy-apple-red:    #A9202A;
+  --deep-burgundy:      #8B0000;
+  --champagne-gold:     #D4AF37;
+  --charcoal:           #2A2A2A;
+  --text-primary:       #2A2A2A;
   --text-secondary:     #5a5a5a;
   --white-card:         #FFFFFF;
 
   /* Semantic CSS Variables */
   --bg-primary:         var(--cream-bg);
-  --bg-dark:            var(--charcoal-dark);
-  --text-primary:       var(--text-primary);
+  --bg-dark:            var(--charcoal);
   --text-cream:         var(--cream-bg);
   --accent-gold:        var(--champagne-gold);
-  --accent-red:         var(--candy-red);
-  --card-border:        var(--chrome-silver);
+  --accent-red:         var(--candy-apple-red);
+  --card-border:        var(--champagne-gold);
 
   /* Fonts */
-  --font-headline:      'Oswald', sans-serif;
-  --font-body:          'Outfit', sans-serif;
-  --font-emotion:       'Cormorant Garamond', serif;
+  --font-headline:      'Montserrat', sans-serif;
+  --font-body:          'Lato', sans-serif;
+  --font-emotion:       'Spline Sans', sans-serif;
 
   /* Spacing & Layout */
   --section-pad:        clamp(3rem, 6vw, 5rem);
@@ -87,9 +83,10 @@ img {
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-headline);
   font-weight: 700;
-  text-transform: uppercase;
+  text-transform: none;
   letter-spacing: 0.02em;
   line-height: 1.1;
+  color: var(--deep-burgundy);
 }
 
 h1 {
@@ -253,7 +250,7 @@ p {
 }
 
 .hero-left {
-  background-color: var(--chrome-silver);
+  background-color: var(--champagne-gold);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -283,7 +280,7 @@ p {
 }
 
 .hero-right {
-  background: linear-gradient(135deg, var(--candy-red) 0%, var(--coral) 50%, var(--peach) 100%);
+  background: linear-gradient(135deg, var(--candy-apple-red) 0%, var(--deep-burgundy) 100%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -382,14 +379,14 @@ p {
 }
 
 .btn-gold {
-  background-color: var(--candy-red);
+  background-color: var(--candy-apple-red);
   color: var(--cream-bg);
-  border: 2px solid var(--champagne-gold);
+  border: none;
 }
 
 .btn-gold:hover {
-  background-color: #a01820;
-  box-shadow: 0 4px 12px rgba(198, 31, 43, 0.3);
+  background-color: var(--deep-burgundy);
+  box-shadow: 0 4px 12px rgba(169, 32, 42, 0.3);
   transform: translateY(-2px);
 }
 
