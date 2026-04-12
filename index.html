@@ -62,7 +62,7 @@
       align-items: center;
       justify-content: space-between;
       padding: 1.5rem 3rem;
-      background: rgba(250, 243, 230, 0.95);
+      background: #2a2a2a;
       backdrop-filter: blur(10px);
       z-index: 1000;
       border-bottom: 1px solid rgba(232, 201, 122, 0.15);
@@ -84,31 +84,32 @@
 
     .nav-links a {
       text-decoration: none;
-      color: var(--text);
+      color: #FAF3E6;
       font-weight: 500;
       font-size: clamp(0.9rem, 1vw, 1rem);
       transition: color 0.3s;
     }
 
     .nav-links a:hover {
-      color: var(--gold);
+      color: #E8C97A;
     }
 
     .nav-cta {
-      background: var(--gold);
-      color: var(--teal);
+      background: #C61F2B;
+      color: #FAF3E6;
+      border: 2px solid #E8C97A;
       padding: 0.75rem 1.5rem;
       text-decoration: none;
       font-weight: 700;
       font-size: 0.85rem;
       letter-spacing: 0.05em;
-      border: none;
       cursor: pointer;
-      transition: opacity 0.3s;
+      transition: all 0.3s;
     }
 
     .nav-cta:hover {
-      opacity: 0.85;
+      background-color: #a01820;
+      box-shadow: 0 4px 8px rgba(198, 31, 43, 0.3);
     }
 
     .nav-toggle {
@@ -455,14 +456,14 @@
 
     .product-card {
       padding: 2rem;
-      border: 1px solid rgba(232, 201, 122, 0.2);
+      border: 2px solid #d4d4d4;
       background: rgba(26, 92, 85, 0.3);
       transition: transform 0.3s, border-color 0.3s;
     }
 
     .product-card:hover {
       transform: translateY(-5px);
-      border-color: var(--gold);
+      border-color: #C61F2B;
     }
 
     .product-emotion {
@@ -495,26 +496,29 @@
       font-family: 'Oswald', sans-serif;
       font-weight: 700;
       font-size: clamp(1.5rem, 2vw, 2rem);
-      color: var(--gold);
+      background-color: #C61F2B;
+      color: #FAF3E6;
+      padding: 0.5rem;
       margin-bottom: 1rem;
     }
 
     .product-cta {
       display: inline-block;
-      background: var(--gold);
-      color: var(--teal);
+      background: #C61F2B;
+      color: #FAF3E6;
+      border: 2px solid #E8C97A;
       padding: 0.75rem 1.5rem;
       text-decoration: none;
       font-weight: 700;
       font-size: 0.85rem;
       letter-spacing: 0.05em;
-      transition: opacity 0.3s;
-      border: none;
+      transition: all 0.3s;
       cursor: pointer;
     }
 
     .product-cta:hover {
-      opacity: 0.85;
+      background-color: #a01820;
+      box-shadow: 0 4px 8px rgba(198, 31, 43, 0.3);
     }
 
     /* Section 5: Rescue */
@@ -889,32 +893,22 @@
 </nav>
 
 <!-- HERO -->
-<section class="hero" id="home">
-  <canvas id="metalflake"></canvas>
-
-  <div class="sun"></div>
-
-  <div class="palms-container">
-    <div class="palm palm-1">🌴</div>
-    <div class="palm palm-2">🌴</div>
-    <div class="palm palm-3">🌴</div>
+<section class="hero" id="home" style="background: linear-gradient(90deg, #2a2a2a 0%, #2a2a2a 50%, #C61F2B 50%, #C61F2B 100%); margin-top: 68px; height: 100vh; display: flex; align-items: stretch;">
+  <div style="background-color: #2a2a2a; color: #FAF3E6; padding: 60px 40px; width: 50%; display: flex; flex-direction: column; justify-content: center;">
+    <h1 style="font-size: 48px; margin: 0; line-height: 1.2; font-family: 'Oswald', sans-serif; font-weight: 700; margin-bottom: 1.5rem;">
+      <strong>My Legacy</strong><br><strong>Continues</strong><br>
+      <span style="color: #E8C97A;">You own your story.</span><br>
+      <strong style="color: #E8C97A;">Forever.</strong>
+    </h1>
+    <p style="font-size: 18px; margin: 0 0 2rem 0; color: #FAF3E6; line-height: 1.6;">
+      One payment. Permanent preservation. No subscriptions. No middleman.
+    </p>
+    <a href="#products" style="background-color: #C61F2B; color: #FAF3E6; border: 2px solid #E8C97A; padding: 12px 24px; font-size: 16px; cursor: pointer; border-radius: 4px; font-weight: bold; text-decoration: none; display: inline-block; width: fit-content; transition: all 0.3s;">
+      Start Your Legacy
+    </a>
   </div>
-
-  <div class="ocean">
-    <div class="wave"></div>
-    <div class="wave" style="animation-delay: -2s;"></div>
-  </div>
-
-  <div class="grain"></div>
-
-  <div class="hero-content">
-    <div class="hero-left">
-      <h1>YOUR STORY NEVER DIES</h1>
-      <button class="cta">Begin Your Story</button>
-    </div>
-    <div class="hero-right">
-      <img src="logo.png" alt="My Legacy Continues">
-    </div>
+  <div style="background: linear-gradient(135deg, #C61F2B 0%, #8B1420 100%); width: 50%; display: flex; align-items: center; justify-content: center;">
+    <img src="logo.png" alt="My Legacy Continues" style="width: 200px; height: auto; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));">
   </div>
 </section>
 
