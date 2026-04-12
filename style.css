@@ -7,16 +7,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Outfit:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&display=swap');
 
 :root {
-  /* ──── Heritage & Chrome Palette (Lowrider Candy Paint) ──── */
+  /* ──── Heritage & Chrome Palette (Candy Red + Chrome Silver Rebrand) ──── */
   --cream-bg:           #FAF3E6;
   --candy-red:          #C61F2B;
-  --chrome-silver:      #d4d4d4;
+  --chrome-silver:      #C0C0C0;
   --charcoal-dark:      #2a2a2a;
   --sunset-orange:      #C8420A;
   --coral:              #E8672A;
   --peach:              #F2A06A;
   --champagne-gold:     #E8C97A;
-  --teal:               #1a5c55;
+  --teal:               #C0C0C0;
   --gold:               #E8C97A;
   --text-primary:       #2a2a2a;
   --text-secondary:     #5a5a5a;
