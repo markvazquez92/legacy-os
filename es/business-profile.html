@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- NO EMOJIS EVER -->
 
 <html lang="es">
 <head>
@@ -13,7 +14,7 @@
 <style>
 
 :root {
-  --navy:         #C0C0C0;
+  --charcoal:         #2A2A2A;
   --navy-deep:    #145049;
   --gold:         #D4AF37;
   --gold-light:   #D4AF37;
@@ -34,7 +35,7 @@
   --bg-card:      rgba(212,160,23,0.08);
   --bg-warm:      #FAF3E6;
   --bg-nav:       #FAF3E6;
-  --forest:       #C0C0C0;
+  --forest:       #2A2A2A;
   --forest-dark:  #145049;
   --im-fell:      'Montserrat', sans-serif;
   --cinzel:       'Montserrat', sans-serif;
@@ -59,10 +60,10 @@ img { max-width: 100%; height: auto; display: block; }
 .btn { display: inline-block; font-family: var(–cinzel); font-size: 0.72rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; padding: 16px 34px; min-height: 44px; border: none; cursor: pointer; transition: all 0.22s ease; text-decoration: none; white-space: nowrap;  }
 .btn-primary { background: #D4AF37; color: #FAF3E6; box-shadow: 0 4px 20px rgba(212,160,23,0.2); }
 .btn-primary:hover { background: #D4AF37; transform: translateY(-2px); }
-.btn-outline { background: transparent; color: #C0C0C0; border: 1.5px solid #C0C0C0; }
-.btn-outline:hover { background: #C0C0C0; color: #D4AF37; }
+.btn-outline { background: transparent; color: #2A2A2A; border: 1.5px solid #2A2A2A; }
+.btn-outline:hover { background: #2A2A2A; color: #D4AF37; }
 
-.page-hero { background: #C0C0C0; padding: 130px 48px 72px; }
+.page-hero { background: #2A2A2A; padding: 130px 48px 72px; }
 .page-hero-inner { max-width: 860px; margin: 0 auto; }
 .back-link { font-family: var(–cinzel); font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(212,160,23,0.8); display: inline-flex; align-items: center; gap: 8px; margin-bottom: 28px; transition: color 0.2s; }
 .back-link:hover { color: #D4AF37; }
@@ -78,20 +79,20 @@ img { max-width: 100%; height: auto; display: block; }
 
 .what-section { padding: 72px 48px; background: #FAF3E6; }
 .what-inner { max-width: 860px; margin: 0 auto; }
-.what-section h2 { font-family: var(–cinzel); font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 700; color: #C0C0C0; margin-bottom: 32px; }
+.what-section h2 { font-family: var(–cinzel); font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 700; color: #2A2A2A; margin-bottom: 32px; }
 .includes-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin-bottom: 40px; }
 .include-item { background: rgba(212,160,23,0.08); border: 1px solid rgba(212,160,23,0.2);  padding: 22px 20px; box-shadow: 0 2px 12px rgba(212,160,23,0.05); }
 .include-item-num { font-family: var(–cinzel); font-size: 0.6rem; font-weight: 700; letter-spacing: 0.2em; color: #D4AF37; margin-bottom: 10px; }
-.include-item-title { font-family: var(–cinzel); font-size: 0.72rem; font-weight: 700; color: #C0C0C0; margin-bottom: 6px; }
+.include-item-title { font-family: var(–cinzel); font-size: 0.72rem; font-weight: 700; color: #2A2A2A; margin-bottom: 6px; }
 .include-item-desc { font-size: 0.8rem; color: #1C1C1C; line-height: 1.7; }
 
 .proof-block { background: #FAF3E6; border-left: 3px solid #D4AF37; padding: 24px 28px;  margin-bottom: 48px; }
 .proof-block p { font-size: 0.9rem; color: #1C1C1C; line-height: 1.85; margin-bottom: 10px; }
 .proof-block p:last-child { margin-bottom: 0; }
-.proof-block strong { color: #C0C0C0; font-weight: 600; }
+.proof-block strong { color: #2A2A2A; font-weight: 600; }
 
 /* SAMPLE PROFILE SECTION */
-.sample-section { background: #C0C0C0; padding: 72px 48px; }
+.sample-section { background: #2A2A2A; padding: 72px 48px; }
 .sample-inner { max-width: 860px; margin: 0 auto; }
 .sample-eyebrow { font-family: var(–cinzel); font-size: 0.56rem; letter-spacing: 0.32em; text-transform: uppercase; color: #D4AF37; display: block; margin-bottom: 14px; }
 .sample-section h2 { font-family: var(–cinzel); font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 700; color: #FAF3E6; margin-bottom: 12px; }
@@ -103,7 +104,7 @@ img { max-width: 100%; height: auto; display: block; }
 .sample-card-meta { font-size: 0.82rem; color: rgba(240,235,224,0.6); letter-spacing: 0.04em; }
 .sample-card-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 8px; }
 .sample-tag { font-family: var(–cinzel); font-size: 0.55rem; letter-spacing: 0.16em; text-transform: uppercase; color: #D4AF37; border: 1px solid rgba(212,160,23,0.4); padding: 5px 12px;  }
-.sample-btn { display: inline-block; font-family: var(–cinzel); font-size: 0.68rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; padding: 14px 28px; background: #D4AF37; color: #C0C0C0;  transition: all 0.22s; white-space: nowrap; }
+.sample-btn { display: inline-block; font-family: var(–cinzel); font-size: 0.68rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; padding: 14px 28px; background: #D4AF37; color: #2A2A2A;  transition: all 0.22s; white-space: nowrap; }
 .sample-btn:hover { background: #D4AF37; transform: translateY(-2px); }
 @media (max-width: 600px) {
 .sample-section { padding: 56px 20px; }
@@ -115,7 +116,7 @@ img { max-width: 100%; height: auto; display: block; }
 .order-inner { max-width: 860px; margin: 0 auto; }
 .stripe-cta { text-align: center; background: rgba(212,160,23,0.08); border: 1px solid rgba(212,160,23,0.2);  padding: 28px 32px; margin-bottom: 32px; box-shadow: 0 2px 12px rgba(212,160,23,0.05); }
 .stripe-cta p { font-size: 0.88rem; color: #1C1C1C; margin-bottom: 18px; line-height: 1.7; }
-.stripe-cta .price-label { font-family: var(–cinzel); font-size: 1.6rem; font-weight: 700; color: #C0C0C0; display: block; margin-bottom: 18px; }
+.stripe-cta .price-label { font-family: var(–cinzel); font-size: 1.6rem; font-weight: 700; color: #2A2A2A; display: block; margin-bottom: 18px; }
 .form-section-title { font-family: var(–cinzel); font-size: 0.6rem; letter-spacing: 0.24em; text-transform: uppercase; color: #D4AF37; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 1px solid rgba(212,160,23,0.25); }
 .intake-form { display: flex; flex-direction: column; gap: 18px; }
 .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
@@ -294,40 +295,40 @@ img { max-width: 100%; height: auto; display: block; }
 <!-- SEE REAL EXAMPLES CAROUSEL -->
 <section style="background-color: #FAF3E6; padding: 72px 48px;">
   <div style="max-width: 1000px; margin: 0 auto;">
-    <h2 style="font-family:var(--cinzel);font-size:clamp(1.4rem,3vw,2rem);font-weight:700;color:#C0C0C0;margin-bottom:8px;text-align:center;">See Real Examples</h2>
+    <h2 style="font-family:var(--cinzel);font-size:clamp(1.4rem,3vw,2rem);font-weight:700;color:#2A2A2A;margin-bottom:8px;text-align:center;">See Real Examples</h2>
     <p style="font-size:0.95rem;color:var(--body);line-height:1.85;text-align:center;margin-bottom:36px;max-width:700px;margin-left:auto;margin-right:auto;">Real businesses who preserved their legacy. Here's what they created with us.</p>
 
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
       <!-- Example 1: Nick McNeal -->
       <div style="background: #FFF;  overflow: hidden; box-shadow: 0 4px 16px rgba(26, 107, 92, 0.08);">
-        <div style="background: linear-gradient(135deg, #C0C0C0 0%, #2A2A2A 100%); height: 180px; display: flex; align-items: center; justify-content: center; font-size: 3.5rem;">🏗️</div>
+        <div style="background: linear-gradient(135deg, #2A2A2A 0%, #2A2A2A 100%); height: 180px; display: flex; align-items: center; justify-content: center; font-size: 3.5rem;">️</div>
         <div style="padding: 24px;">
           <div style="font-family:var(--cinzel);font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:#D4AF37;font-weight:600;margin-bottom:8px;">Negocio Founder Profile</div>
-          <h3 style="font-family:var(--cinzel);font-size:1.2rem;color:#C0C0C0;margin-bottom:12px;">McNeal Construction</h3>
+          <h3 style="font-family:var(--cinzel);font-size:1.2rem;color:#2A2A2A;margin-bottom:12px;">McNeal Construction</h3>
           <p style="font-size:0.9rem;color:#1C1C1C;font-style:italic;margin-bottom:16px;line-height:1.6;">"My business story, permanently documented. This is what I built."</p>
-          <a href="mcneal-construction-profile.html" style="display:inline-block;padding:10px 14px;background:#D4AF37;color:#C0C0C0;text-decoration:none;font-size:0.85rem;font-weight:600;transition:all 0.2s;">View Profile</a>
+          <a href="mcneal-construction-profile.html" style="display:inline-block;padding:10px 14px;background:#D4AF37;color:#2A2A2A;text-decoration:none;font-size:0.85rem;font-weight:600;transition:all 0.2s;">View Profile</a>
         </div>
       </div>
 
       <!-- Example 2: Carlos Macias -->
       <div style="background: #FFF;  overflow: hidden; box-shadow: 0 4px 16px rgba(26, 107, 92, 0.08);">
-        <div style="background: linear-gradient(135deg, #C0C0C0 0%, #2A2A2A 100%); height: 180px; display: flex; align-items: center; justify-content: center; font-size: 3.5rem;">💼</div>
+        <div style="background: linear-gradient(135deg, #2A2A2A 0%, #2A2A2A 100%); height: 180px; display: flex; align-items: center; justify-content: center; font-size: 3.5rem;"></div>
         <div style="padding: 24px;">
           <div style="font-family:var(--cinzel);font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:#D4AF37;font-weight:600;margin-bottom:8px;">Negocio Profile</div>
-          <h3 style="font-family:var(--cinzel);font-size:1.2rem;color:#C0C0C0;margin-bottom:12px;">Carlos Macias</h3>
+          <h3 style="font-family:var(--cinzel);font-size:1.2rem;color:#2A2A2A;margin-bottom:12px;">Carlos Macias</h3>
           <p style="font-size:0.9rem;color:#1C1C1C;font-style:italic;margin-bottom:16px;line-height:1.6;">"A permanent home for my business story and professional legacy."</p>
-          <a href="carlos-macias-profile.html" style="display:inline-block;padding:10px 14px;background:#D4AF37;color:#C0C0C0;text-decoration:none;font-size:0.85rem;font-weight:600;transition:all 0.2s;">View Profile</a>
+          <a href="carlos-macias-profile.html" style="display:inline-block;padding:10px 14px;background:#D4AF37;color:#2A2A2A;text-decoration:none;font-size:0.85rem;font-weight:600;transition:all 0.2s;">View Profile</a>
         </div>
       </div>
 
       <!-- Example 3: Negocio Profile -->
       <div style="background: #FFF;  overflow: hidden; box-shadow: 0 4px 16px rgba(26, 107, 92, 0.08);">
-        <div style="background: linear-gradient(135deg, #C0C0C0 0%, #2A2A2A 100%); height: 180px; display: flex; align-items: center; justify-content: center; font-size: 3.5rem;">📊</div>
+        <div style="background: linear-gradient(135deg, #2A2A2A 0%, #2A2A2A 100%); height: 180px; display: flex; align-items: center; justify-content: center; font-size: 3.5rem;"></div>
         <div style="padding: 24px;">
           <div style="font-family:var(--cinzel);font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:#D4AF37;font-weight:600;margin-bottom:8px;">Negocio Founder Profile</div>
-          <h3 style="font-family:var(--cinzel);font-size:1.2rem;color:#C0C0C0;margin-bottom:12px;">Your Negocio Story</h3>
+          <h3 style="font-family:var(--cinzel);font-size:1.2rem;color:#2A2A2A;margin-bottom:12px;">Your Negocio Story</h3>
           <p style="font-size:0.9rem;color:#1C1C1C;font-style:italic;margin-bottom:16px;line-height:1.6;">"Document the legacy you've built. Create a permanent home for your business."</p>
-          <a href="demo-profiles.html" style="display:inline-block;padding:10px 14px;background:#D4AF37;color:#C0C0C0;text-decoration:none;font-size:0.85rem;font-weight:600;transition:all 0.2s;">See More</a>
+          <a href="demo-profiles.html" style="display:inline-block;padding:10px 14px;background:#D4AF37;color:#2A2A2A;text-decoration:none;font-size:0.85rem;font-weight:600;transition:all 0.2s;">See More</a>
         </div>
       </div>
     </div>
@@ -337,53 +338,53 @@ img { max-width: 100%; height: auto; display: block; }
 <!-- FEATURES COMPARISON TABLE -->
 <section style="background-color: #FAF3E6; padding: 72px 48px;">
   <div style="max-width: 1000px; margin: 0 auto;">
-    <h2 style="font-family:var(--cinzel);font-size:clamp(1.4rem,3vw,2rem);font-weight:700;color:#C0C0C0;margin-bottom:8px;text-align:center;">What's Included</h2>
+    <h2 style="font-family:var(--cinzel);font-size:clamp(1.4rem,3vw,2rem);font-weight:700;color:#2A2A2A;margin-bottom:8px;text-align:center;">What's Included</h2>
     <p style="font-size:0.95rem;color:var(--body);line-height:1.85;text-align:center;margin-bottom:36px;max-width:700px;margin-left:auto;margin-right:auto;">Your complete business profile, ready to represent your legacy.</p>
 
     <div style="overflow-x: auto;">
       <table style="width: 100%; border-collapse: collapse; background: #FFF;  overflow: hidden; box-shadow: 0 4px 16px rgba(26, 107, 92, 0.08);">
         <thead>
-          <tr style="background: linear-gradient(135deg, #C0C0C0 0%, #2A2A2A 100%); color: #FAF3E6;">
+          <tr style="background: linear-gradient(135deg, #2A2A2A 0%, #2A2A2A 100%); color: #FAF3E6;">
             <th style="padding: 16px; text-align: left; font-weight: 600; border-bottom: 2px solid #D4AF37;">Feature</th>
             <th style="padding: 16px; text-align: center; font-weight: 600; border-bottom: 2px solid #D4AF37;">Included</th>
           </tr>
         </thead>
         <tbody>
           <tr style="border-bottom: 1px solid rgba(26, 107, 92, 0.1);">
-            <td style="padding: 16px; color: #C0C0C0; font-weight: 600;">Professional Founder Story</td>
-            <td style="padding: 16px; text-align: center;">✓</td>
+            <td style="padding: 16px; color: #2A2A2A; font-weight: 600;">Professional Founder Story</td>
+            <td style="padding: 16px; text-align: center;"></td>
           </tr>
           <tr style="border-bottom: 1px solid rgba(26, 107, 92, 0.1);">
-            <td style="padding: 16px; color: #C0C0C0; font-weight: 600;">Company Page with Logo</td>
-            <td style="padding: 16px; text-align: center;">✓</td>
+            <td style="padding: 16px; color: #2A2A2A; font-weight: 600;">Company Page with Logo</td>
+            <td style="padding: 16px; text-align: center;"></td>
           </tr>
           <tr style="border-bottom: 1px solid rgba(26, 107, 92, 0.1);">
-            <td style="padding: 16px; color: #C0C0C0; font-weight: 600;">Work Portfolio & Gallery</td>
-            <td style="padding: 16px; text-align: center;">✓</td>
+            <td style="padding: 16px; color: #2A2A2A; font-weight: 600;">Work Portfolio & Gallery</td>
+            <td style="padding: 16px; text-align: center;"></td>
           </tr>
           <tr style="border-bottom: 1px solid rgba(26, 107, 92, 0.1);">
-            <td style="padding: 16px; color: #C0C0C0; font-weight: 600;">QR Code for Negocio Cards</td>
-            <td style="padding: 16px; text-align: center;">✓</td>
+            <td style="padding: 16px; color: #2A2A2A; font-weight: 600;">QR Code for Negocio Cards</td>
+            <td style="padding: 16px; text-align: center;"></td>
           </tr>
           <tr style="border-bottom: 1px solid rgba(26, 107, 92, 0.1);">
-            <td style="padding: 16px; color: #C0C0C0; font-weight: 600;">Contacto Information & Hours</td>
-            <td style="padding: 16px; text-align: center;">✓</td>
+            <td style="padding: 16px; color: #2A2A2A; font-weight: 600;">Contacto Information & Hours</td>
+            <td style="padding: 16px; text-align: center;"></td>
           </tr>
           <tr style="border-bottom: 1px solid rgba(26, 107, 92, 0.1);">
-            <td style="padding: 16px; color: #C0C0C0; font-weight: 600;">Tap-to-Quote (Estimate Request)</td>
-            <td style="padding: 16px; text-align: center;">✓</td>
+            <td style="padding: 16px; color: #2A2A2A; font-weight: 600;">Tap-to-Quote (Estimate Request)</td>
+            <td style="padding: 16px; text-align: center;"></td>
           </tr>
           <tr style="border-bottom: 1px solid rgba(26, 107, 92, 0.1);">
-            <td style="padding: 16px; color: #C0C0C0; font-weight: 600;">Team Member Profiles</td>
-            <td style="padding: 16px; text-align: center;">✓</td>
+            <td style="padding: 16px; color: #2A2A2A; font-weight: 600;">Team Member Profiles</td>
+            <td style="padding: 16px; text-align: center;"></td>
           </tr>
           <tr style="border-bottom: 1px solid rgba(26, 107, 92, 0.1);">
-            <td style="padding: 16px; color: #C0C0C0; font-weight: 600;">License & Certifications Display</td>
-            <td style="padding: 16px; text-align: center;">✓</td>
+            <td style="padding: 16px; color: #2A2A2A; font-weight: 600;">License & Certifications Display</td>
+            <td style="padding: 16px; text-align: center;"></td>
           </tr>
           <tr>
-            <td style="padding: 16px; color: #C0C0C0; font-weight: 600;">Permanent at mylegacycontinues.com</td>
-            <td style="padding: 16px; text-align: center;">✓</td>
+            <td style="padding: 16px; color: #2A2A2A; font-weight: 600;">Permanent at mylegacycontinues.com</td>
+            <td style="padding: 16px; text-align: center;"></td>
           </tr>
         </tbody>
       </table>
@@ -527,7 +528,7 @@ img { max-width: 100%; height: auto; display: block; }
 </section>
 
 <div style="background: rgba(212,160,23,0.08); padding: 2rem 3rem; text-align: center;">
-  <p style="font-size: 0.95rem; color: #C0C0C0; font-weight: 500;">One-time payment. No recurring fees. Your memories stay online forever.</p>
+  <p style="font-size: 0.95rem; color: #2A2A2A; font-weight: 500;">One-time payment. No recurring fees. Your memories stay online forever.</p>
 </div>
 
 <!-- YOUR LEGACY, YOUR CONTROL -->
