@@ -68,7 +68,7 @@ Each includes quote, family name, adoption date, emotional impact messaging.
 - **NEW:** EIN (84-4188282) for transparency
 
 ### Visual Design:
-- Maintained existing teal (#1A5C55) hero
+- Maintained existing teal (#C0C0C0) hero
 - Gold accents (#E8C97A) for highlights
 - Cream background (#FAF3E6) for content sections
 - Metalflake texture on dark sections
@@ -85,7 +85,7 @@ Each includes quote, family name, adoption date, emotional impact messaging.
 ### Form Structure:
 
 **Hero Section:**
-- Teal background (#1A5C55)
+- Teal background (#C0C0C0)
 - Clear title: "Rescue Dog Intake Form"
 - Description: "Submit a dog for rescue evaluation..."
 - Back link to Shoshi profile
@@ -219,7 +219,7 @@ Mutual responsibilities documented:
 ### Featured Partner Card:
 
 **Design:**
-- Teal background (#1A5C55)
+- Teal background (#C0C0C0)
 - Gold text accents (#E8C97A)
 - Centered layout
 - Clear visual hierarchy

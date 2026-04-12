@@ -12,11 +12,11 @@
   --candy-red:          #C61F2B;
   --chrome-silver:      #C0C0C0;
   --charcoal-dark:      #2a2a2a;
-  --sunset-orange:      #C8420A;
+  --candy-red:      #C61F2B;
   --coral:              #E8672A;
   --peach:              #F2A06A;
   --champagne-gold:     #E8C97A;
-  --teal:               #C0C0C0;
+  --chrome-silver:               #C0C0C0;
   --gold:               #E8C97A;
   --text-primary:       #2a2a2a;
   --text-secondary:     #5a5a5a;
@@ -255,7 +255,7 @@ p {
 }
 
 .hero-left {
-  background-color: var(--teal);
+  background-color: var(--chrome-silver);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -285,7 +285,7 @@ p {
 }
 
 .hero-right {
-  background: linear-gradient(135deg, var(--sunset-orange) 0%, var(--coral) 50%, var(--peach) 100%);
+  background: linear-gradient(135deg, var(--candy-red) 0%, var(--coral) 50%, var(--peach) 100%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -411,7 +411,7 @@ p {
 }
 
 .section-teal {
-  background-color: var(--teal);
+  background-color: var(--chrome-silver);
   color: var(--cream-bg);
   padding: var(--section-pad) 0;
   position: relative;
