@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rescue Dog Intake Form — Underdog Heroes | My Legacy Continues</title>
+  <meta name="description" content="Submit a dog for rescue with Underdog Heroes. Complete intake form includes medical history, behavioral notes, and timeline. Secure and confidential.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Outfit:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body { background-color: #FAF3E6; overflow-x: hidden; }
+    section { background-color: #FAF3E6; }
+    .section { background-color: #FAF3E6; }
+
+    .page-hero {
+      background: #1A5C55;
+      padding: 80px 48px 60px;
+      text-align: center;
+    }
+    .page-hero h1 {
+      font-family: 'Oswald', sans-serif;
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      color: #FAF3E6;
+      margin-bottom: 12px;
+      font-weight: 700;
+    }
+    .page-hero p {
+      color: rgba(250,243,230,0.85);
+      font-size: 1rem;
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.8;
+    }
+
+    .form-section {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 60px 48px;
+    }
+
+    .form-section h2 {
+      font-family: 'Oswald', sans-serif;
+      font-size: 1.6rem;
+      color: #1A5C55;
+      margin-bottom: 28px;
+      font-weight: 700;
+    }
+
+    .form-group {
+      margin-bottom: 24px;
+    }
+
+    .form-group label {
+      display: block;
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #1A5C55;
+      margin-bottom: 8px;
+    }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      padding: 12px 16px;
+      border: 1px solid rgba(26,107,92,0.25);
+      border-radius: 3px;
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.95rem;
+      color: #1C1C1C;
+      background: #FFF;
+      box-sizing: border-box;
+      transition: border-color 0.2s;
+      min-height: 44px;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+      outline: none;
+      border-color: #E8C97A;
+      box-shadow: 0 0 0 3px rgba(232,201,122,0.1);
+    }
+
+    .form-group textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    @media (max-width: 600px) {
+      .form-row { grid-template-columns: 1fr; }
+      .form-section { padding: 40px 20px; }
+      .page-hero { padding: 60px 20px 40px; }
+    }
+
+    .form-divider {
+      height: 1px;
+      background: rgba(26,107,92,0.15);
+      margin: 32px 0;
+    }
+
+    .form-submit-row {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-top: 32px;
+    }
+
+    .form-submit-note {
+      font-size: 0.85rem;
+      color: #666;
+      line-height: 1.6;
+    }
+
+    .btn {
+      display: inline-block;
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 16px 34px;
+      min-height: 44px;
+      border: none;
+      cursor: pointer;
+      transition: all 0.22s ease;
+      text-decoration: none;
+      white-space: nowrap;
+      border-radius: 2px;
+    }
+
+    .btn-primary {
+      background: #E8C97A;
+      color: #FAF3E6;
+      box-shadow: 0 4px 20px rgba(232,201,122,0.2);
+    }
+
+    .btn-primary:hover {
+      background: #DFB966;
+      transform: translateY(-2px);
+    }
+
+    .back-link {
+      display: inline-block;
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #1A5C55;
+      text-decoration: none;
+      margin-bottom: 16px;
+      transition: color 0.2s;
+    }
+
+    .back-link:hover {
+      color: #0F3D38;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav class="site-nav">
+    <a href="https://mylegacycontinues.com/index.html" class="nav-brand">
+      <img src="logo.png" alt="My Legacy Continues" class="nav-logo">
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="shoshi-gamliel-profile.html">Underdog Heroes</a></li>
+      <li><a href="rescue-registry.html">Rescue Registry</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="https://mylegacycontinues.com/index.html#products" class="btn btn-gold" style="padding: 0.5rem 1.2rem; font-size: 0.7rem;">START YOUR LEGACY</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <div class="page-hero">
+    <a href="shoshi-gamliel-profile.html" class="back-link">← Back to Underdog Heroes</a>
+    <h1>Rescue Dog Intake Form</h1>
+    <p>Submit a dog for rescue evaluation. Complete this form securely and confidentially. We'll respond within 24 hours to discuss next steps.</p>
+  </div>
+
+  <!-- FORM SECTION -->
+  <section class="form-section">
+    <form action="https://formspree.io/f/xzzpqjle" method="POST">
+      <input type="hidden" name="_subject" value="Rescue Dog Intake — Underdog Heroes">
+      <input type="hidden" name="_next" value="https://mylegacycontinues.com/thank-you.html">
+
+      <h2>Dog Information</h2>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="dog_name">Dog's Name *</label>
+          <input type="text" id="dog_name" name="dog_name" required placeholder="e.g. Rocky">
+        </div>
+        <div class="form-group">
+          <label for="dog_age">Age *</label>
+          <input type="text" id="dog_age" name="dog_age" required placeholder="e.g. 3 years, 8 months">
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="dog_breed">Breed(s) *</label>
+          <input type="text" id="dog_breed" name="dog_breed" required placeholder="e.g. Pit Bull, American Bully mix">
+        </div>
+        <div class="form-group">
+          <label for="dog_color">Color/Markings</label>
+          <input type="text" id="dog_color" name="dog_color" placeholder="e.g. Brindle with white chest">
+        </div>
+      </div>
+
+      <div class="form-divider"></div>
+
+      <h2>Medical History</h2>
+
+      <div class="form-group">
+        <label for="vaccinations">Vaccination Status *</label>
+        <select id="vaccinations" name="vaccinations" required>
+          <option value="">-- Select --</option>
+          <option value="Up to date">Up to date</option>
+          <option value="Partial">Partial (list below)</option>
+          <option value="Unknown">Unknown</option>
+          <option value="None">None / Not vaccinated</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="medications">Current Medications</label>
+        <textarea id="medications" name="medications" placeholder="List any medications, dosages, and reasons (e.g. 'Amoxicillin 500mg 2x daily for ear infection'). Leave blank if none."></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="health_concerns">Health Concerns *</label>
+        <textarea id="health_concerns" name="health_concerns" required placeholder="List any injuries, illnesses, special needs, or health conditions (e.g. 'Limps on back left leg - possible ACL injury', 'Heartworm positive', 'Diabetic - requires insulin')"></textarea>
+      </div>
+
+      <div class="form-divider"></div>
+
+      <h2>Behavioral Information</h2>
+
+      <div class="form-group">
+        <label for="temperament">Temperament / Personality *</label>
+        <textarea id="temperament" name="temperament" required placeholder="How does the dog behave? (e.g. 'Friendly, energetic, loves people', 'Fearful, withdrawn, needs time to warm up')"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="triggers">Known Triggers or Sensitivities</label>
+        <textarea id="triggers" name="triggers" placeholder="Any situations that cause fear, aggression, or anxiety? (e.g. 'Reactive to loud noises', 'Resource guards food', 'Fearful of men')"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="training">Training Level / Obedience</label>
+        <textarea id="training" name="training" placeholder="What commands does the dog know? Any behavioral training? (e.g. 'Knows sit, stay, come', 'No formal training, needs house training')"></textarea>
+      </div>
+
+      <div class="form-divider"></div>
+
+      <h2>Current Situation</h2>
+
+      <div class="form-group">
+        <label for="current_status">Current Status *</label>
+        <select id="current_status" name="current_status" required>
+          <option value="">-- Select --</option>
+          <option value="Shelter/Pound">Shelter or Pound</option>
+          <option value="Stray">Stray (location-specific)</option>
+          <option value="Owner Surrender">Owner Surrender (owner can't keep)</option>
+          <option value="Already in Rescue">Already in another rescue</option>
+          <option value="Foster Home">Currently in foster home</option>
+          <option value="Other">Other (describe below)</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="rescue_org">Organization / Shelter Name (if applicable)</label>
+        <input type="text" id="rescue_org" name="rescue_org" placeholder="e.g. Riverside County Pound, XYZ Rescue">
+      </div>
+
+      <div class="form-group">
+        <label for="rescue_contact">Organization Contact / Reference</label>
+        <input type="text" id="rescue_contact" name="rescue_contact" placeholder="Name, phone, or email of contact person">
+      </div>
+
+      <div class="form-divider"></div>
+
+      <h2>Timeline & Urgency</h2>
+
+      <div class="form-group">
+        <label for="timeline">When does the dog need rescue? *</label>
+        <select id="timeline" name="timeline" required>
+          <option value="">-- Select --</option>
+          <option value="URGENT - Days">URGENT — Days (euthanasia list, immediate danger)</option>
+          <option value="Soon - 1-2 weeks">Soon — 1-2 weeks</option>
+          <option value="Flexible - 1 month">Flexible — 1 month</option>
+          <option value="No immediate rush">No immediate rush</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="additional_info">Additional Information</label>
+        <textarea id="additional_info" name="additional_info" placeholder="Any other details we should know? Size/weight, success in home settings, special needs, photos (link), etc."></textarea>
+      </div>
+
+      <div class="form-divider"></div>
+
+      <h2>Your Contact Information</h2>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="submitter_name">Your Name *</label>
+          <input type="text" id="submitter_name" name="submitter_name" required placeholder="Your full name">
+        </div>
+        <div class="form-group">
+          <label for="submitter_email">Your Email *</label>
+          <input type="email" id="submitter_email" name="submitter_email" required placeholder="your@email.com">
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="submitter_phone">Your Phone</label>
+          <input type="tel" id="submitter_phone" name="submitter_phone" placeholder="(555) 123-4567">
+        </div>
+        <div class="form-group">
+          <label for="submitter_relationship">Your Relationship to Dog *</label>
+          <select id="submitter_relationship" name="submitter_relationship" required>
+            <option value="">-- Select --</option>
+            <option value="Shelter/Rescue Staff">Shelter or Rescue Staff</option>
+            <option value="Current Owner">Current Owner</option>
+            <option value="Foster Caregiver">Foster Caregiver</option>
+            <option value="Found Dog (Good Samaritan)">Found Dog (Good Samaritan)</option>
+            <option value="Concerned Person">Concerned Person / Witness</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-divider"></div>
+
+      <div class="form-submit-row">
+        <button type="submit" class="btn btn-primary">Submit Intake Form</button>
+        <span class="form-submit-note">We'll respond within 24 hours. All information is confidential.</span>
+      </div>
+    </form>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <img src="logo.png" alt="My Legacy Continues" class="footer-logo">
+      <div class="footer-contact">Contact: contact@mylegacycontinues.com | (805) 863-3794 | Santa Maria, CA</div>
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="shoshi-gamliel-profile.html">Underdog Heroes</a></li>
+        <li><a href="rescue-registry.html">Rescue Registry</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="legal/privacy.html">Privacy</a></li>
+        <li><a href="legal/terms-of-service.html">Terms</a></li>
+      </ul>
+      <p class="footer-copy">&copy; 2026 My Legacy Continues. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="metalflake.js"></script>
+  <script>
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    if (navToggle) {
+      navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+      navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => navLinks.classList.remove('open'));
+      });
+    }
+  </script>
+
+</body>
+</html>
