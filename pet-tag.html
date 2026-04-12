@@ -240,7 +240,7 @@
     <div class="section-inner">
       <div class="form-container">
         <div style="text-align: center; margin-bottom: 24px;">
-          <button id="showOrderForm" class="btn btn-gold" onclick="document.getElementById('orderFormWrap').style.display='block';this.style.display='none';" style="margin-bottom:16px">Start Now</button>
+          <button id="showOrderForm" onclick="toggleOrderForm()" style="background:#C61F2B;color:#FAF3E6;border:1.5px solid #E8C97A;padding:12px 24px;font-family:var(--cinzel);font-size:0.75rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;transition:all 0.22s ease;min-height:44px;border-radius:2px;margin-bottom:16px">Order Now</button>
         </div>
         <div id="orderFormWrap" style="display:none;">
         <form action="https://formspree.io/f/xzzpqjle" method="POST">
@@ -411,5 +411,18 @@
     document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
   </script>
 <script src="metalflake.js"></script>
+<script>
+function toggleOrderForm() {
+  const formWrap = document.getElementById('orderFormWrap');
+  const button = document.getElementById('showOrderForm');
+  if (formWrap.style.display === 'none' || formWrap.style.display === '') {
+    formWrap.style.display = 'block';
+    button.textContent = 'Hide Form';
+  } else {
+    formWrap.style.display = 'none';
+    button.textContent = 'Order Now';
+  }
+}
+</script>
 </body>
 </html>

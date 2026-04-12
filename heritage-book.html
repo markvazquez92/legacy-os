@@ -309,7 +309,7 @@ img { max-width: 100%; height: auto; display: block; }
     <div style="padding-top:56px; margin-bottom:36px; text-align:center;">
       <h2 style="font-family:var(--cinzel);font-size:clamp(1.4rem,3vw,2rem);font-weight:700;color: var(--heading);margin-bottom:12px;">Start My Heritage Book</h2>
       <p style="font-size:0.9rem;color:var(--text-muted);max-width:580px;line-height:1.85;margin:0 auto 24px;">Pay first, then fill out the form. We'll reach out within 48 hours to confirm we have everything we need. Delivery is 3–4 weeks from when we receive your information.</p>
-      <button id="showOrderForm" class="btn btn-primary" onclick="document.getElementById('orderFormWrap').style.display='block';this.style.display='none';" style="margin-bottom:24px;">Start My Order</button>
+      <button id="showOrderForm" onclick="toggleOrderForm()" style="background:#C61F2B;color:#FAF3E6;border:1.5px solid #E8C97A;padding:16px 34px;font-family:var(--cinzel);font-size:0.72rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;cursor:pointer;transition:all 0.22s ease;min-height:44px;border-radius:2px;margin-bottom:24px;">Get Started</button>
     </div>
 
 <div id="orderFormWrap" style="display:none;">
@@ -555,5 +555,18 @@ img { max-width: 100%; height: auto; display: block; }
 </script>
 
 <script src="metalflake.js"></script>
+<script>
+function toggleOrderForm() {
+  const formWrap = document.getElementById('orderFormWrap');
+  const button = document.getElementById('showOrderForm');
+  if (formWrap.style.display === 'none' || formWrap.style.display === '') {
+    formWrap.style.display = 'block';
+    button.textContent = 'Hide Form';
+  } else {
+    formWrap.style.display = 'none';
+    button.textContent = 'Get Started';
+  }
+}
+</script>
 </body>
 </html>
