@@ -691,20 +691,6 @@
         margin-top: 60px;
       }
 
-      .hero-content {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      .hero-left {
-        padding-right: 0;
-        margin-bottom: 2rem;
-      }
-
-      .hero-right img {
-        width: 200px;
-      }
-
       section {
         padding: 2rem 1.5rem;
       }
@@ -1052,11 +1038,6 @@
       navLinks?.classList.toggle('active');
     });
   }
-
-  // Hero CTA button
-  document.querySelector('.hero-left .cta').addEventListener('click', () => {
-    document.querySelector('.products').scrollIntoView({ behavior: 'smooth' });
-  });
 
   // Nav CTA button
   document.querySelector('.nav-cta').addEventListener('click', () => {
