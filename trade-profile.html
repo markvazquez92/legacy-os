@@ -107,8 +107,35 @@ a { color: inherit; text-decoration: none; }
 @media (max-width: 600px) { .bottom-cta { padding: 48px 20px; } }
 
 </style>
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PLACEHOLDER"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-PLACEHOLDER', {
+      'page_path': window.location.pathname,
+      'page_title': document.title
+    });
+  </script>
+
+  <!-- Facebook Pixel -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1234567890');
+    fbq('track', 'PageView');
+  </script>
 </head>
 <body>
+  <!-- Facebook Pixel noscript -->
+  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1234567890&ev=PageView&noscript=1" /></noscript>
   <!-- NAVIGATION -->
   <nav class="site-nav">
     <a href="https://mylegacycontinues.com/index.html" class="nav-brand">
@@ -226,7 +253,7 @@ a { color: inherit; text-decoration: none; }
 <!-- BOTTOM CTA -->
 <section class="bottom-cta">
   <p>Want a profile like this for your business?</p>
-  <a href="https://buy.stripe.com/4gM14odSLaK8asI9CIfQI03" class="btn btn-gold">Get Your Business Founder Profile — $79</a>
+  <a href="https://buy.stripe.com/4gM14odSLaK8asI9CIfQI03" class="btn btn-gold" data-product="business-profile">Get Your Business Founder Profile — $79</a>
 </section>
 
 <footer style="background: var(--navy, #1C1C1C); border-top: 1px solid rgba(212,160,23,0.2); padding: 40px 48px 28px;">
@@ -258,6 +285,47 @@ a { color: inherit; text-decoration: none; }
   }
 </script>
 <script src="metalflake.js"></script>
+
+
+  <!-- Form Submission Tracking -->
+  <script>
+    document.querySelectorAll('form').forEach(form => {
+      form.addEventListener('submit', function(e) {
+        const subject = form.querySelector('input[name="_subject"]');
+        const eventName = subject ? subject.value.replace(/\s+/g, '_').toLowerCase() : 'form_submission';
+        if (typeof gtag !== 'undefined') {
+          gtag('event', eventName, {
+            'event_category': 'form',
+            'event_label': subject ? subject.value : 'unknown'
+          });
+        }
+      });
+    });
+  </script>
+
+  <!-- Product Click Tracking -->
+  <script>
+    document.querySelectorAll('[data-product]').forEach(button => {
+      button.addEventListener('click', function() {
+        if (typeof gtag !== 'undefined') {
+          gtag('event', 'view_item', {
+            'items': [{
+              'item_id': this.getAttribute('data-product'),
+              'item_name': this.getAttribute('data-product').replace(/[-_]/g, ' ').toUpperCase(),
+              'item_category': 'legacy_product'
+            }]
+          });
+        }
+
+        if (typeof fbq !== 'undefined') {
+          fbq('track', 'ViewContent', {
+            'content_name': this.getAttribute('data-product'),
+            'content_type': 'product'
+          });
+        }
+      });
+    });
+  </script>
 
 </body>
 </html>

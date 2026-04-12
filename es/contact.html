@@ -44,8 +44,35 @@
     .lang-switcher a { color: #FAF3E6; text-decoration: none; font-size: 0.85rem; font-weight: 600; }
     @media(max-width:768px) { .lang-switcher { top: 4.5rem; right: 1.5rem; } }
   </style>
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PLACEHOLDER"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-PLACEHOLDER', {
+      'page_path': window.location.pathname,
+      'page_title': document.title
+    });
+  </script>
+
+  <!-- Facebook Pixel -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1234567890');
+    fbq('track', 'PageView');
+  </script>
 </head>
 <body>
+  <!-- Facebook Pixel noscript -->
+  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1234567890&ev=PageView&noscript=1" /></noscript>
   <div class="lang-switcher"><a href="https://mylegacycontinues.com/contact.html">English</a></div>
   <div class="hero"><h1>Ponte en Contacto</h1><p>¿Tienes preguntas? ¿Listo para preservar tu legado? Estamos aquí para ayudar.</p></div>
   <div class="content">
@@ -59,6 +86,47 @@
     <div class="business-hours"><h3>Nuestros Servicios</h3><p style="margin-bottom:1rem;">Mi Legado Continúa opera múltiples líneas de servicio:</p><ul style="list-style:none;padding:0;"><li style="margin:0.5rem 0;"><strong>Preservación de Herencia:</strong> Documentación familiar, investigación genealógica, libros de herencia de lujo</li><li style="margin:0.5rem 0;"><strong>Memoriales y Legado:</strong> Placas de cementerio, etiquetas de mascotas, servicios memoriales</li><li style="margin:0.5rem 0;"><strong>Perfiles Profesionales:</strong> Perfiles de negocios, perfiles de herencia familiar, documentación de legado</li><li style="margin:0.5rem 0;"><strong>Legado de Bebé:</strong> Paquetes de nueva vida, preservación de historia familiar</li></ul></div>
   </div>
   <footer><p><strong>Mi Legado Continúa</strong></p><p>Contacto: contact@mylegacycontinues.com | (805) 863-3794 | Santa Maria, CA</p><p style="margin-top:2rem;font-size:0.85rem"><a href="index.html">Inicio</a> | <a href="heritage-book.html">Herencia</a> | <a href="pet-tag.html">Etiquetas</a> | <a href="about.html">Acerca de</a> | <a href="contact.html">Contacto</a></p></footer>
+
+  <!-- Form Submission Tracking -->
+  <script>
+    document.querySelectorAll('form').forEach(form => {
+      form.addEventListener('submit', function(e) {
+        const subject = form.querySelector('input[name="_subject"]');
+        const eventName = subject ? subject.value.replace(/\s+/g, '_').toLowerCase() : 'form_submission';
+        if (typeof gtag !== 'undefined') {
+          gtag('event', eventName, {
+            'event_category': 'form',
+            'event_label': subject ? subject.value : 'unknown'
+          });
+        }
+      });
+    });
+  </script>
+
+  <!-- Product Click Tracking -->
+  <script>
+    document.querySelectorAll('[data-product]').forEach(button => {
+      button.addEventListener('click', function() {
+        if (typeof gtag !== 'undefined') {
+          gtag('event', 'view_item', {
+            'items': [{
+              'item_id': this.getAttribute('data-product'),
+              'item_name': this.getAttribute('data-product').replace(/[-_]/g, ' ').toUpperCase(),
+              'item_category': 'legacy_product'
+            }]
+          });
+        }
+
+        if (typeof fbq !== 'undefined') {
+          fbq('track', 'ViewContent', {
+            'content_name': this.getAttribute('data-product'),
+            'content_type': 'product'
+          });
+        }
+      });
+    });
+  </script>
+
 </body>
 </html>
 

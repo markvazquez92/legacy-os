@@ -84,8 +84,35 @@
 }
 </style>
 <link rel="alternate" hreflang="es" href="https://mylegacycontinues.com/es/pet-tag.html">
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PLACEHOLDER"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-PLACEHOLDER', {
+      'page_path': window.location.pathname,
+      'page_title': document.title
+    });
+  </script>
+
+  <!-- Facebook Pixel -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1234567890');
+    fbq('track', 'PageView');
+  </script>
   </head>
 <body>
+  <!-- Facebook Pixel noscript -->
+  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1234567890&ev=PageView&noscript=1" /></noscript>
   <!-- NAVIGATION -->
   <nav class="site-nav">
     <a href="https://mylegacycontinues.com/index.html" class="nav-brand">
@@ -219,7 +246,7 @@
           <li style="padding: 0.5rem 0; border-bottom: 1px solid rgba(212,175,55,0.2); font-size: 0.9rem;">Digital memorial profile</li>
           <li style="padding: 0.5rem 0; font-size: 0.9rem;">Hosted forever</li>
         </ul>
-        <a href="https://buy.stripe.com/eVq7sM9CvdWk9oE4iofQI07" class="btn btn-gold">Get Basic</a>
+        <a href="https://buy.stripe.com/eVq7sM9CvdWk9oE4iofQI07" class="btn btn-gold" data-product="pet-tag" data-product="pet-tag">Get Basic</a>
       </div>
       <!-- Premium -->
       <div class="card text-center" style="border-color: var(--teal); border-width: 3px; position: relative;">
@@ -236,7 +263,7 @@
           <li style="padding: 0.5rem 0; border-bottom: 1px solid rgba(212,175,55,0.2); font-size: 0.9rem;">Updates forever</li>
           <li style="padding: 0.5rem 0; font-size: 0.9rem;">AirTag bundle compatible</li>
         </ul>
-        <a href="https://buy.stripe.com/bJe28s15ZcSgdEU9CIfQI09" class="btn btn-gold">Get Premium</a>
+        <a href="https://buy.stripe.com/bJe28s15ZcSgdEU9CIfQI09" class="btn btn-gold" data-product="pet-tag" data-product="pet-tag">Get Premium</a>
       </div>
     </div>
   </section>
@@ -666,5 +693,45 @@ document.querySelectorAll('form').forEach(form => {
   });
 });
 </script>
+  <!-- Form Submission Tracking -->
+  <script>
+    document.querySelectorAll('form').forEach(form => {
+      form.addEventListener('submit', function(e) {
+        const subject = form.querySelector('input[name="_subject"]');
+        const eventName = subject ? subject.value.replace(/\s+/g, '_').toLowerCase() : 'form_submission';
+        if (typeof gtag !== 'undefined') {
+          gtag('event', eventName, {
+            'event_category': 'form',
+            'event_label': subject ? subject.value : 'unknown'
+          });
+        }
+      });
+    });
+  </script>
+
+  <!-- Product Click Tracking -->
+  <script>
+    document.querySelectorAll('[data-product]').forEach(button => {
+      button.addEventListener('click', function() {
+        if (typeof gtag !== 'undefined') {
+          gtag('event', 'view_item', {
+            'items': [{
+              'item_id': this.getAttribute('data-product'),
+              'item_name': this.getAttribute('data-product').replace(/[-_]/g, ' ').toUpperCase(),
+              'item_category': 'legacy_product'
+            }]
+          });
+        }
+
+        if (typeof fbq !== 'undefined') {
+          fbq('track', 'ViewContent', {
+            'content_name': this.getAttribute('data-product'),
+            'content_type': 'product'
+          });
+        }
+      });
+    });
+  </script>
+
 </body>
 </html>

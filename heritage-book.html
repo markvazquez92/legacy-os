@@ -121,8 +121,35 @@ img { max-width: 100%; height: auto; display: block; }
 </style>
 
 <link rel="alternate" hreflang="es" href="https://mylegacycontinues.com/es/heritage-book.html">
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PLACEHOLDER"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-PLACEHOLDER', {
+      'page_path': window.location.pathname,
+      'page_title': document.title
+    });
+  </script>
+
+  <!-- Facebook Pixel -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1234567890');
+    fbq('track', 'PageView');
+  </script>
   </head>
 <body>
+  <!-- Facebook Pixel noscript -->
+  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1234567890&ev=PageView&noscript=1" /></noscript>
   <!-- NAVIGATION -->
   <nav class="site-nav">
     <a href="https://mylegacycontinues.com/index.html" class="nav-brand">
@@ -163,7 +190,7 @@ img { max-width: 100%; height: auto; display: block; }
     </div>
     <div class="price-badge">$199</div>
     <p class="price-note">One-time purchase. Includes physical book + permanent digital profile. No subscriptions.</p>
-    <a href="https://buy.stripe.com/bJe14o2a35pO6csg16fQI02" class="btn btn-primary">Pay Now — $199</a>
+    <a href="https://buy.stripe.com/bJe14o2a35pO6csg16fQI02" class="btn btn-primary" data-product="heritage-book">Pay Now — $199</a>
   </div>
 </div>
 
@@ -436,7 +463,7 @@ img { max-width: 100%; height: auto; display: block; }
 <div class="stripe-cta">
   <p>Secure checkout through Stripe. One-time payment. Nothing recurring.</p>
   <span class="price-label">Heritage Culture Book — $199</span>
-  <a href="https://buy.stripe.com/bJe14o2a35pO6csg16fQI02" class="btn btn-primary">Pay $199 — Secure Checkout</a>
+  <a href="https://buy.stripe.com/bJe14o2a35pO6csg16fQI02" class="btn btn-primary" data-product="heritage-book">Pay $199 — Secure Checkout</a>
 </div>
 
 <form
@@ -652,7 +679,7 @@ img { max-width: 100%; height: auto; display: block; }
   <div class="section-inner text-center" style="max-width: 700px; margin: 0 auto;">
     <h2 style="color: var(--gold);">Photo Research Add-On — $150</h2>
     <p style="color: var(--cream); margin-top: 1.5rem;">We dig through historical archives, regional newspapers, church photo collections, immigration records, and public domain collections to find images connected to your family's time, place, and story. Full sourcing and usage rights documentation included.</p>
-    <a href="https://buy.stripe.com/bJe14o2a35pO6csg16fQI02" class="btn btn-gold" style="margin-top: 2rem;">Add Photo Research — $150</a>
+    <a href="https://buy.stripe.com/bJe14o2a35pO6csg16fQI02" class="btn btn-gold" style="margin-top: 2rem;" data-product="photo-research-addon">Add Photo Research — $150</a>
   </div>
 </section>
 
@@ -743,5 +770,45 @@ document.querySelectorAll('form').forEach(form => {
   });
 });
 </script>
+  <!-- Form Submission Tracking -->
+  <script>
+    document.querySelectorAll('form').forEach(form => {
+      form.addEventListener('submit', function(e) {
+        const subject = form.querySelector('input[name="_subject"]');
+        const eventName = subject ? subject.value.replace(/\s+/g, '_').toLowerCase() : 'form_submission';
+        if (typeof gtag !== 'undefined') {
+          gtag('event', eventName, {
+            'event_category': 'form',
+            'event_label': subject ? subject.value : 'unknown'
+          });
+        }
+      });
+    });
+  </script>
+
+  <!-- Product Click Tracking -->
+  <script>
+    document.querySelectorAll('[data-product]').forEach(button => {
+      button.addEventListener('click', function() {
+        if (typeof gtag !== 'undefined') {
+          gtag('event', 'view_item', {
+            'items': [{
+              'item_id': this.getAttribute('data-product'),
+              'item_name': this.getAttribute('data-product').replace(/[-_]/g, ' ').toUpperCase(),
+              'item_category': 'legacy_product'
+            }]
+          });
+        }
+
+        if (typeof fbq !== 'undefined') {
+          fbq('track', 'ViewContent', {
+            'content_name': this.getAttribute('data-product'),
+            'content_type': 'product'
+          });
+        }
+      });
+    });
+  </script>
+
 </body>
 </html>
