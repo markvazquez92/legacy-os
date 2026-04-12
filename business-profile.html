@@ -391,7 +391,7 @@ img { max-width: 100%; height: auto; display: block; }
 
 <div id="orderFormWrap" style="display:none;">
 <form class="intake-form" action="https://formspree.io/f/xzzpqjle" method="POST">
-  <input type="hidden" name="_subject" value="New Business Profile Order">
+  <input type="hidden" name="_subject" value="Business Profile Inquiry">
   <input type="hidden" name="_next" value="https://mylegacycontinues.com/thank-you.html">
 
   <div class="form-section-title">About Your Business</div>
@@ -399,11 +399,11 @@ img { max-width: 100%; height: auto; display: block; }
   <div class="form-row">
     <div class="form-group">
       <label for="biz-name">Business Name *</label>
-      <input type="text" id="biz-name" name="business_name" placeholder="e.g. Bears Concrete Pumping" required>
+      <input type="text" minlength="2" id="biz-name" name="business_name" placeholder="e.g. Bears Concrete Pumping" required>
     </div>
     <div class="form-group">
       <label for="biz-type">Type of Work *</label>
-      <input type="text" id="biz-type" name="type_of_work" placeholder="e.g. Concrete pumping, framing, plumbing..." required>
+      <input type="text" minlength="2" id="biz-type" name="type_of_work" placeholder="e.g. Concrete pumping, framing, plumbing..." required>
     </div>
   </div>
 
@@ -425,13 +425,13 @@ img { max-width: 100%; height: auto; display: block; }
     </div>
     <div class="form-group">
       <label for="biz-phone">Business Phone *</label>
-      <input type="tel" id="biz-phone" name="business_phone" placeholder="(805) 000-0000" required>
+      <input type="tel" pattern="[0-9 \-\+\(\)]{10,}" id="biz-phone" name="business_phone" placeholder="(805) 000-0000" required>
     </div>
   </div>
 
   <div class="form-group">
     <label for="biz-email">Business Email</label>
-    <input type="email" id="biz-email" name="business_email" placeholder="your@email.com">
+    <input type="email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" id="biz-email" name="business_email" placeholder="your@email.com">
   </div>
 
   <div class="form-divider"></div>
@@ -561,5 +561,25 @@ function toggleOrderForm() {
 }
 </script>
 
+<script>
+document.querySelectorAll('form').forEach(form => {
+  form.addEventListener('submit', function(e) {
+    const requiredFields = form.querySelectorAll('[required]');
+    let isValid = true;
+
+    requiredFields.forEach(field => {
+      if (!field.value.trim()) {
+        field.style.borderColor = '#C8420A';
+        isValid = false;
+      }
+    });
+
+    if (!isValid) {
+      e.preventDefault();
+      alert('Please fill in all required fields');
+    }
+  });
+});
+</script>
 </body>
 </html>

@@ -201,7 +201,7 @@
   <!-- FORM SECTION -->
   <section class="form-section">
     <form action="https://formspree.io/f/xzzpqjle" method="POST">
-      <input type="hidden" name="_subject" value="Rescue Dog Intake — Underdog Heroes">
+      <input type="hidden" name="_subject" value="Rescue Dog Intake">
       <input type="hidden" name="_next" value="https://mylegacycontinues.com/thank-you.html">
 
       <h2>Dog Information</h2>
@@ -209,18 +209,18 @@
       <div class="form-row">
         <div class="form-group">
           <label for="dog_name">Dog's Name *</label>
-          <input type="text" id="dog_name" name="dog_name" required placeholder="e.g. Rocky">
+          <input type="text" minlength="2" id="dog_name" name="dog_name" required placeholder="e.g. Rocky">
         </div>
         <div class="form-group">
           <label for="dog_age">Age *</label>
-          <input type="text" id="dog_age" name="dog_age" required placeholder="e.g. 3 years, 8 months">
+          <input type="text" minlength="2" id="dog_age" name="dog_age" required placeholder="e.g. 3 years, 8 months">
         </div>
       </div>
 
       <div class="form-row">
         <div class="form-group">
           <label for="dog_breed">Breed(s) *</label>
-          <input type="text" id="dog_breed" name="dog_breed" required placeholder="e.g. Pit Bull, American Bully mix">
+          <input type="text" minlength="2" id="dog_breed" name="dog_breed" required placeholder="e.g. Pit Bull, American Bully mix">
         </div>
         <div class="form-group">
           <label for="dog_color">Color/Markings</label>
@@ -326,18 +326,18 @@
       <div class="form-row">
         <div class="form-group">
           <label for="submitter_name">Your Name *</label>
-          <input type="text" id="submitter_name" name="submitter_name" required placeholder="Your full name">
+          <input type="text" minlength="2" id="submitter_name" name="submitter_name" required placeholder="Your full name">
         </div>
         <div class="form-group">
           <label for="submitter_email">Your Email *</label>
-          <input type="email" id="submitter_email" name="submitter_email" required placeholder="your@email.com">
+          <input type="email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" id="submitter_email" name="submitter_email" required placeholder="your@email.com">
         </div>
       </div>
 
       <div class="form-row">
         <div class="form-group">
           <label for="submitter_phone">Your Phone</label>
-          <input type="tel" id="submitter_phone" name="submitter_phone" placeholder="(555) 123-4567">
+          <input type="tel" pattern="[0-9 \-\+\(\)]{10,}" id="submitter_phone" name="submitter_phone" placeholder="(555) 123-4567">
         </div>
         <div class="form-group">
           <label for="submitter_relationship">Your Relationship to Dog *</label>
@@ -391,5 +391,25 @@
     }
   </script>
 
+<script>
+document.querySelectorAll('form').forEach(form => {
+  form.addEventListener('submit', function(e) {
+    const requiredFields = form.querySelectorAll('[required]');
+    let isValid = true;
+
+    requiredFields.forEach(field => {
+      if (!field.value.trim()) {
+        field.style.borderColor = '#C8420A';
+        isValid = false;
+      }
+    });
+
+    if (!isValid) {
+      e.preventDefault();
+      alert('Please fill in all required fields');
+    }
+  });
+});
+</script>
 </body>
 </html>

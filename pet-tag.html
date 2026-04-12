@@ -21,7 +21,68 @@
     .section {
       background-color: #FAF3E6;
     }
-  </style>
+  
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.58rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #1C1C1C;
+  font-weight: 600;
+}
+
+.form-input {
+  background: #FAF3E6;
+  border: 1px solid rgba(212, 160, 23, 0.2);
+  border-radius: 2px;
+  color: #1C1C1C;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.9rem;
+  padding: 13px 16px;
+  min-height: 44px;
+  transition: border-color 0.2s;
+  width: 100%;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #E8C97A;
+  box-shadow: 0 0 0 3px rgba(212, 160, 23, 0.1);
+}
+
+.form-input::placeholder {
+  color: #1C1C1C;
+  opacity: 0.6;
+}
+
+.form-button {
+  background: #E8C97A;
+  color: #FAF3E6;
+  border: none;
+  border-radius: 2px;
+  padding: 13px 24px;
+  min-height: 44px;
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.22s ease;
+}
+
+.form-button:hover {
+  background: #D4A017;
+  transform: translateY(-2px);
+}
+</style>
 <link rel="alternate" hreflang="es" href="https://mylegacycontinues.com/es/pet-tag.html">
   </head>
 <body>
@@ -111,7 +172,7 @@
       <p style="font-size:0.95rem;color:var(--muted);line-height:1.85;max-width:700px;font-style:italic;margin-bottom:28px;">This feature is coming soon. Join the waitlist to be first notified when it launches.</p>
       <form action="https://formspree.io/f/xzzpqjle" method="POST" style="display:inline-flex;gap:0.75rem;flex-wrap:wrap;align-items:center;">
         <input type="hidden" name="_subject" value="GPS Tracking Waitlist — Pet Tags">
-        <input type="email" name="email" placeholder="Enter your email" required style="padding:12px 16px;border:1.5px solid rgba(212,160,23,0.4);background:#FAF3E6;color:#1C1C1C;font-family:var(--sans);font-size:0.95rem;min-width:220px;border-radius:0;">
+        <input type="email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" name="email" placeholder="Enter your email" required style="padding:12px 16px;border:1.5px solid rgba(212,160,23,0.4);background:#FAF3E6;color:#1C1C1C;font-family:var(--sans);font-size:0.95rem;min-width:220px;border-radius:0;">
         <button type="submit" style="background:#C61F2B;color:#FAF3E6;padding:12px 24px;border:1.5px solid #E8C97A;font-family:var(--cinzel);font-size:0.75rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;border-radius:0;">Get Notified When Available</button>
       </form>
     </div>
@@ -233,7 +294,7 @@
         <p>Premium tag will include GPS location tracking. When someone scans the QR tag, you get notified with their location instantly. Real-time. No monthly fee model — one time.</p>
         <form action="https://formspree.io/f/xzzpqjle" method="POST" style="margin-top: 1rem; display: flex; gap: 0.75rem; flex-wrap: wrap;">
           <input type="hidden" name="_subject" value="GPS Tag Waitlist">
-          <input type="email" name="email" placeholder="Enter your email" required style="flex: 1; min-width: 160px;">
+          <input type="email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" name="email" placeholder="Enter your email" required style="flex: 1; min-width: 160px;">
           <button type="submit" class="btn btn-gold" style="font-size: 0.75rem; padding: 0.6rem 1.2rem;">Notify Me When Live</button>
         </form>
       </div>
@@ -373,7 +434,7 @@
           <input type="hidden" name="_next" value="https://mylegacycontinues.com/thank-you.html">
           <div class="form-group">
             <label for="pet-name">Pet Name</label>
-            <input type="text" id="pet-name" name="pet_name" required>
+            <input type="text" minlength="2" id="pet-name" name="pet_name" required>
           </div>
           <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
             <div class="form-group">
@@ -387,16 +448,16 @@
           </div>
           <div class="form-group">
             <label for="owner-name">Your Name</label>
-            <input type="text" id="owner-name" name="owner_name" required>
+            <input type="text" minlength="2" id="owner-name" name="owner_name" required>
           </div>
           <div class="form-group">
             <label for="owner-email">Email</label>
-            <input type="email" id="owner-email" name="email" required>
+            <input type="email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" id="owner-email" name="email" required>
           </div>
           <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
             <div class="form-group">
               <label for="owner-phone">Phone</label>
-              <input type="tel" id="owner-phone" name="phone" required>
+              <input type="tel" pattern="[0-9 \-\+\(\)]{10,}" id="owner-phone" name="phone" required>
             </div>
             <div class="form-group">
               <label for="city-state">City / State</label>
@@ -414,7 +475,7 @@
             </div>
             <div class="form-group">
               <label for="emergency-phone">Emergency Contact Phone</label>
-              <input type="tel" id="emergency-phone" name="emergency_phone">
+              <input type="tel" pattern="[0-9 \-\+\(\)]{10,}" id="emergency-phone" name="emergency_phone">
             </div>
           </div>
           <div class="form-group">
@@ -584,6 +645,26 @@ function toggleOrderForm() {
     button.textContent = 'Order Now';
   }
 }
+</script>
+<script>
+document.querySelectorAll('form').forEach(form => {
+  form.addEventListener('submit', function(e) {
+    const requiredFields = form.querySelectorAll('[required]');
+    let isValid = true;
+
+    requiredFields.forEach(field => {
+      if (!field.value.trim()) {
+        field.style.borderColor = '#C8420A';
+        isValid = false;
+      }
+    });
+
+    if (!isValid) {
+      e.preventDefault();
+      alert('Please fill in all required fields');
+    }
+  });
+});
 </script>
 </body>
 </html>

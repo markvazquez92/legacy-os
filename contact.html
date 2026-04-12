@@ -287,20 +287,21 @@
     <div class="form-section">
       <h2>Send us a Message</h2>
       <form action="https://formspree.io/f/xzzpqjle" method="POST">
+  <input type="hidden" name="_subject" value="General Contact" />
         <input type="hidden" name="_next" value="https://mylegacycontinues.com/thank-you.html">
         <div class="form-group">
           <label for="name">Name *</label>
-          <input type="text" id="name" name="name" required>
+          <input type="text" minlength="2" id="name" name="name" required>
         </div>
 
         <div class="form-group">
           <label for="email">Email *</label>
-          <input type="email" id="email" name="email" required>
+          <input type="email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" id="email" name="email" required>
         </div>
 
         <div class="form-group">
           <label for="phone">Phone</label>
-          <input type="tel" id="phone" name="phone">
+          <input type="tel" pattern="[0-9 \-\+\(\)]{10,}" id="phone" name="phone">
         </div>
 
         <div class="form-group">
@@ -373,5 +374,25 @@
   document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 </script>
 <script src="metalflake.js"></script>
+<script>
+document.querySelectorAll('form').forEach(form => {
+  form.addEventListener('submit', function(e) {
+    const requiredFields = form.querySelectorAll('[required]');
+    let isValid = true;
+
+    requiredFields.forEach(field => {
+      if (!field.value.trim()) {
+        field.style.borderColor = '#C8420A';
+        isValid = false;
+      }
+    });
+
+    if (!isValid) {
+      e.preventDefault();
+      alert('Please fill in all required fields');
+    }
+  });
+});
+</script>
 </body>
 </html>
