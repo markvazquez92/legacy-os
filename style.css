@@ -732,9 +732,18 @@ p {
   transition: opacity 0.6s var(--ease-smooth), transform 0.6s var(--ease-smooth);
 }
 
-.fade-in-active {
+.fade-in.fade-in-active,
+.fade-in.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* Safety fallback: never hide content on mobile regardless of JS */
+@media (max-width: 768px) {
+  .fade-in {
+    opacity: 1 !important;
+    transform: none !important;
+  }
 }
 
 /* ──────────────────────────────────────────────────────────── */
