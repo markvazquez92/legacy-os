@@ -120,9 +120,19 @@
       display: none;
       background: none;
       border: none;
-      font-size: 1.5rem;
       cursor: pointer;
-      color: var(--text);
+      padding: 0.5rem;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .nav-toggle span {
+      display: block;
+      width: 24px;
+      height: 3px;
+      background-color: #FAF3E6;
+      border-radius: 2px;
+      transition: all 0.3s;
     }
 
     /* HERO */
@@ -148,8 +158,6 @@
     /* SECTIONS */
     section {
       padding: 4rem 3rem;
-      opacity: 0;
-      transition: opacity 0.8s ease;
     }
 
     section.fade-in {
@@ -685,7 +693,31 @@
       }
 
       .nav-toggle {
+        display: flex;
+      }
+
+      .nav-cta {
+        display: none;
+      }
+
+      .nav-links.active {
+        display: flex !important;
+        flex-direction: column;
+        position: absolute;
+        top: 68px;
+        left: 0;
+        right: 0;
+        transform: none;
+        background: #2a2a2a;
+        gap: 0;
+        padding: 0.5rem 0;
+        z-index: 999;
+      }
+
+      .nav-links.active li a {
         display: block;
+        padding: 0.75rem 1.5rem;
+        border-bottom: 1px solid rgba(250,243,230,0.1);
       }
 
       .hero {
@@ -752,7 +784,7 @@
     <li><a href="contact.html">Contact</a></li>
   </ul>
   <button class="nav-cta">Start Your Legacy</button>
-  <button class="nav-toggle" id="navToggle"></button>
+  <button class="nav-toggle" id="navToggle"><span></span><span></span><span></span></button>
 <div style="position: absolute; right: 3rem;">
     <a href="/es/" style="color: #FAF3E6; text-decoration: none; font-size: 0.9rem; display: inline-block; padding: 8px 12px; border: 1px solid rgba(250,243,230,0.3); border-radius: 4px; transition: all 0.2s;">
       <strong>English</strong> | <span style="color: #D4AF37;">Español</span>
