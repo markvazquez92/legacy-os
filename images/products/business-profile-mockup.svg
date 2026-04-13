@@ -6,7 +6,7 @@
   <rect x="20" y="30" width="320" height="140" fill="#FAF3E6" stroke="#E8C97A" stroke-width="2" rx="3"/>
   
   <!-- Left stripe (teal accent) -->
-  <rect x="20" y="30" width="4" height="140" fill="#1A5C55"/>
+  <rect x="20" y="30" width="4" height="140" fill="#2A2A2A"/>
   
   <!-- Gold accent bar -->
   <rect x="20" y="155" width="320" height="2" fill="#E8C97A"/>
@@ -20,7 +20,7 @@
   <rect x="97" y="57" width="7" height="7" fill="#1C1C1C"/>
   <rect x="47" y="107" width="7" height="7" fill="#1C1C1C"/>
   <rect x="97" y="107" width="7" height="7" fill="#1C1C1C"/>
-  <circle cx="75" cy="80" r="4" fill="#1A5C55" opacity="0.4"/>
+  <circle cx="75" cy="80" r="4" fill="#2A2A2A" opacity="0.4"/>
   <circle cx="85" cy="95" r="2.5" fill="#C8420A" opacity="0.3"/>
   
   <!-- QR label -->
@@ -34,13 +34,13 @@
   </text>
   
   <!-- Personal name -->
-  <text x="135" y="80" font-size="12" fill="#1A5C55" font-family="Cormorant Garamond, serif" font-weight="600">
+  <text x="135" y="80" font-size="12" fill="#2A2A2A" font-family="Cormorant Garamond, serif" font-weight="600">
     [Owner / Founder Name]
   </text>
   
   <!-- Title -->
   <text x="135" y="98" font-size="10" fill="#666666" font-family="Outfit, sans-serif">
-    Founder & Legacy Builder
+    Founder &amp; Legacy Builder
   </text>
   
   <!-- Contact info -->
@@ -49,7 +49,7 @@
   </text>
   
   <!-- Website/Location -->
-  <text x="135" y="130" font-size="9" fill="#1A5C55" font-family="Outfit, sans-serif" font-weight="500">
+  <text x="135" y="130" font-size="9" fill="#2A2A2A" font-family="Outfit, sans-serif" font-weight="500">
     mylegacycontinues.com
   </text>
   
