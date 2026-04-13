@@ -288,28 +288,6 @@
       </div>
     </div>
 
-    <div class="business-hours">
-      <h3>Business Hours</h3>
-      <div class="hours-list">
-        <div class="hours-item">
-          <strong>Monday - Friday</strong>
-          <span>9:00 AM - 6:00 PM</span>
-        </div>
-        <div class="hours-item">
-          <strong>Saturday</strong>
-          <span>10:00 AM - 4:00 PM</span>
-        </div>
-        <div class="hours-item">
-          <strong>Sunday</strong>
-          <span>Closed</span>
-        </div>
-        <div class="hours-item">
-          <strong>Emergencies</strong>
-          <span>Call anytime</span>
-        </div>
-      </div>
-    </div>
-
     <div class="form-section">
       <h2>Send us a Message</h2>
       <form action="https://formspree.io/f/xzzpqjle" method="POST">
@@ -389,9 +367,9 @@
   const navToggle = document.getElementById('navToggle');
   const navLinks = document.getElementById('navLinks');
   if (navToggle) {
-    navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+    navToggle.addEventListener('click', () => navLinks.classList.toggle('active'));
     navLinks.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => navLinks.classList.remove('open'));
+      link.addEventListener('click', () => navLinks.classList.remove('active'));
     });
   }
   const observer = new IntersectionObserver((entries) => {

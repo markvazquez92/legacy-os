@@ -363,7 +363,9 @@ img { max-width: 100%; height: auto; display: block; }
 ```
 <div class="stripe-cta" style="background: rgba(201,146,10,0.08); border: 1px solid rgba(201,146,10,0.2); margin-bottom: 48px;">
   <div style="font-family:var(--cinzel); font-size:0.62rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--gold); margin-bottom:16px;">What Stays Forever</div>
-  <p style="font-size:0.9rem;color:var(--text-muted);line-height:1.85; margin-bottom:0;">The plaque is stainless steel — it won't rust or fade. The memorial profile is hosted at mylegacycontinues.com forever, no renewal needed. Your family can update it anytime (add photos, songs, memories). People can leave tributes and see them preserved. On birthdays and anniversaries, the profile lights up in remembrance. This isn't a memorial service — it's a place where people actually go to remember them.</p>
+  <p style="font-size:0.9rem;color:var(--text-muted);line-height:1.85; margin-bottom:12px;"><strong>The plaque is stainless steel</strong> — it won't rust or fade. The memorial profile is hosted at mylegacycontinues.com forever, no renewal needed.</p>
+  <p style="font-size:0.9rem;color:var(--text-muted);line-height:1.85; margin-bottom:12px;">Your family can update it anytime — add photos, songs, memories. People can leave tributes and see them preserved.</p>
+  <p style="font-size:0.9rem;color:var(--text-muted);line-height:1.85; margin-bottom:0;">On birthdays and anniversaries, <strong>the profile lights up in remembrance.</strong> This isn't a memorial service — it's a place where people actually go to remember them.</p>
 </div>
 
 <div class="stripe-cta">
@@ -579,9 +581,9 @@ img { max-width: 100%; height: auto; display: block; }
   const navToggle = document.getElementById('navToggle');
   const navLinks = document.getElementById('navLinks');
   if (navToggle) {
-    navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+    navToggle.addEventListener('click', () => navLinks.classList.toggle('active'));
     navLinks.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => navLinks.classList.remove('open'));
+      link.addEventListener('click', () => navLinks.classList.remove('active'));
     });
   }
   const observer = new IntersectionObserver((entries) => {

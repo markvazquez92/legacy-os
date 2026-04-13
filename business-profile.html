@@ -199,7 +199,8 @@ img { max-width: 100%; height: auto; display: block; }
     <a href="index.html" class="back-link">Back to All Products</a>
     <span class="page-eyebrow">Business</span>
     <h1 class="page-title">Business Founder Profile</h1>
-    <p class="page-sub">Your business card should tell the whole story. Scan it and they see your real history — years of work, your best jobs, your license, and why you started. Written for you. Permanent.</p>
+    <p class="page-sub"><strong>Your business card should tell the whole story.</strong> Scan it and they see your real history — years of work, your best jobs, your license, and why you started.</p>
+    <p class="page-sub">Written for you. <strong>Permanent.</strong></p>
     <div class="price-badge">$79</div>
     <p class="price-note">One-time purchase. Permanent digital profile with QR code. No subscriptions.</p>
     <a href="https://buy.stripe.com/4gM14odSLaK8asI9CIfQI03" class="btn btn-primary" data-product="business-profile">Pay Now — $79</a>
@@ -402,7 +403,8 @@ img { max-width: 100%; height: auto; display: block; }
 ```
 <div class="stripe-cta" style="background: rgba(201,146,10,0.08); border: 1px solid rgba(201,146,10,0.2); margin-bottom: 48px;">
   <div style="font-family:var(--cinzel); font-size:0.62rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--gold); margin-bottom:16px;">How We Write Your Story</div>
-  <p style="font-size:0.9rem;color:var(--text-muted);line-height:1.85; margin-bottom:0;">You answer simple questions about your work and why you started. We turn your answers into a real founder story that captures what you've built — not marketing copy, not a template. We listen for the detail that matters: why you started, what makes your work different, what you're proud of. That's what goes on your profile.</p>
+  <p style="font-size:0.9rem;color:var(--text-muted);line-height:1.85; margin-bottom:12px;">You answer simple questions about your work and why you started. <strong>We turn your answers into a real founder story</strong> — not marketing copy, not a template.</p>
+  <p style="font-size:0.9rem;color:var(--text-muted);line-height:1.85; margin-bottom:0;">We listen for the detail that matters: why you started, what makes your work different, what you're proud of. <strong>That's what goes on your profile.</strong></p>
 </div>
 
 <div class="stripe-cta">
@@ -562,9 +564,9 @@ img { max-width: 100%; height: auto; display: block; }
   const navToggle = document.getElementById('navToggle');
   const navLinks = document.getElementById('navLinks');
   if (navToggle) {
-    navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+    navToggle.addEventListener('click', () => navLinks.classList.toggle('active'));
     navLinks.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => navLinks.classList.remove('open'));
+      link.addEventListener('click', () => navLinks.classList.remove('active'));
     });
   }
   const observer = new IntersectionObserver((entries) => {

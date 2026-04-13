@@ -556,9 +556,9 @@ section+section{border-top:1px solid var(--border)}
   const navToggle = document.getElementById('navToggle');
   const navLinks = document.getElementById('navLinks');
   if (navToggle) {
-    navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+    navToggle.addEventListener('click', () => navLinks.classList.toggle('active'));
     navLinks.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => navLinks.classList.remove('open'));
+      link.addEventListener('click', () => navLinks.classList.remove('active'));
     });
   }
   const observer = new IntersectionObserver((entries) => {
@@ -569,7 +569,7 @@ section+section{border-top:1px solid var(--border)}
   function toggle(btn){
     const item = btn.closest('.faq-item');
     const isOpen = item.classList.contains('open');
-    document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
+    document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('active'));
     if(!isOpen) item.classList.add('open');
   }
 </script>

@@ -318,9 +318,9 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
   const navToggle = document.getElementById('navToggle');
   const navLinks2 = document.getElementById('navLinks');
   if (navToggle) {
-    navToggle.addEventListener('click', () => navLinks2.classList.toggle('open'));
+    navToggle.addEventListener('click', () => navLinks2.classList.toggle('active'));
     navLinks2.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => navLinks2.classList.remove('open'));
+      link.addEventListener('click', () => navLinks2.classList.remove('active'));
     });
   }
 </script>
