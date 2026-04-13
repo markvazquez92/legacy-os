@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vázquez Culture Guide | My Legacy Continues</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=Karla:wght@300;400;500;600&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root { --gold:#C9A84C; --cream:#F0EAD6; --white:#fff; --gray:rgba(240,234,214,0.55); --border:1px solid rgba(201,168,76,0.2); }
+
+body {
+  background: #1B3A2D;
+  min-height:100vh; color:var(--cream); font-family:'Karla',sans-serif; font-weight:300;
+}
+body::after {
+  content:''; position:fixed; inset:0; pointer-events:none; z-index:999;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  opacity:0.035;
+}
+nav {
+  position:sticky; top:0; z-index:100;
+  background:rgba(6,9,6,0.95); backdrop-filter:blur(12px);
+  border-bottom:var(--border); padding:1rem 2rem;
+  display:flex; align-items:center; justify-content:space-between;
+}
+.nav-logo { font-family:'IM Fell English',serif; font-size:1.3rem; font-weight:600; color:var(--gold); text-decoration:none; }
+.nav-links { display:flex; gap:2rem; list-style:none; }
+.nav-links a { color:var(--gray); text-decoration:none; font-size:0.8rem; letter-spacing:0.08em; text-transform:uppercase; transition:color 0.2s; }
+.nav-links a:hover { color:var(--gold); }
+
+.hero { padding:100px 2rem 60px; text-align:center; max-width:860px; margin:0 auto; }
+.eyebrow { font-family:'Karla',sans-serif; font-size:0.7rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--gold); opacity:0.75; margin-bottom:1.5rem; }
+h1 { font-family:'Karla',sans-serif; font-size:clamp(2rem,5vw,4rem); color:var(--white); margin-bottom:1rem; }
+h1 span { color:var(--gold); }
+.hero-sub { font-family:'IM Fell English',serif; font-size:1.3rem; font-style:italic; color:var(--cream); opacity:0.8; margin-bottom:0; line-height:1.7; }
+.gold-line { width:60px; height:2px; background:var(--gold); margin:2.5rem auto; opacity:0.6; }
+
+.intro { max-width:820px; margin:0 auto; padding:0 2rem 60px; }
+.intro p { font-family:'IM Fell English',serif; font-size:1.2rem; line-height:1.9; color:var(--cream); opacity:0.88; }
+
+/* FAMILY SIDE TABS */
+.side-selector { display:flex; justify-content:center; gap:1rem; padding:0 2rem 3rem; flex-wrap:wrap; }
+.side-btn {
+  font-family:'Karla',sans-serif; font-size:0.8rem;
+  letter-spacing:0.12em; text-transform:uppercase;
+  padding:0.8rem 2rem; border-radius:4px; cursor:pointer;
+  border:1px solid var(--gold); background:transparent; color:var(--gold);
+  transition:all 0.2s;
+}
+.side-btn.active, .side-btn:hover { background:var(--gold); color:#1B3A2D; }
+
+.side-panel { display:none; }
+.side-panel.active { display:block; }
+
+/* WEEK CARDS */
+.weeks { max-width:1000px; margin:0 auto; padding:0 2rem 80px; }
+.week { margin-bottom:3rem; }
+.week-header {
+  font-family:'Karla',sans-serif; font-size:0.75rem;
+  letter-spacing:0.2em; text-transform:uppercase;
+  color:var(--gold); opacity:0.7; margin-bottom:0.75rem;
+}
+.week-title { font-family:'Karla',sans-serif; font-size:1.5rem; color:var(--white); margin-bottom:1.5rem; }
+.resource-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:1rem; }
+.resource-card {
+  background:rgba(26,40,26,0.6); border:var(--border);
+  border-radius:8px; padding:1.5rem; backdrop-filter:blur(4px);
+  transition:border-color 0.2s;
+}
+.resource-card:hover { border-color:rgba(201,168,76,0.6); }
+.resource-type { font-family:'Karla',sans-serif; font-size:0.65rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--gold); opacity:0.6; margin-bottom:0.5rem; }
+.resource-name { font-family:'IM Fell English',serif; font-size:1.1rem; color:var(--cream); margin-bottom:0.75rem; line-height:1.4; }
+.resource-note { font-family:'Karla',sans-serif; font-size:0.8rem; color:var(--gray); line-height:1.5; margin-bottom:1rem; }
+.resource-link {
+  display:inline-block; font-family:'Karla',sans-serif;
+  font-size:0.7rem; letter-spacing:0.1em; text-transform:uppercase;
+  color:var(--gold); text-decoration:none; border-bottom:1px solid rgba(201,168,76,0.3);
+  padding-bottom:2px; transition:border-color 0.2s;
+}
+.resource-link:hover { border-color:var(--gold); }
+
+/* DIVIDER */
+.side-divider { border:none; border-top:var(--border); max-width:1000px; margin:0 auto 3rem; }
+
+footer { border-top:var(--border); padding:3rem 2rem; text-align:center; background:rgba(6,9,6,0.8); }
+footer p { font-family:'IM Fell English',serif; color:var(--gray); font-size:0.9rem; margin-bottom:0.5rem; }
+.footer-tagline { font-family:'Karla',sans-serif; color:var(--gold); font-size:0.95rem; letter-spacing:0.1em; margin-top:1rem; }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">My Legacy Continues</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="vazquez-profile.html">Bear</a></li>
+    <li><a href="debbie-mahony-profile.html">Debbie</a></li>
+  </ul>
+</nav>
+
+<div class="hero">
+  <div class="eyebrow">Heritage Culture Guide — Bear Vázquez</div>
+  <h1>Know <span>Where</span> You Come From</h1>
+  <p class="hero-sub">Four weeks. Two family lines. Music, film, food, and archive.<br>This is your heritage — made real.</p>
+  <div class="gold-line"></div>
+</div>
+
+<div class="intro">
+  <p>Bear carries two lines. On his father's side: the Vázquez family — Galicia, Spain through Mexico City into California. On his mother's side: the Garcia / Montemayor line — South Texas, Central Coast, eighteen children and nearly a century of American life. This guide covers both. Start with whichever side calls to you.</p>
+</div>
+
+<div class="side-selector">
+  <button class="side-btn active" onclick="showSide('vazquez')">Vázquez Side — Galicia & Mexico City</button>
+  <button class="side-btn" onclick="showSide('garcia')">Garcia Side — Texas & Central Coast</button>
+</div>
+
+<!-- VAZQUEZ SIDE -->
+<div id="vazquez" class="side-panel active">
+  <div class="weeks">
+
+    <div class="week">
+      <div class="week-header">Week 01</div>
+      <div class="week-title">Galicia — The Ancient Homeland</div>
+      <div class="resource-grid">
+        <div class="resource-card">
+          <div class="resource-type">Music</div>
+          <div class="resource-name">Gaelic Storm — "Tell Me Ma"</div>
+          <div class="resource-note">Celtic Atlantic folk — the sound of the Galician coastline. Pipes and percussion that predate the Vázquez name by centuries.</div>
+          <a href="https://www.youtube.com/results?search_query=Gaelic+Storm+Tell+Me+Ma" target="_blank" class="resource-link">Listen on YouTube</a>
+        </div>
+        <div class="resource-card">
+          <div class="resource-type">Music</div>
+          <div class="resource-name">Carlos Núñez — Galician Bagpipes</div>
+          <div class="resource-note">Galicia has its own bagpipe tradition — the gaita. This is what your ancestors heard at festivals.</div>
+          <a href="https://www.youtube.com/results?search_query=Carlos+Nunez+gaita+gallega" target="_blank" class="resource-link">Listen on YouTube</a>
+        </div>
+        <div class="resource-card">
+          <div class="resource-type">Film</div>
+          <div class="resource-name">The Way (2010)</div>
+          <div class="resource-note">Martin Sheen walks the Camino de Santiago — which ends in Galicia, in Santiago de Compostela. Your ancestors lived near this pilgrimage route.</div>
+          <a href="https://www.imdb.com/title/tt1441912/" target="_blank" class="resource-link">Watch on IMDB</a>
+        </div>
+        <div class="resource-card">
+          <div class="resource-type">Archive</div>
+          <div class="resource-name">Pasajeros a Indias — PARES</div>
+          <div class="resource-note">Spanish national archive of colonial emigrants. Search Vázquez + Galicia to find families who crossed to New Spain.</div>
+          <a href="https://pares.mcu.es" target="_blank" class="resource-link">Search PARES</a>
+        </div>
+        <div class="resource-card">
+          <div class="resource-type">Food</div>
+          <div class="resource-name">Caldo Gallego</div>
+          <div class="resource-note">The dish of Galicia — a hearty white bean and greens soup that fed fishermen and farmers. The original Vázquez comfort food.</div>
+          <a href="https://www.google.com/search?q=caldo+gallego+recipe+traditional" target="_blank" class="resource-link">Find Recipe</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="week">
+      <div class="week-header">Week 02</div>
+      <div class="week-title">Mexico City — New Spain, New World</div>
+      <div class="resource-grid">
+        <div class="resource-card">
+          <div class="resource-type">Music</div>
+          <div class="resource-name">Agustín Lara — "María Bonita"</div>
+          <div class="resource-note">The soundtrack of Mexico City in the 1930s–40s — exactly when the Vázquez family was there before the California crossing.</div>
+          <a href="https://www.youtube.com/results?search_query=Agustin+Lara+Maria+Bonita" target="_blank" class="resource-link">Listen on YouTube</a>
+        </div>
+        <div class="resource-card">
+          <div class="resource-type">Music</div>
+          <div class="resource-name">Jorge Negrete — Mariachi Clásico</div>
+          <div class="resource-note">The golden age of Mexican music. Your grandfather Joe came of age listening to this. This was the culture he carried north.</div>
+          <a href="https://www.youtube.com/results?search_query=Jorge+Negrete+clasicos" target="_blank" class="resource-link">Listen on YouTube</a>
+        </div>
+        <div class="resource-card">
+          <div class="resource-type">Film</div>
+          <div class="resource-name">Roma (2018)</div>
+          <div class="resource-note">Alfonso Cuarón's film set in Mexico City — the same city, the same streets, the same colonial architecture your grandfather knew.</div>
+          <a href="https://www.netflix.com/title/80240715" target="_blank" class="resource-link">Watch on Netflix</a>
+        </div>
+        <div class="resource-card">
+          <div class="resource-type">Archive</div>
+          <div class="resource-name">FamilySearch — Distrito Federal</div>
+          <div class="resource-note">Mexico City Catholic Church Records 1514–1970. Search Vázquez to find your direct ancestors in the colonial capital.</div>
+          <a href="https://www.familysearch.org/search/collection/1800576" target="_blank" class="resource-link">Search Records</a>
+        </div>
+        <div class="resource-card">
+          <div class="resource-type">Food</div>
+          <div class="resource-name">Tamales de Rajas con Queso</div>
+          <div class="resource-note">Mexico City street food — tamales sold from steaming pots at every corner. The food Grandpa Joe grew up eating.</div>
+          <a href="https://www.google.com/search?q=tamales+de+rajas+con+queso+receta" target="_blank" class="resource-link">Find Recipe</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="week">
+      <div class="week-header">Week 03</div>
+      <div class="week-title">The Crossing — Mexico to California</div>
+      <div class="resource-grid">
+        <div class="resource-card">
+          <div class="resource-type">Music</div>
+          <div class="resource-name">Los Tigres del Norte — "Tres Veces Mojado"</div>
+          <div class="resource-note">The border crossing in song. This is the story of the generation that walked north.</div>
+          <a href="https://www.youtube.com/results?search_query=Los+Tigres+del+Norte+Tres+Veces+Mojado" target="_blank" class="resource-link">Listen on YouTube</a>
+        </div>
+        <div class="resource-card">
+          <div class="resource-type">Film</div>
+          <div class="resource-name">El Norte (1983)</div>
+          <div class="resource-note">The definitive film about the Mexican migration north. Raw and real. Watch it to understand what that generation risked.</div>
+          <a href="https://www.imdb.com/title/tt0085613/" target="_blank" class="resource-link">Watch on IMDB</a>
+        </div>
+        <div class="resource-card">
+          <div class="resource-type">Archive</div>
+          <div class="resource-name">UC Davis Bracero Archive</div>
+          <div class="resource-note">Photos and contracts from the Bracero Program 1942–1964. The generation that built California's agriculture.</div>
+          <a href="https://braceroarchive.org" target="_blank" class="resource-link">Search Archive</a>
+        </div>
+        <div class="resource-card">
+          <div class="resource-type">Archive</div>
+          <div class="resource-name">NARA Border Crossing Records</div>
+          <div class="resource-note">Border crossing cards 1895–1960. Search Vázquez + El Paso or Nogales to find the entry record.</div>
+          <a href="https://www.ancestry.com/search/collections/1075/" target="_blank" class="resource-link">Search NARA</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="week">
+      <div class="week-header">Week 04</div>
+      <div class="week-title">California — Building the Central Coast</div>
+      <div class="resource-grid">
+        <div class="resource-card">
+          <div class="resource-type">Music</div>
+          <div class="resource-name">Santana — "Oye Como Va"</div>
+          <div class="resource-note">Mexican-American music that defined California in the generation after the crossing. This is the soundtrack of becoming.</div>
+          <a href="https://www.youtube.com/results?search_query=Santana+Oye+Como+Va" target="_blank" class="resource-link">Listen on YouTube</a>
+        </div>
+        <div class="resource-card">
+          <div class="resource-type">Archive</div>
+          <div class="resource-name">Calisphere — California History</div>
+          <div class="resource-note">UC digital archive of California history — photos, newspapers, documents. Search Santa Maria or Santa Barbara + Mexican families.</div>
+          <a href="https://calisphere.org" target="_blank" class="resource-link">Search Calisphere</a>
+        </div>
+        <div class="resource-card">
+          <div class="resource-type">Film</div>
+          <div class="resource-name">Zoot Suit (1981)</div>
+          <div class="resource-note">The Mexican-American experience in California — the generation that planted roots and built a culture that was neither Mexico nor Anglo America.</div>
+          <a href="https://www.imdb.com/title/tt0083492/" target="_blank" class="resource-link">Watch on IMDB</a>
+        </div>
+        <div class="resource-card">
+          <div class="resource-type">Food</div>
+          <div class="resource-name">Carne Asada — Central Coast Style</div>
+          <div class="resource-note">Sunday tradition on the Central Coast. The Mexican family gathering food that bridged two worlds. Make it. Feed your people.</div>
+          <a href="https://www.google.com/search?q=carne+asada+recipe+authentic+mexican" target="_blank" class="resource-link">Find Recipe</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- GARCIA SIDE -->
+<div id="garcia" class="side-panel">
+  <div class="weeks">
+
+    <div class="week">
+      <div class="week-header">Week 01</div>
+      <div class="week-title">South Texas — The Montemayor Roots</div>
+      <div class="resource-grid">
+        <div class="resource-card">
+          <div class="resource-type">Music</div>
+          <div class="resource-name">Flaco Jiménez — Conjunto Tejano</div>
+          <div class="resource-note">The sound of South Texas — the accordion-driven conjunto music that filled living rooms in Sinton, TX where Faustino Montemayor lived to age 98.</div>
+          <a href="https://www.youtube.com/results?search_query=Flaco+Jimenez+conjunto+tejano+classics" target="_blank" class="resource-link">Listen on YouTube</a>
+        </div>
+        <div class="resource-card">
+          <div class="resource-type">Music</div>
+          <div class="resource-name">Lydia Mendoza — "Mal Hombre"</div>
+          <div class="resource-note">The Queen of Tejano music. Recorded in the 1930s in San Antonio — the era when your great-great-grandparents were raising their family in Sinton.</div>
+          <a href="https://www.youtube.com/results?search_query=Lydia+Mendoza+Mal+Hombre" target="_blank" class="resource-link">Listen on YouTube</a>
+        </div>
+        <div class="resource-card">
+          <div class="resource-type">Archive</div>
+          <div class="resource-name">1940 Census — Sinton, Texas</div>
+          <div class="resource-note">The Garcia/Montemayor family appears in the 1940 Sinton, TX census — Francisco and Clara with their 18 children. Find them here.</div>
+          <a href="https://www.familysearch.org/search/record/results?q.surname=Garcia&q.birthCountry=United+States&q.residenceState=Texas" target="_blank" class="resource-link">Search Census</a>
+        </div>
+        <div class="resource-card">
+          <div class="resource-type">Food</div>
+          <div class="resource-name">Caldillo — South Texas Beef Stew</div>
+          <div class="resource-note">The comfort food of the Texas-Mexico border. Eighteen mouths to feed — this is what you cook when a family is that big.</div>
+          <a href="https://www.google.com/search?q=caldillo+recipe+south+texas+traditional" target="_blank" class="resource-link">Find Recipe</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="week">
+      <div class="week-header">Week 02</div>
+      <div class="week-title">The Garcia Name — A Thousand Years</div>
+      <div class="resource-grid">
+        <div class="resource-card">
+          <div class="resource-type">Music</div>
+          <div class="resource-name">Los Lobos — "La Bamba"</div>
+          <div class="resource-note">The Garcia name entered California with the first Spanish settlers. Los Lobos played the Central Coast's cultural inheritance into mainstream America.</div>
+          <a href="https://www.youtube.com/results?search_query=Los+Lobos+La+Bamba" target="_blank" class="resource-link">Listen on YouTube</a>
+        </div>
+        <div class="resource-card">
+          <div class="resource-type">Archive</div>
+          <div class="resource-name">California Mission Records — Garcia</div>
+          <div class="resource-note">Garcia was recorded at Mission San Carlos on December 13, 1777. One of the first Spanish surnames in California. Find the record.</div>
+          <a href="https://www.huntington.org/early-california-population-project" target="_blank" class="resource-link">Search ECPP</a>
+        </div>
+        <div class="resource-card">
+          <div class="resource-type">Film</div>
+          <div class="resource-name">Selena (1997)</div>
+          <div class="resource-note">The Texas-Mexican experience told through the story of Selena Quintanilla — a family from the same cultural soil as the Garcia/Montemayor line.</div>
+          <a href="https://www.imdb.com/title/tt0117787/" target="_blank" class="resource-link">Watch on IMDB</a>
+        </div>
+        <div class="resource-card">
+          <div class="resource-type">Research</div>
+          <div class="resource-name">Garcia Name Origin — Basque Root</div>
+          <div class="resource-note">Some linguists trace "Garcia" to the Basque word for bear. Bear Vázquez. Son of Garcia. The name may have known before he did.</div>
+          <a href="https://www.surnamedb.com/Surname/Garcia" target="_blank" class="resource-link">Read More</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="week">
+      <div class="week-header">Week 03</div>
+      <div class="week-title">Grandma Elvira — The Youngest of 18</div>
+      <div class="resource-grid">
+        <div class="resource-card">
+          <div class="resource-type">Music</div>
+          <div class="resource-name">Celia Cruz — "La Vida Es Un Carnaval"</div>
+          <div class="resource-note">Born September 7, 1944 — Elvira "Barbara" Garcia came into a world that was loud and alive. This is the music of her generation.</div>
+          <a href="https://www.youtube.com/results?search_query=Celia+Cruz+La+Vida+Es+Un+Carnaval" target="_blank" class="resource-link">Listen on YouTube</a>
+        </div>
+        <div class="resource-card">
+          <div class="resource-type">Archive</div>
+          <div class="resource-name">Texas Birth Records — FamilySearch</div>
+          <div class="resource-note">Elvira Garcia, born Sept 7 1944. Search Texas birth records on FamilySearch to locate her original birth certificate.</div>
+          <a href="https://www.familysearch.org/search/collection/2138449" target="_blank" class="resource-link">Search Records</a>
+        </div>
+        <div class="resource-card">
+          <div class="resource-type">Film</div>
+          <div class="resource-name">Giant (1956)</div>
+          <div class="resource-note">Set in Texas, starring Rock Hudson — the world Elvira grew up in, where Mexican families built Anglo Texas and rarely got credit for it.</div>
+          <a href="https://www.imdb.com/title/tt0049261/" target="_blank" class="resource-link">Watch on IMDB</a>
+        </div>
+        <div class="resource-card">
+          <div class="resource-type">Food</div>
+          <div class="resource-name">Tamales — Texas Style</div>
+          <div class="resource-note">In a family of 18, everyone helped make tamales at Christmas. This is the recipe that bonded the Garcia line across generations.</div>
+          <a href="https://www.google.com/search?q=texas+tamales+recipe+traditional+mexican" target="_blank" class="resource-link">Find Recipe</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="week">
+      <div class="week-header">Week 04</div>
+      <div class="week-title">Santa Maria — The Line Continues</div>
+      <div class="resource-grid">
+        <div class="resource-card">
+          <div class="resource-type">Music</div>
+          <div class="resource-name">War — "Low Rider"</div>
+          <div class="resource-note">The sound of Mexican-American California — recorded in the 1970s by a band from Long Beach. This is the Central Coast in song.</div>
+          <a href="https://www.youtube.com/results?search_query=War+Low+Rider" target="_blank" class="resource-link">Listen on YouTube</a>
+        </div>
+        <div class="resource-card">
+          <div class="resource-type">Archive</div>
+          <div class="resource-name">Calisphere — Santa Maria Valley</div>
+          <div class="resource-note">Historical photos of Santa Maria and the Central Coast. This is where Debbie Garcia built her life. Find what the town looked like.</div>
+          <a href="https://calisphere.org/search/?q=santa+maria+california+history" target="_blank" class="resource-link">Search Photos</a>
+        </div>
+        <div class="resource-card">
+          <div class="resource-type">Food</div>
+          <div class="resource-name">Santa Maria Tri-Tip BBQ</div>
+          <div class="resource-note">The Central Coast's own BBQ tradition — born in Santa Maria. This is the food of the community that raised Debbie and Bear.</div>
+          <a href="https://www.google.com/search?q=santa+maria+tri+tip+BBQ+recipe+authentic" target="_blank" class="resource-link">Find Recipe</a>
+        </div>
+        <div class="resource-card">
+          <div class="resource-type">Film</div>
+          <div class="resource-name">Stand and Deliver (1988)</div>
+          <div class="resource-note">The story of a Mexican-American community refusing to be underestimated. The generation that Debbie Garcia belongs to.</div>
+          <a href="https://www.imdb.com/title/tt0094027/" target="_blank" class="resource-link">Watch on IMDB</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  <p>Heritage Culture Guide — Bear Vázquez · My Legacy Continues</p>
+  <p>Santa Maria, California · mylegacycontinues.com</p>
+  <p class="footer-tagline">Long Live Your Legacy.</p>
+</footer>
+
+<script>
+function showSide(side) {
+  document.querySelectorAll('.side-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.side-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById(side).classList.add('active');
+  event.target.classList.add('active');
+}
+</script>
+</body>
+</html>
