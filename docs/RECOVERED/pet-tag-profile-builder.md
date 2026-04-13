@@ -21,8 +21,8 @@ A single self-contained HTML file named `[petname]-tag-profile.html`
 
 ## Design Spec
 - Mobile-first — designed for a phone screen
-- Black background (#1A1A1A), gold accents (#D4AF37)
-- Cinzel font for headings, clean sans for body
+- Black background (#2A2A2A), gold accents (#D4AF37)
+- Montserrat font for headings, clean sans for body
 - Large tap-to-call button prominently at top
 - MLC logo and branding at bottom
 - No login required, no app required
@@ -32,7 +32,7 @@ A single self-contained HTML file named `[petname]-tag-profile.html`
 ```
 [PET PHOTO — large, full width]
 
-[PET NAME — large Cinzel heading]
+[PET NAME — large Montserrat heading]
 [Breed · Age if known]
 
 ━━━━━━━━━━━━━━━━━━━━━━━━
@@ -70,21 +70,21 @@ mylegacycontinues.com
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>[PET NAME] — Pet Profile | My Legacy Continues</title>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
 * { box-sizing: border-box; margin: 0; padding: 0; }
-body { background: #1A1A1A; color: #F4EFE6; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; max-width: 480px; margin: 0 auto; }
+body { background: #2A2A2A; color: #F4EFE6; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; max-width: 480px; margin: 0 auto; }
 .hero-photo { width: 100%; height: 280px; object-fit: cover; }
-.pet-name { font-family: 'Cinzel', serif; font-size: 2rem; font-weight: 700; color: #D4AF37; text-align: center; padding: 24px 20px 8px; }
+.pet-name { font-family: 'Montserrat', serif; font-size: 2rem; font-weight: 700; color: #D4AF37; text-align: center; padding: 24px 20px 8px; }
 .pet-sub { text-align: center; color: rgba(244,239,230,0.6); font-size: 0.9rem; padding-bottom: 24px; }
 .divider { height: 1px; background: rgba(212,175,55,0.25); margin: 0 20px; }
 .section { padding: 24px 20px; }
-.section-label { font-family: 'Cinzel', serif; font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: #D4AF37; margin-bottom: 12px; }
-.call-btn { display: block; background: #D4AF37; color: #1A1A1A; font-family: 'Cinzel', serif; font-size: 1rem; font-weight: 700; letter-spacing: 0.08em; text-align: center; padding: 18px; text-decoration: none; border-radius: 4px; margin: 20px; }
+.section-label { font-family: 'Montserrat', serif; font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: #D4AF37; margin-bottom: 12px; }
+.call-btn { display: block; background: #D4AF37; color: #2A2A2A; font-family: 'Montserrat', serif; font-size: 1rem; font-weight: 700; letter-spacing: 0.08em; text-align: center; padding: 18px; text-decoration: none; border-radius: 4px; margin: 20px; }
 .info-row { display: flex; gap: 12px; align-items: flex-start; padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.06); font-size: 0.88rem; color: rgba(244,239,230,0.8); }
 .info-label { color: rgba(244,239,230,0.4); min-width: 80px; font-size: 0.8rem; }
 .footer { text-align: center; padding: 32px 20px; border-top: 1px solid rgba(212,175,55,0.2); }
-.footer-brand { font-family: 'Cinzel', serif; font-size: 0.6rem; letter-spacing: 0.15em; color: rgba(212,175,55,0.5); text-transform: uppercase; }
+.footer-brand { font-family: 'Montserrat', serif; font-size: 0.6rem; letter-spacing: 0.15em; color: rgba(212,175,55,0.5); text-transform: uppercase; }
 </style>
 </head>
 <body>

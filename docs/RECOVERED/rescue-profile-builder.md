@@ -24,7 +24,7 @@ This is the pitch to Underdog Heroes — Petfinder listings vanish. Ours last fo
 ```html
 [HERO PHOTO — full width, 300px height, object-fit cover]
 
-[DOG NAME — large Cinzel gold heading]
+[DOG NAME — large Montserrat gold heading]
 [Breed · Age · Status badge: Available / Foster / Adopted]
 
 [ADOPTION BUTTON — large gold CTA]

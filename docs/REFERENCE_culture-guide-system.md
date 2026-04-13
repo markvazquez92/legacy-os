@@ -26,7 +26,7 @@ Before generating, confirm you have:
 If any are missing, ask before proceeding.
 
 ## Output Format
-Produce the Culture Guide as a self-contained HTML file using the MLC brand (black background #1A1A1A, gold accents #D4AF37, Cinzel headings). Include:
+Produce the Culture Guide as a self-contained HTML file using the MLC brand (black background #2A2A2A, gold accents #D4AF37, Montserrat headings). Include:
 
 ### Structure
 ```

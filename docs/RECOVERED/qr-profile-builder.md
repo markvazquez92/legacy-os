@@ -1,6 +1,6 @@
 ---
 name: qr-profile-builder
-description: Builds the permanent digital QR profile page for My Legacy Continues customers. Creates mobile-optimized HTML profile pages in MLC brand (black, gold, Cinzel) for Heritage Book customers, business founders, and cemetery memorial customers. Trigger this skill whenever a heritage research order is complete and needs a digital profile, whenever user says "build the profile page", "create QR profile for [name]", "make the digital page", "build the profile html", or when a physical product needs a scannable landing page. Also use when assembling the full 5-deliverable Heritage Package.
+description: Builds the permanent digital QR profile page for My Legacy Continues customers. Creates mobile-optimized HTML profile pages in MLC brand (black, gold, Montserrat) for Heritage Book customers, business founders, and cemetery memorial customers. Trigger this skill whenever a heritage research order is complete and needs a digital profile, whenever user says "build the profile page", "create QR profile for [name]", "make the digital page", "build the profile html", or when a physical product needs a scannable landing page. Also use when assembling the full 5-deliverable Heritage Package.
 ---
 
 # QR Profile Builder — My Legacy Continues
@@ -22,10 +22,10 @@ A mobile-first, scroll-based heritage profile that tells the family's story in a
 
 ## Design Spec
 Match the MLC main site exactly:
-- Background: `#1A1A1A` (near black)
+- Background: `#2A2A2A` (near black)
 - Gold: `#D4AF37`
 - Text: `#F4EFE6` (warm cream)
-- Headings: Cinzel (Google Fonts)
+- Headings: Montserrat (Google Fonts)
 - Body: Lora (Google Fonts)
 - Max-width: 860px centered
 - Mobile-first responsive
@@ -37,7 +37,7 @@ Match the MLC main site exactly:
 
 [HERO]
   Gold ship logo (logo.png)
-  Family name in large Cinzel
+  Family name in large Montserrat
   "A Heritage Profile — My Legacy Continues"
   Commissioned by: [Customer Name] · [Year]
   Gold divider line

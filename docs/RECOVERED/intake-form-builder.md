@@ -104,7 +104,7 @@ Match MLC brand:
 - Form card: white `#FFFFFF`
 - Borders: `rgba(201,168,76,0.3)` gold
 - Submit button: forest green `#1E2D1F` with gold text
-- Cinzel for headings, Lora for labels and body
+- Montserrat for headings, Lora for labels and body
 - Mobile responsive — full-width on small screens
 
 ## File Naming

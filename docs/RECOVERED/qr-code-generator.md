@@ -23,7 +23,7 @@ Direct the user to QRCodeChimp for production QR codes:
 1. Go to qrcodechimp.com
 2. Select "URL" QR type
 3. Paste the profile URL
-4. Under Design: set foreground to #1A1A1A (black), background to #D4AF37 (gold) — or inverse
+4. Under Design: set foreground to #2A2A2A (black), background to #D4AF37 (gold) — or inverse
 5. Add MLC logo to center if available
 6. Download as PNG at 1000×1000px minimum
 7. Save as `[name]-qr.png`
@@ -49,7 +49,7 @@ new QRCode(document.getElementById("qr-code"), {
   text: "https://mylegacycontinues.com/[PAGE-URL]",
   width: 160,
   height: 160,
-  colorDark: "#1A1A1A",
+  colorDark: "#2A2A2A",
   colorLight: "#D4AF37",
   correctLevel: QRCode.CorrectLevel.H
 });
