@@ -18,7 +18,7 @@
   --navy-deep:    #145049;
   --gold:         #D4AF37;
   --gold-light:   #D4AF37;
-  --coral:        #A9202A;
+  --coral:        #C0392B;
   --cream:        #FAF3E6;
   --charcoal:     #1C1C1C;
   --charcoal2:    #1C1C1C;
@@ -189,7 +189,7 @@ img { max-width: 100%; height: auto; display: block; }
         <span></span><span></span><span></span>
       </button>
     </div>
-  <div style="position: absolute; right: 3rem;">
+  <div class="lang-switcher" style="position: absolute; right: 3rem;">
     <a href="/es//es/business-profile.html" style="color: #FAF3E6; text-decoration: none; font-size: 0.9rem;">
       English | <span style="color: #D4AF37;">Español</span>
     </a>
@@ -414,7 +414,7 @@ img { max-width: 100%; height: auto; display: block; }
 </div>
 
 <div style="text-align: center; margin-bottom: 32px;">
-  <button id="showOrderForm" onclick="toggleOrderForm()" style="background:#A9202A;color:#FAF3E6;border:1.5px solid #D4AF37;padding:16px 34px;font-family:var(--cinzel);font-size:0.72rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;cursor:pointer;transition:all 0.22s ease;min-height:44px;margin-bottom:24px;">Get Started</button>
+  <button id="showOrderForm" onclick="toggleOrderForm()" style="background:#C0392B;color:#FAF3E6;border:1.5px solid #D4AF37;padding:16px 34px;font-family:var(--cinzel);font-size:0.72rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;cursor:pointer;transition:all 0.22s ease;min-height:44px;margin-bottom:24px;">Get Started</button>
 </div>
 
 <div id="orderFormWrap" style="display:none;">
@@ -449,7 +449,7 @@ img { max-width: 100%; height: auto; display: block; }
   <div class="form-row">
     <div class="form-group">
       <label for="service-area">Service Area</label>
-      <input type="text" id="service-area" name="service_area" placeholder="e.g. Santa Maria, Lompoc, SLO County">
+      <input type="text" id="service-area" name="service_area" placeholder="e.g. Santa Maria, Orcutt, SLO County">
     </div>
     <div class="form-group">
       <label for="biz-phone">Negocio Phone *</label>
@@ -597,7 +597,7 @@ document.querySelectorAll('form').forEach(form => {
 
     requiredFields.forEach(field => {
       if (!field.value.trim()) {
-        field.style.borderColor = '#A9202A';
+        field.style.borderColor = '#C0392B';
         isValid = false;
       }
     });

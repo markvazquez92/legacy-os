@@ -7,22 +7,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Lato:wght@400&family=Spline+Sans:wght@700&display=swap');
 
 :root {
-  /* ──── New Design Palette ──── */
+  /* ──── Design Palette ──── */
   --cream-bg:           #FAF3E6;
-  --candy-apple-red:    #A9202A;
-  --deep-burgundy:      #8B0000;
+  --candy-wine:         #722F37;
+  --candy-red:          #C0392B;
   --champagne-gold:     #D4AF37;
   --charcoal:           #2A2A2A;
-  --text-primary:       #2A2A2A;
-  --text-secondary:     #5a5a5a;
+  --body-text:          #1C1C1C;
+  --warm-white:         #F5EFE6;
   --white-card:         #FFFFFF;
 
   /* Semantic CSS Variables */
   --bg-primary:         var(--cream-bg);
   --bg-dark:            var(--charcoal);
   --text-cream:         var(--cream-bg);
+  --text-primary:       var(--body-text);
+  --text-secondary:     #5a5a5a;
   --accent-gold:        var(--champagne-gold);
-  --accent-red:         var(--candy-apple-red);
+  --accent-red:         var(--candy-red);
   --card-border:        var(--champagne-gold);
 
   /* Fonts */
@@ -86,7 +88,7 @@ h1, h2, h3, h4, h5, h6 {
   text-transform: none;
   letter-spacing: 0.02em;
   line-height: 1.1;
-  color: var(--deep-burgundy);
+  color: var(--candy-wine);
 }
 
 h1 {
@@ -202,6 +204,7 @@ p {
   }
 
   .nav-cta { display: none !important; }
+  .nav-right > a.btn { display: none !important; }
   .lang-switcher { display: none !important; }
 
   .nav-links {
@@ -290,7 +293,7 @@ p {
 }
 
 .hero-right {
-  background: linear-gradient(135deg, var(--candy-apple-red) 0%, var(--deep-burgundy) 100%);
+  background: linear-gradient(135deg, var(--candy-red) 0%, var(--candy-wine) 100%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -389,14 +392,14 @@ p {
 }
 
 .btn-gold {
-  background-color: var(--candy-apple-red);
-  color: var(--cream-bg);
+  background-color: var(--candy-red);
+  color: var(--warm-white);
   border: none;
 }
 
 .btn-gold:hover {
-  background-color: var(--deep-burgundy);
-  box-shadow: 0 4px 12px rgba(169, 32, 42, 0.3);
+  background-color: var(--candy-wine);
+  box-shadow: 0 4px 12px rgba(192, 57, 43, 0.3);
   transform: translateY(-2px);
 }
 

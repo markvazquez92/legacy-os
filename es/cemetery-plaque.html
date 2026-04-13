@@ -18,7 +18,7 @@
   --navy-deep:    #145049;
   --gold:         #D4AF37;
   --gold-light:   #D4AF37;
-  --coral:        #A9202A;
+  --coral:        #C0392B;
   --cream:        #FAF3E6;
   --charcoal:     #1C1C1C;
   --charcoal2:    #1C1C1C;
@@ -174,7 +174,7 @@ img { max-width: 100%; height: auto; display: block; }
         <span></span><span></span><span></span>
       </button>
     </div>
-  <div style="position: absolute; right: 3rem;">
+  <div class="lang-switcher" style="position: absolute; right: 3rem;">
     <a href="/es/cemetery-plaque.html" style="color: #FAF3E6; text-decoration: none; font-size: 0.9rem;">
       English | <span style="color: #D4AF37;">Español</span>
     </a>
@@ -374,7 +374,7 @@ img { max-width: 100%; height: auto; display: block; }
 </div>
 
 <div style="text-align: center; margin-bottom: 32px;">
-  <button id="showOrderForm" onclick="toggleOrderForm()" style="background:#A9202A;color:#FAF3E6;border:1.5px solid #D4AF37;padding:16px 34px;font-family:var(--cinzel);font-size:0.72rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;cursor:pointer;transition:all 0.22s ease;min-height:44px;margin-bottom:24px;">Ordena Ahora</button>
+  <button id="showOrderForm" onclick="toggleOrderForm()" style="background:#C0392B;color:#FAF3E6;border:1.5px solid #D4AF37;padding:16px 34px;font-family:var(--cinzel);font-size:0.72rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;cursor:pointer;transition:all 0.22s ease;min-height:44px;margin-bottom:24px;">Ordena Ahora</button>
 </div>
 
 <div id="orderFormWrap" style="display:none;">
@@ -601,7 +601,7 @@ document.querySelectorAll('form').forEach(form => {
 
     requiredFields.forEach(field => {
       if (!field.value.trim()) {
-        field.style.borderColor = '#A9202A';
+        field.style.borderColor = '#C0392B';
         isValid = false;
       }
     });
