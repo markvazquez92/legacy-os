@@ -18,7 +18,7 @@
   <rect x="115" y="55" width="8" height="8" fill="#1C1C1C"/>
   <rect x="55" y="115" width="8" height="8" fill="#1C1C1C"/>
   <rect x="115" y="115" width="8" height="8" fill="#1C1C1C"/>
-  <circle cx="90" cy="80" r="3" fill="#1A5C55" opacity="0.5"/>
+  <circle cx="90" cy="80" r="3" fill="#2A2A2A" opacity="0.5"/>
   <circle cx="110" cy="100" r="2" fill="#C8420A" opacity="0.4"/>
   
   <!-- QR label -->
@@ -32,7 +32,7 @@
   </text>
   
   <!-- Name (placeholder) -->
-  <text x="160" y="115" text-anchor="start" font-size="14" fill="#1A5C55" font-family="Cormorant Garamond, serif" font-weight="600">
+  <text x="160" y="115" text-anchor="start" font-size="14" fill="#2A2A2A" font-family="Cormorant Garamond, serif" font-weight="600">
     [Name Engraved Here]
   </text>
   

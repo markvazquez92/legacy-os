@@ -3,10 +3,10 @@
   <desc>Physical hardcover book mockup showing cream spine and teal front cover with gold accents</desc>
   
   <!-- Book spine (back) -->
-  <rect x="10" y="80" width="30" height="240" fill="#1A5C55" opacity="0.6"/>
+  <rect x="10" y="80" width="30" height="240" fill="#2A2A2A" opacity="0.6"/>
   
   <!-- Book cover (front) -->
-  <rect x="40" y="60" width="200" height="280" fill="#1A5C55" rx="3"/>
+  <rect x="40" y="60" width="200" height="280" fill="#2A2A2A" rx="3"/>
   
   <!-- Subtle metalflake texture overlay on cover -->
   <circle cx="80" cy="120" r="1.5" fill="#E8C97A" opacity="0.3"/>
