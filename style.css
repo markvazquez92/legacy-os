@@ -201,12 +201,16 @@ p {
     display: flex;
   }
 
+  .nav-cta { display: none !important; }
+  .lang-switcher { display: none !important; }
+
   .nav-links {
+    display: none !important;
     position: absolute;
     top: 4rem;
     left: 0;
     right: 0;
-    background-color: var(--charcoal-dark);
+    background-color: #2A2A2A;
     flex-direction: column;
     gap: 0;
     margin: 0;
@@ -217,6 +221,12 @@ p {
   }
 
   .nav-links.active {
+    display: flex !important;
+    flex-direction: column;
+    width: 100%;
+    background: #2A2A2A;
+    padding: 16px;
+    gap: 12px;
     max-height: 500px;
   }
 
