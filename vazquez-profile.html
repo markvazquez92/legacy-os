@@ -117,6 +117,57 @@
     .rescue-stat .rs-num { font-family:'Montserrat',serif; font-size:48px; font-weight:700; color:var(--gold); line-height:1; display:block; }
     .rescue-stat .rs-label { font-size:10px; color:var(--muted); letter-spacing:0.1em; text-transform:uppercase; }
 
+    /* 4-WEEK CULTURE GUIDE ACCORDION */
+    .clg-tabs { display:flex; gap:0; margin-bottom:20px; border-bottom:1px solid var(--border); }
+    .clg-tab { padding:13px 22px; cursor:pointer; font-family:'Montserrat',sans-serif; font-size:12px; font-weight:700; color:var(--muted); border-bottom:2px solid transparent; margin-bottom:-1px; transition:color 0.2s,border-color 0.2s; user-select:none; letter-spacing:0.04em; text-transform:uppercase; }
+    .clg-tab:hover { color:var(--cream); }
+    .clg-tab.active { color:var(--gold); border-bottom-color:var(--gold); }
+    .clg-tab small { display:block; font-size:9px; letter-spacing:0.1em; text-transform:uppercase; margin-top:2px; opacity:0.55; font-weight:400; }
+    .clg-panel { display:none; }
+    .clg-panel.active { display:block; }
+    .clg-week { border:1px solid var(--border); margin-bottom:8px; overflow:hidden; transition:border-color 0.25s; }
+    .clg-week.open { border-color:rgba(212,175,55,0.45); }
+    .clg-week-hd { display:flex; align-items:center; justify-content:space-between; padding:18px 22px; cursor:pointer; background:var(--card); transition:background 0.2s; }
+    .clg-week-hd:hover, .clg-week.open .clg-week-hd { background:#1a1a1a; }
+    .clg-week-left { display:flex; align-items:center; gap:16px; }
+    .clg-week-n { font-family:'Montserrat',sans-serif; font-size:2rem; font-weight:700; color:rgba(212,175,55,0.22); line-height:1; min-width:40px; transition:color 0.25s; }
+    .clg-week.open .clg-week-n { color:var(--gold); }
+    .clg-week-meta h3 { font-family:'Montserrat',sans-serif; font-size:15px; font-weight:700; color:var(--cream); margin:0 0 2px; }
+    .clg-week-meta p { font-size:11px; color:var(--muted); margin:0; }
+    .clg-caret { color:var(--gold); font-size:1.1rem; font-weight:700; transition:transform 0.3s; flex-shrink:0; }
+    .clg-week.open .clg-caret { transform:rotate(45deg); }
+    .clg-week-bd { display:none; padding:0 22px 26px; background:var(--card); }
+    .clg-week.open .clg-week-bd { display:block; }
+    .clg-ctx { border-left:2px solid var(--gold); padding:12px 16px; margin:16px 0 20px; background:rgba(212,175,55,0.04); }
+    .clg-ctx p { font-size:13px; color:#ccc; line-height:1.75; margin:0; }
+    .clg-ctx strong { color:var(--cream); }
+    .clg-ctx em { color:var(--gold); font-style:italic; }
+    .clg-playlist { background:rgba(212,175,55,0.06); border:1px solid rgba(212,175,55,0.14); padding:14px 18px; margin-bottom:20px; }
+    .clg-playlist-label { font-size:9px; letter-spacing:3px; text-transform:uppercase; color:var(--gold); margin-bottom:8px; }
+    .clg-playlist-tracks { display:flex; flex-wrap:wrap; gap:6px; }
+    .clg-track { font-size:11px; color:#ccc; background:rgba(250,243,230,0.06); padding:4px 10px; }
+    .clg-section-label { font-size:9px; letter-spacing:3px; text-transform:uppercase; color:rgba(212,175,55,0.6); margin:18px 0 12px; padding-bottom:8px; border-bottom:1px solid rgba(250,243,230,0.06); }
+    .clg-item { padding:14px 0; border-bottom:1px solid rgba(250,243,230,0.05); display:flex; gap:12px; }
+    .clg-item:last-child { border-bottom:none; padding-bottom:0; }
+    .clg-item-body h4 { font-family:'Montserrat',sans-serif; font-size:13px; font-weight:700; color:var(--cream); margin:0 0 5px; }
+    .clg-item-body p { font-size:12px; color:var(--muted); line-height:1.7; margin:0 0 8px; }
+    .clg-link { font-size:11px; color:var(--gold); text-decoration:none; border-bottom:1px solid rgba(212,175,55,0.3); padding-bottom:1px; }
+    .clg-link + .clg-link { margin-left:12px; }
+    .clg-link:hover { border-color:var(--gold); color:var(--cream); }
+    .clg-arch { background:rgba(250,243,230,0.025); border:1px solid rgba(250,243,230,0.07); padding:14px 16px; margin-bottom:8px; }
+    .clg-arch:last-child { margin-bottom:0; }
+    .clg-arch h4 { font-family:'Montserrat',sans-serif; font-size:13px; font-weight:700; color:var(--cream); margin:0 0 4px; }
+    .clg-arch p { font-size:12px; color:var(--muted); line-height:1.65; margin:0 0 5px; }
+    .clg-tip { display:block; font-size:11px; color:rgba(212,175,55,0.65); font-style:italic; margin-bottom:7px; }
+
+    /* ANCESTOR'S EYES */
+    .ae-block { background:var(--card); border-top:2px solid var(--gold); padding:32px; margin-bottom:10px; }
+    .ae-eyebrow { font-size:9px; letter-spacing:0.18em; text-transform:uppercase; color:var(--gold); margin-bottom:20px; }
+    .ae-letter { border-left:2px solid rgba(212,175,55,0.4); padding-left:20px; }
+    .ae-letter p { font-family:'Spline Sans',serif; font-style:italic; font-size:15px; line-height:2; color:#ccc; margin-bottom:20px; }
+    .ae-letter p:last-child { margin-bottom:0; }
+    .ae-sig { font-family:'Montserrat',sans-serif; font-size:12px; color:var(--gold); font-style:normal; letter-spacing:0.06em; margin-top:24px; font-weight:700; }
+
     /* CTA */
     .cta { background:var(--gold); }
     .cta-inner { max-width:820px; margin:0 auto; padding:32px 28px; display:flex; justify-content:space-between; align-items:center; gap:20px; flex-wrap:wrap; }
@@ -252,6 +303,21 @@
     <p><strong>The family's inheritance</strong> isn't money or land. It's the <strong>knowledge of how things are built to last.</strong> And now Bear is building something else too: <strong>a company dedicated to making sure no family loses their story.</strong></p>
   </div>
 
+  <!-- ANCESTOR'S EYES -->
+  <div class="sec"><h2>Ancestor's Eyes</h2><div class="sec-rule"></div></div>
+  <div class="ae-block">
+    <div class="ae-eyebrow">A Letter From Grandpa Joe — Written In His Voice</div>
+    <div class="ae-letter">
+      <p>Bear.</p>
+      <p>I don't know that we ever talked the way I wanted to. You were young, and I was old, and old men from Mexico City don't always know how to say the things that matter before it's too late. So let me say them now.</p>
+      <p>I made rings. That was my trade in Mexico City — a platero, a man who works metal. I knew gold and silver the way a farmer knows soil. You press it wrong, it cracks. You rush it, it warps. You give it what it needs — the right heat, the right pressure, the right patience — and it becomes something that lasts a hundred years. I understood that. I built my whole life around that understanding.</p>
+      <p>What I want you to know is this: what you do with concrete is the same thing. You place foundations. You move material with intention. You know how much weight a pour can hold, how fast it sets in the Central Coast heat, where the tolerances are. You carry the same knowledge I carried — just scaled up from a ring to a building. The precision didn't leave the family when I did. It lives in your hands.</p>
+      <p>I walked north because Mexico City was running out of future. California was a guess. Your grandfather — your father's father — crossed with craft knowledge and nothing else, and that was enough to build a life. Now you carry it forward, and you carry it right.</p>
+      <p>Build things that last. Remember where we came from. That's all I ever wanted to pass down.</p>
+      <div class="ae-sig">— Joe Vazquez &nbsp;&middot;&nbsp; Ring Maker &nbsp;&middot;&nbsp; Mexico City to Santa Barbara &nbsp;&middot;&nbsp; Mid 20th Century</div>
+    </div>
+  </div>
+
   <!-- THEN & NOW -->
   <div class="sec"><h2 style="color:var(--gold);font-family:'Montserrat',sans-serif;">Then & Now</h2><div class="sec-rule"></div></div>
   <p style="font-family:'Spline Sans',serif;font-style:italic;color:var(--gold);font-size:16px;text-align:center;margin-bottom:28px;">Every legacy starts somewhere.</p>
@@ -356,50 +422,383 @@
 
   <!-- CULTURE GUIDE -->
   <div class="sec"><h2>Culture Guide</h2><div class="sec-rule"></div></div>
-  <div class="culture-grid">
-    <div class="culture-card">
-      <div class="cult-n">01</div>
-      <div class="cult-cat">Music</div>
-      <h4>Galician Traditional Music</h4>
-      <p>Galicia shares Celtic roots with Ireland and Scotland. The gaita — the Galician bagpipe — is the sound of your ancestral homeland.</p>
-      <a href="https://www.youtube.com/results?search_query=galician+traditional+music+gaita" target="_blank">Listen on YouTube &rarr;</a>
+  <p style="font-size:13px;color:var(--muted);margin-bottom:18px;line-height:1.7;">You carry two bloodlines. Each has its own music, food, archives, and films. Choose a side — or go back and forth. This is yours to explore.</p>
+
+  <!-- BLOODLINE TABS -->
+  <div class="clg-tabs">
+    <div class="clg-tab active" onclick="switchBloodline(this,'panel-vazquez')">
+      Vázquez Side
+      <small>Galicia, Spain → Mexico City → California</small>
     </div>
-    <div class="culture-card">
-      <div class="cult-n">02</div>
-      <div class="cult-cat">Food</div>
-      <h4>Galician &amp; Mexico City Heritage</h4>
-      <p>Galicia: pulpo a la gallega, empanada gallega, pimientos de Padron. Mexico City: tamales, pozole, chiles en nogada — the real ones.</p>
-      <a href="https://www.youtube.com/results?search_query=galician+food+recipes" target="_blank">Explore recipes &rarr;</a>
-    </div>
-    <div class="culture-card">
-      <div class="cult-n">03</div>
-      <div class="cult-cat">History</div>
-      <h4>The Camino de Santiago</h4>
-      <p>The world's most famous pilgrimage ends in Santiago de Compostela, Galicia — the spiritual heart of your ancestral homeland.</p>
-      <a href="https://www.caminodesantiago.gal/en" target="_blank">Learn more &rarr;</a>
-    </div>
-    <div class="culture-card">
-      <div class="cult-n">04</div>
-      <div class="cult-cat">Film</div>
-      <h4>Stories of the Migration North</h4>
-      <p>El Norte (1983), A Better Life (2011), Harvest of Empire (2012) — the films that document what your family lived.</p>
-      <a href="https://www.imdb.com/title/tt0085975/" target="_blank">Watch El Norte &rarr;</a>
-    </div>
-    <div class="culture-card">
-      <div class="cult-n">05</div>
-      <div class="cult-cat">Research</div>
-      <h4>FamilySearch — Mexico City Records</h4>
-      <p>Mexico City Catholic Church Records 1514–1970. Search: Vazquez + Distrito Federal. Free access. Your family is in there.</p>
-      <a href="https://www.familysearch.org" target="_blank">Search records &rarr;</a>
-    </div>
-    <div class="culture-card">
-      <div class="cult-n">06</div>
-      <div class="cult-cat">Craft Tradition</div>
-      <h4>The Platero — Mexican Metalwork</h4>
-      <p>The silversmithing and metal casting tradition that Grandpa Joe mastered in Mexico City. A master's knowledge that passed forward through blood.</p>
-      <a href="https://www.youtube.com/results?search_query=mexican+silversmith+platero+tradition" target="_blank">Learn more &rarr;</a>
+    <div class="clg-tab" onclick="switchBloodline(this,'panel-garcia')">
+      García Side
+      <small>Nuevo León → Sinton, TX → California</small>
     </div>
   </div>
+
+  <!-- VÁZQUEZ PANEL -->
+  <div class="clg-panel active" id="panel-vazquez">
+
+    <!-- WEEK 1: MUSIC -->
+    <div class="clg-week open" id="vz-w1">
+      <div class="clg-week-hd" onclick="toggleW('vz-w1')">
+        <div class="clg-week-left">
+          <span class="clg-week-n">01</span>
+          <div class="clg-week-meta">
+            <h3>The Music</h3>
+            <p>Celtic bagpipes, Mexico City mariachi, and the corrido of the crossing</p>
+          </div>
+        </div>
+        <span class="clg-caret">+</span>
+      </div>
+      <div class="clg-week-bd">
+        <div class="clg-ctx">
+          <p>Most people don't know this: <strong>Galicia is Celtic</strong>. The <em>gaita gallega</em> — the Galician bagpipe — sounds like Ireland because the ancient peoples were connected. Your Vázquez name comes from a place where Celtic music never died. Then that line moved to Mexico City, where the <em>corrido</em> became the working-class newspaper — the music that documented everything the system refused to record. Two sounds. Both in your blood.</p>
+        </div>
+        <div class="clg-playlist">
+          <p class="clg-playlist-label">Build These Playlists</p>
+          <div class="clg-playlist-tracks">
+            <span class="clg-track">Milladoiro</span>
+            <span class="clg-track">Carlos Núñez</span>
+            <span class="clg-track">Luar na Lubre</span>
+            <span class="clg-track">Mariachi Vargas</span>
+            <span class="clg-track">El Piporro</span>
+            <span class="clg-track">Vicente Fernández</span>
+          </div>
+        </div>
+        <p class="clg-section-label">Listen To — With Context</p>
+        <div class="clg-item">
+          <div class="clg-item-body">
+            <h4>Milladoiro — Galician Celtic Folk</h4>
+            <p>The most celebrated Galician folk group. This is the sound your 1300s ancestors danced to in the same granite mountains where the Vázquez name was born. Put on their album <em>A Romería</em> and close your eyes.</p>
+            <a class="clg-link" href="https://open.spotify.com/artist/0Z3KtDy8YuqNnJKjgLMGp7" target="_blank">Spotify</a>
+            <a class="clg-link" href="https://www.youtube.com/results?search_query=Milladoiro+galician+folk" target="_blank">YouTube</a>
+          </div>
+        </div>
+        <div class="clg-item">
+          <div class="clg-item-body">
+            <h4>Carlos Núñez — Galician Bagpipe Master</h4>
+            <p>He blends the <em>gaita</em> with Irish, Breton, and Andean traditions — a perfect mirror of how the Vázquez family crossed worlds. Start with <em>A Irmandade das Estrelas</em>. Note: the Galician word for homesickness is <em>morriña</em> — a longing for a place you may have never been. You'll feel it in this music.</p>
+            <a class="clg-link" href="https://open.spotify.com/artist/3dlDFxWDM8A0K7sq63IOWV" target="_blank">Spotify</a>
+          </div>
+        </div>
+        <div class="clg-item">
+          <div class="clg-item-body">
+            <h4>Luar na Lubre — Atlantic Celtic Sound</h4>
+            <p>From A Coruña, Galicia — one of the most beloved Celtic folk groups in Spain. Their sound bridges the ancient and modern, exactly as the Vázquez name has always done across continents.</p>
+            <a class="clg-link" href="https://www.youtube.com/results?search_query=Luar+na+Lubre+galician" target="_blank">YouTube</a>
+          </div>
+        </div>
+        <div class="clg-item">
+          <div class="clg-item-body">
+            <h4>Mariachi Vargas de Tecalitlán — Mexico City Gold Era</h4>
+            <p>In the Mexico City your grandfather's generation knew — 1930s through 1960s — mariachi was everywhere. At baptisms, at funerals, at the market. This is the music Grandpa Joe grew up hearing before he ever crossed north.</p>
+            <a class="clg-link" href="https://open.spotify.com/artist/3RQKy8wl7gGADX5r1vYBTj" target="_blank">Spotify</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- WEEK 2: FILMS -->
+    <div class="clg-week" id="vz-w2">
+      <div class="clg-week-hd" onclick="toggleW('vz-w2')">
+        <div class="clg-week-left">
+          <span class="clg-week-n">02</span>
+          <div class="clg-week-meta">
+            <h3>The Films &amp; Books</h3>
+            <p>Watch the world your grandfather walked into — and away from</p>
+          </div>
+        </div>
+        <span class="clg-caret">+</span>
+      </div>
+      <div class="clg-week-bd">
+        <div class="clg-ctx">
+          <p>The Mexican Revolution started in 1910 and didn't truly settle until the late 1920s. For a family in Mexico City, California wasn't a dream — it was a <strong>calculation</strong>. These films show you exactly what that world looked like and why families made the move north.</p>
+        </div>
+        <p class="clg-section-label">Watch — In This Order</p>
+        <div class="clg-item">
+          <div class="clg-item-body">
+            <h4>Macario (1960)</h4>
+            <p>Set in colonial Mexico, made during the exact era your grandfather's generation came of age. Captures the fatalistic beauty of working-class Mexican life. One of the greatest Mexican films ever made. Free on YouTube.</p>
+            <a class="clg-link" href="https://www.youtube.com/results?search_query=Macario+1960+full+film+English+subtitles" target="_blank">Find on YouTube</a>
+          </div>
+        </div>
+        <div class="clg-item">
+          <div class="clg-item-body">
+            <h4>Mi Familia / My Family (1995)</h4>
+            <p>A Mexican family crosses to Los Angeles and builds a life across three generations. Stars Jimmy Smits, Edward James Olmos. Watch it with your mom.</p>
+            <a class="clg-link" href="https://www.youtube.com/results?search_query=Mi+Familia+My+Family+1995+full+movie" target="_blank">Find on YouTube</a>
+          </div>
+        </div>
+        <div class="clg-item">
+          <div class="clg-item-body">
+            <h4>Latino Americans — PBS Documentary (2013)</h4>
+            <p>Six episodes covering 500 years of Latin American history in the US. Episode 3 covers the exact era your grandfather crossed north. Start here for the big picture.</p>
+            <a class="clg-link" href="https://www.pbs.org/latino-americans/en/watch-online/" target="_blank">PBS Website</a>
+          </div>
+        </div>
+        <p class="clg-section-label" style="margin-top:18px;">Read — One Book</p>
+        <div class="clg-item">
+          <div class="clg-item-body">
+            <h4>The Death of Artemio Cruz — Carlos Fuentes</h4>
+            <p>The definitive novel of post-Revolutionary Mexico. A dying man reviews his life — land, power, family, compromise. This is the Mexico City your grandfather's generation navigated. If you read one book from this entire guide, make it this one.</p>
+            <a class="clg-link" href="https://www.amazon.com/Death-Artemio-Cruz-Carlos-Fuentes/dp/0374523851" target="_blank">Amazon</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- WEEK 3: FOOD -->
+    <div class="clg-week" id="vz-w3">
+      <div class="clg-week-hd" onclick="toggleW('vz-w3')">
+        <div class="clg-week-left">
+          <span class="clg-week-n">03</span>
+          <div class="clg-week-meta">
+            <h3>The Food</h3>
+            <p>From Galician granite coast to Mexico City kitchens — taste where they lived</p>
+          </div>
+        </div>
+        <span class="clg-caret">+</span>
+      </div>
+      <div class="clg-week-bd">
+        <div class="clg-ctx">
+          <p>Food is the one thing that crosses every border intact. Put on Week 1's music. Cook one of these dishes. The combination connects something that reading can't reach. Start with the pozole — it's the most Mexico City dish on this list, and it's the easiest to make on a Sunday.</p>
+        </div>
+        <p class="clg-section-label">Cook This Week</p>
+        <div class="clg-item">
+          <div class="clg-item-body">
+            <h4>Pozole Rojo — Mexico City's Celebration Dish</h4>
+            <p>In Mexico City, pozole was the dish for anything that mattered — baptisms, quinceañeras, homecomings. Hominy corn, pork, dried chiles. Grandpa Joe knew this dish. Make it on a Sunday with the mariachi playing.</p>
+            <a class="clg-link" href="https://www.seriouseats.com/red-pork-pozole-recipe" target="_blank">Recipe</a>
+          </div>
+        </div>
+        <div class="clg-item">
+          <div class="clg-item-body">
+            <h4>Tamales — The Food of Crossings</h4>
+            <p>Every family that made the journey from Mexico to California brought tamale knowledge with them. The masa, the filling, the corn husks — it all traveled north. If you have a family tamale recipe, make those. That recipe is worth more than any document in these archives.</p>
+            <a class="clg-link" href="https://www.seriouseats.com/tamales-recipe-guide" target="_blank">Guide</a>
+          </div>
+        </div>
+        <div class="clg-item">
+          <div class="clg-item-body">
+            <h4>Pulpo a la Gallega — The Dish of Galicia</h4>
+            <p>Octopus served on wooden plates with olive oil, paprika, and salt. This dish has been eaten at every fair and feast day in Galicia for 700 years. Your Vázquez ancestors — the ones who never left Spain — ate this. Make it once just to say you did.</p>
+            <a class="clg-link" href="https://www.seriouseats.com/pulpo-a-la-gallega-recipe" target="_blank">Recipe</a>
+          </div>
+        </div>
+        <div class="clg-item">
+          <div class="clg-item-body">
+            <h4>Tarta de Santiago — Galician Almond Cake</h4>
+            <p>Almond flour, eggs, citrus. Baked in Galicia since the medieval pilgrim era. The cross of Saint James pressed into powdered sugar on top. Simple, ancient, and easy to make. This is the dessert of your family's oldest homeland.</p>
+            <a class="clg-link" href="https://www.food52.com/recipes/search?q=tarta+de+santiago" target="_blank">Find on Food52</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- WEEK 4: ARCHIVES -->
+    <div class="clg-week" id="vz-w4">
+      <div class="clg-week-hd" onclick="toggleW('vz-w4')">
+        <div class="clg-week-left">
+          <span class="clg-week-n">04</span>
+          <div class="clg-week-meta">
+            <h3>The Archives</h3>
+            <p>Find them by name — your family's actual documents exist in these databases</p>
+          </div>
+        </div>
+        <span class="clg-caret">+</span>
+      </div>
+      <div class="clg-week-bd">
+        <div class="clg-ctx">
+          <p>This week you stop reading about your family and start <strong>finding them</strong>. Birth records. Baptism cards. Border crossing documents. Census pages with their handwriting. Start with FamilySearch — it's free and it's where most people find their first real document.</p>
+        </div>
+        <p class="clg-section-label">Search These — In Order</p>
+        <div class="clg-arch">
+          <h4>1. FamilySearch — Mexico City Catholic Church Records, 1514–1970</h4>
+          <p>The most likely place to find Grandpa Joe's baptism or his parents' marriage record. Free. No account required to search.</p>
+          <span class="clg-tip">Search: "Vázquez" → Mexico City / Distrito Federal → year range 1890–1930</span>
+          <a class="clg-link" href="https://www.familysearch.org/search/collection/1471019" target="_blank">Open this collection</a>
+        </div>
+        <div class="clg-arch">
+          <h4>2. PARES — Spanish National Archive</h4>
+          <p>Spain's free national archive. Contains the Padrón de Hidalgos — the nobility registry from the Real Chancillería de Valladolid. Your family's Galician hidalgo status from 1547 is documented in collections like this.</p>
+          <span class="clg-tip">Search: "Vázquez" → Galicia → Real Chancillería de Valladolid collection</span>
+          <a class="clg-link" href="https://pares.mcu.es" target="_blank">Open PARES</a>
+        </div>
+        <div class="clg-arch">
+          <h4>3. NARA — US Border Crossing Records, 1895–1960</h4>
+          <p>The physical card your grandfather filled out when he crossed into California — his handwriting, his described appearance, his stated occupation. This document exists somewhere in here.</p>
+          <span class="clg-tip">Search: "Vázquez" or "Vasquez" → El Paso or Nogales → 1920–1945</span>
+          <a class="clg-link" href="https://www.ancestry.com/search/collections/8872/" target="_blank">Search on Ancestry</a>
+        </div>
+        <div class="clg-arch">
+          <h4>4. AGN — Archivo General de la Nación (Mexico City)</h4>
+          <p>Mexico's national archive. Land records, colonial padrones, notarial records. The oldest and deepest archive on this list. This is where records from the 1600s and 1700s Mexico City live.</p>
+          <span class="clg-tip">Start: "Ramo Padrones" → Vázquez → Distrito Federal. Use the accent mark in your search.</span>
+          <a class="clg-link" href="https://catalogo.agn.gob.mx" target="_blank">Open AGN</a>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- end vazquez panel -->
+
+  <!-- GARCÍA PANEL -->
+  <div class="clg-panel" id="panel-garcia">
+    <div class="clg-week open" id="gc-w1">
+      <div class="clg-week-hd" onclick="toggleW('gc-w1')">
+        <div class="clg-week-left">
+          <span class="clg-week-n">01</span>
+          <div class="clg-week-meta">
+            <h3>The Music</h3>
+            <p>Norteño, conjunto, and the Tejano sound from South Texas</p>
+          </div>
+        </div>
+        <span class="clg-caret">+</span>
+      </div>
+      <div class="clg-week-bd">
+        <div class="clg-ctx">
+          <p>The García family line runs through <strong>Nuevo León, Mexico</strong> → <strong>Sinton, Texas</strong> → California. Nuevo León is norteño country — the accordion, the bajo sexto, the corrido. When your family crossed into Texas, that sound mixed with Czech and German polka traditions and became <em>conjunto</em>. Then it became Tejano. <strong>Los Alegres de Terán</strong> are from General Terán, Nuevo León — the exact region your García/Montemayor line comes from.</p>
+        </div>
+        <div class="clg-playlist">
+          <p class="clg-playlist-label">Build These Playlists</p>
+          <div class="clg-playlist-tracks">
+            <span class="clg-track">Los Alegres de Terán</span>
+            <span class="clg-track">Ramón Ayala</span>
+            <span class="clg-track">Flaco Jiménez</span>
+            <span class="clg-track">Selena</span>
+            <span class="clg-track">Little Joe y la Familia</span>
+          </div>
+        </div>
+        <p class="clg-section-label">Listen To — With Context</p>
+        <div class="clg-item">
+          <div class="clg-item-body">
+            <h4>Los Alegres de Terán — Your Family's Regional Sound</h4>
+            <p>From General Terán, Nuevo León — the same region your Montemayor/García line traces to. They defined norteño music for decades. This is what played at dances in the towns your great-great-grandmother Clara grew up near.</p>
+            <a class="clg-link" href="https://open.spotify.com/search/Los%20Alegres%20de%20Ter%C3%A1n" target="_blank">Spotify</a>
+            <a class="clg-link" href="https://www.youtube.com/results?search_query=Los+Alegres+de+Teran+norteno" target="_blank">YouTube</a>
+          </div>
+        </div>
+        <div class="clg-item">
+          <div class="clg-item-body">
+            <h4>Selena — Corpus Christi, 30 Miles From Sinton</h4>
+            <p>Selena Quintanilla grew up 30 miles from where your grandmother Elvira García was raised. She crossed every border between Mexican and American identity. <em>Como la Flor</em>, <em>Bidi Bidi Bom Bom</em>, <em>Dreaming of You</em>. This music came out of your family's backyard.</p>
+            <a class="clg-link" href="https://open.spotify.com/artist/1q6LFD9rAWVM4MGD5KMWIY" target="_blank">Spotify</a>
+          </div>
+        </div>
+        <div class="clg-item">
+          <div class="clg-item-body">
+            <h4>Flaco Jiménez — San Antonio Conjunto Legend</h4>
+            <p>The king of Texas conjunto. His accordion style is the direct descendant of what your family heard growing up in Sinton. He worked with Bob Dylan, Ry Cooder, the Rolling Stones — without ever leaving his roots.</p>
+            <a class="clg-link" href="https://open.spotify.com/artist/2D4FOFWbRRyWbqaWf6YImX" target="_blank">Spotify</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="clg-week" id="gc-w2">
+      <div class="clg-week-hd" onclick="toggleW('gc-w2')">
+        <div class="clg-week-left">
+          <span class="clg-week-n">02</span>
+          <div class="clg-week-meta">
+            <h3>The Films &amp; Books</h3>
+            <p>South Texas, the border, and what it meant to build a life in between</p>
+          </div>
+        </div>
+        <span class="clg-caret">+</span>
+      </div>
+      <div class="clg-week-bd">
+        <div class="clg-ctx">
+          <p>Sinton, Texas in the 1930s–1950s: your great-great-grandfather Faustino Montemayor — born 1852, died 1950 at age 98 — lived through more American history than almost anyone. He saw the end of the frontier, both World Wars, the Depression, and the beginning of the civil rights era.</p>
+        </div>
+        <p class="clg-section-label">Watch</p>
+        <div class="clg-item">
+          <div class="clg-item-body">
+            <h4>Selena (1997)</h4>
+            <p>Jennifer Lopez as Selena Quintanilla. Beyond the music — this film captures exactly what it felt like to be Mexican-American in South Texas. Too Mexican for the Americans, too American for the Mexicans. Your family navigated that same identity their entire lives.</p>
+            <a class="clg-link" href="https://www.youtube.com/results?search_query=Selena+1997+full+movie" target="_blank">Find on YouTube</a>
+          </div>
+        </div>
+        <div class="clg-item">
+          <div class="clg-item-body">
+            <h4>Lone Star (1996)</h4>
+            <p>Set in a South Texas border town. A mystery about family secrets, racial identity, and what gets passed down across generations. The landscape is your family's landscape.</p>
+            <a class="clg-link" href="https://www.youtube.com/results?search_query=Lone+Star+1996+John+Sayles+film" target="_blank">Find on YouTube</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="clg-week" id="gc-w3">
+      <div class="clg-week-hd" onclick="toggleW('gc-w3')">
+        <div class="clg-week-left">
+          <span class="clg-week-n">03</span>
+          <div class="clg-week-meta">
+            <h3>The Food</h3>
+            <p>South Texas border cooking — the food your grandmother grew up eating</p>
+          </div>
+        </div>
+        <span class="clg-caret">+</span>
+      </div>
+      <div class="clg-week-bd">
+        <div class="clg-ctx">
+          <p>Sinton, Texas border cooking is its own tradition — not pure Mexican, not Tex-Mex as tourists know it. It's ranch food, farmworker food, family food cooked in a wood-heated kitchen by a woman with 18 children to feed. Start with caldo de res. It's the simplest and closest to what Clara Montemayor would have made.</p>
+        </div>
+        <p class="clg-section-label">Cook This Week</p>
+        <div class="clg-item">
+          <div class="clg-item-body">
+            <h4>Caldo de Res — South Texas Beef Soup</h4>
+            <p>Beef, corn, chayote, carrots, cilantro. A pot of this fed a whole ranch family on a cold Texas morning. Clara Montemayor fed 18 children. This is the kind of dish that sustained them.</p>
+            <a class="clg-link" href="https://www.youtube.com/results?search_query=caldo+de+res+recipe+authentic" target="_blank">YouTube</a>
+          </div>
+        </div>
+        <div class="clg-item">
+          <div class="clg-item-body">
+            <h4>Barbacoa — The Celebration Meat</h4>
+            <p>In South Texas, barbacoa on Sunday morning is sacred. Slow-cooked beef cheek wrapped in maguey leaves. The dish your grandmother's family made when there was something to celebrate — or just because it was Sunday.</p>
+            <a class="clg-link" href="https://www.seriouseats.com/barbacoa-recipe" target="_blank">Recipe</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="clg-week" id="gc-w4">
+      <div class="clg-week-hd" onclick="toggleW('gc-w4')">
+        <div class="clg-week-left">
+          <span class="clg-week-n">04</span>
+          <div class="clg-week-meta">
+            <h3>The Archives</h3>
+            <p>Find the García and Montemayor lines in these records</p>
+          </div>
+        </div>
+        <span class="clg-caret">+</span>
+      </div>
+      <div class="clg-week-bd">
+        <div class="clg-ctx">
+          <p>The García/Montemayor line has a real head start: Faustino Montemayor — born 1852, died 1950 — spans so much history that multiple census records almost certainly exist. The 1930 and 1940 US Census records for Sinton, Texas are the place to start. He's in there.</p>
+        </div>
+        <p class="clg-section-label">Search These</p>
+        <div class="clg-arch">
+          <h4>1. FamilySearch — Texas Census Records</h4>
+          <p>Search for Faustino Montemayor in San Patricio County, Texas. The 1940 census record showing him with Clara and their 18 children is likely findable here.</p>
+          <span class="clg-tip">Search: "Montemayor" → San Patricio County, Texas → 1930–1940</span>
+          <a class="clg-link" href="https://www.familysearch.org" target="_blank">FamilySearch</a>
+        </div>
+        <div class="clg-arch">
+          <h4>2. Texas Birth &amp; Death Records — TDSHS</h4>
+          <p>Texas Department of State Health Services holds birth and death records from 1903 onward. Elvira "Barbara" García born Sept 7, 1944 in Sinton — her birth certificate is searchable here.</p>
+          <span class="clg-tip">Search: García → San Patricio County → 1944</span>
+          <a class="clg-link" href="https://www.dshs.texas.gov/vs/reqproc/index.shtm" target="_blank">Texas DSHS</a>
+        </div>
+        <div class="clg-arch">
+          <h4>3. Nuevo León Church Records — FamilySearch</h4>
+          <p>The Montemayor name originates in Nuevo León. Catholic baptism records from General Terán and surrounding municipalities go back to the 1700s.</p>
+          <span class="clg-tip">Search: "Montemayor" → Nuevo León → General Terán → pre-1900</span>
+          <a class="clg-link" href="https://www.familysearch.org/search/collection/1927051" target="_blank">Open this collection</a>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- end garcia panel -->
 
   <!-- VIDEO: BEAR'S WORK -->
   <div class="sec"><h2 style="color: var(--gold); font-family: 'Montserrat', sans-serif;">Bear's Work</h2><div class="sec-rule"></div></div>
@@ -440,6 +839,12 @@
       <div class="prof-type">Pet Legacy Profile</div>
       <h3>Butters</h3>
       <p>Orange tabby. 5 years old. Microchipped. Professional napper. The Champ of Santa Maria.</p>
+      <div class="prof-arrow">&rarr;</div>
+    </a>
+    <a class="prof-card" href="https://mylegacycontinues.com/demo-profiles.html">
+      <div class="prof-type">See All Demo Profiles</div>
+      <h3>Profile Gallery</h3>
+      <p>Heritage books, memorials, pet profiles, business pages — browse every profile type we build.</p>
       <div class="prof-arrow">&rarr;</div>
     </a>
   </div>
@@ -498,6 +903,19 @@
   }
 </script>
 <script src="metalflake.js"></script>
+<script>
+  function toggleW(id) {
+    var w = document.getElementById(id);
+    if (w) w.classList.toggle('open');
+  }
+  function switchBloodline(tab, panelId) {
+    document.querySelectorAll('.clg-panel').forEach(function(p){ p.classList.remove('active'); });
+    document.querySelectorAll('.clg-tab').forEach(function(t){ t.classList.remove('active'); });
+    var panel = document.getElementById(panelId);
+    if (panel) panel.classList.add('active');
+    tab.classList.add('active');
+  }
+</script>
 
 
   <!-- Form Submission Tracking -->
