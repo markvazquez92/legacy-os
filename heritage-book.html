@@ -58,7 +58,7 @@ a { color: inherit; text-decoration: none; }
 img { max-width: 100%; height: auto; display: block; }
 
 .btn { display: inline-block; font-family: var(–cinzel); font-size: 0.72rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; padding: 16px 34px; min-height: 44px; border: none; cursor: pointer; transition: all 0.22s ease; text-decoration: none; white-space: nowrap;  }
-.btn-primary { background: #C0392B; color: #FAF3E6; box-shadow: 0 4px 20px rgba(169,32,42,0.2); }
+.btn-primary { background: #C0392B; color: #FAF3E6; box-shadow: 0 4px 20px rgba(192,57,43,0.2); }
 .btn-primary:hover { background: #722F37; transform: translateY(-2px); }
 .btn-outline { background: transparent; color: #722F37; border: 1.5px solid #722F37; }
 .btn-outline:hover { background: #722F37; color: #D4AF37; }
@@ -81,13 +81,13 @@ img { max-width: 100%; height: auto; display: block; }
 .what-inner { max-width: 860px; margin: 0 auto; }
 .what-section h2 { font-family: var(–cinzel); font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 700; color: #722F37; margin-bottom: 32px; }
 .includes-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin-bottom: 40px; }
-.include-item { background: rgba(169,32,42,0.08); border: 1px solid rgba(169,32,42,0.2);  padding: 22px 20px; box-shadow: 0 2px 12px rgba(169,32,42,0.05); }
+.include-item { background: rgba(192,57,43,0.08); border: 1px solid rgba(192,57,43,0.2);  padding: 22px 20px; box-shadow: 0 2px 12px rgba(192,57,43,0.05); }
 .include-item-icon { font-size: 1.4rem; margin-bottom: 10px; }
 .include-item-title { font-family: var(–cinzel); font-size: 0.72rem; font-weight: 700; color: #722F37; margin-bottom: 6px; }
 .include-item-desc { font-size: 0.8rem; color: #1C1C1C; line-height: 1.7; }
 
 /* CASE STUDY BLOCK */
-.case-study { background: #FAF3E6; border: 1px solid rgba(169,32,42,0.2);  padding: 36px 40px; margin-bottom: 48px; }
+.case-study { background: #FAF3E6; border: 1px solid rgba(192,57,43,0.2);  padding: 36px 40px; margin-bottom: 48px; }
 .case-study-eyebrow { font-family: var(–cinzel); font-size: 0.54rem; letter-spacing: 0.28em; text-transform: uppercase; color: #D4AF37; display: block; margin-bottom: 14px; }
 .case-study h3 { font-family: var(–cinzel); font-size: 1.1rem; font-weight: 700; color: #722F37; margin-bottom: 14px; }
 .case-study p { font-size: 0.88rem; color: #1C1C1C; line-height: 1.9; margin-bottom: 12px; }
@@ -96,10 +96,10 @@ img { max-width: 100%; height: auto; display: block; }
 
 .order-section { padding: 0 48px 80px; background: #FAF3E6; }
 .order-inner { max-width: 860px; margin: 0 auto; }
-.stripe-cta { text-align: center; background: rgba(169,32,42,0.08); border: 1px solid rgba(169,32,42,0.2);  padding: 28px 32px; margin-bottom: 32px; box-shadow: 0 2px 12px rgba(169,32,42,0.05); }
+.stripe-cta { text-align: center; background: rgba(192,57,43,0.08); border: 1px solid rgba(192,57,43,0.2);  padding: 28px 32px; margin-bottom: 32px; box-shadow: 0 2px 12px rgba(192,57,43,0.05); }
 .stripe-cta p { font-size: 0.88rem; color: #1C1C1C; margin-bottom: 18px; line-height: 1.7; }
 .stripe-cta .price-label { font-family: var(–cinzel); font-size: 1.6rem; font-weight: 700; color: #722F37; display: block; margin-bottom: 18px; }
-.form-section-title { font-family: var(–cinzel); font-size: 0.6rem; letter-spacing: 0.24em; text-transform: uppercase; color: #D4AF37; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 1px solid rgba(169,32,42,0.25); }
+.form-section-title { font-family: var(–cinzel); font-size: 0.6rem; letter-spacing: 0.24em; text-transform: uppercase; color: #D4AF37; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 1px solid rgba(192,57,43,0.25); }
 .intake-form { display: flex; flex-direction: column; gap: 18px; }
 .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
 @media (max-width: 600px) { .form-row { grid-template-columns: 1fr; } .order-section { padding: 0 20px 64px; } }
@@ -161,8 +161,7 @@ img { max-width: 100%; height: auto; display: block; }
       <li><a href="heritage-book.html">Heritage</a></li>
       <li><a href="pet-tag.html">Pet Tags</a></li>
       <li><a href="business-profile.html">Business</a></li>
-      <li><a href="rescue-registry.html">Rescue Registry</a></li>
-      <li><a href="active-transports.html">Transport</a></li>
+      <li><a href="rescue-registry.html">Rescue</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
@@ -200,38 +199,37 @@ img { max-width: 100%; height: auto; display: block; }
     <h2>What You're Getting</h2>
     <div class="includes-grid">
       <div class="include-item">
-        <div class="include-item-icon"></div>
+
         <div class="include-item-title">Deep Genealogy Research</div>
         <div class="include-item-desc"><strong>4+ generations minimum.</strong> We search everywhere: FamilySearch, Spanish nobility registries, border records, census, church archives.</div>
       </div>
       <div class="include-item">
-        <div class="include-item-icon"></div>
+
         <div class="include-item-title">Custom Written Narrative</div>
         <div class="include-item-desc"><strong>Not a template.</strong> Not a chart. A real story — your family's history told like it deserves.</div>
       </div>
       <div class="include-item">
-        <div class="include-item-icon"></div>
+
         <div class="include-item-title">Migration Map & Timeline</div>
         <div class="include-item-desc"><strong>Your family's journey.</strong> Spain, Mexico, Texas, California. Traced.</div>
       </div>
       <div class="include-item">
-        <div class="include-item-icon"></div>
+
         <div class="include-item-title">Cultural Guide</div>
         <div class="include-item-desc"><strong>Who your family really was.</strong> Their music. Food. Traditions. Celebrations.</div>
       </div>
       <div class="include-item">
-        <div class="include-item-icon"></div>
+
         <div class="include-item-title">Physical Book — Shipped</div>
         <div class="include-item-desc"><strong>Professionally printed and bound.</strong> Shipped to your door. Held for generations.</div>
       </div>
       <div class="include-item">
-        <div class="include-item-icon"></div>
+
         <div class="include-item-title">Permanent Digital Profile</div>
         <div class="include-item-desc"><strong>Forever online.</strong> At mylegacycontinues.com. QR code for your family to share.</div>
       </div>
     </div>
 
-```
 <div class="case-study">
   <span class="case-study-eyebrow">How We Research — Complete Transparency</span>
   <h3>Where the Information Comes From (And What We Can't Verify)</h3>
@@ -246,9 +244,8 @@ img { max-width: 100%; height: auto; display: block; }
   <span class="case-study-eyebrow">Real Example — The Vázquez Legacy</span>
   <h3>From Galicia, Spain to Santa Maria, California — Bear's Family Story</h3>
   <p>This is the kind of story most families don't know they have. We found this one.</p>
-  <p style="margin-top: 16px; margin-bottom: 0;"><a href="vazquez-profile.html" style="color: var(--heading); font-weight: 600; text-decoration: underline;">→ See the full Vázquez heritage profile here</a></p>
+  <p style="margin-top: 16px; margin-bottom: 0;"><a href="vazquez-profile.html" style="color: var(--heading); font-weight: 600; text-decoration: underline;">See the full Vazquez heritage profile here</a></p>
 </div>
-```
 
   </div>
 </section>
@@ -284,20 +281,20 @@ img { max-width: 100%; height: auto; display: block; }
   <div style="max-width: 860px; margin: 0 auto;">
     <h2 style="font-family:var(--cinzel);font-size:clamp(1.4rem,3vw,2rem);font-weight:700;color:#722F37;margin-bottom:32px;">How We Print Your Book</h2>
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px;margin-bottom:32px;">
-      <div style="background:rgba(169,32,42,0.08);border:1px solid rgba(169,32,42,0.2);padding:24px;">
+      <div style="background:rgba(192,57,43,0.08);border:1px solid rgba(192,57,43,0.2);padding:24px;">
         <div style="font-family:var(--cinzel);font-size:0.9rem;font-weight:700;color:#722F37;margin-bottom:12px;">Professional Printing Partner</div>
         <p style="font-size:0.9rem;color:var(--body);line-height:1.7;">We use <strong>Blurb.com</strong> for professional printing — the same platform used by publishers and photographers worldwide.</p>
       </div>
-      <div style="background:rgba(169,32,42,0.08);border:1px solid rgba(169,32,42,0.2);padding:24px;">
+      <div style="background:rgba(192,57,43,0.08);border:1px solid rgba(192,57,43,0.2);padding:24px;">
         <div style="font-family:var(--cinzel);font-size:0.9rem;font-weight:700;color:#722F37;margin-bottom:12px;">Book Specifications</div>
         <p style="font-size:0.9rem;color:var(--body);line-height:1.7;"><strong>Hardcover, 8.5x11 inches</strong> • <strong>Matte finish</strong> • <strong>40–80 pages</strong> (custom length based on your story)</p>
       </div>
-      <div style="background:rgba(169,32,42,0.08);border:1px solid rgba(169,32,42,0.2);padding:24px;">
+      <div style="background:rgba(192,57,43,0.08);border:1px solid rgba(192,57,43,0.2);padding:24px;">
         <div style="font-family:var(--cinzel);font-size:0.9rem;font-weight:700;color:#722F37;margin-bottom:12px;">Complete Timeline</div>
         <p style="font-size:0.9rem;color:var(--body);line-height:1.7;"><strong>Research: 1-2 weeks</strong> • <strong>Writing & Design: 1-2 weeks</strong> • <strong>Printing & Delivery: 2-3 weeks</strong> • <strong>Total: 4-6 weeks</strong></p>
       </div>
     </div>
-    <div style="background:rgba(26,107,92,0.1);border-left:4px solid #D4AF37;padding:24px;margin-bottom:0;">
+    <div style="background:rgba(42,42,42,0.1);border-left:4px solid #D4AF37;padding:24px;margin-bottom:0;">
       <p style="font-size:0.95rem;color:var(--body);line-height:1.85;margin:0;"><strong>You approve everything before we print.</strong> No surprises. No hidden costs. Once you sign off on the final design, your book goes into production immediately.</p>
     </div>
   </div>
@@ -306,7 +303,7 @@ img { max-width: 100%; height: auto; display: block; }
 <div class="gold-rule"></div>
 
 <!-- CULTURE GUIDE -->
-<section style="padding: 72px 48px; background: rgba(26,107,92,0.05);">
+<section style="padding: 72px 48px; background: rgba(42,42,42,0.05);">
   <div style="max-width: 860px; margin: 0 auto;">
     <h2 style="font-family:var(--cinzel);font-size:clamp(1.4rem,3vw,2rem);font-weight:700;color:#722F37;margin-bottom:16px;">The Culture Guide — Know Where You Come From</h2>
     <p style="font-size:0.95rem;color:var(--body);line-height:1.85;max-width:700px;margin-bottom:16px;"><strong>A map back to your roots.</strong> Every Heritage Book includes a curated guide to your family's cultures — <strong>your regional music, food, traditions.</strong></p>
@@ -331,7 +328,7 @@ img { max-width: 100%; height: auto; display: block; }
 <div class="gold-rule"></div>
 
 <!-- COMPLEMENTARY PRODUCTS -->
-<section style="padding: 72px 48px; background: rgba(169,32,42,0.05);">
+<section style="padding: 72px 48px; background: rgba(192,57,43,0.05);">
   <div style="max-width: 1000px; margin: 0 auto;">
     <h2 style="font-family:var(--cinzel);font-size:clamp(1.4rem,3vw,2rem);font-weight:700;color:#722F37;margin-bottom:32px;text-align:center;">Preserve More Stories</h2>
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem;">
@@ -376,7 +373,7 @@ img { max-width: 100%; height: auto; display: block; }
     <div style="overflow-x: auto; margin-bottom: 36px;">
       <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem;">
         <thead>
-          <tr style="background: rgba(169,32,42,0.1); border-bottom: 2px solid #D4AF37;">
+          <tr style="background: rgba(192,57,43,0.1); border-bottom: 2px solid #D4AF37;">
             <th style="padding: 16px; text-align: left; color: #722F37; font-weight: 700;">Feature</th>
             <th style="padding: 16px; text-align: center; color: #722F37; font-weight: 700;">Heritage Book<br><span style="font-size: 1.4rem; color: #D4AF37;">$199</span></th>
             <th style="padding: 16px; text-align: center; color: #722F37; font-weight: 700;">Morning Memories<br><span style="font-size: 1.4rem; color: #D4AF37;">$129</span></th>
@@ -384,49 +381,49 @@ img { max-width: 100%; height: auto; display: block; }
           </tr>
         </thead>
         <tbody>
-          <tr style="border-bottom: 1px solid rgba(169,32,42,0.2);">
+          <tr style="border-bottom: 1px solid rgba(192,57,43,0.2);">
             <td style="padding: 14px 16px;"><strong>Genealogy Research</strong></td>
             <td style="padding: 14px 16px; text-align: center;"> 4+ generations</td>
             <td style="padding: 14px 16px; text-align: center;">—</td>
             <td style="padding: 14px 16px; text-align: center;">—</td>
           </tr>
-          <tr style="border-bottom: 1px solid rgba(169,32,42,0.2);">
+          <tr style="border-bottom: 1px solid rgba(192,57,43,0.2);">
             <td style="padding: 14px 16px;"><strong>Family Migration Story</strong></td>
             <td style="padding: 14px 16px; text-align: center;"> Full narrative</td>
             <td style="padding: 14px 16px; text-align: center;">—</td>
             <td style="padding: 14px 16px; text-align: center;">—</td>
           </tr>
-          <tr style="border-bottom: 1px solid rgba(169,32,42,0.2);">
+          <tr style="border-bottom: 1px solid rgba(192,57,43,0.2);">
             <td style="padding: 14px 16px;"><strong>Cultural Guide</strong></td>
             <td style="padding: 14px 16px; text-align: center;"> Included</td>
             <td style="padding: 14px 16px; text-align: center;">—</td>
             <td style="padding: 14px 16px; text-align: center;"> Caregiving focus</td>
           </tr>
-          <tr style="border-bottom: 1px solid rgba(169,32,42,0.2);">
+          <tr style="border-bottom: 1px solid rgba(192,57,43,0.2);">
             <td style="padding: 14px 16px;"><strong>Voice Recording</strong></td>
             <td style="padding: 14px 16px; text-align: center;">—</td>
             <td style="padding: 14px 16px; text-align: center;"> 3-4 sessions</td>
             <td style="padding: 14px 16px; text-align: center;"> Memory support</td>
           </tr>
-          <tr style="border-bottom: 1px solid rgba(169,32,42,0.2);">
+          <tr style="border-bottom: 1px solid rgba(192,57,43,0.2);">
             <td style="padding: 14px 16px;"><strong>Recipes & Wisdom</strong></td>
             <td style="padding: 14px 16px; text-align: center;">—</td>
             <td style="padding: 14px 16px; text-align: center;"> Primary focus</td>
             <td style="padding: 14px 16px; text-align: center;">—</td>
           </tr>
-          <tr style="border-bottom: 1px solid rgba(169,32,42,0.2);">
+          <tr style="border-bottom: 1px solid rgba(192,57,43,0.2);">
             <td style="padding: 14px 16px;"><strong>Identity Preservation</strong></td>
             <td style="padding: 14px 16px; text-align: center;"> Ancestral line</td>
             <td style="padding: 14px 16px; text-align: center;"> Personal stories</td>
             <td style="padding: 14px 16px; text-align: center;"> As memory fades</td>
           </tr>
-          <tr style="border-bottom: 1px solid rgba(169,32,42,0.2);">
+          <tr style="border-bottom: 1px solid rgba(192,57,43,0.2);">
             <td style="padding: 14px 16px;"><strong>Physical Book</strong></td>
             <td style="padding: 14px 16px; text-align: center;"> Professionally bound</td>
             <td style="padding: 14px 16px; text-align: center;"> Keepsake edition</td>
             <td style="padding: 14px 16px; text-align: center;"> Laminated for care</td>
           </tr>
-          <tr style="border-bottom: 1px solid rgba(169,32,42,0.2);">
+          <tr style="border-bottom: 1px solid rgba(192,57,43,0.2);">
             <td style="padding: 14px 16px;"><strong>Digital Profile</strong></td>
             <td style="padding: 14px 16px; text-align: center;"> Forever hosted</td>
             <td style="padding: 14px 16px; text-align: center;"> Forever hosted</td>
@@ -839,7 +836,6 @@ img { max-width: 100%; height: auto; display: block; }
 
 <footer>
   <div class="footer-inner">
-    <img src="logo.png" alt="My Legacy Continues" class="footer-logo">
     <div class="footer-contact">Contact: contact@mylegacycontinues.com | (805) 863-3794 | Santa Maria, CA</div>
     <ul class="footer-links">
       <li><a href="index.html">Home</a></li>
