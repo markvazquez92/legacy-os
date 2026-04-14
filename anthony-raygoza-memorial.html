@@ -2,250 +2,408 @@
 <!-- NO EMOJIS EVER -->
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Anthony Raygoza Sr. | In Memory | My Legacy Continues</title>
-  <meta name="description" content="In loving memory of Anthony Raygoza Sr. — Santa Maria, California. Preserved permanently by My Legacy Continues." />
-  <link rel="stylesheet" href="style.css">
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Anthony Raygoza Sr. | In Loving Memory | My Legacy Continues</title>
+<meta name="description" content="In loving memory of Anthony Joe Raygoza Vadillo &mdash; father of Antoinette Raygoza, brother of Debbie Garcia. Santa Maria, CA and Yuma, AZ. Preserved permanently by My Legacy Continues." />
+<link rel="stylesheet" href="style.css">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Montserrat:wght@300;400;500&family=Staatliches&display=swap');
 
-    :root {
-      --gold: #c9a84c;
-      --bg: #080808;
-      --surface: #111;
-      --border: #222;
-      --text: #FAF3E6;
-      --muted: #888;
-      --dim: #555;
-    }
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: 'Georgia', serif;
-      line-height: 1.6;
-      background-color: #FAF3E6;
-      overflow-x: hidden;
-    }
+:root {
+  --charcoal: #1A1A1A;
+  --charcoal-2: #232323;
+  --brandywine: #8B0000;
+  --brandywine-deep: #4A0000;
+  --chrome: #E0E0E0;
+  --chrome-dim: #9a9a9a;
+  --soft-white: #F5F5F5;
+  --purple-dv: #6A0DAD;
+}
 
-    /* Mobile background fix */
-    section {
-      background-color: #FAF3E6;
-    }
+html { scroll-behavior: smooth; }
 
-    .section {
-      background-color: #FAF3E6;
-    }
+body {
+  background: var(--charcoal);
+  color: var(--soft-white);
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+  line-height: 1.7;
+  overflow-x: hidden;
+  min-width: 375px;
+}
 
-    a { color: inherit; text-decoration: none; }
+/* Metalflake paint texture overlay for brandywine surfaces */
+.metalflake {
+  position: relative;
+  background:
+    radial-gradient(1px 1px at 15% 20%, rgba(255,255,255,0.12), transparent 40%),
+    radial-gradient(1px 1px at 42% 68%, rgba(255,255,255,0.10), transparent 40%),
+    radial-gradient(1px 1px at 78% 35%, rgba(255,255,255,0.08), transparent 40%),
+    radial-gradient(1px 1px at 61% 88%, rgba(255,255,255,0.10), transparent 40%),
+    radial-gradient(1px 1px at 28% 52%, rgba(255,255,255,0.12), transparent 40%),
+    radial-gradient(1px 1px at 88% 78%, rgba(255,255,255,0.08), transparent 40%),
+    linear-gradient(180deg, var(--brandywine) 0%, var(--brandywine-deep) 100%);
+}
 
+a { color: inherit; text-decoration: none; }
 
-    /* HERO */
-    .memorial-hero {
-      padding: 80px 24px 60px;
-      text-align: center;
-      border-bottom: 1px solid var(--border);
-    }
+/* ===== HERO ===== */
+.lr-hero {
+  padding: 90px 24px 70px;
+  text-align: center;
+  background: var(--charcoal);
+  border-bottom: 1px solid var(--chrome);
+}
 
-    .memorial-eyebrow {
-      font-size: 11px;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 24px;
-    }
+.lr-eyebrow {
+  font-family: 'Oswald', sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--chrome);
+  margin-bottom: 28px;
+}
 
-    .memorial-initial {
-      width: 80px;
-      height: 80px;
-      
-      border: 1px solid var(--border);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 2.2rem;
-      font-weight: 700;
-      color: var(--gold);
-      margin: 0 auto 28px;
-    }
+.lr-portrait {
+  width: 220px;
+  height: 220px;
+  margin: 0 auto 32px;
+  border: 3px solid var(--chrome);
+  box-shadow:
+    inset 2px 2px 5px rgba(255,255,255,0.4),
+    0 0 0 1px rgba(0,0,0,0.6),
+    0 10px 40px rgba(0,0,0,0.55);
+  overflow: hidden;
+  background: #0f0f0f;
+}
 
-    .memorial-hero h1 {
-      font-size: clamp(2rem, 5vw, 3rem);
-      font-weight: 700;
-      color: var(--text);
-      margin-bottom: 12px;
-    }
+.lr-portrait img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
 
-    .memorial-hero h1 em {
-      font-style: italic;
-      color: var(--gold);
-    }
+.lr-hero h1 {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 700;
+  font-size: clamp(2rem, 6vw, 3.4rem);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--chrome);
+  margin-bottom: 14px;
+}
 
-    .memorial-subtitle {
-      color: var(--muted);
-      font-size: 1rem;
-      letter-spacing: 0.04em;
-      margin-bottom: 28px;
-    }
+.lr-subtitle {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  color: var(--chrome-dim);
+  letter-spacing: 0.06em;
+  font-size: 0.95rem;
+  margin-bottom: 34px;
+}
 
-    .memorial-quote {
-      max-width: 520px;
-      margin: 0 auto;
-      font-size: 1.1rem;
-      font-style: italic;
-      color: #aaa;
-      line-height: 1.7;
-      border-left: 2px solid var(--gold);
-      padding-left: 20px;
-      text-align: left;
-    }
+.lr-hero-quote {
+  max-width: 620px;
+  margin: 0 auto;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+  font-style: italic;
+  font-size: 1.05rem;
+  color: var(--soft-white);
+  line-height: 1.8;
+  padding: 22px 26px;
+  border-left: 3px solid var(--brandywine);
+  background: var(--charcoal-2);
+  text-align: left;
+}
 
-    /* CONTENT */
-    .content {
-      max-width: 720px;
-      margin: 0 auto;
-      padding: 64px 24px;
-    }
+/* ===== CONTENT ===== */
+.lr-content {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 70px 24px;
+}
 
-    .section-label {
-      font-size: 11px;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 12px;
-    }
+.lr-section-label {
+  font-family: 'Oswald', sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--brandywine);
+  margin-bottom: 14px;
+}
 
-    .content h2 {
-      font-size: 1.6rem;
-      font-weight: 700;
-      margin-bottom: 20px;
-    }
+.lr-content h2 {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 700;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--chrome);
+  margin-bottom: 22px;
+}
 
-    .content p {
-      color: #aaa;
-      line-height: 1.8;
-      margin-bottom: 20px;
-    }
+.lr-content h3 {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 500;
+  font-size: 1.15rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--chrome);
+  margin: 28px 0 12px;
+}
 
-    .divider {
-      border: none;
-      border-top: 1px solid var(--border);
-      margin: 48px 0;
-    }
+.lr-content p {
+  color: var(--soft-white);
+  font-weight: 300;
+  line-height: 1.9;
+  margin-bottom: 18px;
+  font-size: 1rem;
+}
 
-    /* FACTS */
-    .facts {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0;
-      border: 1px solid var(--border);
-      
-      overflow: hidden;
-      margin: 32px 0;
-    }
+.lr-divider {
+  border: none;
+  border-top: 1px solid var(--chrome);
+  opacity: 0.25;
+  margin: 56px 0;
+}
 
-    .fact {
-      padding: 20px;
-      border-bottom: 1px solid var(--border);
-      border-right: 1px solid var(--border);
-    }
+/* ===== FACT GRID ===== */
+.lr-facts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  border: 3px solid var(--chrome);
+  box-shadow: inset 2px 2px 5px rgba(255,255,255,0.4);
+  overflow: hidden;
+  margin: 30px 0;
+  background: var(--charcoal-2);
+}
 
-    .fact:nth-child(even) { border-right: none; }
-    .fact:nth-last-child(-n+2) { border-bottom: none; }
+.lr-fact {
+  padding: 22px 24px;
+  border-bottom: 1px solid rgba(224,224,224,0.25);
+  border-right: 1px solid rgba(224,224,224,0.25);
+}
+.lr-fact:nth-child(even) { border-right: none; }
+.lr-fact:nth-last-child(-n+2) { border-bottom: none; }
 
-    .fact-label {
-      font-size: 11px;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 4px;
-    }
+.lr-fact-label {
+  font-family: 'Oswald', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--chrome-dim);
+  margin-bottom: 6px;
+}
 
-    .fact-value {
-      font-size: 0.95rem;
-      color: var(--text);
-    }
+.lr-fact-value {
+  font-size: 1rem;
+  color: var(--soft-white);
+  font-weight: 400;
+}
 
-    /* FAMILY NETWORK */
-    .family-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-      margin-top: 20px;
-    }
+/* ===== STORY CARD ===== */
+.lr-story-card {
+  background: var(--charcoal-2);
+  border: 3px solid var(--chrome);
+  box-shadow:
+    inset 2px 2px 5px rgba(255,255,255,0.4),
+    0 -2px 0 0 var(--brandywine) inset,
+    0 -12px 30px -12px rgba(139,0,0,0.55) inset;
+  padding: 34px 28px;
+  margin-bottom: 26px;
+}
+.lr-story-card h3 { margin-top: 0; }
+.lr-story-card p:last-child { margin-bottom: 0; }
 
-    .family-card {
-      border: 1px solid var(--border);
-      
-      padding: 16px 18px;
-      transition: border-color 0.2s;
-    }
+/* ===== QUOTES ===== */
+.lr-quote {
+  border-left: 3px solid var(--brandywine);
+  padding: 18px 22px;
+  margin: 22px 0;
+  background: var(--charcoal-2);
+  font-style: italic;
+  font-weight: 300;
+  color: var(--soft-white);
+  line-height: 1.85;
+}
+.lr-quote cite {
+  display: block;
+  margin-top: 10px;
+  font-style: normal;
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--chrome-dim);
+}
 
-    .family-card:hover { border-color: #333; }
+/* ===== FAMILY GRID ===== */
+.lr-family-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-top: 22px;
+}
 
-    .family-card-label {
-      font-size: 10px;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 4px;
-    }
+.lr-family-card {
+  background: var(--charcoal-2);
+  border: 3px solid var(--chrome);
+  box-shadow: inset 2px 2px 5px rgba(255,255,255,0.4);
+  padding: 18px 20px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  display: block;
+}
+.lr-family-card:hover {
+  box-shadow:
+    inset 2px 2px 5px rgba(255,255,255,0.4),
+    0 0 0 1px var(--brandywine),
+    0 0 22px -6px var(--brandywine);
+}
 
-    .family-card-name {
-      font-size: 0.95rem;
-      font-weight: 600;
-      color: var(--text);
-    }
+.lr-family-label {
+  font-family: 'Oswald', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--brandywine);
+  margin-bottom: 6px;
+}
+.lr-family-name {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: var(--chrome);
+}
+.lr-family-sub {
+  font-size: 0.82rem;
+  color: var(--chrome-dim);
+  margin-top: 4px;
+  font-weight: 300;
+}
 
-    .family-card-sub {
-      font-size: 0.82rem;
-      color: var(--dim);
-      margin-top: 2px;
-    }
+/* ===== BUTTONS ===== */
+.lr-btn {
+  display: inline-block;
+  background: var(--brandywine);
+  color: var(--chrome);
+  font-family: 'Staatliches', sans-serif;
+  font-size: 0.95rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 14px 28px;
+  border: 2px solid var(--chrome);
+  box-shadow: inset 2px 2px 5px rgba(255,255,255,0.35);
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+}
+.lr-btn:hover {
+  background: var(--brandywine-deep);
+  color: #fff;
+}
 
-    /* CTA */
-    .cta-section {
-      background: var(--surface);
-      border-top: 1px solid var(--border);
-      padding: 64px 24px;
-      text-align: center;
-    }
+/* ===== CTA ===== */
+.lr-cta {
+  background: var(--charcoal-2);
+  border-top: 1px solid var(--chrome);
+  border-bottom: 1px solid var(--chrome);
+  padding: 64px 24px;
+  text-align: center;
+}
+.lr-cta h3 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.4rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--chrome);
+  margin-bottom: 14px;
+}
+.lr-cta p {
+  max-width: 500px;
+  margin: 0 auto 28px;
+  color: var(--chrome-dim);
+  font-size: 0.95rem;
+}
 
-    .cta-section h3 {
-      font-size: 1.4rem;
-      font-weight: 700;
-      margin-bottom: 12px;
-    }
+/* ===== DOMESTIC VIOLENCE SECTION ===== */
+.lr-dv {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 60px 24px;
+}
+.lr-dv-card {
+  background: var(--charcoal-2);
+  border: 3px solid var(--chrome);
+  box-shadow:
+    inset 2px 2px 5px rgba(255,255,255,0.4),
+    0 -2px 0 0 var(--purple-dv) inset,
+    0 -16px 40px -16px rgba(106,13,173,0.5) inset;
+  padding: 36px 30px;
+}
+.lr-dv-label {
+  font-family: 'Oswald', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--purple-dv);
+  margin-bottom: 14px;
+}
+.lr-dv-card h2 {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 700;
+  font-size: 1.6rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--chrome);
+  margin-bottom: 18px;
+}
+.lr-dv-stmt {
+  font-style: italic;
+  font-weight: 300;
+  font-size: 1.05rem;
+  line-height: 1.85;
+  color: var(--soft-white);
+  padding: 18px 22px;
+  margin: 22px 0;
+  border-left: 3px solid var(--purple-dv);
+  background: rgba(106,13,173,0.08);
+}
+.lr-dv-hotline {
+  margin-top: 26px;
+  padding-top: 22px;
+  border-top: 1px solid rgba(224,224,224,0.25);
+  font-size: 0.95rem;
+  color: var(--soft-white);
+}
+.lr-dv-hotline strong {
+  font-family: 'Oswald', sans-serif;
+  letter-spacing: 0.1em;
+  color: var(--chrome);
+}
+.lr-dv-hotline a {
+  color: var(--purple-dv);
+  text-decoration: underline;
+}
 
-    .cta-section p {
-      color: var(--muted);
-      max-width: 480px;
-      margin: 0 auto 28px;
-      font-size: 0.95rem;
-    }
-
-    .cta-btn {
-      display: inline-block;
-      background: var(--gold);
-      color: #0a0a0a;
-      padding: 14px 28px;
-      
-      font-weight: 700;
-      font-size: 0.9rem;
-      letter-spacing: 0.04em;
-      transition: background 0.2s;
-    }
-
-    .cta-btn:hover { background: #dbb85a; }
-
-    @media (max-width: 600px) {
-      .facts { grid-template-columns: 1fr; }
-      .fact { border-right: none !important; }
-      .fact:last-child { border-bottom: none; }
-      .family-grid { grid-template-columns: 1fr; }
-    }
-  </style>
+/* ===== RESPONSIVE ===== */
+@media (max-width: 600px) {
+  .lr-hero { padding: 60px 18px 50px; }
+  .lr-portrait { width: 170px; height: 170px; }
+  .lr-content, .lr-dv { padding: 50px 18px; }
+  .lr-facts { grid-template-columns: 1fr; }
+  .lr-fact { border-right: none !important; }
+  .lr-fact:last-child { border-bottom: none; }
+  .lr-family-grid { grid-template-columns: 1fr; }
+  .lr-story-card { padding: 26px 22px; }
+  .lr-dv-card { padding: 28px 22px; }
+}
+</style>
   <!-- Google Analytics 4 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XQJ8KPVZX9"></script>
   <script>
@@ -298,92 +456,186 @@
   </nav>
 
 <!-- HERO -->
-<section class="memorial-hero">
-  <div class="memorial-eyebrow">In Loving Memory</div>
-  <div class="memorial-initial">A</div>
-  <h1>Anthony Raygoza <em>Sr.</em></h1>
-  <p class="memorial-subtitle">Father · Santa Maria, California · Central Coast Family</p>
-  <blockquote class="memorial-quote">
+<section class="lr-hero">
+  <div class="lr-eyebrow">In Loving Memory</div>
+  <div class="lr-portrait">
+    <img src="data:image/jpeg;base64,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" alt="Anthony Raygoza Sr." />
+  </div>
+  <h1>Anthony Raygoza <span style="color:var(--brandywine);">Sr.</span></h1>
+  <p class="lr-subtitle">Born July 6 &mdash; Passed September 2014 &middot; Santa Maria, California &middot; Yuma, Arizona</p>
+  <blockquote class="lr-hero-quote">
     "Some people hold a family together just by being in it. You don't understand that until they're gone."
   </blockquote>
 </section>
 
-<!-- CONTENT -->
-<div class="content">
-
-  <div class="section-label">His Story</div>
+<!-- HIS STORY -->
+<div class="lr-content">
+  <div class="lr-section-label">His Life</div>
   <h2>Who He Was</h2>
 
-  <p>Anthony Raygoza Sr. was a father, a brother, and a fixture in the lives of the people who knew him. He was part of the extended Garcia and Raygoza family that built their lives on California's Central Coast — the kind of family that shows up for each other, that marks time by who's at the table.</p>
+  <div class="lr-story-card">
+    <p><strong>Anthony Joe Raygoza Vadillo</strong> was a father, a brother, and a fixture in the lives of the people who knew him. The Raygoza and Vadillo names both lived in his &mdash; the full legal name he carried connected him to his father <strong>Joe Vadillo</strong>, to Great Aunt Barbara (Raygoza) Zepeda, and to a family line that ran through both <strong>Santa Maria, California</strong> and <strong>Yuma, Arizona</strong>.</p>
 
-  <p>He was Debbie Garcia's brother, which made him Bear Vázquez's uncle. He was the father of Antoinette Raygoza. That's not a small thing. The connections he had — the relationships he kept — those run all the way through this family's story.</p>
+    <p>He was the husband of <strong>Emma Garcia</strong>. He was the father of <strong>Antoinette</strong>, <strong>Anthony Jr.</strong>, <strong>Erica</strong>, and <strong>Dario</strong>. He was <strong>Debbie Garcia's brother</strong>, which made him uncle to Bear, Joseph, and Stephanie V&aacute;zquez. The Raygozas held family reunions at the home in Yuma &mdash; the kind of gatherings the family still speaks about by name.</p>
 
-  <p>This page was built so his name stays on the internet. Not as a news article. Not as a record. As a memorial — permanent, no subscription, no expiration. He was real. This page makes sure the people who search for him can find that out.</p>
+    <p>In February 2012, Anthony lost his daughter Antoinette to an act of domestic violence. He stood for her. He spoke for her in court. He was present at the <strong>2014 memorial at Waller Park</strong>, planting a white alder tree in her memory beside the duck pond she loved. Later that same year &mdash; September 2014 &mdash; Anthony himself passed away, in Santa Maria. His obituary lives on the Santa Maria Times as <em>Anthony Joe Raygoza Vadillo</em>.</p>
 
-  <hr class="divider" />
+    <p>This page was built so his name stays on the internet. Not a news article. Not a record behind a paywall. A memorial &mdash; permanent, no subscription, no expiration. He was real. This page makes sure the people who search for him can find that out.</p>
+  </div>
 
-  <div class="section-label">Record</div>
+  <hr class="lr-divider" />
+
+  <div class="lr-section-label">Record</div>
   <h2>What We Know</h2>
 
-  <div class="facts">
-    <div class="fact">
-      <div class="fact-label">Full Name</div>
-      <div class="fact-value">Anthony Raygoza Sr.</div>
+  <div class="lr-facts">
+    <div class="lr-fact">
+      <div class="lr-fact-label">Full Legal Name</div>
+      <div class="lr-fact-value">Anthony Joe Raygoza Vadillo</div>
     </div>
-    <div class="fact">
-      <div class="fact-label">Home</div>
-      <div class="fact-value">Santa Maria, California</div>
+    <div class="lr-fact">
+      <div class="lr-fact-label">Birthday</div>
+      <div class="lr-fact-value">July 6</div>
     </div>
-    <div class="fact">
-      <div class="fact-label">Family Line</div>
-      <div class="fact-value">Garcia — Raygoza</div>
+    <div class="lr-fact">
+      <div class="lr-fact-label">Passed</div>
+      <div class="lr-fact-value">September 2014 &middot; Santa Maria, CA</div>
     </div>
-    <div class="fact">
-      <div class="fact-label">Preserved By</div>
-      <div class="fact-value">My Legacy Continues</div>
+    <div class="lr-fact">
+      <div class="lr-fact-label">Home Cities</div>
+      <div class="lr-fact-value">Santa Maria, CA &middot; Yuma, AZ</div>
+    </div>
+    <div class="lr-fact">
+      <div class="lr-fact-label">Wife</div>
+      <div class="lr-fact-value">Emma Garcia</div>
+    </div>
+    <div class="lr-fact">
+      <div class="lr-fact-label">Father</div>
+      <div class="lr-fact-value">Joe Vadillo</div>
+    </div>
+    <div class="lr-fact">
+      <div class="lr-fact-label">Sister</div>
+      <div class="lr-fact-value">Debbie Garcia (Deborah Mahony)</div>
+    </div>
+    <div class="lr-fact">
+      <div class="lr-fact-label">Family Line</div>
+      <div class="lr-fact-value">Raygoza &middot; Vadillo &middot; Garcia</div>
     </div>
   </div>
 
-  <hr class="divider" />
+  <hr class="lr-divider" />
 
-  <div class="section-label">Family</div>
-  <h2>The People Connected to Him</h2>
+  <div class="lr-section-label">His Own Words</div>
+  <h2>What He Said In Court For His Daughter</h2>
 
-  <div class="family-grid">
-    <a href="/antoinette-raygoza-memorial.html" class="family-card">
-      <div class="family-card-label">Daughter — Memorial</div>
-      <div class="family-card-name">Antoinette Raygoza</div>
-      <div class="family-card-sub">Forever in her family's hearts.</div>
+  <div class="lr-story-card">
+    <p>In February 2013, at the sentencing of the man who killed his daughter Antoinette, Anthony spoke directly to Superior Court Judge Edward Bullard:</p>
+
+    <blockquote class="lr-quote">
+      "I don't know if you're a father, but if you think that's what he deserves, let him have it."
+      <cite>&mdash; Anthony Raygoza Sr., at sentencing, Santa Maria Superior Court</cite>
+    </blockquote>
+
+    <p>At the plea hearing in late January 2013, speaking about the prosecutor:</p>
+
+    <blockquote class="lr-quote">
+      "It looks like she just gave into a plea."
+      <cite>&mdash; Anthony Raygoza Sr., at the plea hearing</cite>
+    </blockquote>
+
+    <p>These words aren't easy to read. They are also exactly why he is remembered the way he is. A father stood for his daughter, publicly, on the record, when he had every reason to walk away.</p>
+  </div>
+
+  <hr class="lr-divider" />
+
+  <div class="lr-section-label">Family</div>
+  <h2>The People Connected To Him</h2>
+
+  <div class="lr-family-grid">
+    <a href="/antoinette-raygoza-memorial.html" class="lr-family-card">
+      <div class="lr-family-label">Daughter &middot; Memorial</div>
+      <div class="lr-family-name">Antoinette Raygoza</div>
+      <div class="lr-family-sub">April 1, 1991 &mdash; February 29, 2012</div>
     </a>
-    <a href="deborah-mahony-profile.html" class="family-card">
-      <div class="family-card-label">Sister — Family Profile</div>
-      <div class="family-card-name">Debbie Garcia</div>
-      <div class="family-card-sub">Santa Maria born and raised.</div>
+    <div class="lr-family-card">
+      <div class="lr-family-label">Wife</div>
+      <div class="lr-family-name">Emma Garcia</div>
+      <div class="lr-family-sub">Mother of his children</div>
+    </div>
+    <div class="lr-family-card">
+      <div class="lr-family-label">Son</div>
+      <div class="lr-family-name">Anthony Raygoza Jr.</div>
+      <div class="lr-family-sub">Present at the 2014 Waller Park memorial</div>
+    </div>
+    <div class="lr-family-card">
+      <div class="lr-family-label">Son</div>
+      <div class="lr-family-name">Dario Raygoza</div>
+      <div class="lr-family-sub">Raygoza line</div>
+    </div>
+    <div class="lr-family-card">
+      <div class="lr-family-label">Daughter</div>
+      <div class="lr-family-name">Erica Garcia</div>
+      <div class="lr-family-sub">Garcia line</div>
+    </div>
+    <a href="/deborah-mahony-profile.html" class="lr-family-card">
+      <div class="lr-family-label">Sister &middot; Profile</div>
+      <div class="lr-family-name">Debbie Garcia &middot; Deborah Mahony</div>
+      <div class="lr-family-sub">Santa Maria born and raised</div>
     </a>
-    <a href="/vazquez-profile.html" class="family-card">
-      <div class="family-card-label">Nephew — Heritage Profile</div>
-      <div class="family-card-name">Mark "Bear" Vázquez</div>
-      <div class="family-card-sub">Founder. Concrete. Santa Maria.</div>
+    <div class="lr-family-card">
+      <div class="lr-family-label">Father</div>
+      <div class="lr-family-name">Joe Vadillo</div>
+      <div class="lr-family-sub">Raygoza &middot; Vadillo line</div>
+    </div>
+    <div class="lr-family-card">
+      <div class="lr-family-label">Mother</div>
+      <div class="lr-family-name">Barbara Garcia</div>
+      <div class="lr-family-sub">Paternal grandmother to Antoinette</div>
+    </div>
+    <a href="/vazquez-profile.html" class="lr-family-card">
+      <div class="lr-family-label">Nephew &middot; Heritage</div>
+      <div class="lr-family-name">Mark "Bear" V&aacute;zquez</div>
+      <div class="lr-family-sub">Founder, My Legacy Continues</div>
     </a>
-    <a href="/index.html" class="family-card">
-      <div class="family-card-label">Preserved By</div>
-      <div class="family-card-name">My Legacy Continues</div>
-      <div class="family-card-sub">mylegacycontinues.com</div>
+    <div class="lr-family-card">
+      <div class="lr-family-label">Great Aunt</div>
+      <div class="lr-family-name">Barbara (Raygoza) Zepeda</div>
+      <div class="lr-family-sub">Raygoza line</div>
+    </div>
+    <div class="lr-family-card">
+      <div class="lr-family-label">Brother-in-law</div>
+      <div class="lr-family-name">David Garcia</div>
+      <div class="lr-family-sub">Garcia line</div>
+    </div>
+    <a href="/index.html" class="lr-family-card">
+      <div class="lr-family-label">Preserved By</div>
+      <div class="lr-family-name">My Legacy Continues</div>
+      <div class="lr-family-sub">mylegacycontinues.com</div>
     </a>
   </div>
 
+  <hr class="lr-divider" />
+
+  <div class="lr-section-label">Where He Came From</div>
+  <h2>Santa Maria &amp; Yuma</h2>
+
+  <div class="lr-story-card">
+    <p>Anthony's family lived in both <strong>Santa Maria, California</strong> and <strong>Yuma, Arizona</strong>. His daughter Antoinette was born in Santa Maria, raised in Yuma, and came back to Santa Maria at thirteen. The <strong>Raygoza family held reunions at their home in Yuma</strong> &mdash; Great Aunt Barbara Zepeda recalled visiting for one in her condolence message.</p>
+
+    <p>Both cities claim him. Both cities remember him.</p>
+  </div>
 </div>
 
 <!-- CTA -->
-<section class="cta-section">
-  <h3>Honor someone in your family the same way.</h3>
+<section class="lr-cta">
+  <h3>Honor Someone In Your Family The Same Way</h3>
   <p>A permanent memorial profile and a physical stainless steel plaque for the gravesite. One-time purchase. Hosted forever.</p>
-  <a href="/cemetery-plaque.html" class="cta-btn">Order a Memorial Plaque — $129</a>
+  <a href="/cemetery-plaque.html" class="lr-btn" data-product="cemetery-plaque">Order A Memorial Plaque &mdash; $129</a>
 </section>
 
-<footer style="background: var(--navy, #1C1C1C); border-top: 1px solid rgba(212,160,23,0.2); padding: 40px 48px 28px;">
+<footer style="background: #1A1A1A; border-top: 1px solid rgba(224,224,224,0.3); padding: 40px 48px 28px;">
   <div class="footer-inner">
-    <div class="footer-contact">Contact: contact@mylegacycontinues.com | (805) 863-3794 | Santa Maria, CA</div>
+    <div class="footer-contact" style="color:#9a9a9a;">Contact: contact@mylegacycontinues.com | (805) 863-3794 | Santa Maria, CA</div>
     <ul class="footer-links">
       <li><a href="index.html">Home</a></li>
       <li><a href="heritage-book.html">Heritage</a></li>
@@ -394,7 +646,7 @@
       <li><a href="legal/privacy.html">Privacy</a></li>
       <li><a href="legal/terms-of-service.html">Terms</a></li>
     </ul>
-    <p class="footer-copy">&copy; 2026 My Legacy Continues. All rights reserved.</p>
+    <p class="footer-copy" style="color:#9a9a9a;">&copy; 2026 My Legacy Continues. All rights reserved.</p>
   </div>
 </footer>
 
