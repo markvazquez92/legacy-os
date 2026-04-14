@@ -205,7 +205,14 @@ p {
 
   .nav-cta { display: none !important; }
   .nav-right > a.btn { display: none !important; }
-  .lang-switcher { display: none !important; }
+
+  .lang-switcher {
+    position: static !important;
+    display: block;
+    margin-top: 1.5rem;
+    text-align: center;
+    right: auto;
+  }
 
   .nav-links {
     display: none !important;
@@ -586,7 +593,7 @@ p {
 .product-image {
   width: 100%;
   aspect-ratio: 1;
-  background: linear-gradient(135deg, rgba(232, 201, 122, 0.05) 0%, rgba(26, 92, 85, 0.05) 100%);
+  background: linear-gradient(135deg, rgba(232, 201, 122, 0.05) 0%, rgba(42, 42, 42, 0.05) 100%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -626,6 +633,23 @@ p {
 .product-card .btn {
   margin: auto clamp(1rem, 2vw, 1.5rem) clamp(1rem, 2vw, 1.5rem) clamp(1rem, 2vw, 1.5rem);
   width: auto;
+}
+
+.coming-soon-item {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.coming-soon-badge {
+  display: inline-block;
+  background-color: var(--champagne-gold);
+  color: var(--charcoal);
+  padding: 0.75rem 1.5rem;
+  font-weight: 700;
+  font-size: clamp(0.8rem, 1vw, 0.95rem);
+  border-radius: 4px;
+  margin-top: 1rem;
+  font-family: var(--font-headline);
 }
 
 /* ──────────────────────────────────────────────────────────── */

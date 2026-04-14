@@ -9,11 +9,11 @@
   <rect x="40" y="60" width="200" height="280" fill="#2A2A2A" rx="3"/>
   
   <!-- Subtle metalflake texture overlay on cover -->
-  <circle cx="80" cy="120" r="1.5" fill="#E8C97A" opacity="0.3"/>
-  <circle cx="140" cy="100" r="1" fill="#E8C97A" opacity="0.2"/>
-  <circle cx="200" cy="140" r="1.5" fill="#E8C97A" opacity="0.25"/>
-  <circle cx="120" cy="200" r="1" fill="#E8C97A" opacity="0.2"/>
-  <circle cx="180" cy="280" r="1.5" fill="#E8C97A" opacity="0.3"/>
+  <circle cx="80" cy="120" r="1.5" fill="#D4AF37" opacity="0.3"/>
+  <circle cx="140" cy="100" r="1" fill="#D4AF37" opacity="0.2"/>
+  <circle cx="200" cy="140" r="1.5" fill="#D4AF37" opacity="0.25"/>
+  <circle cx="120" cy="200" r="1" fill="#D4AF37" opacity="0.2"/>
+  <circle cx="180" cy="280" r="1.5" fill="#D4AF37" opacity="0.3"/>
   
   <!-- Book title area -->
   <text x="140" y="140" text-anchor="middle" font-size="18" font-weight="600" fill="#FAF3E6" font-family="Oswald, sans-serif">
@@ -24,7 +24,7 @@
   </text>
   
   <!-- Decorative divider line -->
-  <line x1="60" y1="180" x2="220" y2="180" stroke="#E8C97A" stroke-width="1.5"/>
+  <line x1="60" y1="180" x2="220" y2="180" stroke="#D4AF37" stroke-width="1.5"/>
   
   <!-- Subtitle -->
   <text x="140" y="210" text-anchor="middle" font-size="12" fill="#F2A06A" font-family="Cormorant Garamond, serif" font-style="italic">
@@ -32,7 +32,7 @@
   </text>
   
   <!-- Bottom accent -->
-  <rect x="40" y="310" width="200" height="3" fill="#E8C97A"/>
+  <rect x="40" y="310" width="200" height="3" fill="#D4AF37"/>
   
   <!-- Spine text (small) -->
   <text x="25" y="200" text-anchor="middle" font-size="8" fill="#FAF3E6" font-family="Outfit, sans-serif" transform="rotate(-90 25 200)">

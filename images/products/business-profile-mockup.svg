@@ -3,16 +3,16 @@
   <desc>QR business card mockup with name, title, and profile link</desc>
   
   <!-- Card background -->
-  <rect x="20" y="30" width="320" height="140" fill="#FAF3E6" stroke="#E8C97A" stroke-width="2" rx="3"/>
+  <rect x="20" y="30" width="320" height="140" fill="#FAF3E6" stroke="#D4AF37" stroke-width="2" rx="3"/>
   
   <!-- Left stripe (teal accent) -->
   <rect x="20" y="30" width="4" height="140" fill="#2A2A2A"/>
   
   <!-- Gold accent bar -->
-  <rect x="20" y="155" width="320" height="2" fill="#E8C97A"/>
+  <rect x="20" y="155" width="320" height="2" fill="#D4AF37"/>
   
   <!-- QR Code area (left side) -->
-  <rect x="40" y="50" width="70" height="70" fill="#FFFFFF" stroke="#E8C97A" stroke-width="1.5"/>
+  <rect x="40" y="50" width="70" height="70" fill="#FFFFFF" stroke="#D4AF37" stroke-width="1.5"/>
   
   <!-- QR pattern -->
   <rect x="47" y="57" width="7" height="7" fill="#1C1C1C"/>
@@ -54,7 +54,7 @@
   </text>
   
   <!-- Metalflake accent -->
-  <circle cx="320" cy="60" r="1.2" fill="#E8C97A" opacity="0.5"/>
-  <circle cx="340" cy="90" r="0.9" fill="#E8C97A" opacity="0.4"/>
-  <circle cx="310" cy="105" r="1" fill="#E8C97A" opacity="0.45"/>
+  <circle cx="320" cy="60" r="1.2" fill="#D4AF37" opacity="0.5"/>
+  <circle cx="340" cy="90" r="0.9" fill="#D4AF37" opacity="0.4"/>
+  <circle cx="310" cy="105" r="1" fill="#D4AF37" opacity="0.45"/>
 </svg>
