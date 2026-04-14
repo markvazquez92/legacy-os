@@ -4,178 +4,868 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Mark "Bear" Vazquez — Heritage Profile</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Lato:wght@400&family=Spline+Sans:wght@700&display=swap" rel="stylesheet">
+  <title>Mark "Bear" Vazquez &mdash; Heritage Profile | My Legacy Continues</title>
+  <meta name="description" content="Heritage profile of Mark 'Bear' Vazquez &mdash; Santa Maria, California. Galicia to Mexico City to the Central Coast. Preserved permanently by My Legacy Continues."/>
   <link rel="stylesheet" href="style.css">
   <style>
-    :root{--bg:#2A2A2A;--green:#2A2A2A;--dark:#2A2A2A;--dark-green:#2A2A2A;--card:#2A2A2A;--border:rgba(232,201,122,0.25);--gold:#D4AF37;--gold2:#D4AF37;--cream:#FAF3E6;--heading:#FAF3E6;--muted:rgba(250,243,230,0.6);--sage:rgba(250,243,230,0.6);--im-fell:'Montserrat', Georgia, serif;--sans:'Lato', sans-serif;}
-    * { margin:0; padding:0; box-sizing:border-box; }
-    body { background:var(--bg); color:var(--cream); font-family:'Lato',sans-serif; font-weight:300; line-height:1.7; background-color:#FAF3E6; overflow-x:hidden; }
+    @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;700&family=Montserrat:wght@300;400;500;600&family=Staatliches&display=swap');
 
-    /* Mobile background fix */
-    section { background-color: #FAF3E6; }
-    .section { background-color: #FAF3E6; }
-
-    /* HERO */
-    .hero { background:var(--dark); border-bottom:1px solid var(--border); padding:72px 28px 56px; text-align:center; }
-    .badge { display:inline-block; border:1px solid var(--gold); color:var(--gold); font-size:9px; letter-spacing:0.2em; text-transform:uppercase; padding:5px 14px; margin-bottom:24px; }
-    .hero h1 { font-family:'Montserrat',serif; font-size:clamp(44px,8vw,72px); font-weight:700; line-height:1.0; color:var(--cream); margin-bottom:10px; }
-    .hero h1 em { color:var(--gold); font-style:italic; }
-    .hero-sub { font-size:14px; color:var(--muted); margin-bottom:6px; letter-spacing:0.04em; }
-    .hero-location { font-size:11px; color:var(--muted); letter-spacing:0.14em; text-transform:uppercase; margin-bottom:36px; }
-
-    .lineage { display:flex; justify-content:center; flex-wrap:wrap; border-top:1px solid var(--border); border-bottom:1px solid var(--border); max-width:680px; margin:0 auto; }
-    .lin-item { padding:14px 24px; text-align:center; border-right:1px solid var(--border); }
-    .lin-item:last-child { border-right:none; }
-    .lin-label { font-size:9px; letter-spacing:0.14em; text-transform:uppercase; color:var(--gold); display:block; margin-bottom:3px; }
-    .lin-val { font-size:13px; color:var(--cream); }
-
-    /* CONNECTED PROFILES */
-    .connected { background:var(--dark); border-bottom:1px solid var(--border); padding:32px 28px; }
-    .connected-inner { max-width:820px; margin:0 auto; }
-    .conn-label { font-size:9px; letter-spacing:0.18em; text-transform:uppercase; color:var(--gold); margin-bottom:16px; }
-    .conn-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--border); }
-    @media(max-width:600px){ .conn-grid{ grid-template-columns:1fr; } }
-    .conn-card { background:var(--card); padding:20px; text-decoration:none; display:block; transition:background 0.2s; }
-    .conn-card:hover { background:#145049; }
-    .conn-type { font-size:9px; letter-spacing:0.14em; text-transform:uppercase; color:var(--gold); margin-bottom:6px; }
-    .conn-name { font-family:'Montserrat',serif; font-size:18px; font-weight:700; color:var(--cream); margin-bottom:3px; }
-    .conn-sub { font-size:11px; color:var(--muted); }
-    .conn-arrow { color:var(--gold); float:right; font-size:18px; margin-top:-28px; }
-
-    /* CONTENT */
-    .wrap { max-width:820px; margin:0 auto; padding:0 28px 64px; }
-    .sec { display:flex; align-items:center; gap:18px; margin:52px 0 26px; }
-    .sec h2 { font-family:'Montserrat',serif; font-size:26px; font-weight:700; color:var(--cream); }
-    @media (max-width:600px) { .sec { flex-wrap:wrap; } .sec h2 { font-size:20px; } }
-    .sec-rule { flex:1; height:1px; background:var(--border); }
-
-    /* CHAPTERS */
-    .chapter { background:var(--card); border-top:2px solid var(--gold); padding:30px; margin-bottom:10px; }
-    .ch-tag { font-size:9px; letter-spacing:0.18em; text-transform:uppercase; color:var(--gold); margin-bottom:8px; }
-    .chapter h3 { font-family:'Montserrat',serif; font-size:22px; font-weight:700; margin-bottom:14px; }
-    .chapter p { font-size:15px; color:#ccc; line-height:1.85; margin-bottom:12px; }
-    .chapter p:last-child { margin-bottom:0; }
-
-    /* FAMILY TREE */
-    .tree-grid { display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--border); margin-bottom:0; }
-    @media(max-width:520px){ .tree-grid{ grid-template-columns:1fr; } }
-    .tree-side-card { background:var(--card); padding:24px; }
-    .tree-side-label { font-size:9px; letter-spacing:0.14em; text-transform:uppercase; color:var(--gold); margin-bottom:14px; }
-    .tree-entry { padding:10px 0; border-bottom:1px solid var(--border); }
-    .tree-entry:last-child { border-bottom:none; padding-bottom:0; }
-    .tree-name { font-size:14px; color:var(--cream); font-weight:500; margin-bottom:2px; }
-    .tree-detail { font-size:11px; color:var(--muted); }
-
-    /* TIMELINE */
-    .timeline { position:relative; padding-left:24px; }
-    .timeline::before { content:""; position:absolute; left:0; top:0; bottom:0; width:1px; background:var(--border); }
-    .tl-item { position:relative; padding:0 0 28px 24px; }
-    .tl-item::before { content:""; position:absolute; left:-5px; top:5px; width:10px; height:10px; background:var(--gold);  }
-    .tl-year { font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--gold); margin-bottom:4px; }
-    .tl-event { font-size:15px; color:var(--cream); font-weight:500; margin-bottom:2px; font-family:'Montserrat',serif; }
-    .tl-detail { font-size:12px; color:var(--muted); }
-
-    /* CULTURE GUIDE */
-    .culture-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:1px; background:var(--border); }
-    .culture-card { background:var(--card); padding:22px 20px; transition:background 0.2s; }
-    .culture-card:hover { background:#145049; }
-    .cult-n { font-family:'Montserrat',serif; font-size:28px; font-weight:700; color:var(--border); line-height:1; margin-bottom:8px; }
-    .cult-cat { font-size:9px; letter-spacing:0.14em; text-transform:uppercase; color:var(--gold); margin-bottom:6px; }
-    .culture-card h4 { font-size:14px; font-weight:600; color:var(--cream); margin-bottom:6px; }
-    .culture-card p { font-size:12px; color:var(--muted); line-height:1.65; margin-bottom:8px; }
-    .culture-card a { color:var(--gold); text-decoration:none; font-size:11px; letter-spacing:0.06em; }
-    .culture-card a:hover { color:var(--cream); }
-
-    /* PLAYLIST */
-    .playlist-block { background:var(--card); border-top:2px solid var(--gold); padding:28px; margin-bottom:0; }
-    .pl-tag { font-size:9px; letter-spacing:0.18em; text-transform:uppercase; color:var(--gold); margin-bottom:8px; }
-    .playlist-block h3 { font-family:'Montserrat',serif; font-size:22px; font-weight:700; margin-bottom:6px; }
-    .playlist-block p { font-size:13px; color:var(--muted); margin-bottom:18px; line-height:1.7; }
-
-    /* LINKED PROFILES — big cards */
-    .profile-links { display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--border); margin-bottom:10px; }
-    @media(max-width:520px){ .profile-links{ grid-template-columns:1fr; } }
-    .prof-card { background:var(--card); padding:26px; text-decoration:none; display:block; transition:background 0.2s; position:relative; }
-    .prof-card:hover { background:#145049; }
-    .prof-type { font-size:9px; letter-spacing:0.14em; text-transform:uppercase; color:var(--gold); margin-bottom:8px; }
-    .prof-card h3 { font-family:'Montserrat',serif; font-size:20px; font-weight:700; color:var(--cream); margin-bottom:4px; }
-    .prof-card p { font-size:12px; color:var(--muted); line-height:1.6; }
-    .prof-arrow { position:absolute; top:26px; right:26px; color:var(--gold); font-size:20px; }
-
-    /* RESCUE REGISTRY BLOCK */
-    .rescue-block { background:var(--card); border:1px solid var(--gold); padding:30px; margin-bottom:10px; display:grid; grid-template-columns:1fr auto; gap:24px; align-items:center; }
-    @media(max-width:520px){ .rescue-block{ grid-template-columns:1fr; } }
-    .rescue-block .rb-tag { font-size:9px; letter-spacing:0.18em; text-transform:uppercase; color:var(--gold); margin-bottom:8px; }
-    .rescue-block h3 { font-family:'Montserrat',serif; font-size:20px; font-weight:700; margin-bottom:10px; }
-    .rescue-block p { font-size:13px; color:var(--muted); line-height:1.75; margin-bottom:16px; }
-    .rescue-block a.btn {
-      display:inline-block; background:var(--gold); color:#0a0e0a;
-      padding:11px 22px; font-size:10px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; text-decoration:none;
+    /* ===== LOWRIDER LUXURY &mdash; CANDY PAINT & CHROME ===== */
+    :root{
+      --charcoal:#1A1A1A;
+      --charcoal-2:#232323;
+      --charcoal-3:#141414;
+      --brandywine:#8B0000;
+      --brandywine-deep:#4A0000;
+      --chrome:#E0E0E0;
+      --chrome-dim:#9a9a9a;
+      --silver:#C0C0C0;
+      --soft-white:#F5F5F5;
     }
-    .rescue-block a.btn:hover { background:var(--gold2); }
-    .rescue-stat { text-align:center; }
-    .rescue-stat .rs-num { font-family:'Montserrat',serif; font-size:48px; font-weight:700; color:var(--gold); line-height:1; display:block; }
-    .rescue-stat .rs-label { font-size:10px; color:var(--muted); letter-spacing:0.1em; text-transform:uppercase; }
 
-    /* 4-WEEK CULTURE GUIDE ACCORDION */
-    .clg-tabs { display:flex; gap:0; margin-bottom:20px; border-bottom:1px solid var(--border); }
-    .clg-tab { padding:13px 22px; cursor:pointer; font-family:'Montserrat',sans-serif; font-size:12px; font-weight:700; color:var(--muted); border-bottom:2px solid transparent; margin-bottom:-1px; transition:color 0.2s,border-color 0.2s; user-select:none; letter-spacing:0.04em; text-transform:uppercase; }
-    .clg-tab:hover { color:var(--cream); }
-    .clg-tab.active { color:var(--gold); border-bottom-color:var(--gold); }
-    .clg-tab small { display:block; font-size:9px; letter-spacing:0.1em; text-transform:uppercase; margin-top:2px; opacity:0.55; font-weight:400; }
-    .clg-panel { display:none; }
-    .clg-panel.active { display:block; }
-    .clg-week { border:1px solid var(--border); margin-bottom:8px; overflow:hidden; transition:border-color 0.25s; }
-    .clg-week.open { border-color:rgba(212,175,55,0.45); }
-    .clg-week-hd { display:flex; align-items:center; justify-content:space-between; padding:18px 22px; cursor:pointer; background:var(--card); transition:background 0.2s; }
-    .clg-week-hd:hover, .clg-week.open .clg-week-hd { background:#1a1a1a; }
-    .clg-week-left { display:flex; align-items:center; gap:16px; }
-    .clg-week-n { font-family:'Montserrat',sans-serif; font-size:2rem; font-weight:700; color:rgba(212,175,55,0.22); line-height:1; min-width:40px; transition:color 0.25s; }
-    .clg-week.open .clg-week-n { color:var(--gold); }
-    .clg-week-meta h3 { font-family:'Montserrat',sans-serif; font-size:15px; font-weight:700; color:var(--cream); margin:0 0 2px; }
-    .clg-week-meta p { font-size:11px; color:var(--muted); margin:0; }
-    .clg-caret { color:var(--gold); font-size:1.1rem; font-weight:700; transition:transform 0.3s; flex-shrink:0; }
-    .clg-week.open .clg-caret { transform:rotate(45deg); }
-    .clg-week-bd { display:none; padding:0 22px 26px; background:var(--card); }
-    .clg-week.open .clg-week-bd { display:block; }
-    .clg-ctx { border-left:2px solid var(--gold); padding:12px 16px; margin:16px 0 20px; background:rgba(212,175,55,0.04); }
-    .clg-ctx p { font-size:13px; color:#ccc; line-height:1.75; margin:0; }
-    .clg-ctx strong { color:var(--cream); }
-    .clg-ctx em { color:var(--gold); font-style:italic; }
-    .clg-playlist { background:rgba(212,175,55,0.06); border:1px solid rgba(212,175,55,0.14); padding:14px 18px; margin-bottom:20px; }
-    .clg-playlist-label { font-size:9px; letter-spacing:3px; text-transform:uppercase; color:var(--gold); margin-bottom:8px; }
-    .clg-playlist-tracks { display:flex; flex-wrap:wrap; gap:6px; }
-    .clg-track { font-size:11px; color:#ccc; background:rgba(250,243,230,0.06); padding:4px 10px; }
-    .clg-section-label { font-size:9px; letter-spacing:3px; text-transform:uppercase; color:rgba(212,175,55,0.6); margin:18px 0 12px; padding-bottom:8px; border-bottom:1px solid rgba(250,243,230,0.06); }
-    .clg-item { padding:14px 0; border-bottom:1px solid rgba(250,243,230,0.05); display:flex; gap:12px; }
-    .clg-item:last-child { border-bottom:none; padding-bottom:0; }
-    .clg-item-body h4 { font-family:'Montserrat',sans-serif; font-size:13px; font-weight:700; color:var(--cream); margin:0 0 5px; }
-    .clg-item-body p { font-size:12px; color:var(--muted); line-height:1.7; margin:0 0 8px; }
-    .clg-link { font-size:11px; color:var(--gold); text-decoration:none; border-bottom:1px solid rgba(212,175,55,0.3); padding-bottom:1px; }
-    .clg-link + .clg-link { margin-left:12px; }
-    .clg-link:hover { border-color:var(--gold); color:var(--cream); }
-    .clg-arch { background:rgba(250,243,230,0.025); border:1px solid rgba(250,243,230,0.07); padding:14px 16px; margin-bottom:8px; }
-    .clg-arch:last-child { margin-bottom:0; }
-    .clg-arch h4 { font-family:'Montserrat',sans-serif; font-size:13px; font-weight:700; color:var(--cream); margin:0 0 4px; }
-    .clg-arch p { font-size:12px; color:var(--muted); line-height:1.65; margin:0 0 5px; }
-    .clg-tip { display:block; font-size:11px; color:rgba(212,175,55,0.65); font-style:italic; margin-bottom:7px; }
+    /* Page-level resets &mdash; scoped to avoid collision with site nav */
+    body{
+      background:var(--charcoal);
+      color:var(--soft-white);
+      font-family:'Montserrat',sans-serif;
+      font-weight:300;
+      line-height:1.75;
+      overflow-x:hidden;
+      min-width:375px;
+      margin:0;
+    }
 
-    /* ANCESTOR'S EYES */
-    .ae-block { background:var(--card); border-top:2px solid var(--gold); padding:32px; margin-bottom:10px; }
-    .ae-eyebrow { font-size:9px; letter-spacing:0.18em; text-transform:uppercase; color:var(--gold); margin-bottom:20px; }
-    .ae-letter { border-left:2px solid rgba(212,175,55,0.4); padding-left:20px; }
-    .ae-letter p { font-family:'Spline Sans',serif; font-style:italic; font-size:15px; line-height:2; color:#ccc; margin-bottom:20px; }
-    .ae-letter p:last-child { margin-bottom:0; }
-    .ae-sig { font-family:'Montserrat',sans-serif; font-size:12px; color:var(--gold); font-style:normal; letter-spacing:0.06em; margin-top:24px; font-weight:700; }
+    body *, body *::before, body *::after { box-sizing:border-box; }
 
-    /* CTA */
-    .cta { background:var(--gold); }
-    .cta-inner { max-width:820px; margin:0 auto; padding:32px 28px; display:flex; justify-content:space-between; align-items:center; gap:20px; flex-wrap:wrap; }
-    .cta p { font-size:15px; font-weight:600; color:#0a0e0a; }
-    .cta a { display:inline-block; background:#0a0e0a; color:var(--gold); padding:12px 24px; font-size:10px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; text-decoration:none; }
+    /* Candy Metalflake texture overlay &mdash; used on any brandywine surface */
+    .metalflake{
+      position:relative;
+      background:
+        radial-gradient(1px 1px at 15% 20%, rgba(255,255,255,0.14), transparent 40%),
+        radial-gradient(1px 1px at 42% 68%, rgba(255,255,255,0.10), transparent 40%),
+        radial-gradient(1px 1px at 78% 35%, rgba(255,255,255,0.08), transparent 40%),
+        radial-gradient(1px 1px at 61% 88%, rgba(255,255,255,0.10), transparent 40%),
+        radial-gradient(1px 1px at 28% 52%, rgba(255,255,255,0.12), transparent 40%),
+        radial-gradient(1px 1px at 88% 78%, rgba(255,255,255,0.08), transparent 40%),
+        linear-gradient(180deg, var(--brandywine) 0%, var(--brandywine-deep) 100%);
+    }
 
+    /* ===== HERO ===== */
+    .lr-hero{
+      background:var(--charcoal);
+      border-bottom:3px solid var(--chrome);
+      padding:90px 24px 64px;
+      text-align:center;
+    }
+    .lr-eyebrow{
+      font-family:'Oswald',sans-serif;
+      font-weight:500;
+      font-size:12px;
+      letter-spacing:0.28em;
+      text-transform:uppercase;
+      color:var(--silver);
+      margin-bottom:26px;
+    }
+    .lr-portrait{
+      width:220px;
+      height:220px;
+      margin:0 auto 30px;
+      border:3px solid var(--chrome);
+      box-shadow:
+        inset 1px 1px 3px rgba(255,255,255,0.6),
+        0 0 0 1px rgba(0,0,0,0.6),
+        0 12px 44px rgba(0,0,0,0.55);
+      overflow:hidden;
+      background:#0f0f0f;
+    }
+    .lr-portrait img{ width:100%; height:100%; object-fit:cover; display:block; }
+    .lr-hero h1{
+      font-family:'Oswald',sans-serif;
+      font-weight:700;
+      font-size:clamp(2rem, 7vw, 3.6rem);
+      letter-spacing:0.15em;
+      text-transform:uppercase;
+      color:var(--silver);
+      margin:0 0 14px;
+      line-height:1.05;
+    }
+    .lr-hero h1 .accent{ color:var(--chrome); }
+    .lr-subtitle{
+      font-family:'Montserrat',sans-serif;
+      font-weight:400;
+      color:var(--chrome-dim);
+      letter-spacing:0.06em;
+      font-size:0.95rem;
+      margin-bottom:8px;
+    }
+    .lr-location{
+      font-family:'Oswald',sans-serif;
+      font-size:11px;
+      letter-spacing:0.18em;
+      text-transform:uppercase;
+      color:var(--chrome-dim);
+      margin-bottom:34px;
+    }
+    .lr-lineage{
+      display:flex;
+      justify-content:center;
+      flex-wrap:wrap;
+      max-width:720px;
+      margin:0 auto;
+      border-top:1px solid rgba(224,224,224,0.25);
+      border-bottom:1px solid rgba(224,224,224,0.25);
+    }
+    .lr-lin-item{
+      padding:16px 22px;
+      text-align:center;
+      border-right:1px solid rgba(224,224,224,0.25);
+    }
+    .lr-lin-item:last-child{ border-right:none; }
+    .lr-lin-label{
+      display:block;
+      font-family:'Oswald',sans-serif;
+      font-size:10px;
+      letter-spacing:0.18em;
+      text-transform:uppercase;
+      color:var(--brandywine);
+      margin-bottom:4px;
+    }
+    .lr-lin-val{ font-size:13px; color:var(--soft-white); letter-spacing:0.04em; }
+
+    /* ===== CONNECTED HUB ===== */
+    .lr-connected{
+      background:var(--charcoal-3);
+      border-bottom:1px solid rgba(224,224,224,0.15);
+      padding:34px 24px;
+    }
+    .lr-connected-inner{ max-width:860px; margin:0 auto; }
+    .lr-conn-label{
+      font-family:'Oswald',sans-serif;
+      font-size:11px;
+      letter-spacing:0.22em;
+      text-transform:uppercase;
+      color:var(--silver);
+      margin-bottom:18px;
+    }
+    .lr-conn-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:14px;
+    }
+    @media(max-width:640px){ .lr-conn-grid{ grid-template-columns:1fr; } }
+    .lr-conn-card{
+      background:var(--charcoal-2);
+      border:3px solid var(--chrome);
+      box-shadow:inset 1px 1px 3px rgba(255,255,255,0.6);
+      padding:20px;
+      display:block;
+      text-decoration:none;
+      color:var(--soft-white);
+      transition:border-color 0.2s, box-shadow 0.2s;
+      position:relative;
+    }
+    .lr-conn-card:hover{
+      border-color:var(--brandywine);
+      box-shadow:
+        inset 1px 1px 3px rgba(255,255,255,0.6),
+        0 0 26px -6px var(--brandywine);
+    }
+    .lr-conn-type{
+      font-family:'Oswald',sans-serif;
+      font-size:10px;
+      letter-spacing:0.18em;
+      text-transform:uppercase;
+      color:var(--brandywine);
+      margin-bottom:8px;
+    }
+    .lr-conn-name{
+      font-family:'Oswald',sans-serif;
+      font-weight:700;
+      font-size:18px;
+      letter-spacing:0.08em;
+      text-transform:uppercase;
+      color:var(--silver);
+      margin-bottom:4px;
+    }
+    .lr-conn-sub{ font-size:12px; color:var(--chrome-dim); }
+    .lr-conn-arrow{
+      position:absolute;
+      top:20px;
+      right:22px;
+      color:var(--chrome);
+      font-size:18px;
+    }
+
+    /* ===== CONTENT WRAP ===== */
+    .lr-wrap{ max-width:860px; margin:0 auto; padding:60px 24px 40px; }
+
+    .lr-sec-head{
+      display:flex;
+      align-items:center;
+      gap:18px;
+      margin:52px 0 24px;
+    }
+    .lr-sec-head h2{
+      font-family:'Oswald',sans-serif;
+      font-weight:700;
+      font-size:clamp(1.35rem, 3.2vw, 1.9rem);
+      letter-spacing:0.15em;
+      text-transform:uppercase;
+      color:var(--silver);
+      margin:0;
+    }
+    .lr-sec-rule{ flex:1; height:1px; background:rgba(224,224,224,0.2); }
+
+    /* ===== PHOTO CARDS (Chrome-framed) ===== */
+    .lr-photo{
+      border:3px solid var(--chrome);
+      box-shadow:inset 1px 1px 3px rgba(255,255,255,0.6), 0 10px 30px rgba(0,0,0,0.4);
+      background:#0f0f0f;
+      overflow:hidden;
+      margin:22px auto;
+      max-width:100%;
+    }
+    .lr-photo img{ width:100%; height:auto; display:block; }
+
+    .lr-photo-caption{
+      font-family:'Oswald',sans-serif;
+      font-size:10px;
+      letter-spacing:0.2em;
+      text-transform:uppercase;
+      color:var(--chrome-dim);
+      text-align:center;
+      margin:10px 0 26px;
+    }
+
+    /* ===== CHAPTER CARD ===== */
+    .lr-chapter{
+      background:var(--charcoal-2);
+      border:3px solid var(--chrome);
+      box-shadow:
+        inset 1px 1px 3px rgba(255,255,255,0.6),
+        0 -2px 0 0 var(--brandywine) inset,
+        0 -14px 34px -14px rgba(139,0,0,0.55) inset;
+      padding:34px 28px;
+      margin-bottom:24px;
+    }
+    .lr-ch-tag{
+      font-family:'Oswald',sans-serif;
+      font-size:11px;
+      letter-spacing:0.22em;
+      text-transform:uppercase;
+      color:var(--brandywine);
+      margin-bottom:10px;
+    }
+    .lr-chapter h3{
+      font-family:'Oswald',sans-serif;
+      font-weight:700;
+      font-size:clamp(1.25rem, 2.8vw, 1.6rem);
+      letter-spacing:0.1em;
+      text-transform:uppercase;
+      color:var(--silver);
+      margin-bottom:18px;
+    }
+    .lr-chapter p{
+      color:var(--soft-white);
+      font-weight:300;
+      font-size:15px;
+      line-height:1.9;
+      margin-bottom:14px;
+    }
+    .lr-chapter p:last-child{ margin-bottom:0; }
+    .lr-chapter strong{ color:var(--chrome); font-weight:500; }
+
+    /* ===== FILMSTRIP TIMELINE (horizontal scroll on all screens, snaps on mobile) ===== */
+    .lr-filmstrip{
+      position:relative;
+      background:var(--charcoal-3);
+      border:3px solid var(--chrome);
+      box-shadow:inset 1px 1px 3px rgba(255,255,255,0.6);
+      padding:28px 0;
+      overflow:hidden;
+    }
+    .lr-filmstrip-track{
+      display:flex;
+      gap:16px;
+      overflow-x:auto;
+      overflow-y:hidden;
+      padding:6px 24px 20px;
+      scroll-snap-type:x mandatory;
+      -webkit-overflow-scrolling:touch;
+    }
+    .lr-filmstrip-track::-webkit-scrollbar{ height:6px; }
+    .lr-filmstrip-track::-webkit-scrollbar-thumb{ background:var(--brandywine); }
+    .lr-filmstrip-track::-webkit-scrollbar-track{ background:var(--charcoal-2); }
+    .lr-film-card{
+      flex:0 0 240px;
+      background:var(--charcoal-2);
+      border:3px solid var(--chrome);
+      box-shadow:inset 1px 1px 3px rgba(255,255,255,0.6);
+      scroll-snap-align:center;
+      overflow:hidden;
+      display:flex;
+      flex-direction:column;
+    }
+    .lr-film-img{
+      width:100%;
+      aspect-ratio:1 / 1;
+      background:#0f0f0f;
+      overflow:hidden;
+    }
+    .lr-film-img img{ width:100%; height:100%; object-fit:cover; display:block; }
+    .lr-film-meta{
+      padding:12px 14px 16px;
+      border-top:1px solid rgba(224,224,224,0.2);
+      background:linear-gradient(180deg, rgba(139,0,0,0.12), transparent);
+    }
+    .lr-film-era{
+      font-family:'Oswald',sans-serif;
+      font-size:10px;
+      letter-spacing:0.2em;
+      text-transform:uppercase;
+      color:var(--brandywine);
+      margin-bottom:5px;
+    }
+    .lr-film-label{
+      font-family:'Oswald',sans-serif;
+      font-weight:500;
+      font-size:13px;
+      letter-spacing:0.08em;
+      text-transform:uppercase;
+      color:var(--silver);
+    }
+    .lr-film-hint{
+      font-family:'Oswald',sans-serif;
+      font-size:10px;
+      letter-spacing:0.2em;
+      text-transform:uppercase;
+      color:var(--chrome-dim);
+      text-align:center;
+      padding:0 24px 4px;
+    }
+
+    /* ===== FAMILY TREE ===== */
+    .lr-tree{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:14px;
+      margin-bottom:8px;
+    }
+    @media(max-width:560px){ .lr-tree{ grid-template-columns:1fr; } }
+    .lr-tree-col{
+      background:var(--charcoal-2);
+      border:3px solid var(--chrome);
+      box-shadow:inset 1px 1px 3px rgba(255,255,255,0.6);
+      padding:22px 22px 10px;
+    }
+    .lr-tree-label{
+      font-family:'Oswald',sans-serif;
+      font-size:11px;
+      letter-spacing:0.22em;
+      text-transform:uppercase;
+      color:var(--brandywine);
+      margin-bottom:14px;
+    }
+    .lr-tree-entry{
+      padding:11px 0;
+      border-bottom:1px solid rgba(224,224,224,0.15);
+    }
+    .lr-tree-entry:last-child{ border-bottom:none; }
+    .lr-tree-name{
+      font-family:'Oswald',sans-serif;
+      font-weight:500;
+      font-size:14px;
+      letter-spacing:0.06em;
+      color:var(--silver);
+      margin-bottom:3px;
+    }
+    .lr-tree-detail{ font-size:12px; color:var(--chrome-dim); }
+
+    /* ===== TIMELINE (vertical) ===== */
+    .lr-timeline{ position:relative; padding-left:26px; }
+    .lr-timeline::before{
+      content:"";
+      position:absolute;
+      left:0; top:0; bottom:0;
+      width:2px;
+      background:var(--chrome);
+    }
+    .lr-tl-item{ position:relative; padding:0 0 28px 22px; }
+    .lr-tl-item::before{
+      content:"";
+      position:absolute;
+      left:-7px; top:6px;
+      width:12px; height:12px;
+      background:var(--brandywine);
+      border:2px solid var(--chrome);
+      box-shadow:inset 1px 1px 2px rgba(255,255,255,0.4);
+    }
+    .lr-tl-year{
+      font-family:'Oswald',sans-serif;
+      font-size:10px;
+      letter-spacing:0.18em;
+      text-transform:uppercase;
+      color:var(--brandywine);
+      margin-bottom:4px;
+    }
+    .lr-tl-event{
+      font-family:'Oswald',sans-serif;
+      font-weight:500;
+      font-size:15px;
+      letter-spacing:0.06em;
+      color:var(--silver);
+      margin-bottom:3px;
+    }
+    .lr-tl-detail{ font-size:12px; color:var(--chrome-dim); line-height:1.7; }
+
+    /* ===== ANCESTOR LETTER ===== */
+    .lr-letter{
+      background:var(--charcoal-2);
+      border:3px solid var(--chrome);
+      box-shadow:
+        inset 1px 1px 3px rgba(255,255,255,0.6),
+        0 -2px 0 0 var(--brandywine) inset,
+        0 -14px 34px -14px rgba(139,0,0,0.5) inset;
+      padding:34px 30px;
+      margin-bottom:22px;
+    }
+    .lr-letter-eyebrow{
+      font-family:'Oswald',sans-serif;
+      font-size:11px;
+      letter-spacing:0.22em;
+      text-transform:uppercase;
+      color:var(--brandywine);
+      margin-bottom:22px;
+    }
+    .lr-letter-body{ border-left:3px solid var(--brandywine); padding-left:22px; }
+    .lr-letter-body p{
+      font-family:'Montserrat',sans-serif;
+      font-weight:300;
+      font-style:italic;
+      font-size:15px;
+      line-height:2;
+      color:var(--soft-white);
+      margin-bottom:18px;
+    }
+    .lr-letter-sig{
+      font-family:'Oswald',sans-serif;
+      font-weight:500;
+      font-size:12px;
+      letter-spacing:0.12em;
+      text-transform:uppercase;
+      color:var(--chrome);
+      font-style:normal;
+      margin-top:22px;
+    }
+
+    /* ===== BUTTONS ===== */
+    .lr-btn{
+      display:inline-block;
+      background:linear-gradient(180deg, var(--brandywine) 0%, var(--brandywine-deep) 100%);
+      color:var(--silver);
+      font-family:'Staatliches',sans-serif;
+      font-size:0.95rem;
+      letter-spacing:0.18em;
+      text-transform:uppercase;
+      padding:14px 30px;
+      border:2px solid var(--chrome);
+      box-shadow:inset 1px 1px 3px rgba(255,255,255,0.5);
+      text-decoration:none;
+      transition:transform 0.15s, box-shadow 0.2s;
+      cursor:pointer;
+    }
+    .lr-btn:hover{
+      box-shadow:
+        inset 1px 1px 3px rgba(255,255,255,0.6),
+        0 0 26px -6px var(--brandywine);
+      color:#fff;
+    }
+
+    /* ===== TRAILER CTA BLOCK ===== */
+    .lr-trailer{
+      background:var(--charcoal-2);
+      border:3px solid var(--chrome);
+      box-shadow:inset 1px 1px 3px rgba(255,255,255,0.6);
+      padding:34px 28px;
+      text-align:center;
+      margin:32px 0;
+    }
+    .lr-trailer p{
+      font-family:'Montserrat',sans-serif;
+      font-style:italic;
+      font-weight:300;
+      color:var(--silver);
+      font-size:16px;
+      margin-bottom:18px;
+    }
+
+    /* ===== CULTURE GUIDE ===== */
+    .lr-culture-intro{
+      font-size:14px;
+      color:var(--chrome-dim);
+      margin-bottom:22px;
+      line-height:1.75;
+    }
+    .lr-tabs{
+      display:flex;
+      gap:0;
+      margin-bottom:20px;
+      border-bottom:2px solid rgba(224,224,224,0.2);
+      flex-wrap:wrap;
+    }
+    .lr-tab{
+      padding:14px 22px;
+      cursor:pointer;
+      font-family:'Oswald',sans-serif;
+      font-weight:500;
+      font-size:12px;
+      letter-spacing:0.15em;
+      text-transform:uppercase;
+      color:var(--chrome-dim);
+      border-bottom:3px solid transparent;
+      margin-bottom:-2px;
+      transition:color 0.2s, border-color 0.2s;
+      user-select:none;
+      background:transparent;
+    }
+    .lr-tab:hover{ color:var(--silver); }
+    .lr-tab.active{ color:var(--brandywine); border-bottom-color:var(--brandywine); }
+    .lr-tab small{
+      display:block;
+      font-family:'Montserrat',sans-serif;
+      font-size:10px;
+      letter-spacing:0.08em;
+      text-transform:none;
+      margin-top:3px;
+      opacity:0.65;
+      font-weight:300;
+    }
+    .lr-panel{ display:none; }
+    .lr-panel.active{ display:block; }
+    .lr-week{
+      border:3px solid var(--chrome);
+      box-shadow:inset 1px 1px 3px rgba(255,255,255,0.6);
+      margin-bottom:10px;
+      overflow:hidden;
+      transition:border-color 0.25s;
+      background:var(--charcoal-2);
+    }
+    .lr-week.open{ border-color:var(--brandywine); }
+    .lr-week-hd{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:18px 22px;
+      cursor:pointer;
+      background:var(--charcoal-2);
+      transition:background 0.2s;
+    }
+    .lr-week.open .lr-week-hd{ background:var(--charcoal-3); }
+    .lr-week-left{ display:flex; align-items:center; gap:16px; }
+    .lr-week-n{
+      font-family:'Oswald',sans-serif;
+      font-weight:700;
+      font-size:1.9rem;
+      color:rgba(224,224,224,0.2);
+      line-height:1;
+      min-width:44px;
+      transition:color 0.25s;
+    }
+    .lr-week.open .lr-week-n{ color:var(--brandywine); }
+    .lr-week-meta h3{
+      font-family:'Oswald',sans-serif;
+      font-weight:500;
+      font-size:14px;
+      letter-spacing:0.1em;
+      text-transform:uppercase;
+      color:var(--silver);
+      margin:0 0 3px;
+    }
+    .lr-week-meta p{ font-size:11px; color:var(--chrome-dim); margin:0; }
+    .lr-caret{
+      color:var(--chrome);
+      font-size:1.2rem;
+      font-weight:700;
+      transition:transform 0.3s;
+      flex-shrink:0;
+    }
+    .lr-week.open .lr-caret{ transform:rotate(45deg); color:var(--brandywine); }
+    .lr-week-bd{ display:none; padding:0 22px 26px; background:var(--charcoal-2); }
+    .lr-week.open .lr-week-bd{ display:block; }
+    .lr-ctx{
+      border-left:3px solid var(--brandywine);
+      padding:14px 18px;
+      margin:16px 0 22px;
+      background:rgba(139,0,0,0.08);
+    }
+    .lr-ctx p{ font-size:13px; color:var(--soft-white); line-height:1.8; margin:0; font-weight:300; }
+    .lr-ctx strong{ color:var(--chrome); font-weight:500; }
+    .lr-ctx em{ color:var(--brandywine); font-style:italic; }
+    .lr-playlist-mini{
+      background:rgba(139,0,0,0.1);
+      border:1px solid rgba(139,0,0,0.3);
+      padding:14px 18px;
+      margin-bottom:20px;
+    }
+    .lr-playlist-label{
+      font-family:'Oswald',sans-serif;
+      font-size:10px;
+      letter-spacing:0.22em;
+      text-transform:uppercase;
+      color:var(--brandywine);
+      margin-bottom:8px;
+    }
+    .lr-playlist-tracks{ display:flex; flex-wrap:wrap; gap:6px; }
+    .lr-track{
+      font-family:'Oswald',sans-serif;
+      font-size:11px;
+      letter-spacing:0.08em;
+      color:var(--silver);
+      background:rgba(224,224,224,0.06);
+      padding:5px 12px;
+      border:1px solid rgba(224,224,224,0.15);
+    }
+    .lr-section-label{
+      font-family:'Oswald',sans-serif;
+      font-size:10px;
+      letter-spacing:0.22em;
+      text-transform:uppercase;
+      color:var(--brandywine);
+      margin:20px 0 12px;
+      padding-bottom:8px;
+      border-bottom:1px solid rgba(224,224,224,0.1);
+    }
+    .lr-item{
+      padding:14px 0;
+      border-bottom:1px solid rgba(224,224,224,0.08);
+    }
+    .lr-item:last-child{ border-bottom:none; padding-bottom:0; }
+    .lr-item h4{
+      font-family:'Oswald',sans-serif;
+      font-weight:500;
+      font-size:13px;
+      letter-spacing:0.08em;
+      text-transform:uppercase;
+      color:var(--silver);
+      margin:0 0 6px;
+    }
+    .lr-item p{ font-size:12px; color:var(--chrome-dim); line-height:1.75; margin:0 0 8px; font-weight:300; }
+    .lr-item em{ color:var(--silver); font-style:italic; }
+    .lr-link{
+      font-family:'Oswald',sans-serif;
+      font-size:11px;
+      letter-spacing:0.1em;
+      color:var(--brandywine);
+      text-decoration:none;
+      border-bottom:1px solid rgba(139,0,0,0.5);
+      padding-bottom:1px;
+    }
+    .lr-link + .lr-link{ margin-left:12px; }
+    .lr-link:hover{ color:var(--chrome); border-color:var(--chrome); }
+    .lr-arch{
+      background:rgba(224,224,224,0.03);
+      border:1px solid rgba(224,224,224,0.12);
+      padding:14px 16px;
+      margin-bottom:10px;
+    }
+    .lr-arch h4{
+      font-family:'Oswald',sans-serif;
+      font-weight:500;
+      font-size:13px;
+      letter-spacing:0.06em;
+      color:var(--silver);
+      margin:0 0 5px;
+    }
+    .lr-arch p{ font-size:12px; color:var(--chrome-dim); line-height:1.7; margin:0 0 6px; font-weight:300; }
+    .lr-tip{
+      display:block;
+      font-family:'Oswald',sans-serif;
+      font-size:11px;
+      letter-spacing:0.06em;
+      color:var(--brandywine);
+      font-style:italic;
+      margin-bottom:8px;
+    }
+
+    /* ===== VIDEO GRID ===== */
+    .lr-video-grid{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:18px;
+      max-width:900px;
+      margin:0 auto;
+    }
+    @media(min-width:768px){ .lr-video-grid{ grid-template-columns:1fr 1fr; } }
+    .lr-video-grid video{
+      width:100%;
+      border:3px solid var(--chrome);
+      box-shadow:inset 1px 1px 3px rgba(255,255,255,0.6), 0 8px 24px rgba(0,0,0,0.5);
+      background:#000;
+    }
+
+    /* ===== PLAYLIST ===== */
+    .lr-playlist-block{
+      background:var(--charcoal-2);
+      border:3px solid var(--chrome);
+      box-shadow:inset 1px 1px 3px rgba(255,255,255,0.6);
+      padding:22px;
+    }
+    .lr-playlist-block iframe{
+      width:100%;
+      max-width:660px;
+      display:block;
+      margin:0 auto;
+    }
+
+    /* ===== LINKED PROFILES GRID ===== */
+    .lr-prof-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:14px;
+      margin-bottom:10px;
+    }
+    @media(max-width:560px){ .lr-prof-grid{ grid-template-columns:1fr; } }
+    .lr-prof-card{
+      background:var(--charcoal-2);
+      border:3px solid var(--chrome);
+      box-shadow:inset 1px 1px 3px rgba(255,255,255,0.6);
+      padding:26px;
+      text-decoration:none;
+      color:var(--soft-white);
+      display:block;
+      position:relative;
+      transition:border-color 0.2s, box-shadow 0.2s;
+    }
+    .lr-prof-card:hover{
+      border-color:var(--brandywine);
+      box-shadow:inset 1px 1px 3px rgba(255,255,255,0.6), 0 0 26px -6px var(--brandywine);
+    }
+    .lr-prof-type{
+      font-family:'Oswald',sans-serif;
+      font-size:10px;
+      letter-spacing:0.2em;
+      text-transform:uppercase;
+      color:var(--brandywine);
+      margin-bottom:8px;
+    }
+    .lr-prof-card h3{
+      font-family:'Oswald',sans-serif;
+      font-weight:700;
+      font-size:1.1rem;
+      letter-spacing:0.08em;
+      text-transform:uppercase;
+      color:var(--silver);
+      margin-bottom:6px;
+    }
+    .lr-prof-card p{ font-size:12px; color:var(--chrome-dim); line-height:1.7; font-weight:300; }
+    .lr-prof-arrow{
+      position:absolute;
+      top:26px;
+      right:26px;
+      color:var(--chrome);
+      font-size:20px;
+    }
+
+    /* ===== RESCUE BLOCK ===== */
+    .lr-rescue{
+      background:var(--charcoal-2);
+      border:3px solid var(--chrome);
+      box-shadow:
+        inset 1px 1px 3px rgba(255,255,255,0.6),
+        0 -2px 0 0 var(--brandywine) inset,
+        0 -14px 34px -14px rgba(139,0,0,0.5) inset;
+      padding:32px 28px;
+      display:grid;
+      grid-template-columns:1fr auto;
+      gap:24px;
+      align-items:center;
+    }
+    @media(max-width:560px){ .lr-rescue{ grid-template-columns:1fr; } }
+    .lr-rescue-tag{
+      font-family:'Oswald',sans-serif;
+      font-size:10px;
+      letter-spacing:0.22em;
+      text-transform:uppercase;
+      color:var(--brandywine);
+      margin-bottom:10px;
+    }
+    .lr-rescue h3{
+      font-family:'Oswald',sans-serif;
+      font-weight:500;
+      font-size:1.2rem;
+      letter-spacing:0.08em;
+      text-transform:uppercase;
+      color:var(--silver);
+      margin-bottom:12px;
+    }
+    .lr-rescue p{
+      font-size:13px;
+      color:var(--chrome-dim);
+      line-height:1.8;
+      margin-bottom:18px;
+      font-weight:300;
+    }
+    .lr-rescue-stat{ text-align:center; }
+    .lr-rescue-num{
+      display:block;
+      font-family:'Oswald',sans-serif;
+      font-weight:700;
+      font-size:3rem;
+      color:var(--brandywine);
+      line-height:1;
+    }
+    .lr-rescue-lbl{
+      display:block;
+      font-family:'Oswald',sans-serif;
+      font-size:10px;
+      letter-spacing:0.18em;
+      text-transform:uppercase;
+      color:var(--chrome-dim);
+      margin-top:6px;
+    }
+
+    /* ===== BOTTOM CTA ===== */
+    .lr-cta-bar{
+      background:var(--charcoal-3);
+      border-top:3px solid var(--chrome);
+      border-bottom:3px solid var(--chrome);
+    }
+    .lr-cta-inner{
+      max-width:860px;
+      margin:0 auto;
+      padding:34px 24px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:22px;
+      flex-wrap:wrap;
+    }
+    .lr-cta-inner p{
+      font-family:'Oswald',sans-serif;
+      font-weight:500;
+      font-size:15px;
+      letter-spacing:0.08em;
+      text-transform:uppercase;
+      color:var(--silver);
+      margin:0;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 600px){
+      .lr-hero{ padding:60px 18px 48px; }
+      .lr-portrait{ width:170px; height:170px; }
+      .lr-wrap{ padding:46px 18px 30px; }
+      .lr-chapter{ padding:26px 22px; }
+      .lr-letter{ padding:26px 22px; }
+      .lr-lin-item{ padding:12px 16px; }
+      .lr-film-card{ flex-basis:200px; }
+    }
+    @media (max-width: 400px){
+      .lr-hero h1{ letter-spacing:0.08em; }
+      .lr-tab{ padding:12px 14px; font-size:11px; }
+    }
   </style>
+
   <!-- Google Analytics 4 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XQJ8KPVZX9"></script>
   <script>
@@ -204,8 +894,9 @@
 </head>
 <body>
   <!-- Facebook Pixel noscript -->
-  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=2828165625364437&ev=PageView&noscript=1" /></noscript>
-  <!-- NAVIGATION -->
+  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=2828165625364437&ev=PageView&noscript=1" alt="" /></noscript>
+
+  <!-- NAVIGATION (site-wide nav from style.css) -->
   <nav class="site-nav">
     <a href="https://mylegacycontinues.com/index.html" class="nav-brand">
       <img src="logo.png" alt="My Legacy Continues" class="nav-logo">
@@ -226,696 +917,716 @@
       </button>
     </div>
     <div class="lang-switcher" style="position: absolute; right: 3rem;">
-      <a href="/es/vazquez-profile.html" style="color: #FAF3E6; text-decoration: none; font-size: 0.9rem; display: inline-block; padding: 8px 12px; border: 1px solid rgba(250,243,230,0.3); border-radius: 4px; transition: all 0.2s;"><strong>English</strong> | <span style="color: #D4AF37;">Español</span></a>
+      <a href="/es/vazquez-profile.html" style="color: #E0E0E0; text-decoration: none; font-size: 0.9rem; display: inline-block; padding: 8px 12px; border: 1px solid rgba(224,224,224,0.3); border-radius: 0; transition: all 0.2s;"><strong>English</strong> | <span style="color: #8B0000;">Espa&ntilde;ol</span></a>
     </div>
   </nav>
 
-<section class="hero">
-  <div class="badge">Heritage Book — Vazquez Family</div>
-  <h1>Mark <em>"Bear"</em><br/>Vazquez</h1>
-  <p class="hero-sub">Concrete Pumping Operator &middot; Heritage Preservationist &middot; Animal Rescue Advocate</p>
-  <p class="hero-location">Santa Maria, California &middot; Est. 2026</p>
-  <div class="lineage">
-    <div class="lin-item"><span class="lin-label">Paternal</span><span class="lin-val">Vazquez &middot; Alba</span></div>
-    <div class="lin-item"><span class="lin-label">Origin</span><span class="lin-val">Galicia, Spain &middot; 1547</span></div>
-    <div class="lin-item"><span class="lin-label">Maternal</span><span class="lin-val">Garcia &middot; Montemayor</span></div>
-    <div class="lin-item"><span class="lin-label">Settled</span><span class="lin-val">Santa Maria, CA</span></div>
-  </div>
-</section>
-
-<!-- CONNECTED PROFILES HUB -->
-<div class="connected">
-  <div class="connected-inner">
-    <div class="conn-label">Bear's World — Everything Connected</div>
-    <div class="conn-grid">
-      <a class="conn-card" href="https://mylegacycontinues.com/bears-concrete-profile.html">
-        <div class="conn-type">Business</div>
-        <div class="conn-name">Bears Concrete Pumping</div>
-        <div class="conn-sub">Santa Maria, CA &middot; (805) 863-3794</div>
-        <div class="conn-arrow">&rarr;</div>
-      </a>
-      <a class="conn-card" href="https://mylegacycontinues.com/butters-profile.html">
-        <div class="conn-type">Pet Legacy</div>
-        <div class="conn-name">Butters</div>
-        <div class="conn-sub">Orange Tabby &middot; 5 Years &middot; The Champ</div>
-        <div class="conn-arrow">&rarr;</div>
-      </a>
-      <a class="conn-card" href="https://mylegacycontinues.com/rescue-registry.html">
-        <div class="conn-type">Rescue Registry</div>
-        <div class="conn-name">Underdog Heroes</div>
-        <div class="conn-sub">8 Dogs &middot; Permanent Profiles &middot; Free</div>
-        <div class="conn-arrow">&rarr;</div>
-      </a>
+  <!-- ===== HERO ===== -->
+  <section class="lr-hero">
+    <div class="lr-eyebrow">Heritage Book &mdash; Vazquez Family</div>
+    <div class="lr-portrait">
+      <img src="bear-photo.jpg" alt="Mark 'Bear' Vazquez portrait"/>
     </div>
-  </div>
-</div>
-
-<div class="wrap">
-
-  <!-- CHAPTER 1 -->
-  <div class="sec"><h2>Chapter 1 — The Soil</h2><div class="sec-rule"></div></div>
-  <div class="chapter">
-    <div class="ch-tag">The Ancient Homeland</div>
-    <h3>Galicia, Spain</h3>
-    <p><strong>Before the name Vazquez appeared in any registry,</strong> the land that would shape this family already had its character. <strong>Galicia</strong> — the green, rain-soaked corner of northwestern Spain — is a place of granite coastlines, ancient oak forests, and river valleys so lush they seem painted.</p>
-    <p><strong>This is Atlantic Spain,</strong> not the arid Castile of legend. It is a land of <strong>fishermen, farmers, and fighters,</strong> where the sea is never far and the mountains rise sudden and steep behind every village.</p>
-    <p><strong>Vazquez</strong> is not simply a surname. It is a <strong>record of lineage encoded in language.</strong> The name is Galician in origin — a patronymic meaning "son of Vasco," derived from the ancient pre-Roman name Velascus.</p>
-    <p><strong>The raven:</strong> a symbol of <strong>intelligence, memory, and the guardianship of the dead.</strong> In Iberian mythology, the raven was a <strong>messenger between worlds.</strong> The family that carries this name has always moved between worlds.</p>
-  </div>
-
-  <!-- CHAPTER 2 -->
-  <div class="sec"><h2>Chapter 2 — The Journey</h2><div class="sec-rule"></div></div>
-  <div class="chapter">
-    <div class="ch-tag">Mexico City to California</div>
-    <h3>The Crossing</h3>
-    <p><strong>In the early 1900s,</strong> Mexico City was not a place of peace. The <strong>Mexican Revolution</strong> had fractured the country along lines of land, class, and loyalty.</p>
-    <p><strong>For urban families in the capital,</strong> the threat was <strong>economic collapse, conscription, and an uncertain future.</strong> Families like the Vazquez family faced an <strong>impossible choice: stay and watch everything erode, or leave everything they built and walk north.</strong> They chose north.</p>
-    <p><strong>Grandpa Joe Vazquez made rings.</strong> In the tradition of the skilled craftsman, he <strong>shaped metal by hand.</strong> He understood material. He knew how <strong>metal behaved under heat, under pressure,</strong> under the intention of a craftsman's eye.</p>
-    <p><strong>That knowledge — that DNA of precision —</strong> traveled with him from Mexico City to the Central Coast of California.</p>
-  </div>
-
-  <!-- CHAPTER 3 -->
-  <div class="sec"><h2>Chapter 3 — The Legacy</h2><div class="sec-rule"></div></div>
-  <div class="chapter">
-    <div class="ch-tag">The DNA of Excellence</div>
-    <h3>From Metal to Concrete</h3>
-    <p><strong>Today, Bear Vazquez runs Bears Concrete Pumping</strong> — shaping the foundations of the same California that his grandfather's generation first entered with callused hands and a craftsman's eye.</p>
-    <p><strong>Grandpa Joe shaped metal.</strong> <strong>Bear moves concrete.</strong> <strong>The scale changed. The standard didn't.</strong></p>
-    <p><strong>The Vazquez family has always known how to move material with intention.</strong> From the metalworking shops of Mexico City to the construction sites of the Central Coast — <strong>the thread is unbroken.</strong></p>
-    <p><strong>The family's inheritance</strong> isn't money or land. It's the <strong>knowledge of how things are built to last.</strong> And now Bear is building something else too: <strong>a company dedicated to making sure no family loses their story.</strong></p>
-  </div>
-
-  <!-- ANCESTOR'S EYES -->
-  <div class="sec"><h2>Ancestor's Eyes</h2><div class="sec-rule"></div></div>
-  <div class="ae-block">
-    <div class="ae-eyebrow">A Letter From Grandpa Joe — Written In His Voice</div>
-    <div class="ae-letter">
-      <p>Bear.</p>
-      <p>I don't know that we ever talked the way I wanted to. You were young, and I was old, and old men from Mexico City don't always know how to say the things that matter before it's too late. So let me say them now.</p>
-      <p>I made rings. That was my trade in Mexico City — a platero, a man who works metal. I knew gold and silver the way a farmer knows soil. You press it wrong, it cracks. You rush it, it warps. You give it what it needs — the right heat, the right pressure, the right patience — and it becomes something that lasts a hundred years. I understood that. I built my whole life around that understanding.</p>
-      <p>What I want you to know is this: what you do with concrete is the same thing. You place foundations. You move material with intention. You know how much weight a pour can hold, how fast it sets in the Central Coast heat, where the tolerances are. You carry the same knowledge I carried — just scaled up from a ring to a building. The precision didn't leave the family when I did. It lives in your hands.</p>
-      <p>I walked north because Mexico City was running out of future. California was a guess. Your grandfather — your father's father — crossed with craft knowledge and nothing else, and that was enough to build a life. Now you carry it forward, and you carry it right.</p>
-      <p>Build things that last. Remember where we came from. That's all I ever wanted to pass down.</p>
-      <div class="ae-sig">— Joe Vazquez &nbsp;&middot;&nbsp; Ring Maker &nbsp;&middot;&nbsp; Mexico City to Santa Barbara &nbsp;&middot;&nbsp; Mid 20th Century</div>
+    <h1>Mark <span class="accent">"Bear"</span> Vazquez</h1>
+    <p class="lr-subtitle">Concrete Pumping Operator &middot; Heritage Preservationist &middot; Animal Rescue Advocate</p>
+    <p class="lr-location">Santa Maria, California &middot; Est. 2026</p>
+    <div class="lr-lineage">
+      <div class="lr-lin-item"><span class="lr-lin-label">Paternal</span><span class="lr-lin-val">Vazquez &middot; Alba</span></div>
+      <div class="lr-lin-item"><span class="lr-lin-label">Origin</span><span class="lr-lin-val">Galicia, Spain &middot; 1547</span></div>
+      <div class="lr-lin-item"><span class="lr-lin-label">Maternal</span><span class="lr-lin-val">Garcia &middot; Montemayor</span></div>
+      <div class="lr-lin-item"><span class="lr-lin-label">Settled</span><span class="lr-lin-val">Santa Maria, CA</span></div>
     </div>
-  </div>
+  </section>
 
-  <!-- THEN & NOW -->
-  <div class="sec"><h2 style="color:var(--gold);font-family:'Montserrat',sans-serif;">Then & Now</h2><div class="sec-rule"></div></div>
-  <p style="font-family:'Spline Sans',serif;font-style:italic;color:var(--gold);font-size:16px;text-align:center;margin-bottom:28px;">Every legacy starts somewhere.</p>
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-bottom:28px;max-width:820px;margin-left:auto;margin-right:auto;">
-    <img src="bear-baby.jpg" alt="Cub" style="width:100%;border:2px solid #D4AF37;">
-  </div>
-  <div style="width:100%;max-width:360px;aspect-ratio:1;background:#2A2A2A;border:2px solid #D4AF37;display:flex;align-items:center;justify-content:center;margin:1rem auto;"><span style="color:#D4AF37;font-family:'Montserrat',sans-serif;font-size:0.85rem;font-weight:700;text-align:center;">Bear Vazquez<br>Photo Coming Soon</span></div>
-  <p style="font-family:'Lato',sans-serif;text-align:center;color:var(--muted);font-size:13px;">Bear Vázquez — Santa Maria, CA — 2026</p>
-
-  <!-- TRAILER -->
-  <div style="text-align:center;margin:48px 0;padding:32px;background:rgba(42,42,42,0.5);border:1px solid rgba(232,201,122,0.25);">
-    <p style="font-family:'Spline Sans',serif;font-style:italic;color:var(--gold);font-size:18px;margin-bottom:16px;">See the Vázquez family story come to life</p>
-    <a class="btn" href="https://mylegacycontinues.com/vazquez-trailer.html" style="display:inline-block;padding:12px 32px;background:var(--gold);color:var(--dark);font-weight:600;text-decoration:none;transition:background 0.3s;">Watch the Vázquez Legacy Trailer</a>
-  </div>
-
-  <!-- FAMILY TREE -->
-  <div class="sec"><h2>Family Tree</h2><div class="sec-rule"></div></div>
-  <div class="tree-grid">
-    <div class="tree-side-card">
-      <div class="tree-side-label">Paternal Line</div>
-      <div class="tree-entry">
-        <div class="tree-name">Grandpa Joe Vazquez</div>
-        <div class="tree-detail">Ring &amp; investment caster &middot; Mexico City</div>
-      </div>
-      <div class="tree-entry">
-        <div class="tree-name">Grandma Juanita (nee Alba)</div>
-        <div class="tree-detail">Her father: Isaac Esparza Alba</div>
-      </div>
-      <div class="tree-entry">
-        <div class="tree-name">Dad Joseph Vazquez</div>
-        <div class="tree-detail">Born Santa Barbara, CA</div>
-      </div>
-      <div class="tree-entry">
-        <div class="tree-name">Mark "Bear" Vazquez</div>
-        <div class="tree-detail">Santa Maria, CA &middot; Founder, My Legacy Continues</div>
+  <!-- ===== CONNECTED HUB ===== -->
+  <section class="lr-connected">
+    <div class="lr-connected-inner">
+      <div class="lr-conn-label">Bear's World &mdash; Everything Connected</div>
+      <div class="lr-conn-grid">
+        <a class="lr-conn-card" href="https://mylegacycontinues.com/bears-concrete-profile.html">
+          <div class="lr-conn-type">Business</div>
+          <div class="lr-conn-name">Bears Concrete Pumping</div>
+          <div class="lr-conn-sub">Santa Maria, CA &middot; (805) 863-3794</div>
+          <div class="lr-conn-arrow">&rarr;</div>
+        </a>
+        <a class="lr-conn-card" href="https://mylegacycontinues.com/butters-profile.html">
+          <div class="lr-conn-type">Pet Legacy</div>
+          <div class="lr-conn-name">Butters</div>
+          <div class="lr-conn-sub">Orange Tabby &middot; 5 Years &middot; The Champ</div>
+          <div class="lr-conn-arrow">&rarr;</div>
+        </a>
+        <a class="lr-conn-card" href="https://mylegacycontinues.com/rescue-registry.html">
+          <div class="lr-conn-type">Rescue Registry</div>
+          <div class="lr-conn-name">Underdog Heroes</div>
+          <div class="lr-conn-sub">8 Dogs &middot; Permanent Profiles &middot; Free</div>
+          <div class="lr-conn-arrow">&rarr;</div>
+        </a>
       </div>
     </div>
-    <div class="tree-side-card">
-      <div class="tree-side-label">Maternal Line</div>
-      <div class="tree-entry">
-        <div class="tree-name">Faustino Montemayor</div>
-        <div class="tree-detail">Born 1852 &middot; Died 1950 age 98 &middot; Sinton, TX</div>
+  </section>
+
+  <div class="lr-wrap">
+
+    <!-- ===== INTRODUCTION ===== -->
+    <div class="lr-sec-head"><h2>Introduction</h2><div class="lr-sec-rule"></div></div>
+    <div class="lr-photo"><img src="bear-baby-2.jpg" alt="Bear as a child &mdash; school portrait"/></div>
+    <div class="lr-photo-caption">circa Early School Years &middot; Santa Maria, CA</div>
+    <div class="lr-chapter">
+      <div class="lr-ch-tag">Two Bloodlines, One Story</div>
+      <h3>From Galicia to the Central Coast</h3>
+      <p>This is the heritage of <strong>Mark "Bear" Vazquez</strong> &mdash; a story that begins in the Celtic mountains of northwestern Spain, crosses an ocean to the cobbled streets of Mexico City, walks north through revolution, and finds its way to the Central Coast of California.</p>
+      <p>Two bloodlines converge in Bear: the <strong>Vazquez &middot; Alba</strong> paternal line from Galicia by way of Mexico City, and the <strong>Garcia &middot; Montemayor</strong> maternal line from Nuevo Le&oacute;n by way of Sinton, Texas. Each carries its own music, its own food, its own quiet inheritance of skill and endurance.</p>
+      <p>What follows is not a family tree in a box. It is a living record &mdash; preserved permanently so no descendant ever has to start from zero.</p>
+    </div>
+
+    <!-- ===== CHAPTER 1 ===== -->
+    <div class="lr-sec-head"><h2>Chapter 1 &mdash; The Soil</h2><div class="lr-sec-rule"></div></div>
+    <div class="lr-photo"><img src="bear-baby.jpg" alt="Bear as a boy with family collie at Christmas"/></div>
+    <div class="lr-photo-caption">circa Childhood Christmas &middot; Central Coast, CA</div>
+    <div class="lr-chapter">
+      <div class="lr-ch-tag">The Ancient Homeland</div>
+      <h3>Galicia, Spain</h3>
+      <p><strong>Before the name Vazquez appeared in any registry,</strong> the land that would shape this family already had its character. <strong>Galicia</strong> &mdash; the green, rain-soaked corner of northwestern Spain &mdash; is a place of granite coastlines, ancient oak forests, and river valleys so lush they seem painted.</p>
+      <p><strong>This is Atlantic Spain,</strong> not the arid Castile of legend. It is a land of <strong>fishermen, farmers, and fighters,</strong> where the sea is never far and the mountains rise sudden and steep behind every village.</p>
+      <p><strong>Vazquez</strong> is not simply a surname. It is a <strong>record of lineage encoded in language.</strong> The name is Galician in origin &mdash; a patronymic meaning "son of Vasco," derived from the ancient pre-Roman name Velascus.</p>
+      <p><strong>The raven:</strong> a symbol of <strong>intelligence, memory, and the guardianship of the dead.</strong> In Iberian mythology, the raven was a <strong>messenger between worlds.</strong> The family that carries this name has always moved between worlds.</p>
+    </div>
+
+    <!-- ===== CHAPTER 2 ===== -->
+    <div class="lr-sec-head"><h2>Chapter 2 &mdash; The Journey</h2><div class="lr-sec-rule"></div></div>
+    <div class="lr-photo"><img src="bear-baby-4.jpg" alt="Bear as a youth at the park with skateboard"/></div>
+    <div class="lr-photo-caption">circa Youth &middot; Park Bench Days &middot; Santa Maria, CA</div>
+    <div class="lr-chapter">
+      <div class="lr-ch-tag">Mexico City to California</div>
+      <h3>The Crossing</h3>
+      <p><strong>In the early 1900s,</strong> Mexico City was not a place of peace. The <strong>Mexican Revolution</strong> had fractured the country along lines of land, class, and loyalty.</p>
+      <p><strong>For urban families in the capital,</strong> the threat was <strong>economic collapse, conscription, and an uncertain future.</strong> Families like the Vazquez family faced an <strong>impossible choice: stay and watch everything erode, or leave everything they built and walk north.</strong> They chose north.</p>
+      <p><strong>Grandpa Joe Vazquez made rings.</strong> In the tradition of the skilled craftsman, he <strong>shaped metal by hand.</strong> He understood material. He knew how <strong>metal behaved under heat, under pressure,</strong> under the intention of a craftsman's eye.</p>
+      <p><strong>That knowledge &mdash; that DNA of precision &mdash;</strong> traveled with him from Mexico City to the Central Coast of California.</p>
+    </div>
+
+    <!-- ===== CHAPTER 3 ===== -->
+    <div class="lr-sec-head"><h2>Chapter 3 &mdash; The Legacy</h2><div class="lr-sec-rule"></div></div>
+    <div class="lr-chapter">
+      <div class="lr-ch-tag">The DNA of Excellence</div>
+      <h3>From Metal to Concrete</h3>
+      <p><strong>Today, Bear Vazquez runs Bears Concrete Pumping</strong> &mdash; shaping the foundations of the same California that his grandfather's generation first entered with callused hands and a craftsman's eye.</p>
+      <p><strong>Grandpa Joe shaped metal.</strong> <strong>Bear moves concrete.</strong> <strong>The scale changed. The standard didn't.</strong></p>
+      <p><strong>The Vazquez family has always known how to move material with intention.</strong> From the metalworking shops of Mexico City to the construction sites of the Central Coast &mdash; <strong>the thread is unbroken.</strong></p>
+      <p><strong>The family's inheritance</strong> isn't money or land. It's the <strong>knowledge of how things are built to last.</strong> And now Bear is building something else too: <strong>a company dedicated to making sure no family loses their story.</strong></p>
+    </div>
+
+    <!-- ===== EARLY CHILDHOOD ===== -->
+    <div class="lr-sec-head"><h2>Early Childhood</h2><div class="lr-sec-rule"></div></div>
+    <div class="lr-photo"><img src="bear-baby-1.jpg" alt="Bear as a young child"/></div>
+    <div class="lr-photo-caption">circa Early Childhood &middot; The Cub Years</div>
+
+    <!-- ===== FAMILY MEMORIES ===== -->
+    <div class="lr-sec-head"><h2>Family Memories</h2><div class="lr-sec-rule"></div></div>
+    <div class="lr-photo"><img src="bear-baby-3.jpg" alt="Bear &mdash; childhood family memory"/></div>
+    <div class="lr-photo-caption">circa Childhood &middot; Family Memories</div>
+
+    <!-- ===== ANCESTOR'S EYES ===== -->
+    <div class="lr-sec-head"><h2>Ancestor's Eyes</h2><div class="lr-sec-rule"></div></div>
+    <div class="lr-letter">
+      <div class="lr-letter-eyebrow">A Letter From Grandpa Joe &mdash; Written In His Voice</div>
+      <div class="lr-letter-body">
+        <p>Bear.</p>
+        <p>I don't know that we ever talked the way I wanted to. You were young, and I was old, and old men from Mexico City don't always know how to say the things that matter before it's too late. So let me say them now.</p>
+        <p>I made rings. That was my trade in Mexico City &mdash; a platero, a man who works metal. I knew gold and silver the way a farmer knows soil. You press it wrong, it cracks. You rush it, it warps. You give it what it needs &mdash; the right heat, the right pressure, the right patience &mdash; and it becomes something that lasts a hundred years. I understood that. I built my whole life around that understanding.</p>
+        <p>What I want you to know is this: what you do with concrete is the same thing. You place foundations. You move material with intention. You know how much weight a pour can hold, how fast it sets in the Central Coast heat, where the tolerances are. You carry the same knowledge I carried &mdash; just scaled up from a ring to a building. The precision didn't leave the family when I did. It lives in your hands.</p>
+        <p>I walked north because Mexico City was running out of future. California was a guess. Your grandfather &mdash; your father's father &mdash; crossed with craft knowledge and nothing else, and that was enough to build a life. Now you carry it forward, and you carry it right.</p>
+        <p>Build things that last. Remember where we came from. That's all I ever wanted to pass down.</p>
+        <div class="lr-letter-sig">&mdash; Joe Vazquez &nbsp;&middot;&nbsp; Ring Maker &nbsp;&middot;&nbsp; Mexico City to Santa Barbara &nbsp;&middot;&nbsp; Mid 20th Century</div>
       </div>
-      <div class="tree-entry">
-        <div class="tree-name">Clara Montemayor + Francisco Garcia</div>
-        <div class="tree-detail">18 children &middot; 1940 Census, Sinton TX</div>
-      </div>
-      <div class="tree-entry">
-        <div class="tree-name">Grandma Elvira "Barbara" Garcia</div>
-        <div class="tree-detail">Born Sept 7, 1944 &middot; Youngest of 18</div>
-      </div>
-      <div class="tree-entry">
-        <div class="tree-name">Mom Deborah Mahony</div>
-        <div class="tree-detail">Santa Maria, CA</div>
-      </div>
     </div>
-  </div>
 
-  <!-- TIMELINE -->
-  <div class="sec"><h2>Family Timeline</h2><div class="sec-rule"></div></div>
-  <div class="timeline">
-    <div class="tl-item">
-      <div class="tl-year">~1300 AD</div>
-      <div class="tl-event">Gonzalo Vazquez — Galicia, Spain</div>
-      <div class="tl-detail">Earliest documented ancestor of the Vazquez line</div>
-    </div>
-    <div class="tl-item">
-      <div class="tl-year">1535</div>
-      <div class="tl-event">Francisco Vazquez de Coronado crosses to New Spain</div>
-      <div class="tl-detail">The Vazquez name plants roots in Mexico</div>
-    </div>
-    <div class="tl-item">
-      <div class="tl-year">1852</div>
-      <div class="tl-event">Faustino Montemayor born — Sinton, Texas</div>
-      <div class="tl-detail">Great-great-grandfather on maternal side &middot; Lived to age 98</div>
-    </div>
-    <div class="tl-item">
-      <div class="tl-year">1910–1929</div>
-      <div class="tl-event">Mexican Revolution &amp; Cristero War</div>
-      <div class="tl-detail">The push that sent the Vazquez family north toward California</div>
-    </div>
-    <div class="tl-item">
-      <div class="tl-year">Mid 1900s</div>
-      <div class="tl-event">Grandpa Joe arrives in California</div>
-      <div class="tl-detail">Settles Santa Barbara area &middot; Craftsman &middot; Builds the foundation</div>
-    </div>
-    <div class="tl-item">
-      <div class="tl-year">Sept 7, 1944</div>
-      <div class="tl-event">Grandma Elvira "Barbara" Garcia born</div>
-      <div class="tl-detail">Youngest of 18 children &middot; Sinton, TX &middot; Maternal line</div>
-    </div>
-    <div class="tl-item">
-      <div class="tl-year">Present</div>
-      <div class="tl-event">Bear Vazquez — Santa Maria, CA</div>
-      <div class="tl-detail">Bears Concrete Pumping &middot; My Legacy Continues &middot; Two lines, one story</div>
-    </div>
-  </div>
-
-  <!-- CULTURE GUIDE -->
-  <div class="sec"><h2>Culture Guide</h2><div class="sec-rule"></div></div>
-  <p style="font-size:13px;color:var(--muted);margin-bottom:18px;line-height:1.7;">You carry two bloodlines. Each has its own music, food, archives, and films. Choose a side — or go back and forth. This is yours to explore.</p>
-
-  <!-- BLOODLINE TABS -->
-  <div class="clg-tabs">
-    <div class="clg-tab active" onclick="switchBloodline(this,'panel-vazquez')">
-      Vázquez Side
-      <small>Galicia, Spain → Mexico City → California</small>
-    </div>
-    <div class="clg-tab" onclick="switchBloodline(this,'panel-garcia')">
-      García Side
-      <small>Nuevo León → Sinton, TX → California</small>
-    </div>
-  </div>
-
-  <!-- VÁZQUEZ PANEL -->
-  <div class="clg-panel active" id="panel-vazquez">
-
-    <!-- WEEK 1: MUSIC -->
-    <div class="clg-week open" id="vz-w1">
-      <div class="clg-week-hd" onclick="toggleW('vz-w1')">
-        <div class="clg-week-left">
-          <span class="clg-week-n">01</span>
-          <div class="clg-week-meta">
-            <h3>The Music</h3>
-            <p>Celtic bagpipes, Mexico City mariachi, and the corrido of the crossing</p>
+    <!-- ===== FILMSTRIP TIMELINE ===== -->
+    <div class="lr-sec-head"><h2>The Life of Bear V&aacute;zquez &mdash; Santa Maria to Here</h2><div class="lr-sec-rule"></div></div>
+    <div class="lr-filmstrip">
+      <div class="lr-filmstrip-track">
+        <div class="lr-film-card">
+          <div class="lr-film-img"><img src="bear-baby-1.jpg" alt="Early childhood"/></div>
+          <div class="lr-film-meta">
+            <div class="lr-film-era">circa Early Childhood</div>
+            <div class="lr-film-label">The Cub</div>
           </div>
         </div>
-        <span class="clg-caret">+</span>
-      </div>
-      <div class="clg-week-bd">
-        <div class="clg-ctx">
-          <p>Most people don't know this: <strong>Galicia is Celtic</strong>. The <em>gaita gallega</em> — the Galician bagpipe — sounds like Ireland because the ancient peoples were connected. Your Vázquez name comes from a place where Celtic music never died. Then that line moved to Mexico City, where the <em>corrido</em> became the working-class newspaper — the music that documented everything the system refused to record. Two sounds. Both in your blood.</p>
-        </div>
-        <div class="clg-playlist">
-          <p class="clg-playlist-label">Build These Playlists</p>
-          <div class="clg-playlist-tracks">
-            <span class="clg-track">Milladoiro</span>
-            <span class="clg-track">Carlos Núñez</span>
-            <span class="clg-track">Luar na Lubre</span>
-            <span class="clg-track">Mariachi Vargas</span>
-            <span class="clg-track">El Piporro</span>
-            <span class="clg-track">Vicente Fernández</span>
+        <div class="lr-film-card">
+          <div class="lr-film-img"><img src="bear-baby.jpg" alt="Childhood with family dog"/></div>
+          <div class="lr-film-meta">
+            <div class="lr-film-era">circa Childhood</div>
+            <div class="lr-film-label">Family &amp; Collie</div>
           </div>
         </div>
-        <p class="clg-section-label">Listen To — With Context</p>
-        <div class="clg-item">
-          <div class="clg-item-body">
-            <h4>Milladoiro — Galician Celtic Folk</h4>
-            <p>The most celebrated Galician folk group. This is the sound your 1300s ancestors danced to in the same granite mountains where the Vázquez name was born. Put on their album <em>A Romería</em> and close your eyes.</p>
-            <a class="clg-link" href="https://open.spotify.com/artist/0Z3KtDy8YuqNnJKjgLMGp7" target="_blank">Spotify</a>
-            <a class="clg-link" href="https://www.youtube.com/results?search_query=Milladoiro+galician+folk" target="_blank">YouTube</a>
+        <div class="lr-film-card">
+          <div class="lr-film-img"><img src="bear-baby-3.jpg" alt="Childhood family memory"/></div>
+          <div class="lr-film-meta">
+            <div class="lr-film-era">circa Childhood</div>
+            <div class="lr-film-label">Family Memories</div>
           </div>
         </div>
-        <div class="clg-item">
-          <div class="clg-item-body">
-            <h4>Carlos Núñez — Galician Bagpipe Master</h4>
-            <p>He blends the <em>gaita</em> with Irish, Breton, and Andean traditions — a perfect mirror of how the Vázquez family crossed worlds. Start with <em>A Irmandade das Estrelas</em>. Note: the Galician word for homesickness is <em>morriña</em> — a longing for a place you may have never been. You'll feel it in this music.</p>
-            <a class="clg-link" href="https://open.spotify.com/artist/3dlDFxWDM8A0K7sq63IOWV" target="_blank">Spotify</a>
+        <div class="lr-film-card">
+          <div class="lr-film-img"><img src="bear-baby-2.jpg" alt="School portrait"/></div>
+          <div class="lr-film-meta">
+            <div class="lr-film-era">circa School Years</div>
+            <div class="lr-film-label">The Portrait</div>
           </div>
         </div>
-        <div class="clg-item">
-          <div class="clg-item-body">
-            <h4>Luar na Lubre — Atlantic Celtic Sound</h4>
-            <p>From A Coruña, Galicia — one of the most beloved Celtic folk groups in Spain. Their sound bridges the ancient and modern, exactly as the Vázquez name has always done across continents.</p>
-            <a class="clg-link" href="https://www.youtube.com/results?search_query=Luar+na+Lubre+galician" target="_blank">YouTube</a>
+        <div class="lr-film-card">
+          <div class="lr-film-img"><img src="bear-baby-4.jpg" alt="Youth &mdash; park bench"/></div>
+          <div class="lr-film-meta">
+            <div class="lr-film-era">circa Youth</div>
+            <div class="lr-film-label">Park Bench Days</div>
           </div>
         </div>
-        <div class="clg-item">
-          <div class="clg-item-body">
-            <h4>Mariachi Vargas de Tecalitlán — Mexico City Gold Era</h4>
-            <p>In the Mexico City your grandfather's generation knew — 1930s through 1960s — mariachi was everywhere. At baptisms, at funerals, at the market. This is the music Grandpa Joe grew up hearing before he ever crossed north.</p>
-            <a class="clg-link" href="https://open.spotify.com/artist/3RQKy8wl7gGADX5r1vYBTj" target="_blank">Spotify</a>
+        <div class="lr-film-card">
+          <div class="lr-film-img"><img src="bear-photo.jpg" alt="Bear today"/></div>
+          <div class="lr-film-meta">
+            <div class="lr-film-era">circa Present</div>
+            <div class="lr-film-label">Santa Maria, CA</div>
           </div>
         </div>
       </div>
+      <div class="lr-film-hint">&larr; Swipe to walk the years &rarr;</div>
     </div>
 
-    <!-- WEEK 2: FILMS -->
-    <div class="clg-week" id="vz-w2">
-      <div class="clg-week-hd" onclick="toggleW('vz-w2')">
-        <div class="clg-week-left">
-          <span class="clg-week-n">02</span>
-          <div class="clg-week-meta">
-            <h3>The Films &amp; Books</h3>
-            <p>Watch the world your grandfather walked into — and away from</p>
+    <!-- ===== TRAILER CTA ===== -->
+    <div class="lr-trailer">
+      <p>See the V&aacute;zquez family story come to life</p>
+      <a class="lr-btn" href="https://mylegacycontinues.com/vazquez-trailer.html">Watch the V&aacute;zquez Legacy Trailer</a>
+    </div>
+
+    <!-- ===== FAMILY TREE ===== -->
+    <div class="lr-sec-head"><h2>Family Tree</h2><div class="lr-sec-rule"></div></div>
+    <div class="lr-tree">
+      <div class="lr-tree-col">
+        <div class="lr-tree-label">Paternal Line</div>
+        <div class="lr-tree-entry">
+          <div class="lr-tree-name">Grandpa Joe Vazquez</div>
+          <div class="lr-tree-detail">Ring &amp; investment caster &middot; Mexico City</div>
+        </div>
+        <div class="lr-tree-entry">
+          <div class="lr-tree-name">Grandma Juanita (nee Alba)</div>
+          <div class="lr-tree-detail">Her father: Isaac Esparza Alba</div>
+        </div>
+        <div class="lr-tree-entry">
+          <div class="lr-tree-name">Dad Joseph Vazquez</div>
+          <div class="lr-tree-detail">Born Santa Barbara, CA</div>
+        </div>
+        <div class="lr-tree-entry">
+          <div class="lr-tree-name">Mark "Bear" Vazquez</div>
+          <div class="lr-tree-detail">Santa Maria, CA &middot; Founder, My Legacy Continues</div>
+        </div>
+      </div>
+      <div class="lr-tree-col">
+        <div class="lr-tree-label">Maternal Line</div>
+        <div class="lr-tree-entry">
+          <div class="lr-tree-name">Faustino Montemayor</div>
+          <div class="lr-tree-detail">Born 1852 &middot; Died 1950 age 98 &middot; Sinton, TX</div>
+        </div>
+        <div class="lr-tree-entry">
+          <div class="lr-tree-name">Clara Montemayor + Francisco Garcia</div>
+          <div class="lr-tree-detail">18 children &middot; 1940 Census, Sinton TX</div>
+        </div>
+        <div class="lr-tree-entry">
+          <div class="lr-tree-name">Grandma Elvira "Barbara" Garcia</div>
+          <div class="lr-tree-detail">Born Sept 7, 1944 &middot; Youngest of 18</div>
+        </div>
+        <div class="lr-tree-entry">
+          <div class="lr-tree-name">Mom Deborah Mahony</div>
+          <div class="lr-tree-detail">Santa Maria, CA</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== FAMILY TIMELINE ===== -->
+    <div class="lr-sec-head"><h2>Family Timeline</h2><div class="lr-sec-rule"></div></div>
+    <div class="lr-timeline">
+      <div class="lr-tl-item">
+        <div class="lr-tl-year">~1300 AD</div>
+        <div class="lr-tl-event">Gonzalo Vazquez &mdash; Galicia, Spain</div>
+        <div class="lr-tl-detail">Earliest documented ancestor of the Vazquez line</div>
+      </div>
+      <div class="lr-tl-item">
+        <div class="lr-tl-year">1535</div>
+        <div class="lr-tl-event">Francisco Vazquez de Coronado crosses to New Spain</div>
+        <div class="lr-tl-detail">The Vazquez name plants roots in Mexico</div>
+      </div>
+      <div class="lr-tl-item">
+        <div class="lr-tl-year">1852</div>
+        <div class="lr-tl-event">Faustino Montemayor born &mdash; Sinton, Texas</div>
+        <div class="lr-tl-detail">Great-great-grandfather on maternal side &middot; Lived to age 98</div>
+      </div>
+      <div class="lr-tl-item">
+        <div class="lr-tl-year">1910&ndash;1929</div>
+        <div class="lr-tl-event">Mexican Revolution &amp; Cristero War</div>
+        <div class="lr-tl-detail">The push that sent the Vazquez family north toward California</div>
+      </div>
+      <div class="lr-tl-item">
+        <div class="lr-tl-year">Mid 1900s</div>
+        <div class="lr-tl-event">Grandpa Joe arrives in California</div>
+        <div class="lr-tl-detail">Settles Santa Barbara area &middot; Craftsman &middot; Builds the foundation</div>
+      </div>
+      <div class="lr-tl-item">
+        <div class="lr-tl-year">Sept 7, 1944</div>
+        <div class="lr-tl-event">Grandma Elvira "Barbara" Garcia born</div>
+        <div class="lr-tl-detail">Youngest of 18 children &middot; Sinton, TX &middot; Maternal line</div>
+      </div>
+      <div class="lr-tl-item">
+        <div class="lr-tl-year">Present</div>
+        <div class="lr-tl-event">Bear Vazquez &mdash; Santa Maria, CA</div>
+        <div class="lr-tl-detail">Bears Concrete Pumping &middot; My Legacy Continues &middot; Two lines, one story</div>
+      </div>
+    </div>
+
+    <!-- ===== CULTURE GUIDE ===== -->
+    <div class="lr-sec-head"><h2>Culture Guide</h2><div class="lr-sec-rule"></div></div>
+    <p class="lr-culture-intro">You carry two bloodlines. Each has its own music, food, archives, and films. Choose a side &mdash; or go back and forth. This is yours to explore.</p>
+
+    <div class="lr-tabs">
+      <div class="lr-tab active" onclick="switchBloodline(this,'panel-vazquez')">
+        V&aacute;zquez Side
+        <small>Galicia, Spain &rarr; Mexico City &rarr; California</small>
+      </div>
+      <div class="lr-tab" onclick="switchBloodline(this,'panel-garcia')">
+        Garc&iacute;a Side
+        <small>Nuevo Le&oacute;n &rarr; Sinton, TX &rarr; California</small>
+      </div>
+    </div>
+
+    <!-- VAZQUEZ PANEL -->
+    <div class="lr-panel active" id="panel-vazquez">
+      <div class="lr-week open" id="vz-w1">
+        <div class="lr-week-hd" onclick="toggleW('vz-w1')">
+          <div class="lr-week-left">
+            <span class="lr-week-n">01</span>
+            <div class="lr-week-meta">
+              <h3>The Music</h3>
+              <p>Celtic bagpipes, Mexico City mariachi, and the corrido of the crossing</p>
+            </div>
+          </div>
+          <span class="lr-caret">+</span>
+        </div>
+        <div class="lr-week-bd">
+          <div class="lr-ctx">
+            <p>Most people don't know this: <strong>Galicia is Celtic</strong>. The <em>gaita gallega</em> &mdash; the Galician bagpipe &mdash; sounds like Ireland because the ancient peoples were connected. Your Vázquez name comes from a place where Celtic music never died. Then that line moved to Mexico City, where the <em>corrido</em> became the working-class newspaper &mdash; the music that documented everything the system refused to record. Two sounds. Both in your blood.</p>
+          </div>
+          <div class="lr-playlist-mini">
+            <p class="lr-playlist-label">Build These Playlists</p>
+            <div class="lr-playlist-tracks">
+              <span class="lr-track">Milladoiro</span>
+              <span class="lr-track">Carlos N&uacute;&ntilde;ez</span>
+              <span class="lr-track">Luar na Lubre</span>
+              <span class="lr-track">Mariachi Vargas</span>
+              <span class="lr-track">El Piporro</span>
+              <span class="lr-track">Vicente Fern&aacute;ndez</span>
+            </div>
+          </div>
+          <p class="lr-section-label">Listen To &mdash; With Context</p>
+          <div class="lr-item">
+            <h4>Milladoiro &mdash; Galician Celtic Folk</h4>
+            <p>The most celebrated Galician folk group. This is the sound your 1300s ancestors danced to in the same granite mountains where the V&aacute;zquez name was born. Put on their album <em>A Romer&iacute;a</em> and close your eyes.</p>
+            <a class="lr-link" href="https://open.spotify.com/artist/0Z3KtDy8YuqNnJKjgLMGp7" target="_blank" rel="noopener">Spotify</a>
+            <a class="lr-link" href="https://www.youtube.com/results?search_query=Milladoiro+galician+folk" target="_blank" rel="noopener">YouTube</a>
+          </div>
+          <div class="lr-item">
+            <h4>Carlos N&uacute;&ntilde;ez &mdash; Galician Bagpipe Master</h4>
+            <p>He blends the <em>gaita</em> with Irish, Breton, and Andean traditions &mdash; a perfect mirror of how the V&aacute;zquez family crossed worlds. Start with <em>A Irmandade das Estrelas</em>. Note: the Galician word for homesickness is <em>morri&ntilde;a</em> &mdash; a longing for a place you may have never been. You'll feel it in this music.</p>
+            <a class="lr-link" href="https://open.spotify.com/artist/3dlDFxWDM8A0K7sq63IOWV" target="_blank" rel="noopener">Spotify</a>
+          </div>
+          <div class="lr-item">
+            <h4>Luar na Lubre &mdash; Atlantic Celtic Sound</h4>
+            <p>From A Coru&ntilde;a, Galicia &mdash; one of the most beloved Celtic folk groups in Spain. Their sound bridges the ancient and modern, exactly as the V&aacute;zquez name has always done across continents.</p>
+            <a class="lr-link" href="https://www.youtube.com/results?search_query=Luar+na+Lubre+galician" target="_blank" rel="noopener">YouTube</a>
+          </div>
+          <div class="lr-item">
+            <h4>Mariachi Vargas de Tecalitl&aacute;n &mdash; Mexico City Gold Era</h4>
+            <p>In the Mexico City your grandfather's generation knew &mdash; 1930s through 1960s &mdash; mariachi was everywhere. At baptisms, at funerals, at the market. This is the music Grandpa Joe grew up hearing before he ever crossed north.</p>
+            <a class="lr-link" href="https://open.spotify.com/artist/3RQKy8wl7gGADX5r1vYBTj" target="_blank" rel="noopener">Spotify</a>
           </div>
         </div>
-        <span class="clg-caret">+</span>
       </div>
-      <div class="clg-week-bd">
-        <div class="clg-ctx">
-          <p>The Mexican Revolution started in 1910 and didn't truly settle until the late 1920s. For a family in Mexico City, California wasn't a dream — it was a <strong>calculation</strong>. These films show you exactly what that world looked like and why families made the move north.</p>
+
+      <div class="lr-week" id="vz-w2">
+        <div class="lr-week-hd" onclick="toggleW('vz-w2')">
+          <div class="lr-week-left">
+            <span class="lr-week-n">02</span>
+            <div class="lr-week-meta">
+              <h3>The Films &amp; Books</h3>
+              <p>Watch the world your grandfather walked into &mdash; and away from</p>
+            </div>
+          </div>
+          <span class="lr-caret">+</span>
         </div>
-        <p class="clg-section-label">Watch — In This Order</p>
-        <div class="clg-item">
-          <div class="clg-item-body">
+        <div class="lr-week-bd">
+          <div class="lr-ctx">
+            <p>The Mexican Revolution started in 1910 and didn't truly settle until the late 1920s. For a family in Mexico City, California wasn't a dream &mdash; it was a <strong>calculation</strong>. These films show you exactly what that world looked like and why families made the move north.</p>
+          </div>
+          <p class="lr-section-label">Watch &mdash; In This Order</p>
+          <div class="lr-item">
             <h4>Macario (1960)</h4>
             <p>Set in colonial Mexico, made during the exact era your grandfather's generation came of age. Captures the fatalistic beauty of working-class Mexican life. One of the greatest Mexican films ever made. Free on YouTube.</p>
-            <a class="clg-link" href="https://www.youtube.com/results?search_query=Macario+1960+full+film+English+subtitles" target="_blank">Find on YouTube</a>
+            <a class="lr-link" href="https://www.youtube.com/results?search_query=Macario+1960+full+film+English+subtitles" target="_blank" rel="noopener">Find on YouTube</a>
           </div>
-        </div>
-        <div class="clg-item">
-          <div class="clg-item-body">
+          <div class="lr-item">
             <h4>Mi Familia / My Family (1995)</h4>
             <p>A Mexican family crosses to Los Angeles and builds a life across three generations. Stars Jimmy Smits, Edward James Olmos. Watch it with your mom.</p>
-            <a class="clg-link" href="https://www.youtube.com/results?search_query=Mi+Familia+My+Family+1995+full+movie" target="_blank">Find on YouTube</a>
+            <a class="lr-link" href="https://www.youtube.com/results?search_query=Mi+Familia+My+Family+1995+full+movie" target="_blank" rel="noopener">Find on YouTube</a>
           </div>
-        </div>
-        <div class="clg-item">
-          <div class="clg-item-body">
-            <h4>Latino Americans — PBS Documentary (2013)</h4>
+          <div class="lr-item">
+            <h4>Latino Americans &mdash; PBS Documentary (2013)</h4>
             <p>Six episodes covering 500 years of Latin American history in the US. Episode 3 covers the exact era your grandfather crossed north. Start here for the big picture.</p>
-            <a class="clg-link" href="https://www.pbs.org/latino-americans/en/watch-online/" target="_blank">PBS Website</a>
+            <a class="lr-link" href="https://www.pbs.org/latino-americans/en/watch-online/" target="_blank" rel="noopener">PBS Website</a>
           </div>
-        </div>
-        <p class="clg-section-label" style="margin-top:18px;">Read — One Book</p>
-        <div class="clg-item">
-          <div class="clg-item-body">
-            <h4>The Death of Artemio Cruz — Carlos Fuentes</h4>
-            <p>The definitive novel of post-Revolutionary Mexico. A dying man reviews his life — land, power, family, compromise. This is the Mexico City your grandfather's generation navigated. If you read one book from this entire guide, make it this one.</p>
-            <a class="clg-link" href="https://www.amazon.com/Death-Artemio-Cruz-Carlos-Fuentes/dp/0374523851" target="_blank">Amazon</a>
+          <p class="lr-section-label">Read &mdash; One Book</p>
+          <div class="lr-item">
+            <h4>The Death of Artemio Cruz &mdash; Carlos Fuentes</h4>
+            <p>The definitive novel of post-Revolutionary Mexico. A dying man reviews his life &mdash; land, power, family, compromise. This is the Mexico City your grandfather's generation navigated. If you read one book from this entire guide, make it this one.</p>
+            <a class="lr-link" href="https://www.amazon.com/Death-Artemio-Cruz-Carlos-Fuentes/dp/0374523851" target="_blank" rel="noopener">Amazon</a>
           </div>
         </div>
       </div>
-    </div>
 
-    <!-- WEEK 3: FOOD -->
-    <div class="clg-week" id="vz-w3">
-      <div class="clg-week-hd" onclick="toggleW('vz-w3')">
-        <div class="clg-week-left">
-          <span class="clg-week-n">03</span>
-          <div class="clg-week-meta">
-            <h3>The Food</h3>
-            <p>From Galician granite coast to Mexico City kitchens — taste where they lived</p>
+      <div class="lr-week" id="vz-w3">
+        <div class="lr-week-hd" onclick="toggleW('vz-w3')">
+          <div class="lr-week-left">
+            <span class="lr-week-n">03</span>
+            <div class="lr-week-meta">
+              <h3>The Food</h3>
+              <p>From Galician granite coast to Mexico City kitchens &mdash; taste where they lived</p>
+            </div>
           </div>
+          <span class="lr-caret">+</span>
         </div>
-        <span class="clg-caret">+</span>
-      </div>
-      <div class="clg-week-bd">
-        <div class="clg-ctx">
-          <p>Food is the one thing that crosses every border intact. Put on Week 1's music. Cook one of these dishes. The combination connects something that reading can't reach. Start with the pozole — it's the most Mexico City dish on this list, and it's the easiest to make on a Sunday.</p>
-        </div>
-        <p class="clg-section-label">Cook This Week</p>
-        <div class="clg-item">
-          <div class="clg-item-body">
-            <h4>Pozole Rojo — Mexico City's Celebration Dish</h4>
-            <p>In Mexico City, pozole was the dish for anything that mattered — baptisms, quinceañeras, homecomings. Hominy corn, pork, dried chiles. Grandpa Joe knew this dish. Make it on a Sunday with the mariachi playing.</p>
-            <a class="clg-link" href="https://www.seriouseats.com/red-pork-pozole-recipe" target="_blank">Recipe</a>
+        <div class="lr-week-bd">
+          <div class="lr-ctx">
+            <p>Food is the one thing that crosses every border intact. Put on Week 1's music. Cook one of these dishes. The combination connects something that reading can't reach. Start with the pozole &mdash; it's the most Mexico City dish on this list, and it's the easiest to make on a Sunday.</p>
           </div>
-        </div>
-        <div class="clg-item">
-          <div class="clg-item-body">
-            <h4>Tamales — The Food of Crossings</h4>
-            <p>Every family that made the journey from Mexico to California brought tamale knowledge with them. The masa, the filling, the corn husks — it all traveled north. If you have a family tamale recipe, make those. That recipe is worth more than any document in these archives.</p>
-            <a class="clg-link" href="https://www.seriouseats.com/tamales-recipe-guide" target="_blank">Guide</a>
+          <p class="lr-section-label">Cook This Week</p>
+          <div class="lr-item">
+            <h4>Pozole Rojo &mdash; Mexico City's Celebration Dish</h4>
+            <p>In Mexico City, pozole was the dish for anything that mattered &mdash; baptisms, quincea&ntilde;eras, homecomings. Hominy corn, pork, dried chiles. Grandpa Joe knew this dish. Make it on a Sunday with the mariachi playing.</p>
+            <a class="lr-link" href="https://www.seriouseats.com/red-pork-pozole-recipe" target="_blank" rel="noopener">Recipe</a>
           </div>
-        </div>
-        <div class="clg-item">
-          <div class="clg-item-body">
-            <h4>Pulpo a la Gallega — The Dish of Galicia</h4>
-            <p>Octopus served on wooden plates with olive oil, paprika, and salt. This dish has been eaten at every fair and feast day in Galicia for 700 years. Your Vázquez ancestors — the ones who never left Spain — ate this. Make it once just to say you did.</p>
-            <a class="clg-link" href="https://www.seriouseats.com/pulpo-a-la-gallega-recipe" target="_blank">Recipe</a>
+          <div class="lr-item">
+            <h4>Tamales &mdash; The Food of Crossings</h4>
+            <p>Every family that made the journey from Mexico to California brought tamale knowledge with them. The masa, the filling, the corn husks &mdash; it all traveled north. If you have a family tamale recipe, make those. That recipe is worth more than any document in these archives.</p>
+            <a class="lr-link" href="https://www.seriouseats.com/tamales-recipe-guide" target="_blank" rel="noopener">Guide</a>
           </div>
-        </div>
-        <div class="clg-item">
-          <div class="clg-item-body">
-            <h4>Tarta de Santiago — Galician Almond Cake</h4>
+          <div class="lr-item">
+            <h4>Pulpo a la Gallega &mdash; The Dish of Galicia</h4>
+            <p>Octopus served on wooden plates with olive oil, paprika, and salt. This dish has been eaten at every fair and feast day in Galicia for 700 years. Your V&aacute;zquez ancestors &mdash; the ones who never left Spain &mdash; ate this. Make it once just to say you did.</p>
+            <a class="lr-link" href="https://www.seriouseats.com/pulpo-a-la-gallega-recipe" target="_blank" rel="noopener">Recipe</a>
+          </div>
+          <div class="lr-item">
+            <h4>Tarta de Santiago &mdash; Galician Almond Cake</h4>
             <p>Almond flour, eggs, citrus. Baked in Galicia since the medieval pilgrim era. The cross of Saint James pressed into powdered sugar on top. Simple, ancient, and easy to make. This is the dessert of your family's oldest homeland.</p>
-            <a class="clg-link" href="https://www.food52.com/recipes/search?q=tarta+de+santiago" target="_blank">Find on Food52</a>
+            <a class="lr-link" href="https://www.food52.com/recipes/search?q=tarta+de+santiago" target="_blank" rel="noopener">Find on Food52</a>
           </div>
         </div>
       </div>
-    </div>
 
-    <!-- WEEK 4: ARCHIVES -->
-    <div class="clg-week" id="vz-w4">
-      <div class="clg-week-hd" onclick="toggleW('vz-w4')">
-        <div class="clg-week-left">
-          <span class="clg-week-n">04</span>
-          <div class="clg-week-meta">
-            <h3>The Archives</h3>
-            <p>Find them by name — your family's actual documents exist in these databases</p>
+      <div class="lr-week" id="vz-w4">
+        <div class="lr-week-hd" onclick="toggleW('vz-w4')">
+          <div class="lr-week-left">
+            <span class="lr-week-n">04</span>
+            <div class="lr-week-meta">
+              <h3>The Archives</h3>
+              <p>Find them by name &mdash; your family's actual documents exist in these databases</p>
+            </div>
+          </div>
+          <span class="lr-caret">+</span>
+        </div>
+        <div class="lr-week-bd">
+          <div class="lr-ctx">
+            <p>This week you stop reading about your family and start <strong>finding them</strong>. Birth records. Baptism cards. Border crossing documents. Census pages with their handwriting. Start with FamilySearch &mdash; it's free and it's where most people find their first real document.</p>
+          </div>
+          <p class="lr-section-label">Search These &mdash; In Order</p>
+          <div class="lr-arch">
+            <h4>1. FamilySearch &mdash; Mexico City Catholic Church Records, 1514&ndash;1970</h4>
+            <p>The most likely place to find Grandpa Joe's baptism or his parents' marriage record. Free. No account required to search.</p>
+            <span class="lr-tip">Search: "V&aacute;zquez" &rarr; Mexico City / Distrito Federal &rarr; year range 1890&ndash;1930</span>
+            <a class="lr-link" href="https://www.familysearch.org/search/collection/1471019" target="_blank" rel="noopener">Open this collection</a>
+          </div>
+          <div class="lr-arch">
+            <h4>2. PARES &mdash; Spanish National Archive</h4>
+            <p>Spain's free national archive. Contains the Padr&oacute;n de Hidalgos &mdash; the nobility registry from the Real Chanciller&iacute;a de Valladolid. Your family's Galician hidalgo status from 1547 is documented in collections like this.</p>
+            <span class="lr-tip">Search: "V&aacute;zquez" &rarr; Galicia &rarr; Real Chanciller&iacute;a de Valladolid collection</span>
+            <a class="lr-link" href="https://pares.mcu.es" target="_blank" rel="noopener">Open PARES</a>
+          </div>
+          <div class="lr-arch">
+            <h4>3. NARA &mdash; US Border Crossing Records, 1895&ndash;1960</h4>
+            <p>The physical card your grandfather filled out when he crossed into California &mdash; his handwriting, his described appearance, his stated occupation. This document exists somewhere in here.</p>
+            <span class="lr-tip">Search: "V&aacute;zquez" or "Vasquez" &rarr; El Paso or Nogales &rarr; 1920&ndash;1945</span>
+            <a class="lr-link" href="https://www.ancestry.com/search/collections/8872/" target="_blank" rel="noopener">Search on Ancestry</a>
+          </div>
+          <div class="lr-arch">
+            <h4>4. AGN &mdash; Archivo General de la Naci&oacute;n (Mexico City)</h4>
+            <p>Mexico's national archive. Land records, colonial padrones, notarial records. The oldest and deepest archive on this list. This is where records from the 1600s and 1700s Mexico City live.</p>
+            <span class="lr-tip">Start: "Ramo Padrones" &rarr; V&aacute;zquez &rarr; Distrito Federal. Use the accent mark in your search.</span>
+            <a class="lr-link" href="https://catalogo.agn.gob.mx" target="_blank" rel="noopener">Open AGN</a>
           </div>
         </div>
-        <span class="clg-caret">+</span>
       </div>
-      <div class="clg-week-bd">
-        <div class="clg-ctx">
-          <p>This week you stop reading about your family and start <strong>finding them</strong>. Birth records. Baptism cards. Border crossing documents. Census pages with their handwriting. Start with FamilySearch — it's free and it's where most people find their first real document.</p>
-        </div>
-        <p class="clg-section-label">Search These — In Order</p>
-        <div class="clg-arch">
-          <h4>1. FamilySearch — Mexico City Catholic Church Records, 1514–1970</h4>
-          <p>The most likely place to find Grandpa Joe's baptism or his parents' marriage record. Free. No account required to search.</p>
-          <span class="clg-tip">Search: "Vázquez" → Mexico City / Distrito Federal → year range 1890–1930</span>
-          <a class="clg-link" href="https://www.familysearch.org/search/collection/1471019" target="_blank">Open this collection</a>
-        </div>
-        <div class="clg-arch">
-          <h4>2. PARES — Spanish National Archive</h4>
-          <p>Spain's free national archive. Contains the Padrón de Hidalgos — the nobility registry from the Real Chancillería de Valladolid. Your family's Galician hidalgo status from 1547 is documented in collections like this.</p>
-          <span class="clg-tip">Search: "Vázquez" → Galicia → Real Chancillería de Valladolid collection</span>
-          <a class="clg-link" href="https://pares.mcu.es" target="_blank">Open PARES</a>
-        </div>
-        <div class="clg-arch">
-          <h4>3. NARA — US Border Crossing Records, 1895–1960</h4>
-          <p>The physical card your grandfather filled out when he crossed into California — his handwriting, his described appearance, his stated occupation. This document exists somewhere in here.</p>
-          <span class="clg-tip">Search: "Vázquez" or "Vasquez" → El Paso or Nogales → 1920–1945</span>
-          <a class="clg-link" href="https://www.ancestry.com/search/collections/8872/" target="_blank">Search on Ancestry</a>
-        </div>
-        <div class="clg-arch">
-          <h4>4. AGN — Archivo General de la Nación (Mexico City)</h4>
-          <p>Mexico's national archive. Land records, colonial padrones, notarial records. The oldest and deepest archive on this list. This is where records from the 1600s and 1700s Mexico City live.</p>
-          <span class="clg-tip">Start: "Ramo Padrones" → Vázquez → Distrito Federal. Use the accent mark in your search.</span>
-          <a class="clg-link" href="https://catalogo.agn.gob.mx" target="_blank">Open AGN</a>
-        </div>
-      </div>
-    </div>
+    </div><!-- /panel-vazquez -->
 
-  </div><!-- end vazquez panel -->
+    <!-- GARCIA PANEL -->
+    <div class="lr-panel" id="panel-garcia">
+      <div class="lr-week open" id="gc-w1">
+        <div class="lr-week-hd" onclick="toggleW('gc-w1')">
+          <div class="lr-week-left">
+            <span class="lr-week-n">01</span>
+            <div class="lr-week-meta">
+              <h3>The Music</h3>
+              <p>Norte&ntilde;o, conjunto, and the Tejano sound from South Texas</p>
+            </div>
+          </div>
+          <span class="lr-caret">+</span>
+        </div>
+        <div class="lr-week-bd">
+          <div class="lr-ctx">
+            <p>The Garc&iacute;a family line runs through <strong>Nuevo Le&oacute;n, Mexico</strong> &rarr; <strong>Sinton, Texas</strong> &rarr; California. Nuevo Le&oacute;n is norte&ntilde;o country &mdash; the accordion, the bajo sexto, the corrido. When your family crossed into Texas, that sound mixed with Czech and German polka traditions and became <em>conjunto</em>. Then it became Tejano. <strong>Los Alegres de Ter&aacute;n</strong> are from General Ter&aacute;n, Nuevo Le&oacute;n &mdash; the exact region your Garc&iacute;a/Montemayor line comes from.</p>
+          </div>
+          <div class="lr-playlist-mini">
+            <p class="lr-playlist-label">Build These Playlists</p>
+            <div class="lr-playlist-tracks">
+              <span class="lr-track">Los Alegres de Ter&aacute;n</span>
+              <span class="lr-track">Ram&oacute;n Ayala</span>
+              <span class="lr-track">Flaco Jim&eacute;nez</span>
+              <span class="lr-track">Selena</span>
+              <span class="lr-track">Little Joe y la Familia</span>
+            </div>
+          </div>
+          <p class="lr-section-label">Listen To &mdash; With Context</p>
+          <div class="lr-item">
+            <h4>Los Alegres de Ter&aacute;n &mdash; Your Family's Regional Sound</h4>
+            <p>From General Ter&aacute;n, Nuevo Le&oacute;n &mdash; the same region your Montemayor/Garc&iacute;a line traces to. They defined norte&ntilde;o music for decades. This is what played at dances in the towns your great-great-grandmother Clara grew up near.</p>
+            <a class="lr-link" href="https://open.spotify.com/search/Los%20Alegres%20de%20Ter%C3%A1n" target="_blank" rel="noopener">Spotify</a>
+            <a class="lr-link" href="https://www.youtube.com/results?search_query=Los+Alegres+de+Teran+norteno" target="_blank" rel="noopener">YouTube</a>
+          </div>
+          <div class="lr-item">
+            <h4>Selena &mdash; Corpus Christi, 30 Miles From Sinton</h4>
+            <p>Selena Quintanilla grew up 30 miles from where your grandmother Elvira Garc&iacute;a was raised. She crossed every border between Mexican and American identity. <em>Como la Flor</em>, <em>Bidi Bidi Bom Bom</em>, <em>Dreaming of You</em>. This music came out of your family's backyard.</p>
+            <a class="lr-link" href="https://open.spotify.com/artist/1q6LFD9rAWVM4MGD5KMWIY" target="_blank" rel="noopener">Spotify</a>
+          </div>
+          <div class="lr-item">
+            <h4>Flaco Jim&eacute;nez &mdash; San Antonio Conjunto Legend</h4>
+            <p>The king of Texas conjunto. His accordion style is the direct descendant of what your family heard growing up in Sinton. He worked with Bob Dylan, Ry Cooder, the Rolling Stones &mdash; without ever leaving his roots.</p>
+            <a class="lr-link" href="https://open.spotify.com/artist/2D4FOFWbRRyWbqaWf6YImX" target="_blank" rel="noopener">Spotify</a>
+          </div>
+        </div>
+      </div>
 
-  <!-- GARCÍA PANEL -->
-  <div class="clg-panel" id="panel-garcia">
-    <div class="clg-week open" id="gc-w1">
-      <div class="clg-week-hd" onclick="toggleW('gc-w1')">
-        <div class="clg-week-left">
-          <span class="clg-week-n">01</span>
-          <div class="clg-week-meta">
-            <h3>The Music</h3>
-            <p>Norteño, conjunto, and the Tejano sound from South Texas</p>
+      <div class="lr-week" id="gc-w2">
+        <div class="lr-week-hd" onclick="toggleW('gc-w2')">
+          <div class="lr-week-left">
+            <span class="lr-week-n">02</span>
+            <div class="lr-week-meta">
+              <h3>The Films &amp; Books</h3>
+              <p>South Texas, the border, and what it meant to build a life in between</p>
+            </div>
           </div>
+          <span class="lr-caret">+</span>
         </div>
-        <span class="clg-caret">+</span>
-      </div>
-      <div class="clg-week-bd">
-        <div class="clg-ctx">
-          <p>The García family line runs through <strong>Nuevo León, Mexico</strong> → <strong>Sinton, Texas</strong> → California. Nuevo León is norteño country — the accordion, the bajo sexto, the corrido. When your family crossed into Texas, that sound mixed with Czech and German polka traditions and became <em>conjunto</em>. Then it became Tejano. <strong>Los Alegres de Terán</strong> are from General Terán, Nuevo León — the exact region your García/Montemayor line comes from.</p>
-        </div>
-        <div class="clg-playlist">
-          <p class="clg-playlist-label">Build These Playlists</p>
-          <div class="clg-playlist-tracks">
-            <span class="clg-track">Los Alegres de Terán</span>
-            <span class="clg-track">Ramón Ayala</span>
-            <span class="clg-track">Flaco Jiménez</span>
-            <span class="clg-track">Selena</span>
-            <span class="clg-track">Little Joe y la Familia</span>
+        <div class="lr-week-bd">
+          <div class="lr-ctx">
+            <p>Sinton, Texas in the 1930s&ndash;1950s: your great-great-grandfather Faustino Montemayor &mdash; born 1852, died 1950 at age 98 &mdash; lived through more American history than almost anyone. He saw the end of the frontier, both World Wars, the Depression, and the beginning of the civil rights era.</p>
           </div>
-        </div>
-        <p class="clg-section-label">Listen To — With Context</p>
-        <div class="clg-item">
-          <div class="clg-item-body">
-            <h4>Los Alegres de Terán — Your Family's Regional Sound</h4>
-            <p>From General Terán, Nuevo León — the same region your Montemayor/García line traces to. They defined norteño music for decades. This is what played at dances in the towns your great-great-grandmother Clara grew up near.</p>
-            <a class="clg-link" href="https://open.spotify.com/search/Los%20Alegres%20de%20Ter%C3%A1n" target="_blank">Spotify</a>
-            <a class="clg-link" href="https://www.youtube.com/results?search_query=Los+Alegres+de+Teran+norteno" target="_blank">YouTube</a>
-          </div>
-        </div>
-        <div class="clg-item">
-          <div class="clg-item-body">
-            <h4>Selena — Corpus Christi, 30 Miles From Sinton</h4>
-            <p>Selena Quintanilla grew up 30 miles from where your grandmother Elvira García was raised. She crossed every border between Mexican and American identity. <em>Como la Flor</em>, <em>Bidi Bidi Bom Bom</em>, <em>Dreaming of You</em>. This music came out of your family's backyard.</p>
-            <a class="clg-link" href="https://open.spotify.com/artist/1q6LFD9rAWVM4MGD5KMWIY" target="_blank">Spotify</a>
-          </div>
-        </div>
-        <div class="clg-item">
-          <div class="clg-item-body">
-            <h4>Flaco Jiménez — San Antonio Conjunto Legend</h4>
-            <p>The king of Texas conjunto. His accordion style is the direct descendant of what your family heard growing up in Sinton. He worked with Bob Dylan, Ry Cooder, the Rolling Stones — without ever leaving his roots.</p>
-            <a class="clg-link" href="https://open.spotify.com/artist/2D4FOFWbRRyWbqaWf6YImX" target="_blank">Spotify</a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="clg-week" id="gc-w2">
-      <div class="clg-week-hd" onclick="toggleW('gc-w2')">
-        <div class="clg-week-left">
-          <span class="clg-week-n">02</span>
-          <div class="clg-week-meta">
-            <h3>The Films &amp; Books</h3>
-            <p>South Texas, the border, and what it meant to build a life in between</p>
-          </div>
-        </div>
-        <span class="clg-caret">+</span>
-      </div>
-      <div class="clg-week-bd">
-        <div class="clg-ctx">
-          <p>Sinton, Texas in the 1930s–1950s: your great-great-grandfather Faustino Montemayor — born 1852, died 1950 at age 98 — lived through more American history than almost anyone. He saw the end of the frontier, both World Wars, the Depression, and the beginning of the civil rights era.</p>
-        </div>
-        <p class="clg-section-label">Watch</p>
-        <div class="clg-item">
-          <div class="clg-item-body">
+          <p class="lr-section-label">Watch</p>
+          <div class="lr-item">
             <h4>Selena (1997)</h4>
-            <p>Jennifer Lopez as Selena Quintanilla. Beyond the music — this film captures exactly what it felt like to be Mexican-American in South Texas. Too Mexican for the Americans, too American for the Mexicans. Your family navigated that same identity their entire lives.</p>
-            <a class="clg-link" href="https://www.youtube.com/results?search_query=Selena+1997+full+movie" target="_blank">Find on YouTube</a>
+            <p>Jennifer Lopez as Selena Quintanilla. Beyond the music &mdash; this film captures exactly what it felt like to be Mexican-American in South Texas. Too Mexican for the Americans, too American for the Mexicans. Your family navigated that same identity their entire lives.</p>
+            <a class="lr-link" href="https://www.youtube.com/results?search_query=Selena+1997+full+movie" target="_blank" rel="noopener">Find on YouTube</a>
           </div>
-        </div>
-        <div class="clg-item">
-          <div class="clg-item-body">
+          <div class="lr-item">
             <h4>Lone Star (1996)</h4>
             <p>Set in a South Texas border town. A mystery about family secrets, racial identity, and what gets passed down across generations. The landscape is your family's landscape.</p>
-            <a class="clg-link" href="https://www.youtube.com/results?search_query=Lone+Star+1996+John+Sayles+film" target="_blank">Find on YouTube</a>
+            <a class="lr-link" href="https://www.youtube.com/results?search_query=Lone+Star+1996+John+Sayles+film" target="_blank" rel="noopener">Find on YouTube</a>
           </div>
         </div>
       </div>
-    </div>
 
-    <div class="clg-week" id="gc-w3">
-      <div class="clg-week-hd" onclick="toggleW('gc-w3')">
-        <div class="clg-week-left">
-          <span class="clg-week-n">03</span>
-          <div class="clg-week-meta">
-            <h3>The Food</h3>
-            <p>South Texas border cooking — the food your grandmother grew up eating</p>
+      <div class="lr-week" id="gc-w3">
+        <div class="lr-week-hd" onclick="toggleW('gc-w3')">
+          <div class="lr-week-left">
+            <span class="lr-week-n">03</span>
+            <div class="lr-week-meta">
+              <h3>The Food</h3>
+              <p>South Texas border cooking &mdash; the food your grandmother grew up eating</p>
+            </div>
           </div>
+          <span class="lr-caret">+</span>
         </div>
-        <span class="clg-caret">+</span>
-      </div>
-      <div class="clg-week-bd">
-        <div class="clg-ctx">
-          <p>Sinton, Texas border cooking is its own tradition — not pure Mexican, not Tex-Mex as tourists know it. It's ranch food, farmworker food, family food cooked in a wood-heated kitchen by a woman with 18 children to feed. Start with caldo de res. It's the simplest and closest to what Clara Montemayor would have made.</p>
-        </div>
-        <p class="clg-section-label">Cook This Week</p>
-        <div class="clg-item">
-          <div class="clg-item-body">
-            <h4>Caldo de Res — South Texas Beef Soup</h4>
+        <div class="lr-week-bd">
+          <div class="lr-ctx">
+            <p>Sinton, Texas border cooking is its own tradition &mdash; not pure Mexican, not Tex-Mex as tourists know it. It's ranch food, farmworker food, family food cooked in a wood-heated kitchen by a woman with 18 children to feed. Start with caldo de res. It's the simplest and closest to what Clara Montemayor would have made.</p>
+          </div>
+          <p class="lr-section-label">Cook This Week</p>
+          <div class="lr-item">
+            <h4>Caldo de Res &mdash; South Texas Beef Soup</h4>
             <p>Beef, corn, chayote, carrots, cilantro. A pot of this fed a whole ranch family on a cold Texas morning. Clara Montemayor fed 18 children. This is the kind of dish that sustained them.</p>
-            <a class="clg-link" href="https://www.youtube.com/results?search_query=caldo+de+res+recipe+authentic" target="_blank">YouTube</a>
+            <a class="lr-link" href="https://www.youtube.com/results?search_query=caldo+de+res+recipe+authentic" target="_blank" rel="noopener">YouTube</a>
           </div>
-        </div>
-        <div class="clg-item">
-          <div class="clg-item-body">
-            <h4>Barbacoa — The Celebration Meat</h4>
-            <p>In South Texas, barbacoa on Sunday morning is sacred. Slow-cooked beef cheek wrapped in maguey leaves. The dish your grandmother's family made when there was something to celebrate — or just because it was Sunday.</p>
-            <a class="clg-link" href="https://www.seriouseats.com/barbacoa-recipe" target="_blank">Recipe</a>
+          <div class="lr-item">
+            <h4>Barbacoa &mdash; The Celebration Meat</h4>
+            <p>In South Texas, barbacoa on Sunday morning is sacred. Slow-cooked beef cheek wrapped in maguey leaves. The dish your grandmother's family made when there was something to celebrate &mdash; or just because it was Sunday.</p>
+            <a class="lr-link" href="https://www.seriouseats.com/barbacoa-recipe" target="_blank" rel="noopener">Recipe</a>
           </div>
         </div>
       </div>
-    </div>
 
-    <div class="clg-week" id="gc-w4">
-      <div class="clg-week-hd" onclick="toggleW('gc-w4')">
-        <div class="clg-week-left">
-          <span class="clg-week-n">04</span>
-          <div class="clg-week-meta">
-            <h3>The Archives</h3>
-            <p>Find the García and Montemayor lines in these records</p>
+      <div class="lr-week" id="gc-w4">
+        <div class="lr-week-hd" onclick="toggleW('gc-w4')">
+          <div class="lr-week-left">
+            <span class="lr-week-n">04</span>
+            <div class="lr-week-meta">
+              <h3>The Archives</h3>
+              <p>Find the Garc&iacute;a and Montemayor lines in these records</p>
+            </div>
+          </div>
+          <span class="lr-caret">+</span>
+        </div>
+        <div class="lr-week-bd">
+          <div class="lr-ctx">
+            <p>The Garc&iacute;a/Montemayor line has a real head start: Faustino Montemayor &mdash; born 1852, died 1950 &mdash; spans so much history that multiple census records almost certainly exist. The 1930 and 1940 US Census records for Sinton, Texas are the place to start. He's in there.</p>
+          </div>
+          <p class="lr-section-label">Search These</p>
+          <div class="lr-arch">
+            <h4>1. FamilySearch &mdash; Texas Census Records</h4>
+            <p>Search for Faustino Montemayor in San Patricio County, Texas. The 1940 census record showing him with Clara and their 18 children is likely findable here.</p>
+            <span class="lr-tip">Search: "Montemayor" &rarr; San Patricio County, Texas &rarr; 1930&ndash;1940</span>
+            <a class="lr-link" href="https://www.familysearch.org" target="_blank" rel="noopener">FamilySearch</a>
+          </div>
+          <div class="lr-arch">
+            <h4>2. Texas Birth &amp; Death Records &mdash; TDSHS</h4>
+            <p>Texas Department of State Health Services holds birth and death records from 1903 onward. Elvira "Barbara" Garc&iacute;a born Sept 7, 1944 in Sinton &mdash; her birth certificate is searchable here.</p>
+            <span class="lr-tip">Search: Garc&iacute;a &rarr; San Patricio County &rarr; 1944</span>
+            <a class="lr-link" href="https://www.dshs.texas.gov/vs/reqproc/index.shtm" target="_blank" rel="noopener">Texas DSHS</a>
+          </div>
+          <div class="lr-arch">
+            <h4>3. Nuevo Le&oacute;n Church Records &mdash; FamilySearch</h4>
+            <p>The Montemayor name originates in Nuevo Le&oacute;n. Catholic baptism records from General Ter&aacute;n and surrounding municipalities go back to the 1700s.</p>
+            <span class="lr-tip">Search: "Montemayor" &rarr; Nuevo Le&oacute;n &rarr; General Ter&aacute;n &rarr; pre-1900</span>
+            <a class="lr-link" href="https://www.familysearch.org/search/collection/1927051" target="_blank" rel="noopener">Open this collection</a>
           </div>
         </div>
-        <span class="clg-caret">+</span>
       </div>
-      <div class="clg-week-bd">
-        <div class="clg-ctx">
-          <p>The García/Montemayor line has a real head start: Faustino Montemayor — born 1852, died 1950 — spans so much history that multiple census records almost certainly exist. The 1930 and 1940 US Census records for Sinton, Texas are the place to start. He's in there.</p>
-        </div>
-        <p class="clg-section-label">Search These</p>
-        <div class="clg-arch">
-          <h4>1. FamilySearch — Texas Census Records</h4>
-          <p>Search for Faustino Montemayor in San Patricio County, Texas. The 1940 census record showing him with Clara and their 18 children is likely findable here.</p>
-          <span class="clg-tip">Search: "Montemayor" → San Patricio County, Texas → 1930–1940</span>
-          <a class="clg-link" href="https://www.familysearch.org" target="_blank">FamilySearch</a>
-        </div>
-        <div class="clg-arch">
-          <h4>2. Texas Birth &amp; Death Records — TDSHS</h4>
-          <p>Texas Department of State Health Services holds birth and death records from 1903 onward. Elvira "Barbara" García born Sept 7, 1944 in Sinton — her birth certificate is searchable here.</p>
-          <span class="clg-tip">Search: García → San Patricio County → 1944</span>
-          <a class="clg-link" href="https://www.dshs.texas.gov/vs/reqproc/index.shtm" target="_blank">Texas DSHS</a>
-        </div>
-        <div class="clg-arch">
-          <h4>3. Nuevo León Church Records — FamilySearch</h4>
-          <p>The Montemayor name originates in Nuevo León. Catholic baptism records from General Terán and surrounding municipalities go back to the 1700s.</p>
-          <span class="clg-tip">Search: "Montemayor" → Nuevo León → General Terán → pre-1900</span>
-          <a class="clg-link" href="https://www.familysearch.org/search/collection/1927051" target="_blank">Open this collection</a>
-        </div>
-      </div>
-    </div>
+    </div><!-- /panel-garcia -->
 
-  </div><!-- end garcia panel -->
-
-  <!-- VIDEO: BEAR'S WORK -->
-  <div class="sec"><h2 style="color: var(--gold); font-family: 'Montserrat', sans-serif;">Bear's Work</h2><div class="sec-rule"></div></div>
-  <div style="max-width: 900px; margin: 0 auto;">
-    <style>
-      @media (min-width: 768px) {
-        .video-grid-vazquez { grid-template-columns: 1fr 1fr !important; }
-      }
-    </style>
-    <div class="video-grid-vazquez" style="display: grid; grid-template-columns: 1fr; gap: 1.5rem;">
-      <video controls width="100%" style="border: 2px solid var(--gold); ">
+    <!-- ===== BEAR'S WORK ===== -->
+    <div class="lr-sec-head"><h2>Bear's Work</h2><div class="lr-sec-rule"></div></div>
+    <div class="lr-video-grid">
+      <video controls preload="metadata">
         <source src="https://mylegacycontinues.com/bear-video-1.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
-      <video controls width="100%" style="border: 2px solid var(--gold); ">
+      <video controls preload="metadata">
         <source src="https://mylegacycontinues.com/bear-video-2.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
     </div>
-  </div>
 
-  <!-- PLAYLIST -->
-  <div class="sec"><h2>My Legacy Playlist</h2><div class="sec-rule"></div></div>
-  <div class="playlist-block" style="border-top: none; padding: 0;">
-    <iframe allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write" frameborder="0" height="450" style="width:100%;max-width:660px;overflow:hidden;" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.music.apple.com/us/playlist/my-legacy-continues/pl.u-55D6XV5c8WBg0d"></iframe>
-  </div>
-
-  <!-- LINKED PROFILES -->
-  <div class="sec"><h2>Bear's World</h2><div class="sec-rule"></div></div>
-  <div class="profile-links">
-    <a class="prof-card" href="https://mylegacycontinues.com/bears-concrete-profile.html">
-      <div class="prof-type">Business Profile</div>
-      <h3>Bears Concrete Pumping</h3>
-      <p>No middleman. Real work on the Central Coast. Before and after portfolio, tap-to-call, the full story.</p>
-      <div class="prof-arrow">&rarr;</div>
-    </a>
-    <a class="prof-card" href="https://mylegacycontinues.com/butters-profile.html">
-      <div class="prof-type">Pet Legacy Profile</div>
-      <h3>Butters</h3>
-      <p>Orange tabby. 5 years old. Microchipped. Professional napper. The Champ of Santa Maria.</p>
-      <div class="prof-arrow">&rarr;</div>
-    </a>
-    <a class="prof-card" href="https://mylegacycontinues.com/demo-profiles.html">
-      <div class="prof-type">See All Demo Profiles</div>
-      <h3>Profile Gallery</h3>
-      <p>Heritage books, memorials, pet profiles, business pages — browse every profile type we build.</p>
-      <div class="prof-arrow">&rarr;</div>
-    </a>
-  </div>
-
-  <!-- RESCUE REGISTRY -->
-  <div class="sec"><h2>Rescue Registry</h2><div class="sec-rule"></div></div>
-  <div class="rescue-block">
-    <div>
-      <div class="rb-tag">Guardian Protocol &middot; Underdog Heroes</div>
-      <h3>Every rescue dog gets a permanent profile. Free.</h3>
-      <p>We support local rescue partners in our community. Every dog that comes through Underdog Heroes gets their own permanent profile — so their story lives on even after they're adopted.</p>
-      <a class="btn" href="https://mylegacycontinues.com/rescue-registry.html">View the Registry</a>
+    <!-- ===== PLAYLIST ===== -->
+    <div class="lr-sec-head"><h2>My Legacy Playlist</h2><div class="lr-sec-rule"></div></div>
+    <div class="lr-playlist-block">
+      <iframe allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write" frameborder="0" height="450" style="border:0;" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.music.apple.com/us/playlist/my-legacy-continues/pl.u-55D6XV5c8WBg0d" title="My Legacy Continues Playlist"></iframe>
     </div>
-    <div class="rescue-stat">
-      <span class="rs-num">8</span>
-      <span class="rs-label">Dogs with<br/>Permanent Profiles</span>
+
+    <!-- ===== LINKED PROFILES ===== -->
+    <div class="lr-sec-head"><h2>Bear's World</h2><div class="lr-sec-rule"></div></div>
+    <div class="lr-prof-grid">
+      <a class="lr-prof-card" href="https://mylegacycontinues.com/bears-concrete-profile.html">
+        <div class="lr-prof-type">Business Profile</div>
+        <h3>Bears Concrete Pumping</h3>
+        <p>No middleman. Real work on the Central Coast. Before and after portfolio, tap-to-call, the full story.</p>
+        <div class="lr-prof-arrow">&rarr;</div>
+      </a>
+      <a class="lr-prof-card" href="https://mylegacycontinues.com/butters-profile.html">
+        <div class="lr-prof-type">Pet Legacy Profile</div>
+        <h3>Butters</h3>
+        <p>Orange tabby. 5 years old. Microchipped. Professional napper. The Champ of Santa Maria.</p>
+        <div class="lr-prof-arrow">&rarr;</div>
+      </a>
+      <a class="lr-prof-card" href="https://mylegacycontinues.com/demo-profiles.html">
+        <div class="lr-prof-type">See All Demo Profiles</div>
+        <h3>Profile Gallery</h3>
+        <p>Heritage books, memorials, pet profiles, business pages &mdash; browse every profile type we build.</p>
+        <div class="lr-prof-arrow">&rarr;</div>
+      </a>
+    </div>
+
+    <!-- ===== RESCUE REGISTRY ===== -->
+    <div class="lr-sec-head"><h2>Rescue Registry</h2><div class="lr-sec-rule"></div></div>
+    <div class="lr-rescue">
+      <div>
+        <div class="lr-rescue-tag">Guardian Protocol &middot; Underdog Heroes</div>
+        <h3>Every rescue dog gets a permanent profile. Free.</h3>
+        <p>We support local rescue partners in our community. Every dog that comes through Underdog Heroes gets their own permanent profile &mdash; so their story lives on even after they're adopted.</p>
+        <a class="lr-btn" href="https://mylegacycontinues.com/rescue-registry.html">View the Registry</a>
+      </div>
+      <div class="lr-rescue-stat">
+        <span class="lr-rescue-num">8</span>
+        <span class="lr-rescue-lbl">Dogs with<br/>Permanent Profiles</span>
+      </div>
+    </div>
+
+  </div><!-- /.lr-wrap -->
+
+  <!-- ===== BOTTOM CTA ===== -->
+  <div class="lr-cta-bar">
+    <div class="lr-cta-inner">
+      <p>Want your family's story preserved like this?</p>
+      <a class="lr-btn" href="https://mylegacycontinues.com/heritage-book.html" data-product="heritage-book">Order a Heritage Book &mdash; $199</a>
     </div>
   </div>
 
-</div>
+  <!-- ===== FOOTER (site-wide from style.css) ===== -->
+  <footer style="background: #141414; border-top: 3px solid #E0E0E0; padding: 40px 48px 28px;">
+    <div class="footer-inner">
+      <div class="footer-contact">Contact: contact@mylegacycontinues.com | (805) 863-3794 | Santa Maria, CA</div>
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="heritage-book.html">Heritage</a></li>
+        <li><a href="pet-tag.html">Pet Tags</a></li>
+        <li><a href="rescue-registry.html">Rescue Registry</a></li>
+        <li><a href="active-transports.html">Transport</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="legal/privacy.html">Privacy</a></li>
+        <li><a href="legal/terms-of-service.html">Terms</a></li>
+      </ul>
+      <p class="footer-copy">&copy; 2026 My Legacy Continues. All rights reserved.</p>
+    </div>
+  </footer>
 
-<div class="cta">
-  <div class="cta-inner">
-    <p>Want your family's story preserved like this?</p>
-    <a href="https://mylegacycontinues.com/heritage-book.html">Order a Heritage Book — $199</a>
-  </div>
-</div>
+  <script>
+    // Mobile nav
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    if (navToggle) {
+      navToggle.addEventListener('click', () => navLinks.classList.toggle('active'));
+      navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => navLinks.classList.remove('active'));
+      });
+    }
+  </script>
+  <script src="metalflake.js"></script>
+  <script>
+    function toggleW(id) {
+      var w = document.getElementById(id);
+      if (w) w.classList.toggle('open');
+    }
+    function switchBloodline(tab, panelId) {
+      document.querySelectorAll('.lr-panel').forEach(function(p){ p.classList.remove('active'); });
+      document.querySelectorAll('.lr-tab').forEach(function(t){ t.classList.remove('active'); });
+      var panel = document.getElementById(panelId);
+      if (panel) panel.classList.add('active');
+      tab.classList.add('active');
+    }
+  </script>
 
-<footer style="background: var(--navy, #1C1C1C); border-top: 1px solid rgba(232,201,122,0.2); padding: 40px 48px 28px;">
-  <div class="footer-inner">
-    <div class="footer-contact">Contact: contact@mylegacycontinues.com | (805) 863-3794 | Santa Maria, CA</div>
-    <ul class="footer-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="heritage-book.html">Heritage</a></li>
-      <li><a href="pet-tag.html">Pet Tags</a></li>
-      <li><a href="rescue-registry.html">Rescue Registry</a></li>
-      <li><a href="active-transports.html">Transport</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="contact.html">Contact</a></li>
-      <li><a href="legal/privacy.html">Privacy</a></li>
-      <li><a href="legal/terms-of-service.html">Terms</a></li>
-    </ul>
-    <p class="footer-copy">&copy; 2026 My Legacy Continues. All rights reserved.</p>
-  </div>
-</footer>
-
-<script>
-  const navToggle = document.getElementById('navToggle');
-  const navLinks = document.getElementById('navLinks');
-  if (navToggle) {
-    navToggle.addEventListener('click', () => navLinks.classList.toggle('active'));
-    navLinks.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => navLinks.classList.remove('active'));
-    });
-  }
-</script>
-<script src="metalflake.js"></script>
-<script>
-  function toggleW(id) {
-    var w = document.getElementById(id);
-    if (w) w.classList.toggle('active');
-  }
-  function switchBloodline(tab, panelId) {
-    document.querySelectorAll('.clg-panel').forEach(function(p){ p.classList.remove('active'); });
-    document.querySelectorAll('.clg-tab').forEach(function(t){ t.classList.remove('active'); });
-    var panel = document.getElementById(panelId);
-    if (panel) panel.classList.add('active');
-    tab.classList.add('active');
-  }
-</script>
-
-
-  <!-- Form Submission Tracking -->
+  <!-- Form Submission Tracking (Formspree xzzpqjle &mdash; preserved for pages with forms) -->
   <script>
     document.querySelectorAll('form').forEach(form => {
       form.addEventListener('submit', function(e) {
@@ -944,7 +1655,6 @@
             }]
           });
         }
-
         if (typeof fbq !== 'undefined') {
           fbq('track', 'ViewContent', {
             'content_name': this.getAttribute('data-product'),
