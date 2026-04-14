@@ -46,7 +46,8 @@
     /* CONTENT */
     .wrap { max-width:820px; margin:0 auto; padding:0 28px 64px; }
     .sec { display:flex; align-items:center; gap:18px; margin:52px 0 26px; }
-    .sec h2 { font-family:'Montserrat',serif; font-size:26px; font-weight:700; white-space:nowrap; color:var(--cream); }
+    .sec h2 { font-family:'Montserrat',serif; font-size:26px; font-weight:700; color:var(--cream); }
+    @media (max-width:600px) { .sec { flex-wrap:wrap; } .sec h2 { font-size:20px; } }
     .sec-rule { flex:1; height:1px; background:var(--border); }
 
     /* CHAPTERS */
