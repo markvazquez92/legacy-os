@@ -16,25 +16,25 @@
 :root {
   --charcoal:         #2A2A2A;
   --navy-deep:    #2A2A2A;
-  --gold:         #D4AF37;
-  --gold-light:   #D4AF37;
+  --gold:#E0E0E0;
+  --gold-light:   #E0E0E0;
   --coral:        #C0392B;
-  --cream:        #FAF3E6;
-  --charcoal:     #1C1C1C;
-  --charcoal2:    #1C1C1C;
-  --gold-bright:  #D4AF37;
-  --gold-dim:     rgba(232,201,122,0.4);
-  --gold-wash:    rgba(232,201,122,0.08);
-  --gold-border:  rgba(232,201,122,0.25);
-  --heading:      #1C1C1C;
-  --body:         #1C1C1C;
+  --cream:#F5F5F5;
+  --charcoal:     #141414;
+  --charcoal2:    #141414;
+  --gold-bright:  #E0E0E0;
+  --gold-dim:     rgba(224,224,224,0.4);
+  --gold-wash:    rgba(224,224,224,0.08);
+  --gold-border:  rgba(224,224,224,0.25);
+  --heading:      #141414;
+  --body:         #141414;
   --muted:        rgba(28,28,28,0.65);
-  --card-bg:      rgba(232,201,122,0.08);
-  --nav-bg:       #FAF3E6;
-  --bg:           #FAF3E6;
-  --bg-card:      rgba(232,201,122,0.08);
-  --bg-warm:      #FAF3E6;
-  --bg-nav:       #FAF3E6;
+  --card-bg:      rgba(224,224,224,0.08);
+  --nav-bg:       #F5F5F5;
+  --bg:#1A1A1A;
+  --bg-card:      rgba(224,224,224,0.08);
+  --bg-warm:      #F5F5F5;
+  --bg-nav:       #F5F5F5;
   --forest:       #2A2A2A;
   --forest-dark:  #2A2A2A;
   --im-fell:      'Montserrat', sans-serif;
@@ -42,75 +42,75 @@
   --serif:        'Montserrat', sans-serif;
   --sans:         'Lato', sans-serif;
   --lora:         'Lato', sans-serif;
-  --text:         #1C1C1C;
+  --text:#F5F5F5;
   --text-muted:   rgba(28,28,28,0.65);
   --text-dim:     rgba(28,28,28,0.5);
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
-body { font-family: var(–sans); background: var(–bg); color: var(–text); line-height: 1.8; -webkit-font-smoothing: antialiased; background-color: #FAF3E6; overflow-x: hidden; }
+body { font-family: var(–sans); background: var(–bg); color: var(–text); line-height: 1.8; -webkit-font-smoothing: antialiased; background-color:#1A1A1A; overflow-x: hidden; }
 
-section { background-color: #FAF3E6; }
-.section { background-color: #FAF3E6; }
+section { background-color:#1A1A1A; }
+.section { background-color:#1A1A1A; }
 a { color: inherit; text-decoration: none; }
 img { max-width: 100%; height: auto; display: block; }
 
 .btn { display: inline-block; font-family: var(–cinzel); font-size: 0.72rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; padding: 16px 34px; min-height: 44px; border: none; cursor: pointer; transition: all 0.22s ease; text-decoration: none; white-space: nowrap;  }
-.btn-primary { background: #D4AF37; color: #FAF3E6; box-shadow: 0 4px 20px rgba(212,160,23,0.2); }
-.btn-primary:hover { background: #D4AF37; transform: translateY(-2px); }
-.btn-outline { background: transparent; color: #2A2A2A; border: 1.5px solid #2A2A2A; }
-.btn-outline:hover { background: #2A2A2A; color: #D4AF37; }
+.btn-primary { background: #E0E0E0; color: #F5F5F5; box-shadow: 0 4px 20px rgba(212,160,23,0.2); }
+.btn-primary:hover { background: #E0E0E0; transform: translateY(-2px); }
+.btn-outline { background: transparent; color:#F5F5F5; border: 1.5px solid #2A2A2A; }
+.btn-outline:hover { background: #2A2A2A; color: #E0E0E0; }
 
 .page-hero { background: #2A2A2A; padding: 130px 48px 72px; }
 .page-hero-inner { max-width: 860px; margin: 0 auto; }
 .back-link { font-family: var(–cinzel); font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(212,160,23,0.8); display: inline-flex; align-items: center; gap: 8px; margin-bottom: 28px; transition: color 0.2s; }
-.back-link:hover { color: #D4AF37; }
+.back-link:hover { color: #E0E0E0; }
 .back-link::before { content: '←'; font-size: 0.9rem; }
-.page-eyebrow { font-family: var(–cinzel); font-size: 0.56rem; letter-spacing: 0.32em; text-transform: uppercase; color: #D4AF37; display: block; margin-bottom: 18px; }
-.page-title { font-family: var(–cinzel); font-size: clamp(2rem, 4.5vw, 3.2rem); font-weight: 700; color: #FAF3E6; line-height: 1.1; margin-bottom: 18px; }
+.page-eyebrow { font-family: var(–cinzel); font-size: 0.56rem; letter-spacing: 0.32em; text-transform: uppercase; color: #E0E0E0; display: block; margin-bottom: 18px; }
+.page-title { font-family: var(–cinzel); font-size: clamp(2rem, 4.5vw, 3.2rem); font-weight: 700; color: #F5F5F5; line-height: 1.1; margin-bottom: 18px; }
 .page-sub { font-size: 1rem; color: rgba(240,235,224,0.8); line-height: 1.85; max-width: 600px; margin-bottom: 28px; }
-.price-badge { display: inline-block; font-family: var(–cinzel); font-size: 2.2rem; font-weight: 700; color: #D4AF37; margin-bottom: 28px; }
+.price-badge { display: inline-block; font-family: var(–cinzel); font-size: 2.2rem; font-weight: 700; color: #E0E0E0; margin-bottom: 28px; }
 .price-note { font-size: 0.8rem; color: rgba(240,235,224,0.6); margin-top: -20px; margin-bottom: 28px; }
 @media (max-width: 600px) { .page-hero { padding: 116px 20px 56px; } }
 
 .gold-rule { height: 1px; background: var(–gold-border); }
 
-.what-section { padding: 72px 48px; background: #FAF3E6; }
+.what-section { padding: 72px 48px; background:#1A1A1A; }
 .what-inner { max-width: 860px; margin: 0 auto; }
-.what-section h2 { font-family: var(–cinzel); font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 700; color: #2A2A2A; margin-bottom: 32px; }
+.what-section h2 { font-family: var(–cinzel); font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 700; color:#F5F5F5; margin-bottom: 32px; }
 .includes-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin-bottom: 40px; }
 .include-item { background: rgba(212,160,23,0.08); border: 1px solid rgba(212,160,23,0.2);  padding: 22px 20px; box-shadow: 0 2px 12px rgba(212,160,23,0.05); }
 .include-item-icon { font-size: 1.4rem; margin-bottom: 10px; }
-.include-item-title { font-family: var(–cinzel); font-size: 0.72rem; font-weight: 700; color: #2A2A2A; margin-bottom: 6px; }
-.include-item-desc { font-size: 0.8rem; color: #1C1C1C; line-height: 1.7; }
+.include-item-title { font-family: var(–cinzel); font-size: 0.72rem; font-weight: 700; color:#F5F5F5; margin-bottom: 6px; }
+.include-item-desc { font-size: 0.8rem; color:#F5F5F5; line-height: 1.7; }
 
-.case-study { background: #FAF3E6; border: 1px solid rgba(212,160,23,0.2);  padding: 36px 40px; margin-bottom: 48px; }
-.case-study-eyebrow { font-family: var(–cinzel); font-size: 0.54rem; letter-spacing: 0.28em; text-transform: uppercase; color: #D4AF37; display: block; margin-bottom: 14px; }
-.case-study h3 { font-family: var(–cinzel); font-size: 1.1rem; font-weight: 700; color: #2A2A2A; margin-bottom: 14px; }
-.case-study p { font-size: 0.88rem; color: #1C1C1C; line-height: 1.9; margin-bottom: 12px; }
+.case-study { background:#1A1A1A; border: 1px solid rgba(212,160,23,0.2);  padding: 36px 40px; margin-bottom: 48px; }
+.case-study-eyebrow { font-family: var(–cinzel); font-size: 0.54rem; letter-spacing: 0.28em; text-transform: uppercase; color: #E0E0E0; display: block; margin-bottom: 14px; }
+.case-study h3 { font-family: var(–cinzel); font-size: 1.1rem; font-weight: 700; color:#F5F5F5; margin-bottom: 14px; }
+.case-study p { font-size: 0.88rem; color:#F5F5F5; line-height: 1.9; margin-bottom: 12px; }
 .case-study p:last-child { margin-bottom: 0; }
 @media (max-width: 600px) { .what-section { padding: 52px 20px; } .case-study { padding: 28px 24px; } }
 
-.order-section { padding: 0 48px 80px; background: #FAF3E6; }
+.order-section { padding: 0 48px 80px; background:#1A1A1A; }
 .order-inner { max-width: 860px; margin: 0 auto; }
 .stripe-cta { text-align: center; background: rgba(212,160,23,0.08); border: 1px solid rgba(212,160,23,0.2);  padding: 28px 32px; margin-bottom: 32px; box-shadow: 0 2px 12px rgba(212,160,23,0.05); }
-.stripe-cta p { font-size: 0.88rem; color: #1C1C1C; margin-bottom: 18px; line-height: 1.7; }
-.stripe-cta .price-label { font-family: var(–cinzel); font-size: 1.6rem; font-weight: 700; color: #2A2A2A; display: block; margin-bottom: 18px; }
-.form-section-title { font-family: var(–cinzel); font-size: 0.6rem; letter-spacing: 0.24em; text-transform: uppercase; color: #D4AF37; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 1px solid rgba(212,160,23,0.25); }
+.stripe-cta p { font-size: 0.88rem; color:#F5F5F5; margin-bottom: 18px; line-height: 1.7; }
+.stripe-cta .price-label { font-family: var(–cinzel); font-size: 1.6rem; font-weight: 700; color:#F5F5F5; display: block; margin-bottom: 18px; }
+.form-section-title { font-family: var(–cinzel); font-size: 0.6rem; letter-spacing: 0.24em; text-transform: uppercase; color: #E0E0E0; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 1px solid rgba(212,160,23,0.25); }
 .intake-form { display: flex; flex-direction: column; gap: 18px; }
 .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
 @media (max-width: 600px) { .form-row { grid-template-columns: 1fr; } .order-section { padding: 0 20px 64px; } }
 .form-group { display: flex; flex-direction: column; gap: 8px; }
-.form-group label { font-family: var(–cinzel); font-size: 0.58rem; letter-spacing: 0.2em; text-transform: uppercase; color: #1C1C1C; }
+.form-group label { font-family: var(–cinzel); font-size: 0.58rem; letter-spacing: 0.2em; text-transform: uppercase; color:#F5F5F5; }
 .form-group input,
 .form-group textarea,
-.form-group select { background: #FAF3E6; border: 1px solid rgba(212,160,23,0.2);  color: #1C1C1C; font-family: var(–lora); font-size: 0.9rem; padding: 13px 16px; min-height: 44px; transition: border-color 0.2s; width: 100%; }
+.form-group select { background:#1A1A1A; border: 1px solid rgba(212,160,23,0.2);  color:#F5F5F5; font-family: var(–lora); font-size: 0.9rem; padding: 13px 16px; min-height: 44px; transition: border-color 0.2s; width: 100%; }
 .form-group input:focus,
 .form-group textarea:focus,
-.form-group select:focus { outline: none; border-color: #D4AF37; box-shadow: 0 0 0 3px rgba(212,160,23,0.1); }
+.form-group select:focus { outline: none; border-color: #E0E0E0; box-shadow: 0 0 0 3px rgba(212,160,23,0.1); }
 .form-group input::placeholder,
-.form-group textarea::placeholder { color: #1C1C1C; }
+.form-group textarea::placeholder { color:#F5F5F5; }
 .form-group textarea { min-height: 110px; resize: vertical; }
 .form-group select { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23D4A020' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 16px center; padding-right: 40px; }
 .form-divider { height: 1px; background: rgba(212,160,23,0.25); margin: 8px 0; }
@@ -205,7 +205,7 @@ img { max-width: 100%; height: auto; display: block; }
     </div>
 
     <div style="margin-top: 48px;">
-      <h3 style="font-family:var(--cinzel);font-size:1.1rem;font-weight:700;color:#2A2A2A;margin-bottom:16px;">Why Bundle These Three?</h3>
+      <h3 style="font-family:var(--cinzel);font-size:1.1rem;font-weight:700;color:#F5F5F5;margin-bottom:16px;">Why Bundle These Three?</h3>
       <p style="font-size:0.95rem;color:var(--body);line-height:1.85;max-width:700px;margin-bottom:16px;"><strong>Complete family story.</strong> Your heritage didn't happen in isolation. Your business was built on that heritage. Your memorial honors the full person.</p>
       <p style="font-size:0.95rem;color:var(--body);line-height:1.85;max-width:700px;margin-bottom:16px;"><strong>Everything connects.</strong> On mylegacycontinues.com, all three profiles link together. One family, one story, properly told.</p>
       <p style="font-size:0.95rem;color:var(--body);line-height:1.85;max-width:700px;"><strong>Save $48.</strong> Individual pricing: Herencia ($199) + Negocio ($79) + Cemetery ($129) = $407. Bundle price: $359. That's 12% off — plus dedicated project manager, priority support, and custom cross-linking across all three profiles.</p>
@@ -218,35 +218,35 @@ img { max-width: 100%; height: auto; display: block; }
 <!-- PRICING COMPARISON -->
 <section style="padding: 72px 20px; background: rgba(42,42,42,0.05);">
   <div style="max-width: 860px; margin: 0 auto;">
-    <h2 style="font-family:var(--cinzel);font-size:clamp(1.4rem,3vw,2rem);font-weight:700;color:#2A2A2A;margin-bottom:32px;text-align:center;">Pricing Comparison</h2>
+    <h2 style="font-family:var(--cinzel);font-size:clamp(1.4rem,3vw,2rem);font-weight:700;color:#F5F5F5;margin-bottom:32px;text-align:center;">Pricing Comparison</h2>
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;margin-bottom:32px;">
-      <div style="background:#FAF3E6;border:1px solid rgba(212,160,23,0.2);padding:32px;text-align:center;">
-        <h3 style="font-family:var(--cinzel);font-size:0.9rem;font-weight:700;color:#2A2A2A;margin-bottom:24px;letter-spacing:0.1em;text-transform:uppercase;">Buy Individually</h3>
+      <div style="background:#1A1A1A;border:1px solid rgba(212,160,23,0.2);padding:32px;text-align:center;">
+        <h3 style="font-family:var(--cinzel);font-size:0.9rem;font-weight:700;color:#F5F5F5;margin-bottom:24px;letter-spacing:0.1em;text-transform:uppercase;">Buy Individually</h3>
         <div style="margin-bottom:16px;">
           <div style="font-size:0.9rem;color:var(--body);margin-bottom:8px;">Herencia Book</div>
-          <div style="font-family:var(--cinzel);font-size:1.2rem;font-weight:700;color:#D4AF37;">$199</div>
+          <div style="font-family:var(--cinzel);font-size:1.2rem;font-weight:700;color:#E0E0E0;">$199</div>
         </div>
         <div style="border-top:1px solid rgba(212,160,23,0.2);padding-top:16px;margin-bottom:16px;">
           <div style="font-size:0.9rem;color:var(--body);margin-bottom:8px;">Negocio Profile</div>
-          <div style="font-family:var(--cinzel);font-size:1.2rem;font-weight:700;color:#D4AF37;">$79</div>
+          <div style="font-family:var(--cinzel);font-size:1.2rem;font-weight:700;color:#E0E0E0;">$79</div>
         </div>
         <div style="border-top:1px solid rgba(212,160,23,0.2);padding-top:16px;margin-bottom:24px;">
           <div style="font-size:0.9rem;color:var(--body);margin-bottom:8px;">Cemetery Plaque</div>
-          <div style="font-family:var(--cinzel);font-size:1.2rem;font-weight:700;color:#D4AF37;">$129</div>
+          <div style="font-family:var(--cinzel);font-size:1.2rem;font-weight:700;color:#E0E0E0;">$129</div>
         </div>
-        <div style="border-top:2px solid #D4AF37;padding-top:16px;">
+        <div style="border-top:2px solid #E0E0E0;padding-top:16px;">
           <div style="font-size:0.85rem;color:var(--muted);margin-bottom:8px;text-transform:uppercase;letter-spacing:0.08em;font-weight:700;">Total</div>
-          <div style="font-family:var(--cinzel);font-size:1.8rem;font-weight:700;color:#2A2A2A;"><s style="opacity:0.5;">$407</s></div>
+          <div style="font-family:var(--cinzel);font-size:1.8rem;font-weight:700;color:#F5F5F5;"><s style="opacity:0.5;">$407</s></div>
         </div>
       </div>
 
-      <div style="background:rgba(232,201,122,0.15);border:2px solid #D4AF37;padding:32px;text-align:center;position:relative;">
-        <div style="position:absolute;top:-12px;right:16px;background:#D4AF37;color:#FAF3E6;padding:6px 12px;font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;">BEST VALUE</div>
-        <h3 style="font-family:var(--cinzel);font-size:0.9rem;font-weight:700;color:#2A2A2A;margin-bottom:24px;letter-spacing:0.1em;text-transform:uppercase;">Complete Bundle</h3>
+      <div style="background:rgba(224,224,224,0.15);border:2px solid #E0E0E0;padding:32px;text-align:center;position:relative;">
+        <div style="position:absolute;top:-12px;right:16px;background:#E0E0E0;color:#F5F5F5;padding:6px 12px;font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;">BEST VALUE</div>
+        <h3 style="font-family:var(--cinzel);font-size:0.9rem;font-weight:700;color:#F5F5F5;margin-bottom:24px;letter-spacing:0.1em;text-transform:uppercase;">Complete Bundle</h3>
         <p style="font-size:0.9rem;color:var(--body);margin-bottom:24px;">All three products bundled</p>
-        <div style="border:2px solid #D4AF37;padding:20px;background:rgba(212,160,23,0.08);">
-          <div style="font-family:var(--cinzel);font-size:2.2rem;font-weight:700;color:#2A2A2A;margin-bottom:8px;">$359</div>
-          <div style="font-size:0.85rem;color:#2A2A2A;font-weight:700;letter-spacing:0.08em;">SAVE $48</div>
+        <div style="border:2px solid #E0E0E0;padding:20px;background:rgba(212,160,23,0.08);">
+          <div style="font-family:var(--cinzel);font-size:2.2rem;font-weight:700;color:#F5F5F5;margin-bottom:8px;">$359</div>
+          <div style="font-size:0.85rem;color:#F5F5F5;font-weight:700;letter-spacing:0.08em;">SAVE $48</div>
         </div>
         <div style="margin-top:24px;">
           <div style="font-size:0.8rem;color:var(--muted);margin-bottom:8px;text-transform:uppercase;letter-spacing:0.08em;">Includes everything plus</div>
@@ -284,12 +284,12 @@ img { max-width: 100%; height: auto; display: block; }
 
 <div class="gold-rule"></div>
 
-<section class="order-section" id="order" style="background-color: #FAF3E6;">
+<section class="order-section" id="order" style="background-color:#1A1A1A;">
   <div class="order-inner">
     <div style="padding-top:56px; margin-bottom:36px; text-align:center;">
       <h2 style="font-family:var(--cinzel);font-size:clamp(1.4rem,3vw,2rem);font-weight:700;color: var(--heading);margin-bottom:12px;">Obtén el Paquete Completo</h2>
       <p style="font-size:0.9rem;color:var(--text-muted);max-width:580px;line-height:1.85;margin:0 auto 24px;">Early-bird pricing available for first 50 customers. All three products for $359 (regularly $407). One-time payment through Stripe.</p>
-      <button id="showOrderForm" onclick="toggleOrderForm()" style="background:#C0392B;color:#FAF3E6;border:1.5px solid #D4AF37;padding:16px 34px;font-family:var(--cinzel);font-size:0.72rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;cursor:pointer;transition:all 0.22s ease;min-height:44px;margin-bottom:24px;">Get Started — $359</button>
+      <button id="showOrderForm" onclick="toggleOrderForm()" style="background:#C0392B;color:#F5F5F5;border:1.5px solid #E0E0E0;padding:16px 34px;font-family:var(--cinzel);font-size:0.72rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;cursor:pointer;transition:all 0.22s ease;min-height:44px;margin-bottom:24px;">Get Started — $359</button>
     </div>
 
 <div id="orderFormWrap" style="display:none;">
@@ -391,8 +391,8 @@ img { max-width: 100%; height: auto; display: block; }
   <button
     type="submit"
     style="
-      background: #D4AF37;
-      color: #FAF3E6;
+      background: #E0E0E0;
+      color: #F5F5F5;
       padding: 14px 32px;
       border: none;
       font-size: 16px;
@@ -414,15 +414,15 @@ img { max-width: 100%; height: auto; display: block; }
 </section>
 
 <div style="background: rgba(212,160,23,0.08); padding: 2rem 3rem; text-align: center;">
-  <p style="font-size: 0.95rem; color: #2A2A2A; font-weight: 500;">One-time payment. No recurring fees. Complete family legacy preserved forever.</p>
+  <p style="font-size: 0.95rem; color:#F5F5F5; font-weight: 500;">One-time payment. No recurring fees. Complete family legacy preserved forever.</p>
 </div>
 
 <!-- FOOTER -->
-<footer style="background: #1C1C1C; color: #FAF3E6; padding: 3rem; text-align: center;">
+<footer style="background: #141414; color: #F5F5F5; padding: 3rem; text-align: center;">
   <div style="max-width: 1200px; margin: 0 auto;">
     <div style="margin-bottom: 2rem; font-size: 0.95rem;">
       <p style="margin-bottom: 1rem;"><strong>Mi Legado Continúa</strong></p>
-      <p style="margin-bottom: 0.5rem;"><a href="mailto:hello@mylegacycontinues.com" style="color: #D4AF37; text-decoration: none;">hello@mylegacycontinues.com</a></p>
+      <p style="margin-bottom: 0.5rem;"><a href="mailto:hello@mylegacycontinues.com" style="color: #E0E0E0; text-decoration: none;">hello@mylegacycontinues.com</a></p>
       <p style="margin-bottom: 0.5rem;">Available 9–5 Pacific</p>
       <p style="opacity: 0.7; font-size: 0.85rem;">No automated responses. Real humans reading your email.</p>
     </div>

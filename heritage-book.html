@@ -16,25 +16,25 @@
 :root {
   --charcoal:         #2A2A2A;
   --navy-deep:    #2A2A2A;
-  --gold:         #D4AF37;
-  --gold-light:   #D4AF37;
+  --gold:#E0E0E0;
+  --gold-light:   #E0E0E0;
   --coral:        #C0392B;
-  --cream:        #FAF3E6;
-  --charcoal:     #1C1C1C;
-  --charcoal2:    #1C1C1C;
-  --gold-bright:  #D4AF37;
-  --gold-dim:     rgba(232,201,122,0.4);
-  --gold-wash:    rgba(232,201,122,0.08);
-  --gold-border:  rgba(232,201,122,0.25);
-  --heading:      #1C1C1C;
-  --body:         #1C1C1C;
+  --cream:#F5F5F5;
+  --charcoal:     #141414;
+  --charcoal2:    #141414;
+  --gold-bright:  #E0E0E0;
+  --gold-dim:     rgba(224,224,224,0.4);
+  --gold-wash:    rgba(224,224,224,0.08);
+  --gold-border:  rgba(224,224,224,0.25);
+  --heading:      #141414;
+  --body:         #141414;
   --muted:        rgba(28,28,28,0.65);
-  --card-bg:      rgba(232,201,122,0.08);
-  --nav-bg:       #FAF3E6;
-  --bg:           #FAF3E6;
-  --bg-card:      rgba(232,201,122,0.08);
-  --bg-warm:      #FAF3E6;
-  --bg-nav:       #FAF3E6;
+  --card-bg:      rgba(224,224,224,0.08);
+  --nav-bg:       #F5F5F5;
+  --bg:#1A1A1A;
+  --bg-card:      rgba(224,224,224,0.08);
+  --bg-warm:      #F5F5F5;
+  --bg-nav:       #F5F5F5;
   --forest:       #2A2A2A;
   --forest-dark:  #2A2A2A;
   --im-fell:      'Montserrat', sans-serif;
@@ -42,77 +42,77 @@
   --serif:        'Montserrat', sans-serif;
   --sans:         'Lato', sans-serif;
   --lora:         'Lato', sans-serif;
-  --text:         #1C1C1C;
+  --text:#F5F5F5;
   --text-muted:   rgba(28,28,28,0.65);
   --text-dim:     rgba(28,28,28,0.5);
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
-body { font-family: var(–sans); background: var(–bg); color: var(–text); line-height: 1.8; -webkit-font-smoothing: antialiased; background-color: #FAF3E6; overflow-x: hidden; }
+body { font-family: var(–sans); background: var(–bg); color: var(–text); line-height: 1.8; -webkit-font-smoothing: antialiased; background-color:#1A1A1A; overflow-x: hidden; }
 
 /* Mobile background fix */
-section { background-color: #FAF3E6; }
-.section { background-color: #FAF3E6; }
+section { background-color:#1A1A1A; }
+.section { background-color:#1A1A1A; }
 a { color: inherit; text-decoration: none; }
 img { max-width: 100%; height: auto; display: block; }
 
 .btn { display: inline-block; font-family: var(–cinzel); font-size: 0.72rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; padding: 16px 34px; min-height: 44px; border: none; cursor: pointer; transition: all 0.22s ease; text-decoration: none; white-space: nowrap;  }
-.btn-primary { background: #C0392B; color: #FAF3E6; box-shadow: 0 4px 20px rgba(192,57,43,0.2); }
+.btn-primary { background: #C0392B; color: #F5F5F5; box-shadow: 0 4px 20px rgba(192,57,43,0.2); }
 .btn-primary:hover { background: #722F37; transform: translateY(-2px); }
 .btn-outline { background: transparent; color: #722F37; border: 1.5px solid #722F37; }
-.btn-outline:hover { background: #722F37; color: #D4AF37; }
+.btn-outline:hover { background: #722F37; color: #E0E0E0; }
 
 .page-hero { background: #2A2A2A; padding: 130px 48px 72px; }
 .page-hero-inner { max-width: 860px; margin: 0 auto; }
-.back-link { font-family: var(–cinzel); font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(212,175,55,0.8); display: inline-flex; align-items: center; gap: 8px; margin-bottom: 28px; transition: color 0.2s; }
-.back-link:hover { color: #D4AF37; }
+.back-link { font-family: var(–cinzel); font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(139,0,0,0.8); display: inline-flex; align-items: center; gap: 8px; margin-bottom: 28px; transition: color 0.2s; }
+.back-link:hover { color: #E0E0E0; }
 .back-link::before { content: ‘←’; font-size: 0.9rem; }
-.page-eyebrow { font-family: var(–cinzel); font-size: 0.56rem; letter-spacing: 0.32em; text-transform: uppercase; color: #D4AF37; display: block; margin-bottom: 18px; }
-.page-title { font-family: var(–cinzel); font-size: clamp(2rem, 4.5vw, 3.2rem); font-weight: 700; color: #FAF3E6; line-height: 1.1; margin-bottom: 18px; }
+.page-eyebrow { font-family: var(–cinzel); font-size: 0.56rem; letter-spacing: 0.32em; text-transform: uppercase; color: #E0E0E0; display: block; margin-bottom: 18px; }
+.page-title { font-family: var(–cinzel); font-size: clamp(2rem, 4.5vw, 3.2rem); font-weight: 700; color: #F5F5F5; line-height: 1.1; margin-bottom: 18px; }
 .page-sub { font-size: 1rem; color: rgba(240,235,224,0.8); line-height: 1.85; max-width: 600px; margin-bottom: 28px; }
-.price-badge { display: inline-block; font-family: var(–cinzel); font-size: 2.2rem; font-weight: 700; color: #D4AF37; margin-bottom: 28px; }
+.price-badge { display: inline-block; font-family: var(–cinzel); font-size: 2.2rem; font-weight: 700; color: #E0E0E0; margin-bottom: 28px; }
 .price-note { font-size: 0.8rem; color: rgba(240,235,224,0.6); margin-top: -20px; margin-bottom: 28px; }
 @media (max-width: 600px) { .page-hero { padding: 116px 20px 56px; } }
 
 .gold-rule { height: 1px; background: var(–gold-border); }
 
-.what-section { padding: 72px 48px; background: #FAF3E6; }
+.what-section { padding: 72px 48px; background:#1A1A1A; }
 .what-inner { max-width: 860px; margin: 0 auto; }
 .what-section h2 { font-family: var(–cinzel); font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 700; color: #722F37; margin-bottom: 32px; }
 .includes-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin-bottom: 40px; }
 .include-item { background: rgba(192,57,43,0.08); border: 1px solid rgba(192,57,43,0.2);  padding: 22px 20px; box-shadow: 0 2px 12px rgba(192,57,43,0.05); }
 .include-item-icon { font-size: 1.4rem; margin-bottom: 10px; }
 .include-item-title { font-family: var(–cinzel); font-size: 0.72rem; font-weight: 700; color: #722F37; margin-bottom: 6px; }
-.include-item-desc { font-size: 0.8rem; color: #1C1C1C; line-height: 1.7; }
+.include-item-desc { font-size: 0.8rem; color:#F5F5F5; line-height: 1.7; }
 
 /* CASE STUDY BLOCK */
-.case-study { background: #FAF3E6; border: 1px solid rgba(192,57,43,0.2);  padding: 36px 40px; margin-bottom: 48px; }
-.case-study-eyebrow { font-family: var(–cinzel); font-size: 0.54rem; letter-spacing: 0.28em; text-transform: uppercase; color: #D4AF37; display: block; margin-bottom: 14px; }
+.case-study { background:#1A1A1A; border: 1px solid rgba(192,57,43,0.2);  padding: 36px 40px; margin-bottom: 48px; }
+.case-study-eyebrow { font-family: var(–cinzel); font-size: 0.54rem; letter-spacing: 0.28em; text-transform: uppercase; color: #E0E0E0; display: block; margin-bottom: 14px; }
 .case-study h3 { font-family: var(–cinzel); font-size: 1.1rem; font-weight: 700; color: #722F37; margin-bottom: 14px; }
-.case-study p { font-size: 0.88rem; color: #1C1C1C; line-height: 1.9; margin-bottom: 12px; }
+.case-study p { font-size: 0.88rem; color:#F5F5F5; line-height: 1.9; margin-bottom: 12px; }
 .case-study p:last-child { margin-bottom: 0; }
 @media (max-width: 600px) { .what-section { padding: 52px 20px; } .case-study { padding: 28px 24px; } }
 
-.order-section { padding: 0 48px 80px; background: #FAF3E6; }
+.order-section { padding: 0 48px 80px; background:#1A1A1A; }
 .order-inner { max-width: 860px; margin: 0 auto; }
 .stripe-cta { text-align: center; background: rgba(192,57,43,0.08); border: 1px solid rgba(192,57,43,0.2);  padding: 28px 32px; margin-bottom: 32px; box-shadow: 0 2px 12px rgba(192,57,43,0.05); }
-.stripe-cta p { font-size: 0.88rem; color: #1C1C1C; margin-bottom: 18px; line-height: 1.7; }
+.stripe-cta p { font-size: 0.88rem; color:#F5F5F5; margin-bottom: 18px; line-height: 1.7; }
 .stripe-cta .price-label { font-family: var(–cinzel); font-size: 1.6rem; font-weight: 700; color: #722F37; display: block; margin-bottom: 18px; }
-.form-section-title { font-family: var(–cinzel); font-size: 0.6rem; letter-spacing: 0.24em; text-transform: uppercase; color: #D4AF37; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 1px solid rgba(192,57,43,0.25); }
+.form-section-title { font-family: var(–cinzel); font-size: 0.6rem; letter-spacing: 0.24em; text-transform: uppercase; color: #E0E0E0; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 1px solid rgba(192,57,43,0.25); }
 .intake-form { display: flex; flex-direction: column; gap: 18px; }
 .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
 @media (max-width: 600px) { .form-row { grid-template-columns: 1fr; } .order-section { padding: 0 20px 64px; } }
 .form-group { display: flex; flex-direction: column; gap: 8px; }
-.form-group label { font-family: var(–cinzel); font-size: 0.58rem; letter-spacing: 0.2em; text-transform: uppercase; color: #1C1C1C; }
+.form-group label { font-family: var(–cinzel); font-size: 0.58rem; letter-spacing: 0.2em; text-transform: uppercase; color:#F5F5F5; }
 .form-group input,
 .form-group textarea,
-.form-group select { background: #FAF3E6; border: 1px solid rgba(212,160,23,0.2);  color: #1C1C1C; font-family: var(–lora); font-size: 0.9rem; padding: 13px 16px; min-height: 44px; transition: border-color 0.2s; width: 100%; }
+.form-group select { background:#1A1A1A; border: 1px solid rgba(212,160,23,0.2);  color:#F5F5F5; font-family: var(–lora); font-size: 0.9rem; padding: 13px 16px; min-height: 44px; transition: border-color 0.2s; width: 100%; }
 .form-group input:focus,
 .form-group textarea:focus,
-.form-group select:focus { outline: none; border-color: #D4AF37; box-shadow: 0 0 0 3px rgba(212,160,23,0.1); }
+.form-group select:focus { outline: none; border-color: #E0E0E0; box-shadow: 0 0 0 3px rgba(212,160,23,0.1); }
 .form-group input::placeholder,
-.form-group textarea::placeholder { color: #1C1C1C; }
+.form-group textarea::placeholder { color:#F5F5F5; }
 .form-group textarea { min-height: 110px; resize: vertical; }
 .form-group select { appearance: none; background-image: url(“data:image/svg+xml,%3Csvg xmlns=’http://www.w3.org/2000/svg’ width=’12’ height=’8’ viewBox=’0 0 12 8’%3E%3Cpath d=’M1 1l5 5 5-5’ stroke=’%23D4A020’ stroke-width=’1.5’ fill=’none’ stroke-linecap=’round’/%3E%3C/svg%3E”); background-repeat: no-repeat; background-position: right 16px center; padding-right: 40px; }
 .form-divider { height: 1px; background: rgba(212,160,23,0.25); margin: 8px 0; }
@@ -172,7 +172,7 @@ img { max-width: 100%; height: auto; display: block; }
       </button>
     </div>
   <div class="lang-switcher" style="position: absolute; right: 3rem;">
-    <a href="/es/heritage-book.html" style="color: #FAF3E6; text-decoration: none; font-size: 0.9rem; display: inline-block; padding: 8px 12px; border: 1px solid rgba(250,243,230,0.3); border-radius: 4px; transition: all 0.2s;"><strong>English</strong> | <span style="color: #D4AF37;">Español</span></a>
+    <a href="/es/heritage-book.html" style="color: #F5F5F5; text-decoration: none; font-size: 0.9rem; display: inline-block; padding: 8px 12px; border: 1px solid rgba(224,224,224,0.3); border-radius: 4px; transition: all 0.2s;"><strong>English</strong> | <span style="color: #E0E0E0;">Español</span></a>
   </div>
 </nav>
 
@@ -194,7 +194,7 @@ img { max-width: 100%; height: auto; display: block; }
 
 <div class="gold-rule"></div>
 
-<section class="what-section" style="background-color: #FAF3E6;">
+<section class="what-section" style="background-color:#1A1A1A;">
   <div class="what-inner">
     <h2>What You're Getting</h2>
     <div class="includes-grid">
@@ -253,10 +253,10 @@ img { max-width: 100%; height: auto; display: block; }
 <div class="gold-rule"></div>
 
 <!-- PHOTO RESEARCH ADD-ON -->
-<section style="padding: 72px 48px; background: #FAF3E6;">
+<section style="padding: 72px 48px; background:#1A1A1A;">
   <div style="max-width: 860px; margin: 0 auto;">
     <h2 style="font-family:var(--cinzel);font-size:clamp(1.4rem,3vw,2rem);font-weight:700;color:#722F37;margin-bottom:8px;">Enhance Your Book</h2>
-    <h3 style="font-family:var(--cinzel);font-size:1.3rem;font-weight:700;color:#D4AF37;margin-bottom:16px;">Photo Research Add-On — $150</h3>
+    <h3 style="font-family:var(--cinzel);font-size:1.3rem;font-weight:700;color:#E0E0E0;margin-bottom:16px;">Photo Research Add-On — $150</h3>
     <p style="font-size:0.95rem;color:var(--body);line-height:1.85;max-width:700px;margin-bottom:16px;">Can't find family photos? We search for them.</p>
     <p style="font-size:0.95rem;color:var(--body);line-height:1.85;max-width:700px;margin-bottom:16px;">We dig through historical archives, regional newspapers, church photo collections, and immigration records with attached photographs.</p>
     <p style="font-size:0.95rem;color:var(--body);line-height:1.85;max-width:700px;margin-bottom:24px;">We also search public domain collections to find images connected to your family's time, place, and story.</p>
@@ -277,7 +277,7 @@ img { max-width: 100%; height: auto; display: block; }
 <div class="gold-rule"></div>
 
 <!-- HOW WE PRINT -->
-<section style="padding: 72px 48px; background: #FAF3E6;">
+<section style="padding: 72px 48px; background:#1A1A1A;">
   <div style="max-width: 860px; margin: 0 auto;">
     <h2 style="font-family:var(--cinzel);font-size:clamp(1.4rem,3vw,2rem);font-weight:700;color:#722F37;margin-bottom:32px;">How We Print Your Book</h2>
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px;margin-bottom:32px;">
@@ -294,7 +294,7 @@ img { max-width: 100%; height: auto; display: block; }
         <p style="font-size:0.9rem;color:var(--body);line-height:1.7;"><strong>Research: 1-2 weeks</strong> • <strong>Writing & Design: 1-2 weeks</strong> • <strong>Printing & Delivery: 2-3 weeks</strong> • <strong>Total: 4-6 weeks</strong></p>
       </div>
     </div>
-    <div style="background:rgba(42,42,42,0.1);border-left:4px solid #D4AF37;padding:24px;margin-bottom:0;">
+    <div style="background:rgba(42,42,42,0.1);border-left:4px solid #E0E0E0;padding:24px;margin-bottom:0;">
       <p style="font-size:0.95rem;color:var(--body);line-height:1.85;margin:0;"><strong>You approve everything before we print.</strong> No surprises. No hidden costs. Once you sign off on the final design, your book goes into production immediately.</p>
     </div>
   </div>
@@ -332,17 +332,17 @@ img { max-width: 100%; height: auto; display: block; }
   <div style="max-width: 1000px; margin: 0 auto;">
     <h2 style="font-family:var(--cinzel);font-size:clamp(1.4rem,3vw,2rem);font-weight:700;color:#722F37;margin-bottom:32px;text-align:center;">Preserve More Stories</h2>
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem;">
-      <div style="background:#FFF;padding:28px;border:1px solid rgba(212,160,23,0.2);text-align:center;">
+      <div style="background:#232323;padding:28px;border:1px solid rgba(212,160,23,0.2);text-align:center;">
         <div style="font-size:1.4rem;margin-bottom:12px;"></div>
         <h3 style="font-family:var(--cinzel);font-size:1.2rem;color:#722F37;margin-bottom:12px;"><strong>Morning Memories</strong></h3>
-        <p style="font-size:0.9rem;color:#1C1C1C;margin-bottom:16px;line-height:1.6;"><strong>Capture aging parents' stories.</strong> Recipes, wisdom, voice recordings. $129</p>
-        <a href="morning-memories.html" style="display:inline-block;padding:10px 18px;background:#C0392B;color:#FAF3E6;text-decoration:none;font-size:0.85rem;font-weight:600;transition:all 0.2s;">Explore</a>
+        <p style="font-size:0.9rem;color:#F5F5F5;margin-bottom:16px;line-height:1.6;"><strong>Capture aging parents' stories.</strong> Recipes, wisdom, voice recordings. $129</p>
+        <a href="morning-memories.html" style="display:inline-block;padding:10px 18px;background:#C0392B;color:#F5F5F5;text-decoration:none;font-size:0.85rem;font-weight:600;transition:all 0.2s;">Explore</a>
       </div>
-      <div style="background:#FFF;padding:28px;border:1px solid rgba(212,160,23,0.2);text-align:center;">
+      <div style="background:#232323;padding:28px;border:1px solid rgba(212,160,23,0.2);text-align:center;">
         <div style="font-size:1.4rem;margin-bottom:12px;"></div>
         <h3 style="font-family:var(--cinzel);font-size:1.2rem;color:#722F37;margin-bottom:12px;"><strong>Baby Legacy</strong></h3>
-        <p style="font-size:0.9rem;color:#1C1C1C;margin-bottom:16px;line-height:1.6;"><strong>Preserve baby's first year.</strong> Birth story, milestones, memories. Unlocks at 18. $79</p>
-        <a href="baby-legacy.html" style="display:inline-block;padding:10px 18px;background:#C0392B;color:#FAF3E6;text-decoration:none;font-size:0.85rem;font-weight:600;transition:all 0.2s;">Explore</a>
+        <p style="font-size:0.9rem;color:#F5F5F5;margin-bottom:16px;line-height:1.6;"><strong>Preserve baby's first year.</strong> Birth story, milestones, memories. Unlocks at 18. $79</p>
+        <a href="baby-legacy.html" style="display:inline-block;padding:10px 18px;background:#C0392B;color:#F5F5F5;text-decoration:none;font-size:0.85rem;font-weight:600;transition:all 0.2s;">Explore</a>
       </div>
     </div>
   </div>
@@ -351,14 +351,14 @@ img { max-width: 100%; height: auto; display: block; }
 <div class="gold-rule"></div>
 
 <!-- YOUR LIFE TRAILER -->
-<section style="padding: 72px 48px; background: #FAF3E6;">
+<section style="padding: 72px 48px; background:#1A1A1A;">
   <div style="max-width: 860px; margin: 0 auto; text-align: center;">
     <h2 style="font-family:var(--cinzel);font-size:clamp(1.4rem,3vw,2rem);font-weight:700;color:#722F37;margin-bottom:16px;">Your Life Trailer — Coming Soon</h2>
     <p style="font-size:0.95rem;color:var(--body);line-height:1.85;max-width:700px;margin:0 auto 16px;">When your Heritage Book is complete, we produce a short cinematic trailer of your family's story. <strong>Photos, music from your culture guide, narration.</strong> Like a movie trailer — but for your family's life.</p>
     <p style="font-size:0.95rem;color:var(--body);line-height:1.85;max-width:700px;margin:0 auto 16px;">Share it. Post it. Play it at reunions. <strong>Something nobody has ever seen before.</strong></p>
     <form action="https://formspree.io/f/xzzpqjle" method="POST" style="display:inline-flex;gap:0.75rem;flex-wrap:wrap;justify-content:center;margin-top:24px;">
       <input type="hidden" name="_subject" value="Life Trailer Waitlist — Heritage Book">
-      <input type="email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" name="email" placeholder="Enter your email" required style="padding:12px 16px;border:1.5px solid rgba(212,160,23,0.4);background:#FAF3E6;font-family:var(--sans);font-size:0.95rem;min-width:220px;">
+      <input type="email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" name="email" placeholder="Enter your email" required style="padding:12px 16px;border:1.5px solid rgba(212,160,23,0.4);background:#1A1A1A;font-family:var(--sans);font-size:0.95rem;min-width:220px;">
       <button type="submit" class="btn btn-primary">Coming Soon — Notify Me</button>
     </form>
   </div>
@@ -367,17 +367,17 @@ img { max-width: 100%; height: auto; display: block; }
 <div class="gold-rule"></div>
 
 <!-- COMPARISON CHART -->
-<section style="padding: 72px 48px; background: #FAF3E6;">
+<section style="padding: 72px 48px; background:#1A1A1A;">
   <div style="max-width: 1000px; margin: 0 auto;">
     <h2 style="font-family:var(--cinzel);font-size:clamp(1.4rem,3vw,2rem);font-weight:700;color:#722F37;margin-bottom:32px;text-align:center;">Compare Our Legacy Books</h2>
     <div style="overflow-x: auto; margin-bottom: 36px;">
       <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem;">
         <thead>
-          <tr style="background: rgba(192,57,43,0.1); border-bottom: 2px solid #D4AF37;">
+          <tr style="background: rgba(192,57,43,0.1); border-bottom: 2px solid #E0E0E0;">
             <th style="padding: 16px; text-align: left; color: #722F37; font-weight: 700;">Feature</th>
-            <th style="padding: 16px; text-align: center; color: #722F37; font-weight: 700;">Heritage Book<br><span style="font-size: 1.4rem; color: #D4AF37;">$199</span></th>
-            <th style="padding: 16px; text-align: center; color: #722F37; font-weight: 700;">Morning Memories<br><span style="font-size: 1.4rem; color: #D4AF37;">$129</span></th>
-            <th style="padding: 16px; text-align: center; color: #722F37; font-weight: 700;">Alzheimer Book<br><span style="font-size: 1.4rem; color: #D4AF37;">$199</span></th>
+            <th style="padding: 16px; text-align: center; color: #722F37; font-weight: 700;">Heritage Book<br><span style="font-size: 1.4rem; color: #E0E0E0;">$199</span></th>
+            <th style="padding: 16px; text-align: center; color: #722F37; font-weight: 700;">Morning Memories<br><span style="font-size: 1.4rem; color: #E0E0E0;">$129</span></th>
+            <th style="padding: 16px; text-align: center; color: #722F37; font-weight: 700;">Alzheimer Book<br><span style="font-size: 1.4rem; color: #E0E0E0;">$199</span></th>
           </tr>
         </thead>
         <tbody>
@@ -431,9 +431,9 @@ img { max-width: 100%; height: auto; display: block; }
           </tr>
           <tr>
             <td style="padding: 14px 16px;"><strong>Best For</strong></td>
-            <td style="padding: 14px 16px; text-align: center; color: #D4AF37; font-weight: 600;">Understanding<br>your roots</td>
-            <td style="padding: 14px 16px; text-align: center; color: #D4AF37; font-weight: 600;">Capturing<br>parents' stories</td>
-            <td style="padding: 14px 16px; text-align: center; color: #D4AF37; font-weight: 600;">Caregiving<br>& connection</td>
+            <td style="padding: 14px 16px; text-align: center; color: #E0E0E0; font-weight: 600;">Understanding<br>your roots</td>
+            <td style="padding: 14px 16px; text-align: center; color: #E0E0E0; font-weight: 600;">Capturing<br>parents' stories</td>
+            <td style="padding: 14px 16px; text-align: center; color: #E0E0E0; font-weight: 600;">Caregiving<br>& connection</td>
           </tr>
         </tbody>
       </table>
@@ -447,47 +447,47 @@ img { max-width: 100%; height: auto; display: block; }
 <div class="gold-rule"></div>
 
 <!-- SEE REAL EXAMPLES CAROUSEL -->
-<section style="padding: 72px 48px; background: #FAF3E6;">
+<section style="padding: 72px 48px; background:#1A1A1A;">
   <div style="max-width: 1000px; margin: 0 auto;">
     <h2 style="font-family:var(--cinzel);font-size:clamp(1.4rem,3vw,2rem);font-weight:700;color:#722F37;margin-bottom:8px;text-align:center;">See Real Examples</h2>
     <p style="font-size:0.95rem;color:var(--body);line-height:1.85;text-align:center;margin-bottom:36px;max-width:700px;margin-left:auto;margin-right:auto;">Real families who preserved their heritage. Here's what they created with us.</p>
 
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
       <!-- Example 1: Deborah Mahony -->
-      <div style="background: #FFF;  overflow: hidden; box-shadow: 0 4px 16px rgba(26, 107, 92, 0.08); transition: all 0.3s ease;">
-        <div style="background:#2A2A2A; height: 180px; display: flex; flex-direction:column; align-items: center; justify-content: center; gap:6px;"><span style="color:#D4AF37;font-family:'Montserrat',sans-serif;font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;">HERITAGE BOOK</span><span style="color:#FAF3E6;font-family:'Montserrat',sans-serif;font-size:1rem;font-weight:700;">Mahony-Vázquez Story</span></div>
+      <div style="background:#232323;  overflow: hidden; box-shadow: 0 4px 16px rgba(26, 107, 92, 0.08); transition: all 0.3s ease;">
+        <div style="background:#2A2A2A; height: 180px; display: flex; flex-direction:column; align-items: center; justify-content: center; gap:6px;"><span style="color:#E0E0E0;font-family:'Montserrat',sans-serif;font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;">HERITAGE BOOK</span><span style="color:#F5F5F5;font-family:'Montserrat',sans-serif;font-size:1rem;font-weight:700;">Mahony-Vázquez Story</span></div>
         <div style="padding: 24px;">
-          <div style="font-family:var(--cinzel);font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:#D4AF37;font-weight:600;margin-bottom:8px;">Heritage Book</div>
+          <div style="font-family:var(--cinzel);font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:#E0E0E0;font-weight:600;margin-bottom:8px;">Heritage Book</div>
           <h3 style="font-family:var(--cinzel);font-size:1.2rem;color:#722F37;margin-bottom:12px;">Mahony-Vázquez Story</h3>
-          <p style="font-size:0.9rem;color:#1C1C1C;font-style:italic;margin-bottom:16px;line-height:1.6;">"My kids will know where they came from. Three generations preserved forever."</p>
+          <p style="font-size:0.9rem;color:#F5F5F5;font-style:italic;margin-bottom:16px;line-height:1.6;">"My kids will know where they came from. Three generations preserved forever."</p>
           <div style="display: flex; flex-direction: column; gap: 8px;">
-            <a href="deborah-mahony-profile.html" style="display:inline-block;padding:10px 14px;background:#C0392B;color:#FAF3E6;text-decoration:none;font-size:0.85rem;font-weight:600;text-align:center;transition:all 0.2s;">View Profile</a>
+            <a href="deborah-mahony-profile.html" style="display:inline-block;padding:10px 14px;background:#C0392B;color:#F5F5F5;text-decoration:none;font-size:0.85rem;font-weight:600;text-align:center;transition:all 0.2s;">View Profile</a>
           </div>
         </div>
       </div>
 
       <!-- Example 2: Vázquez Family -->
-      <div style="background: #FFF;  overflow: hidden; box-shadow: 0 4px 16px rgba(26, 107, 92, 0.08); transition: all 0.3s ease;">
-        <div style="background:#2A2A2A; height: 180px; display: flex; flex-direction:column; align-items: center; justify-content: center; gap:6px;"><span style="color:#D4AF37;font-family:'Montserrat',sans-serif;font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;">HERITAGE + PROFILES</span><span style="color:#FAF3E6;font-family:'Montserrat',sans-serif;font-size:1rem;font-weight:700;">Vázquez Family Heritage</span></div>
+      <div style="background:#232323;  overflow: hidden; box-shadow: 0 4px 16px rgba(26, 107, 92, 0.08); transition: all 0.3s ease;">
+        <div style="background:#2A2A2A; height: 180px; display: flex; flex-direction:column; align-items: center; justify-content: center; gap:6px;"><span style="color:#E0E0E0;font-family:'Montserrat',sans-serif;font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;">HERITAGE + PROFILES</span><span style="color:#F5F5F5;font-family:'Montserrat',sans-serif;font-size:1rem;font-weight:700;">Vázquez Family Heritage</span></div>
         <div style="padding: 24px;">
-          <div style="font-family:var(--cinzel);font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:#D4AF37;font-weight:600;margin-bottom:8px;">Heritage + Profiles</div>
+          <div style="font-family:var(--cinzel);font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:#E0E0E0;font-weight:600;margin-bottom:8px;">Heritage + Profiles</div>
           <h3 style="font-family:var(--cinzel);font-size:1.2rem;color:#722F37;margin-bottom:12px;">Vázquez Family Heritage</h3>
-          <p style="font-size:0.9rem;color:#1C1C1C;font-style:italic;margin-bottom:16px;line-height:1.6;">"Three generations, one permanent story. Everything connected forever."</p>
+          <p style="font-size:0.9rem;color:#F5F5F5;font-style:italic;margin-bottom:16px;line-height:1.6;">"Three generations, one permanent story. Everything connected forever."</p>
           <div style="display: flex; flex-direction: column; gap: 8px;">
-            <a href="vazquez-profile.html" style="display:inline-block;padding:10px 14px;background:#C0392B;color:#FAF3E6;text-decoration:none;font-size:0.85rem;font-weight:600;text-align:center;transition:all 0.2s;">View Profile</a>
+            <a href="vazquez-profile.html" style="display:inline-block;padding:10px 14px;background:#C0392B;color:#F5F5F5;text-decoration:none;font-size:0.85rem;font-weight:600;text-align:center;transition:all 0.2s;">View Profile</a>
           </div>
         </div>
       </div>
 
       <!-- Example 3: Nick McNeal -->
-      <div style="background: #FFF;  overflow: hidden; box-shadow: 0 4px 16px rgba(26, 107, 92, 0.08); transition: all 0.3s ease;">
-        <div style="background:#2A2A2A; height: 180px; display: flex; flex-direction:column; align-items: center; justify-content: center; gap:6px;"><span style="color:#D4AF37;font-family:'Montserrat',sans-serif;font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;">BUSINESS + HERITAGE</span><span style="color:#FAF3E6;font-family:'Montserrat',sans-serif;font-size:1rem;font-weight:700;">McNeal Construction Story</span></div>
+      <div style="background:#232323;  overflow: hidden; box-shadow: 0 4px 16px rgba(26, 107, 92, 0.08); transition: all 0.3s ease;">
+        <div style="background:#2A2A2A; height: 180px; display: flex; flex-direction:column; align-items: center; justify-content: center; gap:6px;"><span style="color:#E0E0E0;font-family:'Montserrat',sans-serif;font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;">BUSINESS + HERITAGE</span><span style="color:#F5F5F5;font-family:'Montserrat',sans-serif;font-size:1rem;font-weight:700;">McNeal Construction Story</span></div>
         <div style="padding: 24px;">
-          <div style="font-family:var(--cinzel);font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:#D4AF37;font-weight:600;margin-bottom:8px;">Business + Heritage</div>
+          <div style="font-family:var(--cinzel);font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:#E0E0E0;font-weight:600;margin-bottom:8px;">Business + Heritage</div>
           <h3 style="font-family:var(--cinzel);font-size:1.2rem;color:#722F37;margin-bottom:12px;">McNeal Construction Story</h3>
-          <p style="font-size:0.9rem;color:#1C1C1C;font-style:italic;margin-bottom:16px;line-height:1.6;">"My business story, permanently documented. This is what I built."</p>
+          <p style="font-size:0.9rem;color:#F5F5F5;font-style:italic;margin-bottom:16px;line-height:1.6;">"My business story, permanently documented. This is what I built."</p>
           <div style="display: flex; flex-direction: column; gap: 8px;">
-            <a href="mcneal-construction-profile.html" style="display:inline-block;padding:10px 14px;background:#C0392B;color:#FAF3E6;text-decoration:none;font-size:0.85rem;font-weight:600;text-align:center;transition:all 0.2s;">View Profile</a>
+            <a href="mcneal-construction-profile.html" style="display:inline-block;padding:10px 14px;background:#C0392B;color:#F5F5F5;text-decoration:none;font-size:0.85rem;font-weight:600;text-align:center;transition:all 0.2s;">View Profile</a>
           </div>
         </div>
       </div>
@@ -496,63 +496,63 @@ img { max-width: 100%; height: auto; display: block; }
 </section>
 
 <!-- FEATURES COMPARISON TABLE -->
-<section style="background-color: #FAF3E6; padding: 72px 48px;">
+<section style="background-color:#1A1A1A; padding: 72px 48px;">
   <div style="max-width: 1000px; margin: 0 auto;">
     <h2 style="font-family:var(--cinzel);font-size:clamp(1.4rem,3vw,2rem);font-weight:700;color:#722F37;margin-bottom:8px;text-align:center;">What's Included</h2>
     <p style="font-size:0.95rem;color:var(--body);line-height:1.85;text-align:center;margin-bottom:36px;max-width:700px;margin-left:auto;margin-right:auto;">Everything you get in your Heritage Culture Book — plus optional add-ons to enhance your family's story.</p>
 
     <div style="overflow-x: auto;">
-      <table style="width: 100%; border-collapse: collapse; background: #FFF;  overflow: hidden; box-shadow: 0 4px 16px rgba(26, 107, 92, 0.08);">
+      <table style="width: 100%; border-collapse: collapse; background:#232323;  overflow: hidden; box-shadow: 0 4px 16px rgba(26, 107, 92, 0.08);">
         <thead>
-          <tr style="background: linear-gradient(135deg, #722F37 0%, #2A2A2A 100%); color: #FAF3E6;">
-            <th style="padding: 16px; text-align: left; font-weight: 600; border-bottom: 2px solid #D4AF37;">Feature</th>
-            <th style="padding: 16px; text-align: center; font-weight: 600; border-bottom: 2px solid #D4AF37;">Base Book<br>$199</th>
-            <th style="padding: 16px; text-align: center; font-weight: 600; border-bottom: 2px solid #D4AF37;">+ Photo Research<br>+$150</th>
-            <th style="padding: 16px; text-align: center; font-weight: 600; border-bottom: 2px solid #D4AF37;">+ Oral History<br>+$299</th>
+          <tr style="background: linear-gradient(135deg, #722F37 0%, #2A2A2A 100%); color: #F5F5F5;">
+            <th style="padding: 16px; text-align: left; font-weight: 600; border-bottom: 2px solid #E0E0E0;">Feature</th>
+            <th style="padding: 16px; text-align: center; font-weight: 600; border-bottom: 2px solid #E0E0E0;">Base Book<br>$199</th>
+            <th style="padding: 16px; text-align: center; font-weight: 600; border-bottom: 2px solid #E0E0E0;">+ Photo Research<br>+$150</th>
+            <th style="padding: 16px; text-align: center; font-weight: 600; border-bottom: 2px solid #E0E0E0;">+ Oral History<br>+$299</th>
           </tr>
         </thead>
         <tbody>
           <tr style="border-bottom: 1px solid rgba(26, 107, 92, 0.1);">
-            <td style="padding: 16px; color: #2A2A2A; font-weight: 600;">Narrative Story</td>
+            <td style="padding: 16px; color:#F5F5F5; font-weight: 600;">Narrative Story</td>
             <td style="padding: 16px; text-align: center;"></td>
             <td style="padding: 16px; text-align: center;"></td>
             <td style="padding: 16px; text-align: center;"></td>
           </tr>
           <tr style="border-bottom: 1px solid rgba(26, 107, 92, 0.1);">
-            <td style="padding: 16px; color: #2A2A2A; font-weight: 600;">Family Photos Organized</td>
+            <td style="padding: 16px; color:#F5F5F5; font-weight: 600;">Family Photos Organized</td>
             <td style="padding: 16px; text-align: center;"></td>
             <td style="padding: 16px; text-align: center;"></td>
             <td style="padding: 16px; text-align: center;"></td>
           </tr>
           <tr style="border-bottom: 1px solid rgba(26, 107, 92, 0.1);">
-            <td style="padding: 16px; color: #2A2A2A; font-weight: 600;">Culture Guide (Music, Food, Traditions)</td>
+            <td style="padding: 16px; color:#F5F5F5; font-weight: 600;">Culture Guide (Music, Food, Traditions)</td>
             <td style="padding: 16px; text-align: center;"></td>
             <td style="padding: 16px; text-align: center;"></td>
             <td style="padding: 16px; text-align: center;"></td>
           </tr>
           <tr style="border-bottom: 1px solid rgba(26, 107, 92, 0.1);">
-            <td style="padding: 16px; color: #2A2A2A; font-weight: 600;">Digital Profile (mylegacycontinues.com)</td>
+            <td style="padding: 16px; color:#F5F5F5; font-weight: 600;">Digital Profile (mylegacycontinues.com)</td>
             <td style="padding: 16px; text-align: center;"></td>
             <td style="padding: 16px; text-align: center;"></td>
             <td style="padding: 16px; text-align: center;"></td>
           </tr>
           <tr style="border-bottom: 1px solid rgba(26, 107, 92, 0.1);">
-            <td style="padding: 16px; color: #2A2A2A; font-weight: 600;">Physical Printed Book</td>
+            <td style="padding: 16px; color:#F5F5F5; font-weight: 600;">Physical Printed Book</td>
             <td style="padding: 16px; text-align: center;"></td>
             <td style="padding: 16px; text-align: center;"></td>
             <td style="padding: 16px; text-align: center;"></td>
           </tr>
           <tr style="border-bottom: 1px solid rgba(26, 107, 92, 0.1); background: rgba(212,160,23,0.05);">
-            <td style="padding: 16px; color: #2A2A2A; font-weight: 600;">Historical Photo Research</td>
+            <td style="padding: 16px; color:#F5F5F5; font-weight: 600;">Historical Photo Research</td>
             <td style="padding: 16px; text-align: center;">—</td>
-            <td style="padding: 16px; text-align: center; color: #D4AF37; font-weight: 600;"></td>
-            <td style="padding: 16px; text-align: center; color: #D4AF37; font-weight: 600;"></td>
+            <td style="padding: 16px; text-align: center; color: #E0E0E0; font-weight: 600;"></td>
+            <td style="padding: 16px; text-align: center; color: #E0E0E0; font-weight: 600;"></td>
           </tr>
           <tr style="background: rgba(212,160,23,0.05);">
-            <td style="padding: 16px; color: #2A2A2A; font-weight: 600;">Recorded Voice & Stories (Interview)</td>
+            <td style="padding: 16px; color:#F5F5F5; font-weight: 600;">Recorded Voice & Stories (Interview)</td>
             <td style="padding: 16px; text-align: center;">—</td>
             <td style="padding: 16px; text-align: center;">—</td>
-            <td style="padding: 16px; text-align: center; color: #D4AF37; font-weight: 600;"></td>
+            <td style="padding: 16px; text-align: center; color: #E0E0E0; font-weight: 600;"></td>
           </tr>
         </tbody>
       </table>
@@ -564,30 +564,30 @@ img { max-width: 100%; height: auto; display: block; }
 <!-- WHAT MAKES US DIFFERENT -->
 <section style="padding: 72px 48px; background: #2A2A2A;">
   <div style="max-width: 860px; margin: 0 auto;">
-    <h2 style="font-family:var(--cinzel);font-size:clamp(1.4rem,3vw,2rem);font-weight:700;color:#D4AF37;margin-bottom:28px;">What Makes Us Different</h2>
+    <h2 style="font-family:var(--cinzel);font-size:clamp(1.4rem,3vw,2rem);font-weight:700;color:#E0E0E0;margin-bottom:28px;">What Makes Us Different</h2>
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;">
       <div style="background:rgba(212,160,23,0.08);border:1px solid rgba(212,160,23,0.25);padding:22px 20px;">
-        <div style="font-family:var(--cinzel);font-size:0.95rem;font-weight:700;color:#D4AF37;margin-bottom:8px;"><strong>We Write Your Story — Not a Chart</strong></div>
-        <div style="font-size:0.88rem;color:rgba(250,243,230,0.8);line-height:1.7;">Competitors give you a PDF of names and dates. <strong>We write a real narrative</strong> your family will actually read.</div>
+        <div style="font-family:var(--cinzel);font-size:0.95rem;font-weight:700;color:#E0E0E0;margin-bottom:8px;"><strong>We Write Your Story — Not a Chart</strong></div>
+        <div style="font-size:0.88rem;color:rgba(224,224,224,0.8);line-height:1.7;">Competitors give you a PDF of names and dates. <strong>We write a real narrative</strong> your family will actually read.</div>
       </div>
       <div style="background:rgba(212,160,23,0.08);border:1px solid rgba(212,160,23,0.25);padding:22px 20px;">
-        <div style="font-family:var(--cinzel);font-size:0.95rem;font-weight:700;color:#D4AF37;margin-bottom:8px;">Culture Guide Included</div>
-        <div style="font-size:0.88rem;color:rgba(250,243,230,0.8);line-height:1.7;"><strong>Nobody else includes the culture.</strong> Your regional music, food, traditions.</div>
+        <div style="font-family:var(--cinzel);font-size:0.95rem;font-weight:700;color:#E0E0E0;margin-bottom:8px;">Culture Guide Included</div>
+        <div style="font-size:0.88rem;color:rgba(224,224,224,0.8);line-height:1.7;"><strong>Nobody else includes the culture.</strong> Your regional music, food, traditions.</div>
       </div>
       <div style="background:rgba(212,160,23,0.08);border:1px solid rgba(212,160,23,0.25);padding:22px 20px;">
-        <div style="font-family:var(--cinzel);font-size:0.95rem;font-weight:700;color:#D4AF37;margin-bottom:8px;">Everything Stays Connected</div>
-        <div style="font-size:0.88rem;color:rgba(250,243,230,0.8);line-height:1.7;"><strong>Everything connects.</strong> Your book links to family profiles, memorials, pet tags, business stories. One family. One home.</div>
+        <div style="font-family:var(--cinzel);font-size:0.95rem;font-weight:700;color:#E0E0E0;margin-bottom:8px;">Everything Stays Connected</div>
+        <div style="font-size:0.88rem;color:rgba(224,224,224,0.8);line-height:1.7;"><strong>Everything connects.</strong> Your book links to family profiles, memorials, pet tags, business stories. One family. One home.</div>
       </div>
     </div>
   </div>
 </section>
 <div class="gold-rule"></div>
-<section class="order-section" id="order" style="background-color: #FAF3E6;">
+<section class="order-section" id="order" style="background-color:#1A1A1A;">
   <div class="order-inner">
     <div style="padding-top:56px; margin-bottom:36px; text-align:center;">
       <h2 style="font-family:var(--cinzel);font-size:clamp(1.4rem,3vw,2rem);font-weight:700;color: var(--heading);margin-bottom:12px;">Start My Heritage Book</h2>
       <p style="font-size:0.9rem;color:var(--text-muted);max-width:580px;line-height:1.85;margin:0 auto 24px;">Pay first, then fill out the form. We'll reach out within 48 hours to confirm we have everything we need. Delivery is 3–4 weeks from when we receive your information.</p>
-      <button id="showOrderForm" onclick="toggleOrderForm()" style="background:#C0392B;color:#FAF3E6;border:1.5px solid #D4AF37;padding:16px 34px;font-family:var(--cinzel);font-size:0.72rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;cursor:pointer;transition:all 0.22s ease;min-height:44px;margin-bottom:24px;">Get Started</button>
+      <button id="showOrderForm" onclick="toggleOrderForm()" style="background:#C0392B;color:#F5F5F5;border:1.5px solid #E0E0E0;padding:16px 34px;font-family:var(--cinzel);font-size:0.72rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;cursor:pointer;transition:all 0.22s ease;min-height:44px;margin-bottom:24px;">Get Started</button>
     </div>
 
 <div id="orderFormWrap" style="display:none;">
@@ -733,14 +733,14 @@ img { max-width: 100%; height: auto; display: block; }
 
   <!-- UPSELLS SECTION -->
   <div style="margin-bottom: 28px; padding: 24px; background: rgba(212,160,23,0.08); border: 1px solid rgba(212,160,23,0.2); ">
-    <h3 style="font-family: var(--cinzel); font-size: 0.9rem; font-weight: 700; color: #2A2A2A; margin-bottom: 16px; letter-spacing: 0.1em; text-transform: uppercase;">Enhance Your Legacy (Optional)</h3>
+    <h3 style="font-family: var(--cinzel); font-size: 0.9rem; font-weight: 700; color:#F5F5F5; margin-bottom: 16px; letter-spacing: 0.1em; text-transform: uppercase;">Enhance Your Legacy (Optional)</h3>
 
     <div style="margin-bottom: 16px;">
       <label style="display: flex; align-items: flex-start; gap: 12px; cursor: pointer;">
         <input type="checkbox" name="photo_research" value="yes" style="margin-top: 4px; cursor: pointer;" />
         <div>
-          <strong style="color: #2A2A2A; display: block; margin-bottom: 4px;"> Photo Research Add-On</strong>
-          <span style="font-size: 0.85rem; color: #1C1C1C;">We search archives, newspapers, and historical collections for family photos. +$150</span>
+          <strong style="color:#F5F5F5; display: block; margin-bottom: 4px;"> Photo Research Add-On</strong>
+          <span style="font-size: 0.85rem; color:#F5F5F5;">We search archives, newspapers, and historical collections for family photos. +$150</span>
         </div>
       </label>
     </div>
@@ -749,8 +749,8 @@ img { max-width: 100%; height: auto; display: block; }
       <label style="display: flex; align-items: flex-start; gap: 12px; cursor: pointer;">
         <input type="checkbox" name="oral_history" value="yes" style="margin-top: 4px; cursor: pointer;" />
         <div>
-          <strong style="color: #2A2A2A; display: block; margin-bottom: 4px;"> Oral History Interview</strong>
-          <span style="font-size: 0.85rem; color: #1C1C1C;">Professional recording session + transcription + digital + physical copy. +$299</span>
+          <strong style="color:#F5F5F5; display: block; margin-bottom: 4px;"> Oral History Interview</strong>
+          <span style="font-size: 0.85rem; color:#F5F5F5;">Professional recording session + transcription + digital + physical copy. +$299</span>
         </div>
       </label>
     </div>
@@ -759,8 +759,8 @@ img { max-width: 100%; height: auto; display: block; }
       <label style="display: flex; align-items: flex-start; gap: 12px; cursor: pointer;">
         <input type="checkbox" name="expedited_delivery" value="yes" style="margin-top: 4px; cursor: pointer;" />
         <div>
-          <strong style="color: #2A2A2A; display: block; margin-bottom: 4px;"> Expedited Delivery</strong>
-          <span style="font-size: 0.85rem; color: #1C1C1C;">5 business days instead of 14 days. +$50</span>
+          <strong style="color:#F5F5F5; display: block; margin-bottom: 4px;"> Expedited Delivery</strong>
+          <span style="font-size: 0.85rem; color:#F5F5F5;">5 business days instead of 14 days. +$50</span>
         </div>
       </label>
     </div>
@@ -779,8 +779,8 @@ img { max-width: 100%; height: auto; display: block; }
   <button
     type="submit"
     style="
-      background: #D4AF37;
-      color: #FAF3E6;
+      background: #E0E0E0;
+      color: #F5F5F5;
       padding: 14px 32px;
       border: none;
       font-size: 16px;
@@ -802,7 +802,7 @@ img { max-width: 100%; height: auto; display: block; }
 </section>
 
 <div style="background: rgba(212,160,23,0.08); padding: 2rem 3rem; text-align: center;">
-  <p style="font-size: 0.95rem; color: #2A2A2A; font-weight: 500;">One-time payment. No recurring fees. Your memories stay online forever.</p>
+  <p style="font-size: 0.95rem; color:#F5F5F5; font-weight: 500;">One-time payment. No recurring fees. Your memories stay online forever.</p>
 </div>
 
 <!-- PHOTO RESEARCH ADD-ON (CTA) -->
@@ -836,7 +836,7 @@ img { max-width: 100%; height: auto; display: block; }
 <section class="section-cream fade-in">
   <div class="section-inner text-center" style="max-width: 700px; margin: 0 auto;">
     <h2>Memory Preservation Book — Coming Soon</h2>
-    <p style="font-family: var(--font-emotion); font-style: italic; font-size: 1.15rem; margin-top: 1rem; color: #D4AF37;">For families watching someone they love begin to fade.</p>
+    <p style="font-family: var(--font-emotion); font-style: italic; font-size: 1.15rem; margin-top: 1rem; color: #E0E0E0;">For families watching someone they love begin to fade.</p>
     <p style="margin-top: 1.5rem;">This book captures who they are right now — their stories, their voice, their personality — before memory loss takes it. Not a medical record. A portrait of a person at their fullest, preserved permanently so the people who love them never lose who they really were. One-time. Permanent.</p>
     <a href="contact.html" class="btn btn-gold" style="margin-top: 2rem;">Join the Waitlist</a>
   </div>
@@ -847,7 +847,7 @@ img { max-width: 100%; height: auto; display: block; }
   <div class="section-inner text-center" style="max-width: 700px; margin: 0 auto;">
     <h2>Your Legacy, Your Control</h2>
     <p style="margin-top: 1.5rem;">Your profile never gets locked. Add photos, update the story, change contacts, add milestones — anytime. Email contact@mylegacycontinues.com and we make changes within 48 hours. No extra charge. Ever.</p>
-    <h3 style="margin-top: 2.5rem; color: #D4AF37;">Family Portal — In Development. Your family's complete history in one place.</h3>
+    <h3 style="margin-top: 2.5rem; color: #E0E0E0;">Family Portal — In Development. Your family's complete history in one place.</h3>
     <p style="margin-top: 1rem;">Your own private dashboard. Log in, add photos, update your story, leave messages for future generations. No waiting on us. Launching 2026.</p>
   </div>
 </section>
