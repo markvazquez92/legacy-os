@@ -19,18 +19,10 @@
     [225, 172, 22],
     [205, 142, 12]
   ];
-  var TEAL = [
-    [42, 198, 140],
-    [28, 175, 118]
-  ];
-
   // ── Flake generation helpers ──
 
   function pickColor() {
-    if (Math.random() < 0.88) {
-      return GOLD[Math.floor(Math.random() * GOLD.length)];
-    }
-    return TEAL[Math.floor(Math.random() * TEAL.length)];
+    return GOLD[Math.floor(Math.random() * GOLD.length)];
   }
 
   function rand(min, max) {
