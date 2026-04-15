@@ -7,6 +7,8 @@
   <title>Mark "Bear" Vazquez &mdash; Heritage Profile | My Legacy Continues</title>
   <meta name="description" content="Heritage profile of Mark 'Bear' Vazquez &mdash; Santa Maria, California. Galicia to Mexico City to the Central Coast. Preserved permanently by My Legacy Continues."/>
   <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;900&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap">
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;700&family=Montserrat:wght@300;400;500;600&family=Staatliches&display=swap');
 
@@ -864,6 +866,313 @@
       .lr-hero h1{ letter-spacing:0.08em; }
       .lr-tab{ padding:12px 14px; font-size:11px; }
     }
+
+/* ===== CANDY PAINT & CHROME — PALETTE LOCK ===== */
+:root {
+  --charcoal: #1A1A1A;
+  --charcoal-2: #1A1A1A;
+  --brandywine: #C8420A;
+  --brandywine-deep: #8F2F07;
+  --chrome: #D4AF37;
+  --chrome-dim: #C9BFA0;
+  --soft-white: #FAF3E6;
+}
+
+.lr-portrait,
+[class^="lr-"] [style*="inset 2px 2px 5px rgba(255,255,255"],
+.lr-hero { box-shadow: none !important; }
+
+.lr-portrait { background: #0f0f0f; border-color: #D4AF37 !important; }
+
+.lr-btn:active, .lr-cta:active, button:active { color: #FAF3E6 !important; }
+
+footer[style] { background: #1A1A1A !important; border-top: 1px solid #D4AF37 !important; }
+footer[style] .footer-contact[style],
+footer[style] .footer-copy[style] { color: #C9BFA0 !important; }
+
+[style*="rgba(224,224,224"] { border-color: rgba(212,175,55,0.35) !important; }
+
+/* ===== CANDY PAINT — FULL CLEAR COAT ===== */
+
+/* 1. BODY — deep brandywine radial fading to near-black, fixed paint */
+html {
+  background: #050505 !important;
+  min-height: 100%;
+}
+body {
+  background:
+    radial-gradient(circle 0.6px at 1px 1px, rgba(255,255,255,0.035) 50%, transparent 51%) 0 0 / 4px 4px,
+    radial-gradient(circle 0.5px at 2px 3px, rgba(212,175,55,0.025) 50%, transparent 51%) 0 0 / 5px 5px,
+    radial-gradient(ellipse at 50% 30%,
+      #4A0E0E 0%,
+      #2E0707 42%,
+      #130303 76%,
+      #050505 100%) !important;
+  background-attachment: fixed, fixed, fixed !important;
+  color: #FAF3E6 !important;
+  font-family: 'Lora', Georgia, 'Times New Roman', serif !important;
+  font-weight: 400 !important;
+  margin: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  overflow-x: hidden !important;
+  overflow-y: visible !important;
+  position: relative;
+}
+
+.metalflake {
+  background:
+    radial-gradient(circle 0.6px at 1px 1px, rgba(255,255,255,0.035) 50%, transparent 51%) 0 0 / 4px 4px,
+    linear-gradient(180deg, #4A0E0E 0%, #1A0303 100%) !important;
+}
+body::after { display: none !important; }
+
+/* 2. PORTRAIT — radial vignette fade into the paint, no box/frame */
+.lr-portrait {
+  width: clamp(260px, 36vw, 340px) !important;
+  height: clamp(260px, 36vw, 340px) !important;
+  aspect-ratio: 1 / 1 !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  background: transparent !important;
+  overflow: visible !important;
+  -webkit-mask-image: radial-gradient(circle closest-side at center, #000 0%, #000 48%, rgba(0,0,0,0.55) 75%, transparent 100%) !important;
+          mask-image: radial-gradient(circle closest-side at center, #000 0%, #000 48%, rgba(0,0,0,0.55) 75%, transparent 100%) !important;
+}
+.lr-portrait img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  display: block !important;
+  border-radius: 0 !important;
+}
+
+/* 3. CARDS + QUOTES — dark glass panels on the paint */
+.lr-hero,
+.lr-story-card,
+.lr-family-card,
+.lr-dv-card,
+.lr-facts,
+.lr-quote,
+.lr-hero-quote {
+  position: relative;
+  border: none !important;
+  border-radius: 14px;
+  background:
+    linear-gradient(160deg,
+      rgba(255,255,255,0.05) 0%,
+      rgba(255,255,255,0.01) 55%,
+      rgba(0,0,0,0.35) 100%),
+    rgba(20,6,6,0.78) !important;
+  backdrop-filter: saturate(1.2);
+  -webkit-backdrop-filter: saturate(1.2);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.08),
+    0 20px 44px -24px rgba(0,0,0,0.85) !important;
+  overflow: hidden;
+}
+.lr-hero {
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+/* 4. CHROME TRIM REMOVED — no gold borders on cards, quotes, or buttons */
+.lr-hero::before,
+.lr-story-card::before,
+.lr-family-card::before,
+.lr-dv-card::before,
+.lr-facts::before,
+.lr-quote::before,
+.lr-hero-quote::before,
+.lr-btn::before,
+.lr-cta::before { display: none !important; }
+
+/* 5. BUTTONS — Sunset Orange pill with soft warm halo */
+.lr-btn,
+.lr-cta {
+  position: relative;
+  border: none !important;
+  border-radius: 999px;
+  overflow: hidden;
+  background: #C8420A !important;
+  color: #FAF3E6 !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.22),
+    0 0 24px -2px rgba(200,66,10,0.45),
+    0 8px 20px -10px rgba(200,66,10,0.6) !important;
+  text-shadow: 0 1px 0 rgba(0,0,0,0.45);
+}
+.lr-btn:hover,
+.lr-cta:hover {
+  background: #8F2F07 !important;
+  color: #FAF3E6 !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.22),
+    0 0 32px -2px rgba(200,66,10,0.6),
+    0 10px 24px -10px rgba(200,66,10,0.75) !important;
+}
+
+.lr-hero > *,
+.lr-story-card > *,
+.lr-family-card > *,
+.lr-dv-card > *,
+.lr-facts > *,
+.lr-quote > *,
+.lr-hero-quote > * { position: relative; z-index: 1; }
+
+/* 6. TEXT — Cream on all body copy inside dark cards */
+body,
+.lr-subtitle,
+.lr-hero-quote, .lr-hero-quote *,
+.lr-content,
+.lr-content p,
+.lr-fact-value,
+.lr-family-name,
+.lr-family-sub,
+.lr-dv-stmt,
+.lr-quote, .lr-quote *,
+.lr-story-card p,
+.lr-story-card span,
+.lr-story-card em,
+.lr-story-card strong,
+.lr-story-card blockquote,
+.lr-story-card li,
+.lr-family-card p,
+.lr-family-card span,
+.lr-family-card em,
+.lr-family-card strong,
+.lr-family-card li,
+.lr-dv-card p,
+.lr-dv-card span,
+.lr-dv-card em,
+.lr-dv-card strong,
+.lr-dv-card blockquote,
+.lr-dv-card li { color: #FAF3E6 !important; }
+
+/* 7. HEADINGS — Warm Gold with depth shadow */
+.lr-eyebrow,
+.lr-content .lr-section-label,
+.lr-hero .lr-eyebrow,
+.lr-hero h1,
+.lr-content h2,
+.lr-content h3,
+.lr-story-card .lr-story-title,
+.lr-story-card h2,
+.lr-story-card h3,
+.lr-family-card .lr-family-label,
+.lr-family-card h2,
+.lr-family-card h3,
+.lr-dv-card .lr-dv-label,
+.lr-dv-card h2,
+.lr-dv-card h3,
+h1, h2, h3 {
+  color: #D4AF37 !important;
+  font-family: 'Cinzel', 'Playfair Display', Georgia, serif !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.04em !important;
+  text-shadow:
+    0 1px 0 rgba(255,240,200,0.28),
+    0 2px 0 rgba(0,0,0,0.55),
+    0 4px 8px rgba(0,0,0,0.6),
+    0 8px 22px rgba(0,0,0,0.4) !important;
+  -webkit-text-stroke: 0 !important;
+}
+.lr-hero h1 { font-weight: 700 !important; letter-spacing: 0.12rem !important; }
+h1 { font-weight: 700 !important; letter-spacing: 0.12rem !important; }
+
+/* Body copy, quotes, and stories in Lora */
+.lr-content, .lr-content p,
+.lr-subtitle,
+.lr-hero-quote, .lr-hero-quote *,
+.lr-quote, .lr-quote *,
+.lr-story-card p, .lr-story-card blockquote, .lr-story-card li,
+.lr-family-card p, .lr-family-card li,
+.lr-family-name, .lr-family-sub,
+.lr-dv-card p, .lr-dv-card blockquote, .lr-dv-card li,
+.lr-dv-stmt,
+.lr-fact-value {
+  font-family: 'Lora', Georgia, 'Times New Roman', serif !important;
+  font-weight: 400 !important;
+  letter-spacing: 0.005em !important;
+}
+.lr-hero-quote, .lr-quote { font-style: italic !important; font-size: 1.1rem !important; line-height: 1.75 !important; }
+.lr-family-name { font-weight: 600 !important; font-style: normal !important; }
+
+.lr-eyebrow, .lr-section-label, .lr-family-label, .lr-fact-label, .lr-dv-label, .lr-dv-hotline {
+  font-family: 'Oswald', sans-serif !important;
+}
+
+[style*="color:var(--brandywine)"],
+[style*="color: var(--brandywine)"] {
+  font-family: 'Cinzel', serif !important;
+  font-weight: 900 !important;
+  letter-spacing: 0.04em !important;
+}
+
+.lr-btn, .lr-cta {
+  font-family: 'Cinzel', 'Oswald', sans-serif !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.1em !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.25),
+    0 0 30px -2px rgba(200,66,10,0.55),
+    0 0 60px -10px rgba(200,66,10,0.4),
+    0 8px 20px -10px rgba(200,66,10,0.65) !important;
+}
+.lr-btn:hover, .lr-cta:hover {
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.25),
+    0 0 38px -2px rgba(200,66,10,0.7),
+    0 0 72px -10px rgba(200,66,10,0.5),
+    0 10px 24px -10px rgba(200,66,10,0.8) !important;
+}
+
+.lr-fact-label,
+.lr-dv-hotline { color: #D4AF37 !important; opacity: 0.78; }
+
+/* 8. LEFT-ACCENT STRIPES — gold removed */
+.lr-section-label,
+.lr-quote,
+.lr-hero-quote {
+  border-image: none !important;
+  border-left: 0 !important;
+  padding-left: 0 !important;
+}
+.lr-dv-stmt {
+  border-image: none !important;
+  border-left: 3px solid #C8420A !important;
+}
+
+/* 9. "SR." span — Sunset Orange with single-layer soft halo */
+[style*="color:var(--brandywine)"],
+[style*="color: var(--brandywine)"] {
+  color: #C8420A !important;
+  text-shadow: 0 0 10px rgba(200,66,10,0.6) !important;
+}
+
+/* 10. FOOTER — deep carbon, no gold top-line */
+footer[style] {
+  background: #0A0303 !important;
+  border-top: 0 !important;
+  color: #FAF3E6 !important;
+}
+footer[style] .footer-contact[style],
+footer[style] .footer-copy[style] { color: #D4AF37 !important; opacity: 0.82; }
+
+/* 11. All hairlines and dividers removed */
+[style*="rgba(224,224,224"] { border-color: transparent !important; }
+.lr-divider { border-top: 0 !important; margin: 32px 0 !important; }
+
+/* 12. NAVIGATION — dark glass over the paint */
+.site-nav {
+  background: rgba(10,10,10,0.55) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+}
+
+/* 13. Body paragraph line-height for readability */
+p { line-height: 1.6 !important; }
   </style>
 
   <!-- Google Analytics 4 -->
