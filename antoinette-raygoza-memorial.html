@@ -625,7 +625,8 @@ h1, h2, h3 {
     0 8px 22px rgba(0,0,0,0.4) !important;
   -webkit-text-stroke: 0 !important;
 }
-.lr-hero h1 { font-weight: 900 !important; letter-spacing: 0.06em !important; }
+.lr-hero h1 { font-weight: 900 !important; letter-spacing: 0.1em !important; }
+h1 { letter-spacing: 0.1em !important; }
 
 /* Body copy, quotes, and stories in Lora — the printed-book feel */
 .lr-content, .lr-content p,
@@ -693,14 +694,11 @@ h1, h2, h3 {
   border-left: 3px solid #C8420A !important;
 }
 
-/* 9. "SR." span — Sunset Orange with a soft warm halo (not neon) */
+/* 9. "SR." span — Sunset Orange with a single-layer soft halo */
 [style*="color:var(--brandywine)"],
 [style*="color: var(--brandywine)"] {
   color: #C8420A !important;
-  text-shadow:
-    0 0 12px rgba(200,66,10,0.5),
-    0 0 22px rgba(200,66,10,0.28),
-    0 1px 0 rgba(0,0,0,0.5);
+  text-shadow: 0 0 12px rgba(200,66,10,0.6) !important;
 }
 
 /* 10. FOOTER — deep carbon, no gold top-line */
@@ -715,6 +713,13 @@ footer[style] .footer-copy[style] { color: #D4AF37 !important; opacity: 0.82; }
 /* 11. All hairlines and dividers removed — no gold borders anywhere */
 [style*="rgba(224,224,224"] { border-color: transparent !important; }
 .lr-divider { border-top: 0 !important; margin: 32px 0 !important; }
+
+/* 12. NAVIGATION — dark glass over the paint */
+.site-nav {
+  background: rgba(10,10,10,0.6) !important;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+}
 </style>
   <!-- Google Analytics 4 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XQJ8KPVZX9"></script>
