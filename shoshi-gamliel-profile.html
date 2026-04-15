@@ -189,19 +189,32 @@
       gap: 60px;
       align-items: center;
     }
-    .uh-founder-portrait {
+    .uh-founder-portrait,
+    .uh-founder-portrait-img {
       width: 280px;
       height: 280px;
       border-radius: 50%;
-      background:
-        linear-gradient(135deg, rgba(255,255,255,0.18), transparent 45%),
-        linear-gradient(135deg, #8B4513 0%, #C8860A 100%);
+      object-fit: cover;
       border: 3px solid var(--gold);
       box-shadow:
         0 0 0 8px var(--bg-cream),
         0 0 0 9px rgba(212,175,55,0.4),
         0 18px 44px rgba(0,0,0,0.18);
       justify-self: center;
+      display: block;
+    }
+    .uh-founder-portrait {
+      background:
+        linear-gradient(135deg, rgba(255,255,255,0.18), transparent 45%),
+        linear-gradient(135deg, #8B4513 0%, #C8860A 100%);
+    }
+
+    .uh-hero-logo {
+      width: 130px;
+      height: auto;
+      margin: 0 auto 28px;
+      display: block;
+      filter: drop-shadow(0 6px 22px rgba(0,0,0,0.55));
     }
     .uh-founder-name {
       font-family: var(--font-heading);
@@ -635,6 +648,7 @@
   <!-- HERO -->
   <section class="uh-hero">
     <div class="uh-hero-inner">
+      <img src="underdog-heroes-logo.png" alt="Underdog Heroes" class="uh-hero-logo">
       <div class="uh-hero-eyebrow">Underdog Heroes</div>
       <h1>Fighting For The Brave Souls Who Have No Voice</h1>
       <div class="uh-hero-sub">Founded by Shoshi Gamliel &mdash; Riverside, CA</div>
@@ -649,7 +663,7 @@
   <!-- FOUNDER -->
   <section class="uh-section">
     <div class="uh-container uh-founder fade-up">
-      <div class="uh-founder-portrait" role="img" aria-label="Portrait of Shoshi Gamliel"></div>
+      <img src="shoshi-photo.jpg" alt="Shoshi Gamliel" class="uh-founder-portrait-img">
       <div class="uh-founder-copy">
         <h2 class="uh-founder-name">Shoshi Gamliel</h2>
         <div class="uh-founder-role">Founder &amp; President, Underdog Heroes Inc.</div>
