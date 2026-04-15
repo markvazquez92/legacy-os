@@ -41,7 +41,9 @@
       "Bash(chmod +x /tmp/audit.sh)",
       "Bash(/tmp/audit.sh)",
       "Bash(chmod +x /tmp/nav_check2.sh)",
-      "Bash(/tmp/nav_check2.sh)"
+      "Bash(/tmp/nav_check2.sh)",
+      "Bash(git commit:*)",
+      "Bash(python -)"
     ]
   }
 }
