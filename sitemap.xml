@@ -136,4 +136,48 @@
     <loc>https://mylegacycontinues.com/privacy.html</loc>
     <priority>0.6</priority>
   </url>
+  <url>
+    <loc>https://mylegacycontinues.com/legal/terms-of-service.html</loc>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://mylegacycontinues.com/es/</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mylegacycontinues.com/es/heritage-book.html</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://mylegacycontinues.com/es/cemetery-plaque.html</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://mylegacycontinues.com/es/pet-tag.html</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://mylegacycontinues.com/es/business-profile.html</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://mylegacycontinues.com/es/contractor-bundle.html</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://mylegacycontinues.com/es/baby-legacy.html</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://mylegacycontinues.com/es/legacy-bundle.html</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://mylegacycontinues.com/es/about.html</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://mylegacycontinues.com/es/contact.html</loc>
+    <priority>0.7</priority>
+  </url>
 </urlset>
