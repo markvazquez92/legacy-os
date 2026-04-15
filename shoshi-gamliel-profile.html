@@ -4,118 +4,609 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Shoshi Gamliel — Underdog Heroes | My Legacy Continues</title>
+  <title>Shoshi Gamliel &mdash; Underdog Heroes | My Legacy Continues</title>
   <meta name="description" content="Partner profile for Shoshi Gamliel, founder of Underdog Heroes Inc. Real responsible rescue for the dogs the system wrote off.">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Lato:wght@400&family=Spline+Sans:wght@700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;900&family=Cormorant+Garamond:ital,wght@1,400;1,500&family=Outfit:wght@300;400;500;600;700&display=swap">
+
   <link rel="stylesheet" href="style.css">
+
   <style>
-    /* Mobile background fix */
+    :root {
+      --bg-cream: #FAF3E6;
+      --gold: #D4AF37;
+      --gold-soft: rgba(212,175,55,0.28);
+      --amber: #C8860A;
+      --amber-deep: #9d6808;
+      --ink: #1A1A1A;
+      --ink-soft: #5a5a5a;
+      --card-white: #FFFFFF;
+      --charcoal-bg: #1A1A1A;
+      --hero-overlay: rgba(10,5,0,0.55);
+      --font-heading: 'Cinzel', Georgia, 'Times New Roman', serif;
+      --font-body: 'Outfit', system-ui, -apple-system, sans-serif;
+      --font-emotion: 'Cormorant Garamond', Georgia, serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
     body {
-      background-color:#1A1A1A;
+      background: var(--bg-cream);
+      color: var(--ink);
+      font-family: var(--font-body);
+      font-weight: 400;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
       overflow-x: hidden;
     }
 
-    section {
-      background-color:#1A1A1A;
+    a { color: var(--amber); text-decoration: none; transition: color 0.2s; }
+    a:hover { color: var(--amber-deep); }
+    img { max-width: 100%; display: block; }
+
+    /* Site nav override — keep dark glass across the warm page */
+    .site-nav {
+      background: rgba(26,26,26,0.92) !important;
+      backdrop-filter: blur(10px) !important;
+      -webkit-backdrop-filter: blur(10px) !important;
     }
 
-    .section {
-      background-color:#1A1A1A;
+    /* Reusable pinstripe divider */
+    hr.pinstripe {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold) 18%, var(--gold) 82%, transparent);
+      border: 0;
+      opacity: 0.65;
+      max-width: 1180px;
+      margin: 0 auto;
+    }
+    .pinstripe-inline {
+      width: 220px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      margin: 32px auto 0;
+      opacity: 0.85;
     }
 
-    .org-logo {
-      max-width: 200px;
-      margin: 2rem auto 0;
-      
-      display: block;
+    /* ========= HERO ========= */
+    .uh-hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 140px 24px 90px;
+      text-align: center;
+      overflow: hidden;
+      background: linear-gradient(135deg, #2C1810 0%, #8B4513 55%, #D4AF37 100%);
     }
-    .section-dark-teal {
-      background: #2A2A2A;
-      color: var(--cream);
-      padding: 4rem 2rem;
+    .uh-hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: var(--hero-overlay);
+      z-index: 1;
     }
-    .phase-card {
-      background: rgba(255,255,255,0.08);
-      border-left: 3px solid var(--gold);
-      padding: 1.25rem 1.5rem;
-      margin-bottom: 1rem;
-    }
-    .phase-card h3 {
-      color: #E0E0E0 !important;
-      margin: 0 0 0.25rem;
-    }
-    .phase-card p {
-      margin: 0;
-      color: #F5F5F5 !important;
-      opacity: 0.9;
-    }
-    .connect-links {
-      list-style: none;
-      padding: 0;
-      margin: 0 0 2rem;
-    }
-    .connect-links li {
-      padding: 0.75rem 0;
-      border-bottom: 1px solid rgba(42,42,42,0.15);
-    }
-    .connect-links li:last-child {
-      border-bottom: none;
-    }
-    .connect-links a {
-      color: #E0E0E0;
-      font-weight: 500;
-      text-decoration: none;
-    }
-    .connect-links a:hover {
+    .uh-hero-inner { position: relative; z-index: 2; max-width: 940px; }
+    .uh-hero-eyebrow {
+      font-family: var(--font-heading);
+      font-size: 12px;
+      letter-spacing: 0.45em;
       color: var(--gold);
-    }
-    .connect-links .link-label {
       font-weight: 600;
-      display: inline-block;
-      min-width: 100px;
+      margin-bottom: 28px;
+      text-transform: uppercase;
     }
-    .coming-soon-tag {
-      display: inline-block;
-      font-size: 0.75rem;
+    .uh-hero h1 {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: clamp(2rem, 5.2vw, 4rem);
+      line-height: 1.14;
+      color: #FFFFFF;
+      letter-spacing: 0.02em;
+      margin: 0 auto 28px;
+      max-width: 880px;
+      text-shadow: 0 2px 18px rgba(0,0,0,0.55);
+    }
+    .uh-hero-sub {
+      font-family: var(--font-emotion);
+      font-style: italic;
+      font-weight: 400;
+      font-size: clamp(1.05rem, 2vw, 1.35rem);
+      color: var(--bg-cream);
+      letter-spacing: 0.01em;
+    }
+    .uh-scroll {
+      position: absolute;
+      bottom: 36px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+      color: var(--gold);
+      font-family: var(--font-body);
+      font-size: 11px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      opacity: 0.9;
+      text-align: center;
+    }
+    .uh-scroll-arrow {
+      display: block;
+      width: 16px;
+      height: 16px;
+      border-right: 2px solid var(--gold);
+      border-bottom: 2px solid var(--gold);
+      transform: rotate(45deg);
+      margin: 12px auto 0;
+      animation: uh-bounce 1.8s infinite ease-in-out;
+    }
+    @keyframes uh-bounce {
+      0%, 100% { transform: rotate(45deg) translate(0,0); opacity: 0.9; }
+      50% { transform: rotate(45deg) translate(4px,4px); opacity: 0.45; }
+    }
+
+    /* ========= SECTION SCAFFOLD ========= */
+    .uh-section { padding: clamp(64px, 9vw, 110px) 24px; }
+    .uh-container { max-width: 1180px; margin: 0 auto; }
+    .uh-section-eyebrow {
+      font-family: var(--font-heading);
+      font-size: 12px;
+      letter-spacing: 0.4em;
+      color: var(--gold);
       font-weight: 600;
       text-transform: uppercase;
-      letter-spacing: 0.05em;
+      text-align: center;
+      margin-bottom: 16px;
+    }
+    .uh-section-title {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      color: var(--ink);
+      letter-spacing: 0.08em;
+      text-align: center;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+    }
+    .uh-section-sub {
+      font-family: var(--font-emotion);
+      font-style: italic;
+      font-size: 1.2rem;
+      color: var(--ink-soft);
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    /* ========= FOUNDER ========= */
+    .uh-founder {
+      display: grid;
+      grid-template-columns: 320px 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+    .uh-founder-portrait {
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      background:
+        linear-gradient(135deg, rgba(255,255,255,0.18), transparent 45%),
+        linear-gradient(135deg, #8B4513 0%, #C8860A 100%);
+      border: 3px solid var(--gold);
+      box-shadow:
+        0 0 0 8px var(--bg-cream),
+        0 0 0 9px rgba(212,175,55,0.4),
+        0 18px 44px rgba(0,0,0,0.18);
+      justify-self: center;
+    }
+    .uh-founder-name {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: clamp(1.7rem, 3vw, 2.3rem);
       color: var(--gold);
-      margin-left: 0.5rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+    .uh-founder-role {
+      font-family: var(--font-body);
+      font-size: 0.92rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+      font-weight: 500;
+      margin-bottom: 28px;
+    }
+    .uh-founder-body p {
+      font-size: 1.02rem;
+      line-height: 1.75;
+      color: var(--ink);
+      margin-bottom: 18px;
+    }
+    .uh-founder-quote {
+      font-family: var(--font-emotion);
+      font-style: italic;
+      font-weight: 500;
+      font-size: clamp(1.25rem, 2vw, 1.6rem);
+      line-height: 1.5;
+      color: var(--ink);
+      border-left: 3px solid var(--gold);
+      padding-left: 22px;
+      margin-top: 30px;
+    }
+
+    /* ========= MISSION ========= */
+    .uh-mission-card {
+      background: var(--card-white);
+      border: 1px solid var(--gold);
+      padding: clamp(40px, 6vw, 64px);
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+    }
+    .uh-mission-item { text-align: center; }
+    .uh-mission-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--gold);
+      margin: 0 auto 18px;
+      box-shadow: 0 0 0 5px rgba(212,175,55,0.15);
+    }
+    .uh-mission-item h3 {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 1.3rem;
+      color: var(--gold);
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+    .uh-mission-item p {
+      color: var(--ink-soft);
+      line-height: 1.7;
+      font-size: 0.98rem;
+    }
+
+    /* ========= OUR DOGS ========= */
+    .uh-dog-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+    }
+    .uh-dog-card {
+      background: var(--card-white);
+      border: 1px solid var(--gold);
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    .uh-dog-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 18px 44px -14px rgba(212,175,55,0.5);
+    }
+    .uh-dog-photo {
+      position: relative;
+      aspect-ratio: 16 / 10;
+      overflow: hidden;
+      background: #222;
+    }
+    .uh-dog-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .uh-dog-photo::after {
+      content: "";
+      position: absolute;
+      inset: auto 0 0 0;
+      height: 55%;
+      background: linear-gradient(to top, rgba(0,0,0,0.78), transparent);
+      pointer-events: none;
+    }
+    .uh-dog-name {
+      position: absolute;
+      left: 24px;
+      bottom: 20px;
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: clamp(1.5rem, 2.4vw, 2rem);
+      color: #FFFFFF;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      z-index: 2;
+      text-shadow: 0 2px 12px rgba(0,0,0,0.65);
+    }
+    .uh-dog-body {
+      padding: 26px 28px 28px;
+      background: var(--bg-cream);
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .uh-dog-meta {
+      font-family: var(--font-body);
+      font-weight: 500;
+      font-size: 0.78rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+      margin-bottom: 14px;
+    }
+    .uh-dog-story {
+      font-family: var(--font-emotion);
+      font-style: italic;
+      font-weight: 500;
+      font-size: 1.2rem;
+      line-height: 1.55;
+      color: var(--ink);
+      margin-bottom: 22px;
+      flex: 1;
+    }
+    .uh-status {
+      align-self: flex-start;
+      display: inline-block;
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      padding: 8px 18px;
+      border-radius: 999px;
+      background: var(--gold);
+      color: var(--ink);
+    }
+    .uh-status.needs { background: var(--amber); color: #FFFFFF; }
+    .uh-status.foster { background: var(--ink); color: var(--gold); border: 1px solid var(--gold); }
+
+    /* ========= STATS BAR ========= */
+    .uh-stats {
+      background: var(--charcoal-bg);
+      padding: clamp(64px, 7vw, 96px) 24px;
+      position: relative;
+    }
+    .uh-stats::before,
+    .uh-stats::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold) 18%, var(--gold) 82%, transparent);
+    }
+    .uh-stats::before { top: 0; }
+    .uh-stats::after { bottom: 0; }
+    .uh-stats-grid {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+      text-align: center;
+    }
+    .uh-stat-num {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: clamp(2.8rem, 5.5vw, 4.2rem);
+      color: var(--gold);
+      letter-spacing: 0.04em;
+      line-height: 1;
+      margin-bottom: 14px;
+    }
+    .uh-stat-label {
+      font-family: var(--font-body);
+      font-weight: 500;
+      font-size: 0.85rem;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--bg-cream);
+    }
+
+    /* ========= HOW TO HELP ========= */
+    .uh-help-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 22px;
+    }
+    .uh-help-card {
+      background: var(--card-white);
+      border: 1px solid var(--gold);
+      padding: 36px 28px 32px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    .uh-help-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 14px 30px -12px rgba(212,175,55,0.4);
+    }
+    .uh-help-card h3 {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 1.2rem;
+      color: var(--gold);
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+    .uh-help-card p {
+      color: var(--ink-soft);
+      line-height: 1.65;
+      font-size: 0.96rem;
+      margin-bottom: 22px;
+      flex: 1;
+    }
+    .uh-btn {
+      display: inline-block;
+      background: var(--amber);
+      color: #FFFFFF;
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: 0.82rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      padding: 14px 24px;
+      border: 0;
+      border-radius: 2px;
+      cursor: pointer;
+      transition: background 0.25s, transform 0.25s;
+      text-align: center;
+    }
+    .uh-btn:hover {
+      background: var(--amber-deep);
+      color: #FFFFFF;
+      transform: translateY(-1px);
+    }
+    .uh-btn.full { display: block; width: 100%; }
+
+    /* ========= QR SECTION ========= */
+    .uh-qr {
+      background: var(--charcoal-bg);
+      padding: clamp(80px, 10vw, 130px) 24px;
+      text-align: center;
+    }
+    .uh-qr h2 {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+      color: var(--gold);
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      margin-bottom: 36px;
+    }
+    .uh-qr-frame {
+      display: inline-block;
+      padding: 18px;
+      border: 1px solid var(--gold);
+      background: var(--bg-cream);
+    }
+    .uh-qr-frame img {
+      width: 240px;
+      height: 240px;
+      display: block;
+    }
+    .uh-qr-caption {
+      margin-top: 36px;
+      color: var(--bg-cream);
+      font-family: var(--font-body);
+      font-size: 1rem;
+      letter-spacing: 0.02em;
+      opacity: 0.9;
+    }
+    .uh-qr-mlc {
+      margin-top: 18px;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .uh-qr-mlc img {
+      max-width: 32px;
+      height: auto;
+    }
+    .uh-qr-mlc a {
+      color: var(--bg-cream);
+      font-size: 0.9rem;
+      letter-spacing: 0.1em;
+    }
+    .uh-qr-mlc a:hover { color: var(--gold); }
+
+    /* ========= FOOTER ========= */
+    .uh-footer {
+      background: var(--bg-cream);
+      padding: 56px 24px 36px;
+      border-top: 1px solid var(--gold);
+    }
+    .uh-footer-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      gap: 40px;
+    }
+    .uh-footer-logo { justify-self: start; }
+    .uh-footer-mlc { justify-self: end; text-align: right; }
+    .uh-footer-logo img { max-width: 150px; }
+    .uh-footer-mlc img { max-width: 100px; }
+    .uh-footer-center {
+      text-align: center;
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      color: var(--ink-soft);
+    }
+    .uh-footer-center .ein {
+      font-family: var(--font-heading);
+      font-size: 0.82rem;
+      letter-spacing: 0.3em;
+      color: var(--ink);
+      margin-bottom: 14px;
+    }
+    .uh-footer-links {
+      list-style: none;
+      display: flex;
+      gap: 18px;
+      justify-content: center;
+      margin: 0 0 12px;
+      padding: 0;
+      flex-wrap: wrap;
+    }
+    .uh-footer-links a {
+      color: var(--ink);
+      font-weight: 500;
+      font-size: 0.84rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+    .uh-footer-links a:hover { color: var(--amber); }
+    .uh-footer-email a { color: var(--amber); font-size: 0.9rem; }
+    .uh-footer-bottom {
+      max-width: 1180px;
+      margin: 36px auto 0;
+      padding-top: 20px;
+      border-top: 1px solid var(--gold-soft);
+    }
+    .uh-footer-copy {
+      font-size: 0.78rem;
+      color: var(--ink-soft);
+      text-align: center;
+      letter-spacing: 0.04em;
+    }
+
+    /* ========= FADE-IN ========= */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+    }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+    /* ========= RESPONSIVE ========= */
+    @media (max-width: 960px) {
+      .uh-founder { grid-template-columns: 1fr; gap: 40px; text-align: center; }
+      .uh-founder-quote { text-align: left; }
+      .uh-mission-card { grid-template-columns: 1fr; gap: 36px; }
+      .uh-dog-grid { grid-template-columns: 1fr; gap: 26px; }
+      .uh-help-grid { grid-template-columns: 1fr 1fr; }
+      .uh-stats-grid { grid-template-columns: 1fr; gap: 36px; }
+      .uh-footer-inner { grid-template-columns: 1fr; justify-items: center; text-align: center; gap: 26px; }
+      .uh-footer-logo, .uh-footer-mlc { justify-self: center; text-align: center; }
+    }
+    @media (max-width: 540px) {
+      .uh-help-grid { grid-template-columns: 1fr; }
+      .uh-hero { padding: 110px 20px 80px; }
     }
   </style>
-  <!-- Google Analytics 4 -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XQJ8KPVZX9"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-XQJ8KPVZX9', {
-      'page_path': window.location.pathname,
-      'page_title': document.title
-    });
-  </script>
-
-  <!-- Facebook Pixel -->
-  <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '2828165625364437');
-    fbq('track', 'PageView');
-  </script>
 </head>
 <body>
   <!-- Facebook Pixel noscript -->
   <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=2828165625364437&ev=PageView&noscript=1" /></noscript>
 
-<!-- NAV -->
   <!-- NAVIGATION -->
   <nav class="site-nav">
     <a href="https://mylegacycontinues.com/index.html" class="nav-brand">
@@ -137,395 +628,288 @@
       </button>
     </div>
     <div class="lang-switcher" style="position: absolute; right: 3rem;">
-      <a href="/es/shoshi-gamliel-profile.html" style="color: #F5F5F5; text-decoration: none; font-size: 0.9rem; display: inline-block; padding: 8px 12px; border: 1px solid rgba(224,224,224,0.3); border-radius: 4px; transition: all 0.2s;"><strong>English</strong> | <span style="color: #E0E0E0;">Español</span></a>
+      <a href="/es/shoshi-gamliel-profile.html" style="color: #F5F5F5; text-decoration: none; font-size: 0.9rem; display: inline-block; padding: 8px 12px; border: 1px solid rgba(224,224,224,0.3); border-radius: 4px; transition: all 0.2s;"><strong>English</strong> | <span style="color: #E0E0E0;">Espa&ntilde;ol</span></a>
     </div>
   </nav>
 
-<!-- SECTION 1 — HERO -->
-<section class="hero metalflake" style="background: #2A2A2A;">
-  <div class="hero-content text-center">
-    <h1>Shoshi Gamliel</h1>
-    <h2>Founder — Underdog Heroes Inc.</h2>
-    <p>Riverside, CA | Est. 2020 | 501(c)(3)</p>
-    <p class="tagline" style="color: var(--cream);">Real responsible rescue is slower, harder, less glamorous. It's about giving dogs a real chance to thrive forever.</p>
-    <img src="https://images.squarespace-cdn.com/content/v1/6662138992805d1f4427dcaa/ecbfad08-2351-4edb-b192-62dfca6f38d2/Untitled+design+%283%29.png" alt="Underdog Heroes Logo" class="org-logo">
-  </div>
-</section>
+  <!-- HERO -->
+  <section class="uh-hero">
+    <div class="uh-hero-inner">
+      <div class="uh-hero-eyebrow">Underdog Heroes</div>
+      <h1>Fighting For The Brave Souls Who Have No Voice</h1>
+      <div class="uh-hero-sub">Founded by Shoshi Gamliel &mdash; Riverside, CA</div>
+      <div class="pinstripe-inline"></div>
+    </div>
+    <div class="uh-scroll">
+      Scroll
+      <span class="uh-scroll-arrow"></span>
+    </div>
+  </section>
 
-<!-- SECTION 2 — WHO SHE IS -->
-<section class="section-cream fade-in">
-  <div class="section-inner">
-    <h2 class="text-center">The Rescue Leader</h2>
-    <p><strong>Shoshi Gamliel built Underdog Heroes</strong> from her Riverside home — <strong>her garage houses dogs that no other rescue will take.</strong> Pit bulls, bully breeds, mastiffs, rotties, cane corsos.</p>
-    <p><strong>The ones the system wrote off.</strong> <strong>She said yes when everyone else said no.</strong></p>
-    <p><strong>With 45,000 Instagram followers</strong> and a track record that includes <strong>dogs featured in Newsweek and Yahoo News,</strong> Shoshi isn't just running a rescue — <strong>she's exposing a broken system and building accountability where there was none.</strong></p>
-    <p><strong>My Legacy Continues is building the infrastructure</strong> her mission has always needed.</p>
-
-    <!-- IMPACT NUMBERS -->
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin: 3rem 0;">
-      <div style="text-align: center;">
-        <div style="font-size: 2.5rem; font-weight: 700; color:#F5F5F5; margin-bottom: 0.5rem;">312+</div>
-        <div style="font-size: 0.95rem; color:#F5F5F5; font-weight: 500;">Dogs Rescued</div>
-        <div style="font-size: 0.85rem; color:#9a9a9a; margin-top: 0.5rem;">Since 2020</div>
-      </div>
-      <div style="text-align: center;">
-        <div style="font-size: 2.5rem; font-weight: 700; color:#F5F5F5; margin-bottom: 0.5rem;">287</div>
-        <div style="font-size: 0.95rem; color:#F5F5F5; font-weight: 500;">Successfully Adopted</div>
-        <div style="font-size: 0.85rem; color:#9a9a9a; margin-top: 0.5rem;">Forever homes found</div>
-      </div>
-      <div style="text-align: center;">
-        <div style="font-size: 2.5rem; font-weight: 700; color:#F5F5F5; margin-bottom: 0.5rem;">25+</div>
-        <div style="font-size: 0.95rem; color:#F5F5F5; font-weight: 500;">Currently in Foster Care</div>
-        <div style="font-size: 0.85rem; color:#9a9a9a; margin-top: 0.5rem;">Preparing for adoption</div>
+  <!-- FOUNDER -->
+  <section class="uh-section">
+    <div class="uh-container uh-founder fade-up">
+      <div class="uh-founder-portrait" role="img" aria-label="Portrait of Shoshi Gamliel"></div>
+      <div class="uh-founder-copy">
+        <h2 class="uh-founder-name">Shoshi Gamliel</h2>
+        <div class="uh-founder-role">Founder &amp; President, Underdog Heroes Inc.</div>
+        <div class="uh-founder-body">
+          <p>Underdog Heroes was founded in 2020 on a simple conviction: the dogs the system writes off deserve a real chance. From a home base in Riverside, California, Shoshi has built one of the most vocal and visible rescues in Southern California &mdash; taking in the pit bulls, bully breeds, mastiffs, cane corsos, and rotties every other rescue passes on.</p>
+          <p>Her work has been featured in Newsweek and Yahoo News, and a community of more than 45,000 supporters follows every pull, every foster, every adoption. Real responsible rescue is slower, harder, less glamorous &mdash; and it is how she has spent the last five years.</p>
+        </div>
+        <blockquote class="uh-founder-quote">&ldquo;The harsh reality is we may never break the cycle of cruelty, but we can raise awareness and make an impact.&rdquo;</blockquote>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- THE PARTNERSHIP -->
-<section style="background: #2A2A2A;" class="metalflake fade-in">
-  <div class="section-inner text-center">
-    <h2 style="color: #E0E0E0;">The Partnership</h2>
-    <p style="color: #F5F5F5; opacity: 0.95; max-width: 700px; margin: 1.5rem auto 0; font-size: 1.05rem; line-height: 1.8;">Underdog Heroes Inc. is the founding rescue partner of My Legacy Continues. 10% of every pet tag sale goes directly to Underdog Heroes — a verified 501c3 nonprofit, EIN 84-4188282. Their dogs receive permanent digital profiles, transport network access, and post-adoption check-in support.</p>
-  </div>
-</section>
+  <hr class="pinstripe">
 
-<!-- SECTION 3 — SERVICES -->
-<section class="section-cream fade-in">
-  <div class="section-inner">
-    <h2 class="text-center">What Underdog Heroes Offers</h2>
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-top: 2rem;">
-      <div style="background: rgba(42,42,42,0.08); border-left: 4px solid #2A2A2A; padding: 1.5rem; ">
-        <h3 style="color:#F5F5F5; margin-bottom: 0.75rem;"> Rescue Intake</h3>
-        <p style="margin: 0; font-size: 0.95rem; color:#F5F5F5; line-height: 1.6;">Got a dog that needs help? Submit an intake form. We'll evaluate and determine the best path forward.</p>
-      </div>
-      <div style="background: rgba(42,42,42,0.08); border-left: 4px solid #2A2A2A; padding: 1.5rem; ">
-        <h3 style="color:#F5F5F5; margin-bottom: 0.75rem;"> Foster Coordination</h3>
-        <p style="margin: 0; font-size: 0.95rem; color:#F5F5F5; line-height: 1.6;">Provide a temporary safe home for dogs. Every foster frees up space for another rescue.</p>
-      </div>
-      <div style="background: rgba(42,42,42,0.08); border-left: 4px solid #2A2A2A; padding: 1.5rem; ">
-        <h3 style="color:#F5F5F5; margin-bottom: 0.75rem;"> Adoption Support</h3>
-        <p style="margin: 0; font-size: 0.95rem; color:#F5F5F5; line-height: 1.6;">Complete adoption process with training, support, and lifetime follow-up.</p>
-      </div>
-      <div style="background: rgba(42,42,42,0.08); border-left: 4px solid #2A2A2A; padding: 1.5rem; ">
-        <h3 style="color:#F5F5F5; margin-bottom: 0.75rem;"> Behavioral Assessment</h3>
-        <p style="margin: 0; font-size: 0.95rem; color:#F5F5F5; line-height: 1.6;">Professional assessment of each dog's temperament, triggers, and training needs.</p>
-      </div>
-      <div style="background: rgba(42,42,42,0.08); border-left: 4px solid #2A2A2A; padding: 1.5rem; ">
-        <h3 style="color:#F5F5F5; margin-bottom: 0.75rem;"> Transport Network</h3>
-        <p style="margin: 0; font-size: 0.95rem; color:#F5F5F5; line-height: 1.6;">Real-time volunteer driver coordination to move dogs between rescues and adoptive homes.</p>
-      </div>
-      <div style="background: rgba(42,42,42,0.08); border-left: 4px solid #2A2A2A; padding: 1.5rem; ">
-        <h3 style="color:#F5F5F5; margin-bottom: 0.75rem;"> Dog Profiles</h3>
-        <p style="margin: 0; font-size: 0.95rem; color:#F5F5F5; line-height: 1.6;">Every dog gets a permanent digital profile tracking their journey from rescue to forever home.</p>
+  <!-- MISSION -->
+  <section class="uh-section">
+    <div class="uh-container">
+      <div class="uh-section-eyebrow">The Work</div>
+      <h2 class="uh-section-title">Rescue. Rehabilitate. Rehome.</h2>
+      <div class="uh-section-sub">Three steps. Every dog. Every time.</div>
+      <div class="uh-mission-card fade-up">
+        <div class="uh-mission-item">
+          <div class="uh-mission-dot"></div>
+          <h3>Rescue</h3>
+          <p>Dogs pulled from high-kill shelters &mdash; the ones no other rescue will touch, the ones with a day left on the list.</p>
+        </div>
+        <div class="uh-mission-item">
+          <div class="uh-mission-dot"></div>
+          <h3>Rehabilitate</h3>
+          <p>Medical care, behavior work, patient training, and the time it takes for a dog to trust a human again.</p>
+        </div>
+        <div class="uh-mission-item">
+          <div class="uh-mission-dot"></div>
+          <h3>Rehome</h3>
+          <p>Matched with vetted adopters for life &mdash; safe forever homes, lifetime follow-up, no dog left behind.</p>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- SECTION 4 — THE PARTNERSHIP -->
-<section style="background: #2A2A2A;" class="metalflake fade-in">
-  <div class="section-inner">
-    <h2 class="text-center text-gold">What We're Building Together</h2>
-    <p class="tagline text-center" style="color: var(--cream);">Every dog deserves a permanent record. Every rescue deserves proof of the lives they saved.</p>
-    <div class="grid-2 mt-2">
-      <div class="card">
-        <h3>Permanent Dog Profiles</h3>
-        <p>Every dog Underdog Heroes saves gets a public profile. Where they came from. Their journey. Where they are now. Forever.</p>
-      </div>
-      <div class="card">
-        <h3>Rescue Accountability Record</h3>
-        <p>Shoshi's legacy, documented. Every life saved. Every adoption. Nobody questions her record because it's all public and permanent.</p>
-      </div>
-      <div class="card">
-        <h3>Transport Coordination Network</h3>
-        <p>Real-time volunteer driver network to move dogs between counties safely. Prevents another Rock N Pawz situation.</p>
-        <p><span class="coming-soon-tag">(Coming Soon)</span></p>
-      </div>
-      <div class="card">
-        <h3>Red List Alert Network</h3>
-        <p>When a shelter puts a dog on the euthanasia list, rescue partners get notified immediately. Not 24 hours too late. Right now.</p>
-        <p><span class="coming-soon-tag">(Coming Soon)</span></p>
-      </div>
-    </div>
-  </div>
-</section>
+  <hr class="pinstripe">
 
-<!-- SECTION 5 — THE DOGS -->
-<section class="section-cream fade-in">
-  <div class="section-inner">
-    <h2 class="text-center">Underdog Heroes — Dogs Looking for Forever Homes</h2>
-    <p class="text-center mb-4">Every dog below has a permanent profile through My Legacy Continues. Scan any tag to see their full story.</p>
-    <div class="dog-grid">
+  <!-- OUR DOGS -->
+  <section class="uh-section">
+    <div class="uh-container">
+      <div class="uh-section-eyebrow">The Dogs</div>
+      <h2 class="uh-section-title">Our Dogs</h2>
+      <div class="uh-section-sub">Every dog has a story worth telling.</div>
 
-      <div class="dog-card">
-        <div class="dog-photo">
-          <img src="https://dbw3zep4prcju.cloudfront.net/animal/51883119-38ef-4a3e-a181-2405b328df0f/image/62f61f8f-19de-4f8f-a6b4-7d088583256e.jpg" alt="Roy" style="object-fit: cover; width: 100%; height: 100%;">
-        </div>
-        <div class="dog-info">
-          <h3>Roy</h3>
-          <p class="dog-meta">Adult Male American Bully</p>
-          <p class="dog-personality">Big heart in a powerful body. Roy is calm, loyal, and ready for a family who sees past the breed.</p>
-          <a href="rescue-registry.html" class="btn btn-gold">View Profile</a>
-        </div>
-      </div>
+      <div class="uh-dog-grid">
 
-      <div class="dog-card">
-        <div class="dog-photo">
-          <img src="https://dbw3zep4prcju.cloudfront.net/animal/ce8a22e5-0516-4c74-a90c-23a036b30411/image/12b9b9e4-f008-4739-803b-e813c1e8b15d.jpg" alt="Mamas" style="object-fit: cover; width: 100%; height: 100%;">
-        </div>
-        <div class="dog-info">
-          <h3>Mamas</h3>
-          <p class="dog-meta">Adult Female Boston Terrier &amp; French Bulldog mix</p>
-          <p class="dog-personality">Sweet, compact, full of personality. Mamas is looking for her forever couch and her person.</p>
-          <a href="rescue-registry.html" class="btn btn-gold">View Profile</a>
-        </div>
-      </div>
-
-      <div class="dog-card">
-        <div class="dog-photo">
-          <img src="https://dbw3zep4prcju.cloudfront.net/animal/36006f52-bb70-4954-96c1-b01012b39fab/image/2d30b800-4039-458d-935a-62e810f57c1c.jpg" alt="Dalia" style="object-fit: cover; width: 100%; height: 100%;">
-        </div>
-        <div class="dog-info">
-          <h3>Dalia</h3>
-          <p class="dog-meta">Adult Female American Bully</p>
-          <p class="dog-personality">Gentle girl who came through hard times. Dalia trusts carefully — and loves completely.</p>
-          <a href="rescue-registry.html" class="btn btn-gold">View Profile</a>
-        </div>
-      </div>
-
-      <div class="dog-card">
-        <div class="dog-photo">
-          <img src="https://dbw3zep4prcju.cloudfront.net/animal/87ce0d52-11d0-4308-a317-4885ead9cb0b/image/3e24f4ca-4b1a-4eb4-af76-d94e937bffe0.jpg" alt="Cash" style="object-fit: cover; width: 100%; height: 100%;">
-        </div>
-        <div class="dog-info">
-          <h3>Cash</h3>
-          <p class="dog-meta">Adult Male Pit Bull &amp; American Bully mix</p>
-          <p class="dog-personality">Energetic, smart, thrives with structure. Cash is ready for someone who can match his drive.</p>
-          <a href="rescue-registry.html" class="btn btn-gold">View Profile</a>
-        </div>
-      </div>
-
-      <div class="dog-card">
-        <div class="dog-photo">
-          <img src="https://dbw3zep4prcju.cloudfront.net/animal/606a58d4-b3ed-4700-8702-536a704672a1/image/053a1c17-7311-47f7-99e6-8dd2259dd945.jpg" alt="Maggie" style="object-fit: cover; width: 100%; height: 100%;">
-        </div>
-        <div class="dog-info">
-          <h3>Maggie</h3>
-          <p class="dog-meta">Adult Female Bulldog</p>
-          <p class="dog-personality">Laid back, loves belly rubs, snores loud. Maggie is exactly the dog you didn't know you needed.</p>
-          <a href="rescue-registry.html" class="btn btn-gold">View Profile</a>
-        </div>
-      </div>
-
-      <div class="dog-card">
-        <div class="dog-photo">
-          <img src="https://dbw3zep4prcju.cloudfront.net/animal/24c5ec45-58b7-4073-851b-f92c1e12e4ae/image/a106d4b3-2134-429b-8d0b-1ed33d58687c.jpg" alt="Victor" style="object-fit: cover; width: 100%; height: 100%;">
-        </div>
-        <div class="dog-info">
-          <h3>Victor</h3>
-          <p class="dog-meta">Adult Male Husky &amp; German Shepherd mix</p>
-          <p class="dog-personality">Athletic, intelligent, loyal to his core. Victor needs room to run and a person to run with.</p>
-          <a href="rescue-registry.html" class="btn btn-gold">View Profile</a>
-        </div>
-      </div>
-
-      <div class="dog-card">
-        <div class="dog-photo">
-          <img src="https://dbw3zep4prcju.cloudfront.net/animal/fbba6465-3344-44c0-b66d-d96a0795f780/image/6c78df53-dc2f-4256-9248-d7de66d029e0.jpg" alt="Fiona" style="object-fit: cover; width: 100%; height: 100%;">
-        </div>
-        <div class="dog-info">
-          <h3>Fiona</h3>
-          <p class="dog-meta">Adult Female Neapolitan Mastiff</p>
-          <p class="dog-personality">Massive love in a massive dog. Fiona is gentle, calm, and devoted to whoever she calls family.</p>
-          <a href="rescue-registry.html" class="btn btn-gold">View Profile</a>
-        </div>
-      </div>
-
-      <div class="dog-card">
-        <div class="dog-photo">
-          <img src="https://dbw3zep4prcju.cloudfront.net/animal/f6574807-a37e-4649-aafb-bda1d6d6ee65/image/d5a5aa02-25dd-413c-8771-2ef35ae8222b.jpg" alt="Tabitha" style="object-fit: cover; width: 100%; height: 100%;">
-        </div>
-        <div class="dog-info">
-          <h3>Tabitha</h3>
-          <p class="dog-meta">Adult Female American Bulldog</p>
-          <p class="dog-personality">Resilient, affectionate, full of heart. Tabitha survived what would break most — she didn't break.</p>
-          <a href="rescue-registry.html" class="btn btn-gold">View Profile</a>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- SECTION 6 — ADOPTER TESTIMONIALS -->
-<section class="section-cream fade-in">
-  <div class="section-inner">
-    <h2 class="text-center">Adopters Share Their Stories</h2>
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 2rem;">
-      <div style="background: rgba(42,42,42,0.05); border-left: 4px solid #E0E0E0; padding: 1.5rem; ">
-        <p style="margin: 0 0 1rem 0; font-size: 1rem; color:#F5F5F5; line-height: 1.8; font-style: italic;">"We thought Roy was too powerful, too dangerous. Shoshi saw his heart. Now he's the gentlest family member we have. He saved us as much as we saved him."</p>
-        <div style="font-weight: 600; color:#F5F5F5;">— Marcus & Diana, Roy's Family</div>
-        <div style="font-size: 0.85rem; color:#9a9a9a; margin-top: 0.5rem;">Adopted: March 2024</div>
-      </div>
-
-      <div style="background: rgba(42,42,42,0.05); border-left: 4px solid #E0E0E0; padding: 1.5rem; ">
-        <p style="margin: 0 0 1rem 0; font-size: 1rem; color:#F5F5F5; line-height: 1.8; font-style: italic;">"Mamas came to us traumatized. Shoshi's team didn't just help us adopt — they taught us how to help her heal. She's a different dog now because they cared enough to do it right."</p>
-        <div style="font-weight: 600; color:#F5F5F5;">— Jennifer & Tom, Mamas' Family</div>
-        <div style="font-size: 0.85rem; color:#9a9a9a; margin-top: 0.5rem;">Adopted: January 2024</div>
-      </div>
-
-      <div style="background: rgba(42,42,42,0.05); border-left: 4px solid #E0E0E0; padding: 1.5rem; ">
-        <p style="margin: 0 0 1rem 0; font-size: 1rem; color:#F5F5F5; line-height: 1.8; font-style: italic;">"We fostered Fiona thinking it would be temporary. But Shoshi's support and the community made it clear — we couldn't let her go. She's ours now, and Shoshi celebrates with us."</p>
-        <div style="font-weight: 600; color:#F5F5F5;">— The Chen Family, Fiona's Forever Home</div>
-        <div style="font-size: 0.85rem; color:#9a9a9a; margin-top: 0.5rem;">Adopted: November 2023</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- SECTION 7 — PHASE 2 VISION -->
-<section class="section-dark-teal metalflake fade-in">
-  <div class="section-inner">
-    <h2 class="text-center text-gold">The System We're Building</h2>
-    <p style="color: var(--cream);">What happened at Rock N Pawz — 700 animals, zero accountability, years of warnings ignored — happens because rescue has no infrastructure. No tracking. No transparency. No way to see problems before they become disasters.</p>
-    <p style="color: var(--cream);" class="mb-4">My Legacy Continues is building that infrastructure. Starting with Underdog Heroes.</p>
-    <div class="phase-card">
-      <h3>Red List Alert Network</h3>
-      <p>Real-time euthanasia notifications</p>
-    </div>
-    <div class="phase-card">
-      <h3>Transport Coordination</h3>
-      <p>Volunteer driver relay network</p>
-    </div>
-    <div class="phase-card">
-      <h3>Animal Passport System</h3>
-      <p>Profile follows the dog forever</p>
-    </div>
-  </div>
-</section>
-
-<!-- SECTION 8 — CONNECT -->
-<section class="section-cream fade-in">
-  <div class="section-inner">
-    <h2 class="text-center">Connect With Underdog Heroes</h2>
-    <div class="card mb-4">
-      <ul class="connect-links">
-        <li><span class="link-label">Website</span> <a href="https://underdogheroes.org">underdogheroes.org</a></li>
-        <li><span class="link-label">Adopt</span> <a href="https://underdogheroes.org/applytoadopt">underdogheroes.org/applytoadopt</a></li>
-        <li><span class="link-label">Foster</span> <a href="https://underdogheroes.org/foster-application">underdogheroes.org/foster-application</a></li>
-        <li><span class="link-label">Volunteer</span> <a href="https://underdogheroes.org/volunteer">underdogheroes.org/volunteer</a></li>
-        <li><span class="link-label">Email</span> <a href="mailto:adopt@underdogheroes.org">adopt@underdogheroes.org</a></li>
-        <li><span class="link-label">Instagram</span> <a href="https://instagram.com/underdogheroes_">@underdogheroes_</a></li>
-        <li><span class="link-label">EIN</span> 84-4188282</li>
-      </ul>
-    </div>
-
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 2rem;">
-      <div class="form-container">
-        <h3 style="text-align: center;">Submit Dog for Rescue</h3>
-        <p style="text-align: center; font-size: 0.9rem; color:#9a9a9a; margin-bottom: 1.5rem;">Got a dog that needs help? Fill out the intake form.</p>
-        <a href="rescue-intake.html" class="btn btn-gold" style="display: block; text-align: center; width: 100%;">Go to Intake Form →</a>
-      </div>
-
-      <div class="form-container">
-        <h3 class="text-center">Partner With Us</h3>
-        <form action="https://formspree.io/f/xzzpqjle" method="POST">
-          <input type="hidden" name="_subject" value="Underdog Heroes Inquiry">
-          <input type="hidden" name="_next" value="https://mylegacycontinues.com/thank-you.html">
-          <div class="form-group">
-            <label for="partner_name">Name</label>
-            <input type="text" id="partner_name" name="name" required>
+        <article class="uh-dog-card fade-up">
+          <div class="uh-dog-photo">
+            <img src="https://dbw3zep4prcju.cloudfront.net/animal/51883119-38ef-4a3e-a181-2405b328df0f/image/62f61f8f-19de-4f8f-a6b4-7d088583256e.jpg" alt="Roy">
+            <div class="uh-dog-name">Roy</div>
           </div>
-          <div class="form-group">
-            <label for="partner_email">Email</label>
-            <input type="email" id="partner_email" name="email" required>
+          <div class="uh-dog-body">
+            <div class="uh-dog-meta">Adult Male &middot; American Bully</div>
+            <p class="uh-dog-story">Everyone saw his breed. Shoshi saw his heart. Now he wakes up to a family who sees him for who he is.</p>
+            <span class="uh-status">Adopted</span>
           </div>
-          <div class="form-group">
-            <label for="partner_message">How can we partner?</label>
-            <textarea id="partner_message" name="message" rows="5" required placeholder="Tell us about your interest in partnering..."></textarea>
+        </article>
+
+        <article class="uh-dog-card fade-up">
+          <div class="uh-dog-photo">
+            <img src="https://dbw3zep4prcju.cloudfront.net/animal/ce8a22e5-0516-4c74-a90c-23a036b30411/image/12b9b9e4-f008-4739-803b-e813c1e8b15d.jpg" alt="Mamas">
+            <div class="uh-dog-name">Mamas</div>
           </div>
-          <button type="submit" class="btn btn-gold" style="width: 100%;">Partner With Us</button>
-        </form>
+          <div class="uh-dog-body">
+            <div class="uh-dog-meta">Adult Female &middot; Boston Terrier &amp; French Bulldog Mix</div>
+            <p class="uh-dog-story">She came in trembling. She left loved. Her forever couch was waiting all along.</p>
+            <span class="uh-status">Adopted</span>
+          </div>
+        </article>
+
+        <article class="uh-dog-card fade-up">
+          <div class="uh-dog-photo">
+            <img src="https://dbw3zep4prcju.cloudfront.net/animal/36006f52-bb70-4954-96c1-b01012b39fab/image/2d30b800-4039-458d-935a-62e810f57c1c.jpg" alt="Dalia">
+            <div class="uh-dog-name">Dalia</div>
+          </div>
+          <div class="uh-dog-body">
+            <div class="uh-dog-meta">Adult Female &middot; American Bully</div>
+            <p class="uh-dog-story">She trusts slowly. She loves completely. She is waiting for the person who will not give up on her.</p>
+            <span class="uh-status needs">Needs Home</span>
+          </div>
+        </article>
+
+        <article class="uh-dog-card fade-up">
+          <div class="uh-dog-photo">
+            <img src="https://dbw3zep4prcju.cloudfront.net/animal/87ce0d52-11d0-4308-a317-4885ead9cb0b/image/3e24f4ca-4b1a-4eb4-af76-d94e937bffe0.jpg" alt="Cash">
+            <div class="uh-dog-name">Cash</div>
+          </div>
+          <div class="uh-dog-body">
+            <div class="uh-dog-meta">Adult Male &middot; Pit Bull &amp; American Bully Mix</div>
+            <p class="uh-dog-story">He has drive, brains, and a job-done look in his eyes. He needs a partner, not just a person.</p>
+            <span class="uh-status needs">Needs Home</span>
+          </div>
+        </article>
+
+        <article class="uh-dog-card fade-up">
+          <div class="uh-dog-photo">
+            <img src="https://dbw3zep4prcju.cloudfront.net/animal/606a58d4-b3ed-4700-8702-536a704672a1/image/053a1c17-7311-47f7-99e6-8dd2259dd945.jpg" alt="Maggie">
+            <div class="uh-dog-name">Maggie</div>
+          </div>
+          <div class="uh-dog-body">
+            <div class="uh-dog-meta">Adult Female &middot; Bulldog</div>
+            <p class="uh-dog-story">She snores. She drools. She is convinced the couch belongs to her. She is probably right.</p>
+            <span class="uh-status foster">In Foster</span>
+          </div>
+        </article>
+
+        <article class="uh-dog-card fade-up">
+          <div class="uh-dog-photo">
+            <img src="https://dbw3zep4prcju.cloudfront.net/animal/24c5ec45-58b7-4073-851b-f92c1e12e4ae/image/a106d4b3-2134-429b-8d0b-1ed33d58687c.jpg" alt="Victor">
+            <div class="uh-dog-name">Victor</div>
+          </div>
+          <div class="uh-dog-body">
+            <div class="uh-dog-meta">Adult Male &middot; Husky &amp; German Shepherd Mix</div>
+            <p class="uh-dog-story">He was built to run. He is still waiting for someone who can keep up.</p>
+            <span class="uh-status needs">Needs Home</span>
+          </div>
+        </article>
+
+        <article class="uh-dog-card fade-up">
+          <div class="uh-dog-photo">
+            <img src="https://dbw3zep4prcju.cloudfront.net/animal/fbba6465-3344-44c0-b66d-d96a0795f780/image/6c78df53-dc2f-4256-9248-d7de66d029e0.jpg" alt="Fiona">
+            <div class="uh-dog-name">Fiona</div>
+          </div>
+          <div class="uh-dog-body">
+            <div class="uh-dog-meta">Adult Female &middot; Neapolitan Mastiff</div>
+            <p class="uh-dog-story">Two hundred pounds of soul. The Chens took one look and knew.</p>
+            <span class="uh-status">Adopted</span>
+          </div>
+        </article>
+
+        <article class="uh-dog-card fade-up">
+          <div class="uh-dog-photo">
+            <img src="https://dbw3zep4prcju.cloudfront.net/animal/f6574807-a37e-4649-aafb-bda1d6d6ee65/image/d5a5aa02-25dd-413c-8771-2ef35ae8222b.jpg" alt="Tabitha">
+            <div class="uh-dog-name">Tabitha</div>
+          </div>
+          <div class="uh-dog-body">
+            <div class="uh-dog-meta">Adult Female &middot; American Bulldog</div>
+            <p class="uh-dog-story">She survived what should have broken her. She did not break. She is ready now.</p>
+            <span class="uh-status needs">Needs Home</span>
+          </div>
+        </article>
+
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- FOOTER -->
-<footer>
-  <div class="footer-inner">
-    <div class="footer-contact">Contact: contact@mylegacycontinues.com | (805) 863-3794 | Santa Maria, CA</div>
-    <ul class="footer-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="heritage-book.html">Heritage</a></li>
-      <li><a href="rescue-registry.html">Rescue Registry</a></li>
-      <li><a href="active-transports.html">Transport</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="contact.html">Contact</a></li>
-      <li><a href="legal/privacy.html">Privacy</a></li>
-      <li><a href="legal/terms-of-service.html">Terms</a></li>
-    </ul>
-    <p class="footer-copy">&copy; 2026 My Legacy Continues. All rights reserved.</p>
-  </div>
-</footer>
+  <!-- STATS BAR -->
+  <section class="uh-stats fade-up">
+    <div class="uh-stats-grid">
+      <div>
+        <div class="uh-stat-num">312+</div>
+        <div class="uh-stat-label">Dogs Rescued</div>
+      </div>
+      <div>
+        <div class="uh-stat-num">287</div>
+        <div class="uh-stat-label">Dogs Adopted</div>
+      </div>
+      <div>
+        <div class="uh-stat-num">600+</div>
+        <div class="uh-stat-label">Lives Changed</div>
+      </div>
+    </div>
+  </section>
 
-<script>
-  const navToggle = document.getElementById('navToggle');
-  const navLinks = document.getElementById('navLinks');
-  if (navToggle) {
-    navToggle.addEventListener('click', () => navLinks.classList.toggle('active'));
-    navLinks.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => navLinks.classList.remove('active'));
-    });
-  }
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
-  }, { threshold: 0.1 });
-  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-</script>
-<script src="metalflake.js"></script>
+  <!-- HOW TO HELP -->
+  <section class="uh-section">
+    <div class="uh-container">
+      <div class="uh-section-eyebrow">Get Involved</div>
+      <h2 class="uh-section-title">How To Help</h2>
+      <div class="uh-section-sub">Every dog saved starts with someone who said yes.</div>
 
+      <div class="uh-help-grid">
+        <div class="uh-help-card fade-up">
+          <h3>Adopt</h3>
+          <p>Open your home to a dog the system gave up on. Our team matches you for life.</p>
+          <a href="https://underdogheroes.org/applytoadopt" class="uh-btn full">Apply to Adopt</a>
+        </div>
+        <div class="uh-help-card fade-up">
+          <h3>Foster</h3>
+          <p>Open your home temporarily. Every foster frees space for the next dog on the list.</p>
+          <a href="https://underdogheroes.org/foster-application" class="uh-btn full">Become a Foster</a>
+        </div>
+        <div class="uh-help-card fade-up">
+          <h3>Volunteer</h3>
+          <p>Drive transports. Run intake. Help at events. We need hands as much as we need homes.</p>
+          <a href="https://underdogheroes.org/volunteer" class="uh-btn full">Volunteer</a>
+        </div>
+        <div class="uh-help-card fade-up">
+          <h3>Donate</h3>
+          <p>Medical bills, food, transport &mdash; every dollar keeps a dog off the red list.</p>
+          <a href="https://underdogheroes.org/donate" class="uh-btn full">Donate</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <!-- Form Submission Tracking -->
+  <!-- QR + MLC -->
+  <section class="uh-qr">
+    <h2>Scan To Visit Our Rescue</h2>
+    <div class="uh-qr-frame">
+      <img src="https://api.qrserver.com/v1/create-qr-code/?data=https%3A%2F%2Funderdogheroes.org&size=240x240&margin=12&format=png" alt="QR code linking to underdogheroes.org" width="240" height="240">
+    </div>
+    <div class="uh-qr-caption">This profile is permanently hosted by My Legacy Continues.</div>
+    <div class="uh-qr-mlc">
+      <img src="logo.png" alt="My Legacy Continues">
+      <a href="https://mylegacycontinues.com">mylegacycontinues.com</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="uh-footer">
+    <div class="uh-footer-inner">
+      <div class="uh-footer-logo">
+        <img src="https://images.squarespace-cdn.com/content/v1/6662138992805d1f4427dcaa/ecbfad08-2351-4edb-b192-62dfca6f38d2/Untitled+design+%283%29.png" alt="Underdog Heroes Inc.">
+      </div>
+      <div class="uh-footer-center">
+        <div class="ein">EIN 84-4188282</div>
+        <ul class="uh-footer-links">
+          <li><a href="https://underdogheroes.org/applytoadopt">Adopt</a></li>
+          <li><a href="https://underdogheroes.org/foster-application">Foster</a></li>
+          <li><a href="https://underdogheroes.org/volunteer">Volunteer</a></li>
+          <li><a href="https://underdogheroes.org/donate">Donate</a></li>
+        </ul>
+        <div class="uh-footer-email"><a href="mailto:info@underdogheroes.org">info@underdogheroes.org</a></div>
+      </div>
+      <div class="uh-footer-mlc">
+        <img src="logo.png" alt="My Legacy Continues">
+      </div>
+    </div>
+    <div class="uh-footer-bottom">
+      <p class="uh-footer-copy">Copyright &copy; 2026 Underdog Heroes Inc. &mdash; Legacy documented by My Legacy Continues</p>
+    </div>
+  </footer>
+
   <script>
-    document.querySelectorAll('form').forEach(form => {
-      form.addEventListener('submit', function(e) {
-        const subject = form.querySelector('input[name="_subject"]');
-        const eventName = subject ? subject.value.replace(/\s+/g, '_').toLowerCase() : 'form_submission';
-        if (typeof gtag !== 'undefined') {
-          gtag('event', eventName, {
-            'event_category': 'form',
-            'event_label': subject ? subject.value : 'unknown'
-          });
+    // Mobile nav toggle
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    if (navToggle) {
+      navToggle.addEventListener('click', () => navLinks.classList.toggle('active'));
+      navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => navLinks.classList.remove('active'));
+      });
+    }
+
+    // Fade-in on scroll
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
         }
       });
-    });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
   </script>
-
-  <!-- Product Click Tracking -->
-  <script>
-    document.querySelectorAll('[data-product]').forEach(button => {
-      button.addEventListener('click', function() {
-        if (typeof gtag !== 'undefined') {
-          gtag('event', 'view_item', {
-            'items': [{
-              'item_id': this.getAttribute('data-product'),
-              'item_name': this.getAttribute('data-product').replace(/[-_]/g, ' ').toUpperCase(),
-              'item_category': 'legacy_product'
-            }]
-          });
-        }
-
-        if (typeof fbq !== 'undefined') {
-          fbq('track', 'ViewContent', {
-            'content_name': this.getAttribute('data-product'),
-            'content_type': 'product'
-          });
-        }
-      });
-    });
-  </script>
-
 </body>
 </html>
