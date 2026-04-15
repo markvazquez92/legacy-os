@@ -48,7 +48,12 @@
       "mcp__21e1b532-d2db-454a-a794-96d89284f781__list_user_apps",
       "mcp__21e1b532-d2db-454a-a794-96d89284f781__edit_base44_app",
       "Bash(ls *.html)",
-      "Bash(python -c \"from PIL import Image, ImageEnhance; print\\('PIL ok'\\)\")"
+      "Bash(python -c \"from PIL import Image, ImageEnhance; print\\('PIL ok'\\)\")",
+      "Bash(grep -E \"\\\\.\\(html|xml|txt\\)$\")",
+      "Bash(grep -n \"mark\\\\.vazquez92\" /c/Users/BEAR/Documents/GitHub/legacy-os/*.html)",
+      "Bash(sed -n '75,90p' pet-tag.html)",
+      "Bash(sed -n '75,90p' baby-legacy.html)",
+      "WebFetch(domain:mylegacycontinues.com)"
     ]
   }
 }
