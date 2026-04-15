@@ -36,7 +36,12 @@
       "Bash(grep -l '      <li><a href=\"business-profile.html\">Business</a></li>' *.html)",
       "Bash(grep -lE '<li><a href=\"business-profile.html\">Business</a></li><li><a href=\"rescue-registry.html\">' *.html)",
       "Bash(sed -i '267i\\\\<img src=\"images/butterstag.png\" alt=\"Butters — pet legacy tag\" style=\"width:100%; max-width:800px; display:block; margin:0 auto 2rem auto; border-radius:8px;\">\\\\n<img src=\"images/tag10.jpg\" alt=\"Pet QR Tag\" style=\"width:100%; max-width:800px; display:block; margin:0 auto 2rem auto; border-radius:8px;\">\\\\n' butters-profile.html)",
-      "Bash(sed -n '266,272p' butters-profile.html)"
+      "Bash(sed -n '266,272p' butters-profile.html)",
+      "Bash(cat)",
+      "Bash(chmod +x /tmp/audit.sh)",
+      "Bash(/tmp/audit.sh)",
+      "Bash(chmod +x /tmp/nav_check2.sh)",
+      "Bash(/tmp/nav_check2.sh)"
     ]
   }
 }
