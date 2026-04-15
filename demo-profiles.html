@@ -4,153 +4,196 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Real Legacy Examples | My Legacy Continues</title>
-  <meta name="description" content="See real examples of preserved legacies. Heritage books, pet tags, business profiles, memorials, and rescue stories. What you can create.">
+  <title>Real Legacies. Real People. — My Legacy Continues</title>
+  <meta name="description" content="Every profile on MLC is a real person. Real story. Permanent. Browse the full MLC Network.">
+  <link rel="icon" href="logo.png" type="image/png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Lato:wght@400&family=Spline+Sans:wght@700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Outfit:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@1,400;1,500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+
   <style>
-    body { background-color:#1A1A1A; overflow-x: hidden; }
-    section { background-color:#1A1A1A; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
-    .page-hero {
-      background: linear-gradient(135deg, #2A2A2A 0%, #2A2A2A 100%);
-      padding: 100px 48px 80px;
+    :root {
+      --charcoal: #1A1A1A;
+      --charcoal-2: #232323;
+      --gold: #D4AF37;
+      --gold-soft: rgba(212,175,55,0.25);
+      --cream: #F5F5F5;
+      --dim: #bababa;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Outfit', sans-serif;
+      background: var(--charcoal);
+      color: var(--cream);
+      line-height: 1.6;
+      font-weight: 300;
+      overflow-x: hidden;
+    }
+
+    section { background: var(--charcoal); }
+
+    .dp-candy-bg { position: relative; overflow: hidden; }
+    .dp-candy-bg::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(1200px 400px at 15% 20%, rgba(212,175,55,0.07), transparent 60%),
+        radial-gradient(900px 500px at 85% 85%, rgba(212,175,55,0.05), transparent 65%);
+      pointer-events: none;
+    }
+
+    .dp-hero {
+      margin-top: 68px;
+      padding: 6rem 1.5rem 4rem;
       text-align: center;
-      color: #F5F5F5;
+      border-bottom: 1px solid var(--gold-soft);
     }
 
-    .page-hero h1 {
-      font-family: 'Montserrat', sans-serif;
-      font-size: clamp(2rem, 5vw, 3.2rem);
-      margin-bottom: 16px;
+    .dp-eyebrow {
+      display: inline-block;
+      color: var(--gold);
+      border: 1px solid var(--gold);
+      padding: 6px 16px;
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      margin-bottom: 1.75rem;
+      font-family: 'Oswald', sans-serif;
+      font-weight: 600;
+    }
+
+    .dp-hero h1 {
+      font-family: 'Oswald', sans-serif;
       font-weight: 700;
+      font-size: clamp(2.2rem, 5.5vw, 4.2rem);
+      letter-spacing: 0.04em;
+      color: var(--cream);
+      margin-bottom: 1rem;
+      line-height: 1.1;
+      text-transform: uppercase;
     }
 
-    .page-hero p {
-      font-size: 1.05rem;
+    .dp-hero p {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-style: italic;
+      font-size: clamp(1.1rem, 2vw, 1.4rem);
+      color: #e8dca6;
       max-width: 700px;
       margin: 0 auto;
-      line-height: 1.8;
-      opacity: 0.95;
     }
 
-    .profiles-grid {
+    .dp-grid-section { padding: 5rem 1.5rem 6rem; }
+
+    .dp-grid {
+      max-width: 1200px;
+      margin: 0 auto;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 2rem;
-      margin-top: 3rem;
-      margin-bottom: 3rem;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
     }
 
-    .profile-card {
-      background:#232323;
-      
-      overflow: hidden;
-      box-shadow: 0 4px 20px rgba(42, 42, 42, 0.1);
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-
-    .profile-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 8px 30px rgba(42, 42, 42, 0.15);
-    }
-
-    .profile-card-image {
-      width: 100%;
-      height: 280px;
-      background: linear-gradient(135deg, #2A2A2A 0%, #2A2A2A 100%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 4rem;
-      color: rgba(224,224,224, 0.3);
-    }
-
-    .profile-card-content {
-      padding: 24px;
-    }
-
-    .profile-card-type {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 0.7rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: #E0E0E0;
-      font-weight: 600;
-      margin-bottom: 8px;
-    }
-
-    .profile-card-title {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 1.35rem;
-      color:#F5F5F5;
-      margin-bottom: 12px;
-      font-weight: 700;
-    }
-
-    .profile-card-quote {
-      font-size: 0.95rem;
-      color:#F5F5F5;
-      font-style: italic;
-      margin-bottom: 16px;
-      line-height: 1.6;
-    }
-
-    .profile-card-ctas {
+    .dp-card {
+      background: var(--charcoal-2);
+      border: 1px solid var(--gold-soft);
+      padding: 2rem 1.75rem;
       display: flex;
       flex-direction: column;
-      gap: 8px;
+      transition: border-color 0.25s, transform 0.25s;
     }
 
-    .profile-cta {
+    .dp-card:hover {
+      border-color: var(--gold);
+      transform: translateY(-4px);
+    }
+
+    .dp-card-tag {
+      font-family: 'Oswald', sans-serif;
+      font-size: 10px;
+      letter-spacing: 0.24em;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 0.85rem;
+    }
+
+    .dp-card h3 {
+      font-family: 'Oswald', sans-serif;
+      font-weight: 700;
+      color: var(--cream);
+      font-size: 1.35rem;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+      line-height: 1.2;
+    }
+
+    .dp-card p {
+      color: var(--dim);
+      font-size: 0.95rem;
+      margin-bottom: 1.75rem;
+      flex: 1;
+    }
+
+    .dp-btn {
       display: inline-block;
-      padding: 12px 16px;
+      background: var(--gold);
+      color: var(--charcoal);
+      padding: 13px 22px;
+      font-family: 'Oswald', sans-serif;
+      font-weight: 700;
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
       text-decoration: none;
-      
-      font-size: 0.9rem;
-      font-weight: 600;
       text-align: center;
-      transition: all 0.2s;
+      transition: all 0.25s;
+      align-self: flex-start;
     }
 
-    .profile-cta-primary {
-      background: #E0E0E0;
-      color:#F5F5F5;
-      border: 1px solid #E0E0E0;
+    .dp-btn:hover { background: var(--cream); color: var(--charcoal); }
+
+    footer {
+      padding: 3rem 1.5rem 2rem;
+      text-align: center;
+      border-top: 1px solid var(--gold-soft);
     }
 
-    .profile-cta-primary:hover {
-      background: #DFB966;
-      border-color: #DFB966;
+    footer .dp-footer-links {
+      display: flex;
+      gap: 1.5rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 1rem;
     }
 
-    .profile-cta-secondary {
-      background: transparent;
-      color:#F5F5F5;
-      border: 1.5px solid #2A2A2A;
+    footer .dp-footer-links a {
+      font-family: 'Oswald', sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      color: var(--gold);
+      text-transform: uppercase;
+      text-decoration: none;
     }
 
-    .profile-cta-secondary:hover {
-      background: #2A2A2A;
-      color: #F5F5F5;
-    }
-
-    @media (max-width: 600px) {
-      .page-hero { padding: 80px 20px 60px; }
-      .profiles-grid { gap: 1.5rem; }
+    footer .dp-footer-copy {
+      color: var(--dim);
+      font-size: 0.85rem;
+      margin-top: 1.25rem;
     }
   </style>
+
   <!-- Google Analytics 4 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XQJ8KPVZX9"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', 'G-XQJ8KPVZX9', {
-      'page_path': window.location.pathname,
-      'page_title': document.title
-    });
+    gtag('config', 'G-XQJ8KPVZX9');
   </script>
 
   <!-- Facebook Pixel -->
@@ -166,14 +209,14 @@
     fbq('init', '2828165625364437');
     fbq('track', 'PageView');
   </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=2828165625364437&ev=PageView&noscript=1"/></noscript>
 </head>
 <body>
-  <!-- Facebook Pixel noscript -->
-  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=2828165625364437&ev=PageView&noscript=1" /></noscript>
 
   <!-- NAVIGATION -->
   <nav class="site-nav">
-    <a href="https://mylegacycontinues.com/index.html" class="nav-brand">
+    <a href="index.html" class="nav-brand">
       <img src="logo.png" alt="My Legacy Continues" class="nav-logo">
     </a>
     <ul class="nav-links" id="navLinks">
@@ -189,7 +232,7 @@
       <li><a href="free-profile.html" style="color:#D4AF37;">Free Page</a></li>
     </ul>
     <div class="nav-right">
-      <a href="https://mylegacycontinues.com/index.html#products" class="btn btn-gold" style="padding: 0.5rem 1.2rem; font-size: 0.7rem;">START YOUR LEGACY</a>
+      <a href="index.html#products" class="btn btn-gold" style="padding: 0.5rem 1.2rem; font-size: 0.7rem;">START YOUR LEGACY</a>
       <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
         <span></span><span></span><span></span>
       </button>
@@ -197,133 +240,93 @@
   </nav>
 
   <!-- HERO -->
-  <div class="page-hero">
-    <h1>Real Legacies Preserved</h1>
-    <p>See what you can create. Real customers. Real stories. Real transformation. These are the legacies being preserved right now on My Legacy Continues.</p>
-  </div>
-
-  <!-- PROFILES GRID -->
-  <section style="padding: 4rem 2rem;">
-    <div class="section-inner" style="max-width: 1200px;">
-      <div class="profiles-grid">
-
-        <!-- Profile 1: Deborah Mahony -->
-        <div class="profile-card">
-          <div class="profile-card-image" style="background:#2A2A2A;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;"><span style="color:#E0E0E0;font-family:'Montserrat',sans-serif;font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;">Heritage Culture Book</span><span style="color:#F5F5F5;font-family:'Montserrat',sans-serif;font-size:1rem;font-weight:700;">Mahony-Vázquez</span></div>
-          <div class="profile-card-content">
-            <div class="profile-card-type">Heritage Culture Book</div>
-            <h3 class="profile-card-title">Mahony-Vázquez Story</h3>
-            <p class="profile-card-quote">"My kids will know where they came from. Three generations preserved forever."</p>
-            <div class="profile-card-ctas">
-              <a href="deborah-mahony-profile.html" class="profile-cta profile-cta-primary">View Full Profile</a>
-              <a href="heritage-book.html" class="profile-cta profile-cta-secondary">Create Your Heritage Book</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Profile 2: Butters -->
-        <div class="profile-card">
-          <div class="profile-card-image" style="background:#2A2A2A;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;"><span style="color:#E0E0E0;font-family:'Montserrat',sans-serif;font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;">Pet Legacy Tag</span><span style="color:#F5F5F5;font-family:'Montserrat',sans-serif;font-size:1rem;font-weight:700;">Butters the Cat</span></div>
-          <div class="profile-card-content">
-            <div class="profile-card-type">Pet Legacy Tag</div>
-            <h3 class="profile-card-title">Butters the Cat</h3>
-            <p class="profile-card-quote">"His complete story, forever accessible. More than just a pet tag."</p>
-            <div class="profile-card-ctas">
-              <a href="butters-profile.html" class="profile-cta profile-cta-primary">View Full Profile</a>
-              <a href="pet-tag.html" class="profile-cta profile-cta-secondary">Create Pet Legacy Tag</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Profile 3: Nick McNeal -->
-        <div class="profile-card">
-          <div class="profile-card-image" style="background:#2A2A2A;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;"><span style="color:#E0E0E0;font-family:'Montserrat',sans-serif;font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;">Business Profile</span><span style="color:#F5F5F5;font-family:'Montserrat',sans-serif;font-size:1rem;font-weight:700;">McNeal Construction</span></div>
-          <div class="profile-card-content">
-            <div class="profile-card-type">Business Founder Profile</div>
-            <h3 class="profile-card-title">McNeal Construction</h3>
-            <p class="profile-card-quote">"My business story, permanently documented. This is what I built."</p>
-            <div class="profile-card-ctas">
-              <a href="mcneal-construction-profile.html" class="profile-cta profile-cta-primary">View Full Profile</a>
-              <a href="business-profile.html" class="profile-cta profile-cta-secondary">Create Business Profile</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Profile 4: Anthony Raygoza -->
-        <div class="profile-card">
-          <div class="profile-card-image" style="background:#2A2A2A;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;"><span style="color:#E0E0E0;font-family:'Montserrat',sans-serif;font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;">Cemetery Memorial</span><span style="color:#F5F5F5;font-family:'Montserrat',sans-serif;font-size:1rem;font-weight:700;">Anthony Raygoza Sr.</span></div>
-          <div class="profile-card-content">
-            <div class="profile-card-type">Cemetery Memorial Plaque</div>
-            <h3 class="profile-card-title">Anthony Raygoza Sr.</h3>
-            <p class="profile-card-quote">"Visitors can scan and see his full story. A memorial that really matters."</p>
-            <div class="profile-card-ctas">
-              <a href="anthony-raygoza-memorial.html" class="profile-cta profile-cta-primary">View Full Profile</a>
-              <a href="cemetery-plaque.html" class="profile-cta profile-cta-secondary">Create Memorial Plaque</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Profile 5: Vázquez Family -->
-        <div class="profile-card">
-          <div class="profile-card-image" style="background:#2A2A2A;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;"><span style="color:#E0E0E0;font-family:'Montserrat',sans-serif;font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;">Heritage + Family</span><span style="color:#F5F5F5;font-family:'Montserrat',sans-serif;font-size:1rem;font-weight:700;">Vázquez Family</span></div>
-          <div class="profile-card-content">
-            <div class="profile-card-type">Heritage Culture Book + Family Profiles</div>
-            <h3 class="profile-card-title">Vázquez Family Heritage</h3>
-            <p class="profile-card-quote">"Three generations, one permanent story. Everything connected forever."</p>
-            <div class="profile-card-ctas">
-              <a href="vazquez-profile.html" class="profile-cta profile-cta-primary">View Full Profile</a>
-              <a href="heritage-book.html" class="profile-cta profile-cta-secondary">Create Heritage Book</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Profile 6: Shoshi Gamliel -->
-        <div class="profile-card">
-          <div class="profile-card-image" style="background:#2A2A2A;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;"><span style="color:#E0E0E0;font-family:'Montserrat',sans-serif;font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;">Rescue Partnership</span><span style="color:#F5F5F5;font-family:'Montserrat',sans-serif;font-size:1rem;font-weight:700;">Underdog Heroes</span></div>
-          <div class="profile-card-content">
-            <div class="profile-card-type">Rescue Partnership Profile</div>
-            <h3 class="profile-card-title">Underdog Heroes</h3>
-            <p class="profile-card-quote">"312 dogs rescued, 287 found forever homes. Our rescue mission documented."</p>
-            <div class="profile-card-ctas">
-              <a href="shoshi-gamliel-profile.html" class="profile-cta profile-cta-primary">Learn About Partnership</a>
-              <a href="pet-tag.html" class="profile-cta profile-cta-secondary">Support Rescue Dogs</a>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
+  <section class="dp-hero dp-candy-bg">
+    <span class="dp-eyebrow">The MLC Network</span>
+    <h1>Real Legacies. Real People.</h1>
+    <p>"Every profile on MLC is a real person. Real story. Permanent."</p>
   </section>
 
-  <!-- CTA SECTION -->
-  <section style="background: #2A2A2A; color: #F5F5F5; padding: 4rem 2rem; text-align: center;">
-    <div class="section-inner" style="max-width: 700px;">
-      <h2 style="font-family: 'Montserrat', sans-serif; font-size: 2rem; margin-bottom: 1rem;">Your Legacy Deserves to be Preserved</h2>
-      <p style="font-size: 1.05rem; margin-bottom: 2rem; line-height: 1.8;">See yourself in these stories. Your family, your pet, your business, your memories — they all deserve the same treatment. Permanent. Beautiful. Forever accessible.</p>
-      <a href="index.html#products" class="btn btn-gold" style="padding: 16px 34px; font-size: 0.9rem;">Start Your Legacy Today</a>
+  <!-- GRID -->
+  <section class="dp-grid-section dp-candy-bg">
+    <div class="dp-grid">
+
+      <div class="dp-card">
+        <div class="dp-card-tag">Heritage</div>
+        <h3>Vázquez Family Heritage</h3>
+        <p>Five generations from Galicia, Spain to the Central Coast. The blood that built a legacy platform.</p>
+        <a href="vazquez-profile.html" class="dp-btn">View Profile</a>
+      </div>
+
+      <div class="dp-card">
+        <div class="dp-card-tag">Heritage Book</div>
+        <h3>Joseph Vázquez Heritage Book</h3>
+        <p>Santa Barbara raised. A life built by hand. The full 7-chapter heritage book.</p>
+        <a href="joseph-vazquez-heritage.html" class="dp-btn">View Profile</a>
+      </div>
+
+      <div class="dp-card">
+        <div class="dp-card-tag">Matriarch</div>
+        <h3>Deborah Mahony</h3>
+        <p>The woman behind the house. The family glue. A permanent profile for a force of love.</p>
+        <a href="deborah-mahony-profile.html" class="dp-btn">View Profile</a>
+      </div>
+
+      <div class="dp-card">
+        <div class="dp-card-tag">Memorial</div>
+        <h3>Anthony Raygoza Sr.</h3>
+        <p>A life remembered. A legacy preserved. The man who lived the 805 before it had a name.</p>
+        <a href="anthony-raygoza-memorial.html" class="dp-btn">View Profile</a>
+      </div>
+
+      <div class="dp-card">
+        <div class="dp-card-tag">Memorial</div>
+        <h3>Antoinette Raygoza</h3>
+        <p>Matriarch. Mother. Memory keeper. Her story preserved forever on the MLC Network.</p>
+        <a href="antoinette-raygoza-memorial.html" class="dp-btn">View Profile</a>
+      </div>
+
+      <div class="dp-card">
+        <div class="dp-card-tag">Business Founder</div>
+        <h3>McNeal Construction</h3>
+        <p>Three generations of builders. Central Coast concrete. Work you can stand on forever.</p>
+        <a href="mcneal-construction-profile.html" class="dp-btn">View Profile</a>
+      </div>
+
+      <div class="dp-card">
+        <div class="dp-card-tag">Business Founder</div>
+        <h3>BigTymer Trucking</h3>
+        <p>Zachary Mediano's fleet. The 805 on wheels. A business profile built to last forever.</p>
+        <a href="bigtymer-trucking-profile.html" class="dp-btn">View Profile</a>
+      </div>
+
+      <div class="dp-card">
+        <div class="dp-card-tag">Pet Legacy</div>
+        <h3>Butters</h3>
+        <p>Not just a dog. Family. A permanent profile for a good boy who meant everything.</p>
+        <a href="butters-profile.html" class="dp-btn">View Profile</a>
+      </div>
+
+      <div class="dp-card">
+        <div class="dp-card-tag">Partnership</div>
+        <h3>Shoshi Gamliel</h3>
+        <p>Partnership profile. A legacy story documented on the MLC Network.</p>
+        <a href="shoshi-gamliel-profile.html" class="dp-btn">View Profile</a>
+      </div>
+
     </div>
   </section>
 
   <!-- FOOTER -->
   <footer>
-    <div class="footer-inner">
-      <div class="footer-contact">Contact: contact@mylegacycontinues.com | (805) 863-3794 | Santa Maria, CA</div>
-      <ul class="footer-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="heritage-book.html">Heritage</a></li>
-        <li><a href="pet-tag.html">Pet Tags</a></li>
-        <li><a href="rescue-registry.html">Rescue Registry</a></li>
-      <li><a href="active-transports.html">Transport</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="legal/privacy.html">Privacy</a></li>
-        <li><a href="legal/terms-of-service.html">Terms</a></li>
-      </ul>
-      <p class="footer-copy">&copy; 2026 My Legacy Continues. All rights reserved.</p>
+    <div class="dp-footer-links">
+      <a href="index.html">Home</a>
+      <a href="network.html">The Network</a>
+      <a href="free-profile.html">Free Page</a>
+      <a href="contact.html">Contact</a>
     </div>
+    <p class="dp-footer-copy">&copy; 2026 My Legacy Continues. Every story deserves forever.</p>
   </footer>
 
-  <script src="metalflake.js"></script>
   <script>
     const navToggle = document.getElementById('navToggle');
     const navLinks = document.getElementById('navLinks');
@@ -334,47 +337,7 @@
       });
     }
   </script>
-
-
-  <!-- Form Submission Tracking -->
-  <script>
-    document.querySelectorAll('form').forEach(form => {
-      form.addEventListener('submit', function(e) {
-        const subject = form.querySelector('input[name="_subject"]');
-        const eventName = subject ? subject.value.replace(/\s+/g, '_').toLowerCase() : 'form_submission';
-        if (typeof gtag !== 'undefined') {
-          gtag('event', eventName, {
-            'event_category': 'form',
-            'event_label': subject ? subject.value : 'unknown'
-          });
-        }
-      });
-    });
-  </script>
-
-  <!-- Product Click Tracking -->
-  <script>
-    document.querySelectorAll('[data-product]').forEach(button => {
-      button.addEventListener('click', function() {
-        if (typeof gtag !== 'undefined') {
-          gtag('event', 'view_item', {
-            'items': [{
-              'item_id': this.getAttribute('data-product'),
-              'item_name': this.getAttribute('data-product').replace(/[-_]/g, ' ').toUpperCase(),
-              'item_category': 'legacy_product'
-            }]
-          });
-        }
-
-        if (typeof fbq !== 'undefined') {
-          fbq('track', 'ViewContent', {
-            'content_name': this.getAttribute('data-product'),
-            'content_type': 'product'
-          });
-        }
-      });
-    });
-  </script>
+  <script src="metalflake.js"></script>
 
 </body>
 </html>

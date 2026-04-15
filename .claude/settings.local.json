@@ -43,7 +43,8 @@
       "Bash(chmod +x /tmp/nav_check2.sh)",
       "Bash(/tmp/nav_check2.sh)",
       "Bash(git commit:*)",
-      "Bash(python -)"
+      "Bash(python -)",
+      "Bash(python -c ':*)"
     ]
   }
 }
