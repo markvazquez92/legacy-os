@@ -737,6 +737,39 @@
       .email-form input {
         min-width: unset;
       }
+
+      /* Mobile layout overrides */
+      .product-cards {
+        grid-template-columns: 1fr !important;
+      }
+
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .hero p {
+        font-size: 1rem;
+      }
+
+      section, .section, .section-inner {
+        padding: 1.5rem 1rem;
+      }
+
+      .product-card img,
+      .product-card picture img {
+        max-width: 100%;
+        height: auto;
+      }
+
+      .pillars,
+      .testimonial-grid {
+        grid-template-columns: 1fr !important;
+      }
+
+      /* Force any inline grid using minmax() to single column */
+      [style*="grid-template-columns"] {
+        grid-template-columns: 1fr !important;
+      }
     }
   </style>
   <!-- Google Analytics 4 -->

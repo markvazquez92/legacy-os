@@ -485,6 +485,11 @@ img { max-width: 100%; height: auto; display: block; }
       });
     });
   </script>
+  <script>
+    document.getElementById('navToggle')?.addEventListener('click', function() {
+      document.querySelector('.nav-links')?.classList.toggle('active');
+    });
+  </script>
 
 </body>
 </html>
