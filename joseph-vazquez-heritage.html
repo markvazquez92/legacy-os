@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<!-- NO EMOJIS EVER -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Joseph Vázquez Heritage Book — Santa Barbara, CA — My Legacy Continues</title>
+  <meta name="description" content="The Joseph Vázquez Heritage Book. Santa Barbara roots. A life built by hand. Preserved forever by My Legacy Continues.">
+  <link rel="icon" href="logo.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Outfit:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@1,400;1,500;1,600&display=swap" rel="stylesheet">
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --charcoal: #1A1A1A;
+      --charcoal-2: #232323;
+      --charcoal-3: #2a2a2a;
+      --gold: #D4AF37;
+      --gold-soft: rgba(212,175,55,0.25);
+      --cream: #F5F5F5;
+      --dim: #bababa;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Outfit', sans-serif;
+      background: var(--charcoal);
+      color: var(--cream);
+      line-height: 1.7;
+      font-weight: 300;
+      letter-spacing: 0.01em;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: var(--gold); text-decoration: none; }
+    a:hover { color: var(--cream); }
+
+    /* CANDY PAINT BACKGROUND ACCENTS */
+    .candy-bg {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .candy-bg::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(1200px 400px at 15% 20%, rgba(212,175,55,0.07), transparent 60%),
+        radial-gradient(900px 500px at 85% 85%, rgba(212,175,55,0.05), transparent 65%);
+      pointer-events: none;
+    }
+
+    /* HEADER */
+    .jv-header {
+      position: relative;
+      padding: 6rem 1.5rem 4rem;
+      text-align: center;
+      border-bottom: 1px solid var(--gold-soft);
+    }
+
+    .jv-logo {
+      width: 140px;
+      height: auto;
+      filter: drop-shadow(0 4px 20px rgba(212,175,55,0.25));
+      margin-bottom: 2.5rem;
+    }
+
+    .jv-name {
+      font-family: 'Oswald', sans-serif;
+      font-weight: 700;
+      font-size: clamp(2.6rem, 7vw, 5.5rem);
+      letter-spacing: 0.08em;
+      color: var(--cream);
+      line-height: 1;
+      margin-bottom: 1.25rem;
+    }
+
+    .jv-subhead {
+      font-family: 'Oswald', sans-serif;
+      font-weight: 500;
+      font-size: clamp(0.85rem, 1.4vw, 1rem);
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 2rem;
+    }
+
+    .jv-tagline {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-style: italic;
+      font-weight: 500;
+      font-size: clamp(1.15rem, 2.2vw, 1.55rem);
+      color: #e8dca6;
+      max-width: 760px;
+      margin: 0 auto 2rem;
+      line-height: 1.5;
+    }
+
+    .jv-born {
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.9rem;
+      color: var(--dim);
+      letter-spacing: 0.08em;
+    }
+
+    .jv-rule {
+      display: block;
+      width: 80px;
+      height: 1px;
+      background: var(--gold);
+      margin: 2rem auto 0;
+      opacity: 0.6;
+    }
+
+    /* CHAPTER CONTAINER */
+    .jv-chapter {
+      position: relative;
+      padding: 5rem 1.5rem;
+      border-bottom: 1px solid rgba(212,175,55,0.1);
+    }
+
+    .jv-chapter-inner {
+      max-width: 780px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .jv-chapter-eyebrow {
+      font-family: 'Oswald', sans-serif;
+      font-weight: 600;
+      font-size: 11px;
+      letter-spacing: 0.3em;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 0.9rem;
+      display: inline-block;
+      padding-left: 40px;
+      position: relative;
+    }
+
+    .jv-chapter-eyebrow::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      width: 28px;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    .jv-chapter-title {
+      font-family: 'Oswald', sans-serif;
+      font-weight: 700;
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      letter-spacing: 0.05em;
+      color: var(--cream);
+      text-transform: uppercase;
+      line-height: 1.1;
+      margin-bottom: 2rem;
+    }
+
+    .jv-body p {
+      font-size: 1.05rem;
+      color: #d9d9d9;
+      margin-bottom: 1.25rem;
+    }
+
+    .jv-body p:last-child { margin-bottom: 0; }
+
+    /* PULL QUOTE */
+    .jv-pullquote {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-style: italic;
+      font-weight: 500;
+      font-size: clamp(1.35rem, 2.6vw, 1.8rem);
+      color: var(--gold);
+      line-height: 1.45;
+      text-align: center;
+      margin: 3rem auto 0;
+      padding: 2rem 1.5rem;
+      border-top: 1px solid var(--gold-soft);
+      border-bottom: 1px solid var(--gold-soft);
+      max-width: 720px;
+    }
+
+    /* TIMELINE */
+    .jv-timeline {
+      position: relative;
+      padding-left: 2.5rem;
+      margin-top: 1rem;
+    }
+
+    .jv-timeline::before {
+      content: '';
+      position: absolute;
+      left: 8px;
+      top: 8px;
+      bottom: 8px;
+      width: 2px;
+      background: var(--gold);
+      opacity: 0.6;
+    }
+
+    .jv-timeline-item {
+      position: relative;
+      padding-bottom: 1.75rem;
+    }
+
+    .jv-timeline-item:last-child { padding-bottom: 0; }
+
+    .jv-timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -2.5rem;
+      top: 7px;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: var(--gold);
+      border: 3px solid var(--charcoal);
+      box-shadow: 0 0 0 1px var(--gold);
+    }
+
+    .jv-timeline-year {
+      font-family: 'Oswald', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      letter-spacing: 0.14em;
+      color: var(--gold);
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 0.35rem;
+    }
+
+    .jv-timeline-item p {
+      color: #d9d9d9;
+      font-size: 1rem;
+      margin: 0;
+    }
+
+    /* FINAL CTA */
+    .jv-cta-section {
+      padding: 6rem 1.5rem;
+      text-align: center;
+      background: linear-gradient(180deg, var(--charcoal) 0%, #161616 100%);
+      border-bottom: 1px solid var(--gold-soft);
+    }
+
+    .jv-cta-section h2 {
+      font-family: 'Oswald', sans-serif;
+      font-weight: 700;
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--cream);
+      margin-bottom: 1.25rem;
+    }
+
+    .jv-cta-section p {
+      max-width: 600px;
+      margin: 0 auto 2rem;
+      color: var(--dim);
+      font-size: 1.05rem;
+    }
+
+    .jv-cta-btn {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--charcoal);
+      padding: 16px 38px;
+      font-family: 'Oswald', sans-serif;
+      font-weight: 700;
+      font-size: 13px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      transition: all 0.25s;
+    }
+
+    .jv-cta-btn:hover {
+      background: var(--cream);
+      transform: translateY(-2px);
+      color: var(--charcoal);
+    }
+
+    /* FOOTER */
+    .jv-footer {
+      padding: 4rem 1.5rem 3rem;
+      text-align: center;
+      background: var(--charcoal);
+    }
+
+    .jv-footer-logo {
+      width: 80px;
+      height: auto;
+      margin-bottom: 1.5rem;
+      filter: drop-shadow(0 2px 10px rgba(212,175,55,0.2));
+    }
+
+    .jv-footer-text {
+      font-family: 'Oswald', sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.6rem;
+    }
+
+    .jv-footer-url {
+      font-size: 0.9rem;
+      color: var(--dim);
+      margin-bottom: 0.6rem;
+    }
+
+    .jv-footer-tagline {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-style: italic;
+      color: #e8dca6;
+      font-size: 1.05rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .jv-footer-links {
+      display: flex;
+      gap: 1.5rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .jv-footer-links a {
+      font-family: 'Oswald', sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      border-bottom: 1px solid transparent;
+      padding-bottom: 2px;
+      transition: border-color 0.25s;
+    }
+
+    .jv-footer-links a:hover { border-color: var(--gold); }
+
+    @media (max-width: 640px) {
+      .jv-chapter { padding: 3.5rem 1.25rem; }
+      .jv-header { padding: 4.5rem 1.25rem 3rem; }
+      .jv-pullquote { padding: 1.5rem 1rem; }
+    }
+  </style>
+
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XQJ8KPVZX9"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XQJ8KPVZX9');
+  </script>
+
+  <!-- Facebook Pixel -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '2828165625364437');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=2828165625364437&ev=PageView&noscript=1"/></noscript>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="jv-header candy-bg">
+    <img src="logo.png" alt="My Legacy Continues" class="jv-logo">
+    <h1 class="jv-name">JOSEPH VÁZQUEZ</h1>
+    <div class="jv-subhead">Santa Barbara, CA &mdash; A Life Built By Hand</div>
+    <p class="jv-tagline">"Some men build buildings. Some men build legacies. He built both."</p>
+    <div class="jv-born">Born: June 15, 1968 &middot; Santa Barbara, California</div>
+    <span class="jv-rule"></span>
+  </header>
+
+  <!-- CHAPTER 1 -->
+  <section class="jv-chapter candy-bg">
+    <div class="jv-chapter-inner">
+      <span class="jv-chapter-eyebrow">Chapter 1 &mdash; Roots</span>
+      <h2 class="jv-chapter-title">Where He Comes From</h2>
+      <div class="jv-body">
+        <p>The Vázquez name doesn't start in California. It starts in Galicia, Spain &mdash; 1547. A family that crossed oceans, survived generations, and planted roots wherever they landed.</p>
+        <p>From Spain to Mexico City. From Mexico City to Santa Barbara. Each generation carrying the name forward like a torch that never goes out.</p>
+        <p>Joseph's grandfather Fidel Vázquez was part of that migration &mdash; a man who brought the family from Mexico City to California, trading one world for another, betting everything on the Central Coast.</p>
+        <p>His son Joe &mdash; Joseph's father &mdash; became a metalworker. A ring maker. A man who turned raw material into something permanent with his bare hands. He boxed at local gyms. He fished off the Santa Barbara breakwater. He drove with the windows down and music playing. He was Santa Barbara before Santa Barbara knew what it was.</p>
+        <p>That's the blood Joseph was born into. That's what runs through him.</p>
+      </div>
+      <blockquote class="jv-pullquote">"The Vázquez line doesn't break. It bends. Then it builds something stronger."</blockquote>
+    </div>
+  </section>
+
+  <!-- CHAPTER 2 -->
+  <section class="jv-chapter candy-bg">
+    <div class="jv-chapter-inner">
+      <span class="jv-chapter-eyebrow">Chapter 2 &mdash; The Early Years</span>
+      <h2 class="jv-chapter-title">Santa Barbara Raised</h2>
+      <div class="jv-body">
+        <p>Joseph Vázquez was born June 15, 1968 in Santa Barbara, California. He grew up in the shadow of the mountains and the smell of the ocean &mdash; the Central Coast way.</p>
+        <p>Santa Barbara in the late 60s and 70s was still raw. Still working class. Still a place where a man was measured by what he did with his hands, not what he said with his mouth.</p>
+        <p>Joseph learned that early. He watched his father work. He watched his grandfather's story become family legend. He absorbed it all without anyone having to say a word.</p>
+        <p>By the time he was a young man he was already carrying the family's weight &mdash; the expectation that you build something real. That you leave something behind. That you don't just pass through. You mark the ground you walked on.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHAPTER 3 -->
+  <section class="jv-chapter candy-bg">
+    <div class="jv-chapter-inner">
+      <span class="jv-chapter-eyebrow">Chapter 3 &mdash; The Mustang Memory</span>
+      <h2 class="jv-chapter-title">The Night That Made Everything</h2>
+      <div class="jv-body">
+        <p>There is one memory that started all of this.</p>
+        <p>A father. His young son. An old school Mustang rolling through Santa Maria at night. Brenton Wood playing low on the stereo &mdash; that smooth, soulful sound that only makes sense when the windows are cracked and the California night air is coming through.</p>
+        <p>The boy would fall asleep in the passenger seat. Safe. Warm. The music wrapping around him like a blanket.</p>
+        <p>He didn't know it then. But that moment &mdash; that Mustang, that music, that man driving &mdash; became the foundation of everything he would build as an adult.</p>
+        <p>That boy grew up to create My Legacy Continues. A platform to preserve family stories forever. And the first story it needed to preserve was this one.</p>
+        <p>The man behind the wheel deserves his own chapter. This is it.</p>
+      </div>
+      <blockquote class="jv-pullquote">"Not every lesson comes with words. Some come with a Mustang and Brenton Wood at midnight."</blockquote>
+    </div>
+  </section>
+
+  <!-- CHAPTER 4 -->
+  <section class="jv-chapter candy-bg">
+    <div class="jv-chapter-inner">
+      <span class="jv-chapter-eyebrow">Chapter 4 &mdash; The Man He Is</span>
+      <h2 class="jv-chapter-title">Central Coast Built</h2>
+      <div class="jv-body">
+        <p>Joseph Vázquez is a Central Coast man in the truest sense. He knows what it means to work. He knows what it means to show up. He knows the difference between talking about building something and actually building it.</p>
+        <p>He passed those things to his son without a manual. Just by being present. By driving through Santa Maria at night. By knowing the family history and keeping it alive long enough to pass it forward.</p>
+        <p>He is connected to the oldest living members of the Vázquez family. He carries stories that haven't been written down yet. Names, places, moments that only exist in his memory right now.</p>
+        <p>That's why this page exists. Before those stories disappear &mdash; we write them down. We make them permanent. We make sure his grandchildren's grandchildren know exactly who Joseph Vázquez was and where they came from.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHAPTER 5 -->
+  <section class="jv-chapter candy-bg">
+    <div class="jv-chapter-inner">
+      <span class="jv-chapter-eyebrow">Chapter 5 &mdash; The Family Line</span>
+      <h2 class="jv-chapter-title">The Vázquez Legacy</h2>
+
+      <div class="jv-timeline">
+        <div class="jv-timeline-item">
+          <span class="jv-timeline-year">1547</span>
+          <p>Vázquez family documented in Galicia, Spain. The name begins its journey.</p>
+        </div>
+        <div class="jv-timeline-item">
+          <span class="jv-timeline-year">Early 1900s</span>
+          <p>Fidel Vázquez. Mexico City. The patriarch who would bring the family north.</p>
+        </div>
+        <div class="jv-timeline-item">
+          <span class="jv-timeline-year">1957</span>
+          <p>The Vázquez family arrives in California. Santa Barbara becomes home.</p>
+        </div>
+        <div class="jv-timeline-item">
+          <span class="jv-timeline-year">1968</span>
+          <p>Joseph Vázquez born. June 15. Santa Barbara, California.</p>
+        </div>
+        <div class="jv-timeline-item">
+          <span class="jv-timeline-year">The 1970s &mdash; 80s</span>
+          <p>Joseph grows up on the Central Coast. Watches his father work. Absorbs the family DNA.</p>
+        </div>
+        <div class="jv-timeline-item">
+          <span class="jv-timeline-year">Santa Maria</span>
+          <p>A Mustang. Brenton Wood. A young son falling asleep. The moment that started everything.</p>
+        </div>
+        <div class="jv-timeline-item">
+          <span class="jv-timeline-year">2026</span>
+          <p>His son Bear builds My Legacy Continues. The story gets preserved forever.</p>
+        </div>
+        <div class="jv-timeline-item">
+          <span class="jv-timeline-year">Future</span>
+          <p>The Vázquez line continues.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHAPTER 6 -->
+  <section class="jv-chapter candy-bg">
+    <div class="jv-chapter-inner">
+      <span class="jv-chapter-eyebrow">Chapter 6 &mdash; What He Knows</span>
+      <h2 class="jv-chapter-title">The Stories Only He Can Tell</h2>
+      <div class="jv-body">
+        <p>Joseph Vázquez is the bridge. He is the living connection between the oldest generation of the Vázquez family and the newest.</p>
+        <p>He knows things nobody else knows. He is planning to take his son Bear to visit the oldest living Vázquez family member &mdash; a trip that could unlock decades of untold history.</p>
+        <p>This chapter is reserved for what comes from that visit. The names. The dates. The stories. The recipes. The migration routes. The things that have never been written down.</p>
+        <p>When that trip happens &mdash; this page will be updated. Forever.</p>
+      </div>
+      <blockquote class="jv-pullquote">"Some stories are worth waiting for. This is one of them."</blockquote>
+    </div>
+  </section>
+
+  <!-- CHAPTER 7 -->
+  <section class="jv-chapter candy-bg">
+    <div class="jv-chapter-inner">
+      <span class="jv-chapter-eyebrow">Chapter 7 &mdash; Grandma Barbara</span>
+      <h2 class="jv-chapter-title">The Woman With The 64</h2>
+      <div class="jv-body">
+        <p>There is a photograph somewhere. A grandmother named Barbara &mdash; Elvira "Barbara" García &mdash; standing next to a 1964 Chevrolet Impala. In the projects. Candy paint catching the light.</p>
+        <p>That image has lived in Bear's memory his whole life. The car. The woman. The pride in how she stood next to it.</p>
+        <p>Without knowing it &mdash; that photograph became the visual DNA of My Legacy Continues. The candy paint. The lowrider aesthetic. The gold flakes. It all traces back to Barbara and that 64.</p>
+        <p>Her story is being documented separately. But she belongs in Joseph's chapter too &mdash; because she is part of what shaped him. Part of what he carried. Part of what he passed forward.</p>
+      </div>
+      <blockquote class="jv-pullquote">"The 64 wasn't just a car. It was a statement. We were here. We built something beautiful. And we weren't going anywhere."</blockquote>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="jv-cta-section candy-bg">
+    <h2>Tell Joseph Something</h2>
+    <p>Know Joseph? Worked with him? Grew up with him? Leave him a memory below. It will live on this page forever.</p>
+    <a href="contact.html" class="jv-cta-btn">Leave A Memory</a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="jv-footer">
+    <img src="logo.png" alt="My Legacy Continues" class="jv-footer-logo">
+    <div class="jv-footer-text">Preserved by My Legacy Continues</div>
+    <div class="jv-footer-url">mylegacycontinues.com</div>
+    <p class="jv-footer-tagline">Your story deserves forever.</p>
+    <div class="jv-footer-links">
+      <a href="vazquez-profile.html">Vázquez Profile</a>
+      <a href="index.html">Home</a>
+    </div>
+  </footer>
+
+</body>
+</html>
