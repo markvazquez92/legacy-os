@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<!-- NO EMOJIS EVER -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Big Tymer Trucking &mdash; Zachary Mediano | My Legacy Continues</title>
+  <meta name="description" content="Big Tymer Trucking — owner-operator Zachary Mediano. Santa Maria, CA. DOT# 3910331. General freight across California's Central Coast. Permanent business legacy hosted by My Legacy Continues.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Outfit:wght@300;400;500;600;700&family=Cinzel:ital,wght@0,500;0,700;1,500&display=swap">
+
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    :root {
+      --bg: #0a0a0a;
+      --bg-card: #111111;
+      --blue: #1a6fde;
+      --blue-deep: #0e4b9c;
+      --blue-glow: rgba(26,111,222,0.45);
+      --blue-soft: rgba(26,111,222,0.25);
+      --chrome: #d4d4d4;
+      --chrome-soft: #9a9a9a;
+      --white: #ffffff;
+      --hero-overlay: rgba(0,0,0,0.65);
+      --font-heading: 'Oswald', Impact, sans-serif;
+      --font-body: 'Outfit', system-ui, -apple-system, sans-serif;
+      --font-accent: 'Cinzel', Georgia, serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--white);
+      font-family: var(--font-body);
+      font-weight: 400;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
+    }
+
+    a { color: var(--blue); text-decoration: none; transition: color 0.2s; }
+    a:hover { color: #3d8bf0; }
+    img { max-width: 100%; display: block; }
+
+    .site-nav {
+      background: rgba(10,10,10,0.92) !important;
+      backdrop-filter: blur(10px) !important;
+      -webkit-backdrop-filter: blur(10px) !important;
+    }
+
+    /* Blue pinstripe divider */
+    hr.pinstripe {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--blue) 18%, var(--blue) 82%, transparent);
+      border: 0;
+      opacity: 0.7;
+      max-width: 1180px;
+      margin: 0 auto;
+    }
+    .pinstripe-inline {
+      width: 240px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--blue), transparent);
+      margin: 32px auto 0;
+      opacity: 0.85;
+    }
+
+    /* ============ HERO ============ */
+    .bt-hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 140px 24px 90px;
+      text-align: center;
+      overflow: hidden;
+      background: linear-gradient(135deg, #000000 0%, #0a1628 55%, #1a6fde 100%);
+    }
+    .bt-hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: var(--hero-overlay);
+      z-index: 1;
+    }
+    .bt-hero-inner { position: relative; z-index: 2; max-width: 940px; }
+    .bt-hero-logo {
+      width: 200px;
+      height: auto;
+      margin: 0 auto 32px;
+      display: block;
+      filter: drop-shadow(0 8px 28px rgba(26,111,222,0.55)) drop-shadow(0 2px 4px rgba(0,0,0,0.8));
+    }
+    .bt-hero h1 {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: clamp(2.2rem, 6vw, 4.4rem);
+      line-height: 1.05;
+      color: var(--white);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin: 0 auto 16px;
+      text-shadow: 0 3px 22px rgba(0,0,0,0.6), 0 0 30px rgba(26,111,222,0.4);
+    }
+    .bt-hero-sub {
+      font-family: var(--font-body);
+      font-weight: 500;
+      font-size: clamp(0.95rem, 1.6vw, 1.1rem);
+      color: var(--chrome);
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      margin-bottom: 28px;
+    }
+    .bt-hero-tag {
+      font-family: var(--font-accent);
+      font-style: italic;
+      font-weight: 500;
+      font-size: clamp(1.1rem, 2.2vw, 1.45rem);
+      color: var(--blue);
+      letter-spacing: 0.02em;
+      text-shadow: 0 0 18px rgba(26,111,222,0.55);
+    }
+    .bt-scroll {
+      position: absolute;
+      bottom: 36px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+      color: var(--blue);
+      font-family: var(--font-body);
+      font-size: 11px;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      text-align: center;
+    }
+    .bt-scroll-arrow {
+      display: block;
+      width: 16px;
+      height: 16px;
+      border-right: 2px solid var(--blue);
+      border-bottom: 2px solid var(--blue);
+      transform: rotate(45deg);
+      margin: 12px auto 0;
+      animation: bt-bounce 1.8s infinite ease-in-out;
+      box-shadow: 2px 2px 8px rgba(26,111,222,0.5);
+    }
+    @keyframes bt-bounce {
+      0%, 100% { transform: rotate(45deg) translate(0,0); opacity: 0.9; }
+      50% { transform: rotate(45deg) translate(4px,4px); opacity: 0.45; }
+    }
+
+    /* ============ SECTION SCAFFOLD ============ */
+    .bt-section { padding: clamp(64px, 9vw, 110px) 24px; }
+    .bt-section.dark { background: var(--bg-card); }
+    .bt-section.deep { background: var(--bg); }
+    .bt-container { max-width: 1180px; margin: 0 auto; }
+    .bt-section-eyebrow {
+      font-family: var(--font-heading);
+      font-size: 12px;
+      letter-spacing: 0.42em;
+      color: var(--blue);
+      font-weight: 600;
+      text-transform: uppercase;
+      text-align: center;
+      margin-bottom: 16px;
+    }
+    .bt-section-title {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: clamp(1.9rem, 3.8vw, 2.8rem);
+      color: var(--white);
+      letter-spacing: 0.14em;
+      text-align: center;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+    }
+    .bt-section-sub {
+      font-family: var(--font-body);
+      font-weight: 400;
+      font-size: 1.05rem;
+      color: var(--chrome);
+      text-align: center;
+      margin-bottom: 48px;
+      letter-spacing: 0.02em;
+      max-width: 720px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* ============ ABOUT ============ */
+    .bt-about {
+      display: grid;
+      grid-template-columns: 320px 1fr;
+      gap: 60px;
+      align-items: start;
+    }
+    .bt-about-logo-wrap {
+      justify-self: center;
+      padding: 28px;
+      background: #000;
+      border: 1px solid var(--blue);
+      box-shadow: 0 0 0 1px rgba(26,111,222,0.2), 0 0 36px -8px var(--blue-glow);
+      display: grid;
+      place-items: center;
+      width: 280px;
+      height: 280px;
+    }
+    .bt-about-logo-wrap img { max-width: 100%; height: auto; }
+    .bt-about-name {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: clamp(1.8rem, 3.2vw, 2.4rem);
+      color: var(--white);
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+    .bt-about-role {
+      font-family: var(--font-body);
+      font-weight: 500;
+      font-size: 0.92rem;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: var(--blue);
+      margin-bottom: 28px;
+    }
+    .bt-facts {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 28px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px 28px;
+    }
+    .bt-fact {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      color: var(--white);
+      font-size: 0.98rem;
+      letter-spacing: 0.01em;
+    }
+    .bt-fact::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      background: var(--blue);
+      flex-shrink: 0;
+      box-shadow: 0 0 10px var(--blue-glow);
+    }
+    .bt-about-story {
+      color: var(--chrome);
+      line-height: 1.8;
+      font-size: 1rem;
+      border-left: 2px solid var(--blue);
+      padding-left: 18px;
+    }
+
+    /* ============ SERVICES ============ */
+    .bt-service-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+    }
+    .bt-service-card {
+      background: var(--bg-card);
+      border: 1px solid var(--blue);
+      padding: 34px 30px;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    .bt-service-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 18px 38px -14px var(--blue-glow);
+    }
+    .bt-service-dot {
+      width: 10px;
+      height: 10px;
+      background: var(--blue);
+      margin-bottom: 18px;
+      box-shadow: 0 0 12px var(--blue-glow);
+    }
+    .bt-service-card h3 {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 1.25rem;
+      color: var(--blue);
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    .bt-service-card p {
+      color: var(--white);
+      line-height: 1.7;
+      font-size: 0.98rem;
+    }
+
+    /* ============ CREDENTIALS / STATS ============ */
+    .bt-stats-wrap {
+      position: relative;
+    }
+    .bt-stats-wrap::before,
+    .bt-stats-wrap::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--blue) 18%, var(--blue) 82%, transparent);
+    }
+    .bt-stats-wrap::before { top: 0; }
+    .bt-stats-wrap::after { bottom: 0; }
+    .bt-stats-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+    .bt-stat-card {
+      background: var(--bg-card);
+      border: 1px solid var(--blue);
+      padding: 36px 24px;
+      text-align: center;
+    }
+    .bt-stat-num {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+      color: var(--blue);
+      letter-spacing: 0.08em;
+      margin-bottom: 10px;
+      text-shadow: 0 0 22px var(--blue-glow);
+    }
+    .bt-stat-label {
+      font-family: var(--font-body);
+      font-weight: 500;
+      font-size: 0.82rem;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--chrome);
+    }
+
+    /* ============ BUSINESS CARD SECTION ============ */
+    .bt-card-body {
+      max-width: 760px;
+      margin: 0 auto 44px;
+      color: var(--chrome);
+      font-size: 1.05rem;
+      line-height: 1.8;
+      text-align: center;
+    }
+    .bt-card-mockups {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      max-width: 880px;
+      margin: 0 auto;
+    }
+    .bt-card-mock {
+      aspect-ratio: 7 / 4;
+      background: linear-gradient(135deg, #0a1628, #000000);
+      border: 1px solid var(--blue);
+      border-radius: 6px;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 14px;
+      position: relative;
+      box-shadow: 0 18px 44px -16px var(--blue-glow);
+    }
+    .bt-card-mock.front img { max-width: 75%; height: auto; }
+    .bt-card-mock.front .bt-card-tag {
+      font-family: var(--font-body);
+      font-size: 10px;
+      letter-spacing: 0.32em;
+      color: var(--chrome-soft);
+      text-transform: uppercase;
+    }
+    .bt-card-mock.back .bt-card-qr {
+      width: 120px;
+      height: 120px;
+      background: var(--white);
+      padding: 6px;
+    }
+    .bt-card-mock.back .bt-card-qr img { width: 100%; height: 100%; display: block; }
+    .bt-card-mock.back .bt-card-scan {
+      font-family: var(--font-heading);
+      font-size: 12px;
+      letter-spacing: 0.32em;
+      color: var(--blue);
+      text-transform: uppercase;
+      text-align: center;
+    }
+    .bt-card-label {
+      display: block;
+      text-align: center;
+      margin-top: 14px;
+      font-family: var(--font-body);
+      font-size: 11px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--chrome-soft);
+    }
+
+    /* ============ CONTACT ============ */
+    .bt-contact-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+    .bt-contact-card {
+      background: #000;
+      border: 1px solid var(--blue);
+      padding: 32px 24px;
+      text-align: center;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    .bt-contact-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 30px -12px var(--blue-glow);
+    }
+    .bt-contact-label {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 0.82rem;
+      letter-spacing: 0.32em;
+      color: var(--blue);
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+    .bt-contact-value,
+    .bt-contact-value a {
+      font-family: var(--font-body);
+      font-weight: 500;
+      font-size: 1.08rem;
+      color: var(--white);
+      letter-spacing: 0.02em;
+      word-break: break-word;
+    }
+    .bt-contact-value a:hover { color: var(--blue); }
+
+    /* ============ QR ============ */
+    .bt-qr { background: var(--bg); padding: clamp(80px, 10vw, 130px) 24px; text-align: center; }
+    .bt-qr h2 {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: clamp(1.3rem, 2.6vw, 1.8rem);
+      color: var(--blue);
+      letter-spacing: 0.38em;
+      text-transform: uppercase;
+      margin-bottom: 36px;
+    }
+    .bt-qr-frame {
+      display: inline-block;
+      padding: 18px;
+      border: 1px solid var(--blue);
+      background: var(--white);
+      box-shadow: 0 0 44px -10px var(--blue-glow);
+    }
+    .bt-qr-frame img { width: 240px; height: 240px; display: block; }
+    .bt-qr-ship {
+      width: 46px;
+      height: auto;
+      margin: 32px auto 0;
+      display: block;
+      opacity: 0.75;
+      filter: grayscale(1) brightness(1.8);
+    }
+    .bt-qr-caption {
+      margin-top: 20px;
+      font-family: var(--font-body);
+      font-style: italic;
+      font-size: 1.05rem;
+      color: var(--chrome);
+      max-width: 620px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.6;
+    }
+    .bt-qr-link {
+      margin-top: 14px;
+      font-family: var(--font-body);
+      font-size: 0.85rem;
+      letter-spacing: 0.16em;
+      color: var(--blue);
+    }
+    .bt-qr-link a { color: var(--blue); }
+
+    /* ============ FOOTER ============ */
+    .bt-footer {
+      background: var(--bg-card);
+      padding: 52px 24px 36px;
+      border-top: 1px solid var(--blue);
+    }
+    .bt-footer-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      align-items: center;
+      gap: 40px;
+    }
+    .bt-footer-left { justify-self: start; }
+    .bt-footer-right { justify-self: end; text-align: right; }
+    .bt-footer-center { text-align: center; }
+    .bt-footer-brand {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 1rem;
+      letter-spacing: 0.2em;
+      color: var(--white);
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+    .bt-footer-sub {
+      font-family: var(--font-body);
+      font-size: 0.82rem;
+      letter-spacing: 0.18em;
+      color: var(--chrome-soft);
+      text-transform: uppercase;
+    }
+    .bt-footer-center a {
+      color: var(--chrome);
+      font-size: 0.92rem;
+      letter-spacing: 0.05em;
+    }
+    .bt-footer-center a:hover { color: var(--blue); }
+    .bt-footer-center .bar { color: var(--blue); margin: 0 10px; }
+    .bt-footer-right img {
+      max-width: 88px;
+      height: auto;
+      margin-left: auto;
+      margin-bottom: 8px;
+      filter: grayscale(1) brightness(1.6);
+      opacity: 0.85;
+    }
+    .bt-footer-right a { color: var(--chrome); font-size: 0.85rem; letter-spacing: 0.1em; }
+    .bt-footer-bottom {
+      max-width: 1180px;
+      margin: 36px auto 0;
+      padding-top: 20px;
+      border-top: 1px solid var(--blue-soft);
+    }
+    .bt-footer-copy {
+      font-size: 0.78rem;
+      color: var(--chrome-soft);
+      text-align: center;
+      letter-spacing: 0.04em;
+    }
+
+    /* ============ FADE-UP ============ */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+    }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+    /* ============ RESPONSIVE ============ */
+    @media (max-width: 960px) {
+      .bt-about { grid-template-columns: 1fr; gap: 36px; text-align: center; }
+      .bt-about-story { text-align: left; }
+      .bt-facts { grid-template-columns: 1fr; }
+      .bt-fact { justify-content: flex-start; }
+      .bt-service-grid { grid-template-columns: 1fr; }
+      .bt-stats-grid { grid-template-columns: 1fr; }
+      .bt-card-mockups { grid-template-columns: 1fr; gap: 26px; }
+      .bt-contact-grid { grid-template-columns: 1fr; }
+      .bt-footer-inner { grid-template-columns: 1fr; justify-items: center; text-align: center; gap: 26px; }
+      .bt-footer-left, .bt-footer-right { justify-self: center; text-align: center; }
+      .bt-footer-right img { margin: 0 auto 8px; }
+    }
+    @media (max-width: 540px) {
+      .bt-hero { padding: 110px 20px 80px; }
+      .bt-about-logo-wrap { width: 100%; max-width: 280px; height: auto; aspect-ratio: 1; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Facebook Pixel noscript -->
+  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=2828165625364437&ev=PageView&noscript=1" /></noscript>
+
+  <!-- NAVIGATION -->
+  <nav class="site-nav">
+    <a href="https://mylegacycontinues.com/index.html" class="nav-brand">
+      <img src="logo.png" alt="My Legacy Continues" class="nav-logo">
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="heritage-book.html">Heritage</a></li>
+      <li><a href="pet-tag.html">Pet Tags</a></li>
+      <li><a href="business-profile.html">Business</a></li>
+      <li><a href="rescue-registry.html">Rescue</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="https://mylegacycontinues.com/index.html#products" class="btn btn-gold" style="padding: 0.5rem 1.2rem; font-size: 0.7rem;">START YOUR LEGACY</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- SECTION 1 — HERO -->
+  <section class="bt-hero">
+    <div class="bt-hero-inner">
+      <img src="bigtymer-logo.png" alt="Big Tymer Trucking" class="bt-hero-logo">
+      <h1>Big Tymer Trucking</h1>
+      <div class="bt-hero-sub">Santa Maria, California &mdash; The 805</div>
+      <div class="bt-hero-tag">&ldquo;One truck. One driver. Built from nothing.&rdquo;</div>
+      <div class="pinstripe-inline"></div>
+    </div>
+    <div class="bt-scroll">
+      Scroll
+      <span class="bt-scroll-arrow"></span>
+    </div>
+  </section>
+
+  <!-- SECTION 2 — ABOUT -->
+  <section class="bt-section dark">
+    <div class="bt-container bt-about fade-up">
+      <div class="bt-about-logo-wrap">
+        <img src="bigtymer-logo.png" alt="Big Tymer Trucking">
+      </div>
+      <div class="bt-about-copy">
+        <h2 class="bt-about-name">Zachary Mediano</h2>
+        <div class="bt-about-role">Owner &amp; Operator &mdash; Big Tymer Trucking</div>
+        <ul class="bt-facts">
+          <li class="bt-fact">Solo owner-operator</li>
+          <li class="bt-fact">Active since June 2022</li>
+          <li class="bt-fact">DOT# 3910331</li>
+          <li class="bt-fact">USDOT Active Status</li>
+          <li class="bt-fact">Intrastate California &mdash; General Freight</li>
+          <li class="bt-fact">Santa Maria, CA 93454</li>
+          <li class="bt-fact">40,000 miles logged in 2024</li>
+        </ul>
+        <p class="bt-about-story">Zachary Mediano didn&rsquo;t wait for permission. He got his DOT number, got his truck, and got to work. Big Tymer Trucking has been rolling since 2022 &mdash; one driver, one rig, building a reputation mile by mile on the Central Coast.</p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="pinstripe">
+
+  <!-- SECTION 3 — SERVICES -->
+  <section class="bt-section deep">
+    <div class="bt-container">
+      <div class="bt-section-eyebrow">The Work</div>
+      <h2 class="bt-section-title">What We Haul</h2>
+      <div class="bt-section-sub">California freight, moved clean and on time.</div>
+
+      <div class="bt-service-grid fade-up">
+        <div class="bt-service-card">
+          <div class="bt-service-dot"></div>
+          <h3>General Freight</h3>
+          <p>Local and regional hauling throughout California. Dry goods, pallets, commercial loads &mdash; dispatched and delivered.</p>
+        </div>
+        <div class="bt-service-card">
+          <div class="bt-service-dot"></div>
+          <h3>Central Coast Routes</h3>
+          <p>Santa Barbara, San Luis Obispo, and Ventura Counties. The 805 corridor is home turf &mdash; miles driven, roads known.</p>
+        </div>
+        <div class="bt-service-card">
+          <div class="bt-service-dot"></div>
+          <h3>Intrastate California</h3>
+          <p>Licensed and insured for California operations. Paperwork clean, DOT active, ready for the next load.</p>
+        </div>
+        <div class="bt-service-card">
+          <div class="bt-service-dot"></div>
+          <h3>Reliable Delivery</h3>
+          <p>On time. Every time. No excuses. One driver accountable from pickup to drop &mdash; the way it should be.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="pinstripe">
+
+  <!-- SECTION 4 — CREDENTIALS -->
+  <section class="bt-section dark bt-stats-wrap">
+    <div class="bt-container">
+      <div class="bt-section-eyebrow">The Record</div>
+      <h2 class="bt-section-title">Credentials</h2>
+      <div class="bt-section-sub">Verified. Active. On the road.</div>
+
+      <div class="bt-stats-grid fade-up">
+        <div class="bt-stat-card">
+          <div class="bt-stat-num">DOT# 3910331</div>
+          <div class="bt-stat-label">USDOT Verified Active</div>
+        </div>
+        <div class="bt-stat-card">
+          <div class="bt-stat-num">Est. 2022</div>
+          <div class="bt-stat-label">Building Since Day One</div>
+        </div>
+        <div class="bt-stat-card">
+          <div class="bt-stat-num">40,000 Miles</div>
+          <div class="bt-stat-label">Logged in 2024</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="pinstripe">
+
+  <!-- SECTION 5 — BUSINESS CARD -->
+  <section class="bt-section deep">
+    <div class="bt-container">
+      <div class="bt-section-eyebrow">The Hand-Off</div>
+      <h2 class="bt-section-title">The Card That Tells Your Story</h2>
+      <p class="bt-card-body">Every Big Tymer business card has a QR code on the back. Scan it and land here &mdash; the full story of who built this company, what they haul, and why their legacy matters. One card. One scan. Everything you need to know.</p>
+
+      <div class="bt-card-mockups fade-up">
+        <div>
+          <div class="bt-card-mock front">
+            <img src="bigtymer-logo.png" alt="Big Tymer Trucking">
+            <div class="bt-card-tag">Zachary Mediano &middot; DOT# 3910331</div>
+          </div>
+          <div class="bt-card-label">Card &mdash; Front</div>
+        </div>
+        <div>
+          <div class="bt-card-mock back">
+            <div class="bt-card-qr">
+              <img src="https://api.qrserver.com/v1/create-qr-code/?data=https%3A%2F%2Fmylegacycontinues.com%2Fbigtymer-trucking-profile.html&size=200x200&margin=4&format=png" alt="QR code">
+            </div>
+            <div class="bt-card-scan">Scan to Visit My Legacy</div>
+          </div>
+          <div class="bt-card-label">Card &mdash; Back</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="pinstripe">
+
+  <!-- SECTION 6 — CONTACT -->
+  <section class="bt-section dark">
+    <div class="bt-container">
+      <div class="bt-section-eyebrow">Reach Out</div>
+      <h2 class="bt-section-title">Get In Touch</h2>
+      <div class="bt-section-sub">Book a load. Ask a question. Talk to the driver directly.</div>
+
+      <div class="bt-contact-grid fade-up">
+        <div class="bt-contact-card">
+          <div class="bt-contact-label">Phone</div>
+          <div class="bt-contact-value"><a href="tel:+18058588180">805-858-8180</a></div>
+        </div>
+        <div class="bt-contact-card">
+          <div class="bt-contact-label">Email</div>
+          <div class="bt-contact-value"><a href="mailto:bigtymertrucking@gmail.com">bigtymertrucking@gmail.com</a></div>
+        </div>
+        <div class="bt-contact-card">
+          <div class="bt-contact-label">DOT</div>
+          <div class="bt-contact-value">3910331</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="pinstripe">
+
+  <!-- SECTION 7 — QR + MLC -->
+  <section class="bt-qr">
+    <h2>Scan To Visit This Legacy</h2>
+    <div class="bt-qr-frame">
+      <img src="https://api.qrserver.com/v1/create-qr-code/?data=https%3A%2F%2Fmylegacycontinues.com%2Fbigtymer-trucking-profile.html&size=240x240&margin=12&format=png" alt="QR code linking to Big Tymer Trucking legacy page" width="240" height="240">
+    </div>
+    <img src="logo.png" alt="My Legacy Continues" class="bt-qr-ship">
+    <div class="bt-qr-caption">This profile is permanently hosted by My Legacy Continues. Zachary&rsquo;s legacy lives here forever.</div>
+    <div class="bt-qr-link"><a href="https://mylegacycontinues.com">mylegacycontinues.com</a></div>
+  </section>
+
+  <!-- SECTION 8 — FOOTER -->
+  <footer class="bt-footer">
+    <div class="bt-footer-inner">
+      <div class="bt-footer-left">
+        <div class="bt-footer-brand">Big Tymer Trucking</div>
+        <div class="bt-footer-sub">DOT# 3910331</div>
+      </div>
+      <div class="bt-footer-center">
+        <a href="tel:+18058588180">805-858-8180</a><span class="bar">|</span><a href="mailto:bigtymertrucking@gmail.com">bigtymertrucking@gmail.com</a>
+      </div>
+      <div class="bt-footer-right">
+        <img src="logo.png" alt="My Legacy Continues">
+        <a href="https://mylegacycontinues.com">mylegacycontinues.com</a>
+      </div>
+    </div>
+    <div class="bt-footer-bottom">
+      <p class="bt-footer-copy">Copyright &copy; 2026 Zachary Mediano &mdash; Legacy documented by My Legacy Continues</p>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile nav toggle
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    if (navToggle) {
+      navToggle.addEventListener('click', () => navLinks.classList.toggle('active'));
+      navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => navLinks.classList.remove('active'));
+      });
+    }
+
+    // Fade-in on scroll
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
