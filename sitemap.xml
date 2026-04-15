@@ -9,6 +9,42 @@
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://mylegacycontinues.com/heritage-book.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mylegacycontinues.com/cemetery-plaque.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mylegacycontinues.com/pet-tag.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mylegacycontinues.com/business-profile.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mylegacycontinues.com/contractor-bundle.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mylegacycontinues.com/baby-legacy.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mylegacycontinues.com/life-trailer.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mylegacycontinues.com/free-profile.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mylegacycontinues.com/network.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://mylegacycontinues.com/about.html</loc>
     <priority>0.8</priority>
   </url>
@@ -21,59 +57,11 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://mylegacycontinues.com/network.html</loc>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://mylegacycontinues.com/demo-profiles.html</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://mylegacycontinues.com/business-profile.html</loc>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://mylegacycontinues.com/sports-legacy.html</loc>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://mylegacycontinues.com/creator-profile.html</loc>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://mylegacycontinues.com/heritage-book.html</loc>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://mylegacycontinues.com/contractor-bundle.html</loc>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://mylegacycontinues.com/pet-tag.html</loc>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://mylegacycontinues.com/cemetery-plaque.html</loc>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://mylegacycontinues.com/baby-legacy.html</loc>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://mylegacycontinues.com/alzheimer-memory-book.html</loc>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://mylegacycontinues.com/morning-memories.html</loc>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://mylegacycontinues.com/life-trailer.html</loc>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://mylegacycontinues.com/free-profile.html</loc>
+    <loc>https://mylegacycontinues.com/plaque-demo.html</loc>
     <priority>0.8</priority>
   </url>
   <url>
@@ -85,19 +73,15 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://mylegacycontinues.com/plaque-demo.html</loc>
+    <loc>https://mylegacycontinues.com/sports-legacy.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mylegacycontinues.com/creator-profile.html</loc>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://mylegacycontinues.com/joseph-vazquez-heritage.html</loc>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://mylegacycontinues.com/portal.html</loc>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://mylegacycontinues.com/privacy.html</loc>
     <priority>0.6</priority>
   </url>
   <url>
@@ -106,6 +90,10 @@
   </url>
   <url>
     <loc>https://mylegacycontinues.com/vazquez-trailer.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://mylegacycontinues.com/deborah-mahony-profile.html</loc>
     <priority>0.6</priority>
   </url>
   <url>
@@ -129,10 +117,6 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://mylegacycontinues.com/deborah-mahony-profile.html</loc>
-    <priority>0.6</priority>
-  </url>
-  <url>
     <loc>https://mylegacycontinues.com/shoshi-gamliel-profile.html</loc>
     <priority>0.6</priority>
   </url>
@@ -150,6 +134,14 @@
   </url>
   <url>
     <loc>https://mylegacycontinues.com/butters-profile.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://mylegacycontinues.com/portal.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://mylegacycontinues.com/privacy.html</loc>
     <priority>0.6</priority>
   </url>
 </urlset>
