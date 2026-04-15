@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<!-- NO EMOJIS EVER -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The MLC Network &mdash; Central Coast Culture | My Legacy Continues</title>
+  <meta name="description" content="The MLC Network — the Central Coast's cultural broadcast station. Weekly drops of music, food, legacy profiles, and 805 stories. Permanent. Hosted forever.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Outfit:wght@300;400;500;600;700&family=Cinzel:wght@500;600;700;900&family=Cormorant+Garamond:ital,wght@0,500;1,400;1,500&display=swap">
+
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    :root {
+      --bg: #1A1A1A;
+      --bg-deep: #0A0A0A;
+      --bg-card: #232323;
+      --brandywine: #8B0000;
+      --brandywine-deep: #4A0000;
+      --gold: #D4AF37;
+      --gold-soft: rgba(212,175,55,0.3);
+      --gold-glow: rgba(212,175,55,0.45);
+      --chrome: #E0E0E0;
+      --chrome-dim: #9a9a9a;
+      --cream: #FAF3E6;
+      --white: #FFFFFF;
+      --font-headline: 'Oswald', Impact, sans-serif;
+      --font-body: 'Outfit', system-ui, -apple-system, sans-serif;
+      --font-section: 'Cinzel', Georgia, serif;
+      --font-emotion: 'Cormorant Garamond', Georgia, serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--chrome);
+      font-family: var(--font-body);
+      font-weight: 400;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
+    }
+
+    a { color: var(--gold); text-decoration: none; transition: color 0.2s; }
+    a:hover { color: var(--brandywine); }
+    img { max-width: 100%; display: block; }
+
+    .site-nav {
+      background: rgba(10,10,10,0.92) !important;
+      backdrop-filter: blur(10px) !important;
+      -webkit-backdrop-filter: blur(10px) !important;
+    }
+
+    hr.pinstripe {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold) 18%, var(--gold) 82%, transparent);
+      border: 0;
+      opacity: 0.7;
+      max-width: 1180px;
+      margin: 0 auto;
+    }
+    .pinstripe-inline {
+      width: 240px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      margin: 32px auto 0;
+      opacity: 0.9;
+    }
+
+    /* ============ HERO ============ */
+    .nw-hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 140px 24px 90px;
+      text-align: center;
+      overflow: hidden;
+      background:
+        radial-gradient(ellipse at 50% 30%, rgba(212,175,55,0.09) 0%, transparent 60%),
+        linear-gradient(160deg, #0a0a0a 0%, #1A1A1A 55%, #0A0A0A 100%);
+    }
+    .nw-hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background:
+        radial-gradient(circle 0.6px at 1px 1px, rgba(255,255,255,0.04) 50%, transparent 51%) 0 0 / 4px 4px,
+        radial-gradient(circle 0.5px at 3px 2px, rgba(212,175,55,0.028) 50%, transparent 51%) 0 0 / 5px 5px;
+      pointer-events: none;
+    }
+    .nw-hero-inner { position: relative; z-index: 2; max-width: 940px; }
+    .nw-hero-eyebrow {
+      font-family: var(--font-section);
+      font-size: 12px;
+      letter-spacing: 0.5em;
+      color: var(--gold);
+      font-weight: 600;
+      margin-bottom: 28px;
+      text-transform: uppercase;
+    }
+    .nw-hero h1 {
+      font-family: var(--font-headline);
+      font-weight: 700;
+      font-size: clamp(2.4rem, 7vw, 5rem);
+      line-height: 1.05;
+      color: var(--white);
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin: 0 auto 28px;
+      text-shadow: 0 3px 22px rgba(0,0,0,0.65), 0 0 40px rgba(212,175,55,0.18);
+    }
+    .nw-hero-sub {
+      font-family: var(--font-emotion);
+      font-style: italic;
+      font-weight: 400;
+      font-size: clamp(1.1rem, 2.2vw, 1.45rem);
+      color: var(--cream);
+      letter-spacing: 0.01em;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .nw-scroll {
+      position: absolute;
+      bottom: 36px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+      color: var(--gold);
+      font-family: var(--font-body);
+      font-size: 11px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      text-align: center;
+    }
+    .nw-scroll-arrow {
+      display: block;
+      width: 16px;
+      height: 16px;
+      border-right: 2px solid var(--gold);
+      border-bottom: 2px solid var(--gold);
+      transform: rotate(45deg);
+      margin: 12px auto 0;
+      animation: nw-bounce 1.8s infinite ease-in-out;
+    }
+    @keyframes nw-bounce {
+      0%, 100% { transform: rotate(45deg) translate(0,0); opacity: 0.9; }
+      50% { transform: rotate(45deg) translate(4px,4px); opacity: 0.45; }
+    }
+
+    /* ============ SECTION SCAFFOLD ============ */
+    .nw-section { padding: clamp(64px, 9vw, 110px) 24px; }
+    .nw-section.deep { background: var(--bg-deep); }
+    .nw-section.charcoal { background: var(--bg); }
+    .nw-section.cream { background: var(--cream); color: #1A1A1A; }
+    .nw-container { max-width: 1180px; margin: 0 auto; }
+    .nw-section-eyebrow {
+      font-family: var(--font-section);
+      font-size: 12px;
+      letter-spacing: 0.42em;
+      color: var(--gold);
+      font-weight: 600;
+      text-transform: uppercase;
+      text-align: center;
+      margin-bottom: 16px;
+    }
+    .nw-section-title {
+      font-family: var(--font-headline);
+      font-weight: 700;
+      font-size: clamp(1.9rem, 3.8vw, 2.8rem);
+      color: var(--white);
+      letter-spacing: 0.14em;
+      text-align: center;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+    }
+    .nw-section.cream .nw-section-title { color: #1A1A1A; }
+    .nw-section-sub {
+      font-family: var(--font-emotion);
+      font-style: italic;
+      font-size: 1.2rem;
+      color: var(--chrome-dim);
+      text-align: center;
+      margin-bottom: 48px;
+    }
+    .nw-section.cream .nw-section-sub { color: #5a5a5a; }
+
+    /* ============ WEEKLY DROPS ============ */
+    .nw-drops-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 22px;
+    }
+    .nw-drop-card {
+      background: var(--bg-card);
+      border: 1px solid var(--gold);
+      padding: 36px 28px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    .nw-drop-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 44px -16px var(--gold-glow);
+    }
+    .nw-drop-dot {
+      width: 10px;
+      height: 10px;
+      background: var(--gold);
+      margin-bottom: 18px;
+      box-shadow: 0 0 12px var(--gold-glow);
+    }
+    .nw-drop-card h3 {
+      font-family: var(--font-section);
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--gold);
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+    .nw-drop-card p {
+      color: var(--chrome);
+      line-height: 1.72;
+      font-size: 0.97rem;
+      flex: 1;
+    }
+
+    /* ============ PLAYLIST ============ */
+    .nw-music-wrap { max-width: 760px; margin: 0 auto; }
+    .nw-music-frame {
+      border: 1px solid var(--gold);
+      padding: 0;
+      background: #000;
+      box-shadow: 0 0 44px -10px var(--gold-glow);
+    }
+    .nw-music-frame iframe {
+      width: 100%;
+      height: 450px;
+      display: block;
+      border: 0;
+      background: #000;
+    }
+    .nw-music-caption {
+      text-align: center;
+      margin-top: 22px;
+      font-family: var(--font-emotion);
+      font-style: italic;
+      color: var(--cream);
+      font-size: 1.05rem;
+    }
+
+    /* ============ FEATURED (CREAM) ============ */
+    .nw-feature-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 26px;
+    }
+    .nw-feature-card {
+      background: var(--bg-card);
+      border: 1px solid var(--gold);
+      padding: 34px 28px 30px;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .nw-feature-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 18px 40px -16px rgba(0,0,0,0.45);
+    }
+    .nw-feature-eyebrow {
+      font-family: var(--font-body);
+      font-size: 11px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--brandywine);
+      font-weight: 600;
+      margin-bottom: 14px;
+    }
+    .nw-feature-card h3 {
+      font-family: var(--font-section);
+      font-weight: 700;
+      font-size: 1.2rem;
+      color: var(--gold);
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    .nw-feature-card p {
+      color: var(--chrome);
+      line-height: 1.7;
+      font-size: 0.98rem;
+      margin-bottom: 22px;
+      flex: 1;
+    }
+
+    /* ============ BUTTONS ============ */
+    .nw-btn {
+      display: inline-block;
+      background: var(--gold);
+      color: #1A1A1A;
+      font-family: var(--font-headline);
+      font-weight: 700;
+      font-size: 0.82rem;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      padding: 14px 26px;
+      border: 0;
+      border-radius: 2px;
+      cursor: pointer;
+      transition: background 0.25s, color 0.25s, transform 0.25s, box-shadow 0.25s;
+      text-align: center;
+      box-shadow: 0 0 0 1px var(--gold-soft);
+    }
+    .nw-btn:hover {
+      background: var(--brandywine);
+      color: var(--cream);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 24px -10px rgba(139,0,0,0.55);
+    }
+    .nw-btn.full { display: block; width: 100%; }
+    .nw-btn.ghost {
+      background: transparent;
+      color: var(--gold);
+      border: 1px solid var(--gold);
+      box-shadow: none;
+    }
+    .nw-btn.ghost:hover { background: var(--gold); color: #1A1A1A; }
+
+    /* ============ JOIN THE NETWORK ============ */
+    .nw-join-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+    }
+    .nw-join-col h3 {
+      font-family: var(--font-section);
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--gold);
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+    .nw-join-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 24px;
+      color: var(--chrome);
+      font-size: 1rem;
+      line-height: 1.95;
+    }
+    .nw-join-list li {
+      padding: 6px 0 6px 24px;
+      position: relative;
+      border-bottom: 1px solid rgba(212,175,55,0.08);
+    }
+    .nw-join-list li:last-child { border-bottom: 0; }
+    .nw-join-list li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 17px;
+      width: 8px;
+      height: 1px;
+      background: var(--gold);
+    }
+    .nw-join-body {
+      color: var(--chrome);
+      line-height: 1.85;
+      font-size: 1rem;
+      margin-bottom: 24px;
+    }
+    .nw-join-cta { text-align: center; margin-top: 40px; }
+
+    /* ============ ARCHIVE ============ */
+    .nw-archive-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+    .nw-archive-card {
+      background: var(--bg-card);
+      border: 1px solid rgba(212,175,55,0.35);
+      padding: 26px 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      transition: border-color 0.25s, transform 0.25s;
+    }
+    .nw-archive-card:hover {
+      border-color: var(--gold);
+      transform: translateY(-2px);
+    }
+    .nw-archive-week {
+      font-family: var(--font-body);
+      font-size: 10px;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--chrome-dim);
+    }
+    .nw-archive-type {
+      font-family: var(--font-section);
+      font-size: 0.78rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 600;
+    }
+    .nw-archive-title {
+      font-family: var(--font-headline);
+      font-weight: 600;
+      font-size: 1.05rem;
+      color: var(--chrome);
+      letter-spacing: 0.04em;
+      margin-top: 4px;
+    }
+    .nw-archive-cta { text-align: center; margin-top: 44px; }
+
+    /* ============ QR ============ */
+    .nw-qr {
+      background: var(--bg-deep);
+      padding: clamp(80px, 10vw, 130px) 24px;
+      text-align: center;
+    }
+    .nw-qr h2 {
+      font-family: var(--font-section);
+      font-weight: 700;
+      font-size: clamp(1.3rem, 2.6vw, 1.8rem);
+      color: var(--gold);
+      letter-spacing: 0.38em;
+      text-transform: uppercase;
+      margin-bottom: 36px;
+    }
+    .nw-qr-frame {
+      display: inline-block;
+      padding: 18px;
+      border: 1px solid var(--gold);
+      background: var(--cream);
+      box-shadow: 0 0 44px -10px var(--gold-glow);
+    }
+    .nw-qr-frame img { width: 240px; height: 240px; display: block; }
+    .nw-qr-ship {
+      width: 46px;
+      height: auto;
+      margin: 32px auto 0;
+      display: block;
+      opacity: 0.85;
+    }
+    .nw-qr-caption {
+      margin-top: 22px;
+      font-family: var(--font-emotion);
+      font-style: italic;
+      font-size: 1.1rem;
+      color: var(--cream);
+      max-width: 620px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.6;
+    }
+    .nw-qr-link {
+      margin-top: 14px;
+      font-family: var(--font-body);
+      font-size: 0.85rem;
+      letter-spacing: 0.14em;
+      color: var(--gold);
+    }
+    .nw-qr-link a { color: var(--gold); }
+
+    /* ============ FADE-UP ============ */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+    }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+    /* ============ RESPONSIVE ============ */
+    @media (max-width: 960px) {
+      .nw-drops-grid { grid-template-columns: 1fr 1fr; }
+      .nw-feature-grid { grid-template-columns: 1fr; }
+      .nw-join-grid { grid-template-columns: 1fr; gap: 36px; }
+      .nw-archive-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 540px) {
+      .nw-hero { padding: 110px 20px 80px; }
+      .nw-drops-grid { grid-template-columns: 1fr; }
+      .nw-archive-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Facebook Pixel noscript -->
+  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=2828165625364437&ev=PageView&noscript=1" /></noscript>
+
+  <!-- NAVIGATION -->
+  <nav class="site-nav">
+    <a href="https://mylegacycontinues.com/index.html" class="nav-brand">
+      <img src="logo.png" alt="My Legacy Continues" class="nav-logo">
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="heritage-book.html">Heritage</a></li>
+      <li><a href="pet-tag.html">Pet Tags</a></li>
+      <li><a href="business-profile.html">Business</a></li>
+      <li><a href="network.html">The Network</a></li>
+      <li><a href="rescue-registry.html">Rescue Registry</a></li>
+      <li><a href="active-transports.html">Transport</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="https://mylegacycontinues.com/index.html#products" class="btn btn-gold" style="padding: 0.5rem 1.2rem; font-size: 0.7rem;">START YOUR LEGACY</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="nw-hero">
+    <div class="nw-hero-inner">
+      <div class="nw-hero-eyebrow">The 805 Network</div>
+      <h1>The MLC Network</h1>
+      <div class="nw-hero-sub">Where Central Coast stories live. Every week. Forever.</div>
+      <div class="pinstripe-inline"></div>
+    </div>
+    <div class="nw-scroll">
+      Scroll
+      <span class="nw-scroll-arrow"></span>
+    </div>
+  </section>
+
+  <!-- SECTION 1 — WEEKLY DROPS -->
+  <section class="nw-section charcoal">
+    <div class="nw-container">
+      <div class="nw-section-eyebrow">The Schedule</div>
+      <h2 class="nw-section-title">Weekly Drops</h2>
+      <div class="nw-section-sub">Four drops a week. All permanent. All the 805.</div>
+
+      <div class="nw-drops-grid fade-up">
+        <div class="nw-drop-card">
+          <div class="nw-drop-dot"></div>
+          <h3>Legacy Monday</h3>
+          <p>Every Monday a new Central Coast story goes live. A family. A business. A life documented permanently. Meet your neighbors.</p>
+        </div>
+        <div class="nw-drop-card">
+          <div class="nw-drop-dot"></div>
+          <h3>Food Wednesday</h3>
+          <p>Local restaurants. Real reactions. No filters. Central Coast spots that deserve to be known. Filmed. Permanent. Shared.</p>
+        </div>
+        <div class="nw-drop-card">
+          <div class="nw-drop-dot"></div>
+          <h3>Throwback Friday</h3>
+          <p>90s R&amp;B. Oldies. Lowrider classics. The music that built the 805. A new playlist every Friday. Drop it. Share it. Remember.</p>
+        </div>
+        <div class="nw-drop-card">
+          <div class="nw-drop-dot"></div>
+          <h3>Sunday Drop</h3>
+          <p>One song. One story. Every Sunday. Like Somo but Central Coast. The track that matters that week. Always here when you come back.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="pinstripe">
+
+  <!-- SECTION 2 — PLAYLIST -->
+  <section class="nw-section charcoal">
+    <div class="nw-container">
+      <div class="nw-section-eyebrow">Tune In</div>
+      <h2 class="nw-section-title">Now Playing &mdash; The 805</h2>
+
+      <div class="nw-music-wrap fade-up">
+        <div class="nw-music-frame">
+          <iframe allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write"
+                  frameborder="0"
+                  height="450"
+                  sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation"
+                  src="https://embed.music.apple.com/us/playlist/my-legacy-continues/pl.u-55D6XV5c8WBg0d"
+                  title="The MLC Network Playlist on Apple Music"></iframe>
+        </div>
+        <p class="nw-music-caption">Bear&rsquo;s personal playlist. Always rotating. Always the 805.</p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="pinstripe">
+
+  <!-- SECTION 3 — FEATURED THIS WEEK -->
+  <section class="nw-section cream">
+    <div class="nw-container">
+      <div class="nw-section-eyebrow">On Air</div>
+      <h2 class="nw-section-title">This Week On The Network</h2>
+      <div class="nw-section-sub">Three features rotating. Every week something new.</div>
+
+      <div class="nw-feature-grid fade-up">
+        <div class="nw-feature-card">
+          <div class="nw-feature-eyebrow">Legacy Profile</div>
+          <h3>The V&aacute;zquez Legacy</h3>
+          <p>Est. 1547. Galicia to Mexico City to the Central Coast. Seventeen generations documented in a single heritage book and permanent digital profile.</p>
+          <a href="vazquez-profile.html" class="nw-btn full">View Profile</a>
+        </div>
+        <div class="nw-feature-card">
+          <div class="nw-feature-eyebrow">Food Feature</div>
+          <h3>Central Coast Restaurant Feature</h3>
+          <p>Coming Soon. A local spot that deserves to be known. Filmed, reviewed, permanently documented on the Network.</p>
+          <a href="#" class="nw-btn full ghost">Stay Tuned</a>
+        </div>
+        <div class="nw-feature-card">
+          <div class="nw-feature-eyebrow">Athlete Spotlight</div>
+          <h3>805 Athlete Legacy</h3>
+          <p>Coming Soon. A Central Coast competitor with a story worth preserving. Their grind documented the right way.</p>
+          <a href="#" class="nw-btn full ghost">Stay Tuned</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="pinstripe">
+
+  <!-- SECTION 4 — JOIN THE NETWORK -->
+  <section class="nw-section charcoal">
+    <div class="nw-container">
+      <div class="nw-section-eyebrow">Join Us</div>
+      <h2 class="nw-section-title">Want To Be Featured?</h2>
+      <div class="nw-section-sub">The Network runs on real Central Coast stories. Yours might be next.</div>
+
+      <div class="nw-join-grid fade-up">
+        <div class="nw-join-col">
+          <h3>Who We Feature</h3>
+          <ul class="nw-join-list">
+            <li>Local restaurants and food creators</li>
+            <li>805 athletes and competitors</li>
+            <li>Contractors and trade businesses</li>
+            <li>Artists and musicians</li>
+            <li>Families with stories worth telling</li>
+            <li>Anyone building something real on the Central Coast</li>
+          </ul>
+        </div>
+        <div class="nw-join-col">
+          <h3>How It Works</h3>
+          <p class="nw-join-body">You reach out. We come to you. We document your story. We drop it on the Network. It lives here permanently. Your community finds you. New customers find you. Your legacy is set.</p>
+        </div>
+      </div>
+
+      <div class="nw-join-cta">
+        <a href="contact.html" class="nw-btn">Get Featured</a>
+      </div>
+    </div>
+  </section>
+
+  <hr class="pinstripe">
+
+  <!-- SECTION 5 — THE ARCHIVE -->
+  <section class="nw-section charcoal">
+    <div class="nw-container">
+      <div class="nw-section-eyebrow">The Record</div>
+      <h2 class="nw-section-title">The Archive</h2>
+      <div class="nw-section-sub">Every drop. Every story. Every playlist. All here. Forever.</div>
+
+      <div class="nw-archive-grid fade-up">
+        <div class="nw-archive-card">
+          <div class="nw-archive-week">Week 01</div>
+          <div class="nw-archive-type">Legacy Monday</div>
+          <div class="nw-archive-title">Coming Soon</div>
+        </div>
+        <div class="nw-archive-card">
+          <div class="nw-archive-week">Week 01</div>
+          <div class="nw-archive-type">Food Wednesday</div>
+          <div class="nw-archive-title">Coming Soon</div>
+        </div>
+        <div class="nw-archive-card">
+          <div class="nw-archive-week">Week 01</div>
+          <div class="nw-archive-type">Throwback Friday</div>
+          <div class="nw-archive-title">Coming Soon</div>
+        </div>
+        <div class="nw-archive-card">
+          <div class="nw-archive-week">Week 01</div>
+          <div class="nw-archive-type">Sunday Drop</div>
+          <div class="nw-archive-title">Coming Soon</div>
+        </div>
+        <div class="nw-archive-card">
+          <div class="nw-archive-week">Week 02</div>
+          <div class="nw-archive-type">Legacy Monday</div>
+          <div class="nw-archive-title">Coming Soon</div>
+        </div>
+        <div class="nw-archive-card">
+          <div class="nw-archive-week">Week 02</div>
+          <div class="nw-archive-type">Food Wednesday</div>
+          <div class="nw-archive-title">Coming Soon</div>
+        </div>
+      </div>
+
+      <div class="nw-archive-cta">
+        <a href="network.html" class="nw-btn ghost">View All Archives</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 6 — QR -->
+  <section class="nw-qr">
+    <h2>Scan To Tune In</h2>
+    <div class="nw-qr-frame">
+      <img src="https://api.qrserver.com/v1/create-qr-code/?data=https%3A%2F%2Fmylegacycontinues.com%2Fnetwork.html&size=240x240&margin=12&format=png" alt="QR code linking to The MLC Network" width="240" height="240">
+    </div>
+    <img src="logo.png" alt="My Legacy Continues" class="nw-qr-ship">
+    <div class="nw-qr-caption">The MLC Network. Central Coast culture. Permanent. Weekly. Yours.</div>
+    <div class="nw-qr-link"><a href="https://mylegacycontinues.com/network.html">mylegacycontinues.com/network.html</a></div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="background: #141414; border-top: 1px solid rgba(212,175,55,0.2); padding: 40px 48px 28px;">
+    <div class="footer-inner" style="max-width: 1180px; margin: 0 auto; text-align: center;">
+      <div class="footer-contact" style="color: var(--chrome-dim); font-size: 0.9rem; margin-bottom: 16px;">Contact: contact@mylegacycontinues.com | (805) 863-3794 | Santa Maria, CA</div>
+      <ul class="footer-links" style="list-style: none; display: flex; gap: 18px; justify-content: center; flex-wrap: wrap; margin: 0 0 16px; padding: 0;">
+        <li><a href="index.html" style="color: var(--chrome); font-size: 0.85rem; letter-spacing: 0.08em;">Home</a></li>
+        <li><a href="heritage-book.html" style="color: var(--chrome); font-size: 0.85rem; letter-spacing: 0.08em;">Heritage</a></li>
+        <li><a href="rescue-registry.html" style="color: var(--chrome); font-size: 0.85rem; letter-spacing: 0.08em;">Rescue Registry</a></li>
+        <li><a href="active-transports.html" style="color: var(--chrome); font-size: 0.85rem; letter-spacing: 0.08em;">Transport</a></li>
+        <li><a href="about.html" style="color: var(--chrome); font-size: 0.85rem; letter-spacing: 0.08em;">About</a></li>
+        <li><a href="contact.html" style="color: var(--chrome); font-size: 0.85rem; letter-spacing: 0.08em;">Contact</a></li>
+        <li><a href="legal/privacy.html" style="color: var(--chrome); font-size: 0.85rem; letter-spacing: 0.08em;">Privacy</a></li>
+        <li><a href="legal/terms-of-service.html" style="color: var(--chrome); font-size: 0.85rem; letter-spacing: 0.08em;">Terms</a></li>
+      </ul>
+      <p class="footer-copy" style="color: var(--chrome-dim); font-size: 0.78rem;">&copy; 2026 My Legacy Continues. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile nav toggle
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    if (navToggle) {
+      navToggle.addEventListener('click', () => navLinks.classList.toggle('active'));
+      navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => navLinks.classList.remove('active'));
+      });
+    }
+
+    // Fade-in on scroll
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
