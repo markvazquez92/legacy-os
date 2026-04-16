@@ -26,6 +26,107 @@
     fbq('init', '2828165625364437');
     fbq('track', 'PageView');
   </script>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&display=swap" rel="stylesheet">
+<style>
+  .road-ahead {
+    padding: 5rem 2.5rem;
+    background: #1A1A1A;
+    color: #F5F5F5;
+    border-top: 1px solid rgba(212,175,55,0.2);
+  }
+  .road-ahead-inner { max-width: 960px; margin: 0 auto; }
+  .road-ahead-head { text-align: center; margin-bottom: 3.5rem; }
+  .road-ahead-eyebrow {
+    display: inline-block;
+    font-family: 'Oswald', 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 0.72rem;
+    color: #8B0000;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    margin-bottom: 0.85rem;
+  }
+  .road-ahead h2 {
+    font-family: 'Oswald', 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: clamp(2rem, 4vw, 3rem);
+    color: #E0E0E0;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 0.75rem;
+  }
+  .road-ahead-sub {
+    font-family: 'Outfit', 'Montserrat', sans-serif;
+    font-size: 1rem;
+    color: rgba(224,224,224,0.6);
+    max-width: 540px;
+    margin: 0 auto;
+  }
+  .road-ahead-timeline {
+    position: relative;
+    padding-left: 72px;
+  }
+  .road-ahead-timeline::before {
+    content: "";
+    position: absolute;
+    left: 26px;
+    top: 10px;
+    bottom: 10px;
+    width: 2px;
+    background: linear-gradient(180deg, #D4AF37 0%, rgba(212,175,55,0.25) 100%);
+  }
+  .road-ahead-phase {
+    position: relative;
+    padding-bottom: 2.75rem;
+  }
+  .road-ahead-phase:last-child { padding-bottom: 0; }
+  .road-ahead-phase .num {
+    position: absolute;
+    left: -72px;
+    top: -4px;
+    width: 56px;
+    text-align: center;
+    font-family: 'Cinzel', Georgia, 'Times New Roman', serif;
+    font-weight: 700;
+    font-size: 1.7rem;
+    color: #D4AF37;
+    background: #1A1A1A;
+    padding: 4px 0;
+    line-height: 1;
+  }
+  .road-ahead-phase .label {
+    font-family: 'Oswald', 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 0.72rem;
+    color: #8B0000;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    margin-bottom: 0.4rem;
+  }
+  .road-ahead-phase h3 {
+    font-family: 'Oswald', 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 1.35rem;
+    color: #E0E0E0;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 0.85rem;
+  }
+  .road-ahead-phase p {
+    font-family: 'Outfit', 'Montserrat', sans-serif;
+    font-size: 1rem;
+    color: rgba(224,224,224,0.65);
+    line-height: 1.75;
+    margin-bottom: 0.8rem;
+  }
+  .road-ahead-phase p:last-child { margin-bottom: 0; }
+  @media (max-width: 640px) {
+    .road-ahead { padding: 3.5rem 1.25rem; }
+    .road-ahead-timeline { padding-left: 52px; }
+    .road-ahead-timeline::before { left: 16px; }
+    .road-ahead-phase .num { left: -52px; width: 40px; font-size: 1.35rem; }
+  }
+</style>
 </head><body>  <!-- Facebook Pixel noscript -->
   <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=2828165625364437&ev=PageView&noscript=1" /></noscript>
 <nav><img src="logo.png" class="nav-logo"><ul class="nav-links"><li><a href="index.html">Home</a></li><li><a href="heritage-book.html">Heritage</a></li><li><a href="pet-tag.html">Pet Tags</a></li><li><a href="business-profile.html">Business</a></li><li><a href="network.html">The Network</a></li><li><a href="rescue-registry.html">Rescue Registry</a></li>
@@ -33,7 +134,48 @@
       <li><a href="free-profile.html" style="color:#D4AF37;">Free Page</a></li></ul><button class="nav-cta">Start Your Legacy</button><div class="lang-switcher" style="position: absolute; right: 3rem;">
     <a href="/es/about.html" style="color: #F5F5F5; text-decoration: none; font-size: 0.9rem; display: inline-block; padding: 8px 12px; border: 1px solid rgba(224,224,224,0.3); border-radius: 4px; transition: all 0.2s;"><strong>English</strong> | <span style="color: #E0E0E0;">Español</span></a>
   </div><button class="nav-toggle" id="navToggle"><span></span><span></span><span></span></button>
-</nav><section class="hero" style="background:linear-gradient(90deg,var(--charcoal) 0%,var(--charcoal) 50%,var(--candy-red) 50%,var(--candy-red) 100%);display:flex"><div style="background-color:var(--charcoal);color:#F5F5F5;padding:60px 40px;width:50%;display:flex;flex-direction:column;justify-content:center"><h1 style="font-size:48px;font-family:'Montserrat',sans-serif;font-weight:700;margin-bottom:1.5rem"><strong>About</strong><br><strong>My Legacy</strong><br><span style="color:var(--gold)">Why we exist.</span></h1><p style="font-size:18px;color:#F5F5F5"><strong>One man's search became a mission</strong> to preserve yours.</p></div><div style="background:linear-gradient(135deg,var(--candy-red) 0%,#8B1420 100%);width:50%;display:flex;align-items:center;justify-content:center"><img src="logo.png" style="width:200px;height:auto;filter:drop-shadow(0 4px 8px rgba(0,0,0,0.3))"></div></section><section style="background:var(--cream)" class="fade-in"><div class="section-inner"><h2>Bear's Story</h2><p><strong>My grandfather Joe</strong> was a metalworker. A ring maker. A storyteller.</p><p>When he passed, almost everything went with him.</p><p>The <strong>Vázquez line goes back to 1547</strong> in Galicia, Spain. My mom's side — García and Montemayor — came through South Texas.</p><p><strong>But nobody had written it down.</strong>. And suddenly I realized: <strong>it could be gone in one generation</strong>.</p><p><strong>So I built this for my family.</strong>. Then I built it for <strong>yours</strong>.</p></div></section><section class="mission-section fade-in"><div class="section-inner"><h2 style="text-align:center;color:#E0E0E0">Our Mission</h2><div class="mission-statement"><strong>Own your story. Build direct. No middleman. Community first.</strong></div></div></section><section style="background:var(--cream)" class="fade-in"><div class="section-inner"><h2 style="text-align:center">How We Work</h2><div class="steps"><div class="step"><div class="step-number">01</div><h3>Research</h3><p>We dig into your family's story.</p><p><strong>Real humans. Real care.</strong></p></div><div class="step"><div class="step-number">02</div><h3>Preserve</h3><p>Your legacy gets <strong>professionally protected.</strong></p><p><strong>Permanently.</strong></p></div><div class="step"><div class="step-number">03</div><h3>Forever</h3><p><strong>You own it. Forever.</strong></p><p>No subscriptions. No expiration.</p></div></div></div></section><section style="background:var(--cream)" class="fade-in"><div class="section-inner"><h2 style="text-align:center">The Team</h2><div class="team-member"><h3>Bear Vázquez</h3><p style="color:#E0E0E0;font-weight:600">Founder & Researcher</p><p>Central Coast native. <strong>Genealogy researcher.</strong> Community advocate.</p></div></div></section><section style="background:var(--cream);text-align:center" class="fade-in"><div class="section-inner"><h2>Ready to Preserve Your Legacy?</h2><a href="index.html#products" class="cta-button">Explore Products</a> <a href="contact.html" class="cta-button" style="margin-left:1rem">Get in Touch</a></div></section><footer><p><strong>My Legacy Continues</strong></p><p>Contact: contact@mylegacycontinues.com | (805) 863-3794 | Santa Maria, CA</p><p style="margin-top:2rem;font-size:0.85rem"><a href="privacy.html">Privacy</a> | <a href="about.html">About</a> | <a href="contact.html">Contact</a></p></footer><script>document.querySelector('.nav-cta').addEventListener('click',()=>{window.location.href='index.html#products'});</script>
+</nav><section class="hero" style="background:linear-gradient(90deg,var(--charcoal) 0%,var(--charcoal) 50%,var(--candy-red) 50%,var(--candy-red) 100%);display:flex"><div style="background-color:var(--charcoal);color:#F5F5F5;padding:60px 40px;width:50%;display:flex;flex-direction:column;justify-content:center"><h1 style="font-size:48px;font-family:'Montserrat',sans-serif;font-weight:700;margin-bottom:1.5rem"><strong>About</strong><br><strong>My Legacy</strong><br><span style="color:var(--gold)">Why we exist.</span></h1><p style="font-size:18px;color:#F5F5F5"><strong>One man's search became a mission</strong> to preserve yours.</p></div><div style="background:linear-gradient(135deg,var(--candy-red) 0%,#8B1420 100%);width:50%;display:flex;align-items:center;justify-content:center"><img src="logo.png" style="width:200px;height:auto;filter:drop-shadow(0 4px 8px rgba(0,0,0,0.3))"></div></section><section style="background:var(--cream)" class="fade-in"><div class="section-inner"><h2>Bear's Story</h2><p><strong>My grandfather Joe</strong> was a metalworker. A ring maker. A storyteller.</p><p>When he passed, almost everything went with him.</p><p>The <strong>Vázquez line goes back to 1547</strong> in Galicia, Spain. My mom's side — García and Montemayor — came through South Texas.</p><p><strong>But nobody had written it down.</strong>. And suddenly I realized: <strong>it could be gone in one generation</strong>.</p><p><strong>So I built this for my family.</strong>. Then I built it for <strong>yours</strong>.</p></div></section><section class="mission-section fade-in"><div class="section-inner"><h2 style="text-align:center;color:#E0E0E0">Our Mission</h2><div class="mission-statement"><strong>Own your story. Build direct. No middleman. Community first.</strong></div></div></section><section style="background:var(--cream)" class="fade-in"><div class="section-inner"><h2 style="text-align:center">How We Work</h2><div class="steps"><div class="step"><div class="step-number">01</div><h3>Research</h3><p>We dig into your family's story.</p><p><strong>Real humans. Real care.</strong></p></div><div class="step"><div class="step-number">02</div><h3>Preserve</h3><p>Your legacy gets <strong>professionally protected.</strong></p><p><strong>Permanently.</strong></p></div><div class="step"><div class="step-number">03</div><h3>Forever</h3><p><strong>You own it. Forever.</strong></p><p>No subscriptions. No expiration.</p></div></div></div></section><section style="background:var(--cream)" class="fade-in"><div class="section-inner"><h2 style="text-align:center">The Team</h2><div class="team-member"><h3>Bear Vázquez</h3><p style="color:#E0E0E0;font-weight:600">Founder & Researcher</p><p>Central Coast native. <strong>Genealogy researcher.</strong> Community advocate.</p></div></div></section><section style="background:var(--cream);text-align:center" class="fade-in"><div class="section-inner"><h2>Ready to Preserve Your Legacy?</h2><a href="index.html#products" class="cta-button">Explore Products</a> <a href="contact.html" class="cta-button" style="margin-left:1rem">Get in Touch</a></div></section>
+
+<!-- THE ROAD AHEAD -->
+<section class="road-ahead">
+  <div class="road-ahead-inner">
+    <div class="road-ahead-head">
+      <div class="road-ahead-eyebrow">The Vision</div>
+      <h2>THE ROAD AHEAD</h2>
+      <p class="road-ahead-sub">We&rsquo;re not done. Here&rsquo;s where this is going.</p>
+    </div>
+    <div class="road-ahead-timeline">
+      <div class="road-ahead-phase">
+        <div class="num">01</div>
+        <div class="label">Phase 1</div>
+        <h3>Live Now</h3>
+        <p>Legacy Profiles. Heritage Books. QR plaques. Pet tags. Physical keys to your permanent story.</p>
+      </div>
+      <div class="road-ahead-phase">
+        <div class="num">02</div>
+        <div class="label">Phase 2</div>
+        <h3>Soon</h3>
+        <p>Build your own Legacy Profile. Free to start. Customize it like it&rsquo;s yours. Because it is.</p>
+      </div>
+      <div class="road-ahead-phase">
+        <div class="num">03</div>
+        <div class="label">Phase 3</div>
+        <h3>Your Permanent Feed</h3>
+        <p>Music. Videos. Funny clips. Life. One page. Organized by vibe.</p>
+        <p>People don&rsquo;t need to chase you across five apps anymore. They hit your Legacy Profile and see everything &mdash; the songs you&rsquo;re playing, the videos you&rsquo;re sharing, the business you&rsquo;re building, the family you came from.</p>
+        <p>Your taste. Your identity. Your permanent feed. One QR code.</p>
+      </div>
+      <div class="road-ahead-phase">
+        <div class="num">04</div>
+        <div class="label">Phase 4</div>
+        <h3>The Channel</h3>
+        <p>Real 805 stories, dropped weekly. Spotlight Saturdays. Throwback Thursdays. Art Laboe Sundays. Your culture. Your clubhouse. Permanent.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer><p><strong>My Legacy Continues</strong></p><p>Contact: contact@mylegacycontinues.com | (805) 863-3794 | Santa Maria, CA</p><p style="margin-top:2rem;font-size:0.85rem"><a href="privacy.html">Privacy</a> | <a href="about.html">About</a> | <a href="contact.html">Contact</a></p></footer><script>document.querySelector('.nav-cta').addEventListener('click',()=>{window.location.href='index.html#products'});</script>
   <!-- Form Submission Tracking -->
   <script>
     document.querySelectorAll('form').forEach(form => {
