@@ -1,153 +1,360 @@
-<!-- force deploy April 9 2026 -->
+<!-- v3 Family MySpace OS -->
 <!-- NO EMOJIS EVER -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Legacy Vault — My Legacy Continues</title>
-  <meta name="description" content="A collection of heritage profiles and memorials preserved forever. The Legacy Vault.">
+  <title>Family Vault — My Legacy Continues</title>
+  <meta name="description" content="Your private family ecosystem — feed, tree, photo timeline, recipe bank, threads. Password-protected. Hosted permanently.">
   <link rel="icon" href="logo.png" type="image/png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Lato:wght@400&family=Spline+Sans:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Outfit:wght@300;400;500;600&family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@1,400;1,500;1,600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="cosmic-overlay.css">
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --charcoal: #1A1A1A;
+      --navy: #1a2744;
+      --navy-deep: #0f1a2e;
+      --teal: #20b2aa;
+      --copper: #b4553b;
+      --gold-flake: #b8962e;
+      --gold: #D4AF37;
+      --cream: #F5F5F5;
+      --chrome: #E0E0E0;
+      --brandywine: #8B0000;
     }
-
     body {
-      font-family: 'Lato', sans-serif;
-      background:#1A1A1A;
-      color:#F5F5F5;
-      line-height: 1.6;
-      background-color:#1A1A1A;
-      overflow-x: hidden;
+      font-family: 'Outfit', sans-serif; background: var(--charcoal);
+      color: var(--cream); line-height: 1.65; overflow-x: hidden;
     }
 
-    /* Mobile background fix */
-    section {
-      background-color:#1A1A1A;
-    }
-
-    .section {
-      background-color:#1A1A1A;
-    }
-
-
-    .page-header {
-      background: #2A2A2A;
-      color: #F5F5F5;
-      padding: 6rem 3rem 4rem;
+    /* Cosmic hero override */
+    .portal-hero {
+      background:
+        radial-gradient(ellipse at top, rgba(32,178,170,0.22) 0%, transparent 55%),
+        radial-gradient(ellipse at 70% 80%, rgba(180,85,59,0.15) 0%, transparent 50%),
+        linear-gradient(180deg, var(--navy) 0%, var(--navy-deep) 100%);
+      position: relative; overflow: hidden;
+      padding: 6rem 2rem 4rem; margin-top: 64px;
       text-align: center;
     }
-
-    .page-header h1 {
-      font-family: 'Montserrat', Georgia, serif;
-      font-size: 3rem;
-      margin-bottom: 1rem;
-      color: #E0E0E0;
+    .portal-hero::before {
+      content:''; position:absolute; inset:0;
+      background-image:
+        radial-gradient(1.5px 1.5px at 15% 22%, rgba(212,175,55,0.9), transparent 55%),
+        radial-gradient(1px 1px at 78% 35%, rgba(180,85,59,0.85), transparent 55%),
+        radial-gradient(2px 2px at 42% 68%, rgba(184,150,46,0.8), transparent 55%);
+      background-size:600px 600px; opacity:0.85;
+      animation: flakeDrift 18s linear infinite; pointer-events:none;
+    }
+    @keyframes flakeDrift {
+      0% { transform: translate(0,0); }
+      100% { transform: translate(-30px,-40px); }
+    }
+    .portal-hero > * { position:relative; z-index:2; }
+    .portal-hero .eyebrow {
+      display:inline-block; font-family:'Oswald',sans-serif;
+      font-weight:700; font-size:0.72rem; color: var(--teal);
+      letter-spacing:0.3em; text-transform:uppercase;
+      padding: 0.4rem 1rem; border: 1px solid var(--teal); margin-bottom: 1rem;
+    }
+    .portal-hero h1 {
+      font-family:'Oswald',sans-serif; font-weight:700;
+      font-size: clamp(2.25rem, 5.5vw, 3.75rem); color: var(--gold-flake);
+      letter-spacing: 0.05em; line-height: 1.05;
+      text-transform: uppercase; margin-bottom: 0.75rem;
+    }
+    .portal-hero p.sub {
+      font-family:'Cormorant Garamond', serif; font-style: italic;
+      font-size: clamp(1.05rem, 2vw, 1.35rem); color: var(--cream);
+      max-width: 680px; margin: 0 auto; opacity: 0.92;
     }
 
-    .page-header p {
-      font-size: 1.1rem;
-      color: rgba(224,224,224, 0.9);
-      max-width: 600px;
-      margin: 0 auto;
+    /* Lock screen */
+    .lock-gate {
+      max-width: 520px; margin: 3rem auto 0;
+      background: linear-gradient(155deg, #1c2d4a 0%, #141e35 100%);
+      border: 2px solid var(--gold-flake); padding: 2rem;
+      text-align: left;
+    }
+    .lock-gate .lock-label {
+      font-family:'Oswald',sans-serif; color: var(--teal);
+      font-size: 0.72rem; letter-spacing: 0.25em;
+      text-transform: uppercase; margin-bottom: 0.5rem; text-align: center;
+    }
+    .lock-gate h3 {
+      font-family:'Oswald',sans-serif; color: var(--cream);
+      font-size: 1.2rem; text-align: center;
+      letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 1rem;
+    }
+    .lock-gate p {
+      font-size: 0.9rem; color: rgba(245,245,245,0.75);
+      text-align: center; margin-bottom: 1.25rem;
+    }
+    .lock-gate .row {
+      display: flex; gap: 0.5rem; align-items: stretch;
+    }
+    .lock-gate input {
+      flex: 1; padding: 0.9rem 1rem;
+      background: rgba(0,0,0,0.35);
+      border: 1px solid rgba(32,178,170,0.4); color: var(--cream);
+      font-family:'Outfit',sans-serif; font-size: 0.95rem; border-radius: 0;
+    }
+    .lock-gate input:focus { outline: none; border-color: var(--teal); }
+    .lock-gate button {
+      padding: 0 1.5rem; background: var(--teal); color: var(--navy-deep);
+      border: 2px solid var(--teal); font-family: 'Oswald', sans-serif;
+      font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase;
+      font-size: 0.85rem; cursor: pointer; transition: all 0.3s; border-radius: 0;
+    }
+    .lock-gate button:hover { background: transparent; color: var(--teal); }
+    .lock-gate .hint {
+      font-size: 0.78rem; color: rgba(245,245,245,0.55); text-align: center;
+      margin-top: 0.85rem;
+    }
+    .lock-gate .err {
+      color: #f87171; font-size: 0.85rem; text-align: center;
+      margin-top: 0.75rem; display: none;
+    }
+    .lock-gate .err.show { display: block; }
+
+    .vault-body { display: none; }
+    .vault-body.open { display: block; }
+
+    /* Tabs */
+    .tab-bar {
+      display: flex; gap: 0; justify-content: center;
+      flex-wrap: wrap; padding: 0 1rem;
+      border-bottom: 1px solid rgba(32,178,170,0.25);
+      max-width: 1100px; margin: 0 auto;
+    }
+    .tab-btn {
+      background: transparent; border: none; cursor: pointer;
+      font-family:'Oswald',sans-serif; font-weight: 700;
+      font-size: 0.8rem; letter-spacing: 0.2em; text-transform: uppercase;
+      color: rgba(245,245,245,0.55); padding: 1rem 1.25rem;
+      border-bottom: 3px solid transparent;
+      transition: all 0.3s;
+    }
+    .tab-btn:hover { color: var(--cream); }
+    .tab-btn.active { color: var(--teal); border-bottom-color: var(--teal); }
+
+    .tab-panel { display: none; padding: 3rem 2rem; max-width: 1100px; margin: 0 auto; }
+    .tab-panel.active { display: block; }
+    .tab-panel h2 {
+      font-family:'Oswald',sans-serif; color: var(--gold-flake);
+      font-size: clamp(1.5rem, 3vw, 2rem); text-transform: uppercase;
+      letter-spacing: 0.05em; margin-bottom: 0.75rem;
+    }
+    .tab-panel .panel-sub {
+      font-family:'Outfit',sans-serif; color: rgba(245,245,245,0.72);
+      margin-bottom: 2rem; font-size: 0.95rem;
     }
 
-    .content {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 4rem 3rem;
+    /* Feed */
+    .feed-post {
+      background: linear-gradient(155deg, #1c2d4a 0%, #141e35 100%);
+      border-left: 3px solid var(--teal); padding: 1.5rem;
+      margin-bottom: 1.25rem;
+    }
+    .feed-post .head {
+      display: flex; gap: 0.75rem; align-items: center; margin-bottom: 0.75rem;
+    }
+    .feed-post .avatar {
+      width: 44px; height: 44px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--teal) 0%, var(--gold-flake) 100%);
+      display: flex; align-items: center; justify-content: center;
+      font-family:'Oswald',sans-serif; color: var(--navy-deep);
+      font-weight: 700; font-size: 1rem;
+    }
+    .feed-post .meta {
+      font-family:'Oswald',sans-serif; color: var(--cream);
+      font-size: 0.9rem; letter-spacing: 0.05em; text-transform: uppercase;
+    }
+    .feed-post .ts {
+      font-family:'Outfit',sans-serif; color: rgba(245,245,245,0.5);
+      font-size: 0.78rem;
+    }
+    .feed-post .body {
+      color: var(--cream); opacity: 0.88; font-size: 0.95rem; line-height: 1.7;
     }
 
-    .vault-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2.5rem;
-      margin-top: 3rem;
+    /* Family tree */
+    .tree-wrap { overflow-x: auto; padding-bottom: 1rem; }
+    .tree {
+      display: flex; flex-direction: column; align-items: center;
+      min-width: 700px; gap: 2rem;
+    }
+    .tree-generation {
+      display: flex; gap: 1.5rem; position: relative;
+    }
+    .tree-node {
+      background: linear-gradient(155deg, #1c2d4a 0%, #141e35 100%);
+      border: 2px solid var(--gold-flake); padding: 1rem 1.25rem;
+      text-align: center; min-width: 170px; cursor: pointer;
+      transition: all 0.3s;
+    }
+    .tree-node:hover {
+      border-color: var(--teal);
+      box-shadow: 0 10px 28px -8px rgba(32,178,170,0.4);
+      transform: translateY(-3px);
+    }
+    .tree-node .name {
+      font-family:'Oswald',sans-serif; color: var(--cream);
+      font-size: 0.95rem; letter-spacing: 0.04em;
+      text-transform: uppercase; margin-bottom: 0.25rem;
+    }
+    .tree-node .span {
+      font-family:'Outfit',sans-serif; color: var(--teal);
+      font-size: 0.78rem; letter-spacing: 0.1em;
+    }
+    .tree-node .role {
+      font-family:'Cormorant Garamond',serif; font-style: italic;
+      color: rgba(245,245,245,0.7); font-size: 0.82rem; margin-top: 0.35rem;
     }
 
-    .legacy-card {
-      background: white;
-      border: 2px solid #E0E0E0;
-      
-      padding: 2.5rem;
-      display: flex;
-      flex-direction: column;
-      text-align: center;
-      transition: all 0.3s ease;
+    /* Photo timeline */
+    .decade-row {
+      display: grid; grid-template-columns: 120px 1fr;
+      gap: 1.5rem; padding: 1.25rem 0;
+      border-bottom: 1px solid rgba(32,178,170,0.18);
+    }
+    .decade-row .decade-label {
+      font-family:'Oswald',sans-serif; color: var(--teal);
+      font-size: 1.25rem; letter-spacing: 0.1em; text-transform: uppercase;
+      padding-top: 0.25rem;
+    }
+    .decade-row .photo-strip {
+      display: flex; gap: 0.75rem; flex-wrap: wrap;
+    }
+    .photo-tile {
+      width: 130px; aspect-ratio: 1;
+      background: linear-gradient(155deg, #1c2d4a 0%, #141e35 100%);
+      border: 1px solid var(--gold-flake);
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      gap: 0.25rem; padding: 0.5rem; text-align: center;
+      transition: all 0.3s;
+    }
+    .photo-tile:hover { border-color: var(--teal); }
+    .photo-tile .tile-title {
+      font-family:'Oswald',sans-serif; color: var(--cream);
+      font-size: 0.75rem; letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .photo-tile .tile-sub {
+      font-family:'Outfit',sans-serif; color: rgba(245,245,245,0.6);
+      font-size: 0.72rem;
     }
 
-    .legacy-card:hover {
-      box-shadow: 0 12px 40px rgba(224,224,224, 0.15);
+    /* Recipe */
+    .recipe-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+    }
+    .recipe-card {
+      background: linear-gradient(155deg, #1c2d4a 0%, #141e35 100%);
+      border: 2px solid var(--gold-flake); padding: 1.5rem;
+      transition: all 0.3s;
+    }
+    .recipe-card:hover {
+      border-color: var(--teal);
+      box-shadow: 0 18px 40px -10px rgba(32,178,170,0.35);
       transform: translateY(-4px);
     }
-
-    .legacy-card h2 {
-      font-family: 'Montserrat', Georgia, serif;
-      font-size: 1.6rem;
-      color:#F5F5F5;
-      margin-bottom: 0.5rem;
+    .recipe-card .eyebrow {
+      font-family:'Oswald',sans-serif; color: var(--teal);
+      font-size: 0.7rem; letter-spacing: 0.25em;
+      text-transform: uppercase; margin-bottom: 0.5rem;
+    }
+    .recipe-card h3 {
+      font-family:'Oswald',sans-serif; color: var(--cream);
+      font-size: 1.1rem; letter-spacing: 0.04em;
+      text-transform: uppercase; margin-bottom: 0.6rem;
+    }
+    .recipe-card p {
+      font-family:'Outfit',sans-serif; color: rgba(245,245,245,0.78);
+      font-size: 0.9rem; line-height: 1.6; margin-bottom: 0.75rem;
+    }
+    .recipe-card .meta {
+      display: flex; gap: 0.75rem; flex-wrap: wrap;
+      font-family:'Oswald',sans-serif; font-size: 0.7rem;
+      letter-spacing: 0.15em; text-transform: uppercase;
+      color: var(--gold-flake);
     }
 
-    .legacy-card .location {
-      font-size: 0.95rem;
-      color: #888;
-      margin-bottom: 1.5rem;
+    /* Threads */
+    .thread {
+      background: linear-gradient(155deg, #1c2d4a 0%, #141e35 100%);
+      border: 2px solid var(--gold-flake); padding: 1.5rem;
+      margin-bottom: 1.25rem; transition: all 0.3s;
+    }
+    .thread:hover {
+      border-color: var(--teal);
+      box-shadow: 0 18px 40px -10px rgba(32,178,170,0.35);
+    }
+    .thread h3 {
+      font-family:'Oswald',sans-serif; color: var(--cream);
+      font-size: 1.05rem; letter-spacing: 0.04em;
+      text-transform: uppercase; margin-bottom: 0.4rem;
+    }
+    .thread .thread-meta {
+      display: flex; gap: 1rem; flex-wrap: wrap;
+      font-family:'Oswald',sans-serif; color: var(--teal);
+      font-size: 0.7rem; letter-spacing: 0.18em;
+      text-transform: uppercase; margin-bottom: 0.75rem;
+    }
+    .thread .thread-preview {
+      font-family:'Cormorant Garamond',serif; font-style: italic;
+      color: rgba(245,245,245,0.82); font-size: 0.95rem;
+      line-height: 1.6; border-left: 2px solid var(--teal);
+      padding-left: 0.85rem;
     }
 
-    .legacy-card p {
-      font-size: 0.9rem;
-      color:#F5F5F5;
-      margin-bottom: 2rem;
-      flex-grow: 1;
+    /* Legacies list (existing content) */
+    .vault-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.25rem;
     }
-
-    .legacy-btn {
-      background: #E0E0E0;
-      color:#F5F5F5;
-      padding: 0.8rem 2rem;
-      border: none;
-      
-      font-family: 'Lato', sans-serif;
-      font-weight: 600;
-      cursor: pointer;
-      text-decoration: none;
-      display: inline-block;
-      transition: all 0.3s ease;
-      font-size: 0.95rem;
+    .vault-card {
+      background: linear-gradient(155deg, #1c2d4a 0%, #141e35 100%);
+      border: 2px solid var(--gold-flake); padding: 1.25rem;
+      transition: all 0.3s;
     }
-
-    .legacy-btn:hover {
-      background: #d4b96e;
+    .vault-card:hover {
+      border-color: var(--teal); transform: translateY(-3px);
+      box-shadow: 0 14px 32px -10px rgba(32,178,170,0.35);
     }
-
-    .page-header {
-      margin-top: 68px;
+    .vault-card h3 {
+      font-family:'Oswald',sans-serif; color: var(--cream);
+      font-size: 1rem; letter-spacing: 0.05em;
+      text-transform: uppercase; margin-bottom: 0.3rem;
     }
+    .vault-card .loc {
+      font-family:'Outfit',sans-serif; color: var(--teal);
+      font-size: 0.78rem; letter-spacing: 0.12em;
+      text-transform: uppercase; margin-bottom: 0.75rem;
+    }
+    .vault-card p {
+      font-family:'Outfit',sans-serif; color: rgba(245,245,245,0.75);
+      font-size: 0.88rem; line-height: 1.55; margin-bottom: 0.85rem;
+    }
+    .vault-card a {
+      font-family:'Oswald',sans-serif; color: var(--gold-flake);
+      font-size: 0.78rem; letter-spacing: 0.15em;
+      text-transform: uppercase; text-decoration: none;
+    }
+    .vault-card a:hover { text-decoration: underline; }
 
     @media (max-width: 768px) {
-      .page-header {
-        padding: 5rem 1.5rem 2.5rem;
-      }
-
-      .page-header h1 {
-        font-size: 2rem;
-      }
-
-      .content {
-        padding: 2rem 1.5rem;
-      }
-
-      .vault-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-      }
+      .portal-hero { padding: 4rem 1.25rem 3rem; }
+      .tab-btn { padding: 0.85rem 0.75rem; font-size: 0.72rem; letter-spacing: 0.1em; }
+      .tab-panel { padding: 2rem 1rem; }
+      .decade-row { grid-template-columns: 1fr; gap: 0.5rem; }
+      .photo-tile { width: 100px; }
     }
   </style>
   <!-- Google Analytics 4 -->
@@ -156,29 +363,10 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', 'G-XQJ8KPVZX9', {
-      'page_path': window.location.pathname,
-      'page_title': document.title
-    });
-  </script>
-
-  <!-- Facebook Pixel -->
-  <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '2828165625364437');
-    fbq('track', 'PageView');
+    gtag('config', 'G-XQJ8KPVZX9');
   </script>
 </head>
 <body>
-  <!-- Facebook Pixel noscript -->
-  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=2828165625364437&ev=PageView&noscript=1" /></noscript>
   <!-- NAVIGATION -->
   <nav class="site-nav">
     <a href="https://mylegacycontinues.com/index.html" class="nav-brand">
@@ -188,98 +376,343 @@
       <li><a href="index.html">Home</a></li>
       <li><a href="heritage-book.html">Heritage</a></li>
       <li><a href="pet-tag.html">Pet Tags</a></li>
+      <li><a href="morning-memories.html">Morning Memories</a></li>
       <li><a href="business-profile.html">Business</a></li>
-      <li><a href="network.html">The Network</a></li>
-      <li><a href="rescue-registry.html">Rescue Registry</a></li>
+      <li><a href="network.html">Network</a></li>
+      <li><a href="rescue-registry.html">Rescue</a></li>
       <li><a href="active-transports.html">Transport</a></li>
+      <li><a href="merch-legacy.html">Merch</a></li>
       <li><a href="about.html">About</a></li>
-      <li><a href="contact.html">Contact</a></li>
       <li><a href="free-profile.html" style="color:#D4AF37;">Free Page</a></li>
     </ul>
     <div class="nav-right">
-      <a href="https://mylegacycontinues.com/index.html#products" class="btn btn-gold" style="padding: 0.5rem 1.2rem; font-size: 0.7rem;">START YOUR LEGACY</a>
+      <a href="index.html#products" class="btn btn-gold" style="padding: 0.5rem 1.2rem; font-size: 0.7rem;">START YOUR LEGACY</a>
       <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
         <span></span><span></span><span></span>
       </button>
     </div>
   </nav>
 
-  <section class="page-header">
-    <h1>The Legacy Vault</h1>
-    <p>A collection of heritage profiles and memorials preserved forever.</p>
-  </section>
+  <!-- HERO -->
+  <section class="portal-hero">
+    <div class="eyebrow">The Family Vault · Members Only</div>
+    <h1>Your Family<br>MySpace OS</h1>
+    <p class="sub">Private feed. Interactive family tree. Photo timeline. Recipe bank. Threads. All locked behind your family password. Hosted permanently.</p>
 
-  <section class="content">
-    <div class="vault-grid">
-      <div class="legacy-card">
-        <h2>Mark "Bear" Vazquez</h2>
-        <div class="location">Santa Maria, California</div>
-        <p>Heritage and family legacy preservation.</p>
-        <a href="vazquez-profile.html" class="legacy-btn">View Legacy</a>
+    <!-- Lock gate -->
+    <div class="lock-gate" id="lockGate">
+      <div class="lock-label">Family Password Required</div>
+      <h3>Enter The Vault</h3>
+      <p>This demo vault is preloaded with the Vázquez family ecosystem. Each real family gets their own password-protected vault.</p>
+      <div class="row">
+        <input type="password" id="pwInput" placeholder="Family password" autocomplete="off">
+        <button id="pwBtn">Unlock</button>
       </div>
-
-      <div class="legacy-card">
-        <h2>Bears Concrete Pumping</h2>
-        <div class="location">Santa Maria, California</div>
-        <p>Business legacy and founder story.</p>
-        <a href="bears-concrete-profile.html" class="legacy-btn">View Legacy</a>
-      </div>
-
-      <div class="legacy-card">
-        <h2>Butters Vázquez</h2>
-        <div class="location">Santa Maria, California</div>
-        <p>Pet memorial and legacy profile.</p>
-        <a href="butters-profile.html" class="legacy-btn">View Legacy</a>
-      </div>
-
-      <div class="legacy-card">
-        <h2>Deborah Mahony</h2>
-        <div class="location">Santa Maria, California</div>
-        <p>Family memorial and heritage.</p>
-        <a href="deborah-mahony-profile.html" class="legacy-btn">View Legacy</a>
-      </div>
-
-      <div class="legacy-card">
-        <h2>Anthony Raygoza Sr.</h2>
-        <div class="location">Santa Maria, California</div>
-        <p>Family legacy and remembrance.</p>
-        <a href="anthony-raygoza-memorial.html" class="legacy-btn">View Legacy</a>
-      </div>
-
-      <div class="legacy-card">
-        <h2>Antoinette Raygoza</h2>
-        <div class="location">Santa Maria, California</div>
-        <p>Family memorial and heritage.</p>
-        <a href="antoinette-raygoza-memorial.html" class="legacy-btn">View Legacy</a>
-      </div>
-
-      <div class="legacy-card">
-        <h2>McNeal Construction</h2>
-        <div class="location">Santa Maria, California</div>
-        <p>Trade business heritage and legacy.</p>
-        <a href="mcneal-construction-profile.html" class="legacy-btn">View Legacy</a>
-      </div>
-
-      <div class="legacy-card">
-        <h2>Carlos Macias</h2>
-        <div class="location">Santa Maria, California</div>
-        <p>Family legacy and remembrance.</p>
-        <a href="carlos-macias-profile.html" class="legacy-btn">View Legacy</a>
-      </div>
+      <div class="hint">Demo hint: type <strong style="color: var(--teal);">vazquez</strong> to preview the vault</div>
+      <div class="err" id="pwErr">Incorrect password. Contact contact@mylegacycontinues.com to request family access.</div>
     </div>
   </section>
 
+  <!-- VAULT BODY (hidden until unlocked) -->
+  <div class="vault-body" id="vaultBody">
+
+    <!-- TABS -->
+    <nav class="tab-bar" role="tablist">
+      <button class="tab-btn active" data-tab="feed">Feed</button>
+      <button class="tab-btn" data-tab="tree">Family Tree</button>
+      <button class="tab-btn" data-tab="photos">Photo Timeline</button>
+      <button class="tab-btn" data-tab="recipes">Recipe Bank</button>
+      <button class="tab-btn" data-tab="threads">Threads</button>
+      <button class="tab-btn" data-tab="legacies">Profiles</button>
+    </nav>
+
+    <!-- FEED -->
+    <div class="tab-panel active" id="tab-feed">
+      <h2>Family Feed</h2>
+      <p class="panel-sub">Real conversations from the Vázquez family vault. Only members with the password can see this feed.</p>
+
+      <div class="feed-post">
+        <div class="head">
+          <div class="avatar">MV</div>
+          <div>
+            <div class="meta">Mark Vázquez</div>
+            <div class="ts">Posted Tuesday · 2:14 pm</div>
+          </div>
+        </div>
+        <div class="body">Dropping a voice memo from my dad's cassette — the one from the '88 trip back to Galicia. He talks about the fishing boats. First time I've heard his voice that clear in ten years. Clip uploaded to the vault under "Voice Archive."</div>
+      </div>
+
+      <div class="feed-post">
+        <div class="head">
+          <div class="avatar">LR</div>
+          <div>
+            <div class="meta">Lupe Raygoza</div>
+            <div class="ts">Posted Monday · 11:48 am</div>
+          </div>
+        </div>
+        <div class="body">Found three more photos in a shoebox of tia Rosa. Scanned them this morning. They're in the timeline under 1970s. The one of her on the porch with the guitar — that's the one Anthony used to talk about.</div>
+      </div>
+
+      <div class="feed-post">
+        <div class="head">
+          <div class="avatar">JV</div>
+          <div>
+            <div class="meta">Joseph Vázquez</div>
+            <div class="ts">Posted Sunday · 9:03 am</div>
+          </div>
+        </div>
+        <div class="body">Updated the tamale recipe with grandma's edits. She told me I had the masa ratio wrong and then laughed at me for ten minutes. It's now in the recipe bank with both versions — the "traditional" one and the "grandma's actual method" one.</div>
+      </div>
+
+      <div class="feed-post">
+        <div class="head">
+          <div class="avatar">SG</div>
+          <div>
+            <div class="meta">Shoshi Gamliel</div>
+            <div class="ts">Posted Saturday · 7:19 pm</div>
+          </div>
+        </div>
+        <div class="body">New thread started: "Why we never talk about uncle Frank's first marriage." Figured it was time. Everyone who remembers — drop what you know. No judgment, just the record.</div>
+      </div>
+    </div>
+
+    <!-- FAMILY TREE -->
+    <div class="tab-panel" id="tab-tree">
+      <h2>Interactive Family Tree</h2>
+      <p class="panel-sub">Click a name to see their full profile, connections, and stories. Seventeen generations mapped back to Galicia.</p>
+      <div class="tree-wrap">
+        <div class="tree">
+          <div class="tree-generation">
+            <a href="vazquez-profile.html" class="tree-node">
+              <div class="name">Manuel Vázquez</div>
+              <div class="span">1867 – 1941</div>
+              <div class="role">patriarch · Galicia</div>
+            </a>
+          </div>
+          <div class="tree-generation">
+            <a href="vazquez-profile.html" class="tree-node">
+              <div class="name">Josefina Vázquez</div>
+              <div class="span">1902 – 1978</div>
+              <div class="role">matriarch · Mexico City</div>
+            </a>
+            <a href="vazquez-profile.html" class="tree-node">
+              <div class="name">Ignacio Vázquez</div>
+              <div class="span">1898 – 1965</div>
+              <div class="role">migrated to CA</div>
+            </a>
+          </div>
+          <div class="tree-generation">
+            <a href="joseph-vazquez-heritage.html" class="tree-node">
+              <div class="name">Joseph Vázquez Sr.</div>
+              <div class="span">1934 – 2012</div>
+              <div class="role">trucker · father</div>
+            </a>
+            <a href="deborah-mahony-profile.html" class="tree-node">
+              <div class="name">Deborah Mahony</div>
+              <div class="span">1941 – 2020</div>
+              <div class="role">nurse · matriarch</div>
+            </a>
+          </div>
+          <div class="tree-generation">
+            <a href="vazquez-profile.html" class="tree-node">
+              <div class="name">Mark "Bear" Vázquez</div>
+              <div class="span">1992 –</div>
+              <div class="role">founder · MLC</div>
+            </a>
+            <a href="vazquez-profile.html" class="tree-node">
+              <div class="name">Joseph Vázquez Jr.</div>
+              <div class="span">1988 –</div>
+              <div class="role">concrete · brother</div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PHOTO TIMELINE -->
+    <div class="tab-panel" id="tab-photos">
+      <h2>Photo Timeline</h2>
+      <p class="panel-sub">Sorted by decade. Every photo tagged with family member, event, location. Click any tile for the full-size photo + context.</p>
+
+      <div class="decade-row">
+        <div class="decade-label">1920s</div>
+        <div class="photo-strip">
+          <div class="photo-tile"><span class="tile-title">Wedding</span><span class="tile-sub">Manuel &amp; Carmen · Mexico City · 1924</span></div>
+          <div class="photo-tile"><span class="tile-title">Family Shop</span><span class="tile-sub">Vázquez Bakery · 1927</span></div>
+        </div>
+      </div>
+
+      <div class="decade-row">
+        <div class="decade-label">1950s</div>
+        <div class="photo-strip">
+          <div class="photo-tile"><span class="tile-title">CA Arrival</span><span class="tile-sub">Ignacio &amp; Josefina · 1951</span></div>
+          <div class="photo-tile"><span class="tile-title">First House</span><span class="tile-sub">Santa Maria · 1953</span></div>
+          <div class="photo-tile"><span class="tile-title">Joseph Sr. Birth</span><span class="tile-sub">Santa Maria · 1934 (re-indexed)</span></div>
+        </div>
+      </div>
+
+      <div class="decade-row">
+        <div class="decade-label">1970s</div>
+        <div class="photo-strip">
+          <div class="photo-tile"><span class="tile-title">Deborah's Porch</span><span class="tile-sub">Deborah · 1972</span></div>
+          <div class="photo-tile"><span class="tile-title">Rosa &amp; Guitar</span><span class="tile-sub">Tia Rosa · 1975</span></div>
+          <div class="photo-tile"><span class="tile-title">Dad's Rig</span><span class="tile-sub">Joseph Sr. · Freightliner · 1978</span></div>
+        </div>
+      </div>
+
+      <div class="decade-row">
+        <div class="decade-label">1990s</div>
+        <div class="photo-strip">
+          <div class="photo-tile"><span class="tile-title">Mark Born</span><span class="tile-sub">Mark Vázquez · 1992</span></div>
+          <div class="photo-tile"><span class="tile-title">Joseph Jr. Born</span><span class="tile-sub">Joseph Jr. · 1988</span></div>
+          <div class="photo-tile"><span class="tile-title">Galicia Trip</span><span class="tile-sub">Joseph Sr. · Galicia · 1988</span></div>
+        </div>
+      </div>
+
+      <div class="decade-row">
+        <div class="decade-label">2020s</div>
+        <div class="photo-strip">
+          <div class="photo-tile"><span class="tile-title">Deborah Memorial</span><span class="tile-sub">Family portrait · 2020</span></div>
+          <div class="photo-tile"><span class="tile-title">MLC Launch</span><span class="tile-sub">Mark + team · 2025</span></div>
+          <div class="photo-tile"><span class="tile-title">Concrete Shop</span><span class="tile-sub">Joseph Jr.'s truck · 2026</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RECIPE BANK -->
+    <div class="tab-panel" id="tab-recipes">
+      <h2>Family Recipe Bank</h2>
+      <p class="panel-sub">Ingredient history, video instructions, the backstory of how each dish got into this family. Each recipe lists both the original version and how we cook it now.</p>
+      <div class="recipe-grid">
+        <div class="recipe-card">
+          <div class="eyebrow">Holiday · Christmas</div>
+          <h3>Grandma's Tamales</h3>
+          <p>Masa with pork shoulder slow-cooked with guajillo and ancho. Joseph Sr. brought this version from Mexico City; Deborah added the California chile twist in 1972.</p>
+          <div class="meta"><span>3 hrs</span><span>Makes 36</span><span>Has Video</span></div>
+        </div>
+        <div class="recipe-card">
+          <div class="eyebrow">Sunday · Every Week</div>
+          <h3>Galician Caldo</h3>
+          <p>Potato, turnip greens, white beans, chorizo. Manuel's mother made this in Galicia; it survived the migration with only one change (paprika instead of pimentón).</p>
+          <div class="meta"><span>90 min</span><span>Serves 8</span><span>Original Recipe</span></div>
+        </div>
+        <div class="recipe-card">
+          <div class="eyebrow">Birthday</div>
+          <h3>Tres Leches Cake</h3>
+          <p>Sponge soaked in three milks. The Vázquez version uses goat milk in one of the three — a tweak from Tia Rosa, who swore it made the cake "stand up better."</p>
+          <div class="meta"><span>2 hrs</span><span>Serves 12</span><span>Rosa's Version</span></div>
+        </div>
+        <div class="recipe-card">
+          <div class="eyebrow">Morning · Breakfast</div>
+          <h3>Chilaquiles Verdes</h3>
+          <p>Tomatillo salsa, day-old tortillas, crema, queso fresco, fried egg. Joseph Jr.'s Saturday morning standard. He'll post a video of him making it with the kids.</p>
+          <div class="meta"><span>25 min</span><span>Serves 4</span><span>Coming w/ Video</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- THREADS -->
+    <div class="tab-panel" id="tab-threads">
+      <h2>Discussion Threads</h2>
+      <p class="panel-sub">Family conversations, historical debates, "why grandpa left." The quiet conversations that don't happen at the dinner table — held here, preserved here.</p>
+
+      <div class="thread">
+        <h3>Why Grandpa Left Galicia</h3>
+        <div class="thread-meta"><span>started by Mark</span><span>14 replies</span><span>last: 3 days ago</span></div>
+        <div class="thread-preview">"Always heard it was about work. My tio Paco says it was really about the fallout with his brother over the bakery. Anyone else have the real story?"</div>
+      </div>
+
+      <div class="thread">
+        <h3>Grandma's Real Maiden Name</h3>
+        <div class="thread-meta"><span>started by Lupe</span><span>7 replies</span><span>last: yesterday</span></div>
+        <div class="thread-preview">"The church record says Fernández but every document after 1952 says Vázquez. Found the marriage certificate — it's neither. We need to talk about this."</div>
+      </div>
+
+      <div class="thread">
+        <h3>Who Has The Original Tamale Recipe Card?</h3>
+        <div class="thread-meta"><span>started by Joseph Jr.</span><span>21 replies</span><span>last: 4 hrs ago</span></div>
+        <div class="thread-preview">"The one in grandma's handwriting. Last seen Thanksgiving 2019 at Tia Carmen's house. Mark has a photo but we want the actual card. Rewards offered."</div>
+      </div>
+
+      <div class="thread">
+        <h3>Uncle Frank's First Marriage</h3>
+        <div class="thread-meta"><span>started by Shoshi</span><span>3 replies</span><span>last: 2 hrs ago</span></div>
+        <div class="thread-preview">"It's time. Everyone who remembers, drop what you know. No judgment, just the record. We owe it to whoever reads this in fifty years."</div>
+      </div>
+    </div>
+
+    <!-- EXISTING LEGACIES -->
+    <div class="tab-panel" id="tab-legacies">
+      <h2>Family Profiles</h2>
+      <p class="panel-sub">The living profiles connected to this vault. Each links to a full MLC profile on the public network, with extended material preserved here.</p>
+      <div class="vault-grid">
+        <div class="vault-card">
+          <h3>Mark "Bear" Vázquez</h3>
+          <div class="loc">Santa Maria, CA</div>
+          <p>Heritage &amp; family legacy. Founder, MLC.</p>
+          <a href="vazquez-profile.html">View Profile &rarr;</a>
+        </div>
+        <div class="vault-card">
+          <h3>Bears Concrete Pumping</h3>
+          <div class="loc">Santa Maria, CA</div>
+          <p>Business legacy &amp; founder story.</p>
+          <a href="bears-concrete-profile.html">View Profile &rarr;</a>
+        </div>
+        <div class="vault-card">
+          <h3>Butters Vázquez</h3>
+          <div class="loc">Santa Maria, CA</div>
+          <p>Pet memorial.</p>
+          <a href="butters-profile.html">View Profile &rarr;</a>
+        </div>
+        <div class="vault-card">
+          <h3>Deborah Mahony</h3>
+          <div class="loc">Santa Maria, CA</div>
+          <p>Family memorial &amp; heritage.</p>
+          <a href="deborah-mahony-profile.html">View Profile &rarr;</a>
+        </div>
+        <div class="vault-card">
+          <h3>Anthony Raygoza Sr.</h3>
+          <div class="loc">Santa Maria, CA</div>
+          <p>Family legacy &amp; remembrance.</p>
+          <a href="anthony-raygoza-memorial.html">View Profile &rarr;</a>
+        </div>
+        <div class="vault-card">
+          <h3>Antoinette Raygoza</h3>
+          <div class="loc">Santa Maria, CA</div>
+          <p>Family memorial &amp; heritage.</p>
+          <a href="antoinette-raygoza-memorial.html">View Profile &rarr;</a>
+        </div>
+        <div class="vault-card">
+          <h3>McNeal Construction</h3>
+          <div class="loc">Santa Maria, CA</div>
+          <p>Trade business heritage.</p>
+          <a href="mcneal-construction-profile.html">View Profile &rarr;</a>
+        </div>
+        <div class="vault-card">
+          <h3>Carlos Macias</h3>
+          <div class="loc">Santa Maria, CA</div>
+          <p>Family legacy &amp; remembrance.</p>
+          <a href="carlos-macias-profile.html">View Profile &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
 <footer>
   <div class="footer-inner">
-    <div class="footer-contact">Contact: contact@mylegacycontinues.com | (805) 863-3794 | Santa Maria, CA</div>
+    <div class="footer-contact">Contact: <a href="mailto:contact@mylegacycontinues.com">contact@mylegacycontinues.com</a> | (805) 863-3794 | Santa Maria, CA</div>
     <ul class="footer-links">
       <li><a href="index.html">Home</a></li>
       <li><a href="heritage-book.html">Heritage</a></li>
-      <li><a href="rescue-registry.html">Rescue Registry</a></li>
+      <li><a href="morning-memories.html">Morning Memories</a></li>
+      <li><a href="rescue-registry.html">Rescue</a></li>
       <li><a href="active-transports.html">Transport</a></li>
+      <li><a href="merch-legacy.html">Merch</a></li>
+      <li><a href="culture-guide.html">Culture Guide</a></li>
+      <li><a href="privacy-promise.html">Privacy Promise</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="contact.html">Contact</a></li>
-      <li><a href="legal/privacy.html">Privacy</a></li>
+      <li><a href="legal/privacy.html">Legal Privacy</a></li>
       <li><a href="legal/terms-of-service.html">Terms</a></li>
     </ul>
     <p class="footer-copy">&copy; 2026 My Legacy Continues. All rights reserved.</p>
@@ -287,62 +720,53 @@
 </footer>
 
 <script>
+  // Mobile nav
   const navToggle = document.getElementById('navToggle');
   const navLinks = document.getElementById('navLinks');
   if (navToggle) {
     navToggle.addEventListener('click', () => navLinks.classList.toggle('active'));
-    navLinks.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => navLinks.classList.remove('active'));
-    });
+    navLinks.querySelectorAll('a').forEach(l => l.addEventListener('click', () => navLinks.classList.remove('active')));
   }
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
-  }, { threshold: 0.1 });
-  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+  // Lock gate
+  const DEMO_PW = 'vazquez';
+  const pwInput = document.getElementById('pwInput');
+  const pwBtn = document.getElementById('pwBtn');
+  const pwErr = document.getElementById('pwErr');
+  const lockGate = document.getElementById('lockGate');
+  const vaultBody = document.getElementById('vaultBody');
+
+  function tryUnlock() {
+    const val = (pwInput.value || '').trim().toLowerCase();
+    if (val === DEMO_PW) {
+      lockGate.style.display = 'none';
+      vaultBody.classList.add('open');
+      sessionStorage.setItem('mlc_vault_unlocked', '1');
+    } else {
+      pwErr.classList.add('show');
+      pwInput.focus();
+      pwInput.select();
+    }
+  }
+  pwBtn.addEventListener('click', tryUnlock);
+  pwInput.addEventListener('keydown', e => { if (e.key === 'Enter') tryUnlock(); });
+
+  // Persist within session
+  if (sessionStorage.getItem('mlc_vault_unlocked') === '1') {
+    lockGate.style.display = 'none';
+    vaultBody.classList.add('open');
+  }
+
+  // Tabs
+  document.querySelectorAll('.tab-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const tab = btn.dataset.tab;
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById('tab-' + tab).classList.add('active');
+    });
+  });
 </script>
-<script src="metalflake.js"></script>
-
-  <!-- Form Submission Tracking -->
-  <script>
-    document.querySelectorAll('form').forEach(form => {
-      form.addEventListener('submit', function(e) {
-        const subject = form.querySelector('input[name="_subject"]');
-        const eventName = subject ? subject.value.replace(/\s+/g, '_').toLowerCase() : 'form_submission';
-        if (typeof gtag !== 'undefined') {
-          gtag('event', eventName, {
-            'event_category': 'form',
-            'event_label': subject ? subject.value : 'unknown'
-          });
-        }
-      });
-    });
-  </script>
-
-  <!-- Product Click Tracking -->
-  <script>
-    document.querySelectorAll('[data-product]').forEach(button => {
-      button.addEventListener('click', function() {
-        if (typeof gtag !== 'undefined') {
-          gtag('event', 'view_item', {
-            'items': [{
-              'item_id': this.getAttribute('data-product'),
-              'item_name': this.getAttribute('data-product').replace(/[-_]/g, ' ').toUpperCase(),
-              'item_category': 'legacy_product'
-            }]
-          });
-        }
-
-        if (typeof fbq !== 'undefined') {
-          fbq('track', 'ViewContent', {
-            'content_name': this.getAttribute('data-product'),
-            'content_type': 'product'
-          });
-        }
-      });
-    });
-  </script>
-
 </body>
 </html>
-
-
