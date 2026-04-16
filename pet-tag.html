@@ -22,7 +22,11 @@
     .section {
       background-color:#1A1A1A;
     }
-  
+
+    @media (max-width: 768px) {
+      .nav-lang-sw { display: none !important; }
+    }
+
 .form-group {
   display: flex;
   flex-direction: column;
@@ -139,7 +143,7 @@
   </ul>
   <div style="display: flex; align-items: center; gap: 1rem; flex-shrink: 0;">
     <a href="index.html#products" class="nav-cta">START YOUR LEGACY</a>
-    <a href="/es/pet-tag.html" style="color: #E0E0E0; text-decoration: none; font-size: 0.75rem; white-space: nowrap; display: inline-block; padding: 5px 8px; border: 1px solid rgba(212,175,55,0.3); transition: all 0.2s;"><strong>EN</strong> | <span style="color: #D4AF37;">ES</span></a>
+    <a href="/es/pet-tag.html" class="nav-lang-sw" style="color: #E0E0E0; text-decoration: none; font-size: 0.75rem; white-space: nowrap; display: inline-block; padding: 5px 8px; border: 1px solid rgba(212,175,55,0.3); transition: all 0.2s;"><strong>EN</strong> | <span style="color: #D4AF37;">ES</span></a>
   </div>
   <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
     <span></span><span></span><span></span>
