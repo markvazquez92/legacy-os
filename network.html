@@ -476,6 +476,66 @@
     }
     .nw-qr-link a { color: var(--gold); }
 
+    /* ============ CATEGORY HEADERS ============ */
+    .nw-cat {
+      text-align: center;
+      margin: 56px 0 28px;
+    }
+    .nw-cat:first-of-type { margin-top: 8px; }
+    .nw-cat h3 {
+      display: inline-block;
+      font-family: var(--font-headline);
+      font-weight: 700;
+      font-size: clamp(1.1rem, 2vw, 1.4rem);
+      color: var(--chrome);
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--gold);
+      margin: 0;
+    }
+    .nw-roster-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 26px;
+    }
+    .nw-roster-grid.solo {
+      grid-template-columns: minmax(0, 380px);
+      justify-content: center;
+    }
+    .nw-roster-card {
+      background: var(--bg-card);
+      border: 1px solid var(--gold);
+      padding: 30px 26px 26px;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .nw-roster-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 18px 40px -16px var(--gold-glow);
+    }
+    .nw-roster-card .nw-feature-eyebrow { color: var(--brandywine); }
+    .nw-roster-card h4 {
+      font-family: var(--font-section);
+      font-weight: 700;
+      font-size: 1.15rem;
+      color: var(--gold);
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    .nw-roster-card p {
+      color: var(--chrome);
+      line-height: 1.65;
+      font-size: 0.96rem;
+      margin-bottom: 20px;
+      flex: 1;
+    }
+    @media (max-width: 960px) {
+      .nw-roster-grid { grid-template-columns: 1fr; }
+    }
+
     /* ============ FADE-UP ============ */
     .fade-up {
       opacity: 0;
@@ -604,8 +664,7 @@
     <div class="nw-container" style="text-align:center; max-width:900px;">
       <div class="nw-section-eyebrow">The 805 Network</div>
       <h2 class="nw-section-title">THE 805 NETWORK</h2>
-      <p class="nw-section-sub" style="max-width:720px; margin:1.5rem auto 2rem auto; line-height:1.7;">Real Central Coast stories. Businesses. Athletes. Families. Creators. Every profile lives here permanently. This is the permanent home for everything the algorithm buries.</p>
-      <a href="demo-profiles.html" class="btn-gold" style="display:inline-block; padding:14px 32px; font-size:0.85rem; letter-spacing:0.1em;">See All Profiles</a>
+      <p class="nw-section-sub" style="max-width:720px; margin:1.5rem auto 0 auto; line-height:1.7;">Real Central Coast stories. Businesses. Athletes. Families. Creators. Every profile lives here permanently. This is the permanent home for everything the algorithm buries.</p>
     </div>
   </section>
 
@@ -633,31 +692,101 @@
 
   <hr class="pinstripe">
 
-  <!-- SECTION 3 — FEATURED THIS WEEK -->
-  <section class="nw-section cream">
+  <!-- SECTION 3 — THE ROSTER: EVERY PROFILE ON THE NETWORK -->
+  <section class="nw-section charcoal">
     <div class="nw-container">
-      <div class="nw-section-eyebrow">On Air</div>
-      <h2 class="nw-section-title">This Week On The Network</h2>
-      <div class="nw-section-sub">Three features rotating. Every week something new.</div>
+      <div class="nw-section-eyebrow">The Roster</div>
+      <h2 class="nw-section-title">Every Profile On The Network</h2>
+      <div class="nw-section-sub">Eleven lives. Five categories. All permanent.</div>
 
-      <div class="nw-feature-grid fade-up">
-        <div class="nw-feature-card">
-          <div class="nw-feature-eyebrow">Legacy Profile</div>
-          <h3>The V&aacute;zquez Legacy</h3>
-          <p>Est. 1547. Galicia to Mexico City to the Central Coast. Seventeen generations documented in a single heritage book and permanent digital profile.</p>
+      <!-- FAMILIES & HERITAGE -->
+      <div class="nw-cat fade-up"><h3>Families &amp; Heritage</h3></div>
+      <div class="nw-roster-grid fade-up">
+        <div class="nw-roster-card">
+          <div class="nw-feature-eyebrow">Family</div>
+          <h4>V&aacute;zquez Family</h4>
+          <p>Galicia to California. Seventeen generations documented. Est. 1547.</p>
           <a href="vazquez-profile.html" class="nw-btn full">View Profile</a>
         </div>
-        <div class="nw-feature-card">
-          <div class="nw-feature-eyebrow">Food Feature</div>
-          <h3>Central Coast Restaurant Feature</h3>
-          <p>Coming Soon. A local spot that deserves to be known. Filmed, reviewed, permanently documented on the Network.</p>
-          <a href="#" class="nw-btn full ghost">Stay Tuned</a>
+        <div class="nw-roster-card">
+          <div class="nw-feature-eyebrow">Heritage Book</div>
+          <h4>Joseph V&aacute;zquez Heritage</h4>
+          <p>One man&rsquo;s story, written to last generations. The heritage book standard.</p>
+          <a href="joseph-vazquez-heritage.html" class="nw-btn full">View Profile</a>
         </div>
-        <div class="nw-feature-card">
-          <div class="nw-feature-eyebrow">Athlete Spotlight</div>
-          <h3>805 Athlete Legacy</h3>
-          <p>Coming Soon. A Central Coast competitor with a story worth preserving. Their grind documented the right way.</p>
-          <a href="#" class="nw-btn full ghost">Stay Tuned</a>
+        <div class="nw-roster-card">
+          <div class="nw-feature-eyebrow">Family</div>
+          <h4>Deborah Mahony</h4>
+          <p>A life remembered. A family story preserved permanently.</p>
+          <a href="deborah-mahony-profile.html" class="nw-btn full">View Profile</a>
+        </div>
+      </div>
+
+      <!-- BUSINESSES -->
+      <div class="nw-cat fade-up"><h3>Businesses</h3></div>
+      <div class="nw-roster-grid fade-up">
+        <div class="nw-roster-card">
+          <div class="nw-feature-eyebrow">Contractor</div>
+          <h4>McNeal Construction</h4>
+          <p>805 contractor. Generational trade. Built to last.</p>
+          <a href="mcneal-construction-profile.html" class="nw-btn full">View Profile</a>
+        </div>
+        <div class="nw-roster-card">
+          <div class="nw-feature-eyebrow">Concrete</div>
+          <h4>Bears Concrete Pumping</h4>
+          <p>Central Coast concrete pumping. Owner-operated. On the ground.</p>
+          <a href="bears-concrete-profile.html" class="nw-btn full">View Profile</a>
+        </div>
+        <div class="nw-roster-card">
+          <div class="nw-feature-eyebrow">Trucking</div>
+          <h4>BigTymer Trucking</h4>
+          <p>805 trucking operation. Road-tested. Driver-owned.</p>
+          <a href="bigtymer-trucking-profile.html" class="nw-btn full">View Profile</a>
+        </div>
+        <div class="nw-roster-card">
+          <div class="nw-feature-eyebrow">Property Mgmt</div>
+          <h4>Carlos Macias</h4>
+          <p>Creative Property Management. Real estate, real results.</p>
+          <a href="carlos-macias-profile.html" class="nw-btn full">View Profile</a>
+        </div>
+      </div>
+
+      <!-- MEMORIALS -->
+      <div class="nw-cat fade-up"><h3>Memorials</h3></div>
+      <div class="nw-roster-grid fade-up">
+        <div class="nw-roster-card">
+          <div class="nw-feature-eyebrow">In Memoriam</div>
+          <h4>Anthony Raygoza Sr.</h4>
+          <p>A life remembered. A legacy preserved.</p>
+          <a href="anthony-raygoza-memorial.html" class="nw-btn full">View Profile</a>
+        </div>
+        <div class="nw-roster-card">
+          <div class="nw-feature-eyebrow">In Memoriam</div>
+          <h4>Antoinette Raygoza</h4>
+          <p>Matriarch. Memory. Forever.</p>
+          <a href="antoinette-raygoza-memorial.html" class="nw-btn full">View Profile</a>
+        </div>
+      </div>
+
+      <!-- PETS -->
+      <div class="nw-cat fade-up"><h3>Pets</h3></div>
+      <div class="nw-roster-grid solo fade-up">
+        <div class="nw-roster-card">
+          <div class="nw-feature-eyebrow">Pet Tag</div>
+          <h4>Butters</h4>
+          <p>Good dog. Great story. Permanently tagged.</p>
+          <a href="butters-profile.html" class="nw-btn full">View Profile</a>
+        </div>
+      </div>
+
+      <!-- RESCUE PARTNERS -->
+      <div class="nw-cat fade-up"><h3>Rescue Partners</h3></div>
+      <div class="nw-roster-grid solo fade-up">
+        <div class="nw-roster-card">
+          <div class="nw-feature-eyebrow">Rescue</div>
+          <h4>Shoshi Gamliel &mdash; Underdog Heroes</h4>
+          <p>Dog rescue across the Central Coast. Mission first.</p>
+          <a href="shoshi-gamliel-profile.html" class="nw-btn full">View Profile</a>
         </div>
       </div>
     </div>
