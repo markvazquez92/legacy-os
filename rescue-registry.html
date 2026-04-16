@@ -10,6 +10,14 @@
   <link rel="icon" href="logo.png" type="image/png">
   <link rel="stylesheet" href="style.css">
   <style>
+    /* Candy Paint local aliases — inline styles in this page use var(--gold) and var(--cream) */
+    :root {
+      --gold: #D4AF37;
+      --cream: #F5F5F5;
+      --brandywine: #8B0000;
+      --chrome: #E0E0E0;
+    }
+
     /* Mobile background fix */
     body {
       background-color:#1A1A1A;
@@ -229,7 +237,7 @@
   <!-- BEHAVIORAL JOURNEY TRACKER -->
   <section class="section-cream fade-in">
     <div class="section-inner text-center">
-      <h2 style="color: #722F37;">Behavioral Journey Tracker</h2>
+      <h2 style="color: var(--gold);">Behavioral Journey Tracker</h2>
       <p style="max-width: 700px; margin: 1.5rem auto 0; font-size: 1.05rem; line-height: 1.8; color:#F5F5F5;">Every dog has a documented behavioral journey. From intake condition through foster observations to adoption day. You know exactly who you are getting. No surprises. No returns. Just a real match.</p>
     </div>
   </section>
