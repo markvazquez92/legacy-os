@@ -898,6 +898,8 @@ footer[style] .footer-copy[style] { color: #C9BFA0 !important; }
 html {
   background: #050505 !important;
   min-height: 100%;
+  scroll-behavior: smooth;
+  scroll-padding-top: 140px;
 }
 body {
   background:
@@ -1173,6 +1175,81 @@ footer[style] .footer-copy[style] { color: #D4AF37 !important; opacity: 0.82; }
 
 /* 13. Body paragraph line-height for readability */
 p { line-height: 1.6 !important; }
+
+/* 14. TAB NAV BAR (Task 8) */
+.vz-founder-tagline {
+  display: block;
+  margin: 8px auto 0;
+  font-family: 'Oswald','Montserrat',sans-serif;
+  font-weight: 700;
+  font-size: 0.72rem;
+  color: #E0E0E0;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+}
+.vz-tabs {
+  position: sticky;
+  top: 64px;
+  z-index: 20;
+  background: #1A1A1A;
+  border-top: 1px solid rgba(212,175,55,0.25);
+  border-bottom: 1px solid rgba(212,175,55,0.25);
+  display: flex;
+  justify-content: center;
+  gap: 0;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.vz-tabs a {
+  flex: 0 0 auto;
+  padding: 16px 28px;
+  font-family: 'Oswald','Montserrat',sans-serif;
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: #E0E0E0;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: color 0.2s, border-color 0.2s;
+  white-space: nowrap;
+  border-radius: 0;
+}
+.vz-tabs a:hover,
+.vz-tabs a.active {
+  color: #D4AF37;
+  border-bottom-color: #D4AF37;
+}
+@media (max-width: 640px) {
+  .vz-tabs { justify-content: flex-start; }
+  .vz-tabs a { padding: 14px 18px; font-size: 0.72rem; letter-spacing: 0.22em; }
+}
+
+/* 15. VIDEOS PLACEHOLDER (Task 8) */
+.vz-videos-placeholder {
+  background: #1f1f1f;
+  border: 1px solid rgba(212,175,55,0.3);
+  padding: 3rem 2rem;
+  text-align: center;
+  border-radius: 0;
+}
+.vz-videos-placeholder h3 {
+  font-family: 'Oswald','Montserrat',sans-serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #D4AF37;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+.vz-videos-placeholder p {
+  font-family: 'Outfit','Montserrat',sans-serif;
+  font-size: 0.95rem;
+  color: rgba(224,224,224,0.6);
+  line-height: 1.6;
+  max-width: 500px;
+  margin: 0 auto;
+}
   </style>
 
   <!-- Google Analytics 4 -->
@@ -1239,6 +1316,7 @@ p { line-height: 1.6 !important; }
       <img src="images/bear-photo.jpg" alt="Mark 'Bear' Vazquez portrait"/>
     </div>
     <h1>Mark <span class="accent">"Bear"</span> Vazquez</h1>
+    <span class="vz-founder-tagline">Founder of My Legacy Continues</span>
     <p class="lr-subtitle">Concrete Pumping Operator &middot; Heritage Preservationist &middot; Animal Rescue Advocate</p>
     <p class="lr-location">Santa Maria, California &middot; Est. 2026</p>
     <div class="lr-lineage">
@@ -1248,6 +1326,14 @@ p { line-height: 1.6 !important; }
       <div class="lr-lin-item"><span class="lr-lin-label">Settled</span><span class="lr-lin-val">Santa Maria, CA</span></div>
     </div>
   </section>
+
+  <!-- ===== TAB NAV BAR ===== -->
+  <nav class="vz-tabs" aria-label="Profile sections">
+    <a href="#life-section">Life</a>
+    <a href="#music-section">Music</a>
+    <a href="#videos-section">Videos</a>
+    <a href="#family-section">Family</a>
+  </nav>
 
   <!-- ===== CONNECTED HUB ===== -->
   <section class="lr-connected">
@@ -1277,6 +1363,8 @@ p { line-height: 1.6 !important; }
   </section>
 
   <div class="lr-wrap">
+
+    <div id="life-section">
 
     <!-- ===== INTRODUCTION ===== -->
     <div class="lr-sec-head"><h2>Introduction</h2><div class="lr-sec-rule"></div></div>
@@ -1332,169 +1420,22 @@ p { line-height: 1.6 !important; }
     <div class="lr-photo"><img src="images/bear-baby-1.jpg" alt="Bear as a young child"/></div>
     <div class="lr-photo-caption">circa Early Childhood &middot; The Cub Years</div>
 
-    <!-- ===== FAMILY MEMORIES ===== -->
-    <div class="lr-sec-head"><h2>Family Memories</h2><div class="lr-sec-rule"></div></div>
-    <div class="lr-photo"><img src="images/bear-baby-3.jpg" alt="Bear &mdash; childhood family memory"/></div>
-    <div class="lr-photo-caption">circa Childhood &middot; Family Memories</div>
-
-    <!-- ===== ANCESTOR'S EYES ===== -->
-    <div class="lr-sec-head"><h2>Ancestor's Eyes</h2><div class="lr-sec-rule"></div></div>
-    <div class="lr-letter">
-      <div class="lr-letter-eyebrow">A Letter From Grandpa Joe &mdash; Written In His Voice</div>
-      <div class="lr-letter-body">
-        <p>Bear.</p>
-        <p>I don't know that we ever talked the way I wanted to. You were young, and I was old, and old men from Mexico City don't always know how to say the things that matter before it's too late. So let me say them now.</p>
-        <p>I made rings. That was my trade in Mexico City &mdash; a platero, a man who works metal. I knew gold and silver the way a farmer knows soil. You press it wrong, it cracks. You rush it, it warps. You give it what it needs &mdash; the right heat, the right pressure, the right patience &mdash; and it becomes something that lasts a hundred years. I understood that. I built my whole life around that understanding.</p>
-        <p>What I want you to know is this: what you do with concrete is the same thing. You place foundations. You move material with intention. You know how much weight a pour can hold, how fast it sets in the Central Coast heat, where the tolerances are. You carry the same knowledge I carried &mdash; just scaled up from a ring to a building. The precision didn't leave the family when I did. It lives in your hands.</p>
-        <p>I walked north because Mexico City was running out of future. California was a guess. Your grandfather &mdash; your father's father &mdash; crossed with craft knowledge and nothing else, and that was enough to build a life. Now you carry it forward, and you carry it right.</p>
-        <p>Build things that last. Remember where we came from. That's all I ever wanted to pass down.</p>
-        <div class="lr-letter-sig">&mdash; Joe Vazquez &nbsp;&middot;&nbsp; Ring Maker &nbsp;&middot;&nbsp; Mexico City to Santa Barbara &nbsp;&middot;&nbsp; Mid 20th Century</div>
-      </div>
+    <!-- ===== BEAR'S WORK (moved into LIFE) ===== -->
+    <div class="lr-sec-head"><h2>Bear's Work</h2><div class="lr-sec-rule"></div></div>
+    <div class="lr-video-grid">
+      <video controls preload="metadata">
+        <source src="https://mylegacycontinues.com/bear-video-1.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <video controls preload="metadata">
+        <source src="https://mylegacycontinues.com/bear-video-2.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
     </div>
 
-    <!-- ===== FILMSTRIP TIMELINE ===== -->
-    <div class="lr-sec-head"><h2>The Life of Bear V&aacute;zquez &mdash; Santa Maria to Here</h2><div class="lr-sec-rule"></div></div>
-    <div class="lr-filmstrip">
-      <div class="lr-filmstrip-track">
-        <div class="lr-film-card">
-          <div class="lr-film-img"><img src="images/bear-baby-1.jpg" alt="Early childhood"/></div>
-          <div class="lr-film-meta">
-            <div class="lr-film-era">circa Early Childhood</div>
-            <div class="lr-film-label">The Cub</div>
-          </div>
-        </div>
-        <div class="lr-film-card">
-          <div class="lr-film-img"><img src="images/bear-baby.jpg" alt="Childhood with family dog"/></div>
-          <div class="lr-film-meta">
-            <div class="lr-film-era">circa Childhood</div>
-            <div class="lr-film-label">Family &amp; Collie</div>
-          </div>
-        </div>
-        <div class="lr-film-card">
-          <div class="lr-film-img"><img src="images/bear-baby-3.jpg" alt="Childhood family memory"/></div>
-          <div class="lr-film-meta">
-            <div class="lr-film-era">circa Childhood</div>
-            <div class="lr-film-label">Family Memories</div>
-          </div>
-        </div>
-        <div class="lr-film-card">
-          <div class="lr-film-img"><img src="images/bear-baby-2.jpg" alt="School portrait"/></div>
-          <div class="lr-film-meta">
-            <div class="lr-film-era">circa School Years</div>
-            <div class="lr-film-label">The Portrait</div>
-          </div>
-        </div>
-        <div class="lr-film-card">
-          <div class="lr-film-img"><img src="images/bear-baby-4.jpg" alt="Youth &mdash; park bench"/></div>
-          <div class="lr-film-meta">
-            <div class="lr-film-era">circa Youth</div>
-            <div class="lr-film-label">Park Bench Days</div>
-          </div>
-        </div>
-        <div class="lr-film-card">
-          <div class="lr-film-img"><img src="images/bear-photo.jpg" alt="Bear today"/></div>
-          <div class="lr-film-meta">
-            <div class="lr-film-era">circa Present</div>
-            <div class="lr-film-label">Santa Maria, CA</div>
-          </div>
-        </div>
-      </div>
-      <div class="lr-film-hint">&larr; Swipe to walk the years &rarr;</div>
-    </div>
+    </div><!-- /life-section -->
 
-    <!-- ===== TRAILER CTA ===== -->
-    <div class="lr-trailer">
-      <p>See the V&aacute;zquez family story come to life</p>
-      <a class="lr-btn" href="https://mylegacycontinues.com/vazquez-trailer.html">Watch the V&aacute;zquez Legacy Trailer</a>
-    </div>
-
-    <!-- ===== FAMILY TREE ===== -->
-    <div class="lr-sec-head"><h2>Family Tree</h2><div class="lr-sec-rule"></div></div>
-    <div class="lr-tree">
-      <div class="lr-tree-col">
-        <div class="lr-tree-label">Paternal Line</div>
-        <div class="lr-tree-entry">
-          <div class="lr-tree-name">Grandpa Joe Vazquez</div>
-          <div class="lr-tree-detail">Ring &amp; investment caster &middot; Mexico City</div>
-        </div>
-        <div class="lr-tree-entry">
-          <div class="lr-tree-name">Grandma Juanita (nee Alba)</div>
-          <div class="lr-tree-detail">Her father: Isaac Esparza Alba</div>
-        </div>
-        <div class="lr-tree-entry">
-          <div class="lr-tree-name">Dad Joseph Vazquez</div>
-          <div class="lr-tree-detail">Born Santa Barbara, CA</div>
-        </div>
-        <div class="lr-tree-entry">
-          <div class="lr-tree-name">Mark "Bear" Vazquez</div>
-          <div class="lr-tree-detail">Santa Maria, CA &middot; Founder, My Legacy Continues</div>
-        </div>
-      </div>
-      <div class="lr-tree-col">
-        <div class="lr-tree-label">Maternal Line</div>
-        <div class="lr-tree-entry">
-          <div class="lr-tree-name">Faustino Montemayor</div>
-          <div class="lr-tree-detail">Born 1852 &middot; Died 1950 age 98 &middot; Sinton, TX</div>
-        </div>
-        <div class="lr-tree-entry">
-          <div class="lr-tree-name">Clara Montemayor + Francisco Garcia</div>
-          <div class="lr-tree-detail">18 children &middot; 1940 Census, Sinton TX</div>
-        </div>
-        <div class="lr-tree-entry">
-          <div class="lr-tree-name">Grandma Elvira "Barbara" Garcia</div>
-          <div class="lr-tree-detail">Born Sept 7, 1944 &middot; Youngest of 18</div>
-        </div>
-        <div class="lr-tree-entry">
-          <div class="lr-tree-name">Mom Deborah Mahony</div>
-          <div class="lr-tree-detail">Santa Maria, CA</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- ===== JOSEPH HERITAGE BOOK CTA ===== -->
-    <div style="text-align:center; margin:3rem auto 2rem;">
-      <a href="joseph-vazquez-heritage.html" style="display:inline-block; background:#D4AF37; color:#1A1A1A; padding:16px 32px; font-family:'Oswald',sans-serif; font-weight:700; font-size:13px; letter-spacing:0.2em; text-transform:uppercase; text-decoration:none;">Read Joseph's Full Heritage Book &rarr;</a>
-    </div>
-
-    <!-- ===== FAMILY TIMELINE ===== -->
-    <div class="lr-sec-head"><h2>Family Timeline</h2><div class="lr-sec-rule"></div></div>
-    <div class="lr-timeline">
-      <div class="lr-tl-item">
-        <div class="lr-tl-year">~1300 AD</div>
-        <div class="lr-tl-event">Gonzalo Vazquez &mdash; Galicia, Spain</div>
-        <div class="lr-tl-detail">Earliest documented ancestor of the Vazquez line</div>
-      </div>
-      <div class="lr-tl-item">
-        <div class="lr-tl-year">1535</div>
-        <div class="lr-tl-event">Francisco Vazquez de Coronado crosses to New Spain</div>
-        <div class="lr-tl-detail">The Vazquez name plants roots in Mexico</div>
-      </div>
-      <div class="lr-tl-item">
-        <div class="lr-tl-year">1852</div>
-        <div class="lr-tl-event">Faustino Montemayor born &mdash; Sinton, Texas</div>
-        <div class="lr-tl-detail">Great-great-grandfather on maternal side &middot; Lived to age 98</div>
-      </div>
-      <div class="lr-tl-item">
-        <div class="lr-tl-year">1910&ndash;1929</div>
-        <div class="lr-tl-event">Mexican Revolution &amp; Cristero War</div>
-        <div class="lr-tl-detail">The push that sent the Vazquez family north toward California</div>
-      </div>
-      <div class="lr-tl-item">
-        <div class="lr-tl-year">Mid 1900s</div>
-        <div class="lr-tl-event">Grandpa Joe arrives in California</div>
-        <div class="lr-tl-detail">Settles Santa Barbara area &middot; Craftsman &middot; Builds the foundation</div>
-      </div>
-      <div class="lr-tl-item">
-        <div class="lr-tl-year">Sept 7, 1944</div>
-        <div class="lr-tl-event">Grandma Elvira "Barbara" Garcia born</div>
-        <div class="lr-tl-detail">Youngest of 18 children &middot; Sinton, TX &middot; Maternal line</div>
-      </div>
-      <div class="lr-tl-item">
-        <div class="lr-tl-year">Present</div>
-        <div class="lr-tl-event">Bear Vazquez &mdash; Santa Maria, CA</div>
-        <div class="lr-tl-detail">Bears Concrete Pumping &middot; My Legacy Continues &middot; Two lines, one story</div>
-      </div>
-    </div>
+    <div id="music-section">
 
     <!-- ===== CULTURE GUIDE ===== -->
     <div class="lr-sec-head"><h2>Culture Guide</h2><div class="lr-sec-rule"></div></div>
@@ -1830,23 +1771,189 @@ p { line-height: 1.6 !important; }
       </div>
     </div><!-- /panel-garcia -->
 
-    <!-- ===== BEAR'S WORK ===== -->
-    <div class="lr-sec-head"><h2>Bear's Work</h2><div class="lr-sec-rule"></div></div>
-    <div class="lr-video-grid">
-      <video controls preload="metadata">
-        <source src="https://mylegacycontinues.com/bear-video-1.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-      <video controls preload="metadata">
-        <source src="https://mylegacycontinues.com/bear-video-2.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-    </div>
-
     <!-- ===== PLAYLIST ===== -->
     <div class="lr-sec-head"><h2>My Legacy Playlist</h2><div class="lr-sec-rule"></div></div>
     <div class="lr-playlist-block">
       <iframe allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write" frameborder="0" height="450" style="border:0;" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.music.apple.com/us/playlist/my-legacy-continues/pl.u-55D6XV5c8WBg0d" title="My Legacy Continues Playlist"></iframe>
+    </div>
+
+    </div><!-- /music-section -->
+
+    <div id="videos-section">
+
+    <!-- ===== VIDEOS ===== -->
+    <div class="lr-sec-head"><h2>Bear's Video Drops</h2><div class="lr-sec-rule"></div></div>
+    <div class="vz-videos-placeholder">
+      <h3>More Coming Soon</h3>
+      <p>Bear's YouTube clips, TikToks, and favorite drops land here. Check back soon.</p>
+    </div>
+
+    </div><!-- /videos-section -->
+
+    <div id="family-section">
+
+    <!-- ===== FAMILY MEMORIES ===== -->
+    <div class="lr-sec-head"><h2>Family Memories</h2><div class="lr-sec-rule"></div></div>
+    <div class="lr-photo"><img src="images/bear-baby-3.jpg" alt="Bear &mdash; childhood family memory"/></div>
+    <div class="lr-photo-caption">circa Childhood &middot; Family Memories</div>
+
+    <!-- ===== ANCESTOR'S EYES ===== -->
+    <div class="lr-sec-head"><h2>Ancestor's Eyes</h2><div class="lr-sec-rule"></div></div>
+    <div class="lr-letter">
+      <div class="lr-letter-eyebrow">A Letter From Grandpa Joe &mdash; Written In His Voice</div>
+      <div class="lr-letter-body">
+        <p>Bear.</p>
+        <p>I don't know that we ever talked the way I wanted to. You were young, and I was old, and old men from Mexico City don't always know how to say the things that matter before it's too late. So let me say them now.</p>
+        <p>I made rings. That was my trade in Mexico City &mdash; a platero, a man who works metal. I knew gold and silver the way a farmer knows soil. You press it wrong, it cracks. You rush it, it warps. You give it what it needs &mdash; the right heat, the right pressure, the right patience &mdash; and it becomes something that lasts a hundred years. I understood that. I built my whole life around that understanding.</p>
+        <p>What I want you to know is this: what you do with concrete is the same thing. You place foundations. You move material with intention. You know how much weight a pour can hold, how fast it sets in the Central Coast heat, where the tolerances are. You carry the same knowledge I carried &mdash; just scaled up from a ring to a building. The precision didn't leave the family when I did. It lives in your hands.</p>
+        <p>I walked north because Mexico City was running out of future. California was a guess. Your grandfather &mdash; your father's father &mdash; crossed with craft knowledge and nothing else, and that was enough to build a life. Now you carry it forward, and you carry it right.</p>
+        <p>Build things that last. Remember where we came from. That's all I ever wanted to pass down.</p>
+        <div class="lr-letter-sig">&mdash; Joe Vazquez &nbsp;&middot;&nbsp; Ring Maker &nbsp;&middot;&nbsp; Mexico City to Santa Barbara &nbsp;&middot;&nbsp; Mid 20th Century</div>
+      </div>
+    </div>
+
+    <!-- ===== FILMSTRIP TIMELINE ===== -->
+    <div class="lr-sec-head"><h2>The Life of Bear V&aacute;zquez &mdash; Santa Maria to Here</h2><div class="lr-sec-rule"></div></div>
+    <div class="lr-filmstrip">
+      <div class="lr-filmstrip-track">
+        <div class="lr-film-card">
+          <div class="lr-film-img"><img src="images/bear-baby-1.jpg" alt="Early childhood"/></div>
+          <div class="lr-film-meta">
+            <div class="lr-film-era">circa Early Childhood</div>
+            <div class="lr-film-label">The Cub</div>
+          </div>
+        </div>
+        <div class="lr-film-card">
+          <div class="lr-film-img"><img src="images/bear-baby.jpg" alt="Childhood with family dog"/></div>
+          <div class="lr-film-meta">
+            <div class="lr-film-era">circa Childhood</div>
+            <div class="lr-film-label">Family &amp; Collie</div>
+          </div>
+        </div>
+        <div class="lr-film-card">
+          <div class="lr-film-img"><img src="images/bear-baby-3.jpg" alt="Childhood family memory"/></div>
+          <div class="lr-film-meta">
+            <div class="lr-film-era">circa Childhood</div>
+            <div class="lr-film-label">Family Memories</div>
+          </div>
+        </div>
+        <div class="lr-film-card">
+          <div class="lr-film-img"><img src="images/bear-baby-2.jpg" alt="School portrait"/></div>
+          <div class="lr-film-meta">
+            <div class="lr-film-era">circa School Years</div>
+            <div class="lr-film-label">The Portrait</div>
+          </div>
+        </div>
+        <div class="lr-film-card">
+          <div class="lr-film-img"><img src="images/bear-baby-4.jpg" alt="Youth &mdash; park bench"/></div>
+          <div class="lr-film-meta">
+            <div class="lr-film-era">circa Youth</div>
+            <div class="lr-film-label">Park Bench Days</div>
+          </div>
+        </div>
+        <div class="lr-film-card">
+          <div class="lr-film-img"><img src="images/bear-photo.jpg" alt="Bear today"/></div>
+          <div class="lr-film-meta">
+            <div class="lr-film-era">circa Present</div>
+            <div class="lr-film-label">Santa Maria, CA</div>
+          </div>
+        </div>
+      </div>
+      <div class="lr-film-hint">&larr; Swipe to walk the years &rarr;</div>
+    </div>
+
+    <!-- ===== TRAILER CTA ===== -->
+    <div class="lr-trailer">
+      <p>See the V&aacute;zquez family story come to life</p>
+      <a class="lr-btn" href="https://mylegacycontinues.com/vazquez-trailer.html">Watch the V&aacute;zquez Legacy Trailer</a>
+    </div>
+
+    <!-- ===== FAMILY TREE ===== -->
+    <div class="lr-sec-head"><h2>Family Tree</h2><div class="lr-sec-rule"></div></div>
+    <div class="lr-tree">
+      <div class="lr-tree-col">
+        <div class="lr-tree-label">Paternal Line</div>
+        <div class="lr-tree-entry">
+          <div class="lr-tree-name">Grandpa Joe Vazquez</div>
+          <div class="lr-tree-detail">Ring &amp; investment caster &middot; Mexico City</div>
+        </div>
+        <div class="lr-tree-entry">
+          <div class="lr-tree-name">Grandma Juanita (nee Alba)</div>
+          <div class="lr-tree-detail">Her father: Isaac Esparza Alba</div>
+        </div>
+        <div class="lr-tree-entry">
+          <div class="lr-tree-name">Dad Joseph Vazquez</div>
+          <div class="lr-tree-detail">Born Santa Barbara, CA</div>
+        </div>
+        <div class="lr-tree-entry">
+          <div class="lr-tree-name">Mark "Bear" Vazquez</div>
+          <div class="lr-tree-detail">Santa Maria, CA &middot; Founder, My Legacy Continues</div>
+        </div>
+      </div>
+      <div class="lr-tree-col">
+        <div class="lr-tree-label">Maternal Line</div>
+        <div class="lr-tree-entry">
+          <div class="lr-tree-name">Faustino Montemayor</div>
+          <div class="lr-tree-detail">Born 1852 &middot; Died 1950 age 98 &middot; Sinton, TX</div>
+        </div>
+        <div class="lr-tree-entry">
+          <div class="lr-tree-name">Clara Montemayor + Francisco Garcia</div>
+          <div class="lr-tree-detail">18 children &middot; 1940 Census, Sinton TX</div>
+        </div>
+        <div class="lr-tree-entry">
+          <div class="lr-tree-name">Grandma Elvira "Barbara" Garcia</div>
+          <div class="lr-tree-detail">Born Sept 7, 1944 &middot; Youngest of 18</div>
+        </div>
+        <div class="lr-tree-entry">
+          <div class="lr-tree-name">Mom Deborah Mahony</div>
+          <div class="lr-tree-detail">Santa Maria, CA</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== JOSEPH HERITAGE BOOK CTA ===== -->
+    <div style="text-align:center; margin:3rem auto 2rem;">
+      <a href="joseph-vazquez-heritage.html" style="display:inline-block; background:#D4AF37; color:#1A1A1A; padding:16px 32px; font-family:'Oswald',sans-serif; font-weight:700; font-size:13px; letter-spacing:0.2em; text-transform:uppercase; text-decoration:none;">Read Joseph's Full Heritage Book &rarr;</a>
+    </div>
+
+    <!-- ===== FAMILY TIMELINE ===== -->
+    <div class="lr-sec-head"><h2>Family Timeline</h2><div class="lr-sec-rule"></div></div>
+    <div class="lr-timeline">
+      <div class="lr-tl-item">
+        <div class="lr-tl-year">~1300 AD</div>
+        <div class="lr-tl-event">Gonzalo Vazquez &mdash; Galicia, Spain</div>
+        <div class="lr-tl-detail">Earliest documented ancestor of the Vazquez line</div>
+      </div>
+      <div class="lr-tl-item">
+        <div class="lr-tl-year">1535</div>
+        <div class="lr-tl-event">Francisco Vazquez de Coronado crosses to New Spain</div>
+        <div class="lr-tl-detail">The Vazquez name plants roots in Mexico</div>
+      </div>
+      <div class="lr-tl-item">
+        <div class="lr-tl-year">1852</div>
+        <div class="lr-tl-event">Faustino Montemayor born &mdash; Sinton, Texas</div>
+        <div class="lr-tl-detail">Great-great-grandfather on maternal side &middot; Lived to age 98</div>
+      </div>
+      <div class="lr-tl-item">
+        <div class="lr-tl-year">1910&ndash;1929</div>
+        <div class="lr-tl-event">Mexican Revolution &amp; Cristero War</div>
+        <div class="lr-tl-detail">The push that sent the Vazquez family north toward California</div>
+      </div>
+      <div class="lr-tl-item">
+        <div class="lr-tl-year">Mid 1900s</div>
+        <div class="lr-tl-event">Grandpa Joe arrives in California</div>
+        <div class="lr-tl-detail">Settles Santa Barbara area &middot; Craftsman &middot; Builds the foundation</div>
+      </div>
+      <div class="lr-tl-item">
+        <div class="lr-tl-year">Sept 7, 1944</div>
+        <div class="lr-tl-event">Grandma Elvira "Barbara" Garcia born</div>
+        <div class="lr-tl-detail">Youngest of 18 children &middot; Sinton, TX &middot; Maternal line</div>
+      </div>
+      <div class="lr-tl-item">
+        <div class="lr-tl-year">Present</div>
+        <div class="lr-tl-event">Bear Vazquez &mdash; Santa Maria, CA</div>
+        <div class="lr-tl-detail">Bears Concrete Pumping &middot; My Legacy Continues &middot; Two lines, one story</div>
+      </div>
     </div>
 
     <!-- ===== LINKED PROFILES ===== -->
@@ -1886,6 +1993,8 @@ p { line-height: 1.6 !important; }
         <span class="lr-rescue-lbl">Dogs with<br/>Permanent Profiles</span>
       </div>
     </div>
+
+    </div><!-- /family-section -->
 
   </div><!-- /.lr-wrap -->
 
