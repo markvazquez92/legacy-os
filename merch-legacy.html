@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<!-- NO EMOJIS EVER -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Legacy Merch + Photo Restoration | My Legacy Continues</title>
+<meta name="description" content="Wearable Legacy — hats, hoodies, t-shirts, patches with your family QR code. Plus photo restoration service to find and restore old family photos.">
+<link rel="icon" href="logo.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Outfit:wght@300;400;500;600&family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@1,400;1,500;1,600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --charcoal: #1A1A1A;
+    --navy: #1a2744;
+    --navy-deep: #0f1a2e;
+    --teal: #20b2aa;
+    --copper: #b4553b;
+    --gold-flake: #b8962e;
+    --gold: #D4AF37;
+    --cream: #F5F5F5;
+    --chrome: #E0E0E0;
+    --brandywine: #8B0000;
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Outfit', sans-serif; color: var(--cream); line-height: 1.65; background: var(--charcoal); overflow-x: hidden; }
+
+  nav {
+    position: fixed; top:0; left:0; right:0;
+    display:flex; align-items:center; justify-content:space-between;
+    padding: 1rem 2rem; background: #2a2a2a; z-index: 1000;
+    border-bottom: 1px solid rgba(32,178,170,0.2);
+  }
+  .nav-logo { height: 48px; }
+  .nav-links {
+    display:flex; list-style:none; gap:0.8rem;
+    position:absolute; left:50%; transform:translateX(-50%);
+  }
+  .nav-links a {
+    text-decoration:none; color: var(--chrome);
+    font-family:'Outfit',sans-serif; font-weight:500;
+    font-size:0.72rem; letter-spacing:0.02em;
+    transition: color 0.3s;
+  }
+  .nav-links a:hover { color: var(--teal); }
+  .nav-cta {
+    background: var(--brandywine); color: var(--cream);
+    border: 2px solid var(--teal); padding: 0.6rem 1.4rem;
+    font-family:'Outfit',sans-serif; font-weight:700;
+    font-size:0.8rem; letter-spacing:0.08em; text-decoration:none;
+  }
+  .nav-toggle { display:none; background:none; border:none; cursor:pointer; padding:0.5rem; flex-direction:column; gap:5px; }
+  .nav-toggle span { display:block; width:24px; height:3px; background:var(--chrome); }
+
+  .cosmic-hero {
+    background:
+      radial-gradient(ellipse at top, rgba(32,178,170,0.22) 0%, transparent 55%),
+      radial-gradient(ellipse at 70% 80%, rgba(180,85,59,0.15) 0%, transparent 50%),
+      linear-gradient(180deg, var(--navy) 0%, var(--navy-deep) 100%);
+    position:relative; overflow:hidden;
+    min-height: 70vh;
+    display:flex; flex-direction:column; align-items:center; justify-content:center;
+    padding: 7rem 2rem 4rem; margin-top: 72px; text-align:center;
+  }
+  .cosmic-hero::before {
+    content:''; position:absolute; inset:0;
+    background-image:
+      radial-gradient(1.5px 1.5px at 15% 22%, rgba(212,175,55,0.9), transparent 55%),
+      radial-gradient(1px 1px at 78% 35%, rgba(180,85,59,0.85), transparent 55%),
+      radial-gradient(2px 2px at 42% 68%, rgba(184,150,46,0.8), transparent 55%);
+    background-size:600px 600px; opacity:0.85;
+    animation: flakeDrift 18s linear infinite; pointer-events:none;
+  }
+  @keyframes flakeDrift {
+    0% { transform: translate(0,0); }
+    100% { transform: translate(-30px,-40px); }
+  }
+  .cosmic-hero > * { position:relative; z-index:2; }
+
+  .eyebrow {
+    display:inline-block; font-family:'Oswald',sans-serif;
+    font-weight:700; font-size:0.72rem; color: var(--teal);
+    letter-spacing:0.3em; text-transform:uppercase;
+    padding: 0.4rem 1rem; border: 1px solid var(--teal); margin-bottom: 1rem;
+  }
+  h1 {
+    font-family:'Oswald',sans-serif; font-weight:700;
+    font-size: clamp(2.25rem, 6vw, 4rem); color: var(--gold-flake);
+    letter-spacing: 0.05em; line-height: 1.05;
+    text-transform: uppercase; margin-bottom: 1rem;
+  }
+  .sub-tag {
+    font-family:'Cormorant Garamond',serif; font-style:italic;
+    font-size: clamp(1.15rem, 2.2vw, 1.5rem); color: var(--cream);
+    max-width: 720px; opacity: 0.92;
+  }
+
+  .section { padding: 5rem 2rem; }
+  .section-navy { background: linear-gradient(180deg, #141e35 0%, #1a2744 100%); }
+  .section-dark { background: var(--navy-deep); }
+  .section h2 {
+    font-family:'Oswald',sans-serif; font-weight:700;
+    font-size: clamp(1.75rem, 4vw, 2.75rem); color: var(--gold-flake);
+    text-transform:uppercase; letter-spacing:0.05em;
+    text-align:center; margin-bottom: 1rem; line-height:1.15;
+  }
+  .section .subhead {
+    text-align: center; color: var(--cream); opacity: 0.85;
+    max-width: 720px; margin: 0 auto 3rem;
+    font-family:'Outfit',sans-serif; font-size: 1rem; line-height: 1.7;
+  }
+  .container { max-width: 1100px; margin: 0 auto; }
+
+  /* Merch grid */
+  .merch-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem; margin-bottom: 2.5rem;
+  }
+  .merch-card {
+    background: linear-gradient(155deg, #1c2d4a 0%, #141e35 100%);
+    border: 2px solid var(--gold-flake); padding: 0;
+    transition: all 0.35s; overflow: hidden;
+  }
+  .merch-card:hover {
+    border-color: var(--teal); transform: translateY(-5px);
+    box-shadow: 0 18px 40px -10px rgba(32,178,170,0.35);
+  }
+  .merch-preview {
+    aspect-ratio: 1; background: radial-gradient(circle at 50% 50%, rgba(32,178,170,0.12) 0%, transparent 65%), #0f1a2e;
+    display: flex; align-items: center; justify-content: center;
+    position: relative;
+  }
+  .merch-preview .product-type {
+    font-family:'Oswald',sans-serif; color: var(--gold-flake);
+    font-size: 0.7rem; letter-spacing: 0.3em; text-transform: uppercase;
+    position: absolute; top: 0.75rem; left: 0.75rem;
+  }
+  .qr-mock {
+    width: 60%; aspect-ratio: 1; max-width: 140px;
+    background:
+      linear-gradient(45deg, transparent 48%, var(--teal) 48%, var(--teal) 52%, transparent 52%),
+      linear-gradient(-45deg, transparent 48%, var(--teal) 48%, var(--teal) 52%, transparent 52%),
+      repeating-linear-gradient(90deg, var(--cream), var(--cream) 8%, #0f1a2e 8%, #0f1a2e 14%),
+      repeating-linear-gradient(0deg, var(--cream), var(--cream) 8%, #0f1a2e 8%, #0f1a2e 14%);
+    background-color: var(--cream);
+    border: 6px solid var(--cream);
+    position: relative;
+  }
+  .qr-mock::after {
+    content: ''; position: absolute; inset: 20%;
+    background: #0f1a2e;
+    border: 3px solid var(--cream);
+  }
+  .qr-mock::before {
+    content: 'VÁZQUEZ'; position: absolute;
+    bottom: -1.5rem; left: 50%; transform: translateX(-50%);
+    font-family:'Oswald',sans-serif; color: var(--cream);
+    font-size: 0.7rem; letter-spacing: 0.2em; white-space: nowrap;
+  }
+  .merch-body {
+    padding: 1.25rem;
+  }
+  .merch-body h3 {
+    font-family:'Oswald',sans-serif; color: var(--cream);
+    font-size: 1rem; letter-spacing: 0.04em;
+    text-transform: uppercase; margin-bottom: 0.4rem;
+  }
+  .merch-body .price {
+    font-family:'Oswald',sans-serif; color: var(--teal);
+    font-size: 1.1rem; font-weight: 700;
+  }
+
+  /* QR Maker card */
+  .qr-maker-wrap {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+  }
+  .qr-step {
+    background: rgba(32,178,170,0.08); border-left: 3px solid var(--teal);
+    padding: 1.5rem;
+  }
+  .qr-step .num-badge {
+    font-family:'Oswald',sans-serif; font-weight:700;
+    font-size: 1.6rem; color: var(--gold-flake);
+    display: block; margin-bottom: 0.5rem;
+  }
+  .qr-step h3 {
+    font-family:'Oswald',sans-serif; color: var(--cream);
+    font-size: 1rem; letter-spacing: 0.04em;
+    text-transform: uppercase; margin-bottom: 0.5rem;
+  }
+  .qr-step p {
+    font-family:'Outfit',sans-serif; color: rgba(245,245,245,0.78);
+    font-size: 0.9rem; line-height: 1.6;
+  }
+
+  /* Form */
+  .form-wrap {
+    max-width: 640px; margin: 0 auto;
+    background: linear-gradient(155deg, #1c2d4a 0%, #141e35 100%);
+    border: 2px solid var(--gold-flake); padding: 2.5rem;
+  }
+  .form-wrap label {
+    display: block; font-family: 'Oswald', sans-serif;
+    color: var(--teal); font-size: 0.8rem; letter-spacing: 0.15em;
+    text-transform: uppercase; margin-bottom: 0.4rem; margin-top: 1.1rem;
+  }
+  .form-wrap input, .form-wrap textarea, .form-wrap select {
+    width: 100%; padding: 0.85rem 1rem;
+    background: rgba(0,0,0,0.3); border: 1px solid rgba(32,178,170,0.35);
+    color: var(--cream); font-family: 'Outfit', sans-serif;
+    font-size: 0.95rem; border-radius: 0;
+  }
+  .form-wrap input:focus, .form-wrap textarea:focus, .form-wrap select:focus {
+    outline: none; border-color: var(--teal);
+  }
+  .form-wrap button {
+    width: 100%; margin-top: 1.75rem;
+    background: var(--teal); color: var(--navy-deep);
+    border: 2px solid var(--teal); padding: 1rem;
+    font-family: 'Oswald', sans-serif; font-weight: 700;
+    letter-spacing: 0.18em; text-transform: uppercase; font-size: 0.9rem;
+    cursor: pointer; transition: all 0.3s; border-radius: 0;
+  }
+  .form-wrap button:hover { background: transparent; color: var(--teal); }
+
+  /* Restoration */
+  .restoration-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem; margin-bottom: 2.5rem;
+  }
+  .restoration-card {
+    background: linear-gradient(155deg, #1c2d4a 0%, #141e35 100%);
+    border: 2px solid var(--gold-flake); padding: 1.75rem;
+    transition: all 0.35s;
+  }
+  .restoration-card:hover {
+    border-color: var(--teal);
+    box-shadow: 0 18px 40px -10px rgba(32,178,170,0.35);
+    transform: translateY(-3px);
+  }
+  .restoration-card .num-badge {
+    font-family:'Oswald',sans-serif; font-weight:700;
+    font-size: 1.75rem; color: var(--gold-flake);
+    display: block; margin-bottom: 0.5rem;
+  }
+  .restoration-card h3 {
+    font-family:'Oswald',sans-serif; color: var(--cream);
+    font-size: 1.05rem; letter-spacing: 0.04em;
+    text-transform: uppercase; margin-bottom: 0.75rem;
+  }
+  .restoration-card p {
+    font-family:'Outfit',sans-serif; color: rgba(245,245,245,0.82);
+    font-size: 0.95rem; line-height: 1.65;
+  }
+
+  .legal-note {
+    max-width: 720px; margin: 2rem auto 0;
+    padding: 1.25rem 1.5rem; border-left: 3px solid var(--gold-flake);
+    background: rgba(184,150,46,0.08);
+    font-family:'Outfit',sans-serif; font-size: 0.88rem;
+    color: rgba(245,245,245,0.78); line-height: 1.65;
+  }
+  .legal-note strong { color: var(--gold-flake); }
+
+  .btn-hero {
+    display:inline-block; border: 2px solid var(--teal);
+    color: var(--teal); background: transparent;
+    padding: 0.9rem 2.2rem; font-family:'Oswald',sans-serif;
+    font-weight:700; font-size: 0.85rem; letter-spacing:0.18em;
+    text-transform:uppercase; text-decoration:none;
+    transition: all 0.3s;
+  }
+  .btn-hero:hover { background: var(--teal); color: var(--navy-deep); }
+
+  footer {
+    background: #0a1020; color: var(--chrome);
+    padding: 3rem 2rem; text-align: center;
+    border-top: 1px solid rgba(32,178,170,0.2);
+  }
+  footer a { color: var(--teal); text-decoration: none; }
+  .footer-links {
+    list-style:none; display:flex; gap:1.5rem; justify-content:center;
+    flex-wrap: wrap; margin: 1.25rem 0; font-size: 0.85rem;
+  }
+  .footer-links a { color: var(--chrome); }
+  .footer-copy { font-size: 0.8rem; opacity:0.6; }
+
+  @media (max-width: 768px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { display:none; }
+    .nav-toggle { display:flex; }
+    .nav-cta { display:none; }
+    .nav-links.active {
+      display:flex !important; flex-direction:column;
+      position:absolute; top:68px; left:0; right:0;
+      transform:none; background:#2a2a2a; gap:0; padding:0.5rem 0;
+    }
+    .nav-links.active li a { display:block; padding:0.75rem 1.5rem; border-bottom:1px solid rgba(32,178,170,0.1); }
+    .cosmic-hero { padding: 5rem 1.5rem 3rem; margin-top: 60px; }
+    .section { padding: 3rem 1.25rem; }
+  }
+</style>
+</head>
+<body>
+<nav>
+  <img src="logo.png?v=4" alt="My Legacy Continues" class="nav-logo">
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="heritage-book.html">Heritage</a></li>
+    <li><a href="pet-tag.html">Pet Tags</a></li>
+    <li><a href="morning-memories.html">Morning Memories</a></li>
+    <li><a href="business-profile.html">Business</a></li>
+    <li><a href="network.html">Network</a></li>
+    <li><a href="rescue-registry.html">Rescue</a></li>
+    <li><a href="active-transports.html">Transport</a></li>
+    <li><a href="merch-legacy.html" style="color: var(--teal);">Merch</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="free-profile.html" style="color:#D4AF37; white-space:nowrap;">Free Page</a></li>
+  </ul>
+  <div style="display:flex; align-items:center; gap:1rem; flex-shrink:0;">
+    <a href="#design" class="nav-cta">DESIGN MY MERCH</a>
+  </div>
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+</nav>
+
+<!-- HERO -->
+<section class="cosmic-hero">
+  <div class="eyebrow">Wearable Legacy + Photo Restoration</div>
+  <h1>Wear Your Story<br>Scan It · Share It</h1>
+  <p class="sub-tag">Hats. Hoodies. T-shirts. Patches. Every item carries your family QR code. Plus professional photo restoration — we find, restore, and preserve the old photos you thought were lost.</p>
+</section>
+
+<!-- MERCH PREVIEW GRID -->
+<section class="section section-dark">
+  <div class="container">
+    <h2>Wearable Legacy</h2>
+    <p class="subhead">Cosmic teal, gold flakes, minimalist, candy paint. Each piece carries your family QR so people can scan and read your story.</p>
+    <div class="merch-grid">
+      <div class="merch-card">
+        <div class="merch-preview">
+          <div class="product-type">Dad Hat</div>
+          <div class="qr-mock"></div>
+        </div>
+        <div class="merch-body">
+          <h3>Legacy Dad Hat</h3>
+          <div class="price">$32</div>
+        </div>
+      </div>
+      <div class="merch-card">
+        <div class="merch-preview">
+          <div class="product-type">Hoodie</div>
+          <div class="qr-mock"></div>
+        </div>
+        <div class="merch-body">
+          <h3>Cosmic Teal Hoodie</h3>
+          <div class="price">$58</div>
+        </div>
+      </div>
+      <div class="merch-card">
+        <div class="merch-preview">
+          <div class="product-type">T-Shirt</div>
+          <div class="qr-mock"></div>
+        </div>
+        <div class="merch-body">
+          <h3>Family Tee</h3>
+          <div class="price">$28</div>
+        </div>
+      </div>
+      <div class="merch-card">
+        <div class="merch-preview">
+          <div class="product-type">Patch</div>
+          <div class="qr-mock"></div>
+        </div>
+        <div class="merch-body">
+          <h3>Iron-On Patch</h3>
+          <div class="price">$12</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QR CUSTOMIZER STEPS -->
+<section class="section section-navy">
+  <div class="container">
+    <h2>Design Your Legacy QR</h2>
+    <p class="subhead">Four steps from idea to shipped merch. Preview before you pay. Everything handmade to order.</p>
+    <div class="qr-maker-wrap">
+      <div class="qr-step">
+        <span class="num-badge">01</span>
+        <h3>Choose Your Template</h3>
+        <p>Cosmic teal, gold flakes, minimalist, candy paint. Four base styles you can customize.</p>
+      </div>
+      <div class="qr-step">
+        <span class="num-badge">02</span>
+        <h3>Upload Your Photo</h3>
+        <p>Family photo, logo, or portrait to sit alongside your QR code on every piece.</p>
+      </div>
+      <div class="qr-step">
+        <span class="num-badge">03</span>
+        <h3>Add Custom Text</h3>
+        <p>Family name, dates, legacy statement — the words that go under or beside the QR.</p>
+      </div>
+      <div class="qr-step">
+        <span class="num-badge">04</span>
+        <h3>Preview Then Order</h3>
+        <p>See it on a hat, hoodie, t-shirt, patch. Approve the mock. We handmake and ship.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DESIGN ORDER FORM -->
+<section class="section section-dark" id="design">
+  <div class="container">
+    <h2>Submit Your Design</h2>
+    <p class="subhead">Tell us about your family QR and what pieces you want. We reply within 48 hours with a mockup for approval before payment.</p>
+    <div class="form-wrap">
+      <form action="https://formspree.io/f/xzzpqjle" method="POST">
+        <input type="hidden" name="_subject" value="Merch Design Order">
+        <input type="hidden" name="form_type" value="Merch Design Order">
+        <input type="hidden" name="_next" value="https://mylegacycontinues.com/thank-you.html">
+
+        <label for="m-name">Your Full Name</label>
+        <input type="text" id="m-name" name="orderer_name" required>
+
+        <label for="m-email">Email</label>
+        <input type="email" id="m-email" name="email" required>
+
+        <label for="m-family">Family Name / Legacy Name</label>
+        <input type="text" id="m-family" name="family_name" placeholder="Vázquez, Raygoza, etc." required>
+
+        <label for="m-qr">QR Target (where the scan should go)</label>
+        <input type="url" id="m-qr" name="qr_target_url" placeholder="https://mylegacycontinues.com/your-profile.html">
+
+        <label for="m-template">Template</label>
+        <select id="m-template" name="template">
+          <option value="Cosmic Teal">Cosmic Teal</option>
+          <option value="Gold Flake">Gold Flake</option>
+          <option value="Minimalist">Minimalist</option>
+          <option value="Candy Paint">Candy Paint</option>
+        </select>
+
+        <label for="m-items">Items Wanted (check all that apply, write in message)</label>
+        <textarea id="m-items" name="items_wanted" rows="3" placeholder="Dad hats x2, hoodie L, family tees x5, patches x10..."></textarea>
+
+        <label for="m-text">Custom Text On Merch</label>
+        <textarea id="m-text" name="custom_text" rows="2" placeholder="Family name, dates, tagline, quote..."></textarea>
+
+        <label for="m-notes">Additional Notes</label>
+        <textarea id="m-notes" name="notes" rows="3" placeholder="Anything special — specific colors, sizing notes, shipping deadline..."></textarea>
+
+        <button type="submit">Request Mockup</button>
+      </form>
+    </div>
+    <p style="text-align:center; margin-top: 1.5rem; font-family: 'Outfit', sans-serif; color: var(--cream); opacity: 0.65; font-size: 0.85rem;">Payment link sent after we send mockup for approval. <a href="mailto:contact@mylegacycontinues.com" style="color: var(--teal);">contact@mylegacycontinues.com</a></p>
+  </div>
+</section>
+
+<!-- PHOTO RESTORATION -->
+<section class="section section-navy" id="restoration">
+  <div class="container">
+    <h2>Photo Restoration Service</h2>
+    <p class="subhead">Don't have photos of your ancestors? We partner with certified restoration specialists to find and restore old family photos, then add them to your profile and Heritage Book.</p>
+    <div class="restoration-grid">
+      <div class="restoration-card">
+        <span class="num-badge">01</span>
+        <h3>Upload What You Have</h3>
+        <p>Blurry photos. Damaged photos. Fragments. Even just a name and a rough location. Start with what you've got — we build from there.</p>
+      </div>
+      <div class="restoration-card">
+        <span class="num-badge">02</span>
+        <h3>Professional Restoration</h3>
+        <p>Certified restoration partners handle the scanning, cleaning, color correction, tear repair, and archival printing. Real human craft, not one-click AI.</p>
+      </div>
+      <div class="restoration-card">
+        <span class="num-badge">03</span>
+        <h3>Ancestry Photo Search</h3>
+        <p>Can't find the original? We search archives, genealogy databases, and partner networks to locate historical photos of your ancestors, their villages, and their era.</p>
+      </div>
+      <div class="restoration-card">
+        <span class="num-badge">04</span>
+        <h3>Added To Your Profile</h3>
+        <p>Restored photos get added to your permanent profile and Heritage Book. High-res digital copy emailed. Archival print optional.</p>
+      </div>
+    </div>
+    <div style="text-align:center; margin-top: 2rem;">
+      <div style="font-family:'Oswald',sans-serif; color: var(--teal); font-size: 0.85rem; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 0.5rem;">Pricing</div>
+      <div style="font-family:'Oswald',sans-serif; color: var(--gold-flake); font-size: 1.75rem; font-weight: 700; margin-bottom: 0.5rem;">$49 – $99 per photo</div>
+      <p style="font-family:'Outfit',sans-serif; color: var(--cream); opacity: 0.82; max-width: 600px; margin: 0 auto 2rem; font-size: 0.95rem;">Final price depends on damage level and research needed. You get an exact quote before any work begins.</p>
+      <a href="mailto:contact@mylegacycontinues.com?subject=Photo%20Restoration%20Request" class="btn-hero">Restore Your Family Photos</a>
+    </div>
+    <div class="legal-note">
+      <strong>Note:</strong> Restoration work is performed by certified third-party specialists we vet and partner with. Ancestry photo searches are conducted by licensed genealogy researchers. You authorize the work and approve final results before they're added to your profile.
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div style="max-width:1200px; margin:0 auto;">
+    <p>Contact: <a href="mailto:contact@mylegacycontinues.com">contact@mylegacycontinues.com</a> | (805) 863-3794 | Santa Maria, CA</p>
+    <ul class="footer-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="heritage-book.html">Heritage</a></li>
+      <li><a href="pet-tag.html">Pet Tags</a></li>
+      <li><a href="morning-memories.html">Morning Memories</a></li>
+      <li><a href="business-profile.html">Business</a></li>
+      <li><a href="network.html">Network</a></li>
+      <li><a href="rescue-registry.html">Rescue</a></li>
+      <li><a href="active-transports.html">Transport</a></li>
+      <li><a href="culture-guide.html">Culture Guide</a></li>
+      <li><a href="privacy-promise.html">Privacy</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+    <p class="footer-copy">&copy; 2026 My Legacy Continues. Every story deserves forever.</p>
+  </div>
+</footer>
+
+<script>
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+  if (navToggle) {
+    navToggle.addEventListener('click', () => navLinks.classList.toggle('active'));
+    navLinks.querySelectorAll('a').forEach(l => l.addEventListener('click', () => navLinks.classList.remove('active')));
+  }
+  document.querySelectorAll('form').forEach(form => {
+    form.addEventListener('submit', function() {
+      const subject = form.querySelector('input[name="_subject"]');
+      const eventName = subject ? subject.value.replace(/\s+/g, '_').toLowerCase() : 'form_submission';
+      if (typeof gtag !== 'undefined') gtag('event', eventName, { 'event_category': 'form' });
+    });
+  });
+</script>
+</body>
+</html>
