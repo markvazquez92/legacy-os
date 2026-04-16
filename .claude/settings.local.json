@@ -53,7 +53,16 @@
       "Bash(grep -n \"mark\\\\.vazquez92\" /c/Users/BEAR/Documents/GitHub/legacy-os/*.html)",
       "Bash(sed -n '75,90p' pet-tag.html)",
       "Bash(sed -n '75,90p' baby-legacy.html)",
-      "WebFetch(domain:mylegacycontinues.com)"
+      "WebFetch(domain:mylegacycontinues.com)",
+      "Bash(dir logo.png)",
+      "Bash(cmd /c dir logo.png)",
+      "Bash(cmd /c dir \"C:\\\\Users\\\\BEAR\\\\Documents\\\\GitHub\\\\legacy-os\\\\logo.png\")",
+      "Bash(python3 -c ':*)",
+      "Bash(gh api:*)",
+      "Bash(git remote:*)",
+      "Bash(cmd /c dir \"C:\\\\Users\\\\BEAR\\\\Documents\\\\GitHub\\\\legacy-os\\\\logo.png - Copy\")",
+      "Bash(git pull:*)",
+      "Bash(git stash:*)"
     ]
   }
 }
