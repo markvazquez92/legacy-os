@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<!-- NO EMOJIS EVER -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Promise — How We Protect Your Family's Stories | My Legacy Continues</title>
+<meta name="description" content="Your family's stories are sacred. We don't sell your data. We don't share it. Here's exactly how we protect it — in English and Spanish.">
+<link rel="icon" href="logo.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Outfit:wght@300;400;500;600&family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@1,400;1,500;1,600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --charcoal: #1A1A1A;
+    --navy: #1a2744;
+    --navy-deep: #0f1a2e;
+    --teal: #20b2aa;
+    --copper: #b4553b;
+    --gold-flake: #b8962e;
+    --gold: #D4AF37;
+    --cream: #F5F5F5;
+    --chrome: #E0E0E0;
+    --brandywine: #8B0000;
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Outfit', sans-serif; color: var(--cream); line-height: 1.7; background: var(--charcoal); overflow-x: hidden; }
+
+  nav {
+    position: fixed; top:0; left:0; right:0;
+    display:flex; align-items:center; justify-content:space-between;
+    padding: 1rem 2rem; background: #2a2a2a; z-index: 1000;
+    border-bottom: 1px solid rgba(32,178,170,0.2);
+  }
+  .nav-logo { height: 48px; }
+  .nav-links {
+    display:flex; list-style:none; gap:0.8rem;
+    position:absolute; left:50%; transform:translateX(-50%);
+  }
+  .nav-links a {
+    text-decoration:none; color: var(--chrome);
+    font-family:'Outfit',sans-serif; font-weight:500;
+    font-size:0.72rem; letter-spacing:0.02em;
+    transition: color 0.3s;
+  }
+  .nav-links a:hover { color: var(--teal); }
+  .nav-cta {
+    background: var(--brandywine); color: var(--cream);
+    border: 2px solid var(--teal); padding: 0.6rem 1.4rem;
+    font-family:'Outfit',sans-serif; font-weight:700;
+    font-size:0.8rem; letter-spacing:0.08em; text-decoration:none;
+  }
+  .nav-toggle { display:none; background:none; border:none; cursor:pointer; padding:0.5rem; flex-direction:column; gap:5px; }
+  .nav-toggle span { display:block; width:24px; height:3px; background:var(--chrome); }
+
+  .cosmic-hero {
+    background:
+      radial-gradient(ellipse at top, rgba(32,178,170,0.22) 0%, transparent 55%),
+      radial-gradient(ellipse at 70% 80%, rgba(180,85,59,0.15) 0%, transparent 50%),
+      linear-gradient(180deg, var(--navy) 0%, var(--navy-deep) 100%);
+    position:relative; overflow:hidden;
+    min-height: 65vh;
+    display:flex; flex-direction:column; align-items:center; justify-content:center;
+    padding: 7rem 2rem 4rem; margin-top: 72px; text-align:center;
+  }
+  .cosmic-hero::before {
+    content:''; position:absolute; inset:0;
+    background-image:
+      radial-gradient(1.5px 1.5px at 15% 22%, rgba(212,175,55,0.9), transparent 55%),
+      radial-gradient(1px 1px at 78% 35%, rgba(180,85,59,0.85), transparent 55%),
+      radial-gradient(2px 2px at 42% 68%, rgba(184,150,46,0.8), transparent 55%);
+    background-size:600px 600px; opacity:0.85;
+    animation: flakeDrift 18s linear infinite; pointer-events:none;
+  }
+  @keyframes flakeDrift {
+    0% { transform: translate(0,0); }
+    100% { transform: translate(-30px,-40px); }
+  }
+  .cosmic-hero > * { position:relative; z-index:2; }
+
+  .eyebrow {
+    display:inline-block; font-family:'Oswald',sans-serif;
+    font-weight:700; font-size:0.72rem; color: var(--teal);
+    letter-spacing:0.3em; text-transform:uppercase;
+    padding: 0.4rem 1rem; border: 1px solid var(--teal); margin-bottom: 1rem;
+  }
+  h1 {
+    font-family:'Oswald',sans-serif; font-weight:700;
+    font-size: clamp(2.25rem, 6vw, 4rem); color: var(--gold-flake);
+    letter-spacing: 0.05em; line-height: 1.05;
+    text-transform: uppercase; margin-bottom: 1rem;
+  }
+  .sub-tag {
+    font-family:'Cormorant Garamond',serif; font-style:italic;
+    font-size: clamp(1.15rem, 2.2vw, 1.5rem); color: var(--cream);
+    max-width: 720px; opacity: 0.92;
+  }
+
+  .section { padding: 5rem 2rem; }
+  .section-navy { background: linear-gradient(180deg, #141e35 0%, #1a2744 100%); }
+  .section-dark { background: var(--navy-deep); }
+  .section h2 {
+    font-family:'Oswald',sans-serif; font-weight:700;
+    font-size: clamp(1.75rem, 4vw, 2.75rem); color: var(--gold-flake);
+    text-transform:uppercase; letter-spacing:0.05em;
+    text-align:center; margin-bottom: 2rem; line-height:1.15;
+  }
+  .container { max-width: 1050px; margin: 0 auto; }
+
+  .principles {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+  }
+  .principle-card {
+    background: linear-gradient(155deg, #1c2d4a 0%, #141e35 100%);
+    border: 2px solid var(--gold-flake); padding: 1.75rem;
+    transition: all 0.35s;
+  }
+  .principle-card:hover {
+    border-color: var(--teal);
+    box-shadow: 0 18px 40px -10px rgba(32,178,170,0.35);
+    transform: translateY(-4px);
+  }
+  .num-badge {
+    font-family:'Oswald',sans-serif; font-weight:700;
+    font-size: 1.75rem; color: var(--gold-flake);
+    display: block; margin-bottom: 0.5rem;
+  }
+  .principle-card h3 {
+    font-family:'Oswald',sans-serif; color: var(--cream);
+    font-size: 1.1rem; letter-spacing: 0.04em;
+    margin-bottom: 0.75rem; text-transform: uppercase;
+  }
+  .principle-card p {
+    font-family:'Outfit',sans-serif; color: rgba(245,245,245,0.82);
+    font-size: 0.95rem; line-height: 1.65;
+  }
+
+  /* Deep rows for what/how */
+  .deep-row {
+    display: grid; grid-template-columns: 140px 1fr;
+    gap: 1.5rem; align-items: start;
+    padding: 1.5rem 0; border-bottom: 1px solid rgba(32,178,170,0.18);
+  }
+  .deep-row:last-child { border-bottom: none; }
+  .deep-row .q {
+    font-family:'Oswald',sans-serif; color: var(--teal);
+    font-size: 0.85rem; letter-spacing: 0.15em; text-transform: uppercase;
+    padding-top: 0.15rem;
+  }
+  .deep-row .a {
+    font-family:'Outfit',sans-serif; color: var(--cream); opacity: 0.88;
+    font-size: 0.98rem; line-height: 1.7;
+  }
+  .deep-row .a strong { color: var(--teal); }
+
+  /* Testimonial block */
+  .testimonial-wrap {
+    max-width: 800px; margin: 0 auto;
+    background: linear-gradient(155deg, #1c2d4a 0%, #141e35 100%);
+    border-left: 4px solid var(--teal); padding: 2.5rem;
+    text-align: left;
+  }
+  .testimonial-wrap blockquote {
+    font-family:'Cormorant Garamond',serif; font-style:italic;
+    font-size: clamp(1.2rem, 2.2vw, 1.55rem); color: var(--cream);
+    line-height: 1.6; margin: 0 0 1.25rem 0;
+  }
+  .testimonial-wrap cite {
+    font-family:'Oswald',sans-serif; color: var(--teal);
+    font-size: 0.85rem; letter-spacing: 0.18em; text-transform: uppercase;
+    font-style: normal; font-weight: 700;
+  }
+
+  /* Language toggle */
+  .lang-toggle {
+    display: inline-flex; gap: 0.5rem; padding: 0.35rem;
+    background: rgba(32,178,170,0.12); border: 1px solid var(--teal);
+    margin-bottom: 2rem;
+  }
+  .lang-toggle button {
+    background: transparent; border: none;
+    font-family:'Oswald',sans-serif; color: var(--cream);
+    font-size: 0.8rem; letter-spacing: 0.15em; text-transform: uppercase;
+    padding: 0.5rem 1.25rem; cursor: pointer;
+    transition: all 0.3s;
+  }
+  .lang-toggle button.active {
+    background: var(--teal); color: var(--navy-deep);
+  }
+  .lang-block { display: none; }
+  .lang-block.active { display: block; }
+
+  .btn-hero {
+    display:inline-block; border: 2px solid var(--teal);
+    color: var(--teal); background: transparent;
+    padding: 0.9rem 2.2rem; font-family:'Oswald',sans-serif;
+    font-weight:700; font-size: 0.85rem; letter-spacing:0.18em;
+    text-transform:uppercase; text-decoration:none;
+    transition: all 0.3s;
+  }
+  .btn-hero:hover { background: var(--teal); color: var(--navy-deep); }
+
+  footer {
+    background: #0a1020; color: var(--chrome);
+    padding: 3rem 2rem; text-align: center;
+    border-top: 1px solid rgba(32,178,170,0.2);
+  }
+  footer a { color: var(--teal); text-decoration: none; }
+  .footer-links {
+    list-style:none; display:flex; gap:1.5rem; justify-content:center;
+    flex-wrap: wrap; margin: 1.25rem 0; font-size: 0.85rem;
+  }
+  .footer-links a { color: var(--chrome); }
+  .footer-copy { font-size: 0.8rem; opacity:0.6; }
+
+  @media (max-width: 768px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { display:none; }
+    .nav-toggle { display:flex; }
+    .nav-cta { display:none; }
+    .nav-links.active {
+      display:flex !important; flex-direction:column;
+      position:absolute; top:68px; left:0; right:0;
+      transform:none; background:#2a2a2a; gap:0; padding:0.5rem 0;
+    }
+    .nav-links.active li a { display:block; padding:0.75rem 1.5rem; border-bottom:1px solid rgba(32,178,170,0.1); }
+    .cosmic-hero { padding: 5rem 1.5rem 3rem; margin-top: 60px; }
+    .section { padding: 3rem 1.25rem; }
+    .deep-row { grid-template-columns: 1fr; gap: 0.4rem; }
+  }
+</style>
+</head>
+<body>
+<nav>
+  <img src="logo.png?v=4" alt="My Legacy Continues" class="nav-logo">
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="heritage-book.html">Heritage</a></li>
+    <li><a href="pet-tag.html">Pet Tags</a></li>
+    <li><a href="morning-memories.html">Morning Memories</a></li>
+    <li><a href="business-profile.html">Business</a></li>
+    <li><a href="network.html">Network</a></li>
+    <li><a href="rescue-registry.html">Rescue</a></li>
+    <li><a href="active-transports.html">Transport</a></li>
+    <li><a href="merch-legacy.html">Merch</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="free-profile.html" style="color:#D4AF37; white-space:nowrap;">Free Page</a></li>
+  </ul>
+  <div style="display:flex; align-items:center; gap:1rem; flex-shrink:0;">
+    <a href="contact.html" class="nav-cta">CONTACT US</a>
+  </div>
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+</nav>
+
+<!-- HERO -->
+<section class="cosmic-hero">
+  <div class="eyebrow">Privacy Promise</div>
+  <h1>Your Family's Stories<br>Are Sacred</h1>
+  <p class="sub-tag">We don't sell your data. We don't share it. We don't look at it unless you ask us to. Here's exactly how we protect the stories you trust us with.</p>
+</section>
+
+<!-- LANGUAGE TOGGLE -->
+<section class="section section-dark" style="padding-top: 3rem; padding-bottom: 2rem;">
+  <div class="container" style="text-align: center;">
+    <div class="lang-toggle" id="langToggle">
+      <button class="active" data-lang="en">English</button>
+      <button data-lang="es">Español</button>
+    </div>
+  </div>
+</section>
+
+<!-- EN CONTENT -->
+<div class="lang-block active" id="lang-en">
+
+  <section class="section section-dark" style="padding-top: 0;">
+    <div class="container">
+      <h2>The 5 Rules We Live By</h2>
+      <div class="principles">
+        <div class="principle-card">
+          <span class="num-badge">01</span>
+          <h3>Encrypted In Transit</h3>
+          <p>Every upload, every payment, every message moves through TLS 1.3 encryption. The data is never readable by anyone in between — not your internet provider, not us, not anyone.</p>
+        </div>
+        <div class="principle-card">
+          <span class="num-badge">02</span>
+          <h3>Password Protected</h3>
+          <p>You decide who sees what. Family-only profiles sit behind a password you control. Public profiles show what you publish and nothing else. You can rotate the password anytime.</p>
+        </div>
+        <div class="principle-card">
+          <span class="num-badge">03</span>
+          <h3>Never Sold, Never Shared</h3>
+          <p>We are not a data broker. We do not sell names, emails, photos, or metadata to advertisers, insurers, analytics companies, or anyone else. Ever.</p>
+        </div>
+        <div class="principle-card">
+          <span class="num-badge">04</span>
+          <h3>Hosted Permanently</h3>
+          <p>Your profile lives on dedicated hosting for as long as the company exists — and we've committed to escrow arrangements that preserve your data even in edge cases. No subscription. No disappearing act.</p>
+        </div>
+        <div class="principle-card">
+          <span class="num-badge">05</span>
+          <h3>You Own It</h3>
+          <p>Not MLC. You. Email us to request a full data export anytime. Email us to delete, and it's gone forever from our servers within 72 hours. No hostage policy. No hoops.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-navy">
+    <div class="container">
+      <h2>The Details, In Plain English</h2>
+      <div class="deep-row">
+        <div class="q">What We Collect</div>
+        <div class="a">The stuff you actively give us: names, photos, audio recordings, written stories, addresses for shipping, and the email you sign up with. That's it. We do not track you across other websites. We do not run third-party ad pixels on profile pages.</div>
+      </div>
+      <div class="deep-row">
+        <div class="q">What We Do With It</div>
+        <div class="a">We use it to build your profile, ship your products, and communicate with you about your order. Nothing else. No behavioral profiling. No personality scoring. No AI training on your family's stories without <strong>explicit, opt-in</strong> consent on a per-story basis.</div>
+      </div>
+      <div class="deep-row">
+        <div class="q">Who Can See Your Profile</div>
+        <div class="a">Whoever you decide. Public, password-protected, or family-only. You change it anytime from your dashboard. Default on new profiles is <strong>password-protected</strong> — we err on the private side.</div>
+      </div>
+      <div class="deep-row">
+        <div class="q">Who Has Access Internally</div>
+        <div class="a">Only the people who need to. The writer assigned to your Heritage Book sees your materials. Our ops lead sees shipping addresses. The founders see payment records. That's the ceiling.</div>
+      </div>
+      <div class="deep-row">
+        <div class="q">How Long We Keep It</div>
+        <div class="a">As long as you want us to. Your profile is permanent by design. If you delete, we purge from live systems within 72 hours and from backups within 30 days.</div>
+      </div>
+      <div class="deep-row">
+        <div class="q">If The Company Is Ever Sold</div>
+        <div class="a">Your data is <strong>not an asset for sale.</strong> In the written contract behind every sale scenario, continued care of your data under identical privacy terms is a non-negotiable condition. If we cannot guarantee that, we shut down and return your data instead.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-dark">
+    <div class="container">
+      <h2>In Their Own Words</h2>
+      <div class="testimonial-wrap">
+        <blockquote>"This is our story. Nobody else's. When we uploaded the Vázquez family history, the hardest part wasn't technology. It was trust. These are seventeen generations of our family. My great-grandmother. My grandfather's voice on a cassette. You don't hand that over to an ad network. You hand it to someone who understands what it is. That's what this place is."</blockquote>
+        <cite>— Mark Vázquez, Founder · speaking for the Vázquez family profile</cite>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ES CONTENT -->
+<div class="lang-block" id="lang-es">
+
+  <section class="section section-dark" style="padding-top: 0;">
+    <div class="container">
+      <h2>Las 5 Reglas Que Seguimos</h2>
+      <div class="principles">
+        <div class="principle-card">
+          <span class="num-badge">01</span>
+          <h3>Cifrado En Tr&aacute;nsito</h3>
+          <p>Cada carga, cada pago, cada mensaje viaja con cifrado TLS 1.3. Los datos no pueden leerse por nadie en el camino — ni tu proveedor de internet, ni nosotros, ni nadie.</p>
+        </div>
+        <div class="principle-card">
+          <span class="num-badge">02</span>
+          <h3>Protegido Con Contrase&ntilde;a</h3>
+          <p>T&uacute; decides qui&eacute;n ve qu&eacute;. Los perfiles familiares est&aacute;n protegidos con una contrase&ntilde;a que t&uacute; controlas. Los perfiles p&uacute;blicos muestran solo lo que publicas. Puedes cambiar la contrase&ntilde;a cuando quieras.</p>
+        </div>
+        <div class="principle-card">
+          <span class="num-badge">03</span>
+          <h3>Nunca Se Vende, Nunca Se Comparte</h3>
+          <p>No somos un corredor de datos. No vendemos nombres, correos, fotos, ni metadatos a anunciantes, aseguradoras, empresas de an&aacute;lisis, ni a nadie. Jam&aacute;s.</p>
+        </div>
+        <div class="principle-card">
+          <span class="num-badge">04</span>
+          <h3>Alojado Permanentemente</h3>
+          <p>Tu perfil vive en hosting dedicado mientras exista la empresa — y tenemos acuerdos de escrow que protegen tus datos incluso en casos extremos. Sin suscripci&oacute;n. Sin desaparecer.</p>
+        </div>
+        <div class="principle-card">
+          <span class="num-badge">05</span>
+          <h3>T&uacute; Eres El Due&ntilde;o</h3>
+          <p>No MLC. T&uacute;. Escr&iacute;benos para exportar toda tu informaci&oacute;n cuando quieras. Escr&iacute;benos para borrar y desaparece de nuestros servidores en 72 horas. Sin rehenes. Sin obst&aacute;culos.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-navy">
+    <div class="container">
+      <h2>Los Detalles, En Lenguaje Claro</h2>
+      <div class="deep-row">
+        <div class="q">Qu&eacute; Recopilamos</div>
+        <div class="a">Solo lo que nos das activamente: nombres, fotos, audios, historias escritas, direcciones para env&iacute;o, y el correo con el que te registras. Nada m&aacute;s. No te rastreamos en otros sitios. No ponemos p&iacute;xeles de publicidad en los perfiles.</div>
+      </div>
+      <div class="deep-row">
+        <div class="q">Qu&eacute; Hacemos Con Ello</div>
+        <div class="a">Lo usamos para construir tu perfil, enviar tus productos, y comunicarnos contigo sobre tu pedido. Nada m&aacute;s. Sin an&aacute;lisis de comportamiento. Sin puntuaci&oacute;n de personalidad. Sin entrenamiento de IA con tus historias familiares sin tu <strong>consentimiento expl&iacute;cito</strong>, historia por historia.</div>
+      </div>
+      <div class="deep-row">
+        <div class="q">Qui&eacute;n Puede Ver Tu Perfil</div>
+        <div class="a">Qui&eacute;n t&uacute; quieras. P&uacute;blico, protegido con contrase&ntilde;a, o solo familia. Lo cambias cuando sea desde tu panel. Por defecto: <strong>protegido con contrase&ntilde;a</strong>.</div>
+      </div>
+      <div class="deep-row">
+        <div class="q">Qui&eacute;n Tiene Acceso Internamente</div>
+        <div class="a">Solo quien lo necesita. El escritor de tu Libro de Herencia ve tus materiales. Nuestra l&iacute;der de operaciones ve direcciones de env&iacute;o. Los fundadores ven registros de pago. No m&aacute;s.</div>
+      </div>
+      <div class="deep-row">
+        <div class="q">Cu&aacute;nto Tiempo Lo Guardamos</div>
+        <div class="a">El tiempo que t&uacute; quieras. Tu perfil es permanente por dise&ntilde;o. Si lo borras, lo eliminamos de los sistemas activos en 72 horas y de los respaldos en 30 d&iacute;as.</div>
+      </div>
+      <div class="deep-row">
+        <div class="q">Si Alguna Vez Se Vende La Empresa</div>
+        <div class="a">Tus datos <strong>no son un activo en venta.</strong> En cada contrato de venta potencial, una condici&oacute;n innegociable es el cuidado continuo bajo los mismos t&eacute;rminos de privacidad. Si no podemos garantizarlo, cerramos la empresa y te devolvemos tus datos.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-dark">
+    <div class="container">
+      <h2>En Sus Propias Palabras</h2>
+      <div class="testimonial-wrap">
+        <blockquote>"Esta es nuestra historia. De nadie m&aacute;s. Cuando subimos la historia familiar V&aacute;zquez, lo m&aacute;s dif&iacute;cil no fue la tecnolog&iacute;a. Fue la confianza. Son diecisiete generaciones de mi familia. Mi bisabuela. La voz de mi abuelo en un casete. Eso no se entrega a una red de anuncios. Se entrega a alguien que entiende lo que es. Eso es este lugar."</blockquote>
+        <cite>— Mark V&aacute;zquez, Fundador · hablando por el perfil familiar V&aacute;zquez</cite>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- CONTACT CTA -->
+<section class="section section-navy">
+  <div class="container" style="text-align: center; max-width: 720px;">
+    <h2>Questions? Contact Us Directly</h2>
+    <p style="font-family:'Outfit',sans-serif; color: var(--cream); opacity:0.88; margin-bottom: 2rem; font-size: 1rem; line-height: 1.7;">Privacy matters more than any marketing promise. If you have a specific concern about how your data is handled, email us. A human reads every message within 48 hours.</p>
+    <a href="mailto:contact@mylegacycontinues.com?subject=Privacy%20Question" class="btn-hero">Email The Privacy Team</a>
+    <p style="margin-top: 1.5rem; font-size: 0.85rem; color: var(--cream); opacity: 0.65;">For the full legal privacy policy: <a href="legal/privacy.html" style="color: var(--teal); text-decoration: underline;">legal/privacy.html</a></p>
+  </div>
+</section>
+
+<footer>
+  <div style="max-width:1200px; margin:0 auto;">
+    <p>Contact: <a href="mailto:contact@mylegacycontinues.com">contact@mylegacycontinues.com</a> | (805) 863-3794 | Santa Maria, CA</p>
+    <ul class="footer-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="heritage-book.html">Heritage</a></li>
+      <li><a href="pet-tag.html">Pet Tags</a></li>
+      <li><a href="morning-memories.html">Morning Memories</a></li>
+      <li><a href="business-profile.html">Business</a></li>
+      <li><a href="network.html">Network</a></li>
+      <li><a href="rescue-registry.html">Rescue</a></li>
+      <li><a href="active-transports.html">Transport</a></li>
+      <li><a href="merch-legacy.html">Merch</a></li>
+      <li><a href="culture-guide.html">Culture Guide</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+    <p class="footer-copy">&copy; 2026 My Legacy Continues. Every story deserves forever.</p>
+  </div>
+</footer>
+
+<script>
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+  if (navToggle) {
+    navToggle.addEventListener('click', () => navLinks.classList.toggle('active'));
+    navLinks.querySelectorAll('a').forEach(l => l.addEventListener('click', () => navLinks.classList.remove('active')));
+  }
+
+  // Language toggle
+  const toggle = document.getElementById('langToggle');
+  toggle.querySelectorAll('button').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const lang = btn.dataset.lang;
+      toggle.querySelectorAll('button').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      document.querySelectorAll('.lang-block').forEach(b => b.classList.remove('active'));
+      document.getElementById('lang-' + lang).classList.add('active');
+    });
+  });
+</script>
+</body>
+</html>
