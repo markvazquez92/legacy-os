@@ -10,6 +10,18 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Lato:wght@400&family=Spline+Sans:wght@700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <style>
+    /* Candy Paint local aliases */
+    :root {
+      --gold: #D4AF37;
+      --gold-soft: rgba(212,175,55,0.28);
+      --cream: #F5F5F5;
+      --brandywine: #8B0000;
+      --brandywine-deep: #4A0000;
+      --chrome: #E0E0E0;
+      --charcoal: #1A1A1A;
+      --charcoal-2: #232323;
+    }
+
     body { background-color:#1A1A1A; overflow-x: hidden; }
     section { background-color:#1A1A1A; }
     .section { background-color:#1A1A1A; }
@@ -68,7 +80,7 @@
     .form-group select {
       width: 100%;
       padding: 12px 16px;
-      border: 1px solid rgba(26,107,92,0.25);
+      border: 1px solid var(--gold-soft);
       
       font-family: 'Lato', sans-serif;
       font-size: 0.95rem;
@@ -106,7 +118,7 @@
 
     .form-divider {
       height: 1px;
-      background: rgba(26,107,92,0.15);
+      background: rgba(212,175,55,0.2);
       margin: 32px 0;
     }
 
@@ -142,13 +154,15 @@
     }
 
     .btn-primary {
-      background: #E0E0E0;
-      color: #F5F5F5;
-      box-shadow: 0 4px 20px rgba(224,224,224,0.2);
+      background: linear-gradient(180deg, var(--brandywine) 0%, var(--brandywine-deep) 100%);
+      color: var(--chrome);
+      border: 2px solid var(--chrome);
+      box-shadow: 0 4px 20px rgba(139,0,0,0.35);
     }
 
     .btn-primary:hover {
-      background: #DFB966;
+      background: linear-gradient(180deg, var(--brandywine-deep) 0%, #2a0000 100%);
+      color: var(--cream);
       transform: translateY(-2px);
     }
 
@@ -166,7 +180,7 @@
     }
 
     .back-link:hover {
-      color:#F5F5F5;
+      color: var(--gold);
     }
   </style>
   <!-- Google Analytics 4 -->
