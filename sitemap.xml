@@ -77,6 +77,26 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://mylegacycontinues.com/morning-memories.html</loc>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://mylegacycontinues.com/culture-guide.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mylegacycontinues.com/privacy-promise.html</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://mylegacycontinues.com/merch-legacy.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mylegacycontinues.com/portal.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://mylegacycontinues.com/joseph-vazquez-heritage.html</loc>
     <priority>0.6</priority>
   </url>
