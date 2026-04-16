@@ -15,16 +15,27 @@
 
   <style>
     :root {
-      --bg-cream: #FAF3E6;
+      /* Candy Paint palette */
+      --charcoal: #1A1A1A;
+      --charcoal-2: #232323;
+      --brandywine: #8B0000;
+      --brandywine-deep: #4A0000;
+      --chrome: #E0E0E0;
+      --chrome-dim: #9a9a9a;
+      --soft-white: #F5F5F5;
+
+      /* Legacy var names mapped to Candy Paint */
+      --bg-cream: #1A1A1A;         /* was cream → charcoal (body / surfaces) */
       --gold: #D4AF37;
       --gold-soft: rgba(212,175,55,0.28);
-      --amber: #C8860A;
-      --amber-deep: #9d6808;
-      --ink: #1A1A1A;
-      --ink-soft: #5a5a5a;
-      --card-white: #FFFFFF;
+      --amber: #8B0000;            /* was amber → brandywine (CTAs) */
+      --amber-deep: #4A0000;       /* was amber-deep → brandywine-deep */
+      --ink: #E0E0E0;              /* was dark ink → chrome (primary text) */
+      --ink-soft: #9a9a9a;         /* was ink-soft → chrome-dim */
+      --card-white: #232323;       /* was white cards → charcoal-2 */
       --charcoal-bg: #1A1A1A;
       --hero-overlay: rgba(10,5,0,0.55);
+
       --font-heading: 'Cinzel', Georgia, 'Times New Roman', serif;
       --font-body: 'Outfit', system-ui, -apple-system, sans-serif;
       --font-emotion: 'Cormorant Garamond', Georgia, serif;
@@ -45,8 +56,8 @@
       overflow-x: hidden;
     }
 
-    a { color: var(--amber); text-decoration: none; transition: color 0.2s; }
-    a:hover { color: var(--amber-deep); }
+    a { color: var(--gold); text-decoration: none; transition: color 0.2s; }
+    a:hover { color: var(--chrome); }
     img { max-width: 100%; display: block; }
 
     /* Site nav override — keep dark glass across the warm page */
@@ -83,7 +94,9 @@
       padding: 140px 24px 90px;
       text-align: center;
       overflow: hidden;
-      background: linear-gradient(135deg, #2C1810 0%, #8B4513 55%, #D4AF37 100%);
+      background:
+        radial-gradient(ellipse at 50% 30%, rgba(212,175,55,0.09) 0%, transparent 60%),
+        linear-gradient(160deg, #0A0A0A 0%, #1A1A1A 55%, #0A0A0A 100%);
     }
     .uh-hero::before {
       content: "";
@@ -118,7 +131,7 @@
       font-style: italic;
       font-weight: 400;
       font-size: clamp(1.05rem, 2vw, 1.35rem);
-      color: var(--bg-cream);
+      color: var(--soft-white);
       letter-spacing: 0.01em;
     }
     .uh-scroll {
@@ -197,7 +210,7 @@
       object-fit: cover;
       border: 3px solid var(--gold);
       box-shadow:
-        0 0 0 8px var(--bg-cream),
+        0 0 0 8px var(--chrome),
         0 0 0 9px rgba(212,175,55,0.4),
         0 18px 44px rgba(0,0,0,0.18);
       justify-self: center;
@@ -206,7 +219,7 @@
     .uh-founder-portrait {
       background:
         linear-gradient(135deg, rgba(255,255,255,0.18), transparent 45%),
-        linear-gradient(135deg, #8B4513 0%, #C8860A 100%);
+        linear-gradient(135deg, var(--brandywine-deep) 0%, var(--brandywine) 100%);
     }
 
     .uh-hero-logo {
@@ -375,7 +388,7 @@
       color: var(--ink);
     }
     .uh-status.needs { background: var(--amber); color: #FFFFFF; }
-    .uh-status.foster { background: var(--ink); color: var(--gold); border: 1px solid var(--gold); }
+    .uh-status.foster { background: var(--charcoal); color: var(--gold); border: 1px solid var(--gold); }
 
     /* ========= STATS BAR ========= */
     .uh-stats {
@@ -417,7 +430,7 @@
       font-size: 0.85rem;
       letter-spacing: 0.32em;
       text-transform: uppercase;
-      color: var(--bg-cream);
+      color: var(--chrome);
     }
 
     /* ========= HOW TO HELP ========= */
@@ -457,23 +470,23 @@
     }
     .uh-btn {
       display: inline-block;
-      background: var(--amber);
-      color: #FFFFFF;
+      background: linear-gradient(180deg, var(--brandywine) 0%, var(--brandywine-deep) 100%);
+      color: var(--chrome);
       font-family: var(--font-body);
       font-weight: 600;
       font-size: 0.82rem;
       letter-spacing: 0.22em;
       text-transform: uppercase;
       padding: 14px 24px;
-      border: 0;
-      border-radius: 2px;
+      border: 2px solid var(--chrome);
+      border-radius: 0;
       cursor: pointer;
       transition: background 0.25s, transform 0.25s;
       text-align: center;
     }
     .uh-btn:hover {
-      background: var(--amber-deep);
-      color: #FFFFFF;
+      background: linear-gradient(180deg, var(--brandywine-deep) 0%, #2a0000 100%);
+      color: var(--soft-white);
       transform: translateY(-1px);
     }
     .uh-btn.full { display: block; width: 100%; }
@@ -497,7 +510,7 @@
       display: inline-block;
       padding: 18px;
       border: 1px solid var(--gold);
-      background: var(--bg-cream);
+      background: var(--chrome);
     }
     .uh-qr-frame img {
       width: 240px;
@@ -506,7 +519,7 @@
     }
     .uh-qr-caption {
       margin-top: 36px;
-      color: var(--bg-cream);
+      color: var(--chrome);
       font-family: var(--font-body);
       font-size: 1rem;
       letter-spacing: 0.02em;
@@ -523,7 +536,7 @@
       height: auto;
     }
     .uh-qr-mlc a {
-      color: var(--bg-cream);
+      color: var(--chrome);
       font-size: 0.9rem;
       letter-spacing: 0.1em;
     }
@@ -531,7 +544,7 @@
 
     /* ========= FOOTER ========= */
     .uh-footer {
-      background: var(--bg-cream);
+      background: var(--charcoal-2);
       padding: 56px 24px 36px;
       border-top: 1px solid var(--gold);
     }
@@ -576,8 +589,8 @@
       letter-spacing: 0.12em;
       text-transform: uppercase;
     }
-    .uh-footer-links a:hover { color: var(--amber); }
-    .uh-footer-email a { color: var(--amber); font-size: 0.9rem; }
+    .uh-footer-links a:hover { color: var(--gold); }
+    .uh-footer-email a { color: var(--gold); font-size: 0.9rem; }
     .uh-footer-bottom {
       max-width: 1180px;
       margin: 36px auto 0;
