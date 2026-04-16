@@ -11,7 +11,7 @@
   --cream-bg:           #1A1A1A;  /* charcoal deep */
   --candy-wine:         #8B0000;  /* brandywine */
   --candy-red:          #4A0000;  /* brandywine deep */
-  --champagne-gold:     #E0E0E0;  /* chrome */
+  --champagne-gold:     #D4AF37;  /* chrome */
   --silver:             #C0C0C0;
   --charcoal:           #1A1A1A;
   --charcoal-2:         #232323;
@@ -341,7 +341,7 @@ p {
   height: auto;
   position: relative;
   z-index: 2;
-  filter: drop-shadow(0 0 8px rgba(224,224,224, 0.4));
+  filter: drop-shadow(0 0 12px rgba(212,175,55,0.5));
 }
 
 .hero-cta {
