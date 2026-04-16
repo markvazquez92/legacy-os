@@ -149,6 +149,7 @@ p {
   height: 3rem;
   width: auto;
   max-width: 200px;
+  filter: brightness(0) saturate(100%) invert(78%) sepia(45%) saturate(500%) hue-rotate(5deg) brightness(95%);
 }
 
 .nav-links {
