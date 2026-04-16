@@ -115,3 +115,209 @@
 
 /* Teal accent on nav hover for product pages that use .nav-links a */
 .nav-links a:hover { color: var(--teal) !important; }
+
+/* ═══════════════════════════════════════════════════════════════
+   INNER SECTION REPAINT — cosmic teal beyond the hero
+   Retargets the common section/heading/card patterns used across
+   heritage-book, cemetery-plaque, pet-tag, business-profile,
+   rescue-registry so the whole page reads cosmic, not just the top.
+   Product CTA buttons (.btn-primary) intentionally keep their
+   brandywine gradient — the buy button stays distinctive.
+   ═══════════════════════════════════════════════════════════════ */
+
+/* Body + section backgrounds → navy gradient base */
+html body {
+  background-color: var(--navy-deep) !important;
+}
+html body section,
+html body .section {
+  background-color: transparent !important;
+}
+
+/* Named section classes used on product pages */
+.page-hero,
+.what-section,
+.order-section,
+.order-intro,
+.case-study,
+.comparison-section {
+  background: linear-gradient(180deg, #141e35 0%, #1a2744 100%) !important;
+  position: relative;
+}
+
+/* Page hero gets the cosmic flake overlay too */
+.page-hero {
+  background:
+    radial-gradient(ellipse at top, rgba(32,178,170,0.2) 0%, transparent 55%),
+    radial-gradient(ellipse at 70% 80%, rgba(180,85,59,0.12) 0%, transparent 50%),
+    linear-gradient(180deg, var(--navy) 0%, var(--navy-deep) 100%) !important;
+  overflow: hidden;
+}
+.page-hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background-image:
+    radial-gradient(1.5px 1.5px at 15% 22%, rgba(212,175,55,0.9), transparent 55%),
+    radial-gradient(1px 1px at 78% 35%, rgba(180,85,59,0.85), transparent 55%),
+    radial-gradient(2px 2px at 42% 68%, rgba(184,150,46,0.8), transparent 55%),
+    radial-gradient(1px 1px at 88% 12%, rgba(212,175,55,0.7), transparent 55%),
+    radial-gradient(1.5px 1.5px at 30% 85%, rgba(180,85,59,0.75), transparent 55%);
+  background-size: 600px 600px;
+  opacity: 0.7;
+  animation: cosmic-flake-drift 18s linear infinite;
+  pointer-events: none; z-index: 0;
+}
+.page-hero > * { position: relative; z-index: 1; }
+
+/* Inline-styled dark sections (body-level) → navy gradient */
+section[style*="#1A1A1A" i],
+section[style*="#1a1a1a"],
+section[style*="#2A2A2A" i],
+section[style*="#2a2a2a"],
+section[style*="#232323"],
+section[style*="#1e1e1e"] {
+  background: linear-gradient(180deg, #141e35 0%, #1a2744 100%) !important;
+}
+
+/* Subtle tinted sections (rgba wine, rgba charcoal) → deeper navy */
+section[style*="rgba(192,57,43,0.05)"],
+section[style*="rgba(42,42,42,0.05)"],
+section[style*="rgba(42, 42, 42, 0.05)"] {
+  background: linear-gradient(180deg, #0f1a2e 0%, #141e35 100%) !important;
+}
+
+/* Wine/candy headings everywhere → gold flake */
+html body h2[style*="#722F37" i],
+html body h2[style*="#C0392B" i],
+html body h2[style*="#8B0000" i],
+html body h3[style*="#722F37" i],
+html body h3[style*="#C0392B" i],
+html body h3[style*="#8B0000" i] {
+  color: var(--gold-flake) !important;
+}
+
+/* Named heading rules (these win over .what-section h2 declarations) */
+.what-section h2,
+.case-study h3,
+.order-section h2,
+.order-intro h2,
+.stripe-cta .price-label,
+.include-item-title {
+  color: var(--gold-flake) !important;
+}
+
+/* Include-item cards (feature bullets) */
+.include-item {
+  background: linear-gradient(155deg, #1c2d4a 0%, #141e35 100%) !important;
+  border-left: 3px solid var(--teal) !important;
+  border-radius: 0;
+  padding: 1.1rem 1.25rem !important;
+  transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s;
+}
+.include-item:hover {
+  border-left-color: var(--gold-flake) !important;
+  box-shadow: 0 12px 28px -10px rgba(32,178,170,0.3);
+  transform: translateY(-2px);
+}
+.include-item-title { color: var(--gold-flake) !important; }
+.include-item-desc { color: rgba(245,245,245,0.82) !important; }
+.include-item-desc strong { color: var(--teal) !important; }
+
+/* Gold rule divider → teal shimmer */
+.gold-rule {
+  background: linear-gradient(90deg, transparent, var(--teal), transparent) !important;
+  opacity: 0.45 !important;
+  height: 1px !important;
+}
+
+/* Inline card wrappers (legacy showcase, comparison cards, etc.) —
+   the pattern is: background:#232323 inline + bordered */
+[style*="background:#232323"],
+[style*="background: #232323"],
+[style*="background-color:#232323"] {
+  background: linear-gradient(155deg, #1c2d4a 0%, #141e35 100%) !important;
+  border-color: var(--gold-flake) !important;
+}
+
+/* Secondary dark tile (the 180px placeholder blocks on cemetery-plaque etc) */
+[style*="background:#2A2A2A" i][style*="height: 180px"],
+[style*="background: #2A2A2A" i][style*="height: 180px"],
+[style*="background:#2a2a2a"][style*="height: 180px"] {
+  background: linear-gradient(135deg, #1a2744 0%, #0f1a2e 100%) !important;
+  border-bottom: 1px solid rgba(32,178,170,0.3);
+}
+
+/* Table rows on comparison tables */
+[style*="background:#232323"] table thead th,
+[style*="background:#232323"] table td {
+  color: #F5F5F5 !important;
+}
+.comparison-section table,
+[style*="background: #232323"] table {
+  background: transparent !important;
+}
+
+/* Page hero subtitle text contrast tweak */
+.page-hero .page-eyebrow {
+  color: var(--teal) !important;
+  border-color: var(--teal) !important;
+}
+.page-hero .page-title {
+  color: var(--gold-flake) !important;
+}
+
+/* CTA blocks that were boxed in wine → teal accent border */
+.stripe-cta {
+  background: linear-gradient(155deg, #1c2d4a 0%, #141e35 100%) !important;
+  border: 2px solid var(--gold-flake) !important;
+  border-radius: 0;
+}
+.stripe-cta:hover { border-color: var(--teal) !important; }
+
+/* Form fields on order forms: darker cosmic bg */
+.form-group input,
+.form-group select,
+.form-group textarea {
+  background: rgba(0,0,0,0.35) !important;
+  border: 1px solid rgba(32,178,170,0.35) !important;
+  color: #F5F5F5 !important;
+}
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--teal) !important;
+  outline: none !important;
+}
+.form-group label {
+  color: var(--teal) !important;
+}
+
+/* Keep btn-primary (the Stripe checkout CTA) brandywine — do NOT repaint */
+/* But give it a teal underglow so it feels part of the cosmic world */
+html body .btn-primary {
+  box-shadow: 0 4px 24px -4px rgba(32,178,170,0.35), 0 4px 20px rgba(192,57,43,0.15) !important;
+}
+
+/* Wine-tinted inline CTAs inside legacy showcase blocks → teal */
+a[style*="background:#C0392B"],
+a[style*="background: #C0392B"] {
+  background: linear-gradient(180deg, var(--teal) 0%, #14746f 100%) !important;
+  color: var(--navy-deep) !important;
+}
+a[style*="background:#C0392B"]:hover,
+a[style*="background: #C0392B"]:hover {
+  background: linear-gradient(180deg, #14746f 0%, var(--teal) 100%) !important;
+  color: var(--cream) !important;
+}
+
+/* t-divider (used on active-transports) → subtle teal */
+.t-divider {
+  background: linear-gradient(90deg, transparent, var(--teal), transparent) !important;
+  opacity: 0.45 !important;
+}
+
+/* Fade-in remains; just ensure safety on mobile */
+@media (max-width: 768px) {
+  .page-hero { padding-top: 110px !important; padding-bottom: 48px !important; }
+}
+
