@@ -590,6 +590,116 @@
       color: var(--charcoal);
     }
 
+    /* NOW ON THE NETWORK */
+    .now-network {
+      padding: 5rem 3rem;
+      background: var(--charcoal);
+      text-align: center;
+    }
+    .now-network .eyebrow {
+      display: inline-block;
+      font-family: 'Oswald', sans-serif;
+      font-weight: 700;
+      font-size: 0.72rem;
+      color: var(--brandywine);
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+    .now-network h2 {
+      font-family: 'Oswald', sans-serif;
+      font-weight: 700;
+      font-size: clamp(2rem, 4vw, 3rem);
+      color: var(--chrome);
+      margin-bottom: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    .now-network .subhead {
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.95rem;
+      color: rgba(224,224,224,0.6);
+      margin: 0 auto 3rem;
+      max-width: 640px;
+    }
+    .now-network-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      max-width: 1200px;
+      margin: 0 auto 2.5rem;
+    }
+    .now-network-card {
+      background: #222;
+      border-left: 3px solid var(--gold);
+      padding: 1.75rem 1.5rem 1.5rem;
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s;
+    }
+    .now-network-card:hover { transform: translateY(-4px); }
+    .now-network-card .cat {
+      font-family: 'Oswald', sans-serif;
+      font-weight: 700;
+      font-size: 0.7rem;
+      color: var(--brandywine);
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      margin-bottom: 0.85rem;
+    }
+    .now-network-card h3 {
+      font-family: 'Oswald', sans-serif;
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--chrome);
+      letter-spacing: 0.04em;
+      margin-bottom: 0.6rem;
+      text-transform: none;
+    }
+    .now-network-card p {
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.9rem;
+      color: rgba(224,224,224,0.55);
+      line-height: 1.6;
+      margin-bottom: 1.25rem;
+      flex: 1;
+    }
+    .now-network-card a {
+      color: var(--gold);
+      text-decoration: none;
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+    }
+    .now-network-card a:hover { text-decoration: underline; }
+    .now-network-cta {
+      display: inline-block;
+      border: 2px solid var(--gold);
+      color: var(--gold);
+      background: transparent;
+      padding: 0.9rem 2.4rem;
+      font-family: 'Oswald', sans-serif;
+      font-weight: 700;
+      font-size: 0.85rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: all 0.3s;
+      border-radius: 0 !important;
+    }
+    .now-network-cta:hover {
+      background: var(--gold);
+      color: var(--charcoal);
+    }
+    @media (max-width: 1024px) {
+      .now-network-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 640px) {
+      .now-network-grid { grid-template-columns: 1fr; }
+    }
+
     /* REAL LEGACIES */
     .real-legacies {
       padding: 5rem 3rem;
@@ -854,7 +964,7 @@
       .hero-sub { font-size: 1rem; }
 
       .what-mlc, .how-it-works, .products, .coming-soon,
-      .mlc-network, .real-legacies, .rescue, .profile-custom,
+      .mlc-network, .now-network, .real-legacies, .rescue, .profile-custom,
       .email-signup { padding: 3rem 1rem; }
 
       .steps { grid-template-columns: 1fr; }
@@ -1125,6 +1235,45 @@
       </div>
 
     </div>
+  </div>
+</section>
+
+<!-- PINSTRIPE -->
+<div class="pinstripe"></div>
+
+<!-- NOW ON THE NETWORK -->
+<section class="now-network">
+  <div style="max-width: 1200px; margin: 0 auto;">
+    <div class="eyebrow">Live On The Network</div>
+    <h2>NOW ON THE NETWORK</h2>
+    <p class="subhead">Real 805 stories. Permanent profiles. Scan, share, preserve.</p>
+    <div class="now-network-grid">
+      <div class="now-network-card">
+        <div class="cat">Family</div>
+        <h3>V&aacute;zquez Family</h3>
+        <p>Seventeen generations. Galicia to California.</p>
+        <a href="vazquez-profile.html">See Profile &rarr;</a>
+      </div>
+      <div class="now-network-card">
+        <div class="cat">Business</div>
+        <h3>McNeal Construction</h3>
+        <p>805 contractor. Generational trade.</p>
+        <a href="mcneal-construction-profile.html">See Profile &rarr;</a>
+      </div>
+      <div class="now-network-card">
+        <div class="cat">Memorial</div>
+        <h3>Anthony Raygoza Sr.</h3>
+        <p>A life remembered. Forever preserved.</p>
+        <a href="anthony-raygoza-memorial.html">See Profile &rarr;</a>
+      </div>
+      <div class="now-network-card">
+        <div class="cat">Rescue</div>
+        <h3>Shoshi Gamliel</h3>
+        <p>Underdog Heroes. Real responsible rescue.</p>
+        <a href="shoshi-gamliel-profile.html">See Profile &rarr;</a>
+      </div>
+    </div>
+    <a href="network.html" class="now-network-cta">See All Profiles &rarr;</a>
   </div>
 </section>
 
