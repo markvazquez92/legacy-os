@@ -912,3 +912,15 @@ html body button.btn-gold:hover {
   color: #F5F5F5;
 }
 
+/* ─────────────────────────────────────────────────────────────
+   iOS Safari auto-zoom prevention
+   Form inputs must render at ≥16px to stop iOS from zooming
+   into the field on focus. Do NOT remove — removing re-introduces
+   the mobile-zoom UX bug on every form on the site.
+   ───────────────────────────────────────────────────────────── */
+input,
+textarea,
+select {
+  font-size: 16px;
+}
+
