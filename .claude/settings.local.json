@@ -62,7 +62,8 @@
       "Bash(git remote:*)",
       "Bash(cmd /c dir \"C:\\\\Users\\\\BEAR\\\\Documents\\\\GitHub\\\\legacy-os\\\\logo.png - Copy\")",
       "Bash(git pull:*)",
-      "Bash(git stash:*)"
+      "Bash(git stash:*)",
+      "Bash(git config *)"
     ]
   }
 }
