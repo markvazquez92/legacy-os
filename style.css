@@ -870,13 +870,6 @@ html body h6 {
   color: #C0C0C0;
 }
 
-/* Chrome-tone the ship logo (was gold PNG) without touching the asset file */
-.nav-logo,
-img.nav-logo,
-img[alt*="My Legacy" i],
-img[src*="logo.png" i] {
-  filter: grayscale(1) brightness(1.45) contrast(1.15) !important;
-}
 
 /* Buttons site-wide: rectangular, Staatliches, brandywine gradient, chrome border */
 .btn,

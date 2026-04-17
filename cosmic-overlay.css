@@ -70,10 +70,6 @@
   opacity: 0.92;
 }
 
-.hero-split .ship-logo {
-  filter: drop-shadow(0 0 18px rgba(32,178,170,0.55)) !important;
-}
-
 @keyframes cosmic-flake-drift {
   0% { transform: translate(0,0); }
   100% { transform: translate(-30px,-40px); }
