@@ -63,7 +63,10 @@
       "Bash(cmd /c dir \"C:\\\\Users\\\\BEAR\\\\Documents\\\\GitHub\\\\legacy-os\\\\logo.png - Copy\")",
       "Bash(git pull:*)",
       "Bash(git stash:*)",
-      "Bash(git config *)"
+      "Bash(git config *)",
+      "Bash(shasum logo.png)",
+      "Bash(identify -format \"%[channels] | dims:%wx%h | colorspace:%[colorspace] | hasalpha:%A\\\\n\" logo.png)",
+      "Bash(python -c \"from PIL import Image; im=Image.open\\('logo.png'\\); print\\(f'mode={im.mode}  size={im.size}'\\); alpha=im.getchannel\\('A'\\) if 'A' in im.mode else None; import statistics; pixels=list\\(alpha.getdata\\(\\)\\) if alpha else []; print\\(f'alpha_min={min\\(pixels\\) if pixels else None}  alpha_max={max\\(pixels\\) if pixels else None}  alpha_unique_count={len\\(set\\(pixels\\)\\) if pixels else None}  alpha_mean={statistics.mean\\(pixels\\):.1f}' if pixels else 'no alpha channel'\\)\")"
     ]
   }
 }
