@@ -9,7 +9,7 @@
   <link rel="icon" href="logo.png" type="image/png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Lato:wght@400;600;700&family=Spline+Sans:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Lato:wght@400;600;700&family=Spline+Sans:wght@700&family=Cinzel:wght@400;600;700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 
   <style>
@@ -317,6 +317,27 @@
       background: #D4AF37;
       color: #1A1A1A;
     }
+
+    /* Real Free Profiles gallery — card hover */
+    .fp-gallery a[href$="profile.html"]:hover {
+      border-color: #D4AF37 !important;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(212,175,55,0.15);
+    }
+
+    /* iOS Safari 16px zoom-prevention fix */
+    input,
+    textarea,
+    select {
+      font-size: 16px !important;
+    }
+    @media (max-width: 768px) {
+      input,
+      textarea,
+      select {
+        font-size: 16px !important;
+      }
+    }
   </style>
 
   <!-- Google Analytics 4 -->
@@ -348,7 +369,7 @@
 
   <!-- NAVIGATION -->
   <nav class="site-nav">
-    <a href="index.html" class="nav-brand">
+    <a href="https://mylegacycontinues.com/index.html" class="nav-brand">
       <img src="logo.png" alt="My Legacy Continues" class="nav-logo">
     </a>
     <ul class="nav-links" id="navLinks">
@@ -356,15 +377,15 @@
       <li><a href="heritage-book.html">Heritage</a></li>
       <li><a href="pet-tag.html">Pet Tags</a></li>
       <li><a href="business-profile.html">Business</a></li>
-      <li><a href="network.html">The Network</a></li>
-      <li><a href="rescue-registry.html">Rescue Registry</a></li>
+      <li><a href="network.html">Network</a></li>
+      <li><a href="rescue-registry.html">Rescue</a></li>
       <li><a href="active-transports.html">Transport</a></li>
+      <li><a href="merch-legacy.html">Merch</a></li>
       <li><a href="about.html">About</a></li>
-      <li><a href="contact.html">Contact</a></li>
       <li><a href="free-profile.html" style="color:#D4AF37;">Free Page</a></li>
     </ul>
     <div class="nav-right">
-      <a href="index.html#products" class="btn btn-gold" style="padding: 0.5rem 1.2rem; font-size: 0.7rem;">START YOUR LEGACY</a>
+      <a href="https://mylegacycontinues.com/index.html#products" class="btn btn-gold" style="padding: 0.5rem 1.2rem; font-size: 0.7rem;">START YOUR LEGACY</a>
       <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
         <span></span><span></span><span></span>
       </button>
@@ -399,7 +420,7 @@
           <input type="text" id="fullname" name="fullname">
         </div>
 
-        <button type="submit" class="btn btn-gold" style="width:100%; padding:18px; font-size:0.85rem; letter-spacing:0.24em; text-transform:uppercase; cursor:pointer; margin-top:0.5rem;">Join The Waitlist</button>
+        <button type="submit" style="width:100%; padding:18px; font-size:0.85rem; letter-spacing:0.24em; text-transform:uppercase; cursor:pointer; margin-top:0.5rem; background: linear-gradient(180deg, #8B0000 0%, #4A0000 100%); color:#F5F5F5; border:1px solid rgba(212,175,55,0.3); font-family:'Oswald','Montserrat',sans-serif; font-weight:700; transition: all 0.3s ease;">Join The Waitlist</button>
       </form>
 
       <div id="waitlistSuccess" style="display:none; text-align:center; padding:2.5rem 1rem; border:1px solid #D4AF37; background:#1A1A1A; margin-top:1.5rem;">
@@ -414,6 +435,43 @@
     <h2 style="text-transform:uppercase; letter-spacing:0.06em;">WANT YOURS BUILT NOW?</h2>
     <p style="color:#cfcfcf; max-width:620px; margin:1rem auto 2rem; line-height:1.75; font-size:1rem;">We build it for you. $79. One payment. Permanent.</p>
     <a href="business-profile.html" class="btn btn-gold" style="padding:16px 36px; font-size:0.85rem; letter-spacing:0.24em; text-transform:uppercase;">Get The Legacy Profile &rarr;</a>
+  </section>
+
+  <!-- REAL FREE PROFILES — LIVE ON THE NETWORK -->
+  <section class="fp-gallery" style="padding: 5rem 2rem; background: #1A1A1A; border-top: 1px solid rgba(212,175,55,0.2);">
+    <div style="max-width: 1100px; margin: 0 auto; text-align: center;">
+      <p style="font-family: 'Oswald', sans-serif; font-size: 0.85rem; letter-spacing: 0.35em; color: #D4AF37; text-transform: uppercase; margin-bottom: 1rem;">Live On The Network</p>
+      <h2 style="font-family: 'Oswald', sans-serif; color: #E0E0E0; font-size: clamp(1.75rem, 4vw, 2.5rem); margin-bottom: 1rem;">Real Free Profiles</h2>
+      <p style="color: rgba(224,224,224,0.75); max-width: 600px; margin: 0 auto 3rem; font-family: 'Outfit', sans-serif;">Three profiles already live &mdash; permanent, honored, free. This is what the entry point looks like on the MLC network.</p>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; max-width: 960px; margin: 0 auto;">
+
+        <!-- Joseph card -->
+        <a href="joseph-vazquez-profile.html" style="display: block; text-decoration: none; background: rgba(26,26,26,0.8); border: 1px solid rgba(212,175,55,0.3); padding: 2.5rem 1.5rem; transition: all 0.3s ease;">
+          <p style="font-family: 'Oswald', sans-serif; font-size: 0.75rem; letter-spacing: 0.3em; color: #D4AF37; text-transform: uppercase; margin-bottom: 1rem;">Family Legacy</p>
+          <h3 style="font-family: 'Cinzel', serif; color: #E0E0E0; font-size: 1.4rem; margin-bottom: 0.75rem;">Joseph V&aacute;zquez</h3>
+          <p style="color: rgba(224,224,224,0.7); font-family: 'Outfit', sans-serif; font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.5rem;">Santa Barbara roots. V&aacute;zquez family story. Galicia to the Central Coast.</p>
+          <span style="color: #D4AF37; font-family: 'Oswald', sans-serif; font-size: 0.85rem; letter-spacing: 0.2em; text-transform: uppercase;">See Profile &rarr;</span>
+        </a>
+
+        <!-- Deborah card -->
+        <a href="deborah-mahony-profile.html" style="display: block; text-decoration: none; background: rgba(26,26,26,0.8); border: 1px solid rgba(212,175,55,0.3); padding: 2.5rem 1.5rem; transition: all 0.3s ease;">
+          <p style="font-family: 'Oswald', sans-serif; font-size: 0.75rem; letter-spacing: 0.3em; color: #D4AF37; text-transform: uppercase; margin-bottom: 1rem;">Family Legacy</p>
+          <h3 style="font-family: 'Cinzel', serif; color: #E0E0E0; font-size: 1.4rem; margin-bottom: 0.75rem;">Deborah Mahony</h3>
+          <p style="color: rgba(224,224,224,0.7); font-family: 'Outfit', sans-serif; font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.5rem;">Garc&iacute;a line. Nuevo Le&oacute;n to Sinton, Texas to the Central Coast.</p>
+          <span style="color: #D4AF37; font-family: 'Oswald', sans-serif; font-size: 0.85rem; letter-spacing: 0.2em; text-transform: uppercase;">See Profile &rarr;</span>
+        </a>
+
+        <!-- Butters card -->
+        <a href="butters-profile.html" style="display: block; text-decoration: none; background: rgba(26,26,26,0.8); border: 1px solid rgba(212,175,55,0.3); padding: 2.5rem 1.5rem; transition: all 0.3s ease;">
+          <p style="font-family: 'Oswald', sans-serif; font-size: 0.75rem; letter-spacing: 0.3em; color: #D4AF37; text-transform: uppercase; margin-bottom: 1rem;">Pet Legacy</p>
+          <h3 style="font-family: 'Cinzel', serif; color: #E0E0E0; font-size: 1.4rem; margin-bottom: 0.75rem;">Butters</h3>
+          <p style="color: rgba(224,224,224,0.7); font-family: 'Outfit', sans-serif; font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.5rem;">Orange tabby. 5 years. Santa Maria&rsquo;s champ. Pet Legacy profile live.</p>
+          <span style="color: #D4AF37; font-family: 'Oswald', sans-serif; font-size: 0.85rem; letter-spacing: 0.2em; text-transform: uppercase;">See Profile &rarr;</span>
+        </a>
+
+      </div>
+    </div>
   </section>
 
   <!-- SEE WHAT IT LOOKS LIKE -->
