@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<!-- NO EMOJIS EVER -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stephanie Quintana &mdash; Creator Legacy Profile | My Legacy Continues</title>
+  <meta name="description" content="Stephanie Quintana &mdash; Central Coast creator. Permanent Creator Legacy Profile on the My Legacy Continues network.">
+  <link rel="icon" href="logo.png" type="image/png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* SCOPED — Stephanie Creator Profile palette: MLC Candy & Chrome */
+    :root {
+      --sq-charcoal: #1A1A1A;
+      --sq-charcoal-deep: #0F0F0F;
+      --sq-gold: #D4AF37;
+      --sq-gold-warm: #D4A017;
+      --sq-brandywine-start: #8B0000;
+      --sq-brandywine-end: #4A0000;
+      --sq-chrome: #E0E0E0;
+    }
+
+    body.stephanie-profile {
+      background: var(--sq-charcoal);
+      color: var(--sq-chrome);
+      font-family: 'Outfit', sans-serif;
+      margin: 0;
+    }
+
+    /* HERO */
+    .sq-hero {
+      min-height: 80vh;
+      background: radial-gradient(ellipse at center, rgba(212,175,55,0.08) 0%, var(--sq-charcoal) 60%), var(--sq-charcoal-deep);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 4rem 2rem;
+      text-align: center;
+      position: relative;
+    }
+
+    .sq-medallion {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      border: 2px solid var(--sq-gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 2rem;
+      box-shadow: 0 0 40px rgba(212, 175, 55, 0.3);
+      background: var(--sq-charcoal);
+    }
+
+    .sq-medallion img {
+      width: 70%;
+      height: auto;
+      filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.4));
+    }
+
+    .sq-eyebrow {
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.85rem;
+      letter-spacing: 0.35em;
+      color: var(--sq-gold);
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+    }
+
+    .sq-name {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      font-weight: 700;
+      color: var(--sq-chrome);
+      margin: 0 0 1rem;
+      letter-spacing: 0.04em;
+      text-shadow: 0 2px 20px rgba(0,0,0,0.5);
+    }
+
+    .sq-subtitle {
+      font-family: 'Oswald', sans-serif;
+      font-size: 1rem;
+      letter-spacing: 0.3em;
+      color: var(--sq-gold-warm);
+      text-transform: uppercase;
+      margin-bottom: 2.5rem;
+    }
+
+    .sq-tagline {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-style: italic;
+      font-size: 1.25rem;
+      color: rgba(224,224,224,0.85);
+      max-width: 540px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    /* LINKS STACK */
+    .sq-links {
+      max-width: 460px;
+      margin: 4rem auto;
+      padding: 0 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .sq-link-btn {
+      display: block;
+      padding: 1.1rem 1.5rem;
+      background: linear-gradient(180deg, var(--sq-brandywine-start) 0%, var(--sq-brandywine-end) 100%);
+      color: #F5F5F5;
+      text-decoration: none;
+      font-family: 'Oswald', sans-serif;
+      font-weight: 600;
+      font-size: 0.95rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      text-align: center;
+      border: 1px solid rgba(212,175,55,0.3);
+      transition: all 0.3s ease;
+    }
+
+    .sq-link-btn:hover {
+      background: linear-gradient(180deg, #6B0000 0%, #2A0000 100%);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 20px rgba(139, 0, 0, 0.3);
+      border-color: var(--sq-gold);
+    }
+
+    /* CONTENT VAULT COMING SOON */
+    .sq-vault {
+      max-width: 720px;
+      margin: 4rem auto;
+      padding: 3rem 2rem;
+      border: 1px solid rgba(212,175,55,0.3);
+      background: rgba(26,26,26,0.6);
+      text-align: center;
+    }
+
+    .sq-vault-eyebrow {
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.8rem;
+      letter-spacing: 0.35em;
+      color: var(--sq-gold);
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+
+    .sq-vault h3 {
+      font-family: 'Oswald', sans-serif;
+      color: var(--sq-chrome);
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .sq-vault p {
+      color: rgba(224,224,224,0.75);
+      max-width: 520px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    /* PERMANENT BADGE */
+    .sq-permanent {
+      text-align: center;
+      padding: 3rem 2rem;
+      border-top: 1px solid rgba(212,175,55,0.2);
+      background: var(--sq-charcoal-deep);
+    }
+
+    .sq-permanent-logo {
+      width: 60px;
+      margin-bottom: 1rem;
+      opacity: 0.8;
+    }
+
+    .sq-permanent p {
+      color: rgba(224,224,224,0.6);
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1rem;
+      max-width: 440px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    /* iOS Safari zoom fix */
+    input,
+    textarea,
+    select {
+      font-size: 16px !important;
+    }
+    @media (max-width: 768px) {
+      input,
+      textarea,
+      select {
+        font-size: 16px !important;
+      }
+    }
+  </style>
+
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XQJ8KPVZX9"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XQJ8KPVZX9', {
+      'page_path': window.location.pathname,
+      'page_title': document.title
+    });
+  </script>
+
+  <!-- Facebook Pixel -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '2828165625364437');
+    fbq('track', 'PageView');
+  </script>
+</head>
+<body class="stephanie-profile">
+  <!-- Facebook Pixel noscript -->
+  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=2828165625364437&ev=PageView&noscript=1" /></noscript>
+
+  <!-- NAVIGATION -->
+  <nav class="site-nav">
+    <a href="https://mylegacycontinues.com/index.html" class="nav-brand">
+      <img src="logo.png" alt="My Legacy Continues" class="nav-logo">
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="heritage-book.html">Heritage</a></li>
+      <li><a href="pet-tag.html">Pet Tags</a></li>
+      <li><a href="business-profile.html">Business</a></li>
+      <li><a href="network.html">Network</a></li>
+      <li><a href="rescue-registry.html">Rescue</a></li>
+      <li><a href="active-transports.html">Transport</a></li>
+      <li><a href="merch-legacy.html">Merch</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="free-profile.html" style="color:#D4AF37;">Free Page</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="https://mylegacycontinues.com/index.html#products" class="btn btn-gold" style="padding: 0.5rem 1.2rem; font-size: 0.7rem;">START YOUR LEGACY</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="sq-hero">
+    <div class="sq-medallion">
+      <img src="logo.png" alt="My Legacy Continues">
+    </div>
+    <div class="sq-eyebrow">Creator Legacy Profile</div>
+    <h1 class="sq-name">STEPHANIE QUINTANA</h1>
+    <div class="sq-subtitle">Creator &middot; Central Coast &middot; 805</div>
+    <p class="sq-tagline">A permanent home for the work. Built on the My Legacy Continues network &mdash; one-time, forever hosted, no subscription.</p>
+  </section>
+
+  <!-- LINKS STACK -->
+  <div class="sq-links">
+    <a href="https://www.instagram.com/stephanieequintana" target="_blank" rel="noopener" class="sq-link-btn">Follow The Journey &mdash; Instagram</a>
+    <a href="rescue-registry.html" class="sq-link-btn">Rescue Infrastructure &mdash; Underdog Heroes</a>
+    <a href="index.html" class="sq-link-btn">Start Your Legacy</a>
+  </div>
+
+  <!-- CONTENT VAULT — HONEST PLACEHOLDER -->
+  <section class="sq-vault">
+    <div class="sq-vault-eyebrow">Content Vault</div>
+    <h3>Opening Soon</h3>
+    <p>Permanent highlights, stories, and archives are being curated for this profile. Once live, everything Stephanie creates will have a permanent home here &mdash; independent of any platform.</p>
+  </section>
+
+  <!-- PERMANENT BADGE -->
+  <section class="sq-permanent">
+    <img src="logo.png" alt="My Legacy Continues" class="sq-permanent-logo">
+    <p>This profile is part of the My Legacy Continues network. Creator profiles start at $79, one-time &mdash; no subscriptions, hosted forever.</p>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+
+      <div class="footer-contact">Contact: contact@mylegacycontinues.com | (805) 863-3794 | Santa Maria, CA</div>
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="heritage-book.html">Heritage</a></li>
+        <li><a href="rescue-registry.html">Rescue Registry</a></li>
+        <li><a href="active-transports.html">Transport</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="legal/privacy.html">Privacy</a></li>
+        <li><a href="legal/terms-of-service.html">Terms</a></li>
+      </ul>
+      <p class="footer-copy">&copy; 2026 My Legacy Continues. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile nav toggle
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    if (navToggle) {
+      navToggle.addEventListener('click', () => navLinks.classList.toggle('active'));
+      navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => navLinks.classList.remove('active'));
+      });
+    }
+  </script>
+
+</body>
+</html>
