@@ -71,7 +71,7 @@
 
     .contact-card {
       background:#232323;
-      border: 2px solid #C0392B;
+      border: 2px solid #8B0000;
       
       padding: 2rem;
       text-align: center;
@@ -101,7 +101,7 @@
 
     .form-section {
       background:#232323;
-      border: 2px solid #C0392B;
+      border: 2px solid #8B0000;
       
       padding: 2.5rem;
       margin: 2rem 0;
@@ -153,7 +153,7 @@
     }
 
     .submit-btn {
-      background: #C0392B;
+      background: linear-gradient(135deg, #8B0000, #4A0000);
       color: #F5F5F5;
       padding: 1rem 2.5rem;
       border: none;
@@ -167,7 +167,7 @@
     }
 
     .submit-btn:hover {
-      background: #722F37;
+      background: linear-gradient(135deg, #6B0000, #3A0000);
       transform: translateY(-2px);
     }
 
@@ -346,7 +346,7 @@ document.querySelectorAll('form').forEach(form => {
 
     requiredFields.forEach(field => {
       if (!field.value.trim()) {
-        field.style.borderColor = '#C0392B';
+        field.style.borderColor = '#8B0000';
         isValid = false;
       }
     });
