@@ -9,7 +9,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;900&family=Cormorant+Garamond:ital,wght@1,400;1,500&family=Outfit:wght@300;400;500;600;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;900&family=Cormorant+Garamond:ital,wght@1,400;1,500&family=Oswald:wght@700&family=Outfit:wght@300;400;500;600;700&display=swap">
 
   <link rel="stylesheet" href="style.css">
 
@@ -652,6 +652,80 @@
       .uh-help-grid { grid-template-columns: 1fr; }
       .uh-hero { padding: 110px 20px 80px; }
     }
+
+    /* ========= NEW SECTIONS (intake CTA, press bar, founder IG) ========= */
+    .uh-founder-ig {
+      margin-top: 1.5rem;
+      text-align: center;
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      color: var(--chrome);
+      letter-spacing: 0.02em;
+    }
+    .uh-founder-ig a {
+      color: var(--uh-gold);
+      font-weight: 700;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .uh-founder-ig a:hover { color: var(--uh-red); }
+    .uh-founder-ig .uh-ig-count {
+      color: var(--uh-blue);
+      font-weight: 400;
+    }
+
+    .uh-intake-cta {
+      padding: clamp(64px, 8vw, 90px) 24px;
+      background: var(--uh-charcoal);
+      text-align: center;
+    }
+    .uh-intake-title {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
+      color: var(--uh-gold);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+    .uh-intake-sub {
+      font-family: var(--font-emotion);
+      font-style: italic;
+      font-size: 1.15rem;
+      color: var(--chrome);
+      margin: 0 auto 28px;
+      max-width: 640px;
+      line-height: 1.55;
+    }
+
+    .uh-press {
+      padding: clamp(48px, 6vw, 72px) 24px;
+      background: var(--uh-charcoal);
+      text-align: center;
+    }
+    .uh-press-label {
+      font-family: var(--font-body);
+      font-size: 11px;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: var(--uh-blue);
+      margin-bottom: 20px;
+      font-weight: 500;
+    }
+    .uh-press-names {
+      font-family: 'Oswald', 'Cinzel', sans-serif;
+      font-size: clamp(1rem, 2.2vw, 1.4rem);
+      letter-spacing: 0.2em;
+      color: var(--uh-gold);
+      font-weight: 700;
+      text-transform: uppercase;
+      line-height: 1.4;
+    }
+    .uh-press-dot {
+      color: var(--uh-gold);
+      margin: 0 12px;
+      opacity: 0.6;
+    }
   </style>
 
   <!-- Google Analytics 4 -->
@@ -735,6 +809,7 @@
           <p>Her work has been featured in Newsweek and Yahoo News, and a community of more than 45,000 supporters follows every pull, every foster, every adoption. Real responsible rescue is slower, harder, less glamorous &mdash; and it is how she has spent the last five years.</p>
         </div>
         <blockquote class="uh-founder-quote">&ldquo;The harsh reality is we may never break the cycle of cruelty, but we can raise awareness and make an impact.&rdquo;</blockquote>
+        <p class="uh-founder-ig">Follow the rescue &rarr; <a href="https://www.instagram.com/underdogheroes_/" target="_blank" rel="noopener">@underdogheroes_</a><span class="uh-ig-count"> &middot; 45K on Instagram</span></p>
       </div>
     </div>
   </section>
@@ -896,6 +971,17 @@
     </div>
   </section>
 
+  <!-- SUBMIT A DOG CTA -->
+  <section class="uh-intake-cta">
+    <div class="uh-container">
+      <h2 class="uh-intake-title">Know A Dog That Needs Help?</h2>
+      <p class="uh-intake-sub">Submit an intake form. We'll review and respond within 48 hours.</p>
+      <a href="https://mylegacycontinues.com/rescue-intake.html" class="uh-btn">Submit a Dog for Rescue &rarr;</a>
+    </div>
+  </section>
+
+  <hr class="pinstripe">
+
   <!-- HOW TO HELP -->
   <section class="uh-section">
     <div class="uh-container">
@@ -927,6 +1013,18 @@
       </div>
     </div>
   </section>
+
+  <hr class="pinstripe">
+
+  <!-- FEATURED IN -->
+  <section class="uh-press">
+    <div class="uh-container">
+      <div class="uh-press-label">Featured In</div>
+      <div class="uh-press-names">NEWSWEEK<span class="uh-press-dot"> &middot; </span>YAHOO NEWS<span class="uh-press-dot"> &middot; </span>SCRIPPS NEWS</div>
+    </div>
+  </section>
+
+  <hr class="pinstripe">
 
   <!-- QR + MLC -->
   <section class="uh-qr">
