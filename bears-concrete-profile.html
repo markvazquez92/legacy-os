@@ -729,6 +729,69 @@
       .bc-custom-grid { grid-template-columns: 1fr; }
       .bc-about-logo-wrap { width: 100%; max-width: 280px; height: auto; aspect-ratio: 1; }
     }
+    /* ===== CONNECTED HUB ===== */
+    .lr-connected{
+      background:var(--bg-card);
+      border-bottom:1px solid rgba(224,224,224,0.15);
+      padding:34px 24px;
+    }
+    .lr-connected-inner{ max-width:860px; margin:0 auto; }
+    .lr-conn-label{
+      font-family:'Oswald',sans-serif;
+      font-size:11px;
+      letter-spacing:0.22em;
+      text-transform:uppercase;
+      color:var(--silver);
+      margin-bottom:18px;
+    }
+    .lr-conn-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:14px;
+    }
+    @media(max-width:640px){ .lr-conn-grid{ grid-template-columns:1fr; } }
+    .lr-conn-card{
+      background:var(--bg);
+      border:3px solid var(--silver);
+      box-shadow:inset 1px 1px 3px rgba(255,255,255,0.6);
+      padding:20px;
+      display:block;
+      text-decoration:none;
+      color:var(--silver);
+      transition:border-color 0.2s, box-shadow 0.2s;
+      position:relative;
+    }
+    .lr-conn-card:hover{
+      border-color:var(--orange);
+      box-shadow:
+        inset 1px 1px 3px rgba(255,255,255,0.6),
+        0 0 26px -6px var(--orange-glow);
+    }
+    .lr-conn-type{
+      font-family:'Oswald',sans-serif;
+      font-size:10px;
+      letter-spacing:0.18em;
+      text-transform:uppercase;
+      color:var(--orange);
+      margin-bottom:8px;
+    }
+    .lr-conn-name{
+      font-family:'Oswald',sans-serif;
+      font-weight:700;
+      font-size:18px;
+      letter-spacing:0.08em;
+      text-transform:uppercase;
+      color:var(--silver);
+      margin-bottom:4px;
+    }
+    .lr-conn-sub{ font-size:12px; color:var(--silver-soft); }
+    .lr-conn-arrow{
+      position:absolute;
+      top:20px;
+      right:22px;
+      color:var(--silver);
+      font-size:18px;
+    }
   </style>
 
   <!-- Google Analytics 4 -->
@@ -800,6 +863,33 @@
     <div class="bc-scroll">
       Scroll
       <span class="bc-scroll-arrow"></span>
+    </div>
+  </section>
+
+  <!-- ===== CONNECTED HUB ===== -->
+  <section class="lr-connected">
+    <div class="lr-connected-inner">
+      <div class="lr-conn-label">The Network &mdash; Connected Profiles</div>
+      <div class="lr-conn-grid">
+        <a class="lr-conn-card" href="vazquez-profile.html">
+          <div class="lr-conn-type">Founder</div>
+          <div class="lr-conn-name">Mark &lsquo;Bear&rsquo; V&aacute;zquez</div>
+          <div class="lr-conn-sub">Owner &amp; Operator</div>
+          <div class="lr-conn-arrow">&rarr;</div>
+        </a>
+        <a class="lr-conn-card" href="butters-profile.html">
+          <div class="lr-conn-type">Companion</div>
+          <div class="lr-conn-name">Butters</div>
+          <div class="lr-conn-sub">Shop Cat</div>
+          <div class="lr-conn-arrow">&rarr;</div>
+        </a>
+        <a class="lr-conn-card" href="index.html">
+          <div class="lr-conn-type">Legacy Platform</div>
+          <div class="lr-conn-name">My Legacy Continues</div>
+          <div class="lr-conn-sub">The Network</div>
+          <div class="lr-conn-arrow">&rarr;</div>
+        </a>
+      </div>
     </div>
   </section>
 
