@@ -95,7 +95,19 @@
       "Bash(grep -nE \"text-shadow: 0 1px 6px rgba\\\\\\\\\\(0,0,0,0\\\\\\\\.7\\\\\\\\\\)|text-shadow: 0 2px 12px rgba\\\\\\\\\\(0,0,0,0\\\\\\\\.8\\\\\\\\\\)|text-shadow: 0 2px 8px rgba\\\\\\\\\\(0,0,0,0\\\\\\\\.7\\\\\\\\\\)\" shoshi-gamliel-profile.html)",
       "Bash(python _apply_rescue_registry.py)",
       "Bash(git mv *)",
-      "Bash(python _move1_joseph.py)"
+      "Bash(python _move1_joseph.py)",
+      "Bash(python _apply_transport.py)",
+      "Bash(awk '/<ul class=\"nav-links\"/,/<\\\\/ul>/' stephanie-quintana-profile.html)",
+      "Bash(grep -on \"written it down[^<]\\\\{0,30\\\\}\\\\|my family[^<]\\\\{0,30\\\\}\\\\|I built this[^<]\\\\{0,30\\\\}\" about.html)",
+      "Bash(grep -oE \"written it down[^<]*</strong>[^<]{0,5}\" about.html)",
+      "Bash(grep -oE \"my family[^<]*</strong>[^<]{0,5}\" about.html)",
+      "Bash(grep -oE \"sell, trade[^<]*</strong>[^.]{0,100}\" privacy.html)",
+      "Bash(grep -oE \"Only you\\\\. Forever[^<]*</strong>[^.]{0,50}\" privacy.html)",
+      "Bash(grep -oE \"2026 My Legacy[^<]{0,30}\" privacy.html)",
+      "Bash(grep -oE \"preserve your story[^<]*</strong>[^<]{0,20}\" thank-you.html)",
+      "Bash(grep -oE \"isn.{1,3}t static\" thank-you.html)",
+      "Bash(python _phase1_sweep.py)",
+      "Bash(python _extract_memorial_images.py)"
     ]
   }
 }
