@@ -428,33 +428,6 @@
       font-style: italic;
     }
 
-    /* ============ MUSIC ============ */
-    .bc-music-wrap {
-      max-width: 720px;
-      margin: 0 auto;
-    }
-    .bc-music-frame {
-      border: 1px solid var(--orange);
-      padding: 0;
-      background: #000;
-      box-shadow: 0 0 40px -10px var(--orange-glow);
-    }
-    .bc-music-frame iframe {
-      width: 100%;
-      height: 450px;
-      display: block;
-      border: 0;
-      background: #000;
-    }
-    .bc-music-caption {
-      text-align: center;
-      margin-top: 22px;
-      font-family: var(--font-body);
-      font-style: italic;
-      color: var(--silver);
-      font-size: 1rem;
-    }
-
     /* ============ BUSINESS CARD ============ */
     .bc-card-body {
       max-width: 760px;
@@ -490,42 +463,6 @@
       margin-bottom: 28px;
       text-transform: uppercase;
     }
-
-    /* ============ CUSTOMIZE LEGACY ============ */
-    .bc-custom-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
-      margin-bottom: 44px;
-    }
-    .bc-custom-card {
-      background: #000;
-      border: 1px solid var(--orange);
-      padding: 30px 24px;
-      display: flex;
-      flex-direction: column;
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
-    }
-    .bc-custom-card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 16px 36px -14px var(--orange-glow);
-    }
-    .bc-custom-card h3 {
-      font-family: var(--font-heading);
-      font-weight: 700;
-      font-size: 1.05rem;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--orange);
-      margin-bottom: 14px;
-    }
-    .bc-custom-card p {
-      color: var(--silver);
-      font-size: 0.95rem;
-      line-height: 1.65;
-      flex: 1;
-    }
-    .bc-custom-cta { text-align: center; }
 
     /* ============ BUTTONS ============ */
     .bc-btn {
@@ -716,7 +653,6 @@
       .bc-videos { grid-template-columns: 1fr; }
       .bc-photo-grid { grid-template-columns: 1fr 1fr; }
       .bc-ba-pair { grid-template-columns: 1fr; gap: 16px; }
-      .bc-custom-grid { grid-template-columns: 1fr 1fr; }
       .bc-contact-grid { grid-template-columns: 1fr; }
       .bc-footer-inner { grid-template-columns: 1fr; justify-items: center; text-align: center; gap: 26px; }
       .bc-footer-left, .bc-footer-right { justify-self: center; text-align: center; }
@@ -726,8 +662,10 @@
     @media (max-width: 540px) {
       .bc-hero { padding: 110px 20px 80px; }
       .bc-photo-grid { grid-template-columns: 1fr; }
-      .bc-custom-grid { grid-template-columns: 1fr; }
       .bc-about-logo-wrap { width: 100%; max-width: 280px; height: auto; aspect-ratio: 1; }
+    }
+    @media(max-width:768px){
+      .bc-signature-grid{ grid-template-columns:1fr !important; }
     }
     /* ===== CONNECTED HUB ===== */
     .lr-connected{
@@ -1020,23 +958,32 @@
 
   <hr class="pinstripe">
 
-  <!-- SECTION 5 — MUSIC -->
+  <!-- SECTION 5 — THE SIGNATURE -->
   <section class="bc-section dark">
-    <div class="bc-container">
-      <div class="bc-section-eyebrow">The Soundtrack</div>
-      <h2 class="bc-section-title">Bear&rsquo;s Playlist</h2>
-      <div class="bc-section-sub">This is the music that drives the work. Pull up a chair.</div>
+    <div class="bc-container fade-up">
+      <div class="bc-section-eyebrow">The Signature</div>
+      <h2 class="bc-section-title">Bear's Track. Bear's Work.</h2>
+      <div class="bc-section-sub">One song that drives the job. One video that shows the craft.</div>
 
-      <div class="bc-music-wrap fade-up">
-        <div class="bc-music-frame">
-          <iframe allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write"
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-top:40px;" class="bc-signature-grid">
+
+        <div class="bc-signature-track">
+          <!-- APPLE MUSIC SINGLE TRACK EMBED PLACEHOLDER — Bear will swap iframe src after push -->
+          <iframe allow="autoplay *; encrypted-media *;"
                   frameborder="0"
-                  height="450"
-                  sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation"
-                  src="https://embed.music.apple.com/us/playlist/my-legacy-continues/pl.u-55D6XV5c8WBg0d"
-                  title="Bear's Playlist on Apple Music"></iframe>
+                  height="175"
+                  style="width:100%; overflow:hidden; border:3px solid var(--silver); background:var(--bg-card);"
+                  sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation-by-user-activation"
+                  src="https://embed.music.apple.com/us/album/placeholder"></iframe>
         </div>
-        <p class="bc-music-caption">Bear&rsquo;s personal playlist &mdash; always playing on the job site.</p>
+
+        <div class="bc-signature-video">
+          <!-- YOUTUBE EMBED PLACEHOLDER — Bear will swap iframe src after push -->
+          <div style="position:relative; padding-bottom:56.25%; height:0; border:3px solid var(--silver); background:var(--bg-card);">
+            <iframe style="position:absolute; top:0; left:0; width:100%; height:100%;" src="about:blank" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
@@ -1067,40 +1014,6 @@
       <div class="bc-ig-wrap fade-up">
         <div class="bc-ig-handle">@bearsconcretepumping</div>
         <a href="https://instagram.com/bearsconcretepumping" target="_blank" rel="noopener" class="bc-btn">Follow on Instagram</a>
-      </div>
-    </div>
-  </section>
-
-  <hr class="pinstripe">
-
-  <!-- SECTION 8 — CUSTOMIZE LEGACY -->
-  <section class="bc-section dark">
-    <div class="bc-container">
-      <div class="bc-section-eyebrow">Make It Yours</div>
-      <h2 class="bc-section-title">Your Legacy Your Way</h2>
-      <div class="bc-section-sub">This page belongs to you. Add your music. Your photos. Your videos. Your story &mdash; the way you want it told.</div>
-
-      <div class="bc-custom-grid fade-up">
-        <div class="bc-custom-card">
-          <h3>Add Your Playlist</h3>
-          <p>Apple Music, Spotify, SoundCloud &mdash; whatever plays on the job. Embedded right on your page for every visitor to hear.</p>
-        </div>
-        <div class="bc-custom-card">
-          <h3>Photo Gallery</h3>
-          <p>Upload your work, your family, your history. Every image captioned, credited, and preserved forever.</p>
-        </div>
-        <div class="bc-custom-card">
-          <h3>Your Life Trailer</h3>
-          <p>A 60-second cinematic video of who you are, what you built, why it matters. Produced and embedded on your profile.</p>
-        </div>
-        <div class="bc-custom-card">
-          <h3>Tribute Wall</h3>
-          <p>Let your customers, your family, your crew leave messages that stay forever. A living wall of the people who know you.</p>
-        </div>
-      </div>
-
-      <div class="bc-custom-cta">
-        <a href="contact.html" class="bc-btn">Customize Your Page</a>
       </div>
     </div>
   </section>
