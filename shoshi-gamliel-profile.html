@@ -100,9 +100,12 @@
       padding: 140px 24px 90px;
       text-align: center;
       overflow: hidden;
-      background:
-        radial-gradient(ellipse at 50% 30%, rgba(245,197,24,0.09) 0%, transparent 60%),
-        linear-gradient(160deg, #0A0A0A 0%, #1A1A1A 55%, #0A0A0A 100%);
+      background-image:
+        linear-gradient(180deg, rgba(10,10,10,0.65) 0%, rgba(10,10,10,0.75) 50%, rgba(10,10,10,0.95) 100%),
+        url('images/shoshi-hero-bg.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
     }
     .uh-hero::before {
       content: "";
@@ -120,6 +123,7 @@
       font-weight: 600;
       margin-bottom: 28px;
       text-transform: uppercase;
+      text-shadow: 0 1px 6px rgba(0,0,0,0.7);
     }
     .uh-hero h1 {
       font-family: var(--font-heading);
@@ -130,7 +134,7 @@
       letter-spacing: 0.02em;
       margin: 0 auto 28px;
       max-width: 880px;
-      text-shadow: 0 2px 18px rgba(0,0,0,0.55);
+      text-shadow: 0 2px 12px rgba(0,0,0,0.8);
     }
     .uh-hero-sub {
       font-family: var(--font-emotion);
@@ -139,6 +143,7 @@
       font-size: clamp(1.05rem, 2vw, 1.35rem);
       color: var(--uh-blue);
       letter-spacing: 0.01em;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.7);
     }
     .uh-scroll {
       position: absolute;
@@ -229,11 +234,25 @@
     }
 
     .uh-hero-logo {
-      width: 130px;
-      height: auto;
+      width: 180px;
+      height: 180px;
       margin: 0 auto 28px;
       display: block;
-      filter: drop-shadow(0 0 20px rgba(245, 197, 24, 0.25)) drop-shadow(0 0 40px rgba(245, 197, 24, 0.15));
+      border-radius: 50%;
+      border: 3px solid var(--uh-gold);
+      padding: 8px;
+      background: rgba(10,10,10,0.6);
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      object-fit: contain;
+      filter: drop-shadow(0 0 24px rgba(245,197,24,0.35)) drop-shadow(0 0 48px rgba(245,197,24,0.18));
+    }
+    @media (max-width: 640px) {
+      .uh-hero-logo {
+        width: 140px;
+        height: 140px;
+        padding: 6px;
+      }
     }
     .uh-founder-name {
       font-family: var(--font-heading);
@@ -888,22 +907,22 @@
         <div class="uh-help-card fade-up">
           <h3>Adopt</h3>
           <p>Open your home to a dog the system gave up on. Our team matches you for life.</p>
-          <a href="https://underdogheroes.org/applytoadopt" class="uh-btn full">Apply to Adopt</a>
+          <a href="https://www.underdogheroes.org/applytoadopt" class="uh-btn full">Apply to Adopt</a>
         </div>
         <div class="uh-help-card fade-up">
           <h3>Foster</h3>
           <p>Open your home temporarily. Every foster frees space for the next dog on the list.</p>
-          <a href="https://underdogheroes.org/foster-application" class="uh-btn full">Become a Foster</a>
+          <a href="https://www.underdogheroes.org/foster-application" class="uh-btn full">Become a Foster</a>
         </div>
         <div class="uh-help-card fade-up">
           <h3>Volunteer</h3>
           <p>Drive transports. Run intake. Help at events. We need hands as much as we need homes.</p>
-          <a href="https://underdogheroes.org/volunteer" class="uh-btn full">Volunteer</a>
+          <a href="https://www.underdogheroes.org/volunteer" class="uh-btn full">Volunteer</a>
         </div>
         <div class="uh-help-card fade-up">
           <h3>Donate</h3>
           <p>Medical bills, food, transport &mdash; every dollar keeps a dog off the red list.</p>
-          <a href="https://underdogheroes.org/donate" class="uh-btn full">Donate</a>
+          <a href="https://www.underdogheroes.org/donate-today" class="uh-btn full">Donate</a>
         </div>
       </div>
     </div>
@@ -913,7 +932,7 @@
   <section class="uh-qr">
     <h2>Scan To Visit Our Rescue</h2>
     <div class="uh-qr-frame">
-      <img src="https://api.qrserver.com/v1/create-qr-code/?data=https%3A%2F%2Funderdogheroes.org&size=240x240&margin=12&format=png" alt="QR code linking to underdogheroes.org" width="240" height="240">
+      <img src="https://api.qrserver.com/v1/create-qr-code/?data=https%3A%2F%2Fwww.underdogheroes.org&size=240x240&margin=12&format=png" alt="QR code linking to underdogheroes.org" width="240" height="240">
     </div>
     <div class="uh-qr-caption">This profile is permanently hosted by My Legacy Continues.</div>
     <div class="uh-qr-mlc">
@@ -931,10 +950,10 @@
       <div class="uh-footer-center">
         <div class="ein">EIN 84-4188282</div>
         <ul class="uh-footer-links">
-          <li><a href="https://underdogheroes.org/applytoadopt">Adopt</a></li>
-          <li><a href="https://underdogheroes.org/foster-application">Foster</a></li>
-          <li><a href="https://underdogheroes.org/volunteer">Volunteer</a></li>
-          <li><a href="https://underdogheroes.org/donate">Donate</a></li>
+          <li><a href="https://www.underdogheroes.org/applytoadopt">Adopt</a></li>
+          <li><a href="https://www.underdogheroes.org/foster-application">Foster</a></li>
+          <li><a href="https://www.underdogheroes.org/volunteer">Volunteer</a></li>
+          <li><a href="https://www.underdogheroes.org/donate-today">Donate</a></li>
         </ul>
         <div class="uh-footer-email"><a href="mailto:info@underdogheroes.org">info@underdogheroes.org</a></div>
       </div>
