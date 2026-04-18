@@ -360,7 +360,21 @@
     .transport-table thead th { font-size: 0.65rem; padding: 8px 6px; }
     .transport-table tbody td { padding: 8px 6px; }
   }
-</style>
+
+  /* iOS Safari zoom fix — force 16px min on form inputs */
+  input,
+  textarea,
+  select {
+    font-size: 16px !important;
+  }
+  @media (max-width: 768px) {
+    input,
+    textarea,
+    select {
+      font-size: 16px !important;
+    }
+  }
+  </style>
   <!-- Google Analytics 4 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XQJ8KPVZX9"></script>
   <script>
@@ -402,7 +416,7 @@
       <li><a href="business-profile.html">Business</a></li>
       <li><a href="network.html">Network</a></li>
       <li><a href="rescue-registry.html">Rescue</a></li>
-      <li><a href="active-transports.html" style="color:#20b2aa;">Transport</a></li>
+      <li><a href="active-transports.html" style="color:#D4AF37;">Transport</a></li>
       <li><a href="merch-legacy.html">Merch</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="free-profile.html" style="color:#D4AF37;">Free Page</a></li>
@@ -421,8 +435,9 @@
     <h1>Moving Rescues Together</h1>
     <p style="color: #F5F5F5;">My Legacy Continues runs a volunteer transport network for rescue dogs across California. Any rescue can post dogs needing transport. Volunteers drive individual legs — you do not need to drive the whole route. This network exists because rescue, return, and euthanasia is a coordination problem. We're building the infrastructure to fix it.</p>
     <div class="hero-buttons">
-      <a href="#volunteer" class="btn btn-gold" style="background: linear-gradient(180deg, #20b2aa 0%, #14746f 100%); border-color: #20b2aa; color: #0f1a2e;">Become a Transport Partner</a>
+      <a href="#volunteer" class="btn btn-gold" style="background: linear-gradient(180deg, #20b2aa 0%, #14746f 100%); border-color: #20b2aa; color: #0f1a2e;">I Can Drive</a>
       <a href="#transports" class="btn btn-outline-gold" style="border-color: #b8962e; color: #b8962e;">View Active Routes</a>
+      <a href="mailto:contact@mylegacycontinues.com?subject=TRANSPORT REQUEST" class="btn btn-gold" style="background: linear-gradient(180deg, #20b2aa 0%, #14746f 100%); border-color: #20b2aa; color: #0f1a2e;">Request a Transport</a>
     </div>
   </div>
 
@@ -457,110 +472,10 @@
 
   <!-- ACTIVE TRANSPORTS TABLE -->
   <div class="transport-table-wrap" id="transports" style="max-width: 960px;">
-    <div style="text-align:center; margin-bottom: 1.5rem;">
-      <div class="live-indicator">Live — Updates Refresh Hourly</div>
-      <h2 style="color: #b8962e; font-family:'Oswald',sans-serif; font-weight:700; font-size: clamp(1.5rem, 3vw, 2rem); letter-spacing: 0.06em; text-transform: uppercase;">Current Routes</h2>
-      <p style="color: rgba(245,245,245,0.78); font-family:'Outfit',sans-serif; font-size: 0.95rem; margin-top: 0.5rem;">Transport legs available now across California. Pick one near you and contact us to claim it.</p>
-    </div>
-
-    <!-- Route 1 -->
-    <div class="route-card">
-      <div class="route-header">
-        <div class="route-path">Santa Maria <span class="arrow">&rarr;</span> Riverside</div>
-        <span class="status-pill pill-inprogress">In Progress</span>
-      </div>
-      <div class="route-meta">
-        <div>
-          <span class="label">Distance</span>
-          <span class="value"><strong>218 mi</strong> · 4 legs planned</span>
-        </div>
-        <div>
-          <span class="label">Rescue Partners</span>
-          <span class="value"><strong>Underdog Heroes</strong> + <strong>Bears Concrete</strong></span>
-        </div>
-        <div>
-          <span class="label">Next Leg</span>
-          <span class="value"><strong>Santa Clarita &rarr; San Bernardino</strong> · unclaimed</span>
-        </div>
-      </div>
-      <div class="dogs-list">
-        <strong>Dogs</strong>Rocco (pit mix, 3yr), Luna (terrier, 5yr), Baby (lab, 9mo)
-      </div>
-    </div>
-
-    <!-- Route 2 -->
-    <div class="route-card">
-      <div class="route-header">
-        <div class="route-path">Bakersfield <span class="arrow">&rarr;</span> San Jose</div>
-        <span class="status-pill pill-scheduled">Scheduled · Sat</span>
-      </div>
-      <div class="route-meta">
-        <div>
-          <span class="label">Distance</span>
-          <span class="value"><strong>247 mi</strong> · 3 legs planned</span>
-        </div>
-        <div>
-          <span class="label">Rescue Partners</span>
-          <span class="value"><strong>Underdog Heroes</strong> + <strong>Central Valley Rescue Relay</strong></span>
-        </div>
-        <div>
-          <span class="label">Volunteers Needed</span>
-          <span class="value"><strong>2 of 3 legs</strong> still open</span>
-        </div>
-      </div>
-      <div class="dogs-list">
-        <strong>Dogs</strong>King (XL bully, 4yr), Princess (poodle mix, 7yr)
-      </div>
-    </div>
-
-    <!-- Route 3 -->
-    <div class="route-card">
-      <div class="route-header">
-        <div class="route-path">Fresno <span class="arrow">&rarr;</span> Los Angeles</div>
-        <span class="status-pill pill-urgent">Urgent · This Week</span>
-      </div>
-      <div class="route-meta">
-        <div>
-          <span class="label">Distance</span>
-          <span class="value"><strong>222 mi</strong> · 3 legs planned</span>
-        </div>
-        <div>
-          <span class="label">Rescue Partners</span>
-          <span class="value"><strong>Underdog Heroes</strong> + foster placement pending</span>
-        </div>
-        <div>
-          <span class="label">Volunteers Needed</span>
-          <span class="value"><strong>All 3 legs</strong> open</span>
-        </div>
-      </div>
-      <div class="dogs-list">
-        <strong>Dogs</strong>Scout (pit mix, 2yr) — shelter deadline approaching
-      </div>
-    </div>
-
-    <!-- Route 4 -->
-    <div class="route-card">
-      <div class="route-header">
-        <div class="route-path">San Diego <span class="arrow">&rarr;</span> Santa Maria</div>
-        <span class="status-pill pill-completed">Completed · Last Week</span>
-      </div>
-      <div class="route-meta">
-        <div>
-          <span class="label">Distance</span>
-          <span class="value"><strong>291 mi</strong> · 4 legs completed</span>
-        </div>
-        <div>
-          <span class="label">Rescue Partners</span>
-          <span class="value"><strong>Underdog Heroes</strong> + <strong>Coastal K9 Rescue</strong></span>
-        </div>
-        <div>
-          <span class="label">Outcome</span>
-          <span class="value">Safely delivered · <strong>now fostering</strong></span>
-        </div>
-      </div>
-      <div class="dogs-list">
-        <strong>Dogs</strong>Milo (shepherd mix, 6yr), Daisy (chihuahua, 4yr)
-      </div>
+    <div style="text-align: center; padding: 3rem 2rem; border: 1px solid rgba(212,175,55,0.2); background: rgba(26,26,26,0.6);">
+      <p style="font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 0.85rem; letter-spacing: 0.3em; color: #D4AF37; text-transform: uppercase; margin-bottom: 1rem;">Network Status</p>
+      <h3 style="font-family: 'Oswald', sans-serif; color: #E0E0E0; font-size: 1.5rem; margin-bottom: 1rem;">Standby — Ready for Next Dispatch</h3>
+      <p style="color: #E0E0E0; opacity: 0.75; max-width: 540px; margin: 0 auto 1.5rem;">No active transports in progress. The network is ready. Rescues: request a transport below to activate a relay.</p>
     </div>
 
     <div style="margin-top: 1.5rem; padding: 1.5rem; background: rgba(32,178,170,0.08); border-left: 3px solid var(--teal);">
@@ -639,51 +554,10 @@
 
   <div class="t-divider"></div>
 
-  <!-- COMPLETED TRANSPORTS — WALL OF FAME -->
+  <!-- COMPLETED TRANSPORTS -->
   <div class="fame" style="max-width: 900px;">
-    <h2 style="color: #b8962e;">Completed Transports — Wall of Fame</h2>
-
-    <div class="route-card" style="margin-bottom: 1rem;">
-      <div class="route-header">
-        <div class="route-path">San Diego <span class="arrow">&rarr;</span> Santa Maria</div>
-        <span class="status-pill pill-completed">Completed</span>
-      </div>
-      <div class="route-meta">
-        <div>
-          <span class="label">Volunteers</span>
-          <span class="value"><strong>4 drivers</strong> across 4 legs</span>
-        </div>
-        <div>
-          <span class="label">Duration</span>
-          <span class="value">8 hours door-to-door</span>
-        </div>
-        <div>
-          <span class="label">Outcome</span>
-          <span class="value">Milo &amp; Daisy placed in foster</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="route-card" style="margin-bottom: 1rem;">
-      <div class="route-header">
-        <div class="route-path">Lancaster <span class="arrow">&rarr;</span> Oakland</div>
-        <span class="status-pill pill-completed">Completed</span>
-      </div>
-      <div class="route-meta">
-        <div>
-          <span class="label">Volunteers</span>
-          <span class="value"><strong>5 drivers</strong> across 5 legs</span>
-        </div>
-        <div>
-          <span class="label">Duration</span>
-          <span class="value">12 hours door-to-door</span>
-        </div>
-        <div>
-          <span class="label">Outcome</span>
-          <span class="value">Blue (XL bully) adopted same week</span>
-        </div>
-      </div>
-    </div>
+    <h2 style="color: #b8962e;">Completed Transports</h2>
+    <p style="color: rgba(245,245,245,0.78); font-family:'Outfit',sans-serif; text-align: center; max-width: 560px; margin: 0 auto 2rem;">When volunteers complete transport legs, the route and outcome will be recorded here permanently. The wall starts the first time.</p>
 
     <div style="text-align:center; margin-top: 2rem;">
       <a href="#volunteer" class="btn btn-gold" style="background: linear-gradient(180deg, #20b2aa 0%, #14746f 100%); border-color: #20b2aa; color: #0f1a2e;">Join the Network</a>
@@ -695,8 +569,8 @@
     <div style="max-width: 900px; margin: 0 auto;">
       <h3 style="font-family: 'Montserrat', sans-serif; color: #722F37; margin-bottom: 1.5rem;">Our Rescue Network</h3>
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem;">
-        <div><a href="rescue-registry.html" style="display: inline-block; padding: 12px 20px; background: #C0392B; color: #F5F5F5; text-decoration: none; font-weight: 600; border-radius: 4px; transition: all 0.2s;">Rescue Registry</a></div>
-        <div><a href="rescue-intake.html" style="display: inline-block; padding: 12px 20px; background: #C0392B; color: #F5F5F5; text-decoration: none; font-weight: 600; border-radius: 4px; transition: all 0.2s;">Rescue Intake</a></div>
+        <div><a href="rescue-registry.html" style="display: inline-block; padding: 12px 20px; background: linear-gradient(180deg, #8B0000 0%, #4A0000 100%); color: #F5F5F5; text-decoration: none; font-weight: 600; border-radius: 4px; transition: all 0.2s;">Rescue Registry</a></div>
+        <div><a href="rescue-intake.html" style="display: inline-block; padding: 12px 20px; background: linear-gradient(180deg, #8B0000 0%, #4A0000 100%); color: #F5F5F5; text-decoration: none; font-weight: 600; border-radius: 4px; transition: all 0.2s;">Rescue Intake</a></div>
         <div><a href="pet-tag.html" style="display: inline-block; padding: 12px 20px; background: #E0E0E0; color:#F5F5F5; text-decoration: none; font-weight: 600; border-radius: 4px; transition: all 0.2s;">Pet Legacy Tags</a></div>
       </div>
     </div>
