@@ -128,7 +128,21 @@ img { max-width: 100%; height: auto; display: block; }
 .form-submit-row { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; margin-top: 8px; }
 .form-submit-note { font-size: 0.78rem; color: var(--text-dim); line-height: 1.6; }
 
-</style>
+
+    /* iOS Safari zoom fix — force 16px min on form inputs */
+    input,
+    textarea,
+    select {
+      font-size: 16px !important;
+    }
+    @media (max-width: 768px) {
+      input,
+      textarea,
+      select {
+        font-size: 16px !important;
+      }
+    }
+  </style>
 
 <link rel="alternate" hreflang="es" href="https://mylegacycontinues.com/es/heritage-book.html">
   <!-- Google Analytics 4 -->
