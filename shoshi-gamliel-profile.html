@@ -15,26 +15,32 @@
 
   <style>
     :root {
-      /* Candy Paint palette */
-      --charcoal: #1A1A1A;
-      --charcoal-2: #232323;
-      --brandywine: #8B0000;
-      --brandywine-deep: #4A0000;
+      /* Underdog Heroes palette */
+      --uh-black: #0A0A0A;
+      --uh-gold: #F5C518;
+      --uh-blue: #A8D8E8;
+      --uh-red: #C8102E;
+      --uh-charcoal: #2A2A2A;
+
+      /* Remapped base vars (so .uh-* classes inherit UH palette) */
+      --charcoal: #0A0A0A;
+      --charcoal-2: #2A2A2A;
+      --brandywine: #C8102E;
+      --brandywine-deep: #9A0B21;
       --chrome: #E0E0E0;
       --chrome-dim: #9a9a9a;
       --soft-white: #F5F5F5;
 
-      /* Legacy var names mapped to Candy Paint */
-      --bg-cream: #1A1A1A;         /* was cream → charcoal (body / surfaces) */
-      --gold: #D4AF37;
-      --gold-soft: rgba(212,175,55,0.28);
-      --amber: #8B0000;            /* was amber → brandywine (CTAs) */
-      --amber-deep: #4A0000;       /* was amber-deep → brandywine-deep */
-      --ink: #E0E0E0;              /* was dark ink → chrome (primary text) */
-      --ink-soft: #9a9a9a;         /* was ink-soft → chrome-dim */
-      --card-white: #232323;       /* was white cards → charcoal-2 */
-      --charcoal-bg: #1A1A1A;
-      --hero-overlay: rgba(10,5,0,0.55);
+      --bg-cream: #0A0A0A;
+      --gold: #F5C518;
+      --gold-soft: rgba(245,197,24,0.28);
+      --amber: #C8102E;
+      --amber-deep: #9A0B21;
+      --ink: #E0E0E0;
+      --ink-soft: #9a9a9a;
+      --card-white: #2A2A2A;
+      --charcoal-bg: #0A0A0A;
+      --hero-overlay: rgba(0,0,0,0.55);
 
       --font-heading: 'Cinzel', Georgia, 'Times New Roman', serif;
       --font-body: 'Outfit', system-ui, -apple-system, sans-serif;
@@ -95,7 +101,7 @@
       text-align: center;
       overflow: hidden;
       background:
-        radial-gradient(ellipse at 50% 30%, rgba(212,175,55,0.09) 0%, transparent 60%),
+        radial-gradient(ellipse at 50% 30%, rgba(245,197,24,0.09) 0%, transparent 60%),
         linear-gradient(160deg, #0A0A0A 0%, #1A1A1A 55%, #0A0A0A 100%);
     }
     .uh-hero::before {
@@ -131,7 +137,7 @@
       font-style: italic;
       font-weight: 400;
       font-size: clamp(1.05rem, 2vw, 1.35rem);
-      color: var(--soft-white);
+      color: var(--uh-blue);
       letter-spacing: 0.01em;
     }
     .uh-scroll {
@@ -180,7 +186,7 @@
       font-family: var(--font-heading);
       font-weight: 700;
       font-size: clamp(1.8rem, 3.5vw, 2.6rem);
-      color: var(--ink);
+      color: var(--uh-gold);
       letter-spacing: 0.08em;
       text-align: center;
       margin-bottom: 10px;
@@ -243,7 +249,7 @@
       font-size: 0.92rem;
       letter-spacing: 0.25em;
       text-transform: uppercase;
-      color: var(--ink-soft);
+      color: var(--uh-blue);
       font-weight: 500;
       margin-bottom: 28px;
     }
@@ -287,7 +293,7 @@
       font-family: var(--font-heading);
       font-weight: 700;
       font-size: 1.3rem;
-      color: var(--gold);
+      color: var(--uh-blue);
       letter-spacing: 0.28em;
       text-transform: uppercase;
       margin-bottom: 16px;
@@ -342,7 +348,7 @@
       font-family: var(--font-heading);
       font-weight: 700;
       font-size: clamp(1.5rem, 2.4vw, 2rem);
-      color: #FFFFFF;
+      color: var(--uh-gold);
       letter-spacing: 0.1em;
       text-transform: uppercase;
       z-index: 2;
@@ -361,7 +367,7 @@
       font-size: 0.78rem;
       letter-spacing: 0.18em;
       text-transform: uppercase;
-      color: var(--ink-soft);
+      color: var(--chrome);
       margin-bottom: 14px;
     }
     .uh-dog-story {
@@ -384,11 +390,11 @@
       text-transform: uppercase;
       padding: 8px 18px;
       border-radius: 999px;
-      background: var(--gold);
-      color: var(--ink);
+      background: var(--uh-gold);
+      color: var(--uh-black);
     }
-    .uh-status.needs { background: var(--amber); color: #FFFFFF; }
-    .uh-status.foster { background: var(--charcoal); color: var(--gold); border: 1px solid var(--gold); }
+    .uh-status.needs { background: var(--uh-red); color: #FFFFFF; }
+    .uh-status.foster { background: var(--uh-blue); color: var(--uh-black); }
 
     /* ========= STATS BAR ========= */
     .uh-stats {
@@ -430,7 +436,7 @@
       font-size: 0.85rem;
       letter-spacing: 0.32em;
       text-transform: uppercase;
-      color: var(--chrome);
+      color: var(--uh-blue);
     }
 
     /* ========= HOW TO HELP ========= */
@@ -456,7 +462,7 @@
       font-family: var(--font-heading);
       font-weight: 700;
       font-size: 1.2rem;
-      color: var(--gold);
+      color: var(--uh-blue);
       letter-spacing: 0.3em;
       text-transform: uppercase;
       margin-bottom: 14px;
@@ -470,23 +476,23 @@
     }
     .uh-btn {
       display: inline-block;
-      background: linear-gradient(180deg, var(--brandywine) 0%, var(--brandywine-deep) 100%);
-      color: var(--chrome);
+      background: var(--uh-black);
+      color: var(--uh-gold);
       font-family: var(--font-body);
       font-weight: 600;
       font-size: 0.82rem;
       letter-spacing: 0.22em;
       text-transform: uppercase;
       padding: 14px 24px;
-      border: 2px solid var(--chrome);
+      border: 2px solid var(--uh-gold);
       border-radius: 0;
       cursor: pointer;
-      transition: background 0.25s, transform 0.25s;
+      transition: background 0.25s, color 0.25s, transform 0.25s;
       text-align: center;
     }
     .uh-btn:hover {
-      background: linear-gradient(180deg, var(--brandywine-deep) 0%, #2a0000 100%);
-      color: var(--soft-white);
+      background: var(--uh-gold);
+      color: var(--uh-black);
       transform: translateY(-1px);
     }
     .uh-btn.full { display: block; width: 100%; }
@@ -570,7 +576,7 @@
       font-family: var(--font-heading);
       font-size: 0.82rem;
       letter-spacing: 0.3em;
-      color: var(--ink);
+      color: var(--uh-blue);
       margin-bottom: 14px;
     }
     .uh-footer-links {
@@ -583,13 +589,13 @@
       flex-wrap: wrap;
     }
     .uh-footer-links a {
-      color: var(--ink);
+      color: var(--uh-gold);
       font-weight: 500;
       font-size: 0.84rem;
       letter-spacing: 0.12em;
       text-transform: uppercase;
     }
-    .uh-footer-links a:hover { color: var(--gold); }
+    .uh-footer-links a:hover { color: var(--uh-red); }
     .uh-footer-email a { color: var(--gold); font-size: 0.9rem; }
     .uh-footer-bottom {
       max-width: 1180px;
