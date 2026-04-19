@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<!-- MLC FONT TEST PAGE - DELETE AFTER ROLLOUT DECISION -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Font Test — MLC</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" href="logo.png" type="image/png">
+
+  <!-- Load the full self-hosted font stack -->
+  <link rel="stylesheet" href="/fonts/fonts.css">
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --charcoal:        #1A1A1A;
+      --charcoal-2:      #232323;
+      --charcoal-3:      #2a2a2a;
+      --brandywine:      #8B0000;
+      --brandywine-deep: #4A0000;
+      --chrome:          #E0E0E0;
+      --gold:            #D4AF37;
+      --gold-warm:       #D4A017;
+      --cream:           #F5F5F5;
+      --dim:             #bababa;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--charcoal);
+      color: var(--cream);
+      font-family: 'Fraunces', Georgia, serif;
+      line-height: 1.6;
+      min-height: 100vh;
+      padding: 40px 24px 120px;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    /* ===== TOP BANNER ===== */
+    .banner {
+      background: linear-gradient(135deg, var(--brandywine), var(--brandywine-deep));
+      border: 1px solid var(--gold);
+      padding: 20px 28px;
+      margin-bottom: 48px;
+      text-align: center;
+    }
+    .banner-label {
+      font-family: 'Big Shoulders', sans-serif;
+      font-weight: 700;
+      font-size: 0.85rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 6px;
+    }
+    .banner-title {
+      font-family: 'Big Shoulders', sans-serif;
+      font-weight: 800;
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
+      letter-spacing: 0.02em;
+      color: var(--cream);
+    }
+    .banner-note {
+      font-family: 'Fraunces', serif;
+      font-style: italic;
+      color: var(--chrome);
+      margin-top: 10px;
+      font-size: 0.95rem;
+    }
+
+    /* ===== FONT BLOCK ===== */
+    .font-block {
+      background: var(--charcoal-2);
+      border-left: 4px solid var(--gold);
+      padding: 36px 40px;
+      margin-bottom: 32px;
+    }
+    .font-label {
+      font-family: 'Big Shoulders', sans-serif;
+      font-weight: 700;
+      font-size: 0.75rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 4px;
+    }
+    .font-role {
+      font-family: 'Fraunces', serif;
+      font-style: italic;
+      color: var(--dim);
+      font-size: 0.9rem;
+      margin-bottom: 20px;
+    }
+
+    /* ===== SEKUYA — HERO/DISPLAY ===== */
+    .sekuya-display {
+      font-family: 'Sekuya', serif;
+      font-size: clamp(3rem, 9vw, 6rem);
+      line-height: 1;
+      color: var(--cream);
+      margin-bottom: 12px;
+      letter-spacing: 0.02em;
+    }
+    .sekuya-sub {
+      font-family: 'Sekuya', serif;
+      font-size: clamp(1.5rem, 4vw, 2.2rem);
+      color: var(--gold);
+    }
+
+    /* ===== BIG SHOULDERS — HEADLINES ===== */
+    .bs-h1 {
+      font-family: 'Big Shoulders', sans-serif;
+      font-weight: 800;
+      font-size: clamp(2.4rem, 6vw, 3.6rem);
+      line-height: 1.05;
+      letter-spacing: 0.01em;
+      color: var(--cream);
+      margin-bottom: 10px;
+      text-transform: uppercase;
+    }
+    .bs-h2 {
+      font-family: 'Big Shoulders', sans-serif;
+      font-weight: 600;
+      font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+      color: var(--chrome);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    .bs-eyebrow {
+      font-family: 'Big Shoulders', sans-serif;
+      font-weight: 700;
+      font-size: 0.85rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    /* ===== FRAUNCES — BODY ===== */
+    .fraunces-body {
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: 1.1rem;
+      line-height: 1.7;
+      color: var(--chrome);
+      margin-bottom: 16px;
+    }
+    .fraunces-body strong {
+      color: var(--cream);
+    }
+
+    /* ===== CORMORANT ITALIC — EMOTION ===== */
+    .cormorant-quote {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 500;
+      font-size: clamp(1.4rem, 3vw, 1.9rem);
+      line-height: 1.5;
+      color: var(--gold);
+      padding-left: 24px;
+      border-left: 2px solid var(--gold);
+      margin: 20px 0;
+    }
+    .cormorant-attribution {
+      font-family: 'Big Shoulders', sans-serif;
+      font-size: 0.8rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--dim);
+      margin-top: 10px;
+    }
+
+    /* ===== FULL MOCK CARD ===== */
+    .mock-card {
+      background: linear-gradient(180deg, var(--charcoal-2), var(--charcoal));
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      padding: 48px 44px;
+      margin-top: 56px;
+      position: relative;
+      overflow: hidden;
+    }
+    .mock-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--brandywine), var(--gold), var(--brandywine));
+    }
+    .mock-eyebrow {
+      font-family: 'Big Shoulders', sans-serif;
+      font-weight: 700;
+      font-size: 0.8rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 16px;
+    }
+    .mock-title {
+      font-family: 'Sekuya', serif;
+      font-size: clamp(2.6rem, 7vw, 4.2rem);
+      line-height: 1;
+      color: var(--cream);
+      margin-bottom: 12px;
+    }
+    .mock-sub {
+      font-family: 'Big Shoulders', sans-serif;
+      font-weight: 600;
+      font-size: clamp(1.1rem, 2.2vw, 1.4rem);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--chrome);
+      margin-bottom: 28px;
+    }
+    .mock-body {
+      font-family: 'Fraunces', serif;
+      font-size: 1.05rem;
+      line-height: 1.75;
+      color: var(--chrome);
+      margin-bottom: 24px;
+    }
+    .mock-quote {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: clamp(1.3rem, 2.6vw, 1.7rem);
+      line-height: 1.4;
+      color: var(--gold);
+      padding: 18px 0 18px 24px;
+      border-left: 2px solid var(--gold);
+      margin: 24px 0;
+    }
+    .mock-signature {
+      font-family: 'Big Shoulders', sans-serif;
+      font-weight: 700;
+      font-size: 0.9rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--dim);
+      margin-top: 32px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(212, 175, 55, 0.2);
+    }
+
+    /* ===== FOOTER NOTE ===== */
+    .footer-note {
+      text-align: center;
+      margin-top: 64px;
+      padding: 24px;
+      font-family: 'Fraunces', serif;
+      font-style: italic;
+      color: var(--dim);
+      font-size: 0.9rem;
+    }
+
+    /* ===== SPACING HELPER ===== */
+    .spacer-sm { height: 16px; }
+    .spacer-md { height: 32px; }
+  </style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- BANNER -->
+  <div class="banner">
+    <div class="banner-label">MLC Font System — Live Test</div>
+    <div class="banner-title">The Candy Paint Stack</div>
+    <div class="banner-note">4 fonts, self-hosted from /fonts/fonts.css — this is what the rollout will look like</div>
+  </div>
+
+  <!-- SEKUYA BLOCK -->
+  <div class="font-block">
+    <div class="font-label">Font 01 — Sekuya</div>
+    <div class="font-role">Hero / Display — the signature move</div>
+    <div class="sekuya-display">My Legacy Continues</div>
+    <div class="sekuya-sub">Own Your Story. Forever.</div>
+  </div>
+
+  <!-- BIG SHOULDERS BLOCK -->
+  <div class="font-block">
+    <div class="font-label">Font 02 — Big Shoulders</div>
+    <div class="font-role">Headlines, eyebrows, navigation — industrial, confident</div>
+    <div class="bs-eyebrow">The Network</div>
+    <div class="spacer-sm"></div>
+    <div class="bs-h1">Built in Santa Maria</div>
+    <div class="bs-h2">For families that refuse to be forgotten</div>
+  </div>
+
+  <!-- FRAUNCES BLOCK -->
+  <div class="font-block">
+    <div class="font-label">Font 03 — Fraunces</div>
+    <div class="font-role">Body text — for Heritage Book storytelling + profile narratives</div>
+    <p class="fraunces-body">
+      Grandma Barbara drove a 1966 Impala. Cream paint, chrome everywhere, a V8 that started every Sunday like clockwork. My uncle Anthony stood next to it in his first communion suit — tie crooked, hair slicked — and somebody in the family took a picture. That photo is the reason <strong>My Legacy Continues</strong> exists.
+    </p>
+    <p class="fraunces-body">
+      We're not a memorial service. We're not a subscription. We're the permanent record of the people you came from — and the ones you're building for.
+    </p>
+  </div>
+
+  <!-- CORMORANT ITALIC BLOCK -->
+  <div class="font-block">
+    <div class="font-label">Font 04 — Cormorant Garamond Italic</div>
+    <div class="font-role">Pull quotes, memorial moments, emotional weight</div>
+    <div class="cormorant-quote">
+      "He didn't leave us with things. He left us with a way of showing up."
+    </div>
+    <div class="cormorant-attribution">— From Joseph Vázquez's Heritage Book</div>
+  </div>
+
+  <!-- FULL MOCK CARD — EVERYTHING WORKING TOGETHER -->
+  <div class="mock-card">
+    <div class="mock-eyebrow">Sample Heritage Profile</div>
+    <div class="mock-title">Anthony Raygoza Sr.</div>
+    <div class="mock-sub">1947 — 2024 · Santa Maria, CA</div>
+    <div class="mock-body">
+      Anthony worked with his hands his entire life. He raised four kids on a welder's wage and never missed a birthday. The neighborhood knew him by his truck — a 1978 Chevy he rebuilt twice and never let go. When his grandkids came, he taught them to shake hands, look people in the eye, and finish what they started.
+    </div>
+    <div class="mock-quote">
+      "He built our family the way he built everything else — steady, patient, and to last."
+    </div>
+    <div class="mock-body">
+      His cemetery plaque sits in Santa Maria Cemetery. Scan the QR code and his whole life opens up.
+    </div>
+    <div class="mock-signature">Permanent · No Subscriptions · Forever</div>
+  </div>
+
+  <!-- FOOTER NOTE -->
+  <div class="footer-note">
+    This is a test page. Delete or hide after rollout decision.<br>
+    Fonts loading from <code>/fonts/fonts.css</code> — self-hosted, SIL OFL licensed.
+  </div>
+
+</div>
+
+</body>
+</html>
