@@ -5,6 +5,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>McNeal Construction &mdash; Nick McNeal | My Legacy Continues</title>
+  <meta property="og:type" content="profile">
+  <meta property="og:url" content="https://mylegacycontinues.com/mcneal-construction-profile.html">
+  <meta property="og:title" content="McNeal Construction — Generational 805 Trade | My Legacy Continues">
+  <meta property="og:description" content="Central Coast contractor. Generational trade. Real work, preserved permanently. One scan — full credibility.">
+  <meta property="og:image" content="https://mylegacycontinues.com/images/nick-hero.jpg">
+  <meta property="og:site_name" content="My Legacy Continues">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://mylegacycontinues.com/mcneal-construction-profile.html">
+  <meta name="twitter:title" content="McNeal Construction — Generational 805 Trade | My Legacy Continues">
+  <meta name="twitter:description" content="Central Coast contractor. Generational trade. Real work, preserved permanently.">
+  <meta name="twitter:image" content="https://mylegacycontinues.com/images/nick-hero.jpg">
   <meta name="description" content="McNeal Construction — Nick McNeal, founder. Santa Maria, California. Licensed CA #1071977. Custom home builds, remodels, foundations, concrete and design-build on the Central Coast.">
 
   <link rel="icon" href="logo.png" type="image/png">
@@ -690,23 +701,4 @@
     // Mobile nav toggle
     const navToggle = document.getElementById('navToggle');
     const navLinks = document.getElementById('navLinks');
-    if (navToggle) {
-      navToggle.addEventListener('click', () => navLinks.classList.toggle('active'));
-      navLinks.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => navLinks.classList.remove('active'));
-      });
-    }
-
-    // Fade-in on scroll
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
-  </script>
-</body>
-</html>
+    if 
