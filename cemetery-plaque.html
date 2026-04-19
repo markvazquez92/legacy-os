@@ -9,7 +9,7 @@
 <meta name="description" content="A stainless steel QR plaque for any headstone. Scan to hear their songs, see photos, leave tributes. One-time $129. Hosted forever. My Legacy Continues.">
 <link rel="icon" href="logo.png" type="image/png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Lato:wght@400&family=Spline+Sans:wght@700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Cormorant+Garamond:wght@400;600&family=Oswald:wght@700&family=Lato:wght@400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="cosmic-overlay.css">
 <style>
@@ -37,9 +37,9 @@
   --bg-nav:       #F5F5F5;
   --forest:       #2A2A2A;
   --forest-dark:  #232323;
-  --im-fell:      'Montserrat', sans-serif;
-  --cinzel:       'Montserrat', sans-serif;
-  --serif:        'Montserrat', sans-serif;
+  --im-fell:      'Cormorant Garamond', serif;
+  --cinzel:       'Cinzel', serif;
+  --serif:        'Cormorant Garamond', serif;
   --sans:         'Lato', sans-serif;
   --lora:         'Lato', sans-serif;
   --text:#F5F5F5;
@@ -62,19 +62,19 @@ img { max-width: 100%; height: auto; display: block; }
 .btn { display: inline-block; font-family: var(--cinzel); font-size: 0.72rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; padding: 16px 34px; min-height: 44px; border: none; cursor: pointer; transition: all 0.22s ease; text-decoration: none; white-space: nowrap;  }
 .btn-primary { background: linear-gradient(180deg, #8B0000 0%, #4A0000 100%); color: #F5F5F5; box-shadow: 0 4px 20px rgba(212,160,23,0.2); transition: all 0.3s ease; }
 .btn-primary:hover { background: linear-gradient(180deg, #6B0000 0%, #2A0000 100%); transform: translateY(-1px); box-shadow: 0 6px 20px rgba(139, 0, 0, 0.3); }
-.btn-outline { background: transparent; color: #722F37; border: 1.5px solid #2A2A2A; }
-.btn-outline:hover { background: #2A2A2A; color: #722F37; }
+.btn-outline { background: transparent; color: #8B0000; border: 1.5px solid #2A2A2A; }
+.btn-outline:hover { background: #2A2A2A; color: #8B0000; }
 
 /* PAGE HERO */
 .page-hero { background: #2A2A2A; padding: 130px 48px 72px; }
 .page-hero-inner { max-width: 860px; margin: 0 auto; }
 .back-link { font-family: var(--cinzel); font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(212,160,23,0.8); display: inline-flex; align-items: center; gap: 8px; margin-bottom: 28px; transition: color 0.2s; }
-.back-link:hover { color: #722F37; }
+.back-link:hover { color: #8B0000; }
 .back-link::before { content: '←'; font-size: 0.9rem; }
-.page-eyebrow { font-family: var(--cinzel); font-size: 0.56rem; letter-spacing: 0.32em; text-transform: uppercase; color: #722F37; display: block; margin-bottom: 18px; }
+.page-eyebrow { font-family: var(--cinzel); font-size: 0.56rem; letter-spacing: 0.32em; text-transform: uppercase; color: #8B0000; display: block; margin-bottom: 18px; }
 .page-title { font-family: var(--cinzel); font-size: clamp(2rem, 4.5vw, 3.2rem); font-weight: 700; color: #F5F5F5; line-height: 1.1; margin-bottom: 18px; }
 .page-sub { font-size: 1rem; color: rgba(240,235,224,0.8); line-height: 1.85; max-width: 600px; margin-bottom: 32px; }
-.price-badge { display: inline-block; font-family: var(--cinzel); font-size: 2.2rem; font-weight: 700; color: #722F37; margin-bottom: 32px; }
+.price-badge { display: inline-block; font-family: var(--cinzel); font-size: 2.2rem; font-weight: 700; color: #8B0000; margin-bottom: 32px; }
 .price-note { font-size: 0.8rem; color: rgba(240,235,224,0.6); margin-top: -20px; margin-bottom: 28px; }
 @media (max-width: 600px) { .page-hero { padding: 116px 20px 56px; } }
 
@@ -83,11 +83,11 @@ img { max-width: 100%; height: auto; display: block; }
 /* WHAT YOU GET */
 .what-section { padding: 72px 48px; background:#1A1A1A; }
 .what-inner { max-width: 860px; margin: 0 auto; }
-.what-section h2 { font-family: var(--cinzel); font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 700; color: #722F37; margin-bottom: 32px; }
+.what-section h2 { font-family: var(--cinzel); font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 700; color: #8B0000; margin-bottom: 32px; }
 .includes-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin-bottom: 40px; }
 .include-item { background: rgba(192,57,43,0.08); border: 1px solid rgba(212,160,23,0.2);  padding: 22px 20px; box-shadow: 0 2px 12px rgba(212,160,23,0.05); }
 .include-item-icon { font-size: 1.4rem; margin-bottom: 10px; }
-.include-item-title { font-family: var(--cinzel); font-size: 0.72rem; font-weight: 700; color: #722F37; margin-bottom: 6px; }
+.include-item-title { font-family: var(--cinzel); font-size: 0.72rem; font-weight: 700; color: #8B0000; margin-bottom: 6px; }
 .include-item-desc { font-size: 0.8rem; color:#F5F5F5; line-height: 1.7; }
 @media (max-width: 600px) { .what-section { padding: 52px 20px; } }
 
@@ -97,10 +97,10 @@ img { max-width: 100%; height: auto; display: block; }
 .order-intro { background: #2A2A2A;  padding: 32px 36px; margin-bottom: 40px; }
 .order-intro p { font-size: 0.9rem; color: rgba(240,235,224,0.85); line-height: 1.85; margin-bottom: 16px; }
 .order-intro p:last-child { margin-bottom: 0; }
-.order-intro a { color: #722F37; }
+.order-intro a { color: #8B0000; }
 .order-intro strong { color: #F5F5F5; }
 
-.form-section-title { font-family: var(--cinzel); font-size: 0.6rem; letter-spacing: 0.24em; text-transform: uppercase; color: #722F37; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 1px solid rgba(212,160,23,0.25); }
+.form-section-title { font-family: var(--cinzel); font-size: 0.6rem; letter-spacing: 0.24em; text-transform: uppercase; color: #8B0000; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 1px solid rgba(212,160,23,0.25); }
 .intake-form { display: flex; flex-direction: column; gap: 18px; }
 .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
 @media (max-width: 600px) { .form-row { grid-template-columns: 1fr; } .order-section { padding: 0 20px 64px; } }
@@ -118,7 +118,7 @@ img { max-width: 100%; height: auto; display: block; }
 .form-group select { background:#1A1A1A; border: 1px solid rgba(212,160,23,0.2);  color:#F5F5F5; font-family: var(--lora); font-size: 0.9rem; padding: 13px 16px; min-height: 44px; transition: border-color 0.2s; width: 100%; }
 .form-group input:focus,
 .form-group textarea:focus,
-.form-group select:focus { outline: none; border-color: #722F37; box-shadow: 0 0 0 3px rgba(212,160,23,0.1); }
+.form-group select:focus { outline: none; border-color: #8B0000; box-shadow: 0 0 0 3px rgba(212,160,23,0.1); }
 .form-group input::placeholder,
 .form-group textarea::placeholder { color:#F5F5F5; }
 .form-group textarea { min-height: 110px; resize: vertical; }
@@ -128,7 +128,7 @@ img { max-width: 100%; height: auto; display: block; }
 .form-submit-note { font-size: 0.78rem; color:#F5F5F5; line-height: 1.6; }
 .stripe-cta { text-align: center; background: rgba(192,57,43,0.08); border: 1px solid rgba(212,160,23,0.2);  padding: 28px 32px; margin-bottom: 32px; box-shadow: 0 2px 12px rgba(212,160,23,0.05); }
 .stripe-cta p { font-size: 0.88rem; color:#F5F5F5; margin-bottom: 18px; line-height: 1.7; }
-.stripe-cta .price-label { font-family: var(--cinzel); font-size: 1.6rem; font-weight: 700; color: #722F37; display: block; margin-bottom: 18px; }
+.stripe-cta .price-label { font-family: var(--cinzel); font-size: 1.6rem; font-weight: 700; color: #8B0000; display: block; margin-bottom: 18px; }
 
 </style>
 
@@ -186,7 +186,7 @@ img { max-width: 100%; height: auto; display: block; }
       </button>
     </div>
   <div class="lang-switcher" style="position: absolute; right: 3rem;">
-    <a href="/es/cemetery-plaque.html" style="color: #F5F5F5; text-decoration: none; font-size: 0.9rem; display: inline-block; padding: 8px 12px; border: 1px solid rgba(224,224,224,0.3); border-radius: 4px; transition: all 0.2s;"><strong>English</strong> | <span style="color: #722F37;">Español</span></a>
+    <a href="/es/cemetery-plaque.html" style="color: #F5F5F5; text-decoration: none; font-size: 0.9rem; display: inline-block; padding: 8px 12px; border: 1px solid rgba(224,224,224,0.3); border-radius: 4px; transition: all 0.2s;"><strong>English</strong> | <span style="color: #8B0000;">Español</span></a>
   </div>
 </nav>
 
@@ -260,16 +260,16 @@ img { max-width: 100%; height: auto; display: block; }
 <!-- SEE MORE REAL EXAMPLES CAROUSEL -->
 <section style="background-color:#1A1A1A; padding: 72px 48px;">
   <div style="max-width: 1000px; margin: 0 auto;">
-    <h2 style="font-family:var(--cinzel);font-size:clamp(1.4rem,3vw,2rem);font-weight:700;color:#722F37;margin-bottom:8px;text-align:center;">More Memorial Examples</h2>
+    <h2 style="font-family:var(--cinzel);font-size:clamp(1.4rem,3vw,2rem);font-weight:700;color:#8B0000;margin-bottom:8px;text-align:center;">More Memorial Examples</h2>
     <p style="font-size:0.95rem;color:var(--body);line-height:1.85;text-align:center;margin-bottom:36px;max-width:700px;margin-left:auto;margin-right:auto;">Real families preserving memories. Here's what cemetery memorials look like on our platform.</p>
 
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
       <!-- Example 1: Anthony Raygoza -->
       <div style="background:#232323;  overflow: hidden; box-shadow: 0 4px 16px rgba(42, 42, 42, 0.08);">
-        <div style="background:#2A2A2A; height: 180px; display: flex; flex-direction:column; align-items: center; justify-content: center; gap:6px;"><span style="color:#E0E0E0;font-family:'Montserrat',sans-serif;font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;">CEMETERY MEMORIAL</span><span style="color:#F5F5F5;font-family:'Montserrat',sans-serif;font-size:1rem;font-weight:700;">Anthony Raygoza Sr.</span></div>
+        <div style="background:#2A2A2A; height: 180px; display: flex; flex-direction:column; align-items: center; justify-content: center; gap:6px;"><span style="color:#E0E0E0;font-family:'Cinzel',serif;font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;">CEMETERY MEMORIAL</span><span style="color:#F5F5F5;font-family:'Cinzel',serif;font-size:1rem;font-weight:700;">Anthony Raygoza Sr.</span></div>
         <div style="padding: 24px;">
           <div style="font-family:var(--cinzel);font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:#E0E0E0;font-weight:600;margin-bottom:8px;">Cemetery Memorial Plaque</div>
-          <h3 style="font-family:var(--cinzel);font-size:1.2rem;color:#722F37;margin-bottom:12px;">Anthony Raygoza Sr.</h3>
+          <h3 style="font-family:var(--cinzel);font-size:1.2rem;color:#8B0000;margin-bottom:12px;">Anthony Raygoza Sr.</h3>
           <p style="font-size:0.9rem;color:#F5F5F5;font-style:italic;margin-bottom:16px;line-height:1.6;">"Visitors can scan and see his full story. A memorial that really matters."</p>
           <a href="anthony-raygoza-memorial.html" style="display:inline-block;padding:10px 14px;background: linear-gradient(135deg, #8B0000, #4A0000);color:#F5F5F5;text-decoration:none;font-size:0.85rem;font-weight:600;transition:all 0.2s;">View Memorial</a>
         </div>
@@ -277,10 +277,10 @@ img { max-width: 100%; height: auto; display: block; }
 
       <!-- Example 2: Deborah's Family History -->
       <div style="background:#232323;  overflow: hidden; box-shadow: 0 4px 16px rgba(42, 42, 42, 0.08);">
-        <div style="background:#2A2A2A; height: 180px; display: flex; flex-direction:column; align-items: center; justify-content: center; gap:6px;"><span style="color:#E0E0E0;font-family:'Montserrat',sans-serif;font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;">HERITAGE PROFILE</span><span style="color:#F5F5F5;font-family:'Montserrat',sans-serif;font-size:1rem;font-weight:700;">Family Stories + Plaque</span></div>
+        <div style="background:#2A2A2A; height: 180px; display: flex; flex-direction:column; align-items: center; justify-content: center; gap:6px;"><span style="color:#E0E0E0;font-family:'Cinzel',serif;font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;">HERITAGE PROFILE</span><span style="color:#F5F5F5;font-family:'Cinzel',serif;font-size:1rem;font-weight:700;">Family Stories + Plaque</span></div>
         <div style="padding: 24px;">
           <div style="font-family:var(--cinzel);font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:#E0E0E0;font-weight:600;margin-bottom:8px;">Heritage + Memorial</div>
-          <h3 style="font-family:var(--cinzel);font-size:1.2rem;color:#722F37;margin-bottom:12px;">Family Stories + Plaque</h3>
+          <h3 style="font-family:var(--cinzel);font-size:1.2rem;color:#8B0000;margin-bottom:12px;">Family Stories + Plaque</h3>
           <p style="font-size:0.9rem;color:#F5F5F5;font-style:italic;margin-bottom:16px;line-height:1.6;">"Complete history book linked to cemetery memorial. Generation after generation."</p>
           <a href="deborah-mahony-profile.html" style="display:inline-block;padding:10px 14px;background: linear-gradient(135deg, #8B0000, #4A0000);color:#F5F5F5;text-decoration:none;font-size:0.85rem;font-weight:600;transition:all 0.2s;">View Example</a>
         </div>
@@ -288,10 +288,10 @@ img { max-width: 100%; height: auto; display: block; }
 
       <!-- Example 3: Memorial Template -->
       <div style="background:#232323;  overflow: hidden; box-shadow: 0 4px 16px rgba(42, 42, 42, 0.08);">
-        <div style="background:#2A2A2A; height: 180px; display: flex; flex-direction:column; align-items: center; justify-content: center; gap:6px;"><span style="color:#E0E0E0;font-family:'Montserrat',sans-serif;font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;">MEMORIAL PLAQUE</span><span style="color:#F5F5F5;font-family:'Montserrat',sans-serif;font-size:1rem;font-weight:700;">Create Your Own</span></div>
+        <div style="background:#2A2A2A; height: 180px; display: flex; flex-direction:column; align-items: center; justify-content: center; gap:6px;"><span style="color:#E0E0E0;font-family:'Cinzel',serif;font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;">MEMORIAL PLAQUE</span><span style="color:#F5F5F5;font-family:'Cinzel',serif;font-size:1rem;font-weight:700;">Create Your Own</span></div>
         <div style="padding: 24px;">
           <div style="font-family:var(--cinzel);font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:#E0E0E0;font-weight:600;margin-bottom:8px;">Cemetery Memorial Plaque</div>
-          <h3 style="font-family:var(--cinzel);font-size:1.2rem;color:#722F37;margin-bottom:12px;">Create Your Own</h3>
+          <h3 style="font-family:var(--cinzel);font-size:1.2rem;color:#8B0000;margin-bottom:12px;">Create Your Own</h3>
           <p style="font-size:0.9rem;color:#F5F5F5;font-style:italic;margin-bottom:16px;line-height:1.6;">"A permanent memorial that brings people together. A place where love doesn't end."</p>
           <a href="demo-profiles.html" style="display:inline-block;padding:10px 14px;background: linear-gradient(135deg, #8B0000, #4A0000);color:#F5F5F5;text-decoration:none;font-size:0.85rem;font-weight:600;transition:all 0.2s;margin-right:8px;">See More</a>
           <a href="vazquez-trailer.html" style="display:inline-block;padding:10px 14px;background:transparent;color:#8B0000;border:1px solid #8B0000;text-decoration:none;font-size:0.85rem;font-weight:600;transition:all 0.2s;">Watch Trailer</a>
@@ -304,52 +304,52 @@ img { max-width: 100%; height: auto; display: block; }
 <!-- FEATURES COMPARISON TABLE -->
 <section style="background-color:#1A1A1A; padding: 72px 48px;">
   <div style="max-width: 1000px; margin: 0 auto;">
-    <h2 style="font-family:var(--cinzel);font-size:clamp(1.4rem,3vw,2rem);font-weight:700;color:#722F37;margin-bottom:8px;text-align:center;">What's Included</h2>
+    <h2 style="font-family:var(--cinzel);font-size:clamp(1.4rem,3vw,2rem);font-weight:700;color:#8B0000;margin-bottom:8px;text-align:center;">What's Included</h2>
     <p style="font-size:0.95rem;color:var(--body);line-height:1.85;text-align:center;margin-bottom:36px;max-width:700px;margin-left:auto;margin-right:auto;">Everything your loved one deserves to be remembered forever.</p>
 
     <div style="overflow-x: auto;">
       <table style="width: 100%; border-collapse: collapse; background:#232323;  overflow: hidden; box-shadow: 0 4px 16px rgba(42, 42, 42, 0.08);">
         <thead>
-          <tr style="background: linear-gradient(135deg, #722F37 0%, #2A2A2A 100%); color: #F5F5F5;">
+          <tr style="background: linear-gradient(135deg, #8B0000 0%, #2A2A2A 100%); color: #F5F5F5;">
             <th style="padding: 16px; text-align: left; font-weight: 600; border-bottom: 2px solid #E0E0E0;">Feature</th>
             <th style="padding: 16px; text-align: center; font-weight: 600; border-bottom: 2px solid #E0E0E0;">Included</th>
           </tr>
         </thead>
         <tbody>
           <tr style="border-bottom: 1px solid rgba(42, 42, 42, 0.1);">
-            <td style="padding: 16px; color: #722F37; font-weight: 600;">Stainless Steel Plaque</td>
+            <td style="padding: 16px; color: #8B0000; font-weight: 600;">Stainless Steel Plaque</td>
             <td style="padding: 16px; text-align: center;"></td>
           </tr>
           <tr style="border-bottom: 1px solid rgba(42, 42, 42, 0.1);">
-            <td style="padding: 16px; color: #722F37; font-weight: 600;">QR Code (Links to Digital Memorial)</td>
+            <td style="padding: 16px; color: #8B0000; font-weight: 600;">QR Code (Links to Digital Memorial)</td>
             <td style="padding: 16px; text-align: center;"></td>
           </tr>
           <tr style="border-bottom: 1px solid rgba(42, 42, 42, 0.1);">
-            <td style="padding: 16px; color: #722F37; font-weight: 600;">Photo Gallery & Stories</td>
+            <td style="padding: 16px; color: #8B0000; font-weight: 600;">Photo Gallery & Stories</td>
             <td style="padding: 16px; text-align: center;"></td>
           </tr>
           <tr style="border-bottom: 1px solid rgba(42, 42, 42, 0.1);">
-            <td style="padding: 16px; color: #722F37; font-weight: 600;">Favorite Songs (Up to 5)</td>
+            <td style="padding: 16px; color: #8B0000; font-weight: 600;">Favorite Songs (Up to 5)</td>
             <td style="padding: 16px; text-align: center;"></td>
           </tr>
           <tr style="border-bottom: 1px solid rgba(42, 42, 42, 0.1);">
-            <td style="padding: 16px; color: #722F37; font-weight: 600;">Tribute Wall (Messages from Visitors)</td>
+            <td style="padding: 16px; color: #8B0000; font-weight: 600;">Tribute Wall (Messages from Visitors)</td>
             <td style="padding: 16px; text-align: center;"></td>
           </tr>
           <tr style="border-bottom: 1px solid rgba(42, 42, 42, 0.1);">
-            <td style="padding: 16px; color: #722F37; font-weight: 600;">Remembrance Mode (Birthday Alerts)</td>
+            <td style="padding: 16px; color: #8B0000; font-weight: 600;">Remembrance Mode (Birthday Alerts)</td>
             <td style="padding: 16px; text-align: center;"></td>
           </tr>
           <tr style="border-bottom: 1px solid rgba(42, 42, 42, 0.1);">
-            <td style="padding: 16px; color: #722F37; font-weight: 600;">English & Spanish Versions</td>
+            <td style="padding: 16px; color: #8B0000; font-weight: 600;">English & Spanish Versions</td>
             <td style="padding: 16px; text-align: center;"></td>
           </tr>
           <tr style="border-bottom: 1px solid rgba(42, 42, 42, 0.1);">
-            <td style="padding: 16px; color: #722F37; font-weight: 600;">Privacy Controls (Family-Only or Public)</td>
+            <td style="padding: 16px; color: #8B0000; font-weight: 600;">Privacy Controls (Family-Only or Public)</td>
             <td style="padding: 16px; text-align: center;"></td>
           </tr>
           <tr>
-            <td style="padding: 16px; color: #722F37; font-weight: 600;">Permanent Profile (Forever Hosted)</td>
+            <td style="padding: 16px; color: #8B0000; font-weight: 600;">Permanent Profile (Forever Hosted)</td>
             <td style="padding: 16px; text-align: center;"></td>
           </tr>
         </tbody>
@@ -363,8 +363,8 @@ img { max-width: 100%; height: auto; display: block; }
 <!-- DEMO SECTION -->
 <section style="padding: 72px 48px; background:#1A1A1A; text-align: center;">
   <div style="max-width: 860px; margin: 0 auto;">
-    <p style="font-family: 'Spline Sans', serif; font-style: italic; color: #722F37; font-size: 18px; margin-bottom: 16px;">See how the memorial plaque works</p>
-    <a href="https://mylegacycontinues.com/plaque-demo.html" style="display: inline-block; padding: 16px 34px; background: linear-gradient(135deg, #8B0000, #4A0000); color: #F5F5F5; font-weight: 600; text-decoration: none;  transition: background 0.3s; font-family: 'Montserrat', sans-serif; font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase;">View the Memorial Plaque Demo</a>
+    <p style="font-family: 'Spline Sans', serif; font-style: italic; color: #8B0000; font-size: 18px; margin-bottom: 16px;">See how the memorial plaque works</p>
+    <a href="https://mylegacycontinues.com/plaque-demo.html" style="display: inline-block; padding: 16px 34px; background: linear-gradient(135deg, #8B0000, #4A0000); color: #F5F5F5; font-weight: 600; text-decoration: none;  transition: background 0.3s; font-family: 'Cinzel', serif; font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase;">View the Memorial Plaque Demo</a>
   </div>
 </section>
 
@@ -548,7 +548,7 @@ img { max-width: 100%; height: auto; display: block; }
 </section>
 
 <div style="background: rgba(192,57,43,0.08); padding: 2rem 3rem; text-align: center;">
-  <p style="font-size: 0.95rem; color: #722F37; font-weight: 500;">One-time payment. No recurring fees. Your memories stay online forever.</p>
+  <p style="font-size: 0.95rem; color: #8B0000; font-weight: 500;">One-time payment. No recurring fees. Your memories stay online forever.</p>
 </div>
 
 <!-- YOUR LEGACY, YOUR CONTROL -->
@@ -556,15 +556,13 @@ img { max-width: 100%; height: auto; display: block; }
   <div class="section-inner text-center" style="max-width: 700px; margin: 0 auto;">
     <h2>Your Legacy, Your Control</h2>
     <p style="margin-top: 1.5rem;">Your profile never gets locked. Add photos, update the story, change contacts, add milestones — anytime. Email contact@mylegacycontinues.com and we make changes within 48 hours. No extra charge. Ever.</p>
-    <h3 style="margin-top: 2.5rem; color: #E0E0E0;">Family Portal — In Development. Your family's complete history in one place.</h3>
-    <p style="margin-top: 1rem;">Your own private dashboard. Log in, add photos, update your story, leave messages for future generations. No waiting on us. Launching 2026.</p>
   </div>
 </section>
 
 <!-- Related Products -->
 <section style="padding: 3rem 2rem; background: rgba(192,57,43,0.05); text-align: center;">
   <div style="max-width: 900px; margin: 0 auto;">
-    <h3 style="font-family: 'Montserrat', sans-serif; color: #722F37; margin-bottom: 1.5rem;">Preserve Complete Legacy</h3>
+    <h3 style="font-family: 'Cinzel', serif; color: #8B0000; margin-bottom: 1.5rem;">Preserve Complete Legacy</h3>
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem;">
       <div><a href="heritage-book.html" style="display: inline-block; padding: 12px 20px; background: linear-gradient(135deg, #8B0000, #4A0000); color: #F5F5F5; text-decoration: none; font-weight: 600; border-radius: 4px; transition: all 0.2s;">Heritage Book — $199</a></div>
       <div><a href="pet-tag.html" style="display: inline-block; padding: 12px 20px; background: linear-gradient(135deg, #8B0000, #4A0000); color: #F5F5F5; text-decoration: none; font-weight: 600; border-radius: 4px; transition: all 0.2s;">Pet Legacy Tags</a></div>
