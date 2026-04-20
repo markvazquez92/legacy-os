@@ -8,7 +8,9 @@
   <meta name="robots" content="noindex, nofollow">
   <link rel="icon" href="logo.png" type="image/png">
 
-  <!-- Load the full self-hosted font stack -->
+  <!-- Self-hosted font stack — preload hot fonts for FCP -->
+  <link rel="preload" href="/fonts/Inter-VariableFont_opsz,wght.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="/fonts/Fraunces-VariableFont_SOFT,WONK,opsz,wght.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="stylesheet" href="/fonts/fonts.css">
 
   <style>
@@ -32,7 +34,7 @@
     body {
       background: var(--charcoal);
       color: var(--cream);
-      font-family: 'Lato', Helvetica, sans-serif;
+      font-family: var(--font-body);
       line-height: 1.6;
       min-height: 100vh;
       padding: 40px 24px 120px;
@@ -52,7 +54,7 @@
       text-align: center;
     }
     .banner-label {
-      font-family: 'Big Shoulders', sans-serif;
+      font-family: var(--font-display);
       font-weight: 700;
       font-size: 0.85rem;
       letter-spacing: 0.25em;
@@ -61,14 +63,14 @@
       margin-bottom: 6px;
     }
     .banner-title {
-      font-family: 'Big Shoulders', sans-serif;
+      font-family: var(--font-display);
       font-weight: 800;
       font-size: clamp(1.8rem, 4vw, 2.5rem);
       letter-spacing: 0.02em;
       color: var(--cream);
     }
     .banner-note {
-      font-family: 'Lato', Helvetica, sans-serif;
+      font-family: var(--font-body);
       font-style: italic;
       color: var(--chrome);
       margin-top: 10px;
@@ -83,7 +85,7 @@
       margin-bottom: 32px;
     }
     .font-label {
-      font-family: 'Big Shoulders', sans-serif;
+      font-family: var(--font-display);
       font-weight: 700;
       font-size: 0.75rem;
       letter-spacing: 0.3em;
@@ -92,7 +94,7 @@
       margin-bottom: 4px;
     }
     .font-role {
-      font-family: 'Lato', Helvetica, sans-serif;
+      font-family: var(--font-body);
       font-style: italic;
       color: var(--dim);
       font-size: 0.9rem;
@@ -101,7 +103,7 @@
 
     /* ===== SEKUYA — HERO/DISPLAY ===== */
     .staatliches-display {
-      font-family: 'Staatliches', sans-serif;
+      font-family: var(--font-display);
       font-size: clamp(3rem, 9vw, 6rem);
       line-height: 1;
       color: var(--cream);
@@ -109,14 +111,14 @@
       letter-spacing: 0.02em;
     }
     .staatliches-sub {
-      font-family: 'Staatliches', sans-serif;
+      font-family: var(--font-display);
       font-size: clamp(1.5rem, 4vw, 2.2rem);
       color: var(--gold);
     }
 
     /* ===== BIG SHOULDERS — HEADLINES ===== */
     .bs-h1 {
-      font-family: 'Big Shoulders', sans-serif;
+      font-family: var(--font-display);
       font-weight: 800;
       font-size: clamp(2.4rem, 6vw, 3.6rem);
       line-height: 1.05;
@@ -126,7 +128,7 @@
       text-transform: uppercase;
     }
     .bs-h2 {
-      font-family: 'Big Shoulders', sans-serif;
+      font-family: var(--font-display);
       font-weight: 600;
       font-size: clamp(1.6rem, 3.5vw, 2.2rem);
       color: var(--chrome);
@@ -135,7 +137,7 @@
       margin-bottom: 10px;
     }
     .bs-eyebrow {
-      font-family: 'Big Shoulders', sans-serif;
+      font-family: var(--font-display);
       font-weight: 700;
       font-size: 0.85rem;
       letter-spacing: 0.28em;
@@ -145,7 +147,7 @@
 
     /* ===== FRAUNCES — BODY ===== */
     .fraunces-body {
-      font-family: 'Lato', Helvetica, sans-serif;
+      font-family: var(--font-body);
       font-size: 1.1rem;
       line-height: 1.7;
       color: var(--chrome);
@@ -157,7 +159,7 @@
 
     /* ===== CORMORANT ITALIC — EMOTION ===== */
     .cormorant-quote {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: var(--font-serif);
       font-style: italic;
       font-weight: 500;
       font-size: clamp(1.4rem, 3vw, 1.9rem);
@@ -168,7 +170,7 @@
       margin: 20px 0;
     }
     .cormorant-attribution {
-      font-family: 'Big Shoulders', sans-serif;
+      font-family: var(--font-display);
       font-size: 0.8rem;
       letter-spacing: 0.2em;
       text-transform: uppercase;
@@ -193,7 +195,7 @@
       background: linear-gradient(90deg, var(--brandywine), var(--gold), var(--brandywine));
     }
     .mock-eyebrow {
-      font-family: 'Big Shoulders', sans-serif;
+      font-family: var(--font-display);
       font-weight: 700;
       font-size: 0.8rem;
       letter-spacing: 0.3em;
@@ -202,14 +204,14 @@
       margin-bottom: 16px;
     }
     .mock-title {
-      font-family: 'Staatliches', sans-serif;
+      font-family: var(--font-display);
       font-size: clamp(2.6rem, 7vw, 4.2rem);
       line-height: 1;
       color: var(--cream);
       margin-bottom: 12px;
     }
     .mock-sub {
-      font-family: 'Big Shoulders', sans-serif;
+      font-family: var(--font-display);
       font-weight: 600;
       font-size: clamp(1.1rem, 2.2vw, 1.4rem);
       letter-spacing: 0.12em;
@@ -218,14 +220,14 @@
       margin-bottom: 28px;
     }
     .mock-body {
-      font-family: 'Lato', Helvetica, sans-serif;
+      font-family: var(--font-body);
       font-size: 1.05rem;
       line-height: 1.75;
       color: var(--chrome);
       margin-bottom: 24px;
     }
     .mock-quote {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: var(--font-serif);
       font-style: italic;
       font-size: clamp(1.3rem, 2.6vw, 1.7rem);
       line-height: 1.4;
@@ -235,7 +237,7 @@
       margin: 24px 0;
     }
     .mock-signature {
-      font-family: 'Big Shoulders', sans-serif;
+      font-family: var(--font-display);
       font-weight: 700;
       font-size: 0.9rem;
       letter-spacing: 0.22em;
@@ -251,7 +253,7 @@
       text-align: center;
       margin-top: 64px;
       padding: 24px;
-      font-family: 'Lato', Helvetica, sans-serif;
+      font-family: var(--font-body);
       font-style: italic;
       color: var(--dim);
       font-size: 0.9rem;
