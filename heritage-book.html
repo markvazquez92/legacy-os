@@ -21,8 +21,9 @@
 <meta name="twitter:description" content="Professional genealogy research + a custom written family narrative. Physical book shipped to your door. Permanent digital profile. $199 one-time. My Legacy Continues.">
 <meta name="twitter:image" content="https://mylegacycontinues.com/logo.png">
 <link rel="icon" href="logo.png" type="image/png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Lato:wght@400&family=Spline+Sans:wght@700&display=swap" rel="stylesheet">
+<link rel="preload" href="/fonts/Inter-VariableFont_opsz,wght.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="preload" href="/fonts/BigShoulders-VariableFont_opsz,wght.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="stylesheet" href="/fonts/fonts.css">
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="cosmic-overlay.css">
 <style>
@@ -50,11 +51,11 @@
   --bg-nav:       #F5F5F5;
   --forest:       #2A2A2A;
   --forest-dark:  #2A2A2A;
-  --im-fell:      'Montserrat', sans-serif;
-  --cinzel:       'Montserrat', sans-serif;
-  --serif:        'Montserrat', sans-serif;
-  --sans:         'Lato', sans-serif;
-  --lora:         'Lato', sans-serif;
+  --im-fell:      var(--font-serif);
+  --cinzel:       var(--font-display);
+  --serif:        var(--font-serif);
+  --sans:         var(--font-body);
+  --lora:         var(--font-serif);
   --text:#F5F5F5;
   --text-muted:   rgba(245,245,245,0.65);
   --text-dim:     rgba(245,245,245,0.5);
@@ -238,8 +239,8 @@ img { max-width: 100%; height: auto; display: block; }
 <section style="background:#1e1e1e; padding:4rem 2rem;">
   <div style="max-width:900px; margin:0 auto; text-align:center;">
     <img src="images/products/nipbook.jpg?v=20260416" alt="Heritage Magazine" style="width:100%; max-width:700px; display:block; margin:0 auto 2rem auto;">
-    <h2 style="font-family:'Oswald',sans-serif; font-size:clamp(1.6rem,3vw,2.2rem); color:#D4AF37; margin-bottom:1rem; letter-spacing:0.06em; text-transform:uppercase;">Heritage Magazine &mdash; $129</h2>
-    <p style="font-family:'Outfit',sans-serif; font-size:1rem; color:#E0E0E0; line-height:1.8; max-width:640px; margin:0 auto;">Same story. Magazine format. You choose which format fits your family.</p>
+    <h2 style="font-family:var(--font-display); font-size:clamp(1.6rem,3vw,2.2rem); color:#D4AF37; margin-bottom:1rem; letter-spacing:0.06em; text-transform:uppercase;">Heritage Magazine &mdash; $129</h2>
+    <p style="font-family:var(--font-body); font-size:1rem; color:#E0E0E0; line-height:1.8; max-width:640px; margin:0 auto;">Same story. Magazine format. You choose which format fits your family.</p>
   </div>
 </section>
 
@@ -356,27 +357,27 @@ img { max-width: 100%; height: auto; display: block; }
 <!-- CULTURE GUIDE -->
 <section style="padding: 72px 48px; background: linear-gradient(180deg, #141e35 0%, #1a2744 100%); color: #F5F5F5;">
   <div style="max-width: 960px; margin: 0 auto;">
-    <div style="display:inline-block; font-family:'Oswald',sans-serif; font-weight:700; font-size:0.72rem; color:#20b2aa; letter-spacing:0.3em; text-transform:uppercase; padding:0.4rem 1rem; border:1px solid #20b2aa; margin-bottom:1rem;">Culture Guide</div>
-    <h2 style="font-family:'Oswald',sans-serif; font-size:clamp(1.6rem,3.5vw,2.4rem); font-weight:700; color:#b8962e; margin-bottom:16px; text-transform:uppercase; letter-spacing:0.05em;">Your Cultural DNA — 4-Week Deep Dive</h2>
+    <div style="display:inline-block; font-family:var(--font-display); font-weight:700; font-size:0.72rem; color:#20b2aa; letter-spacing:0.3em; text-transform:uppercase; padding:0.4rem 1rem; border:1px solid #20b2aa; margin-bottom:1rem;">Culture Guide</div>
+    <h2 style="font-family:var(--font-display); font-size:clamp(1.6rem,3.5vw,2.4rem); font-weight:700; color:#b8962e; margin-bottom:16px; text-transform:uppercase; letter-spacing:0.05em;">Your Cultural DNA — 4-Week Deep Dive</h2>
     <p style="font-size:1rem; color:#F5F5F5; line-height:1.8; max-width:720px; margin-bottom:16px; opacity:0.9;"><strong style="color:#20b2aa;">A map back to your roots.</strong> Every Heritage Book includes a curated guide to your family's cultures — regional music, food, traditions. Stories, not lectures. Authentic. Personal. Celebratory.</p>
     <p style="font-size:0.95rem; color:#F5F5F5; line-height:1.8; max-width:720px; margin-bottom:24px; opacity:0.82;">Not a Wikipedia copy-paste. Real cultural context, specific to YOUR family, broken into four weeks: where you came from, how you adapted, what you built, how to pass it down.</p>
 
     <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; margin-bottom: 2rem;">
       <div style="background: rgba(32,178,170,0.08); border-left: 3px solid #20b2aa; padding: 1rem 1.25rem;">
-        <div style="font-family:'Oswald',sans-serif; font-size:0.72rem; color:#20b2aa; letter-spacing:0.2em; text-transform:uppercase; margin-bottom:0.4rem;">Week 01</div>
-        <div style="font-family:'Oswald',sans-serif; color:#F5F5F5; font-size:1rem; text-transform:uppercase;">Where We Came From</div>
+        <div style="font-family:var(--font-display); font-size:0.72rem; color:#20b2aa; letter-spacing:0.2em; text-transform:uppercase; margin-bottom:0.4rem;">Week 01</div>
+        <div style="font-family:var(--font-display); color:#F5F5F5; font-size:1rem; text-transform:uppercase;">Where We Came From</div>
       </div>
       <div style="background: rgba(32,178,170,0.08); border-left: 3px solid #20b2aa; padding: 1rem 1.25rem;">
-        <div style="font-family:'Oswald',sans-serif; font-size:0.72rem; color:#20b2aa; letter-spacing:0.2em; text-transform:uppercase; margin-bottom:0.4rem;">Week 02</div>
-        <div style="font-family:'Oswald',sans-serif; color:#F5F5F5; font-size:1rem; text-transform:uppercase;">How We Adapted</div>
+        <div style="font-family:var(--font-display); font-size:0.72rem; color:#20b2aa; letter-spacing:0.2em; text-transform:uppercase; margin-bottom:0.4rem;">Week 02</div>
+        <div style="font-family:var(--font-display); color:#F5F5F5; font-size:1rem; text-transform:uppercase;">How We Adapted</div>
       </div>
       <div style="background: rgba(32,178,170,0.08); border-left: 3px solid #20b2aa; padding: 1rem 1.25rem;">
-        <div style="font-family:'Oswald',sans-serif; font-size:0.72rem; color:#20b2aa; letter-spacing:0.2em; text-transform:uppercase; margin-bottom:0.4rem;">Week 03</div>
-        <div style="font-family:'Oswald',sans-serif; color:#F5F5F5; font-size:1rem; text-transform:uppercase;">What We Built</div>
+        <div style="font-family:var(--font-display); font-size:0.72rem; color:#20b2aa; letter-spacing:0.2em; text-transform:uppercase; margin-bottom:0.4rem;">Week 03</div>
+        <div style="font-family:var(--font-display); color:#F5F5F5; font-size:1rem; text-transform:uppercase;">What We Built</div>
       </div>
       <div style="background: rgba(32,178,170,0.08); border-left: 3px solid #20b2aa; padding: 1rem 1.25rem;">
-        <div style="font-family:'Oswald',sans-serif; font-size:0.72rem; color:#20b2aa; letter-spacing:0.2em; text-transform:uppercase; margin-bottom:0.4rem;">Week 04</div>
-        <div style="font-family:'Oswald',sans-serif; color:#F5F5F5; font-size:1rem; text-transform:uppercase;">Passing It Down</div>
+        <div style="font-family:var(--font-display); font-size:0.72rem; color:#20b2aa; letter-spacing:0.2em; text-transform:uppercase; margin-bottom:0.4rem;">Week 04</div>
+        <div style="font-family:var(--font-display); color:#F5F5F5; font-size:1rem; text-transform:uppercase;">Passing It Down</div>
       </div>
     </div>
 
@@ -396,7 +397,7 @@ img { max-width: 100%; height: auto; display: block; }
     </div>
 
     <div style="text-align:center;">
-      <a href="culture-guide.html" style="display:inline-block; border:2px solid #20b2aa; color:#20b2aa; background:transparent; padding:0.9rem 2.2rem; font-family:'Oswald',sans-serif; font-weight:700; font-size:0.85rem; letter-spacing:0.18em; text-transform:uppercase; text-decoration:none; transition: all 0.3s;">See The Full Culture Guide</a>
+      <a href="culture-guide.html" style="display:inline-block; border:2px solid #20b2aa; color:#20b2aa; background:transparent; padding:0.9rem 2.2rem; font-family:var(--font-display); font-weight:700; font-size:0.85rem; letter-spacing:0.18em; text-transform:uppercase; text-decoration:none; transition: all 0.3s;">See The Full Culture Guide</a>
       <p style="font-size:0.85rem; color:#F5F5F5; opacity:0.7; margin-top:1rem;">Included with Heritage Book · Available standalone for $49</p>
     </div>
   </div>
@@ -446,7 +447,7 @@ img { max-width: 100%; height: auto; display: block; }
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
       <!-- Example 1: Deborah Mahony -->
       <div style="background:#232323;  overflow: hidden; box-shadow: 0 4px 16px rgba(26, 107, 92, 0.08); transition: all 0.3s ease;">
-        <div style="background:#2A2A2A; height: 180px; display: flex; flex-direction:column; align-items: center; justify-content: center; gap:6px;"><span style="color:#E0E0E0;font-family:'Montserrat',sans-serif;font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;">HERITAGE BOOK</span><span style="color:#F5F5F5;font-family:'Montserrat',sans-serif;font-size:1rem;font-weight:700;">Mahony-Vázquez Story</span></div>
+        <div style="background:#2A2A2A; height: 180px; display: flex; flex-direction:column; align-items: center; justify-content: center; gap:6px;"><span style="color:#E0E0E0;font-family:var(--font-body);font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;">HERITAGE BOOK</span><span style="color:#F5F5F5;font-family:var(--font-body);font-size:1rem;font-weight:700;">Mahony-Vázquez Story</span></div>
         <div style="padding: 24px;">
           <div style="font-family:var(--cinzel);font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:#E0E0E0;font-weight:600;margin-bottom:8px;">Heritage Book</div>
           <h3 style="font-family:var(--cinzel);font-size:1.2rem;color:#722F37;margin-bottom:12px;">Mahony-Vázquez Story</h3>
@@ -459,7 +460,7 @@ img { max-width: 100%; height: auto; display: block; }
 
       <!-- Example 2: Vázquez Family -->
       <div style="background:#232323;  overflow: hidden; box-shadow: 0 4px 16px rgba(26, 107, 92, 0.08); transition: all 0.3s ease;">
-        <div style="background:#2A2A2A; height: 180px; display: flex; flex-direction:column; align-items: center; justify-content: center; gap:6px;"><span style="color:#E0E0E0;font-family:'Montserrat',sans-serif;font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;">HERITAGE + PROFILES</span><span style="color:#F5F5F5;font-family:'Montserrat',sans-serif;font-size:1rem;font-weight:700;">Vázquez Family Heritage</span></div>
+        <div style="background:#2A2A2A; height: 180px; display: flex; flex-direction:column; align-items: center; justify-content: center; gap:6px;"><span style="color:#E0E0E0;font-family:var(--font-body);font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;">HERITAGE + PROFILES</span><span style="color:#F5F5F5;font-family:var(--font-body);font-size:1rem;font-weight:700;">Vázquez Family Heritage</span></div>
         <div style="padding: 24px;">
           <div style="font-family:var(--cinzel);font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:#E0E0E0;font-weight:600;margin-bottom:8px;">Heritage + Profiles</div>
           <h3 style="font-family:var(--cinzel);font-size:1.2rem;color:#722F37;margin-bottom:12px;">Vázquez Family Heritage</h3>
@@ -472,7 +473,7 @@ img { max-width: 100%; height: auto; display: block; }
 
       <!-- Example 3: Nick McNeal -->
       <div style="background:#232323;  overflow: hidden; box-shadow: 0 4px 16px rgba(26, 107, 92, 0.08); transition: all 0.3s ease;">
-        <div style="background:#2A2A2A; height: 180px; display: flex; flex-direction:column; align-items: center; justify-content: center; gap:6px;"><span style="color:#E0E0E0;font-family:'Montserrat',sans-serif;font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;">BUSINESS + HERITAGE</span><span style="color:#F5F5F5;font-family:'Montserrat',sans-serif;font-size:1rem;font-weight:700;">McNeal Construction Story</span></div>
+        <div style="background:#2A2A2A; height: 180px; display: flex; flex-direction:column; align-items: center; justify-content: center; gap:6px;"><span style="color:#E0E0E0;font-family:var(--font-body);font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;">BUSINESS + HERITAGE</span><span style="color:#F5F5F5;font-family:var(--font-body);font-size:1rem;font-weight:700;">McNeal Construction Story</span></div>
         <div style="padding: 24px;">
           <div style="font-family:var(--cinzel);font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:#E0E0E0;font-weight:600;margin-bottom:8px;">Business + Heritage</div>
           <h3 style="font-family:var(--cinzel);font-size:1.2rem;color:#722F37;margin-bottom:12px;">McNeal Construction Story</h3>
@@ -778,7 +779,7 @@ img { max-width: 100%; height: auto; display: block; }
       cursor: pointer;
       width: 100%;
       
-      font-family: Outfit, sans-serif;
+      font-family: var(--font-body);
       font-weight: 700;
       letter-spacing: 0.1em;
       text-transform: uppercase;
@@ -827,7 +828,7 @@ img { max-width: 100%; height: auto; display: block; }
 <section class="section-cream fade-in">
   <div class="section-inner text-center" style="max-width: 700px; margin: 0 auto;">
     <h2>Memory Preservation Book — Coming Soon</h2>
-    <p style="font-family: var(--font-emotion); font-style: italic; font-size: 1.15rem; margin-top: 1rem; color: #E0E0E0;">For families watching someone they love begin to fade.</p>
+    <p style="font-family: var(--font-body); font-style: italic; font-size: 1.15rem; margin-top: 1rem; color: #E0E0E0;">For families watching someone they love begin to fade.</p>
     <p style="margin-top: 1.5rem;">This book captures who they are right now — their stories, their voice, their personality — before memory loss takes it. Not a medical record. A portrait of a person at their fullest, preserved permanently so the people who love them never lose who they really were. One-time. Permanent.</p>
     <a href="contact.html" class="btn btn-gold" style="margin-top: 2rem;">Join the Waitlist</a>
   </div>

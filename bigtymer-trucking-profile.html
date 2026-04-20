@@ -18,9 +18,9 @@
   <meta name="twitter:image" content="https://mylegacycontinues.com/images/products/bigtymers.jpg">
   <meta name="description" content="Big Tymer Trucking — owner-operator Zachary Mediano. Santa Maria, CA. DOT# 3910331. General freight across California's Central Coast. Permanent business legacy hosted by My Legacy Continues.">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Outfit:wght@300;400;500;600;700&family=Cinzel:ital,wght@0,500;0,700;1,500&display=swap">
+  <link rel="preload" href="/fonts/Inter-VariableFont_opsz,wght.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="/fonts/BigShoulders-VariableFont_opsz,wght.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="stylesheet" href="/fonts/fonts.css">
 
   <link rel="stylesheet" href="style.css">
 
@@ -36,9 +36,8 @@
       --chrome-soft: #9a9a9a;
       --white: #ffffff;
       --hero-overlay: rgba(0,0,0,0.65);
-      --font-heading: 'Oswald', Impact, sans-serif;
-      --font-body: 'Outfit', system-ui, -apple-system, sans-serif;
-      --font-accent: 'Cinzel', Georgia, serif;
+      /* Font vars inherit from global style.css :root (Stage F cleanup) */
+      --font-accent: var(--font-serif);
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -111,7 +110,7 @@
       filter: drop-shadow(0 8px 28px rgba(26,111,222,0.55)) drop-shadow(0 2px 4px rgba(0,0,0,0.8));
     }
     .bt-hero h1 {
-      font-family: var(--font-heading);
+      font-family: var(--font-display);
       font-weight: 700;
       font-size: clamp(2.2rem, 6vw, 4.4rem);
       line-height: 1.05;
@@ -174,7 +173,7 @@
     .bt-section.deep { background: var(--bg); }
     .bt-container { max-width: 1180px; margin: 0 auto; }
     .bt-section-eyebrow {
-      font-family: var(--font-heading);
+      font-family: var(--font-display);
       font-size: 12px;
       letter-spacing: 0.42em;
       color: var(--blue);
@@ -184,7 +183,7 @@
       margin-bottom: 16px;
     }
     .bt-section-title {
-      font-family: var(--font-heading);
+      font-family: var(--font-display);
       font-weight: 700;
       font-size: clamp(1.9rem, 3.8vw, 2.8rem);
       color: var(--white);
@@ -226,7 +225,7 @@
     }
     .bt-about-logo-wrap img { max-width: 100%; height: auto; }
     .bt-about-name {
-      font-family: var(--font-heading);
+      font-family: var(--font-display);
       font-weight: 700;
       font-size: clamp(1.8rem, 3.2vw, 2.4rem);
       color: var(--white);
@@ -299,7 +298,7 @@
       box-shadow: 0 0 12px var(--blue-glow);
     }
     .bt-service-card h3 {
-      font-family: var(--font-heading);
+      font-family: var(--font-display);
       font-weight: 700;
       font-size: 1.25rem;
       color: var(--blue);
@@ -340,7 +339,7 @@
       text-align: center;
     }
     .bt-stat-num {
-      font-family: var(--font-heading);
+      font-family: var(--font-display);
       font-weight: 700;
       font-size: clamp(1.8rem, 3.5vw, 2.5rem);
       color: var(--blue);
@@ -403,7 +402,7 @@
     }
     .bt-card-mock.back .bt-card-qr img { width: 100%; height: 100%; display: block; }
     .bt-card-mock.back .bt-card-scan {
-      font-family: var(--font-heading);
+      font-family: var(--font-display);
       font-size: 12px;
       letter-spacing: 0.32em;
       color: var(--blue);
@@ -439,7 +438,7 @@
       box-shadow: 0 12px 30px -12px var(--blue-glow);
     }
     .bt-contact-label {
-      font-family: var(--font-heading);
+      font-family: var(--font-display);
       font-weight: 700;
       font-size: 0.82rem;
       letter-spacing: 0.32em;
@@ -461,7 +460,7 @@
     /* ============ QR ============ */
     .bt-qr { background: var(--bg); padding: clamp(80px, 10vw, 130px) 24px; text-align: center; }
     .bt-qr h2 {
-      font-family: var(--font-heading);
+      font-family: var(--font-display);
       font-weight: 700;
       font-size: clamp(1.3rem, 2.6vw, 1.8rem);
       color: var(--blue);
@@ -523,7 +522,7 @@
     .bt-footer-right { justify-self: end; text-align: right; }
     .bt-footer-center { text-align: center; }
     .bt-footer-brand {
-      font-family: var(--font-heading);
+      font-family: var(--font-display);
       font-weight: 700;
       font-size: 1rem;
       letter-spacing: 0.2em;

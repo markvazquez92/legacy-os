@@ -7,9 +7,9 @@
 <title>Legacy Merch + Photo Restoration | My Legacy Continues</title>
 <meta name="description" content="Wearable Legacy — hats, hoodies, t-shirts, patches with your family QR code. Plus photo restoration service to find and restore old family photos.">
 <link rel="icon" href="logo.png" type="image/png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Outfit:wght@300;400;500;600&family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@1,400;1,500;1,600&display=swap" rel="stylesheet">
+<link rel="preload" href="/fonts/Inter-VariableFont_opsz,wght.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="preload" href="/fonts/BigShoulders-VariableFont_opsz,wght.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="stylesheet" href="/fonts/fonts.css">
 <style>
   *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
   :root {
@@ -25,7 +25,7 @@
     --brandywine: #8B0000;
   }
   html { scroll-behavior: smooth; }
-  body { font-family: 'Outfit', sans-serif; color: var(--cream); line-height: 1.65; background: var(--charcoal); overflow-x: hidden; }
+  body { font-family: var(--font-body); color: var(--cream); line-height: 1.65; background: var(--charcoal); overflow-x: hidden; }
 
   nav {
     position: fixed; top:0; left:0; right:0;
@@ -40,7 +40,7 @@
   }
   .nav-links a {
     text-decoration:none; color: var(--chrome);
-    font-family:'Outfit',sans-serif; font-weight:500;
+    font-family:var(--font-body); font-weight:500;
     font-size:0.72rem; letter-spacing:0.02em;
     transition: color 0.3s;
   }
@@ -48,7 +48,7 @@
   .nav-cta {
     background: var(--brandywine); color: var(--cream);
     border: 2px solid var(--teal); padding: 0.6rem 1.4rem;
-    font-family:'Outfit',sans-serif; font-weight:700;
+    font-family:var(--font-body); font-weight:700;
     font-size:0.8rem; letter-spacing:0.08em; text-decoration:none;
   }
   .nav-toggle { display:none; background:none; border:none; cursor:pointer; padding:0.5rem; flex-direction:column; gap:5px; }
@@ -80,19 +80,19 @@
   .cosmic-hero > * { position:relative; z-index:2; }
 
   .eyebrow {
-    display:inline-block; font-family:'Oswald',sans-serif;
+    display:inline-block; font-family:var(--font-display);
     font-weight:700; font-size:0.72rem; color: var(--teal);
     letter-spacing:0.3em; text-transform:uppercase;
     padding: 0.4rem 1rem; border: 1px solid var(--teal); margin-bottom: 1rem;
   }
   h1 {
-    font-family:'Oswald',sans-serif; font-weight:700;
+    font-family:var(--font-display); font-weight:700;
     font-size: clamp(2.25rem, 6vw, 4rem); color: var(--gold-flake);
     letter-spacing: 0.05em; line-height: 1.05;
     text-transform: uppercase; margin-bottom: 1rem;
   }
   .sub-tag {
-    font-family:'Cormorant Garamond',serif; font-style:italic;
+    font-family:var(--font-serif); font-style:italic;
     font-size: clamp(1.15rem, 2.2vw, 1.5rem); color: var(--cream);
     max-width: 720px; opacity: 0.92;
   }
@@ -101,7 +101,7 @@
   .section-navy { background: linear-gradient(180deg, #141e35 0%, #1a2744 100%); }
   .section-dark { background: var(--navy-deep); }
   .section h2 {
-    font-family:'Oswald',sans-serif; font-weight:700;
+    font-family:var(--font-display); font-weight:700;
     font-size: clamp(1.75rem, 4vw, 2.75rem); color: var(--gold-flake);
     text-transform:uppercase; letter-spacing:0.05em;
     text-align:center; margin-bottom: 1rem; line-height:1.15;
@@ -109,7 +109,7 @@
   .section .subhead {
     text-align: center; color: var(--cream); opacity: 0.85;
     max-width: 720px; margin: 0 auto 3rem;
-    font-family:'Outfit',sans-serif; font-size: 1rem; line-height: 1.7;
+    font-family:var(--font-body); font-size: 1rem; line-height: 1.7;
   }
   .container { max-width: 1100px; margin: 0 auto; }
 
@@ -133,7 +133,7 @@
     position: relative;
   }
   .merch-preview .product-type {
-    font-family:'Oswald',sans-serif; color: var(--gold-flake);
+    font-family:var(--font-display); color: var(--gold-flake);
     font-size: 0.7rem; letter-spacing: 0.3em; text-transform: uppercase;
     position: absolute; top: 0.75rem; left: 0.75rem;
   }
@@ -156,19 +156,19 @@
   .qr-mock::before {
     content: 'VÁZQUEZ'; position: absolute;
     bottom: -1.5rem; left: 50%; transform: translateX(-50%);
-    font-family:'Oswald',sans-serif; color: var(--cream);
+    font-family:var(--font-display); color: var(--cream);
     font-size: 0.7rem; letter-spacing: 0.2em; white-space: nowrap;
   }
   .merch-body {
     padding: 1.25rem;
   }
   .merch-body h3 {
-    font-family:'Oswald',sans-serif; color: var(--cream);
+    font-family:var(--font-display); color: var(--cream);
     font-size: 1rem; letter-spacing: 0.04em;
     text-transform: uppercase; margin-bottom: 0.4rem;
   }
   .merch-body .price {
-    font-family:'Oswald',sans-serif; color: var(--teal);
+    font-family:var(--font-display); color: var(--teal);
     font-size: 1.1rem; font-weight: 700;
   }
 
@@ -182,17 +182,17 @@
     padding: 1.5rem;
   }
   .qr-step .num-badge {
-    font-family:'Oswald',sans-serif; font-weight:700;
+    font-family:var(--font-display); font-weight:700;
     font-size: 1.6rem; color: var(--gold-flake);
     display: block; margin-bottom: 0.5rem;
   }
   .qr-step h3 {
-    font-family:'Oswald',sans-serif; color: var(--cream);
+    font-family:var(--font-display); color: var(--cream);
     font-size: 1rem; letter-spacing: 0.04em;
     text-transform: uppercase; margin-bottom: 0.5rem;
   }
   .qr-step p {
-    font-family:'Outfit',sans-serif; color: rgba(245,245,245,0.78);
+    font-family:var(--font-body); color: rgba(245,245,245,0.78);
     font-size: 0.9rem; line-height: 1.6;
   }
 
@@ -203,14 +203,14 @@
     border: 2px solid var(--gold-flake); padding: 2.5rem;
   }
   .form-wrap label {
-    display: block; font-family: 'Oswald', sans-serif;
+    display: block; font-family: var(--font-display);
     color: var(--teal); font-size: 0.8rem; letter-spacing: 0.15em;
     text-transform: uppercase; margin-bottom: 0.4rem; margin-top: 1.1rem;
   }
   .form-wrap input, .form-wrap textarea, .form-wrap select {
     width: 100%; padding: 0.85rem 1rem;
     background: rgba(0,0,0,0.3); border: 1px solid rgba(32,178,170,0.35);
-    color: var(--cream); font-family: 'Outfit', sans-serif;
+    color: var(--cream); font-family: var(--font-body);
     font-size: 0.95rem; border-radius: 0;
   }
   .form-wrap input:focus, .form-wrap textarea:focus, .form-wrap select:focus {
@@ -220,7 +220,7 @@
     width: 100%; margin-top: 1.75rem;
     background: var(--teal); color: var(--navy-deep);
     border: 2px solid var(--teal); padding: 1rem;
-    font-family: 'Oswald', sans-serif; font-weight: 700;
+    font-family: var(--font-display); font-weight: 700;
     letter-spacing: 0.18em; text-transform: uppercase; font-size: 0.9rem;
     cursor: pointer; transition: all 0.3s; border-radius: 0;
   }
@@ -242,17 +242,17 @@
     transform: translateY(-3px);
   }
   .restoration-card .num-badge {
-    font-family:'Oswald',sans-serif; font-weight:700;
+    font-family:var(--font-display); font-weight:700;
     font-size: 1.75rem; color: var(--gold-flake);
     display: block; margin-bottom: 0.5rem;
   }
   .restoration-card h3 {
-    font-family:'Oswald',sans-serif; color: var(--cream);
+    font-family:var(--font-display); color: var(--cream);
     font-size: 1.05rem; letter-spacing: 0.04em;
     text-transform: uppercase; margin-bottom: 0.75rem;
   }
   .restoration-card p {
-    font-family:'Outfit',sans-serif; color: rgba(245,245,245,0.82);
+    font-family:var(--font-body); color: rgba(245,245,245,0.82);
     font-size: 0.95rem; line-height: 1.65;
   }
 
@@ -260,7 +260,7 @@
     max-width: 720px; margin: 2rem auto 0;
     padding: 1.25rem 1.5rem; border-left: 3px solid var(--gold-flake);
     background: rgba(184,150,46,0.08);
-    font-family:'Outfit',sans-serif; font-size: 0.88rem;
+    font-family:var(--font-body); font-size: 0.88rem;
     color: rgba(245,245,245,0.78); line-height: 1.65;
   }
   .legal-note strong { color: var(--gold-flake); }
@@ -268,7 +268,7 @@
   .btn-hero {
     display:inline-block; border: 2px solid var(--teal);
     color: var(--teal); background: transparent;
-    padding: 0.9rem 2.2rem; font-family:'Oswald',sans-serif;
+    padding: 0.9rem 2.2rem; font-family:var(--font-display);
     font-weight:700; font-size: 0.85rem; letter-spacing:0.18em;
     text-transform:uppercase; text-decoration:none;
     transition: all 0.3s;
@@ -455,7 +455,7 @@
         <button type="submit">Request Mockup</button>
       </form>
     </div>
-    <p style="text-align:center; margin-top: 1.5rem; font-family: 'Outfit', sans-serif; color: var(--cream); opacity: 0.65; font-size: 0.85rem;">Payment link sent after we send mockup for approval. <a href="mailto:contact@mylegacycontinues.com" style="color: var(--teal);">contact@mylegacycontinues.com</a></p>
+    <p style="text-align:center; margin-top: 1.5rem; font-family: var(--font-body); color: var(--cream); opacity: 0.65; font-size: 0.85rem;">Payment link sent after we send mockup for approval. <a href="mailto:contact@mylegacycontinues.com" style="color: var(--teal);">contact@mylegacycontinues.com</a></p>
   </div>
 </section>
 
@@ -487,9 +487,9 @@
       </div>
     </div>
     <div style="text-align:center; margin-top: 2rem;">
-      <div style="font-family:'Oswald',sans-serif; color: var(--teal); font-size: 0.85rem; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 0.5rem;">Pricing</div>
-      <div style="font-family:'Oswald',sans-serif; color: var(--gold-flake); font-size: 1.75rem; font-weight: 700; margin-bottom: 0.5rem;">$49 – $99 per photo</div>
-      <p style="font-family:'Outfit',sans-serif; color: var(--cream); opacity: 0.82; max-width: 600px; margin: 0 auto 2rem; font-size: 0.95rem;">Final price depends on damage level and research needed. You get an exact quote before any work begins.</p>
+      <div style="font-family:var(--font-display); color: var(--teal); font-size: 0.85rem; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 0.5rem;">Pricing</div>
+      <div style="font-family:var(--font-display); color: var(--gold-flake); font-size: 1.75rem; font-weight: 700; margin-bottom: 0.5rem;">$49 – $99 per photo</div>
+      <p style="font-family:var(--font-body); color: var(--cream); opacity: 0.82; max-width: 600px; margin: 0 auto 2rem; font-size: 0.95rem;">Final price depends on damage level and research needed. You get an exact quote before any work begins.</p>
       <a href="mailto:contact@mylegacycontinues.com?subject=Photo%20Restoration%20Request" class="btn-hero">Restore Your Family Photos</a>
     </div>
     <div class="legal-note">
