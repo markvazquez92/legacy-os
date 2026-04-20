@@ -924,3 +924,96 @@ select {
   font-size: 16px;
 }
 
+
+/* ════════════════════════════════════════════════════════════════
+   STAGE C — Candy Paint :root (April 2026 rebrand)
+   Second :root block. CSS cascades — this overrides the original
+   :root above where variable names overlap, adds new names where
+   they don't. Activates Stage B utility classes.
+   ──────────────────────────────────────────────────────────────── */
+
+:root {
+  /* ──── Candy Paint colors (P3-safe) ──── */
+  --onyx-lacquer:     #14110F;
+  --brandywine:       #5C0A12;
+  --brandywine-mid:   #3A070C;
+  --brandywine-deep:  #2B0608;
+  --pagan-gold:       #C9A24C;
+  --bone-cream:       #ECE4D2;
+  --chrome-stripe:    #BFB8A8;
+
+  /* ──── Memorial sub-palette ──── */
+  --onyx-warm:        #1B1613;
+  --oxblood-memory:   #47121A;
+  --gold-tarnished:   #B49050;
+  --candle-amber:     #E8C070;
+  --divider-memory:   #3A2F27;
+
+  /* ──── Status / semantic ──── */
+  --oriental-blue:    #1A3A5C;
+  --error:            #A01E27;
+
+  /* ──── Font stack (self-hosted, see /fonts/fonts.css) ──── */
+  --font-display:     'Big Shoulders Display', Impact, sans-serif;
+  --font-serif:       'Fraunces', Georgia, serif;
+  --font-body:        'Inter', system-ui, -apple-system, sans-serif;
+
+  /* ──── Typography system ──── */
+  --measure:          60ch;
+  --lh-body:          1.6;
+  --lh-h1:            1.05;
+  --lh-h2:            1.15;
+  --lh-h3:            1.25;
+  --lh-h4:            1.30;
+  --space-paragraph:  1.5em;
+
+  /* ──── Section spacing ──── */
+  --pad-section-mobile:   32px 16px;
+  --pad-section-desktop:  64px 24px;
+  --gap-section-mobile:   48px;
+  --gap-section-desktop:  96px;
+
+  /* ──── Backward-compat aliases (old CSS keeps working) ──── */
+  --charcoal:         var(--onyx-lacquer);
+  --chrome:           var(--bone-cream);
+  --gold:             var(--pagan-gold);
+  --warm-gold:        var(--pagan-gold);
+}
+
+
+/* ════════════════════════════════════════════════════════════════
+   STAGE B — Candy Paint utility + page-type classes
+   (appended 2026-04-19; dormant until Stage C defines :root vars)
+   ──────────────────────────────────────────────────────────────── */
+
+.cta-brandywine {
+  background: linear-gradient(180deg, var(--brandywine) 0%, var(--brandywine-mid) 60%, var(--brandywine-deep) 100%);
+  color: var(--bone-cream);
+  font-family: var(--font-body);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.pinstripe {
+  border-top: 1px solid var(--chrome-stripe);
+  border-bottom: 1px solid var(--pagan-gold);
+  height: 3px;
+  background: transparent;
+  margin: 48px 0;
+}
+
+.page-memorial {
+  --onyx-lacquer:   var(--onyx-warm);
+  --brandywine:     var(--oxblood-memory);
+  --pagan-gold:     var(--gold-tarnished);
+  --chrome-stripe:  var(--divider-memory);
+}
+
+.page-pet {
+  --onyx-lacquer: var(--bone-cream);
+  color: #14110F;
+}
+.page-pet body { color: #14110F; background: var(--bone-cream); }
+
+.page-legal { max-width: 680px; margin: 0 auto; }
+
