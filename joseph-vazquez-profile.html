@@ -22,7 +22,7 @@
   <link rel="icon" href="logo.png" type="image/png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Outfit:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@1,400;1,500;1,600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Outfit:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@1,400;1,500;1,600&family=Courier+Prime:ital,wght@0,400;0,700&family=Caveat:wght@400;600;700&display=swap" rel="stylesheet">
 
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -363,6 +363,75 @@
       .jv-header { padding: 4.5rem 1.25rem 3rem; }
       .jv-pullquote { padding: 1.5rem 1rem; }
     }
+
+    /* SIGNATURE BLOCK — reusable component. Ships to vazquez-profile, deborah-mahony-profile, bears-concrete-profile next. */
+    .sig-wrap {
+      max-width: 780px;
+      margin: 4rem auto;
+      padding: 0 1.25rem;
+      position: relative;
+      z-index: 1;
+    }
+    .sig-header {
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.28em;
+      color: #D4AF37;
+      text-transform: uppercase;
+      text-align: center;
+      margin-bottom: 0.6rem;
+    }
+    .sig-title {
+      font-family: 'Oswald', sans-serif;
+      font-weight: 700;
+      font-size: 1.75rem;
+      color: #F5F5F5;
+      text-align: center;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      margin-bottom: 1.75rem;
+      line-height: 1.2;
+    }
+    .sig-block {
+      max-width: 640px;
+      margin: 0 auto;
+      background: #F4EBD0;
+      color: #2b2217;
+      border: 1px solid rgba(212,175,55,0.3);
+      padding: 3rem;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    }
+    .sig-body {
+      font-family: 'Courier Prime', 'Courier New', monospace;
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: #2b2217;
+      text-align: left;
+    }
+    .sig-body p { margin: 0 0 1.1rem; }
+    .sig-body p:last-of-type { margin-bottom: 0; }
+    .sig-name {
+      font-family: 'Caveat', cursive;
+      font-size: 1.75rem;
+      color: #2b2217;
+      text-align: right;
+      margin-top: 1.75rem;
+      line-height: 1;
+    }
+    .sig-date {
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.82rem;
+      color: #8a6f25;
+      text-align: right;
+      margin-top: 0.6rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+    @media (max-width: 600px) {
+      .sig-block { padding: 2rem 1.5rem; }
+      .sig-body { font-size: 0.98rem; }
+      .sig-name { font-size: 1.5rem; }
+    }
   </style>
 
   <!-- Google Analytics 4 -->
@@ -414,6 +483,27 @@
       </div>
     </div>
   </section>
+
+  <!-- SIGNATURE BLOCK — A Letter From Bear -->
+  <div class="sig-wrap">
+    <div class="sig-header">Signature</div>
+    <h2 class="sig-title">A Letter From Bear</h2>
+    <div class="sig-block">
+      <div class="sig-body">
+        <p>Dad &mdash;</p>
+        <p>You don't know I'm doing this yet. By the time you read it, the whole family will.</p>
+        <p>I built this because your stories were slipping. Grandpa Joe's rings. The Mustang rides. The way you looked at Mom when you met her at 14. The way you kept the Z in Vázquez when everyone else dropped it.</p>
+        <p>None of it was written down. Just passed mouth to mouth until somebody forgot.</p>
+        <p>Not anymore.</p>
+        <p>This page is yours. It's permanent. Your dad's Austin-Healey and the Coyote Fire and the 40 years of class rings at Jostens &mdash; that's Gen 3 now. You're Gen 4. And I'm Gen 5 pouring concrete instead of casting silver, but it's the same thing.</p>
+        <p>We don't lose people. We lose what they built when nobody writes it down.</p>
+        <p>I wrote it down.</p>
+        <p>Love,<br>Bear</p>
+      </div>
+      <div class="sig-name">Bear</div>
+      <div class="sig-date">Santa Maria, CA · April 2026</div>
+    </div>
+  </div>
 
   <!-- CHAPTER 1 -->
   <section class="jv-chapter candy-bg">
