@@ -16,9 +16,11 @@
 <meta name="twitter:title" content="Deborah Mahony — A Mother's Legacy | My Legacy Continues">
 <meta name="twitter:description" content="Central Coast roots. A mother's story, preserved permanently.">
 <meta name="twitter:image" content="https://mylegacycontinues.com/images/mom.JPG">
+<link rel="preload" href="/fonts/Inter-VariableFont_opsz,wght.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="preload" href="/fonts/Fraunces-VariableFont_SOFT,WONK,opsz,wght.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="stylesheet" href="/fonts/fonts.css">
 <link rel="stylesheet" href="style.css">
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Montserrat:wght@300;400;500&family=Staatliches&display=swap');
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -38,7 +40,7 @@ html { scroll-behavior: smooth; }
 body {
   background: var(--charcoal);
   color: var(--soft-white);
-  font-family: 'Montserrat', sans-serif;
+  font-family: var(--font-body);
   font-weight: 300;
   line-height: 1.7;
   overflow-x: hidden;
@@ -69,7 +71,7 @@ a { color: inherit; text-decoration: none; }
 }
 
 .lr-eyebrow {
-  font-family: 'Oswald', sans-serif;
+  font-family: var(--font-display);
   font-size: 12px;
   letter-spacing: 0.28em;
   text-transform: uppercase;
@@ -98,7 +100,7 @@ a { color: inherit; text-decoration: none; }
 }
 
 .lr-hero h1 {
-  font-family: 'Oswald', sans-serif;
+  font-family: var(--font-display);
   font-weight: 700;
   font-size: clamp(2rem, 6vw, 3.4rem);
   letter-spacing: 0.1em;
@@ -108,7 +110,7 @@ a { color: inherit; text-decoration: none; }
 }
 
 .lr-subtitle {
-  font-family: 'Montserrat', sans-serif;
+  font-family: var(--font-body);
   font-weight: 400;
   color: var(--chrome-dim);
   letter-spacing: 0.06em;
@@ -119,7 +121,7 @@ a { color: inherit; text-decoration: none; }
 .lr-hero-quote {
   max-width: 620px;
   margin: 0 auto;
-  font-family: 'Montserrat', sans-serif;
+  font-family: var(--font-body);
   font-weight: 300;
   font-style: italic;
   font-size: 1.05rem;
@@ -139,7 +141,7 @@ a { color: inherit; text-decoration: none; }
 }
 
 .lr-section-label {
-  font-family: 'Oswald', sans-serif;
+  font-family: var(--font-display);
   font-size: 12px;
   letter-spacing: 0.25em;
   text-transform: uppercase;
@@ -148,7 +150,7 @@ a { color: inherit; text-decoration: none; }
 }
 
 .lr-content h2 {
-  font-family: 'Oswald', sans-serif;
+  font-family: var(--font-display);
   font-weight: 700;
   font-size: clamp(1.5rem, 3vw, 2rem);
   letter-spacing: 0.1em;
@@ -158,7 +160,7 @@ a { color: inherit; text-decoration: none; }
 }
 
 .lr-content h3 {
-  font-family: 'Oswald', sans-serif;
+  font-family: var(--font-display);
   font-weight: 500;
   font-size: 1.15rem;
   letter-spacing: 0.1em;
@@ -203,7 +205,7 @@ a { color: inherit; text-decoration: none; }
 .lr-fact:nth-last-child(-n+2) { border-bottom: none; }
 
 .lr-fact-label {
-  font-family: 'Oswald', sans-serif;
+  font-family: var(--font-display);
   font-size: 11px;
   letter-spacing: 0.15em;
   text-transform: uppercase;
@@ -246,7 +248,7 @@ a { color: inherit; text-decoration: none; }
   display: block;
   margin-top: 10px;
   font-style: normal;
-  font-family: 'Oswald', sans-serif;
+  font-family: var(--font-display);
   font-size: 0.75rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -277,7 +279,7 @@ a { color: inherit; text-decoration: none; }
 }
 
 .lr-family-label {
-  font-family: 'Oswald', sans-serif;
+  font-family: var(--font-display);
   font-size: 10px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -285,7 +287,7 @@ a { color: inherit; text-decoration: none; }
   margin-bottom: 6px;
 }
 .lr-family-name {
-  font-family: 'Oswald', sans-serif;
+  font-family: var(--font-display);
   font-size: 1.05rem;
   font-weight: 500;
   letter-spacing: 0.06em;
@@ -303,7 +305,7 @@ a { color: inherit; text-decoration: none; }
   display: inline-block;
   background: var(--brandywine);
   color: var(--chrome);
-  font-family: 'Staatliches', sans-serif;
+  font-family: var(--font-display);
   font-size: 0.95rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
@@ -327,7 +329,7 @@ a { color: inherit; text-decoration: none; }
   text-align: center;
 }
 .lr-cta h3 {
-  font-family: 'Oswald', sans-serif;
+  font-family: var(--font-display);
   font-size: 1.4rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -357,7 +359,7 @@ a { color: inherit; text-decoration: none; }
   padding: 36px 30px;
 }
 .lr-dv-label {
-  font-family: 'Oswald', sans-serif;
+  font-family: var(--font-display);
   font-size: 11px;
   letter-spacing: 0.25em;
   text-transform: uppercase;
@@ -365,7 +367,7 @@ a { color: inherit; text-decoration: none; }
   margin-bottom: 14px;
 }
 .lr-dv-card h2 {
-  font-family: 'Oswald', sans-serif;
+  font-family: var(--font-display);
   font-weight: 700;
   font-size: 1.6rem;
   letter-spacing: 0.08em;
@@ -392,7 +394,7 @@ a { color: inherit; text-decoration: none; }
   color: var(--soft-white);
 }
 .lr-dv-hotline strong {
-  font-family: 'Oswald', sans-serif;
+  font-family: var(--font-display);
   letter-spacing: 0.1em;
   color: var(--chrome);
 }
@@ -428,14 +430,14 @@ a { color: inherit; text-decoration: none; }
   padding: 20px 22px;
 }
 .lr-root-num {
-  font-family: 'Oswald', sans-serif;
+  font-family: var(--font-display);
   font-size: 26px;
   font-weight: 700;
   color: var(--brandywine);
   margin-bottom: 8px;
 }
 .lr-root-name {
-  font-family: 'Oswald', sans-serif;
+  font-family: var(--font-display);
   font-size: 1rem;
   font-weight: 500;
   letter-spacing: 0.05em;
@@ -461,14 +463,14 @@ a { color: inherit; text-decoration: none; }
   text-align:center;
 }
 .lr-hero-stat-label {
-  font-family:'Oswald',sans-serif;
+  font-family:var(--font-display);
   font-size:10px;
   color:var(--brandywine);
   letter-spacing:0.18em;
   text-transform:uppercase;
 }
 .lr-hero-stat-val {
-  font-family:'Montserrat',sans-serif;
+  font-family:var(--font-body);
   font-size:15px;
   color:var(--chrome);
   font-weight:400;
@@ -479,7 +481,7 @@ a { color: inherit; text-decoration: none; }
 }
 .lr-family-member:last-child { border-bottom: none; }
 .lr-fm-name {
-  font-family: 'Oswald', sans-serif;
+  font-family: var(--font-display);
   font-size: 1rem;
   font-weight: 500;
   color: var(--chrome);
@@ -621,7 +623,7 @@ a { color: inherit; text-decoration: none; }
     <p>His granddaughter <strong>Clara Montemayor</strong> married <strong>Francisco Garcia</strong>. Together they raised <strong>eighteen children</strong> in Sinton &mdash; documented in the <strong>1940 U.S. Census</strong>. Eighteen kids through the Great Depression and World War II. That took a particular kind of strength.</p>
     <p>The <strong>youngest of those eighteen</strong> was <strong>Elvira "Barbara" Garcia</strong> &mdash; born <strong>September 7, 1944</strong>. Deborah's mother. Bear's grandmother. The one who crossed from Texas to California and planted this family on the Central Coast.</p>
     <p>Grandma Elvira makes <strong>legendary tamales and tortillas</strong>. Recipes nobody wrote down. Recipes that live in her hands, not on paper. Christmas, baptisms, Sunday afternoons &mdash; the kitchen was the center of everything.</p>
-    <p class="lr-pullquote" style="font-family:'Cormorant Garamond',Georgia,serif; font-style:italic; color:#D4AF37; font-size:1.3rem; line-height:1.6; margin:2rem 0; padding-left:1.5rem; border-left:3px solid #D4AF37;">Eighteen kids. One mother. A whole family line carried on her shoulders.</p>
+    <p class="lr-pullquote" style="font-family:var(--font-serif); font-style:italic; color:#D4AF37; font-size:1.3rem; line-height:1.6; margin:2rem 0; padding-left:1.5rem; border-left:3px solid #D4AF37;">Eighteen kids. One mother. A whole family line carried on her shoulders.</p>
     <p><strong>Grandma Elvira is still with us.</strong> But she is <strong>losing her memory</strong>. Every week, more of the stories slip. That's why this page exists. That's why My Legacy Continues exists. Before the recipes go. Before the names go. Before the way she laughs goes.</p>
     <p><strong>Deborah carries that line forward.</strong> Three children. Four grandchildren. The Central Coast. The Garcia name planted next to the Vazquez name in the soil of Santa Maria. <strong>Long live your legacy.</strong></p>
   </div>
@@ -769,16 +771,16 @@ a { color: inherit; text-decoration: none; }
 
 <section style="background:#1e1e1e; padding:4rem 2rem; text-align:center; border-top:1px solid rgba(212,175,55,0.2);">
   <div style="max-width:800px; margin:0 auto;">
-    <h2 style="font-family:'Oswald',sans-serif; font-size:clamp(1.4rem,2.5vw,2rem); color:#D4AF37; margin-bottom:1.5rem; letter-spacing:0.06em; text-transform:uppercase;">Family</h2>
+    <h2 style="font-family:var(--font-display); font-size:clamp(1.4rem,2.5vw,2rem); color:#D4AF37; margin-bottom:1.5rem; letter-spacing:0.06em; text-transform:uppercase;">Family</h2>
     <img src="images/momanduncle.jpg" alt="Deborah Mahony — Family" style="width:100%; max-width:700px; display:block; margin:0 auto 2rem auto; border:1px solid rgba(212,175,55,0.3);">
   </div>
 </section>
 
 <section style="background:#1A1A1A; padding:4rem 2rem; text-align:center; border-top:1px solid rgba(212,175,55,0.2);">
   <div style="max-width:700px; margin:0 auto;">
-    <h2 style="font-family:'Oswald',sans-serif; font-size:clamp(1.4rem,2.5vw,1.9rem); color:#E0E0E0; margin-bottom:1rem; letter-spacing:0.06em; text-transform:uppercase;">This Is A Free Legacy Profile</h2>
-    <p style="font-family:'Outfit',sans-serif; font-size:0.95rem; color:#E0E0E0; line-height:1.8; margin-bottom:2rem; opacity:0.9;">Every story deserves a permanent home. This page is live, forever, at no cost. Want to add photos, update the story, or customize your profile? Email <a href="mailto:contact@mylegacycontinues.com" style="color:#D4AF37; text-decoration:underline;">contact@mylegacycontinues.com</a> &mdash; We&rsquo;ll update it within 48 hours. No charge.</p>
-    <a href="free-profile.html" style="display:inline-block; border:2px solid #D4AF37; color:#D4AF37; background:transparent; padding:0.8rem 2rem; font-family:'Outfit',sans-serif; font-weight:700; font-size:0.8rem; letter-spacing:0.1em; text-transform:uppercase; text-decoration:none;">Claim Your Free Page</a>
+    <h2 style="font-family:var(--font-display); font-size:clamp(1.4rem,2.5vw,1.9rem); color:#E0E0E0; margin-bottom:1rem; letter-spacing:0.06em; text-transform:uppercase;">This Is A Free Legacy Profile</h2>
+    <p style="font-family:var(--font-body); font-size:0.95rem; color:#E0E0E0; line-height:1.8; margin-bottom:2rem; opacity:0.9;">Every story deserves a permanent home. This page is live, forever, at no cost. Want to add photos, update the story, or customize your profile? Email <a href="mailto:contact@mylegacycontinues.com" style="color:#D4AF37; text-decoration:underline;">contact@mylegacycontinues.com</a> &mdash; We&rsquo;ll update it within 48 hours. No charge.</p>
+    <a href="free-profile.html" style="display:inline-block; border:2px solid #D4AF37; color:#D4AF37; background:transparent; padding:0.8rem 2rem; font-family:var(--font-body); font-weight:700; font-size:0.8rem; letter-spacing:0.1em; text-transform:uppercase; text-decoration:none;">Claim Your Free Page</a>
   </div>
 </section>
 

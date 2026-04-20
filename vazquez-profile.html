@@ -20,10 +20,10 @@
   <meta name="twitter:description" content="Heritage profile of Mark 'Bear' Vazquez &mdash; Santa Maria, California. Galicia to Mexico City to the Central Coast. Preserved permanently by My Legacy Continues.">
   <meta name="twitter:image" content="https://mylegacycontinues.com/images/bear-photo.jpg">
   <link rel="stylesheet" href="style.css">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;900&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap">
+  <link rel="preload" href="/fonts/Inter-VariableFont_opsz,wght.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="/fonts/Fraunces-VariableFont_SOFT,WONK,opsz,wght.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="stylesheet" href="/fonts/fonts.css">
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;700&family=Montserrat:wght@300;400;500;600&family=Staatliches&display=swap');
 
     /* ===== LOWRIDER LUXURY &mdash; CANDY PAINT & CHROME ===== */
     :root{
@@ -42,7 +42,7 @@
     body{
       background:var(--charcoal);
       color:var(--soft-white);
-      font-family:'Montserrat',sans-serif;
+      font-family:var(--font-body);
       font-weight:300;
       line-height:1.75;
       overflow-x:hidden;
@@ -73,7 +73,7 @@
       text-align:center;
     }
     .lr-eyebrow{
-      font-family:'Oswald',sans-serif;
+      font-family:var(--font-display);
       font-weight:500;
       font-size:12px;
       letter-spacing:0.28em;
@@ -95,7 +95,7 @@
     }
     .lr-portrait img{ width:100%; height:100%; object-fit:cover; display:block; }
     .lr-hero h1{
-      font-family:'Oswald',sans-serif;
+      font-family:var(--font-display);
       font-weight:700;
       font-size:clamp(2rem, 7vw, 3.6rem);
       letter-spacing:0.15em;
@@ -106,7 +106,7 @@
     }
     .lr-hero h1 .accent{ color:var(--chrome); }
     .lr-subtitle{
-      font-family:'Montserrat',sans-serif;
+      font-family:var(--font-body);
       font-weight:400;
       color:var(--chrome-dim);
       letter-spacing:0.06em;
@@ -114,7 +114,7 @@
       margin-bottom:8px;
     }
     .lr-location{
-      font-family:'Oswald',sans-serif;
+      font-family:var(--font-display);
       font-size:11px;
       letter-spacing:0.18em;
       text-transform:uppercase;
@@ -138,7 +138,7 @@
     .lr-lin-item:last-child{ border-right:none; }
     .lr-lin-label{
       display:block;
-      font-family:'Oswald',sans-serif;
+      font-family:var(--font-display);
       font-size:10px;
       letter-spacing:0.18em;
       text-transform:uppercase;
@@ -155,7 +155,7 @@
     }
     .lr-connected-inner{ max-width:860px; margin:0 auto; }
     .lr-conn-label{
-      font-family:'Oswald',sans-serif;
+      font-family:var(--font-display);
       font-size:11px;
       letter-spacing:0.22em;
       text-transform:uppercase;
@@ -186,7 +186,7 @@
         0 0 26px -6px var(--brandywine);
     }
     .lr-conn-type{
-      font-family:'Oswald',sans-serif;
+      font-family:var(--font-display);
       font-size:10px;
       letter-spacing:0.18em;
       text-transform:uppercase;
@@ -194,7 +194,7 @@
       margin-bottom:8px;
     }
     .lr-conn-name{
-      font-family:'Oswald',sans-serif;
+      font-family:var(--font-display);
       font-weight:700;
       font-size:18px;
       letter-spacing:0.08em;
@@ -221,7 +221,7 @@
       margin:52px 0 24px;
     }
     .lr-sec-head h2{
-      font-family:'Oswald',sans-serif;
+      font-family:var(--font-display);
       font-weight:700;
       font-size:clamp(1.35rem, 3.2vw, 1.9rem);
       letter-spacing:0.15em;
@@ -243,7 +243,7 @@
     .lr-photo img{ width:100%; height:auto; display:block; }
 
     .lr-photo-caption{
-      font-family:'Oswald',sans-serif;
+      font-family:var(--font-display);
       font-size:10px;
       letter-spacing:0.2em;
       text-transform:uppercase;
@@ -264,7 +264,7 @@
       margin-bottom:24px;
     }
     .lr-ch-tag{
-      font-family:'Oswald',sans-serif;
+      font-family:var(--font-display);
       font-size:11px;
       letter-spacing:0.22em;
       text-transform:uppercase;
@@ -272,7 +272,7 @@
       margin-bottom:10px;
     }
     .lr-chapter h3{
-      font-family:'Oswald',sans-serif;
+      font-family:var(--font-display);
       font-weight:700;
       font-size:clamp(1.25rem, 2.8vw, 1.6rem);
       letter-spacing:0.1em;
@@ -334,7 +334,7 @@
       background:linear-gradient(180deg, rgba(139,0,0,0.12), transparent);
     }
     .lr-film-era{
-      font-family:'Oswald',sans-serif;
+      font-family:var(--font-display);
       font-size:10px;
       letter-spacing:0.2em;
       text-transform:uppercase;
@@ -342,7 +342,7 @@
       margin-bottom:5px;
     }
     .lr-film-label{
-      font-family:'Oswald',sans-serif;
+      font-family:var(--font-display);
       font-weight:500;
       font-size:13px;
       letter-spacing:0.08em;
@@ -350,7 +350,7 @@
       color:var(--silver);
     }
     .lr-film-hint{
-      font-family:'Oswald',sans-serif;
+      font-family:var(--font-display);
       font-size:10px;
       letter-spacing:0.2em;
       text-transform:uppercase;
@@ -374,7 +374,7 @@
       padding:22px 22px 10px;
     }
     .lr-tree-label{
-      font-family:'Oswald',sans-serif;
+      font-family:var(--font-display);
       font-size:11px;
       letter-spacing:0.22em;
       text-transform:uppercase;
@@ -387,7 +387,7 @@
     }
     .lr-tree-entry:last-child{ border-bottom:none; }
     .lr-tree-name{
-      font-family:'Oswald',sans-serif;
+      font-family:var(--font-display);
       font-weight:500;
       font-size:14px;
       letter-spacing:0.06em;
@@ -416,7 +416,7 @@
       box-shadow:inset 1px 1px 2px rgba(255,255,255,0.4);
     }
     .lr-tl-year{
-      font-family:'Oswald',sans-serif;
+      font-family:var(--font-display);
       font-size:10px;
       letter-spacing:0.18em;
       text-transform:uppercase;
@@ -424,7 +424,7 @@
       margin-bottom:4px;
     }
     .lr-tl-event{
-      font-family:'Oswald',sans-serif;
+      font-family:var(--font-display);
       font-weight:500;
       font-size:15px;
       letter-spacing:0.06em;
@@ -445,7 +445,7 @@
       margin-bottom:22px;
     }
     .lr-letter-eyebrow{
-      font-family:'Oswald',sans-serif;
+      font-family:var(--font-display);
       font-size:11px;
       letter-spacing:0.22em;
       text-transform:uppercase;
@@ -454,7 +454,7 @@
     }
     .lr-letter-body{ border-left:3px solid var(--brandywine); padding-left:22px; }
     .lr-letter-body p{
-      font-family:'Montserrat',sans-serif;
+      font-family:var(--font-body);
       font-weight:300;
       font-style:italic;
       font-size:15px;
@@ -463,7 +463,7 @@
       margin-bottom:18px;
     }
     .lr-letter-sig{
-      font-family:'Oswald',sans-serif;
+      font-family:var(--font-display);
       font-weight:500;
       font-size:12px;
       letter-spacing:0.12em;
@@ -478,7 +478,7 @@
       display:inline-block;
       background:linear-gradient(180deg, var(--brandywine) 0%, var(--brandywine-deep) 100%);
       color:var(--silver);
-      font-family:'Staatliches',sans-serif;
+      font-family:var(--font-display);
       font-size:0.95rem;
       letter-spacing:0.18em;
       text-transform:uppercase;
@@ -506,7 +506,7 @@
       margin:32px 0;
     }
     .lr-trailer p{
-      font-family:'Montserrat',sans-serif;
+      font-family:var(--font-body);
       font-style:italic;
       font-weight:300;
       color:var(--silver);
@@ -531,7 +531,7 @@
     .lr-tab{
       padding:14px 22px;
       cursor:pointer;
-      font-family:'Oswald',sans-serif;
+      font-family:var(--font-display);
       font-weight:500;
       font-size:12px;
       letter-spacing:0.15em;
@@ -547,7 +547,7 @@
     .lr-tab.active{ color:var(--brandywine); border-bottom-color:var(--brandywine); }
     .lr-tab small{
       display:block;
-      font-family:'Montserrat',sans-serif;
+      font-family:var(--font-body);
       font-size:10px;
       letter-spacing:0.08em;
       text-transform:none;
@@ -578,7 +578,7 @@
     .lr-week.open .lr-week-hd{ background:var(--charcoal-3); }
     .lr-week-left{ display:flex; align-items:center; gap:16px; }
     .lr-week-n{
-      font-family:'Oswald',sans-serif;
+      font-family:var(--font-display);
       font-weight:700;
       font-size:1.9rem;
       color:rgba(224,224,224,0.2);
@@ -588,7 +588,7 @@
     }
     .lr-week.open .lr-week-n{ color:var(--brandywine); }
     .lr-week-meta h3{
-      font-family:'Oswald',sans-serif;
+      font-family:var(--font-display);
       font-weight:500;
       font-size:14px;
       letter-spacing:0.1em;
@@ -623,7 +623,7 @@
       margin-bottom:20px;
     }
     .lr-playlist-label{
-      font-family:'Oswald',sans-serif;
+      font-family:var(--font-display);
       font-size:10px;
       letter-spacing:0.22em;
       text-transform:uppercase;
@@ -632,7 +632,7 @@
     }
     .lr-playlist-tracks{ display:flex; flex-wrap:wrap; gap:6px; }
     .lr-track{
-      font-family:'Oswald',sans-serif;
+      font-family:var(--font-display);
       font-size:11px;
       letter-spacing:0.08em;
       color:var(--silver);
@@ -641,7 +641,7 @@
       border:1px solid rgba(224,224,224,0.15);
     }
     .lr-section-label{
-      font-family:'Oswald',sans-serif;
+      font-family:var(--font-display);
       font-size:10px;
       letter-spacing:0.22em;
       text-transform:uppercase;
@@ -656,7 +656,7 @@
     }
     .lr-item:last-child{ border-bottom:none; padding-bottom:0; }
     .lr-item h4{
-      font-family:'Oswald',sans-serif;
+      font-family:var(--font-display);
       font-weight:500;
       font-size:13px;
       letter-spacing:0.08em;
@@ -667,7 +667,7 @@
     .lr-item p{ font-size:12px; color:var(--chrome-dim); line-height:1.75; margin:0 0 8px; font-weight:300; }
     .lr-item em{ color:var(--silver); font-style:italic; }
     .lr-link{
-      font-family:'Oswald',sans-serif;
+      font-family:var(--font-display);
       font-size:11px;
       letter-spacing:0.1em;
       color:var(--brandywine);
@@ -684,7 +684,7 @@
       margin-bottom:10px;
     }
     .lr-arch h4{
-      font-family:'Oswald',sans-serif;
+      font-family:var(--font-display);
       font-weight:500;
       font-size:13px;
       letter-spacing:0.06em;
@@ -694,7 +694,7 @@
     .lr-arch p{ font-size:12px; color:var(--chrome-dim); line-height:1.7; margin:0 0 6px; font-weight:300; }
     .lr-tip{
       display:block;
-      font-family:'Oswald',sans-serif;
+      font-family:var(--font-display);
       font-size:11px;
       letter-spacing:0.06em;
       color:var(--brandywine);
@@ -756,7 +756,7 @@
       box-shadow:inset 1px 1px 3px rgba(255,255,255,0.6), 0 0 26px -6px var(--brandywine);
     }
     .lr-prof-type{
-      font-family:'Oswald',sans-serif;
+      font-family:var(--font-display);
       font-size:10px;
       letter-spacing:0.2em;
       text-transform:uppercase;
@@ -764,7 +764,7 @@
       margin-bottom:8px;
     }
     .lr-prof-card h3{
-      font-family:'Oswald',sans-serif;
+      font-family:var(--font-display);
       font-weight:700;
       font-size:1.1rem;
       letter-spacing:0.08em;
@@ -797,7 +797,7 @@
     }
     @media(max-width:560px){ .lr-rescue{ grid-template-columns:1fr; } }
     .lr-rescue-tag{
-      font-family:'Oswald',sans-serif;
+      font-family:var(--font-display);
       font-size:10px;
       letter-spacing:0.22em;
       text-transform:uppercase;
@@ -805,7 +805,7 @@
       margin-bottom:10px;
     }
     .lr-rescue h3{
-      font-family:'Oswald',sans-serif;
+      font-family:var(--font-display);
       font-weight:500;
       font-size:1.2rem;
       letter-spacing:0.08em;
@@ -823,7 +823,7 @@
     .lr-rescue-stat{ text-align:center; }
     .lr-rescue-num{
       display:block;
-      font-family:'Oswald',sans-serif;
+      font-family:var(--font-display);
       font-weight:700;
       font-size:3rem;
       color:var(--brandywine);
@@ -831,7 +831,7 @@
     }
     .lr-rescue-lbl{
       display:block;
-      font-family:'Oswald',sans-serif;
+      font-family:var(--font-display);
       font-size:10px;
       letter-spacing:0.18em;
       text-transform:uppercase;
@@ -856,7 +856,7 @@
       flex-wrap:wrap;
     }
     .lr-cta-inner p{
-      font-family:'Oswald',sans-serif;
+      font-family:var(--font-display);
       font-weight:500;
       font-size:15px;
       letter-spacing:0.08em;
@@ -925,7 +925,7 @@ body {
       #050505 100%) !important;
   background-attachment: fixed, fixed, fixed !important;
   color: #FAF3E6 !important;
-  font-family: 'Lora', Georgia, 'Times New Roman', serif !important;
+  font-family: var(--font-serif) !important;
   font-weight: 400 !important;
   margin: 0 !important;
   border-radius: 0 !important;
@@ -1083,7 +1083,7 @@ body,
 .lr-dv-card h3,
 h1, h2, h3 {
   color: #D4AF37 !important;
-  font-family: 'Cinzel', 'Playfair Display', Georgia, serif !important;
+  font-family: var(--font-serif) !important;
   font-weight: 700 !important;
   letter-spacing: 0.04em !important;
   text-shadow:
@@ -1107,7 +1107,7 @@ h1 { font-weight: 700 !important; letter-spacing: 0.12rem !important; }
 .lr-dv-card p, .lr-dv-card blockquote, .lr-dv-card li,
 .lr-dv-stmt,
 .lr-fact-value {
-  font-family: 'Lora', Georgia, 'Times New Roman', serif !important;
+  font-family: var(--font-serif) !important;
   font-weight: 400 !important;
   letter-spacing: 0.005em !important;
 }
@@ -1115,18 +1115,18 @@ h1 { font-weight: 700 !important; letter-spacing: 0.12rem !important; }
 .lr-family-name { font-weight: 600 !important; font-style: normal !important; }
 
 .lr-eyebrow, .lr-section-label, .lr-family-label, .lr-fact-label, .lr-dv-label, .lr-dv-hotline {
-  font-family: 'Oswald', sans-serif !important;
+  font-family: var(--font-display) !important;
 }
 
 [style*="color:var(--brandywine)"],
 [style*="color: var(--brandywine)"] {
-  font-family: 'Cinzel', serif !important;
+  font-family: var(--font-display) !important;
   font-weight: 900 !important;
   letter-spacing: 0.04em !important;
 }
 
 .lr-btn, .lr-cta {
-  font-family: 'Cinzel', 'Oswald', sans-serif !important;
+  font-family: var(--font-display) !important;
   font-weight: 700 !important;
   letter-spacing: 0.1em !important;
   box-shadow:
@@ -1193,7 +1193,7 @@ p { line-height: 1.6 !important; }
 .vz-founder-tagline {
   display: block;
   margin: 8px auto 0;
-  font-family: 'Oswald','Montserrat',sans-serif;
+  font-family: var(--font-display);
   font-weight: 700;
   font-size: 0.72rem;
   color: #E0E0E0;
@@ -1216,7 +1216,7 @@ p { line-height: 1.6 !important; }
 .vz-tabs a {
   flex: 0 0 auto;
   padding: 16px 28px;
-  font-family: 'Oswald','Montserrat',sans-serif;
+  font-family: var(--font-display);
   font-weight: 700;
   font-size: 0.8rem;
   letter-spacing: 0.28em;
@@ -1247,7 +1247,7 @@ p { line-height: 1.6 !important; }
   border-radius: 0;
 }
 .vz-videos-placeholder h3 {
-  font-family: 'Oswald','Montserrat',sans-serif;
+  font-family: var(--font-display);
   font-weight: 700;
   font-size: 1.1rem;
   color: #D4AF37;
@@ -1256,7 +1256,7 @@ p { line-height: 1.6 !important; }
   margin-bottom: 0.75rem;
 }
 .vz-videos-placeholder p {
-  font-family: 'Outfit','Montserrat',sans-serif;
+  font-family: var(--font-body);
   font-size: 0.95rem;
   color: rgba(224,224,224,0.6);
   line-height: 1.6;
@@ -1418,7 +1418,7 @@ p { line-height: 1.6 !important; }
       <p><strong>Joe arrived in Santa Barbara in 1957 at age 12</strong> with his mother Esperanza, three sisters, and three brothers. He went to <strong>Wilson Elementary</strong>, then <strong>Santa Barbara Junior High</strong>, then <strong>Santa Barbara High School</strong> &mdash; where he became a <strong>Don</strong>. "Once a Don, always a Don." That was the line he carried the rest of his life.</p>
       <p>He boxed at the local gyms. He fished off the breakwater and chartered boats out to Santa Cruz Island. In <strong>1964</strong>, still a young man, he helped fight the <strong>Coyote Fire</strong> &mdash; the wildfire that tore through the hills above Santa Barbara. He was proud of that his whole life.</p>
       <p>He drove a <strong>convertible Austin-Healey</strong> up and down the coast with the top down. And then he went to work at <strong>Jostens in Summerland, California</strong> &mdash; an investment caster. He made <strong>class rings</strong> there for decades. Every ring a small permanent thing for someone else's legacy.</p>
-      <p class="lr-pullquote" style="font-family:'Cormorant Garamond',Georgia,serif; font-style:italic; color:#D4AF37; font-size:1.3rem; line-height:1.6; margin:2rem 0; padding-left:1.5rem; border-left:3px solid #D4AF37;">Rings are permanence. Scale changed. Mastery didn't.</p>
+      <p class="lr-pullquote" style="font-family:var(--font-serif); font-style:italic; color:#D4AF37; font-size:1.3rem; line-height:1.6; margin:2rem 0; padding-left:1.5rem; border-left:3px solid #D4AF37;">Rings are permanence. Scale changed. Mastery didn't.</p>
     </div>
 
     <!-- ===== CHAPTER 3 ===== -->
@@ -1930,7 +1930,7 @@ p { line-height: 1.6 !important; }
 
     <!-- ===== JOSEPH HERITAGE BOOK CTA ===== -->
     <div style="text-align:center; margin:3rem auto 2rem;">
-      <a href="joseph-vazquez-profile.html" style="display:inline-block; background:#D4AF37; color:#1A1A1A; padding:16px 32px; font-family:'Oswald',sans-serif; font-weight:700; font-size:13px; letter-spacing:0.2em; text-transform:uppercase; text-decoration:none;">See Joseph's Profile &rarr;</a>
+      <a href="joseph-vazquez-profile.html" style="display:inline-block; background:#D4AF37; color:#1A1A1A; padding:16px 32px; font-family:var(--font-display); font-weight:700; font-size:13px; letter-spacing:0.2em; text-transform:uppercase; text-decoration:none;">See Joseph's Profile &rarr;</a>
     </div>
 
     <!-- ===== FAMILY TIMELINE ===== -->

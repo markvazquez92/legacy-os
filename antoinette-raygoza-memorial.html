@@ -20,10 +20,10 @@
 <meta name="twitter:description" content="In loving memory of Antoinette Raygoza (1991-2012). Santa Maria, California. Preserved permanently by My Legacy Continues.">
 <meta name="twitter:image" content="https://mylegacycontinues.com/images/antoinette-memorial.jpg">
 <link rel="stylesheet" href="style.css">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;900&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap">
+<link rel="preload" href="/fonts/Inter-VariableFont_opsz,wght.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="preload" href="/fonts/Fraunces-VariableFont_SOFT,WONK,opsz,wght.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="stylesheet" href="/fonts/fonts.css">
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Montserrat:wght@300;400;500&family=Staatliches&display=swap');
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -43,7 +43,7 @@ html { scroll-behavior: smooth; }
 body {
   background: var(--charcoal);
   color: var(--soft-white);
-  font-family: 'Montserrat', sans-serif;
+  font-family: var(--font-body);
   font-weight: 300;
   line-height: 1.7;
   overflow-x: hidden;
@@ -74,7 +74,7 @@ a { color: inherit; text-decoration: none; }
 }
 
 .lr-eyebrow {
-  font-family: 'Oswald', sans-serif;
+  font-family: var(--font-display);
   font-size: 12px;
   letter-spacing: 0.28em;
   text-transform: uppercase;
@@ -103,7 +103,7 @@ a { color: inherit; text-decoration: none; }
 }
 
 .lr-hero h1 {
-  font-family: 'Oswald', sans-serif;
+  font-family: var(--font-display);
   font-weight: 700;
   font-size: clamp(2rem, 6vw, 3.4rem);
   letter-spacing: 0.1em;
@@ -113,7 +113,7 @@ a { color: inherit; text-decoration: none; }
 }
 
 .lr-subtitle {
-  font-family: 'Montserrat', sans-serif;
+  font-family: var(--font-body);
   font-weight: 400;
   color: var(--chrome-dim);
   letter-spacing: 0.06em;
@@ -124,7 +124,7 @@ a { color: inherit; text-decoration: none; }
 .lr-hero-quote {
   max-width: 620px;
   margin: 0 auto;
-  font-family: 'Montserrat', sans-serif;
+  font-family: var(--font-body);
   font-weight: 300;
   font-style: italic;
   font-size: 1.05rem;
@@ -144,7 +144,7 @@ a { color: inherit; text-decoration: none; }
 }
 
 .lr-section-label {
-  font-family: 'Oswald', sans-serif;
+  font-family: var(--font-display);
   font-size: 12px;
   letter-spacing: 0.25em;
   text-transform: uppercase;
@@ -153,7 +153,7 @@ a { color: inherit; text-decoration: none; }
 }
 
 .lr-content h2 {
-  font-family: 'Oswald', sans-serif;
+  font-family: var(--font-display);
   font-weight: 700;
   font-size: clamp(1.5rem, 3vw, 2rem);
   letter-spacing: 0.1em;
@@ -163,7 +163,7 @@ a { color: inherit; text-decoration: none; }
 }
 
 .lr-content h3 {
-  font-family: 'Oswald', sans-serif;
+  font-family: var(--font-display);
   font-weight: 500;
   font-size: 1.15rem;
   letter-spacing: 0.1em;
@@ -208,7 +208,7 @@ a { color: inherit; text-decoration: none; }
 .lr-fact:nth-last-child(-n+2) { border-bottom: none; }
 
 .lr-fact-label {
-  font-family: 'Oswald', sans-serif;
+  font-family: var(--font-display);
   font-size: 11px;
   letter-spacing: 0.15em;
   text-transform: uppercase;
@@ -251,7 +251,7 @@ a { color: inherit; text-decoration: none; }
   display: block;
   margin-top: 10px;
   font-style: normal;
-  font-family: 'Oswald', sans-serif;
+  font-family: var(--font-display);
   font-size: 0.75rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -282,7 +282,7 @@ a { color: inherit; text-decoration: none; }
 }
 
 .lr-family-label {
-  font-family: 'Oswald', sans-serif;
+  font-family: var(--font-display);
   font-size: 10px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -290,7 +290,7 @@ a { color: inherit; text-decoration: none; }
   margin-bottom: 6px;
 }
 .lr-family-name {
-  font-family: 'Oswald', sans-serif;
+  font-family: var(--font-display);
   font-size: 1.05rem;
   font-weight: 500;
   letter-spacing: 0.06em;
@@ -308,7 +308,7 @@ a { color: inherit; text-decoration: none; }
   display: inline-block;
   background: var(--brandywine);
   color: var(--chrome);
-  font-family: 'Staatliches', sans-serif;
+  font-family: var(--font-display);
   font-size: 0.95rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
@@ -332,7 +332,7 @@ a { color: inherit; text-decoration: none; }
   text-align: center;
 }
 .lr-cta h3 {
-  font-family: 'Oswald', sans-serif;
+  font-family: var(--font-display);
   font-size: 1.4rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -362,7 +362,7 @@ a { color: inherit; text-decoration: none; }
   padding: 36px 30px;
 }
 .lr-dv-label {
-  font-family: 'Oswald', sans-serif;
+  font-family: var(--font-display);
   font-size: 11px;
   letter-spacing: 0.25em;
   text-transform: uppercase;
@@ -370,7 +370,7 @@ a { color: inherit; text-decoration: none; }
   margin-bottom: 14px;
 }
 .lr-dv-card h2 {
-  font-family: 'Oswald', sans-serif;
+  font-family: var(--font-display);
   font-weight: 700;
   font-size: 1.6rem;
   letter-spacing: 0.08em;
@@ -397,7 +397,7 @@ a { color: inherit; text-decoration: none; }
   color: var(--soft-white);
 }
 .lr-dv-hotline strong {
-  font-family: 'Oswald', sans-serif;
+  font-family: var(--font-display);
   letter-spacing: 0.1em;
   color: var(--chrome);
 }
@@ -467,7 +467,7 @@ body {
       #050505 100%) !important;
   background-attachment: fixed, fixed, fixed !important;
   color: #FAF3E6 !important;
-  font-family: 'Lora', Georgia, 'Times New Roman', serif !important;
+  font-family: var(--font-serif) !important;
   font-weight: 400 !important;
   margin: 0 !important;
   border-radius: 0 !important;
@@ -628,7 +628,7 @@ body,
 .lr-dv-card h3,
 h1, h2, h3 {
   color: #D4AF37 !important;
-  font-family: 'Cinzel', 'Playfair Display', Georgia, serif !important;
+  font-family: var(--font-serif) !important;
   font-weight: 700 !important;
   letter-spacing: 0.04em !important;
   text-shadow:
@@ -652,7 +652,7 @@ h1 { font-weight: 700 !important; letter-spacing: 0.12rem !important; }
 .lr-dv-card p, .lr-dv-card blockquote, .lr-dv-card li,
 .lr-dv-stmt,
 .lr-fact-value {
-  font-family: 'Lora', Georgia, 'Times New Roman', serif !important;
+  font-family: var(--font-serif) !important;
   font-weight: 400 !important;
   letter-spacing: 0.005em !important;
 }
@@ -661,20 +661,20 @@ h1 { font-weight: 700 !important; letter-spacing: 0.12rem !important; }
 
 /* Eyebrows & section labels stay in the condensed sans for hierarchy contrast */
 .lr-eyebrow, .lr-section-label, .lr-family-label, .lr-fact-label, .lr-dv-label, .lr-dv-hotline {
-  font-family: 'Oswald', sans-serif !important;
+  font-family: var(--font-display) !important;
 }
 
 /* "SR." span in its container picks up Cinzel for emblem consistency */
 [style*="color:var(--brandywine)"],
 [style*="color: var(--brandywine)"] {
-  font-family: 'Cinzel', serif !important;
+  font-family: var(--font-display) !important;
   font-weight: 900 !important;
   letter-spacing: 0.04em !important;
 }
 
 /* Neon-soft sunset glow on buttons */
 .lr-btn, .lr-cta {
-  font-family: 'Cinzel', 'Oswald', sans-serif !important;
+  font-family: var(--font-display) !important;
   font-weight: 700 !important;
   letter-spacing: 0.1em !important;
   box-shadow:
@@ -1000,7 +1000,7 @@ p { line-height: 1.6 !important; }
   <div class="lr-story-card">
     <p>Her aunt <strong>Debbie Garcia</strong> &mdash; <strong>Deborah Mahony</strong> &mdash; still lives in Santa Maria. Her cousin <strong>Mark "Bear" V&aacute;zquez</strong> founded <strong>My Legacy Continues</strong> in 2026. This page is part of why.</p>
     <p>Antoinette wanted to help people. She was working two jobs and studying at Allan Hancock to figure out exactly how. That intention did not disappear when she did. It moved to the people who loved her. It moved to a younger cousin who decided that no family should lose their stories again.</p>
-    <p class="lr-pullquote" style="font-family:'Cormorant Garamond',Georgia,serif; font-style:italic; color:#D4AF37; font-size:1.3rem; line-height:1.6; margin:2rem 0; padding-left:1.5rem; border-left:3px solid #D4AF37;">She wanted to help people. Her family is still finding the ways.</p>
+    <p class="lr-pullquote" style="font-family:var(--font-serif); font-style:italic; color:#D4AF37; font-size:1.3rem; line-height:1.6; margin:2rem 0; padding-left:1.5rem; border-left:3px solid #D4AF37;">She wanted to help people. Her family is still finding the ways.</p>
   </div>
 </div>
 <hr class="lr-divider" />

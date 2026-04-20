@@ -20,9 +20,9 @@
   <meta name="twitter:description" content="Partner profile for Shoshi Gamliel, founder of Underdog Heroes Inc. Real responsible rescue for the dogs the system wrote off.">
   <meta name="twitter:image" content="https://mylegacycontinues.com/images/shoshi-photo.jpg">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;900&family=Cormorant+Garamond:ital,wght@1,400;1,500&family=Oswald:wght@700&family=Outfit:wght@300;400;500;600;700&display=swap">
+  <link rel="preload" href="/fonts/Inter-VariableFont_opsz,wght.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="/fonts/Fraunces-VariableFont_SOFT,WONK,opsz,wght.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="stylesheet" href="/fonts/fonts.css">
 
   <link rel="stylesheet" href="style.css">
 
@@ -55,9 +55,7 @@
       --charcoal-bg: #0A0A0A;
       --hero-overlay: rgba(0,0,0,0.55);
 
-      --font-heading: 'Cinzel', Georgia, 'Times New Roman', serif;
-      --font-body: 'Outfit', system-ui, -apple-system, sans-serif;
-      --font-emotion: 'Cormorant Garamond', Georgia, serif;
+      /* Font vars inherit from global style.css :root (Stage F cleanup) */
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -129,7 +127,7 @@
     }
     .uh-hero-inner { position: relative; z-index: 2; max-width: 940px; }
     .uh-hero-eyebrow {
-      font-family: var(--font-heading);
+      font-family: var(--font-display);
       font-size: 12px;
       letter-spacing: 0.45em;
       color: var(--gold);
@@ -139,7 +137,7 @@
       text-shadow: 0 1px 6px rgba(0,0,0,0.7);
     }
     .uh-hero h1 {
-      font-family: var(--font-heading);
+      font-family: var(--font-display);
       font-weight: 700;
       font-size: clamp(2rem, 5.2vw, 4rem);
       line-height: 1.14;
@@ -150,7 +148,7 @@
       text-shadow: 0 2px 12px rgba(0,0,0,0.8);
     }
     .uh-hero-sub {
-      font-family: var(--font-emotion);
+      font-family: var(--font-body);
       font-style: italic;
       font-weight: 400;
       font-size: clamp(1.05rem, 2vw, 1.35rem);
@@ -191,7 +189,7 @@
     .uh-section { padding: clamp(64px, 9vw, 110px) 24px; }
     .uh-container { max-width: 1180px; margin: 0 auto; }
     .uh-section-eyebrow {
-      font-family: var(--font-heading);
+      font-family: var(--font-display);
       font-size: 12px;
       letter-spacing: 0.4em;
       color: var(--gold);
@@ -201,7 +199,7 @@
       margin-bottom: 16px;
     }
     .uh-section-title {
-      font-family: var(--font-heading);
+      font-family: var(--font-display);
       font-weight: 700;
       font-size: clamp(1.8rem, 3.5vw, 2.6rem);
       color: var(--uh-gold);
@@ -211,7 +209,7 @@
       text-transform: uppercase;
     }
     .uh-section-sub {
-      font-family: var(--font-emotion);
+      font-family: var(--font-body);
       font-style: italic;
       font-size: 1.2rem;
       color: var(--ink-soft);
@@ -268,7 +266,7 @@
       }
     }
     .uh-founder-name {
-      font-family: var(--font-heading);
+      font-family: var(--font-display);
       font-weight: 700;
       font-size: clamp(1.7rem, 3vw, 2.3rem);
       color: var(--gold);
@@ -292,7 +290,7 @@
       margin-bottom: 18px;
     }
     .uh-founder-quote {
-      font-family: var(--font-emotion);
+      font-family: var(--font-body);
       font-style: italic;
       font-weight: 500;
       font-size: clamp(1.25rem, 2vw, 1.6rem);
@@ -322,7 +320,7 @@
       box-shadow: 0 0 0 5px rgba(212,175,55,0.15);
     }
     .uh-mission-item h3 {
-      font-family: var(--font-heading);
+      font-family: var(--font-display);
       font-weight: 700;
       font-size: 1.3rem;
       color: var(--uh-blue);
@@ -377,7 +375,7 @@
       position: absolute;
       left: 24px;
       bottom: 20px;
-      font-family: var(--font-heading);
+      font-family: var(--font-display);
       font-weight: 700;
       font-size: clamp(1.5rem, 2.4vw, 2rem);
       color: var(--uh-gold);
@@ -403,7 +401,7 @@
       margin-bottom: 14px;
     }
     .uh-dog-story {
-      font-family: var(--font-emotion);
+      font-family: var(--font-body);
       font-style: italic;
       font-weight: 500;
       font-size: 1.2rem;
@@ -454,7 +452,7 @@
       text-align: center;
     }
     .uh-stat-num {
-      font-family: var(--font-heading);
+      font-family: var(--font-display);
       font-weight: 700;
       font-size: clamp(2.8rem, 5.5vw, 4.2rem);
       color: var(--gold);
@@ -491,7 +489,7 @@
       box-shadow: 0 14px 30px -12px rgba(212,175,55,0.4);
     }
     .uh-help-card h3 {
-      font-family: var(--font-heading);
+      font-family: var(--font-display);
       font-weight: 700;
       font-size: 1.2rem;
       color: var(--uh-blue);
@@ -536,7 +534,7 @@
       text-align: center;
     }
     .uh-qr h2 {
-      font-family: var(--font-heading);
+      font-family: var(--font-display);
       font-weight: 700;
       font-size: clamp(1.3rem, 2.5vw, 1.8rem);
       color: var(--gold);
@@ -605,7 +603,7 @@
       color: var(--ink-soft);
     }
     .uh-footer-center .ein {
-      font-family: var(--font-heading);
+      font-family: var(--font-display);
       font-size: 0.82rem;
       letter-spacing: 0.3em;
       color: var(--uh-blue);
@@ -693,7 +691,7 @@
       text-align: center;
     }
     .uh-intake-title {
-      font-family: var(--font-heading);
+      font-family: var(--font-display);
       font-weight: 700;
       font-size: clamp(1.5rem, 3vw, 2.2rem);
       color: var(--uh-gold);
@@ -702,7 +700,7 @@
       margin-bottom: 14px;
     }
     .uh-intake-sub {
-      font-family: var(--font-emotion);
+      font-family: var(--font-body);
       font-style: italic;
       font-size: 1.15rem;
       color: var(--chrome);
@@ -726,7 +724,7 @@
       font-weight: 500;
     }
     .uh-press-names {
-      font-family: 'Oswald', 'Cinzel', sans-serif;
+      font-family: var(--font-display);
       font-size: clamp(1rem, 2.2vw, 1.4rem);
       letter-spacing: 0.2em;
       color: var(--uh-gold);
