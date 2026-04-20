@@ -14,10 +14,10 @@
   *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
   :root {
     --charcoal: #1A1A1A;
-    --navy: #1a2744;
-    --navy-deep: #0f1a2e;
-    --teal: #20b2aa;
-    --copper: #b4553b;
+    --charcoal: #1A1A1A;
+    --charcoal-deep: #0A0A0A;
+    --brandywine: #8B0000;
+    --gold-warm: #D4A017;
     --gold-flake: #b8962e;
     --gold: #D4AF37;
     --cream: #F5F5F5;
@@ -31,7 +31,7 @@
     position: fixed; top:0; left:0; right:0;
     display:flex; align-items:center; justify-content:space-between;
     padding: 1rem 2rem; background: #2a2a2a; z-index: 1000;
-    border-bottom: 1px solid rgba(32,178,170,0.2);
+    border-bottom: 1px solid rgba(212, 175, 55,0.2);
   }
   .nav-logo { height: 48px; }
   .nav-links {
@@ -44,27 +44,27 @@
     font-size:0.72rem; letter-spacing:0.02em;
     transition: color 0.3s;
   }
-  .nav-links a:hover { color: var(--teal); }
+  .nav-links a:hover { color: var(--brandywine); }
   .nav-cta {
     background: var(--brandywine); color: var(--cream);
-    border: 2px solid var(--teal); padding: 0.6rem 1.4rem;
+    border: 2px solid var(--brandywine); padding: 0.6rem 1.4rem;
     font-family:var(--font-body); font-weight:700;
     font-size:0.8rem; letter-spacing:0.08em; text-decoration:none;
   }
   .nav-toggle { display:none; background:none; border:none; cursor:pointer; padding:0.5rem; flex-direction:column; gap:5px; }
   .nav-toggle span { display:block; width:24px; height:3px; background:var(--chrome); }
 
-  .cosmic-hero {
+  .page-hero {
     background:
-      radial-gradient(ellipse at top, rgba(32,178,170,0.22) 0%, transparent 55%),
+      radial-gradient(ellipse at top, rgba(212, 175, 55,0.22) 0%, transparent 55%),
       radial-gradient(ellipse at 70% 80%, rgba(180,85,59,0.15) 0%, transparent 50%),
-      linear-gradient(180deg, var(--navy) 0%, var(--navy-deep) 100%);
+      linear-gradient(180deg, var(--charcoal) 0%, var(--charcoal-deep) 100%);
     position:relative; overflow:hidden;
     min-height: 70vh;
     display:flex; flex-direction:column; align-items:center; justify-content:center;
     padding: 7rem 2rem 4rem; margin-top: 72px; text-align:center;
   }
-  .cosmic-hero::before {
+  .page-hero::before {
     content:''; position:absolute; inset:0;
     background-image:
       radial-gradient(1.5px 1.5px at 15% 22%, rgba(212,175,55,0.9), transparent 55%),
@@ -77,13 +77,13 @@
     0% { transform: translate(0,0); }
     100% { transform: translate(-30px,-40px); }
   }
-  .cosmic-hero > * { position:relative; z-index:2; }
+  .page-hero > * { position:relative; z-index:2; }
 
   .eyebrow {
     display:inline-block; font-family:var(--font-display);
-    font-weight:700; font-size:0.72rem; color: var(--teal);
+    font-weight:700; font-size:0.72rem; color: var(--brandywine);
     letter-spacing:0.3em; text-transform:uppercase;
-    padding: 0.4rem 1rem; border: 1px solid var(--teal); margin-bottom: 1rem;
+    padding: 0.4rem 1rem; border: 1px solid var(--brandywine); margin-bottom: 1rem;
   }
   h1 {
     font-family:var(--font-display); font-weight:700;
@@ -98,8 +98,8 @@
   }
 
   .section { padding: 5rem 2rem; }
-  .section-navy { background: linear-gradient(180deg, #141e35 0%, #1a2744 100%); }
-  .section-dark { background: var(--navy-deep); }
+  .section-charcoal { background: linear-gradient(180deg, #1A1A1A 0%, #1A1A1A 100%); }
+  .section-dark { background: var(--charcoal-deep); }
   .section h2 {
     font-family:var(--font-display); font-weight:700;
     font-size: clamp(1.75rem, 4vw, 2.75rem); color: var(--gold-flake);
@@ -119,16 +119,16 @@
     gap: 1.5rem; margin-bottom: 2.5rem;
   }
   .merch-card {
-    background: linear-gradient(155deg, #1c2d4a 0%, #141e35 100%);
+    background: linear-gradient(155deg, #1A1A1A 0%, #1A1A1A 100%);
     border: 2px solid var(--gold-flake); padding: 0;
     transition: all 0.35s; overflow: hidden;
   }
   .merch-card:hover {
-    border-color: var(--teal); transform: translateY(-5px);
-    box-shadow: 0 18px 40px -10px rgba(32,178,170,0.35);
+    border-color: var(--brandywine); transform: translateY(-5px);
+    box-shadow: 0 18px 40px -10px rgba(212, 175, 55,0.35);
   }
   .merch-preview {
-    aspect-ratio: 1; background: radial-gradient(circle at 50% 50%, rgba(32,178,170,0.12) 0%, transparent 65%), #0f1a2e;
+    aspect-ratio: 1; background: radial-gradient(circle at 50% 50%, rgba(212, 175, 55,0.12) 0%, transparent 65%), #1A1A1A;
     display: flex; align-items: center; justify-content: center;
     position: relative;
   }
@@ -140,17 +140,17 @@
   .qr-mock {
     width: 60%; aspect-ratio: 1; max-width: 140px;
     background:
-      linear-gradient(45deg, transparent 48%, var(--teal) 48%, var(--teal) 52%, transparent 52%),
-      linear-gradient(-45deg, transparent 48%, var(--teal) 48%, var(--teal) 52%, transparent 52%),
-      repeating-linear-gradient(90deg, var(--cream), var(--cream) 8%, #0f1a2e 8%, #0f1a2e 14%),
-      repeating-linear-gradient(0deg, var(--cream), var(--cream) 8%, #0f1a2e 8%, #0f1a2e 14%);
+      linear-gradient(45deg, transparent 48%, var(--brandywine) 48%, var(--brandywine) 52%, transparent 52%),
+      linear-gradient(-45deg, transparent 48%, var(--brandywine) 48%, var(--brandywine) 52%, transparent 52%),
+      repeating-linear-gradient(90deg, var(--cream), var(--cream) 8%, #1A1A1A 8%, #1A1A1A 14%),
+      repeating-linear-gradient(0deg, var(--cream), var(--cream) 8%, #1A1A1A 8%, #1A1A1A 14%);
     background-color: var(--cream);
     border: 6px solid var(--cream);
     position: relative;
   }
   .qr-mock::after {
     content: ''; position: absolute; inset: 20%;
-    background: #0f1a2e;
+    background: #1A1A1A;
     border: 3px solid var(--cream);
   }
   .qr-mock::before {
@@ -168,7 +168,7 @@
     text-transform: uppercase; margin-bottom: 0.4rem;
   }
   .merch-body .price {
-    font-family:var(--font-display); color: var(--teal);
+    font-family:var(--font-display); color: var(--brandywine);
     font-size: 1.1rem; font-weight: 700;
   }
 
@@ -178,7 +178,7 @@
     gap: 1.5rem;
   }
   .qr-step {
-    background: rgba(32,178,170,0.08); border-left: 3px solid var(--teal);
+    background: rgba(212, 175, 55,0.08); border-left: 3px solid var(--brandywine);
     padding: 1.5rem;
   }
   .qr-step .num-badge {
@@ -199,32 +199,32 @@
   /* Form */
   .form-wrap {
     max-width: 640px; margin: 0 auto;
-    background: linear-gradient(155deg, #1c2d4a 0%, #141e35 100%);
+    background: linear-gradient(155deg, #1A1A1A 0%, #1A1A1A 100%);
     border: 2px solid var(--gold-flake); padding: 2.5rem;
   }
   .form-wrap label {
     display: block; font-family: var(--font-display);
-    color: var(--teal); font-size: 0.8rem; letter-spacing: 0.15em;
+    color: var(--brandywine); font-size: 0.8rem; letter-spacing: 0.15em;
     text-transform: uppercase; margin-bottom: 0.4rem; margin-top: 1.1rem;
   }
   .form-wrap input, .form-wrap textarea, .form-wrap select {
     width: 100%; padding: 0.85rem 1rem;
-    background: rgba(0,0,0,0.3); border: 1px solid rgba(32,178,170,0.35);
+    background: rgba(0,0,0,0.3); border: 1px solid rgba(212, 175, 55,0.35);
     color: var(--cream); font-family: var(--font-body);
     font-size: 0.95rem; border-radius: 0;
   }
   .form-wrap input:focus, .form-wrap textarea:focus, .form-wrap select:focus {
-    outline: none; border-color: var(--teal);
+    outline: none; border-color: var(--brandywine);
   }
   .form-wrap button {
     width: 100%; margin-top: 1.75rem;
-    background: var(--teal); color: var(--navy-deep);
-    border: 2px solid var(--teal); padding: 1rem;
+    background: var(--brandywine); color: var(--charcoal-deep);
+    border: 2px solid var(--brandywine); padding: 1rem;
     font-family: var(--font-display); font-weight: 700;
     letter-spacing: 0.18em; text-transform: uppercase; font-size: 0.9rem;
     cursor: pointer; transition: all 0.3s; border-radius: 0;
   }
-  .form-wrap button:hover { background: transparent; color: var(--teal); }
+  .form-wrap button:hover { background: transparent; color: var(--brandywine); }
 
   /* Restoration */
   .restoration-grid {
@@ -232,13 +232,13 @@
     gap: 1.5rem; margin-bottom: 2.5rem;
   }
   .restoration-card {
-    background: linear-gradient(155deg, #1c2d4a 0%, #141e35 100%);
+    background: linear-gradient(155deg, #1A1A1A 0%, #1A1A1A 100%);
     border: 2px solid var(--gold-flake); padding: 1.75rem;
     transition: all 0.35s;
   }
   .restoration-card:hover {
-    border-color: var(--teal);
-    box-shadow: 0 18px 40px -10px rgba(32,178,170,0.35);
+    border-color: var(--brandywine);
+    box-shadow: 0 18px 40px -10px rgba(212, 175, 55,0.35);
     transform: translateY(-3px);
   }
   .restoration-card .num-badge {
@@ -266,21 +266,21 @@
   .legal-note strong { color: var(--gold-flake); }
 
   .btn-hero {
-    display:inline-block; border: 2px solid var(--teal);
-    color: var(--teal); background: transparent;
+    display:inline-block; border: 2px solid var(--brandywine);
+    color: var(--brandywine); background: transparent;
     padding: 0.9rem 2.2rem; font-family:var(--font-display);
     font-weight:700; font-size: 0.85rem; letter-spacing:0.18em;
     text-transform:uppercase; text-decoration:none;
     transition: all 0.3s;
   }
-  .btn-hero:hover { background: var(--teal); color: var(--navy-deep); }
+  .btn-hero:hover { background: var(--brandywine); color: var(--charcoal-deep); }
 
   footer {
     background: #0a1020; color: var(--chrome);
     padding: 3rem 2rem; text-align: center;
-    border-top: 1px solid rgba(32,178,170,0.2);
+    border-top: 1px solid rgba(212, 175, 55,0.2);
   }
-  footer a { color: var(--teal); text-decoration: none; }
+  footer a { color: var(--brandywine); text-decoration: none; }
   .footer-links {
     list-style:none; display:flex; gap:1.5rem; justify-content:center;
     flex-wrap: wrap; margin: 1.25rem 0; font-size: 0.85rem;
@@ -298,8 +298,8 @@
       position:absolute; top:68px; left:0; right:0;
       transform:none; background:#2a2a2a; gap:0; padding:0.5rem 0;
     }
-    .nav-links.active li a { display:block; padding:0.75rem 1.5rem; border-bottom:1px solid rgba(32,178,170,0.1); }
-    .cosmic-hero { padding: 5rem 1.5rem 3rem; margin-top: 60px; }
+    .nav-links.active li a { display:block; padding:0.75rem 1.5rem; border-bottom:1px solid rgba(212, 175, 55,0.1); }
+    .page-hero { padding: 5rem 1.5rem 3rem; margin-top: 60px; }
     .section { padding: 3rem 1.25rem; }
   }
 </style>
@@ -326,7 +326,7 @@
 </nav>
 
 <!-- HERO -->
-<section class="cosmic-hero">
+<section class="page-hero">
   <div class="eyebrow">Wearable Legacy + Photo Restoration</div>
   <h1>Wear Your Story<br>Scan It · Share It</h1>
   <p class="sub-tag">Hats. Hoodies. T-shirts. Patches. Every item carries your family QR code. Plus professional photo restoration — we find, restore, and preserve the old photos you thought were lost.</p>
@@ -383,7 +383,7 @@
 </section>
 
 <!-- QR CUSTOMIZER STEPS -->
-<section class="section section-navy">
+<section class="section section-charcoal">
   <div class="container">
     <h2>Design Your Legacy QR</h2>
     <p class="subhead">Four steps from idea to shipped merch. Preview before you pay. Everything handmade to order.</p>
@@ -455,12 +455,12 @@
         <button type="submit">Request Mockup</button>
       </form>
     </div>
-    <p style="text-align:center; margin-top: 1.5rem; font-family: var(--font-body); color: var(--cream); opacity: 0.65; font-size: 0.85rem;">Payment link sent after we send mockup for approval. <a href="mailto:contact@mylegacycontinues.com" style="color: var(--teal);">contact@mylegacycontinues.com</a></p>
+    <p style="text-align:center; margin-top: 1.5rem; font-family: var(--font-body); color: var(--cream); opacity: 0.65; font-size: 0.85rem;">Payment link sent after we send mockup for approval. <a href="mailto:contact@mylegacycontinues.com" style="color: var(--brandywine);">contact@mylegacycontinues.com</a></p>
   </div>
 </section>
 
 <!-- PHOTO RESTORATION -->
-<section class="section section-navy" id="restoration">
+<section class="section section-charcoal" id="restoration">
   <div class="container">
     <h2>Photo Restoration Service</h2>
     <p class="subhead">Don't have photos of your ancestors? We partner with certified restoration specialists to find and restore old family photos, then add them to your profile and Heritage Book.</p>
@@ -487,7 +487,7 @@
       </div>
     </div>
     <div style="text-align:center; margin-top: 2rem;">
-      <div style="font-family:var(--font-display); color: var(--teal); font-size: 0.85rem; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 0.5rem;">Pricing</div>
+      <div style="font-family:var(--font-display); color: var(--brandywine); font-size: 0.85rem; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 0.5rem;">Pricing</div>
       <div style="font-family:var(--font-display); color: var(--gold-flake); font-size: 1.75rem; font-weight: 700; margin-bottom: 0.5rem;">$49 – $99 per photo</div>
       <p style="font-family:var(--font-body); color: var(--cream); opacity: 0.82; max-width: 600px; margin: 0 auto 2rem; font-size: 0.95rem;">Final price depends on damage level and research needed. You get an exact quote before any work begins.</p>
       <a href="mailto:contact@mylegacycontinues.com?subject=Photo%20Restoration%20Request" class="btn-hero">Restore Your Family Photos</a>
