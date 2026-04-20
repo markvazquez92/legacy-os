@@ -7,9 +7,9 @@
   <title>Real Legacies. Real People. — My Legacy Continues</title>
   <meta name="description" content="Every profile on MLC is a real person. Real story. Permanent. Browse the full MLC Network.">
   <link rel="icon" href="logo.png" type="image/png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Outfit:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@1,400;1,500&display=swap" rel="stylesheet">
+  <link rel="preload" href="/fonts/Inter-VariableFont_opsz,wght.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="/fonts/BigShoulders-VariableFont_opsz,wght.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="stylesheet" href="/fonts/fonts.css">
   <link rel="stylesheet" href="style.css">
 
   <style>
@@ -27,7 +27,7 @@
     html { scroll-behavior: smooth; }
 
     body {
-      font-family: 'Outfit', sans-serif;
+      font-family: var(--font-body);
       background: var(--charcoal);
       color: var(--cream);
       line-height: 1.6;
@@ -64,12 +64,12 @@
       letter-spacing: 0.22em;
       text-transform: uppercase;
       margin-bottom: 1.75rem;
-      font-family: 'Oswald', sans-serif;
+      font-family: var(--font-display);
       font-weight: 600;
     }
 
     .dp-hero h1 {
-      font-family: 'Oswald', sans-serif;
+      font-family: var(--font-display);
       font-weight: 700;
       font-size: clamp(2.2rem, 5.5vw, 4.2rem);
       letter-spacing: 0.04em;
@@ -80,7 +80,7 @@
     }
 
     .dp-hero p {
-      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-family: var(--font-serif);
       font-style: italic;
       font-size: clamp(1.1rem, 2vw, 1.4rem);
       color: #e8dca6;
@@ -113,7 +113,7 @@
     }
 
     .dp-card-tag {
-      font-family: 'Oswald', sans-serif;
+      font-family: var(--font-display);
       font-size: 10px;
       letter-spacing: 0.24em;
       color: var(--gold);
@@ -122,7 +122,7 @@
     }
 
     .dp-card h3 {
-      font-family: 'Oswald', sans-serif;
+      font-family: var(--font-display);
       font-weight: 700;
       color: var(--cream);
       font-size: 1.35rem;
@@ -144,7 +144,7 @@
       background: var(--gold);
       color: var(--charcoal);
       padding: 13px 22px;
-      font-family: 'Oswald', sans-serif;
+      font-family: var(--font-display);
       font-weight: 700;
       font-size: 11px;
       letter-spacing: 0.2em;
@@ -172,7 +172,7 @@
     }
 
     footer .dp-footer-links a {
-      font-family: 'Oswald', sans-serif;
+      font-family: var(--font-display);
       font-size: 11px;
       letter-spacing: 0.2em;
       color: var(--gold);

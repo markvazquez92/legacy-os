@@ -19,8 +19,9 @@
 <meta name="twitter:image" content="https://mylegacycontinues.com/images/products/mcnealcards.jpg">
 <meta name="description" content="Your business card should tell the whole story. A permanent digital founder profile with QR code. $79 one-time. Hosted forever. My Legacy Continues — Santa Maria, CA.">
 <link rel="icon" href="logo.png" type="image/png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Lato:wght@400&family=Spline+Sans:wght@700&display=swap" rel="stylesheet">
+<link rel="preload" href="/fonts/Inter-VariableFont_opsz,wght.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="preload" href="/fonts/BigShoulders-VariableFont_opsz,wght.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="stylesheet" href="/fonts/fonts.css">
 <link rel="stylesheet" href="style.css">
 <style>
 
@@ -47,11 +48,11 @@
   --bg-nav:       #F5F5F5;
   --forest:       #2A2A2A;
   --forest-dark:  #232323;
-  --im-fell:      'Montserrat', sans-serif;
-  --cinzel:       'Montserrat', sans-serif;
-  --serif:        'Montserrat', sans-serif;
-  --sans:         'Lato', sans-serif;
-  --lora:         'Lato', sans-serif;
+  --im-fell:      var(--font-serif);
+  --cinzel:       var(--font-display);
+  --serif:        var(--font-serif);
+  --sans:         var(--font-body);
+  --lora:         var(--font-serif);
   --text:#F5F5F5;
   --text-muted:   rgba(245,245,245,0.65);
   --text-dim:     rgba(245,245,245,0.5);
@@ -247,29 +248,29 @@ img { max-width: 100%; height: auto; display: block; }
 <!-- ONE PRODUCT. THREE WORLDS. -->
 <section style="background:#1A1A1A; padding: 80px 48px; border-top:1px solid rgba(212,175,55,0.2); border-bottom:1px solid rgba(212,175,55,0.2);">
   <div style="max-width: 860px; margin: 0 auto;">
-    <div style="font-family:'Montserrat',sans-serif; font-size:0.65rem; letter-spacing:0.32em; text-transform:uppercase; color:#D4AF37; text-align:center; font-weight:700; margin-bottom:14px;">Who It&rsquo;s For</div>
-    <h2 style="font-family:'Montserrat',sans-serif; font-size:clamp(1.6rem,3.2vw,2.2rem); font-weight:700; color:#F5F5F5; letter-spacing:0.04em; margin-bottom:14px; text-align:center; text-transform:uppercase;">One Product. Three Worlds.</h2>
+    <div style="font-family:var(--font-body); font-size:0.65rem; letter-spacing:0.32em; text-transform:uppercase; color:#D4AF37; text-align:center; font-weight:700; margin-bottom:14px;">Who It&rsquo;s For</div>
+    <h2 style="font-family:var(--font-body); font-size:clamp(1.6rem,3.2vw,2.2rem); font-weight:700; color:#F5F5F5; letter-spacing:0.04em; margin-bottom:14px; text-align:center; text-transform:uppercase;">One Product. Three Worlds.</h2>
     <p style="text-align:center; color:#bababa; font-size:1rem; line-height:1.75; max-width:620px; margin:0 auto 52px;">Same profile. Same $79. Tell your story however it needs to be told.</p>
 
     <div style="margin-bottom:28px; padding:34px 32px; background:#232323; border-left:3px solid #D4AF37;">
-      <div style="font-family:'Montserrat',sans-serif; font-size:0.68rem; letter-spacing:0.3em; text-transform:uppercase; color:#D4AF37; font-weight:700; margin-bottom:14px;">For Business Owners</div>
-      <h3 style="font-family:'Montserrat',sans-serif; color:#F5F5F5; font-size:1.35rem; font-weight:700; margin-bottom:14px;">Your story. Your crew. Your work.</h3>
+      <div style="font-family:var(--font-body); font-size:0.68rem; letter-spacing:0.3em; text-transform:uppercase; color:#D4AF37; font-weight:700; margin-bottom:14px;">For Business Owners</div>
+      <h3 style="font-family:var(--font-body); color:#F5F5F5; font-size:1.35rem; font-weight:700; margin-bottom:14px;">Your story. Your crew. Your work.</h3>
       <p style="color:#e0e0e0; line-height:1.8; font-size:0.98rem; margin-bottom:22px;">Origin story. Crew. Projects. License number. QR code on your cards, trucks, and job sites — one scan shows customers everything you&rsquo;ve built.</p>
-      <a href="mcneal-construction-profile.html" style="color:#D4AF37; font-family:'Montserrat',sans-serif; font-size:0.72rem; font-weight:700; letter-spacing:0.22em; text-transform:uppercase; border-bottom:1px solid #D4AF37; padding-bottom:3px; text-decoration:none;">Example: McNeal Construction &rarr;</a>
+      <a href="mcneal-construction-profile.html" style="color:#D4AF37; font-family:var(--font-body); font-size:0.72rem; font-weight:700; letter-spacing:0.22em; text-transform:uppercase; border-bottom:1px solid #D4AF37; padding-bottom:3px; text-decoration:none;">Example: McNeal Construction &rarr;</a>
     </div>
 
     <div style="margin-bottom:28px; padding:34px 32px; background:#232323; border-left:3px solid #D4AF37;">
-      <div style="font-family:'Montserrat',sans-serif; font-size:0.68rem; letter-spacing:0.3em; text-transform:uppercase; color:#D4AF37; font-weight:700; margin-bottom:14px;">For Athletes</div>
-      <h3 style="font-family:'Montserrat',sans-serif; color:#F5F5F5; font-size:1.35rem; font-weight:700; margin-bottom:14px;">Your record. Your highlights. Your journey.</h3>
+      <div style="font-family:var(--font-body); font-size:0.68rem; letter-spacing:0.3em; text-transform:uppercase; color:#D4AF37; font-weight:700; margin-bottom:14px;">For Athletes</div>
+      <h3 style="font-family:var(--font-body); color:#F5F5F5; font-size:1.35rem; font-weight:700; margin-bottom:14px;">Your record. Your highlights. Your journey.</h3>
       <p style="color:#e0e0e0; line-height:1.8; font-size:0.98rem; margin-bottom:22px;">Record. Highlights. Stats. The grind, documented. A permanent page recruiters, coaches, and fans can find — not an Instagram feed that gets buried.</p>
-      <span style="color:#9a9a9a; font-family:'Montserrat',sans-serif; font-size:0.72rem; font-weight:700; letter-spacing:0.22em; text-transform:uppercase;">Example: Coming Soon</span>
+      <span style="color:#9a9a9a; font-family:var(--font-body); font-size:0.72rem; font-weight:700; letter-spacing:0.22em; text-transform:uppercase;">Example: Coming Soon</span>
     </div>
 
     <div style="padding:34px 32px; background:#232323; border-left:3px solid #D4AF37;">
-      <div style="font-family:'Montserrat',sans-serif; font-size:0.68rem; letter-spacing:0.3em; text-transform:uppercase; color:#D4AF37; font-weight:700; margin-bottom:14px;">For Creators</div>
-      <h3 style="font-family:'Montserrat',sans-serif; color:#F5F5F5; font-size:1.35rem; font-weight:700; margin-bottom:14px;">Your portfolio. Your playlists. Your links.</h3>
+      <div style="font-family:var(--font-body); font-size:0.68rem; letter-spacing:0.3em; text-transform:uppercase; color:#D4AF37; font-weight:700; margin-bottom:14px;">For Creators</div>
+      <h3 style="font-family:var(--font-body); color:#F5F5F5; font-size:1.35rem; font-weight:700; margin-bottom:14px;">Your portfolio. Your playlists. Your links.</h3>
       <p style="color:#e0e0e0; line-height:1.8; font-size:0.98rem; margin-bottom:22px;">Portfolio. Playlists. Work samples. Every link that matters. One page that holds the whole catalog — permanent, not algorithm-dependent.</p>
-      <span style="color:#9a9a9a; font-family:'Montserrat',sans-serif; font-size:0.72rem; font-weight:700; letter-spacing:0.22em; text-transform:uppercase;">Example: Coming Soon</span>
+      <span style="color:#9a9a9a; font-family:var(--font-body); font-size:0.72rem; font-weight:700; letter-spacing:0.22em; text-transform:uppercase;">Example: Coming Soon</span>
     </div>
   </div>
 </section>

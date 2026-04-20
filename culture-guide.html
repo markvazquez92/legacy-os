@@ -7,9 +7,9 @@
 <title>Culture Guide — 4-Week Deep Dive | My Legacy Continues</title>
 <meta name="description" content="Your Cultural DNA — a 4-week deep dive into where you come from, how your family adapted, what they built, and how to pass it down.">
 <link rel="icon" href="logo.png" type="image/png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Outfit:wght@300;400;500;600&family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@1,400;1,500;1,600&display=swap" rel="stylesheet">
+<link rel="preload" href="/fonts/Inter-VariableFont_opsz,wght.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="preload" href="/fonts/BigShoulders-VariableFont_opsz,wght.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="stylesheet" href="/fonts/fonts.css">
 <style>
   *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
   :root {
@@ -27,7 +27,7 @@
   }
   html { scroll-behavior: smooth; }
   body {
-    font-family: 'Outfit', sans-serif; color: var(--cream);
+    font-family: var(--font-body); color: var(--cream);
     line-height: 1.65; background: var(--charcoal); overflow-x: hidden;
   }
 
@@ -44,7 +44,7 @@
   }
   .nav-links a {
     text-decoration:none; color: var(--chrome);
-    font-family:'Outfit',sans-serif; font-weight:500;
+    font-family:var(--font-body); font-weight:500;
     font-size:0.72rem; letter-spacing:0.02em;
     transition: color 0.3s;
   }
@@ -52,7 +52,7 @@
   .nav-cta {
     background: var(--brandywine); color: var(--cream);
     border: 2px solid var(--brandywine); padding: 0.6rem 1.4rem;
-    font-family:'Outfit',sans-serif; font-weight:700;
+    font-family:var(--font-body); font-weight:700;
     font-size:0.8rem; letter-spacing:0.08em; text-decoration:none;
   }
   .nav-toggle { display:none; background:none; border:none; cursor:pointer; padding:0.5rem; flex-direction:column; gap:5px; }
@@ -85,20 +85,20 @@
   .page-hero > * { position:relative; z-index:2; }
 
   .eyebrow {
-    display:inline-block; font-family:'Oswald',sans-serif;
+    display:inline-block; font-family:var(--font-display);
     font-weight:700; font-size:0.72rem; color: var(--gold);
     letter-spacing:0.3em; text-transform:uppercase;
     padding: 0.4rem 1rem; border: 1px solid var(--brandywine);
     margin-bottom: 1rem;
   }
   h1 {
-    font-family:'Oswald',sans-serif; font-weight:700;
+    font-family:var(--font-display); font-weight:700;
     font-size: clamp(2.25rem, 6vw, 4rem); color: var(--gold-flake);
     letter-spacing: 0.05em; line-height: 1.05;
     text-transform: uppercase; margin-bottom: 1rem;
   }
   .sub-tag {
-    font-family:'Cormorant Garamond',serif; font-style:italic;
+    font-family:var(--font-serif); font-style:italic;
     font-size: clamp(1.15rem, 2.2vw, 1.5rem); color: var(--cream);
     max-width: 700px; opacity: 0.92;
   }
@@ -107,7 +107,7 @@
   .section-charcoal { background: linear-gradient(180deg, #1A1A1A 0%, #1A1A1A 100%); }
   .section-dark { background: var(--charcoal-deep); }
   .section h2 {
-    font-family:'Oswald',sans-serif; font-weight:700;
+    font-family:var(--font-display); font-weight:700;
     font-size: clamp(1.75rem, 4vw, 2.75rem); color: var(--gold-flake);
     text-transform:uppercase; letter-spacing:0.05em;
     text-align:center; margin-bottom: 3rem; line-height:1.15;
@@ -127,18 +127,18 @@
     transform: translateY(-3px);
   }
   .week-card .week-label {
-    font-family:'Oswald',sans-serif; font-weight:700;
+    font-family:var(--font-display); font-weight:700;
     font-size: 0.85rem; color: var(--gold);
     letter-spacing: 0.25em; text-transform: uppercase;
     margin-bottom: 0.5rem;
   }
   .week-card h3 {
-    font-family:'Oswald',sans-serif; color: var(--cream);
+    font-family:var(--font-display); color: var(--cream);
     font-size: clamp(1.4rem, 2.5vw, 1.9rem); letter-spacing: 0.04em;
     text-transform: uppercase; margin-bottom: 1rem;
   }
   .week-card .week-body {
-    font-family:'Outfit',sans-serif; color: rgba(245,245,245,0.85);
+    font-family:var(--font-body); color: rgba(245,245,245,0.85);
     font-size: 1rem; line-height: 1.75; margin-bottom: 1.25rem;
   }
   .week-card ul {
@@ -162,12 +162,12 @@
     padding: 1.25rem; text-align: left;
   }
   .extra-chip .lbl {
-    font-family:'Oswald',sans-serif; color: var(--gold);
+    font-family:var(--font-display); color: var(--gold);
     font-size: 0.7rem; letter-spacing: 0.2em;
     text-transform: uppercase; margin-bottom: 0.5rem;
   }
   .extra-chip .body {
-    font-family:'Outfit',sans-serif; color: var(--cream);
+    font-family:var(--font-body); color: var(--cream);
     font-size: 0.92rem; line-height: 1.55;
   }
 
@@ -175,7 +175,7 @@
   .btn-hero {
     display:inline-block; border: 2px solid var(--brandywine);
     color: var(--brandywine); background: transparent;
-    padding: 0.9rem 2.2rem; font-family:'Oswald',sans-serif;
+    padding: 0.9rem 2.2rem; font-family:var(--font-display);
     font-weight:700; font-size: 0.85rem; letter-spacing:0.18em;
     text-transform:uppercase; text-decoration:none;
     transition: all 0.3s;
@@ -184,7 +184,7 @@
 
   .quote-block {
     max-width: 720px; margin: 0 auto; text-align:center;
-    font-family:'Cormorant Garamond',serif; font-style:italic;
+    font-family:var(--font-serif); font-style:italic;
     font-size: clamp(1.2rem, 2.2vw, 1.55rem); color: var(--brandywine);
     line-height: 1.55;
   }
@@ -353,14 +353,14 @@
         <div class="week-label" style="margin-bottom: 0.75rem;">Included With</div>
         <h3 style="font-size: 1.25rem;">Heritage Culture Book</h3>
         <p class="week-body" style="font-size: 0.95rem; margin-bottom: 1rem;">Every Heritage Book order includes the full 4-Week Culture Guide. Delivered alongside your printed book.</p>
-        <div style="font-family:'Oswald',sans-serif; font-size: 1.5rem; color: var(--brandywine); margin-bottom: 1rem;">$199</div>
+        <div style="font-family:var(--font-display); font-size: 1.5rem; color: var(--brandywine); margin-bottom: 1rem;">$199</div>
         <a href="heritage-book.html" class="btn-hero">Order Heritage Book</a>
       </div>
       <div class="week-card" style="padding: 1.75rem;">
         <div class="week-label" style="margin-bottom: 0.75rem;">Standalone Add-On</div>
         <h3 style="font-size: 1.25rem;">Culture Guide Only</h3>
         <p class="week-body" style="font-size: 0.95rem; margin-bottom: 1rem;">Digital 4-week guide with recipes, quizzes, dialect recordings, and conversation prompts.</p>
-        <div style="font-family:'Oswald',sans-serif; font-size: 1.5rem; color: var(--brandywine); margin-bottom: 1rem;">$49</div>
+        <div style="font-family:var(--font-display); font-size: 1.5rem; color: var(--brandywine); margin-bottom: 1rem;">$49</div>
         <a href="mailto:contact@mylegacycontinues.com?subject=Culture%20Guide%20Standalone%20-%20%2449" class="btn-hero">Request Guide</a>
       </div>
     </div>

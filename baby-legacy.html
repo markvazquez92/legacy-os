@@ -18,6 +18,9 @@
   <meta name="twitter:image" content="https://mylegacycontinues.com/images/products/babyleg.jpg">
   <meta name="description" content="Record your baby's first year. Professional writing, monthly milestones, permanent digital time capsule. $79 one-time. Hosted forever.">
   <link rel="icon" href="logo.png" type="image/png">
+  <link rel="preload" href="/fonts/Inter-VariableFont_opsz,wght.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="/fonts/BigShoulders-VariableFont_opsz,wght.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="stylesheet" href="/fonts/fonts.css">
   <link rel="stylesheet" href="style.css">
   <style>
     /* Mobile background fix */
@@ -43,7 +46,7 @@
 }
 
 .form-group label {
-  font-family: 'Montserrat', sans-serif;
+  font-family: var(--font-body);
   font-size: 0.58rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
@@ -56,7 +59,7 @@
   border: 1px solid rgba(212, 160, 23, 0.2);
   
   color:#F5F5F5;
-  font-family: 'Lato', sans-serif;
+  font-family: var(--font-body);
   font-size: 0.9rem;
   padding: 13px 16px;
   min-height: 44px;
@@ -82,7 +85,7 @@
   
   padding: 13px 24px;
   min-height: 44px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: var(--font-body);
   font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.14em;
@@ -170,7 +173,7 @@
       <p style="color: var(--cream); font-size: 1.1rem; margin: 1rem 0; opacity: 0.9;">Record your baby's first year. Permanent time capsule.</p>
       <p class="tagline" style="color: var(--cream); font-size: clamp(1.2rem, 2.5vw, 1.5rem);">Start their story on day one.</p>
       <div style="margin-top: 2rem;">
-        <span style="font-family: var(--font-headline); font-size: 3rem; font-weight: 700; color: var(--cream);">$79</span>
+        <span style="font-family: var(--font-display); font-size: 3rem; font-weight: 700; color: var(--cream);">$79</span>
         <p style="color: var(--cream); opacity: 0.7; font-size: 0.85rem; margin-top: 0.5rem;">One-time purchase. Hosted forever. No subscriptions. No recurring fees.</p>
       </div>
       <div style="margin-top: 2rem; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
@@ -245,10 +248,10 @@
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; max-width: 1000px; margin: 0 auto;">
       <!-- Example 1: Deborah Mahony -->
       <div style="background:#232323;  overflow: hidden; box-shadow: 0 4px 16px rgba(42, 42, 42, 0.08);">
-        <div style="background:#2A2A2A; height: 180px; display: flex; flex-direction:column; align-items: center; justify-content: center; gap:6px;"><span style="color:#E0E0E0;font-family:'Montserrat',sans-serif;font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;">HERITAGE BOOK</span><span style="color:#F5F5F5;font-family:'Montserrat',sans-serif;font-size:1rem;font-weight:700;">Mahony-Vázquez Story</span></div>
+        <div style="background:#2A2A2A; height: 180px; display: flex; flex-direction:column; align-items: center; justify-content: center; gap:6px;"><span style="color:#E0E0E0;font-family:var(--font-body);font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;">HERITAGE BOOK</span><span style="color:#F5F5F5;font-family:var(--font-body);font-size:1rem;font-weight:700;">Mahony-Vázquez Story</span></div>
         <div style="padding: 24px;">
-          <div style="font-family:var(--cinzel);font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:#E0E0E0;font-weight:600;margin-bottom:8px;">Heritage Book</div>
-          <h3 style="font-family:var(--cinzel);font-size:1.2rem;color:#E0E0E0;margin-bottom:12px;">Mahony-Vázquez Story</h3>
+          <div style="font-family:var(--font-display);font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:#E0E0E0;font-weight:600;margin-bottom:8px;">Heritage Book</div>
+          <h3 style="font-family:var(--font-display);font-size:1.2rem;color:#E0E0E0;margin-bottom:12px;">Mahony-Vázquez Story</h3>
           <p style="font-size:0.9rem;color:#F5F5F5;font-style:italic;margin-bottom:16px;line-height:1.6;">"My kids will know where they came from. Three generations preserved forever."</p>
           <a href="deborah-mahony-profile.html" style="display:inline-block;padding:10px 14px;background:#E0E0E0;color:#E0E0E0;text-decoration:none;font-size:0.85rem;font-weight:600;transition:all 0.2s;">View Profile</a>
         </div>
@@ -256,10 +259,10 @@
 
       <!-- Example 2: Vázquez Family -->
       <div style="background:#232323;  overflow: hidden; box-shadow: 0 4px 16px rgba(42, 42, 42, 0.08);">
-        <div style="background:#2A2A2A; height: 180px; display: flex; flex-direction:column; align-items: center; justify-content: center; gap:6px;"><span style="color:#E0E0E0;font-family:'Montserrat',sans-serif;font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;">HERITAGE + PROFILES</span><span style="color:#F5F5F5;font-family:'Montserrat',sans-serif;font-size:1rem;font-weight:700;">Vázquez Family Heritage</span></div>
+        <div style="background:#2A2A2A; height: 180px; display: flex; flex-direction:column; align-items: center; justify-content: center; gap:6px;"><span style="color:#E0E0E0;font-family:var(--font-body);font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;">HERITAGE + PROFILES</span><span style="color:#F5F5F5;font-family:var(--font-body);font-size:1rem;font-weight:700;">Vázquez Family Heritage</span></div>
         <div style="padding: 24px;">
-          <div style="font-family:var(--cinzel);font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:#E0E0E0;font-weight:600;margin-bottom:8px;">Heritage + Profiles</div>
-          <h3 style="font-family:var(--cinzel);font-size:1.2rem;color:#E0E0E0;margin-bottom:12px;">Vázquez Family Heritage</h3>
+          <div style="font-family:var(--font-display);font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:#E0E0E0;font-weight:600;margin-bottom:8px;">Heritage + Profiles</div>
+          <h3 style="font-family:var(--font-display);font-size:1.2rem;color:#E0E0E0;margin-bottom:12px;">Vázquez Family Heritage</h3>
           <p style="font-size:0.9rem;color:#F5F5F5;font-style:italic;margin-bottom:16px;line-height:1.6;">"Three generations, one permanent story. Everything connected forever."</p>
           <a href="vazquez-profile.html" style="display:inline-block;padding:10px 14px;background:#E0E0E0;color:#E0E0E0;text-decoration:none;font-size:0.85rem;font-weight:600;transition:all 0.2s;">View Profile</a>
         </div>
@@ -267,10 +270,10 @@
 
       <!-- Example 3: Baby Legacy Example -->
       <div style="background:#232323;  overflow: hidden; box-shadow: 0 4px 16px rgba(42, 42, 42, 0.08);">
-        <div style="background:#2A2A2A; height: 180px; display: flex; flex-direction:column; align-items: center; justify-content: center; gap:6px;"><span style="color:#E0E0E0;font-family:'Montserrat',sans-serif;font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;">BABY LEGACY</span><span style="color:#F5F5F5;font-family:'Montserrat',sans-serif;font-size:1rem;font-weight:700;">First Year Complete</span></div>
+        <div style="background:#2A2A2A; height: 180px; display: flex; flex-direction:column; align-items: center; justify-content: center; gap:6px;"><span style="color:#E0E0E0;font-family:var(--font-body);font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;">BABY LEGACY</span><span style="color:#F5F5F5;font-family:var(--font-body);font-size:1rem;font-weight:700;">First Year Complete</span></div>
         <div style="padding: 24px;">
-          <div style="font-family:var(--cinzel);font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:#E0E0E0;font-weight:600;margin-bottom:8px;">Baby Legacy</div>
-          <h3 style="font-family:var(--cinzel);font-size:1.2rem;color:#E0E0E0;margin-bottom:12px;">First Year Complete</h3>
+          <div style="font-family:var(--font-display);font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:#E0E0E0;font-weight:600;margin-bottom:8px;">Baby Legacy</div>
+          <h3 style="font-family:var(--font-display);font-size:1.2rem;color:#E0E0E0;margin-bottom:12px;">First Year Complete</h3>
           <p style="font-size:0.9rem;color:#F5F5F5;font-style:italic;margin-bottom:16px;line-height:1.6;">"Twelve months of memories. One permanent story they'll cherish forever."</p>
           <a href="demo-profiles.html" style="display:inline-block;padding:10px 14px;background:#E0E0E0;color:#E0E0E0;text-decoration:none;font-size:0.85rem;font-weight:600;transition:all 0.2s;">See More</a>
         </div>
@@ -367,7 +370,7 @@
 
           <!-- UPSELLS SECTION -->
           <div style="margin: 24px 0; padding: 20px; background: rgba(212,160,23,0.08); border: 1px solid rgba(212,160,23,0.2); ">
-            <h3 style="font-family: var(--cinzel); font-size: 0.9rem; font-weight: 700; color: #E0E0E0; margin-bottom: 16px; letter-spacing: 0.1em; text-transform: uppercase;">Enhance Your Legacy (Optional)</h3>
+            <h3 style="font-family: var(--font-display); font-size: 0.9rem; font-weight: 700; color: #E0E0E0; margin-bottom: 16px; letter-spacing: 0.1em; text-transform: uppercase;">Enhance Your Legacy (Optional)</h3>
 
             <div style="margin-bottom: 16px;">
               <label style="display: flex; align-items: flex-start; gap: 12px; cursor: pointer;">
@@ -540,7 +543,7 @@ document.querySelectorAll('form').forEach(form => {
   <!-- Related Products -->
   <section style="padding: 3rem 2rem; background: rgba(192,57,43,0.05); text-align: center;">
     <div style="max-width: 900px; margin: 0 auto;">
-      <h3 style="font-family: 'Montserrat', sans-serif; color: #722F37; margin-bottom: 1.5rem;">Also Preserve Legacy</h3>
+      <h3 style="font-family: var(--font-body); color: #722F37; margin-bottom: 1.5rem;">Also Preserve Legacy</h3>
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem;">
         <div><a href="heritage-book.html" style="display: inline-block; padding: 12px 20px; background: linear-gradient(135deg, #8B0000, #4A0000); color: #F5F5F5; text-decoration: none; font-weight: 600; border-radius: 4px; transition: all 0.2s;">Heritage Book — $199</a></div>
         <div><a href="faq.html" style="display: inline-block; padding: 12px 20px; background: #E0E0E0; color:#F5F5F5; text-decoration: none; font-weight: 600; border-radius: 4px; transition: all 0.2s;">Questions? See FAQ</a></div>
