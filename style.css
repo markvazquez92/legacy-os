@@ -1,10 +1,8 @@
 /* ════════════════════════════════════════════════════════════════
    MY LEGACY CONTINUES — MASTER STYLESHEET
    New Design System
-   Fonts: Montserrat | Lato | Spline Sans
+   Fonts: Big Shoulders Display | Inter | Fraunces (self-hosted — see /fonts/fonts.css)
    ════════════════════════════════════════════════════════════════ */
-
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;700&family=Montserrat:wght@300;400;500;600;700;900&family=Lato:wght@400;700&family=Spline+Sans:wght@400;700&family=Staatliches&display=swap');
 
 :root {
   /* ──── Candy Paint & Chrome Palette ──── */
@@ -31,10 +29,10 @@
   --card-border:        var(--champagne-gold);
 
   /* Fonts */
-  --font-headline:      'Oswald', 'Montserrat', sans-serif;
-  --font-body:          'Montserrat', 'Lato', sans-serif;
-  --font-emotion:       'Montserrat', 'Spline Sans', sans-serif;
-  --font-button:        'Staatliches', 'Oswald', sans-serif;
+  --font-headline:      'Big Shoulders Display', 'Inter', sans-serif;
+  --font-body:          'Inter', system-ui, sans-serif;
+  --font-emotion:       'Fraunces', Georgia, serif;
+  --font-button:        'Big Shoulders Display', 'Inter', sans-serif;
 
   /* Compatibility aliases (used by older nav/footer markup) */
   --charcoal-dark:      #141414;
@@ -98,7 +96,7 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.1;
   color: var(--silver);
   text-transform: uppercase;
-  font-family: "Oswald", sans-serif;
+  font-family: 'Big Shoulders Display', 'Inter', sans-serif;
 }
 
 h1 {
@@ -856,26 +854,26 @@ p {
    Applied last so they win specificity over page-level inline styles.
    ════════════════════════════════════════════════════════════════ */
 
-/* Force Oswald on every header across every page */
+/* Force Big Shoulders Display on every header across every page */
 html body h1,
 html body h2,
 html body h3,
 html body h4,
 html body h5,
 html body h6 {
-  font-family: 'Oswald', 'Montserrat', sans-serif !important;
+  font-family: 'Big Shoulders Display', 'Inter', sans-serif !important;
   text-transform: uppercase;
   letter-spacing: 0.12em;
   color: #C0C0C0;
 }
 
 
-/* Buttons site-wide: rectangular, Staatliches, brandywine gradient, chrome border */
+/* Buttons site-wide: rectangular, Big Shoulders, brandywine gradient, chrome border */
 .btn,
 button.btn,
 a.btn {
   border-radius: 0 !important;
-  font-family: 'Staatliches', 'Oswald', sans-serif !important;
+  font-family: 'Big Shoulders Display', 'Inter', sans-serif !important;
   letter-spacing: 0.18em !important;
 }
 
@@ -890,7 +888,7 @@ html body .btn.btn-gold {
   color: #E0E0E0 !important;
   border: 2px solid #E0E0E0 !important;
   box-shadow: inset 1px 1px 3px rgba(255,255,255,0.5) !important;
-  font-family: 'Staatliches', 'Oswald', sans-serif !important;
+  font-family: 'Big Shoulders Display', 'Inter', sans-serif !important;
   letter-spacing: 0.18em !important;
 }
 html body .btn-gold:hover,
