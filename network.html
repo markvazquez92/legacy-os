@@ -7,9 +7,9 @@
   <title>The MLC Network &mdash; Central Coast Culture | My Legacy Continues</title>
   <meta name="description" content="The MLC Network — the Central Coast's cultural broadcast station. Weekly drops of music, food, legacy profiles, and 805 stories. Permanent. Hosted forever.">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Outfit:wght@300;400;500;600;700&family=Cinzel:wght@500;600;700;900&family=Cormorant+Garamond:ital,wght@0,500;1,400;1,500&display=swap">
+  <link rel="preload" href="/fonts/Inter-VariableFont_opsz,wght.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="/fonts/BigShoulders-VariableFont_opsz,wght.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="stylesheet" href="/fonts/fonts.css">
 
   <link rel="stylesheet" href="style.css">
 
@@ -27,10 +27,6 @@
       --chrome-dim: #9a9a9a;
       --cream: #FAF3E6;
       --white: #FFFFFF;
-      --font-headline: 'Oswald', Impact, sans-serif;
-      --font-body: 'Outfit', system-ui, -apple-system, sans-serif;
-      --font-section: 'Cinzel', Georgia, serif;
-      --font-emotion: 'Cormorant Garamond', Georgia, serif;
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -100,7 +96,7 @@
     }
     .nw-hero-inner { position: relative; z-index: 2; max-width: 940px; }
     .nw-hero-eyebrow {
-      font-family: var(--font-section);
+      font-family: var(--font-display);
       font-size: 12px;
       letter-spacing: 0.5em;
       color: var(--gold);
@@ -109,7 +105,7 @@
       text-transform: uppercase;
     }
     .nw-hero h1 {
-      font-family: var(--font-headline);
+      font-family: var(--font-display);
       font-weight: 700;
       font-size: clamp(2.4rem, 7vw, 5rem);
       line-height: 1.05;
@@ -120,7 +116,7 @@
       text-shadow: 0 3px 22px rgba(0,0,0,0.65), 0 0 40px rgba(212,175,55,0.18);
     }
     .nw-hero-sub {
-      font-family: var(--font-emotion);
+      font-family: var(--font-serif);
       font-style: italic;
       font-weight: 400;
       font-size: clamp(1.1rem, 2.2vw, 1.45rem);
@@ -164,7 +160,7 @@
     .nw-section.cream { background: var(--cream); color: #1A1A1A; }
     .nw-container { max-width: 1180px; margin: 0 auto; }
     .nw-section-eyebrow {
-      font-family: var(--font-section);
+      font-family: var(--font-display);
       font-size: 12px;
       letter-spacing: 0.42em;
       color: var(--gold);
@@ -174,7 +170,7 @@
       margin-bottom: 16px;
     }
     .nw-section-title {
-      font-family: var(--font-headline);
+      font-family: var(--font-display);
       font-weight: 700;
       font-size: clamp(1.9rem, 3.8vw, 2.8rem);
       color: var(--white);
@@ -185,7 +181,7 @@
     }
     .nw-section.cream .nw-section-title { color: #1A1A1A; }
     .nw-section-sub {
-      font-family: var(--font-emotion);
+      font-family: var(--font-serif);
       font-style: italic;
       font-size: 1.2rem;
       color: var(--chrome-dim);
@@ -220,7 +216,7 @@
       box-shadow: 0 0 12px var(--gold-glow);
     }
     .nw-drop-card h3 {
-      font-family: var(--font-section);
+      font-family: var(--font-display);
       font-weight: 700;
       font-size: 1.1rem;
       color: var(--gold);
@@ -253,7 +249,7 @@
     .nw-music-caption {
       text-align: center;
       margin-top: 22px;
-      font-family: var(--font-emotion);
+      font-family: var(--font-serif);
       font-style: italic;
       color: var(--cream);
       font-size: 1.05rem;
@@ -287,7 +283,7 @@
       margin-bottom: 14px;
     }
     .nw-feature-card h3 {
-      font-family: var(--font-section);
+      font-family: var(--font-display);
       font-weight: 700;
       font-size: 1.2rem;
       color: var(--gold);
@@ -308,7 +304,7 @@
       display: inline-block;
       background: var(--gold);
       color: #1A1A1A;
-      font-family: var(--font-headline);
+      font-family: var(--font-display);
       font-weight: 700;
       font-size: 0.82rem;
       letter-spacing: 0.24em;
@@ -343,7 +339,7 @@
       gap: 48px;
     }
     .nw-join-col h3 {
-      font-family: var(--font-section);
+      font-family: var(--font-display);
       font-weight: 700;
       font-size: 1.1rem;
       color: var(--gold);
@@ -409,7 +405,7 @@
       color: var(--chrome-dim);
     }
     .nw-archive-type {
-      font-family: var(--font-section);
+      font-family: var(--font-display);
       font-size: 0.78rem;
       letter-spacing: 0.28em;
       text-transform: uppercase;
@@ -417,7 +413,7 @@
       font-weight: 600;
     }
     .nw-archive-title {
-      font-family: var(--font-headline);
+      font-family: var(--font-display);
       font-weight: 600;
       font-size: 1.05rem;
       color: var(--chrome);
@@ -433,7 +429,7 @@
       text-align: center;
     }
     .nw-qr h2 {
-      font-family: var(--font-section);
+      font-family: var(--font-display);
       font-weight: 700;
       font-size: clamp(1.3rem, 2.6vw, 1.8rem);
       color: var(--gold);
@@ -458,7 +454,7 @@
     }
     .nw-qr-caption {
       margin-top: 22px;
-      font-family: var(--font-emotion);
+      font-family: var(--font-serif);
       font-style: italic;
       font-size: 1.1rem;
       color: var(--cream);
@@ -484,7 +480,7 @@
     .nw-cat:first-of-type { margin-top: 8px; }
     .nw-cat h3 {
       display: inline-block;
-      font-family: var(--font-headline);
+      font-family: var(--font-display);
       font-weight: 700;
       font-size: clamp(1.1rem, 2vw, 1.4rem);
       color: var(--chrome);
@@ -517,7 +513,7 @@
     }
     .nw-roster-card .nw-feature-eyebrow { color: var(--brandywine); }
     .nw-roster-card h4 {
-      font-family: var(--font-section);
+      font-family: var(--font-display);
       font-weight: 700;
       font-size: 1.15rem;
       color: var(--gold);
@@ -643,7 +639,7 @@
       <div style="max-width:560px; margin:2.5rem auto 0; background:#1f1f1f; border:1px solid #D4AF37; padding:2.5rem 2rem; text-align:center;">
         <div style="color:#D4AF37; font-size:11px; letter-spacing:0.18em; text-transform:uppercase; margin-bottom:0.75rem;">Featured This Week</div>
         <img src="/images/momanduncle.jpg" alt="Anthony Raygoza Sr." style="width:100%; max-width:360px; height:auto; display:block; margin:0 auto 1.5rem; border:1px solid #D4AF37;">
-        <h3 style="font-family:'Montserrat',Georgia,serif; font-size:1.6rem; color:#F5F5F5; margin-bottom:0.5rem;">Anthony Raygoza Sr.</h3>
+        <h3 style="font-family:var(--font-body); font-size:1.6rem; color:#F5F5F5; margin-bottom:0.5rem;">Anthony Raygoza Sr.</h3>
         <p style="color:#bababa; margin-bottom:1.75rem;">A life remembered. A legacy preserved.</p>
         <a href="anthony-raygoza-memorial.html" style="display:inline-block; background:#D4AF37; color:#1A1A1A; padding:14px 28px; font-size:11px; letter-spacing:0.14em; text-transform:uppercase; text-decoration:none; font-weight:700;">See His Legacy</a>
       </div>
@@ -653,7 +649,7 @@
       </p>
 
       <p style="margin-top:1.25rem;">
-        <a href="demo-profiles.html" style="display:inline-block; font-family:'Oswald',sans-serif; font-weight:700; font-size:12px; letter-spacing:0.2em; text-transform:uppercase; color:#D4AF37; text-decoration:none; border-bottom:1px solid #D4AF37; padding-bottom:2px;">See All Profiles &rarr;</a>
+        <a href="demo-profiles.html" style="display:inline-block; font-family:var(--font-display); font-weight:700; font-size:12px; letter-spacing:0.2em; text-transform:uppercase; color:#D4AF37; text-decoration:none; border-bottom:1px solid #D4AF37; padding-bottom:2px;">See All Profiles &rarr;</a>
       </p>
     </div>
   </section>

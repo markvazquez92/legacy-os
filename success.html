@@ -5,16 +5,19 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Order Confirmed — My Legacy Continues</title>
+  <link rel="preload" href="/fonts/Inter-VariableFont_opsz,wght.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="/fonts/BigShoulders-VariableFont_opsz,wght.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="stylesheet" href="/fonts/fonts.css">
   <link rel="stylesheet" href="style.css">
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Lato:wght@300;400&display=swap');
+    /* Fonts loaded via /fonts/fonts.css in <head> — see preload + stylesheet links */
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
       min-height: 100vh;
       background: #f9f6f1;
-      font-family: 'Lato', sans-serif;
+      font-family: var(--font-body);
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -62,7 +65,7 @@
     }
 
     h1 {
-      font-family: 'Playfair Display', serif;
+      font-family: var(--font-serif);
       font-size: 28px;
       font-weight: 600;
       margin-bottom: 12px;
@@ -90,7 +93,7 @@
     }
 
     .next-steps h2 {
-      font-family: 'Playfair Display', serif;
+      font-family: var(--font-serif);
       font-size: 15px;
       letter-spacing: 0.08em;
       text-transform: uppercase;

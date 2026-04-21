@@ -7,9 +7,9 @@
 <title>Privacy Promise — How We Protect Your Family's Stories | My Legacy Continues</title>
 <meta name="description" content="Your family's stories are sacred. We don't sell your data. We don't share it. Here's exactly how we protect it — in English and Spanish.">
 <link rel="icon" href="logo.png" type="image/png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Outfit:wght@300;400;500;600&family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@1,400;1,500;1,600&display=swap" rel="stylesheet">
+<link rel="preload" href="/fonts/Inter-VariableFont_opsz,wght.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="preload" href="/fonts/BigShoulders-VariableFont_opsz,wght.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="stylesheet" href="/fonts/fonts.css">
 <style>
   *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
   :root {
@@ -25,7 +25,7 @@
     --brandywine: #8B0000;
   }
   html { scroll-behavior: smooth; }
-  body { font-family: 'Outfit', sans-serif; color: var(--cream); line-height: 1.7; background: var(--charcoal); overflow-x: hidden; }
+  body { font-family: var(--font-body); color: var(--cream); line-height: 1.7; background: var(--charcoal); overflow-x: hidden; }
 
   nav {
     position: fixed; top:0; left:0; right:0;
@@ -40,7 +40,7 @@
   }
   .nav-links a {
     text-decoration:none; color: var(--chrome);
-    font-family:'Outfit',sans-serif; font-weight:500;
+    font-family:var(--font-body); font-weight:500;
     font-size:0.72rem; letter-spacing:0.02em;
     transition: color 0.3s;
   }
@@ -48,7 +48,7 @@
   .nav-cta {
     background: var(--brandywine); color: var(--cream);
     border: 2px solid var(--brandywine); padding: 0.6rem 1.4rem;
-    font-family:'Outfit',sans-serif; font-weight:700;
+    font-family:var(--font-body); font-weight:700;
     font-size:0.8rem; letter-spacing:0.08em; text-decoration:none;
   }
   .nav-toggle { display:none; background:none; border:none; cursor:pointer; padding:0.5rem; flex-direction:column; gap:5px; }
@@ -80,19 +80,19 @@
   .page-hero > * { position:relative; z-index:2; }
 
   .eyebrow {
-    display:inline-block; font-family:'Oswald',sans-serif;
+    display:inline-block; font-family:var(--font-display);
     font-weight:700; font-size:0.72rem; color: var(--gold);
     letter-spacing:0.3em; text-transform:uppercase;
     padding: 0.4rem 1rem; border: 1px solid var(--brandywine); margin-bottom: 1rem;
   }
   h1 {
-    font-family:'Oswald',sans-serif; font-weight:700;
+    font-family:var(--font-display); font-weight:700;
     font-size: clamp(2.25rem, 6vw, 4rem); color: var(--gold-flake);
     letter-spacing: 0.05em; line-height: 1.05;
     text-transform: uppercase; margin-bottom: 1rem;
   }
   .sub-tag {
-    font-family:'Cormorant Garamond',serif; font-style:italic;
+    font-family:var(--font-serif); font-style:italic;
     font-size: clamp(1.15rem, 2.2vw, 1.5rem); color: var(--cream);
     max-width: 720px; opacity: 0.92;
   }
@@ -101,7 +101,7 @@
   .section-charcoal { background: linear-gradient(180deg, #1A1A1A 0%, #1A1A1A 100%); }
   .section-dark { background: var(--charcoal-deep); }
   .section h2 {
-    font-family:'Oswald',sans-serif; font-weight:700;
+    font-family:var(--font-display); font-weight:700;
     font-size: clamp(1.75rem, 4vw, 2.75rem); color: var(--gold-flake);
     text-transform:uppercase; letter-spacing:0.05em;
     text-align:center; margin-bottom: 2rem; line-height:1.15;
@@ -123,17 +123,17 @@
     transform: translateY(-4px);
   }
   .num-badge {
-    font-family:'Oswald',sans-serif; font-weight:700;
+    font-family:var(--font-display); font-weight:700;
     font-size: 1.75rem; color: var(--gold-flake);
     display: block; margin-bottom: 0.5rem;
   }
   .principle-card h3 {
-    font-family:'Oswald',sans-serif; color: var(--cream);
+    font-family:var(--font-display); color: var(--cream);
     font-size: 1.1rem; letter-spacing: 0.04em;
     margin-bottom: 0.75rem; text-transform: uppercase;
   }
   .principle-card p {
-    font-family:'Outfit',sans-serif; color: rgba(245,245,245,0.82);
+    font-family:var(--font-body); color: rgba(245,245,245,0.82);
     font-size: 0.95rem; line-height: 1.65;
   }
 
@@ -145,12 +145,12 @@
   }
   .deep-row:last-child { border-bottom: none; }
   .deep-row .q {
-    font-family:'Oswald',sans-serif; color: var(--gold);
+    font-family:var(--font-display); color: var(--gold);
     font-size: 0.85rem; letter-spacing: 0.15em; text-transform: uppercase;
     padding-top: 0.15rem;
   }
   .deep-row .a {
-    font-family:'Outfit',sans-serif; color: var(--cream); opacity: 0.88;
+    font-family:var(--font-body); color: var(--cream); opacity: 0.88;
     font-size: 0.98rem; line-height: 1.7;
   }
   .deep-row .a strong { color: var(--brandywine); }
@@ -163,12 +163,12 @@
     text-align: left;
   }
   .testimonial-wrap blockquote {
-    font-family:'Cormorant Garamond',serif; font-style:italic;
+    font-family:var(--font-serif); font-style:italic;
     font-size: clamp(1.2rem, 2.2vw, 1.55rem); color: var(--cream);
     line-height: 1.6; margin: 0 0 1.25rem 0;
   }
   .testimonial-wrap cite {
-    font-family:'Oswald',sans-serif; color: var(--gold);
+    font-family:var(--font-display); color: var(--gold);
     font-size: 0.85rem; letter-spacing: 0.18em; text-transform: uppercase;
     font-style: normal; font-weight: 700;
   }
@@ -181,7 +181,7 @@
   }
   .lang-toggle button {
     background: transparent; border: none;
-    font-family:'Oswald',sans-serif; color: var(--cream);
+    font-family:var(--font-display); color: var(--cream);
     font-size: 0.8rem; letter-spacing: 0.15em; text-transform: uppercase;
     padding: 0.5rem 1.25rem; cursor: pointer;
     transition: all 0.3s;
@@ -195,7 +195,7 @@
   .btn-hero {
     display:inline-block; border: 2px solid var(--brandywine);
     color: var(--brandywine); background: transparent;
-    padding: 0.9rem 2.2rem; font-family:'Oswald',sans-serif;
+    padding: 0.9rem 2.2rem; font-family:var(--font-display);
     font-weight:700; font-size: 0.85rem; letter-spacing:0.18em;
     text-transform:uppercase; text-decoration:none;
     transition: all 0.3s;
@@ -428,7 +428,7 @@
 <section class="section section-charcoal">
   <div class="container" style="text-align: center; max-width: 720px;">
     <h2>Questions? Contact Us Directly</h2>
-    <p style="font-family:'Outfit',sans-serif; color: var(--cream); opacity:0.88; margin-bottom: 2rem; font-size: 1rem; line-height: 1.7;">Privacy matters more than any marketing promise. If you have a specific concern about how your data is handled, email us. A human reads every message within 48 hours.</p>
+    <p style="font-family:var(--font-body); color: var(--cream); opacity:0.88; margin-bottom: 2rem; font-size: 1rem; line-height: 1.7;">Privacy matters more than any marketing promise. If you have a specific concern about how your data is handled, email us. A human reads every message within 48 hours.</p>
     <a href="mailto:contact@mylegacycontinues.com?subject=Privacy%20Question" class="btn-hero">Email The Privacy Team</a>
     <p style="margin-top: 1.5rem; font-size: 0.85rem; color: var(--cream); opacity: 0.65;">For the full legal privacy policy: <a href="legal/privacy.html" style="color: var(--brandywine); text-decoration: underline;">legal/privacy.html</a></p>
   </div>

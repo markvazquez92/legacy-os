@@ -5,7 +5,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Cemetery Memorial Plaque — My Legacy Continues</title>
-  <link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@700&family=Karla:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="preload" href="/fonts/Inter-VariableFont_opsz,wght.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="/fonts/BigShoulders-VariableFont_opsz,wght.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="stylesheet" href="/fonts/fonts.css">
   <link rel="stylesheet" href="style.css">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -26,7 +28,7 @@
     body {
       background: var(--bg);
       color: var(--cream);
-      font-family: 'Karla', sans-serif;
+      font-family: var(--font-body);
       font-weight: 300;
       line-height: 1.8;
       background-color:#1A1A1A;
@@ -56,7 +58,7 @@
       color: var(--gold); margin-bottom: 12px;
     }
     h1 {
-      font-family: 'Spline Sans', serif;
+      font-family: var(--font-body);
       font-size: clamp(2.4rem, 5vw, 4rem);
       font-weight: 300; color: var(--cream); line-height: 1.15;
       margin-bottom: 20px;
@@ -69,7 +71,7 @@
     /* SECTIONS */
     .section { max-width: 900px; margin: 0 auto; padding: 80px 24px; border-bottom: 1px solid var(--border); }
     .section h2 {
-      font-family: 'Spline Sans', serif;
+      font-family: var(--font-body);
       font-size: clamp(1.8rem, 3.5vw, 2.6rem);
       font-weight: 300; color: var(--gold); margin-bottom: 20px; line-height: 1.2;
     }
@@ -138,7 +140,7 @@
     /* TEXT SIDE */
     .plaque-text { flex: 1; }
     .plaque-name {
-      font-family: 'Spline Sans', serif;
+      font-family: var(--font-body);
       font-size: 1.5rem;
       font-weight: 600;
       color: var(--engrave);
@@ -148,14 +150,14 @@
       text-shadow: 0 1px 0 rgba(255,255,255,0.3);
     }
     .plaque-dates {
-      font-family: 'Karla', sans-serif;
+      font-family: var(--font-body);
       font-size: 0.8rem;
       letter-spacing: 0.12em;
       color:#9a9a9a;
       margin-bottom: 10px;
     }
     .plaque-epitaph {
-      font-family: 'Spline Sans', serif;
+      font-family: var(--font-body);
       font-style: italic;
       font-size: 0.9rem;
       color:#9a9a9a;
@@ -164,7 +166,7 @@
       padding-top: 10px;
     }
     .plaque-scan-note {
-      font-family: 'Karla', sans-serif;
+      font-family: var(--font-body);
       font-size: 0.6rem;
       letter-spacing: 0.12em;
       text-transform: uppercase;
@@ -201,7 +203,7 @@
     }
     .profile-link-preview:hover { border-color: var(--gold); }
     .plp-label { font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; }
-    .plp-name { font-family: 'Spline Sans', serif; font-size: 1.4rem; color: var(--cream); margin-bottom: 6px; }
+    .plp-name { font-family: var(--font-body); font-size: 1.4rem; color: var(--cream); margin-bottom: 6px; }
     .plp-desc { font-size: 0.85rem; color: var(--muted); }
     .plp-arrow { font-size: 0.75rem; letter-spacing: 0.12em; color: var(--gold); margin-top: 12px; display: block; }
 
@@ -214,25 +216,25 @@
       padding: 28px 24px;
     }
     .step-num {
-      font-family: 'Spline Sans', serif;
+      font-family: var(--font-body);
       font-size: 2.5rem;
       color: var(--gold);
       opacity: 0.4;
       line-height: 1;
       margin-bottom: 12px;
     }
-    .step h3 { font-family: 'Spline Sans', serif; font-size: 1.15rem; color: var(--cream); margin-bottom: 8px; }
+    .step h3 { font-family: var(--font-body); font-size: 1.15rem; color: var(--cream); margin-bottom: 8px; }
     .step p { font-size: 0.85rem; color: var(--muted); }
 
     /* CTA */
     .cta-wrap { text-align: center; padding: 80px 24px; }
-    .cta-wrap h2 { font-family: 'Spline Sans', serif; font-size: clamp(2rem, 4vw, 3rem); font-weight: 300; color: var(--cream); margin-bottom: 16px; }
+    .cta-wrap h2 { font-family: var(--font-body); font-size: clamp(2rem, 4vw, 3rem); font-weight: 300; color: var(--cream); margin-bottom: 16px; }
     .cta-wrap p { color: var(--muted); max-width: 480px; margin: 0 auto 32px; }
     .btn {
       display: inline-block;
       background: var(--gold);
       color: #1a2619;
-      font-family: 'Karla', sans-serif;
+      font-family: var(--font-body);
       font-weight: 500;
       font-size: 0.85rem;
       letter-spacing: 0.1em;
