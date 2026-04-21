@@ -6,6 +6,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The MLC Network &mdash; Central Coast Culture | My Legacy Continues</title>
   <meta name="description" content="The MLC Network — the Central Coast's cultural broadcast station. Weekly drops of music, food, legacy profiles, and 805 stories. Permanent. Hosted forever.">
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://mylegacycontinues.com/network.html">
+  <meta property="og:title" content="The Network — Real 805 Stories | My Legacy Continues">
+  <meta property="og:description" content="Every MLC profile lives on the Network. Families. Businesses. Creators. Rescues. Permanent Central Coast stories.">
+  <meta property="og:image" content="https://mylegacycontinues.com/logo.png">
+  <meta property="og:site_name" content="My Legacy Continues">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://mylegacycontinues.com/network.html">
+  <meta name="twitter:title" content="The Network — Real 805 Stories | My Legacy Continues">
+  <meta name="twitter:description" content="Every MLC profile lives on the Network. Families. Businesses. Creators. Rescues. Permanent Central Coast stories.">
+  <meta name="twitter:image" content="https://mylegacycontinues.com/logo.png">
 
   <link rel="preload" href="/fonts/Inter-VariableFont_opsz,wght.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="preload" href="/fonts/BigShoulders-VariableFont_opsz,wght.ttf" as="font" type="font/ttf" crossorigin>
@@ -566,7 +579,10 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', 'G-XQJ8KPVZX9');
+    gtag('config', 'G-XQJ8KPVZX9', {
+      'page_path': window.location.pathname,
+      'page_title': document.title
+    });
   </script>
 
   <!-- Facebook Pixel -->

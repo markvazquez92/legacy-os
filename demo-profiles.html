@@ -7,6 +7,19 @@
   <title>Real Legacies. Real People. — My Legacy Continues</title>
   <meta name="description" content="Every profile on MLC is a real person. Real story. Permanent. Browse the full MLC Network.">
   <link rel="icon" href="logo.png" type="image/png">
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://mylegacycontinues.com/demo-profiles.html">
+  <meta property="og:title" content="Real Legacies. Real People. | My Legacy Continues">
+  <meta property="og:description" content="See actual MLC profiles. Families, businesses, memorials, rescues. Permanent stories from the Central Coast.">
+  <meta property="og:image" content="https://mylegacycontinues.com/logo.png">
+  <meta property="og:site_name" content="My Legacy Continues">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://mylegacycontinues.com/demo-profiles.html">
+  <meta name="twitter:title" content="Real Legacies. Real People. | My Legacy Continues">
+  <meta name="twitter:description" content="See actual MLC profiles. Families, businesses, memorials, rescues. Permanent stories from the Central Coast.">
+  <meta name="twitter:image" content="https://mylegacycontinues.com/logo.png">
   <link rel="preload" href="/fonts/Inter-VariableFont_opsz,wght.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="preload" href="/fonts/BigShoulders-VariableFont_opsz,wght.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="stylesheet" href="/fonts/fonts.css">
@@ -193,7 +206,10 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', 'G-XQJ8KPVZX9');
+    gtag('config', 'G-XQJ8KPVZX9', {
+      'page_path': window.location.pathname,
+      'page_title': document.title
+    });
   </script>
 
   <!-- Facebook Pixel -->
@@ -209,10 +225,10 @@
     fbq('init', '2828165625364437');
     fbq('track', 'PageView');
   </script>
-  <noscript><img height="1" width="1" style="display:none"
-  src="https://www.facebook.com/tr?id=2828165625364437&ev=PageView&noscript=1"/></noscript>
 </head>
 <body>
+  <!-- Facebook Pixel noscript -->
+  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=2828165625364437&ev=PageView&noscript=1" alt="" /></noscript>
 
   <!-- NAVIGATION -->
   <nav class="site-nav">
