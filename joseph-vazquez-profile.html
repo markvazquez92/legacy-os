@@ -436,6 +436,133 @@
       .sig-body { font-size: 0.98rem; }
       .sig-name { font-size: 1.5rem; }
     }
+    /* ────────────────────────────────────────── */
+    /* GLOBAL NAV (matches site-wide nav)          */
+    /* ────────────────────────────────────────── */
+    .site-nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4rem;
+      background-color: var(--charcoal);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 clamp(1rem, 3vw, 2rem);
+      z-index: 999;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    }
+    .nav-brand { flex-shrink: 0; display: flex; align-items: center; height: 100%; }
+    .nav-logo { height: 3rem; width: auto; max-width: 200px; }
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: clamp(1rem, 2vw, 2.5rem);
+      align-items: center;
+      flex: 1;
+      margin-left: clamp(1rem, 3vw, 3rem);
+    }
+    .nav-links a {
+      font-family: var(--font-body);
+      font-size: clamp(0.85rem, 1.2vw, 1rem);
+      font-weight: 500;
+      color: var(--cream);
+      position: relative;
+      text-decoration: none;
+    }
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: var(--gold);
+      transition: width 0.2s;
+    }
+    .nav-links a:hover::after { width: 100%; }
+    .nav-right { display: flex; align-items: center; gap: 1rem; }
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      flex-direction: column;
+      gap: 0.35rem;
+      padding: 0.5rem;
+    }
+    .nav-toggle span {
+      display: block;
+      width: 24px;
+      height: 3px;
+      background-color: var(--gold);
+      transition: all 0.3s;
+    }
+    .btn {
+      display: inline-flex;
+      padding: clamp(0.7rem, 1.5vw, 1rem) clamp(1.5rem, 3vw, 2rem);
+      font-family: var(--font-display);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      border: none;
+      cursor: pointer;
+      transition: all 0.2s;
+      border-radius: 0;
+      font-size: clamp(0.8rem, 1.3vw, 1rem);
+      min-height: 44px;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+    }
+    .btn-gold {
+      background: linear-gradient(180deg, #5C0A12 0%, #3A070C 100%);
+      color: var(--cream);
+      letter-spacing: 0.18em;
+      border: 2px solid var(--gold);
+      box-shadow: inset 1px 1px 3px rgba(255,255,255,0.3);
+    }
+    .btn-gold:hover {
+      background: linear-gradient(180deg, #3A070C 0%, #2B0608 100%);
+      color: #ffffff;
+      box-shadow: inset 1px 1px 3px rgba(255,255,255,0.4), 0 0 22px -4px #5C0A12;
+      transform: translateY(-2px);
+    }
+    @media (max-width: 768px) {
+      .nav-toggle { display: flex; }
+      .nav-right > a.btn { display: none !important; }
+      .nav-links {
+        display: none !important;
+        position: absolute;
+        top: 4rem;
+        left: 0;
+        right: 0;
+        background-color: #2A2A2A;
+        flex-direction: column;
+        gap: 0;
+        margin: 0;
+        border-bottom: 1px solid rgba(224,224,224,0.2);
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+      }
+      .nav-links.active {
+        display: flex !important;
+        flex-direction: column;
+        width: 100%;
+        background: #2A2A2A;
+        padding: 16px;
+        gap: 12px;
+        max-height: 500px;
+      }
+      .nav-links li {
+        width: 100%;
+        border-bottom: 1px solid rgba(224,224,224,0.1);
+      }
+      .nav-links a { display: block; padding: 1rem 1.5rem; }
+      .nav-right { flex-direction: column; gap: 0.5rem; }
+    }
   </style>
 
   <!-- Google Analytics 4 -->
@@ -464,6 +591,31 @@
   src="https://www.facebook.com/tr?id=2828165625364437&ev=PageView&noscript=1"/></noscript>
 </head>
 <body>
+
+  <!-- GLOBAL NAV -->
+  <nav class="site-nav">
+    <a href="https://mylegacycontinues.com/index.html" class="nav-brand">
+      <img src="logo.png" alt="My Legacy Continues" class="nav-logo">
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="heritage-book.html">Heritage</a></li>
+      <li><a href="pet-tag.html">Pet Tags</a></li>
+      <li><a href="business-profile.html">Business</a></li>
+      <li><a href="network.html">Network</a></li>
+      <li><a href="rescue-registry.html">Rescue</a></li>
+      <li><a href="active-transports.html">Transport</a></li>
+      <li><a href="merch-legacy.html">Merch</a></li>
+      <li><a href="free-profile.html" style="color:#D4AF37;">Free Page</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="https://mylegacycontinues.com/index.html#products" class="btn btn-gold" style="padding: 0.5rem 1.2rem; font-size: 0.7rem;">START YOUR LEGACY</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
 
   <!-- HEADER -->
   <header class="jv-header candy-bg">
@@ -661,6 +813,17 @@
       <a href="index.html">Home</a>
     </div>
   </footer>
+
+  <script>
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    if (navToggle && navLinks) {
+      navToggle.addEventListener('click', () => navLinks.classList.toggle('active'));
+      navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => navLinks.classList.remove('active'));
+      });
+    }
+  </script>
 
 </body>
 </html>
