@@ -32,7 +32,7 @@
   --charcoal-deep: #2A2A2A;
   --gold:#D4AF37;
   --gold-light:   #D4AF37;
-  --coral:        #8B0000;
+  --coral:        #5C0A12;
   --cream:#F5F5F5;
   --charcoal2:    #141414;
   --gold-bright:  #D4AF37;
@@ -55,8 +55,8 @@
   --text:#F5F5F5;
   --text-muted:   rgba(245,245,245,0.65);
   --text-dim:     rgba(245,245,245,0.5);
-  --brandywine:   #8B0000;
-  --brandywine-deep: #4A0000;
+  --brandywine:   #5C0A12;
+  --brandywine-deep: #3A070C;
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -71,10 +71,10 @@ a { color: inherit; text-decoration: none; }
 img { max-width: 100%; height: auto; display: block; }
 
 .btn { display: inline-block; font-family: var(--font-display); font-size: 0.72rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; padding: 16px 34px; min-height: 44px; border: none; cursor: pointer; transition: all 0.22s ease; text-decoration: none; white-space: nowrap;  }
-.btn-primary { background: linear-gradient(180deg, #8B0000 0%, #4A0000 100%); color: #F5F5F5; box-shadow: 0 4px 20px rgba(192,57,43,0.2); transition: all 0.3s ease; }
-.btn-primary:hover { background: linear-gradient(180deg, #6B0000 0%, #2A0000 100%); transform: translateY(-1px); box-shadow: 0 6px 20px rgba(139, 0, 0, 0.3); }
-.btn-outline { background: transparent; color: #722F37; border: 1.5px solid #722F37; }
-.btn-outline:hover { background: #722F37; color: #E0E0E0; }
+.btn-primary { background: linear-gradient(180deg, #5C0A12 0%, #3A070C 100%); color: #F5F5F5; box-shadow: 0 4px 20px rgba(192,57,43,0.2); transition: all 0.3s ease; }
+.btn-primary:hover { background: linear-gradient(180deg, #3A070C 0%, #2B0608 100%); transform: translateY(-1px); box-shadow: 0 6px 20px rgba(92, 10, 18, 0.3); }
+.btn-outline { background: transparent; color: #5C0A12; border: 1.5px solid #5C0A12; }
+.btn-outline:hover { background: #5C0A12; color: #E0E0E0; }
 
 .page-hero { background: #2A2A2A; padding: 130px 48px 72px; }
 .page-hero-inner { max-width: 860px; margin: 0 auto; }
@@ -92,17 +92,17 @@ img { max-width: 100%; height: auto; display: block; }
 
 .what-section { padding: 72px 48px; background:#1A1A1A; }
 .what-inner { max-width: 860px; margin: 0 auto; }
-.what-section h2 { font-family: var(--font-display); font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 700; color: #722F37; margin-bottom: 32px; }
+.what-section h2 { font-family: var(--font-display); font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 700; color: #5C0A12; margin-bottom: 32px; }
 .includes-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin-bottom: 40px; }
 .include-item { background: rgba(192,57,43,0.08); border: 1px solid rgba(192,57,43,0.2);  padding: 22px 20px; box-shadow: 0 2px 12px rgba(192,57,43,0.05); }
 .include-item-icon { font-size: 1.4rem; margin-bottom: 10px; }
-.include-item-title { font-family: var(--font-display); font-size: 0.72rem; font-weight: 700; color: #722F37; margin-bottom: 6px; }
+.include-item-title { font-family: var(--font-display); font-size: 0.72rem; font-weight: 700; color: #5C0A12; margin-bottom: 6px; }
 .include-item-desc { font-size: 0.8rem; color:#F5F5F5; line-height: 1.7; }
 
 /* CASE STUDY BLOCK */
 .case-study { background:#1A1A1A; border: 1px solid rgba(192,57,43,0.2);  padding: 36px 40px; margin-bottom: 48px; }
 .case-study-eyebrow { font-family: var(--font-display); font-size: 0.54rem; letter-spacing: 0.28em; text-transform: uppercase; color: #E0E0E0; display: block; margin-bottom: 14px; }
-.case-study h3 { font-family: var(--font-display); font-size: 1.1rem; font-weight: 700; color: #722F37; margin-bottom: 14px; }
+.case-study h3 { font-family: var(--font-display); font-size: 1.1rem; font-weight: 700; color: #5C0A12; margin-bottom: 14px; }
 .case-study p { font-size: 0.88rem; color:#F5F5F5; line-height: 1.9; margin-bottom: 12px; }
 .case-study p:last-child { margin-bottom: 0; }
 @media (max-width: 600px) { .what-section { padding: 52px 20px; } .case-study { padding: 28px 24px; } }
@@ -111,7 +111,7 @@ img { max-width: 100%; height: auto; display: block; }
 .order-inner { max-width: 860px; margin: 0 auto; }
 .stripe-cta { text-align: center; background: rgba(192,57,43,0.08); border: 1px solid rgba(192,57,43,0.2);  padding: 28px 32px; margin-bottom: 32px; box-shadow: 0 2px 12px rgba(192,57,43,0.05); }
 .stripe-cta p { font-size: 0.88rem; color:#F5F5F5; margin-bottom: 18px; line-height: 1.7; }
-.stripe-cta .price-label { font-family: var(--font-display); font-size: 1.6rem; font-weight: 700; color: #722F37; display: block; margin-bottom: 18px; }
+.stripe-cta .price-label { font-family: var(--font-display); font-size: 1.6rem; font-weight: 700; color: #5C0A12; display: block; margin-bottom: 18px; }
 .form-section-title { font-family: var(--font-display); font-size: 0.6rem; letter-spacing: 0.24em; text-transform: uppercase; color: #E0E0E0; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 1px solid rgba(192,57,43,0.25); }
 .intake-form { display: flex; flex-direction: column; gap: 18px; }
 .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
@@ -314,12 +314,12 @@ img { max-width: 100%; height: auto; display: block; }
 <!-- PHOTO RESEARCH ADD-ON -->
 <section style="padding: 72px 48px; background:#1A1A1A;">
   <div style="max-width: 860px; margin: 0 auto;">
-    <h2 style="font-family:var(--font-display);font-size:clamp(1.4rem,3vw,2rem);font-weight:700;color:#722F37;margin-bottom:8px;">Enhance Your Book</h2>
+    <h2 style="font-family:var(--font-display);font-size:clamp(1.4rem,3vw,2rem);font-weight:700;color:#5C0A12;margin-bottom:8px;">Enhance Your Book</h2>
     <h3 style="font-family:var(--font-display);font-size:1.3rem;font-weight:700;color:#E0E0E0;margin-bottom:16px;">Photo Research Add-On — $150</h3>
     <p style="font-size:0.95rem;color:var(--body);line-height:1.85;max-width:700px;margin-bottom:16px;">Can't find family photos? We search for them.</p>
     <p style="font-size:0.95rem;color:var(--body);line-height:1.85;max-width:700px;margin-bottom:16px;">We dig through historical archives, regional newspapers, church photo collections, and immigration records with attached photographs.</p>
     <p style="font-size:0.95rem;color:var(--body);line-height:1.85;max-width:700px;margin-bottom:24px;">We also search public domain collections to find images connected to your family's time, place, and story.</p>
-    <h4 style="font-family:var(--font-display);font-size:0.85rem;font-weight:700;color:#722F37;margin-bottom:12px;letter-spacing:0.1em;text-transform:uppercase;">What We Search</h4>
+    <h4 style="font-family:var(--font-display);font-size:0.85rem;font-weight:700;color:#5C0A12;margin-bottom:12px;letter-spacing:0.1em;text-transform:uppercase;">What We Search</h4>
     <ul style="list-style:none;margin-bottom:28px;max-width:700px;">
       <li style="padding:0.5rem 0;border-bottom:1px solid rgba(212,160,23,0.2);font-size:0.9rem;color:var(--body);">FamilySearch photo collections (border crossing cards 1903-1957 include actual photographs)</li>
       <li style="padding:0.5rem 0;border-bottom:1px solid rgba(212,160,23,0.2);font-size:0.9rem;color:var(--body);">California digital newspaper archives</li>
@@ -338,18 +338,18 @@ img { max-width: 100%; height: auto; display: block; }
 <!-- HOW WE PRINT -->
 <section style="padding: 72px 48px; background:#1A1A1A;">
   <div style="max-width: 860px; margin: 0 auto;">
-    <h2 style="font-family:var(--font-display);font-size:clamp(1.4rem,3vw,2rem);font-weight:700;color:#722F37;margin-bottom:32px;">How We Print Your Book</h2>
+    <h2 style="font-family:var(--font-display);font-size:clamp(1.4rem,3vw,2rem);font-weight:700;color:#5C0A12;margin-bottom:32px;">How We Print Your Book</h2>
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px;margin-bottom:32px;">
       <div style="background:rgba(192,57,43,0.08);border:1px solid rgba(192,57,43,0.2);padding:24px;">
-        <div style="font-family:var(--font-display);font-size:0.9rem;font-weight:700;color:#722F37;margin-bottom:12px;">Professional Printing Partner</div>
+        <div style="font-family:var(--font-display);font-size:0.9rem;font-weight:700;color:#5C0A12;margin-bottom:12px;">Professional Printing Partner</div>
         <p style="font-size:0.9rem;color:var(--body);line-height:1.7;">We use <strong>Blurb.com</strong> for professional printing — the same platform used by publishers and photographers worldwide.</p>
       </div>
       <div style="background:rgba(192,57,43,0.08);border:1px solid rgba(192,57,43,0.2);padding:24px;">
-        <div style="font-family:var(--font-display);font-size:0.9rem;font-weight:700;color:#722F37;margin-bottom:12px;">Book Specifications</div>
+        <div style="font-family:var(--font-display);font-size:0.9rem;font-weight:700;color:#5C0A12;margin-bottom:12px;">Book Specifications</div>
         <p style="font-size:0.9rem;color:var(--body);line-height:1.7;"><strong>Hardcover, 8.5x11 inches</strong> • <strong>Matte finish</strong> • <strong>40–80 pages</strong> (custom length based on your story)</p>
       </div>
       <div style="background:rgba(192,57,43,0.08);border:1px solid rgba(192,57,43,0.2);padding:24px;">
-        <div style="font-family:var(--font-display);font-size:0.9rem;font-weight:700;color:#722F37;margin-bottom:12px;">Complete Timeline</div>
+        <div style="font-family:var(--font-display);font-size:0.9rem;font-weight:700;color:#5C0A12;margin-bottom:12px;">Complete Timeline</div>
         <p style="font-size:0.9rem;color:var(--body);line-height:1.7;"><strong>Research: 1-2 weeks</strong> • <strong>Writing & Design: 1-2 weeks</strong> • <strong>Printing & Delivery: 2-3 weeks</strong> • <strong>Total: 4-6 weeks</strong></p>
       </div>
     </div>
@@ -415,13 +415,13 @@ img { max-width: 100%; height: auto; display: block; }
 <!-- COMPLEMENTARY PRODUCTS -->
 <section style="padding: 72px 48px; background: rgba(192,57,43,0.05);">
   <div style="max-width: 1000px; margin: 0 auto;">
-    <h2 style="font-family:var(--font-display);font-size:clamp(1.4rem,3vw,2rem);font-weight:700;color:#722F37;margin-bottom:32px;text-align:center;">Preserve More Stories</h2>
+    <h2 style="font-family:var(--font-display);font-size:clamp(1.4rem,3vw,2rem);font-weight:700;color:#5C0A12;margin-bottom:32px;text-align:center;">Preserve More Stories</h2>
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem;">
       <div style="background:#232323;padding:28px;border:1px solid rgba(212,160,23,0.2);text-align:center;">
         <div style="font-size:1.4rem;margin-bottom:12px;"></div>
-        <h3 style="font-family:var(--font-display);font-size:1.2rem;color:#722F37;margin-bottom:12px;"><strong>Baby Legacy</strong></h3>
+        <h3 style="font-family:var(--font-display);font-size:1.2rem;color:#5C0A12;margin-bottom:12px;"><strong>Baby Legacy</strong></h3>
         <p style="font-size:0.9rem;color:#F5F5F5;margin-bottom:16px;line-height:1.6;"><strong>Preserve baby's first year.</strong> Birth story, milestones, memories. Unlocks at 18. $79</p>
-        <a href="baby-legacy.html" style="display:inline-block;padding:10px 18px;background: linear-gradient(135deg, #8B0000, #4A0000);color:#F5F5F5;text-decoration:none;font-size:0.85rem;font-weight:600;transition:all 0.2s;">Explore</a>
+        <a href="baby-legacy.html" style="display:inline-block;padding:10px 18px;background: linear-gradient(135deg, #5C0A12, #3A070C);color:#F5F5F5;text-decoration:none;font-size:0.85rem;font-weight:600;transition:all 0.2s;">Explore</a>
       </div>
     </div>
   </div>
@@ -444,7 +444,7 @@ img { max-width: 100%; height: auto; display: block; }
 <!-- SEE REAL EXAMPLES CAROUSEL -->
 <section style="padding: 72px 48px; background:#1A1A1A;">
   <div style="max-width: 1000px; margin: 0 auto;">
-    <h2 style="font-family:var(--font-display);font-size:clamp(1.4rem,3vw,2rem);font-weight:700;color:#722F37;margin-bottom:8px;text-align:center;">See Real Examples</h2>
+    <h2 style="font-family:var(--font-display);font-size:clamp(1.4rem,3vw,2rem);font-weight:700;color:#5C0A12;margin-bottom:8px;text-align:center;">See Real Examples</h2>
     <p style="font-size:0.95rem;color:var(--body);line-height:1.85;text-align:center;margin-bottom:36px;max-width:700px;margin-left:auto;margin-right:auto;">Real families who preserved their heritage. Here's what they created with us.</p>
 
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
@@ -453,10 +453,10 @@ img { max-width: 100%; height: auto; display: block; }
         <div style="background:#2A2A2A; height: 180px; display: flex; flex-direction:column; align-items: center; justify-content: center; gap:6px;"><span style="color:#E0E0E0;font-family:var(--font-body);font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;">HERITAGE BOOK</span><span style="color:#F5F5F5;font-family:var(--font-body);font-size:1rem;font-weight:700;">Mahony-Vázquez Story</span></div>
         <div style="padding: 24px;">
           <div style="font-family:var(--font-display);font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:#E0E0E0;font-weight:600;margin-bottom:8px;">Heritage Book</div>
-          <h3 style="font-family:var(--font-display);font-size:1.2rem;color:#722F37;margin-bottom:12px;">Mahony-Vázquez Story</h3>
+          <h3 style="font-family:var(--font-display);font-size:1.2rem;color:#5C0A12;margin-bottom:12px;">Mahony-Vázquez Story</h3>
           <p style="font-size:0.9rem;color:#F5F5F5;font-style:italic;margin-bottom:16px;line-height:1.6;">"My kids will know where they came from. Three generations preserved forever."</p>
           <div style="display: flex; flex-direction: column; gap: 8px;">
-            <a href="deborah-mahony-profile.html" style="display:inline-block;padding:10px 14px;background: linear-gradient(135deg, #8B0000, #4A0000);color:#F5F5F5;text-decoration:none;font-size:0.85rem;font-weight:600;text-align:center;transition:all 0.2s;">View Profile</a>
+            <a href="deborah-mahony-profile.html" style="display:inline-block;padding:10px 14px;background: linear-gradient(135deg, #5C0A12, #3A070C);color:#F5F5F5;text-decoration:none;font-size:0.85rem;font-weight:600;text-align:center;transition:all 0.2s;">View Profile</a>
           </div>
         </div>
       </div>
@@ -466,10 +466,10 @@ img { max-width: 100%; height: auto; display: block; }
         <div style="background:#2A2A2A; height: 180px; display: flex; flex-direction:column; align-items: center; justify-content: center; gap:6px;"><span style="color:#E0E0E0;font-family:var(--font-body);font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;">HERITAGE + PROFILES</span><span style="color:#F5F5F5;font-family:var(--font-body);font-size:1rem;font-weight:700;">Vázquez Family Heritage</span></div>
         <div style="padding: 24px;">
           <div style="font-family:var(--font-display);font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:#E0E0E0;font-weight:600;margin-bottom:8px;">Heritage + Profiles</div>
-          <h3 style="font-family:var(--font-display);font-size:1.2rem;color:#722F37;margin-bottom:12px;">Vázquez Family Heritage</h3>
+          <h3 style="font-family:var(--font-display);font-size:1.2rem;color:#5C0A12;margin-bottom:12px;">Vázquez Family Heritage</h3>
           <p style="font-size:0.9rem;color:#F5F5F5;font-style:italic;margin-bottom:16px;line-height:1.6;">"Three generations, one permanent story. Everything connected forever."</p>
           <div style="display: flex; flex-direction: column; gap: 8px;">
-            <a href="vazquez-profile.html" style="display:inline-block;padding:10px 14px;background: linear-gradient(135deg, #8B0000, #4A0000);color:#F5F5F5;text-decoration:none;font-size:0.85rem;font-weight:600;text-align:center;transition:all 0.2s;">View Profile</a>
+            <a href="vazquez-profile.html" style="display:inline-block;padding:10px 14px;background: linear-gradient(135deg, #5C0A12, #3A070C);color:#F5F5F5;text-decoration:none;font-size:0.85rem;font-weight:600;text-align:center;transition:all 0.2s;">View Profile</a>
           </div>
         </div>
       </div>
@@ -479,10 +479,10 @@ img { max-width: 100%; height: auto; display: block; }
         <div style="background:#2A2A2A; height: 180px; display: flex; flex-direction:column; align-items: center; justify-content: center; gap:6px;"><span style="color:#E0E0E0;font-family:var(--font-body);font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;">BUSINESS + HERITAGE</span><span style="color:#F5F5F5;font-family:var(--font-body);font-size:1rem;font-weight:700;">McNeal Construction Story</span></div>
         <div style="padding: 24px;">
           <div style="font-family:var(--font-display);font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:#E0E0E0;font-weight:600;margin-bottom:8px;">Business + Heritage</div>
-          <h3 style="font-family:var(--font-display);font-size:1.2rem;color:#722F37;margin-bottom:12px;">McNeal Construction Story</h3>
+          <h3 style="font-family:var(--font-display);font-size:1.2rem;color:#5C0A12;margin-bottom:12px;">McNeal Construction Story</h3>
           <p style="font-size:0.9rem;color:#F5F5F5;font-style:italic;margin-bottom:16px;line-height:1.6;">"My business story, permanently documented. This is what I built."</p>
           <div style="display: flex; flex-direction: column; gap: 8px;">
-            <a href="mcneal-construction-profile.html" style="display:inline-block;padding:10px 14px;background: linear-gradient(135deg, #8B0000, #4A0000);color:#F5F5F5;text-decoration:none;font-size:0.85rem;font-weight:600;text-align:center;transition:all 0.2s;">View Profile</a>
+            <a href="mcneal-construction-profile.html" style="display:inline-block;padding:10px 14px;background: linear-gradient(135deg, #5C0A12, #3A070C);color:#F5F5F5;text-decoration:none;font-size:0.85rem;font-weight:600;text-align:center;transition:all 0.2s;">View Profile</a>
           </div>
         </div>
       </div>
@@ -493,13 +493,13 @@ img { max-width: 100%; height: auto; display: block; }
 <!-- FEATURES COMPARISON TABLE -->
 <section style="background-color:#1A1A1A; padding: 72px 48px;">
   <div style="max-width: 1000px; margin: 0 auto;">
-    <h2 style="font-family:var(--font-display);font-size:clamp(1.4rem,3vw,2rem);font-weight:700;color:#722F37;margin-bottom:8px;text-align:center;">What's Included</h2>
+    <h2 style="font-family:var(--font-display);font-size:clamp(1.4rem,3vw,2rem);font-weight:700;color:#5C0A12;margin-bottom:8px;text-align:center;">What's Included</h2>
     <p style="font-size:0.95rem;color:var(--body);line-height:1.85;text-align:center;margin-bottom:36px;max-width:700px;margin-left:auto;margin-right:auto;">Everything you get in your Heritage Culture Book — plus optional add-ons to enhance your family's story.</p>
 
     <div style="overflow-x: auto;">
       <table style="width: 100%; border-collapse: collapse; background:#232323;  overflow: hidden; box-shadow: 0 4px 16px rgba(26, 107, 92, 0.08);">
         <thead>
-          <tr style="background: linear-gradient(135deg, #722F37 0%, #2A2A2A 100%); color: #F5F5F5;">
+          <tr style="background: linear-gradient(135deg, #5C0A12 0%, #2A2A2A 100%); color: #F5F5F5;">
             <th style="padding: 16px; text-align: left; font-weight: 600; border-bottom: 2px solid #E0E0E0;">Feature</th>
             <th style="padding: 16px; text-align: center; font-weight: 600; border-bottom: 2px solid #E0E0E0;">Base Book<br>$199</th>
             <th style="padding: 16px; text-align: center; font-weight: 600; border-bottom: 2px solid #E0E0E0;">+ Photo Research<br>+$150</th>
@@ -582,7 +582,7 @@ img { max-width: 100%; height: auto; display: block; }
     <div style="padding-top:56px; margin-bottom:36px; text-align:center;">
       <h2 style="font-family:var(--font-display);font-size:clamp(1.4rem,3vw,2rem);font-weight:700;color: var(--heading);margin-bottom:12px;">Start My Heritage Book</h2>
       <p style="font-size:0.9rem;color:var(--text-muted);max-width:580px;line-height:1.85;margin:0 auto 24px;">Pay first, then fill out the form. We'll reach out within 48 hours to confirm we have everything we need. Delivery is 3–4 weeks from when we receive your information.</p>
-      <button id="showOrderForm" onclick="toggleOrderForm()" style="background: linear-gradient(135deg, #8B0000, #4A0000);color:#F5F5F5;border:1.5px solid #E0E0E0;padding:16px 34px;font-family:var(--font-display);font-size:0.72rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;cursor:pointer;transition:all 0.22s ease;min-height:44px;margin-bottom:24px;">Get Started</button>
+      <button id="showOrderForm" onclick="toggleOrderForm()" style="background: linear-gradient(135deg, #5C0A12, #3A070C);color:#F5F5F5;border:1.5px solid #E0E0E0;padding:16px 34px;font-family:var(--font-display);font-size:0.72rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;cursor:pointer;transition:all 0.22s ease;min-height:44px;margin-bottom:24px;">Get Started</button>
     </div>
 
 <div id="orderFormWrap" style="display:none;">
@@ -900,7 +900,7 @@ document.querySelectorAll('form').forEach(form => {
 
     requiredFields.forEach(field => {
       if (!field.value.trim()) {
-        field.style.borderColor = '#8B0000';
+        field.style.borderColor = '#5C0A12';
         isValid = false;
       }
     });

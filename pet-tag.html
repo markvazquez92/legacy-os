@@ -401,14 +401,14 @@
   <!-- COMPARISON: BASIC VS PREMIUM -->
   <section class="section-cream" style="padding: 3rem 2rem; background-color:#1A1A1A;">
     <div style="max-width: 900px; margin: 0 auto;">
-      <h2 style="text-align: center; margin-bottom: 2rem; color: #722F37; font-size: clamp(1.4rem, 3vw, 2rem);">Choose Your Pet Tag</h2>
+      <h2 style="text-align: center; margin-bottom: 2rem; color: #5C0A12; font-size: clamp(1.4rem, 3vw, 2rem);">Choose Your Pet Tag</h2>
       <div style="overflow-x: auto;">
         <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem;">
           <thead>
             <tr style="background: rgba(192,57,43,0.1); border-bottom: 2px solid #E0E0E0;">
-              <th style="padding: 16px; text-align: left; color: #722F37; font-weight: 700;">Feature</th>
-              <th style="padding: 16px; text-align: center; color: #722F37; font-weight: 700;">Basic Tag<br><span style="font-size: 1.4rem; color: #E0E0E0;">$24.99</span></th>
-              <th style="padding: 16px; text-align: center; color: #722F37; font-weight: 700;">Premium Tag<br><span style="font-size: 1.4rem; color: #E0E0E0;">$49.99</span></th>
+              <th style="padding: 16px; text-align: left; color: #5C0A12; font-weight: 700;">Feature</th>
+              <th style="padding: 16px; text-align: center; color: #5C0A12; font-weight: 700;">Basic Tag<br><span style="font-size: 1.4rem; color: #E0E0E0;">$24.99</span></th>
+              <th style="padding: 16px; text-align: center; color: #5C0A12; font-weight: 700;">Premium Tag<br><span style="font-size: 1.4rem; color: #E0E0E0;">$49.99</span></th>
             </tr>
           </thead>
           <tbody>
@@ -480,7 +480,7 @@
           <p style="font-size:0.9rem;color:#F5F5F5;font-style:italic;margin-bottom:16px;line-height:1.6;">"312 dogs rescued, 287 found forever homes. Their story documented."</p>
           <div style="display: flex; gap: 8px; justify-content: center;">
             <a href="shoshi-gamliel-profile.html" style="display:inline-block;padding:10px 14px;background:#E0E0E0;color:#F5F5F5;text-decoration:none;font-size:0.85rem;font-weight:600;transition:all 0.2s;">Learn More</a>
-            <a href="rescue-intake.html" style="display:inline-block;padding:10px 14px;background: linear-gradient(135deg, #8B0000, #4A0000);color:#F5F5F5;text-decoration:none;font-size:0.85rem;font-weight:600;transition:all 0.2s;">Get Involved</a>
+            <a href="rescue-intake.html" style="display:inline-block;padding:10px 14px;background: linear-gradient(135deg, #5C0A12, #3A070C);color:#F5F5F5;text-decoration:none;font-size:0.85rem;font-weight:600;transition:all 0.2s;">Get Involved</a>
           </div>
         </div>
       </div>
@@ -569,7 +569,7 @@
     <div class="section-inner">
       <div class="form-container">
         <div style="text-align: center; margin-bottom: 24px;">
-          <button id="showOrderForm" onclick="toggleOrderForm()" style="background: linear-gradient(135deg, #8B0000, #4A0000);color:#F5F5F5;border:1.5px solid #E0E0E0;padding:12px 24px;font-family:var(--font-display);font-size:0.75rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;transition:all 0.22s ease;min-height:44px;margin-bottom:16px">Order Now</button>
+          <button id="showOrderForm" onclick="toggleOrderForm()" style="background: linear-gradient(135deg, #5C0A12, #3A070C);color:#F5F5F5;border:1.5px solid #E0E0E0;padding:12px 24px;font-family:var(--font-display);font-size:0.75rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;transition:all 0.22s ease;min-height:44px;margin-bottom:16px">Order Now</button>
         </div>
         <div id="orderFormWrap" style="display:none;">
         <form action="https://formspree.io/f/xzzpqjle" method="POST">
@@ -781,7 +781,7 @@ document.querySelectorAll('form').forEach(form => {
 
     requiredFields.forEach(field => {
       if (!field.value.trim()) {
-        field.style.borderColor = '#8B0000';
+        field.style.borderColor = '#5C0A12';
         isValid = false;
       }
     });
