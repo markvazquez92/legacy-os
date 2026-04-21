@@ -219,6 +219,21 @@
 </section>
 
 <footer><p><strong>My Legacy Continues</strong></p><p>Contact: contact@mylegacycontinues.com | <a href="tel:+18058633794">(805) 863-3794</a> | Santa Maria, CA</p><p style="margin-top:2rem;font-size:0.85rem"><a href="legal/privacy.html">Privacy</a> | <a href="about.html">About</a> | <a href="contact.html">Contact</a></p></footer>
+  <script>
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    if (navToggle) {
+      navToggle.addEventListener('click', () => navLinks.classList.toggle('active'));
+      navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => navLinks.classList.remove('active'));
+      });
+    }
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  </script>
+
   <!-- Form Submission Tracking -->
   <script>
     document.querySelectorAll('form').forEach(form => {
