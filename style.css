@@ -141,12 +141,16 @@ p {
   display: flex;
   align-items: center;
   height: 100%;
+  overflow: hidden;
+  max-width: 60%;
 }
 
 .nav-logo {
   height: 3rem;
   width: auto;
   max-width: 200px;
+  max-height: 100%;
+  object-fit: contain;
 }
 
 .nav-links {
