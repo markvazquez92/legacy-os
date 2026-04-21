@@ -1127,10 +1127,16 @@
   </div>
 </section>
 
+<style>
+  @media (min-width: 640px) {
+    .free-vs-grid { grid-template-columns: 1fr 1fr !important; }
+  }
+</style>
+
 <section style="background:#1A1A1A; padding:2.5rem 1.5rem; border-top:1px solid rgba(212,175,55,0.15); border-bottom:1px solid rgba(212,175,55,0.15);">
   <div style="max-width:720px; margin:0 auto; text-align:center;">
     <p style="font-family:var(--font-display); font-size:0.72rem; letter-spacing:0.28em; color:#D4AF37; text-transform:uppercase; margin-bottom:1rem;">Free vs. $79 — What's The Difference?</p>
-    <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; text-align:left; max-width:600px; margin:0 auto;">
+    <div class="free-vs-grid" style="display:grid; grid-template-columns:1fr; gap:1.5rem; text-align:left; max-width:600px; margin:0 auto;">
       <div style="padding:1.25rem; border:1px solid rgba(212,175,55,0.2);">
         <p style="font-family:var(--font-display); font-size:0.7rem; letter-spacing:0.2em; color:#D4AF37; text-transform:uppercase; margin-bottom:0.5rem;">Free Page</p>
         <p style="font-family:var(--font-body); font-size:0.9rem; color:#E0E0E0; line-height:1.6;">Your name on the network. Basic profile. <strong>You build it yourself</strong> when the builder launches.</p>
@@ -1158,7 +1164,6 @@
           <p>Your family's complete story.<br>Researched. Written. Printed.<br>Linked to a permanent digital profile via QR.</p>
           <div class="product-price">$199</div>
           <a href="heritage-book.html" class="product-learn-more" data-product="heritage-book">Learn More →</a>
-          <p style="font-size: 0.85rem; color: var(--chrome); opacity: 0.7; margin-top: 0.5rem;">Includes a printed hardcover + professional research. Example coming soon.</p>
         </div>
       </div>
 
@@ -1189,7 +1194,7 @@
 
       <!-- Card 5: Legacy Profile -->
       <div class="product-card">
-        <img src="images/products/mcnealcards.jpg?v=20260416" alt="Legacy Profile">
+        <img src="images/products/examples.jpg?v=20260416" alt="Business Founder Profile">
         <div class="product-card-body">
           <div class="product-label">Profile</div>
           <h3>Business Founder Profile</h3>
