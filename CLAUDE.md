@@ -13,6 +13,9 @@ Last updated: April 21, 2026
 - contractor-bundle.html + index.html: form _next redirects added
 - privacy.html + thank-you.html: old white/cream colors replaced with Onyx (#14110F)
 - style.css: nav overflow fix for medium screen widths
+- Apr 21 2026: Stripped leading-slash internal links (GitHub Pages 404 fix) in anthony-raygoza-memorial, antoinette-raygoza-memorial, contractor-bundle, faq
+- Apr 21 2026: family-tree.html — JH node link corrected: joseph-vazquez-heritage.html → joseph-vazquez-profile.html
+- Apr 21 2026: creator-profile.html + sports-legacy.html — Formspree intake form added below Stripe button (endpoint xgolrkea, _next → thank-you.html)
 
 ### Parking lot — not started
 - vazquez-profile.html: page loads, content never reviewed

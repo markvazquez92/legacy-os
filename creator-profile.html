@@ -27,6 +27,18 @@
   <style>
     body { background:#1A1A1A; color:#F5F5F5; overflow-x: hidden; font-family: var(--font-body); }
     section { background-color:#1A1A1A; }
+
+    /* Order form */
+    #order { padding: 64px 24px; background:#1A1A1A; }
+    #order .order-inner { max-width: 640px; margin: 0 auto; }
+    #order h2 { font-family: var(--font-display); font-size: 32px; color: var(--cream); text-align:center; letter-spacing: 0.06em; margin-bottom: 12px; text-transform: uppercase; }
+    #order .order-note { font-size: 14px; color: var(--cream-muted); text-align:center; margin-bottom: 28px; line-height: 1.6; }
+    #order form .field { margin-bottom: 20px; }
+    #order form label { display: block; font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); margin-bottom: 6px; }
+    #order form input, #order form textarea { width: 100%; background: #14110F; border: 1px solid rgba(212,175,55,0.3); padding: 12px 16px; color: var(--cream); font-family: var(--font-body); font-size: 16px; }
+    #order form input::placeholder, #order form textarea::placeholder { color: var(--cream-muted); opacity: 0.5; }
+    #order form input:focus, #order form textarea:focus { outline: none; border-color: var(--gold); }
+    #order form textarea { min-height: 100px; resize: vertical; }
   </style>
 
   <!-- Google Analytics 4 -->
@@ -97,6 +109,24 @@
       <div style="margin-top: 2rem; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
         <a href="https://buy.stripe.com/4gM14odSLaK8asI9CIfQI03" class="btn btn-gold" data-product="creator-profile">Get Your Profile — $79</a>
       </div>
+    </div>
+  </section>
+
+  <!-- ORDER FORM -->
+  <section id="order">
+    <div class="order-inner">
+      <h2>Order Details</h2>
+      <p class="order-note">After paying through the button above, fill out the form below so we can build your profile. We respond within 48 hours.</p>
+      <form action="https://formspree.io/f/xgolrkea" method="POST">
+        <input type="hidden" name="_subject" value="Creator Profile Order — $79"/>
+        <input type="hidden" name="_next" value="https://mylegacycontinues.com/thank-you.html"/>
+        <input type="hidden" name="product" value="Creator Profile"/>
+        <div class="field"><label>Name *</label><input type="text" name="name" required/></div>
+        <div class="field"><label>Email *</label><input type="email" name="email" required/></div>
+        <div class="field"><label>Phone *</label><input type="tel" name="phone" required/></div>
+        <div class="field"><label>Notes</label><textarea name="notes" placeholder="Links, handles, anything you want on your profile"></textarea></div>
+        <button type="submit" class="btn-gold" style="width:100%;border:none;cursor:pointer;font-size:14px;padding:14px">Submit Order Details</button>
+      </form>
     </div>
   </section>
 
