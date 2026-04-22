@@ -19,6 +19,7 @@ Last updated: April 22, 2026
 - Apr 22 2026: about.html — restored broken <img> tags (nav logo L147 + hero image L166). Commit 7feeac3.
 - Apr 22 2026: family-tree.html removed (commit 48c0b20). Connection feature moves to individual profiles instead.
 - Apr 22 2026: rescue-registry.html — Section 4 form simplified (Get Involved, 3 fields, no card wrapper); Section 7 copy softened (removed Underdog Heroes specificity, plain 10% language).
+- Apr 22 2026: Sitewide — removed "Underdog Heroes" org name from 8 pages, replaced with "Rescue Partner" / generic copy. Kept shoshi-gamliel-profile + rescue-intake intact (her named pages). Commit 141b18f.
 
 ### Parking lot — not started
 - vazquez-profile.html: page loads, content never reviewed
