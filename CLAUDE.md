@@ -20,12 +20,14 @@ Last updated: April 22, 2026
 - Apr 22 2026: family-tree.html removed (commit 48c0b20). Connection feature moves to individual profiles instead.
 - Apr 22 2026: rescue-registry.html — Section 4 form simplified (Get Involved, 3 fields, no card wrapper); Section 7 copy softened (removed Underdog Heroes specificity, plain 10% language).
 - Apr 22 2026: Sitewide — removed "Underdog Heroes" org name from 8 pages, replaced with "Rescue Partner" / generic copy. Kept shoshi-gamliel-profile + rescue-intake intact (her named pages). Commit 141b18f.
+- Apr 22 2026: Removed broken/orphan links across 3 files. heritage-book.html: killed Culture Guide CTA + "$49 standalone" line, removed Life Trailer teaser section, removed Morning Memories Book section. cemetery-plaque.html: removed "Watch Trailer" button. vazquez-profile.html: removed "Watch the Vázquez Legacy Trailer" CTA block.
 
 ### Parking lot — not started
 - vazquez-profile.html: page loads, content never reviewed
 - Stop Claude button: not found in any HTML — likely a browser extension, not in codebase
 - Copy inconsistencies, placeholder cards, FAQ alignment, form UX
 - Folder reorganization (NOT STARTED): move profile pages → /profiles/, memorial pages → /memorials/, product pages → /products/. All internal links across every .html file will need updating. Do NOT start without explicit instruction — touches every page on the site.
+- Orphan files on disk (no inbound links as of Apr 22 2026): culture-guide.html, life-trailer.html, vazquez-trailer.html. Decide later: revive with real content, redirect, or delete.
 
 ### Locked constants — never touch without explicit instruction
 - Formspree endpoint: xgolrkea (never change)
