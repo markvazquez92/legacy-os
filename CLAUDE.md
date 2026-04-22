@@ -69,3 +69,33 @@ GitHub Actions config. Do not modify without explicit approval.
 - NO rounded pill buttons (max border-radius 3px)
 - Tone: warm, human, plain-spoken — never AI-sounding
 - All pages self-contained HTML — fonts served locally from /fonts/ (except Courier Prime + Caveat for Signature Block, Joseph profile only)
+## SESSION RULES — Anti-Loop Protocol
+
+- Before touching any file, grep for the pattern across ALL .html files first
+- Fix all instances of a pattern in ONE pass, not file by file
+- Batch all fixes into ONE commit per session — never push single-file fixes
+- Do not chase adjacent issues mid-session — finish the stated goal first
+- After every change, state: what was changed, what file, what line
+- If the same fix appears in multiple files, use a loop or sed command — not manual edits
+- Never "clean up while I'm in here" — scope creep is the loop
+
+## SHARED COMPONENTS — Known Repeat Offenders
+
+The following blocks appear on every page and must be kept identical:
+- Header nav (all 9 links in exact order)
+- Footer nav + copyright + contact info
+- "Talk To The Founder" / Text Bear block
+
+When fixing any of these, fix ALL pages in one pass using grep + batch edit.
+
+## CURRENT NAV LINK MAP (source of truth)
+
+Home → index.html
+Heritage → heritage-book.html
+Pet Tags → pet-tag.html
+Business → business-profile.html
+Network → network.html
+Rescue → rescue-registry.html
+Transport → active-transports.html
+Free Page → free-profile.html
+About → about.html
