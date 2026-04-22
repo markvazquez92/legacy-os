@@ -3,7 +3,7 @@ markdown# CLAUDE.md — Rules for AI tools working in this repo
 ---
 
 ## CURRENT STATUS
-Last updated: April 21, 2026
+Last updated: April 22, 2026
 
 ### Completed — do not redo
 - All 43 pages: footer nav standardized (12-link canonical footer)
@@ -16,11 +16,14 @@ Last updated: April 21, 2026
 - Apr 21 2026: Stripped leading-slash internal links (GitHub Pages 404 fix) in anthony-raygoza-memorial, antoinette-raygoza-memorial, contractor-bundle, faq
 - Apr 21 2026: family-tree.html — JH node link corrected: joseph-vazquez-heritage.html → joseph-vazquez-profile.html
 - Apr 21 2026: creator-profile.html + sports-legacy.html — Formspree intake form added below Stripe button (endpoint xgolrkea, _next → thank-you.html)
+- Apr 22 2026: about.html — restored broken <img> tags (nav logo L147 + hero image L166). Commit 7feeac3.
+- Apr 22 2026: family-tree.html removed (commit 48c0b20). Connection feature moves to individual profiles instead.
 
 ### Parking lot — not started
 - vazquez-profile.html: page loads, content never reviewed
 - Stop Claude button: not found in any HTML — likely a browser extension, not in codebase
 - Copy inconsistencies, placeholder cards, FAQ alignment, form UX
+- Folder reorganization (NOT STARTED): move profile pages → /profiles/, memorial pages → /memorials/, product pages → /products/. All internal links across every .html file will need updating. Do NOT start without explicit instruction — touches every page on the site.
 
 ### Locked constants — never touch without explicit instruction
 - Formspree endpoint: xgolrkea (never change)
