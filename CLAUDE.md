@@ -18,6 +18,7 @@ Last updated: April 22, 2026
 - Apr 21 2026: creator-profile.html + sports-legacy.html — Formspree intake form added below Stripe button (endpoint xgolrkea, _next → thank-you.html)
 - Apr 22 2026: about.html — restored broken <img> tags (nav logo L147 + hero image L166). Commit 7feeac3.
 - Apr 22 2026: family-tree.html removed (commit 48c0b20). Connection feature moves to individual profiles instead.
+- Apr 22 2026: rescue-registry.html — Section 4 form simplified (Get Involved, 3 fields, no card wrapper); Section 7 copy softened (removed Underdog Heroes specificity, plain 10% language).
 
 ### Parking lot — not started
 - vazquez-profile.html: page loads, content never reviewed
