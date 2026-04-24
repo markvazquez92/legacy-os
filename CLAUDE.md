@@ -21,6 +21,8 @@ Last updated: April 22, 2026
 - Apr 22 2026: rescue-registry.html — Section 4 form simplified (Get Involved, 3 fields, no card wrapper); Section 7 copy softened (removed Underdog Heroes specificity, plain 10% language).
 - Apr 22 2026: Sitewide — removed "Underdog Heroes" org name from 8 pages, replaced with "Rescue Partner" / generic copy. Kept shoshi-gamliel-profile + rescue-intake intact (her named pages). Commit 141b18f.
 - Apr 22 2026: Removed broken/orphan links across 3 files. heritage-book.html: killed Culture Guide CTA + "$49 standalone" line, removed Life Trailer teaser section, removed Morning Memories Book section. cemetery-plaque.html: removed "Watch Trailer" button. vazquez-profile.html: removed "Watch the Vázquez Legacy Trailer" CTA block.
+- Apr 23 2026: **Total System Sync refactor (Phases 1–5 + homepage rebuild)**. Font stack flipped: Big Shoulders/Fraunces/Inter retired, Staatliches/Lato/Cormorant Garamond Italic locked — all self-hosted at `/fonts/`. `fonts/fonts.css` rewritten. `style.css` `:root` consolidated around CLAUDE.md palette (Onyx/Brandywine/Pagan Gold primary + Bone Cream/Chrome Pinstripe/memorial sub-palette supporting); 925 inline `var(--...)` refs keep working via alias layer; `!important` font/button overrides rewritten to use `var()`. `manifest.json` background+theme colors swapped to spec. 798 hex replacements across 38 HTMLs (#1A1A1A → `var(--color-bg)`, #F5F5F5 → `var(--color-text)`, #D4AF37 → `var(--color-accent)`). One SVG `stroke=` on index.html:1462 moved into inline `style=` to support `var()`. `about.html` repaired — was truncated at L290, missing closers. `joseph-vazquez-profile.html` repaired — was missing `<link rel="stylesheet" href="style.css">` entirely. Anthony Raygoza memorial body forced to `var(--color-bg)` + Lato. Retired font preloads stripped from 34 HTMLs; Staatliches + Lato preloads added in their place. **New files:** `js/bionic.js` (Bionic Bold utility — opt-in via `data-bionic="true"` or `.bionic`, applied to heritage-book.html + pet-tag.html + cemetery-plaque.html — 722/563/similar `<b>` wraps verified), `js/sticky-cta.js` (mobile-only sticky "Claim Free Profile" CTA injected sitewide on 37 HTMLs; self-excludes on free-profile.html). `style.css` gained global `.sticky-cta` block + WCAG 2.5.5 min-44×44 touch target rule covering `button`, `.btn`, `a.btn`, `.home-cta`, `input[type="submit|button|reset"]`, `.nav-toggle`. **Homepage rebuild:** `index.html` collapsed from 1,474 → ~475 lines — 6-section flow (Hero / Founder Mission / 3-Step / Legacy Bundle w/ inline Bionic Bold / Rescue Partner / Final Call) with canonical nav+footer preserved. Known residuals (deferred): 2 stale CSS comments in anthony+antoinette reference old font names (zero runtime impact); archive/ intentionally untouched.
+- Apr 24 2026: **Final color-purity sweep.** antoinette-raygoza-memorial.html body override matched to anthony spec (onyx bg + Lato body). Global `#FAF3E6` → `#ECE4D2` swap: 20 replacements across 4 files (anthony, antoinette, network, vazquez). Sitewide `#FAF3E6` count is now 0. Browser-verified: antoinette body bg `rgb(20,17,15)` / text `rgb(236,228,210)` / font Lato, no console errors.
 
 ### Parking lot — not started
 - vazquez-profile.html: page loads, content never reviewed
@@ -125,17 +127,17 @@ For pages inside /legal/ use ../ prefix on every href.
 - Divider Memory: #3A2F27
 
 ### Fonts (self-hosted at /fonts/)
-- Display: Big Shoulders Display (variable)
-- Serif/Editorial: Fraunces (variable, regular + italic)
-- Body/UI: Inter (variable)
-- Signature Block only: Courier Prime + Caveat (Google Fonts — Joseph profile only)
-- Killed: Staatliches, Lato, Cormorant, Oswald, Outfit, Cinzel
+- Hero / Display / Eyebrows: Staatliches
+- Body / UI: Lato
+- Quotes only: Cormorant Garamond Italic (400)
+- Signature Block only: Courier Prime + Caveat (Joseph profile only)
+- Killed (remove on sight): Big Shoulders, Oswald, Fraunces, Inter, Outfit, Cinzel
 
 ### Typography
-- Body: Inter 18px / 1.6 line-height / 60ch max-width
-- H1: Fraunces 900 / 36px mobile / 64px desktop
-- Pull quotes: Fraunces Italic
-- Eyebrows: Big Shoulders 900 uppercase tracked +120
+- Body: Lato 18px / 1.6 line-height / 60ch max-width
+- H1: Staatliches / 36px mobile / 64px desktop
+- Pull quotes: Cormorant Garamond Italic
+- Eyebrows: Staatliches uppercase tracked +120
 
 ### ADHD rules
 - Max 12 words/sentence, 3 sentences/paragraph, 75 words/paragraph

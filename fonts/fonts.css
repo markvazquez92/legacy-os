@@ -4,41 +4,55 @@
    (or permissive equivalent). See *-LICENSE.txt in this directory.
    ------------------------------------------------------------
    Stack:
-     --font-display: Big Shoulders Display  (hero + section display)
-     --font-serif:   Fraunces               (editorial body + pull quotes)
-     --font-body:    Inter                  (UI + running text)
+     --font-hero:    Staatliches         (hero / display / eyebrows)
+     --font-body:    Lato                (UI + running text)
+     --font-quote:   Cormorant Garamond  (pull quotes — italic 400 only)
      Courier Prime   (Signature Block only — local fallback)
+   Retired on Apr 23 2026: Big Shoulders, Fraunces, Inter, Oswald.
    ============================================================ */
 
 @font-face {
-  font-family: 'Inter';
-  src: url('/fonts/Inter-VariableFont_opsz,wght.ttf') format('truetype-variations');
-  font-weight: 100 900;
+  font-family: 'Staatliches';
+  src: url('/fonts/Staatliches-Regular.ttf') format('truetype');
+  font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Fraunces';
-  src: url('/fonts/Fraunces-VariableFont_SOFT,WONK,opsz,wght.ttf') format('truetype-variations');
-  font-weight: 100 900;
+  font-family: 'Lato';
+  src: url('/fonts/Lato-Regular.ttf') format('truetype');
+  font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
-
 @font-face {
-  font-family: 'Fraunces';
-  src: url('/fonts/Fraunces-Italic-VariableFont_SOFT,WONK,opsz,wght.ttf') format('truetype-variations');
-  font-weight: 100 900;
+  font-family: 'Lato';
+  src: url('/fonts/Lato-Italic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Lato';
+  src: url('/fonts/Lato-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Lato';
+  src: url('/fonts/Lato-BoldItalic.ttf') format('truetype');
+  font-weight: 700;
   font-style: italic;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Big Shoulders Display';
-  src: url('/fonts/BigShoulders-VariableFont_opsz,wght.ttf') format('truetype-variations');
-  font-weight: 100 900;
-  font-style: normal;
+  font-family: 'Cormorant Garamond';
+  src: url('/fonts/CormorantGaramond-Italic-VariableFont_wght.ttf') format('truetype-variations');
+  font-weight: 400;
+  font-style: italic;
   font-display: swap;
 }
 

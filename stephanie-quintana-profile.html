@@ -20,9 +20,8 @@
   <meta name="twitter:title" content="Stephanie Quintana — Legacy Profile | My Legacy Continues">
   <meta name="twitter:description" content="Creator. Central Coast. Her story, permanent. One payment, forever. Built by My Legacy Continues.">
   <meta name="twitter:image" content="https://mylegacycontinues.com/logo.png">
-
-  <link rel="preload" href="/fonts/Inter-VariableFont_opsz,wght.ttf" as="font" type="font/ttf" crossorigin>
-  <link rel="preload" href="/fonts/BigShoulders-VariableFont_opsz,wght.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="/fonts/Staatliches-Regular.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="/fonts/Lato-Regular.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="stylesheet" href="/fonts/fonts.css">
 
   <link rel="stylesheet" href="style.css">
@@ -30,9 +29,9 @@
   <style>
     /* SCOPED — Stephanie Creator Profile palette: MLC Candy & Chrome */
     :root {
-      --sq-charcoal: #1A1A1A;
+      --sq-charcoal: var(--color-bg);
       --sq-charcoal-deep: #0F0F0F;
-      --sq-gold: #D4AF37;
+      --sq-gold: var(--color-accent);
       --sq-gold-warm: #D4A017;
       --sq-brandywine-start: #5C0A12;
       --sq-brandywine-end: #3A070C;
@@ -130,7 +129,7 @@
       display: block;
       padding: 1.1rem 1.5rem;
       background: linear-gradient(180deg, var(--sq-brandywine-start) 0%, var(--sq-brandywine-end) 100%);
-      color: #F5F5F5;
+      color: var(--color-text);
       text-decoration: none;
       font-family: var(--font-display);
       font-weight: 600;
@@ -264,7 +263,7 @@
       <li><a href="network.html">Network</a></li>
       <li><a href="rescue-registry.html">Rescue</a></li>
       <li><a href="active-transports.html">Transport</a></li>
-            <li><a href="free-profile.html" style="color:#D4AF37;">Free Page</a></li>
+            <li><a href="free-profile.html" style="color:var(--color-accent);">Free Page</a></li>
       <li><a href="about.html">About</a></li>
     </ul>
     <div class="nav-right">
@@ -341,5 +340,6 @@
     }
   </script>
 
+<script src="js/sticky-cta.js" defer></script>
 </body>
 </html>

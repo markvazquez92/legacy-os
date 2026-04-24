@@ -20,9 +20,10 @@
   <meta name="twitter:description" content="The story of Bear's father. Galicia 1547 to Santa Maria. A living Heritage profile preserved permanently by My Legacy Continues.">
   <meta name="twitter:image" content="https://mylegacycontinues.com/images/meandpops.jpeg">
   <link rel="icon" href="logo.png" type="image/png">
-  <link rel="preload" href="/fonts/Inter-VariableFont_opsz,wght.ttf" as="font" type="font/ttf" crossorigin>
-  <link rel="preload" href="/fonts/Fraunces-VariableFont_SOFT,WONK,opsz,wght.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="/fonts/Staatliches-Regular.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="/fonts/Lato-Regular.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="stylesheet" href="/fonts/fonts.css">
+  <link rel="stylesheet" href="style.css">
   <!-- Signature Block only — Courier Prime + Caveat from Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -32,12 +33,12 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
     :root {
-      --charcoal: #1A1A1A;
+      --charcoal: var(--color-bg);
       --charcoal-2: #232323;
       --charcoal-3: #2a2a2a;
-      --gold: #D4AF37;
+      --gold: var(--color-accent);
       --gold-soft: rgba(212,175,55,0.25);
-      --cream: #F5F5F5;
+      --cream: var(--color-text);
       --dim: #bababa;
     }
 
@@ -380,7 +381,7 @@
       font-family: var(--font-display);
       font-size: 0.72rem;
       letter-spacing: 0.28em;
-      color: #D4AF37;
+      color: var(--color-accent);
       text-transform: uppercase;
       text-align: center;
       margin-bottom: 0.6rem;
@@ -389,7 +390,7 @@
       font-family: var(--font-display);
       font-weight: 700;
       font-size: 1.75rem;
-      color: #F5F5F5;
+      color: var(--color-text);
       text-align: center;
       letter-spacing: 0.03em;
       text-transform: uppercase;
@@ -608,7 +609,7 @@
       <li><a href="network.html">Network</a></li>
       <li><a href="rescue-registry.html">Rescue</a></li>
       <li><a href="active-transports.html">Transport</a></li>
-            <li><a href="free-profile.html" style="color:#D4AF37;">Free Page</a></li>
+            <li><a href="free-profile.html" style="color:var(--color-accent);">Free Page</a></li>
       <li><a href="about.html">About</a></li>
     </ul>
     <div class="nav-right">
@@ -633,8 +634,8 @@
   <section class="jv-chapter candy-bg">
     <div class="jv-chapter-inner">
       <figure style="margin: 0 0 2.5rem; text-align:center;">
-        <img src="images/meandpops.jpeg" alt="Joseph Vázquez and Bear" style="width:100%; max-width:620px; height:auto; border:2px solid #D4AF37; display:block; margin:0 auto; box-shadow:0 10px 40px rgba(212,175,55,0.15);">
-        <figcaption style="font-family:var(--font-serif); font-style:italic; font-size:1.1rem; color:#D4AF37; margin-top:1rem;">"The man who started it all."</figcaption>
+        <img src="images/meandpops.jpeg" alt="Joseph Vázquez and Bear" style="width:100%; max-width:620px; height:auto; border:2px solid var(--color-accent); display:block; margin:0 auto; box-shadow:0 10px 40px rgba(212,175,55,0.15);">
+        <figcaption style="font-family:var(--font-serif); font-style:italic; font-size:1.1rem; color:var(--color-accent); margin-top:1rem;">"The man who started it all."</figcaption>
       </figure>
       <div class="jv-body">
         <p>Joseph Vázquez was born June 15, 1968 in Santa Barbara, California. He grew up Central Coast — mountains to one side, ocean to the other. His father was a metalworker and ring maker. His grandfather Fidel brought the family from Mexico City to California. Joseph carried that weight forward.</p>
@@ -672,7 +673,7 @@
         <p>The <strong>Vázquez</strong> name doesn't start in California. It starts in <strong>Galicia, Spain</strong> — green coast, Atlantic wind, Celtic roots buried under Spanish rule.</p>
         <p>The earliest recorded Vázquez — <strong>Juan Vázquez de Coronado</strong> — lived around 1235 to 1295. By <strong>1547</strong>, the name is carved into church records in Soba, Santander.</p>
         <p>One Vázquez even led a Spanish expedition to present-day Kansas in 1540. <strong>Francisco Vázquez de Coronado.</strong> The name traveled before the family did.</p>
-        <p style="font-family:var(--font-serif); font-style:italic; color:#D4AF37; font-size:1.25rem; margin-top:1.5rem; padding-left:1.25rem; border-left:2px solid #D4AF37;">Son of Vasco. Son of the Basque. A name forged before the maps were drawn.</p>
+        <p style="font-family:var(--font-serif); font-style:italic; color:var(--color-accent); font-size:1.25rem; margin-top:1.5rem; padding-left:1.25rem; border-left:2px solid var(--color-accent);">Son of Vasco. Son of the Basque. A name forged before the maps were drawn.</p>
       </div>
     </div>
   </section>
@@ -700,7 +701,7 @@
         <p>Joe became a Don. "<em>Once a Don, always a Don.</em>" He boxed at the local gyms. He fished off the breakwater. He helped fight the <strong>Coyote Fire of 1964</strong> — Joseph's father, a teenager, on the line with the rest of Santa Barbara.</p>
         <p>He drove an <strong>Austin-Healey</strong> convertible up and down the coast with the top down. That car is part of the family story now.</p>
         <p>Then he went to work at <strong>Jostens in Summerland, California.</strong> Investment caster. He made <strong>class rings</strong> for decades. Every ring a small permanent thing for someone else's legacy.</p>
-        <p style="font-family:var(--font-serif); font-style:italic; color:#D4AF37; font-size:1.25rem; margin-top:1.5rem; padding-left:1.25rem; border-left:2px solid #D4AF37;">Rings are permanence. Scale changed. Mastery didn't.</p>
+        <p style="font-family:var(--font-serif); font-style:italic; color:var(--color-accent); font-size:1.25rem; margin-top:1.5rem; padding-left:1.25rem; border-left:2px solid var(--color-accent);">Rings are permanence. Scale changed. Mastery didn't.</p>
       </div>
     </div>
   </section>
@@ -724,11 +725,11 @@
       <span class="jv-chapter-eyebrow">Ancestor's Eyes</span>
       <h2 class="jv-chapter-title">A Letter From Grandpa Joe</h2>
       <div class="jv-body">
-        <p style="font-family:var(--font-serif); font-style:italic; color:#F5F5F5; font-size:1.15rem; line-height:1.9;">Mijo —</p>
-        <p style="font-family:var(--font-serif); font-style:italic; color:#F5F5F5; font-size:1.15rem; line-height:1.9;">I crossed one border with my mother when I was twelve. I made rings for other people's kids for forty years. I drove an Austin-Healey up the coast when the coast was still ours.</p>
-        <p style="font-family:var(--font-serif); font-style:italic; color:#F5F5F5; font-size:1.15rem; line-height:1.9;">You pour concrete. Your son will do something I can't picture yet. That's how it's supposed to work.</p>
-        <p style="font-family:var(--font-serif); font-style:italic; color:#F5F5F5; font-size:1.15rem; line-height:1.9;">Keep the Z.</p>
-        <p style="font-family:var(--font-serif); font-style:italic; color:#D4AF37; font-size:1.15rem; line-height:1.9; text-align:right; margin-top:1rem;">— Joe Luis Vázquez<br>Santa Barbara, 1945 – 2020</p>
+        <p style="font-family:var(--font-serif); font-style:italic; color:var(--color-text); font-size:1.15rem; line-height:1.9;">Mijo —</p>
+        <p style="font-family:var(--font-serif); font-style:italic; color:var(--color-text); font-size:1.15rem; line-height:1.9;">I crossed one border with my mother when I was twelve. I made rings for other people's kids for forty years. I drove an Austin-Healey up the coast when the coast was still ours.</p>
+        <p style="font-family:var(--font-serif); font-style:italic; color:var(--color-text); font-size:1.15rem; line-height:1.9;">You pour concrete. Your son will do something I can't picture yet. That's how it's supposed to work.</p>
+        <p style="font-family:var(--font-serif); font-style:italic; color:var(--color-text); font-size:1.15rem; line-height:1.9;">Keep the Z.</p>
+        <p style="font-family:var(--font-serif); font-style:italic; color:var(--color-accent); font-size:1.15rem; line-height:1.9; text-align:right; margin-top:1rem;">— Joe Luis Vázquez<br>Santa Barbara, 1945 – 2020</p>
       </div>
     </div>
   </section>
@@ -799,8 +800,8 @@
   <section style="background:#1e1e1e; padding:4rem 2rem; text-align:center; border-top:1px solid rgba(212,175,55,0.2);">
     <div style="max-width:700px; margin:0 auto;">
       <h2 style="font-family:var(--font-display); font-size:clamp(1.6rem,3vw,2.2rem); color:#E0E0E0; margin-bottom:1rem; letter-spacing:0.06em; text-transform:uppercase;">This Is A Free Legacy Profile</h2>
-      <p style="font-family:var(--font-body); font-size:1rem; color:#E0E0E0; line-height:1.8; margin-bottom:2rem; opacity:0.9;">Every story deserves a permanent home. This page is live, forever, at no cost. Want to add photos, update the story, or customize your profile? Email <a href="mailto:contact@mylegacycontinues.com" style="color:#D4AF37; text-decoration:underline;">contact@mylegacycontinues.com</a> — We'll update it within 48 hours. No charge.</p>
-      <a href="free-profile.html" style="display:inline-block; border:2px solid #D4AF37; color:#D4AF37; background:transparent; padding:0.9rem 2.4rem; font-family:var(--font-body); font-weight:700; font-size:0.85rem; letter-spacing:0.1em; text-transform:uppercase; text-decoration:none;">Claim Your Free Page</a>
+      <p style="font-family:var(--font-body); font-size:1rem; color:#E0E0E0; line-height:1.8; margin-bottom:2rem; opacity:0.9;">Every story deserves a permanent home. This page is live, forever, at no cost. Want to add photos, update the story, or customize your profile? Email <a href="mailto:contact@mylegacycontinues.com" style="color:var(--color-accent); text-decoration:underline;">contact@mylegacycontinues.com</a> — We'll update it within 48 hours. No charge.</p>
+      <a href="free-profile.html" style="display:inline-block; border:2px solid var(--color-accent); color:var(--color-accent); background:transparent; padding:0.9rem 2.4rem; font-family:var(--font-body); font-weight:700; font-size:0.85rem; letter-spacing:0.1em; text-transform:uppercase; text-decoration:none;">Claim Your Free Page</a>
     </div>
   </section>
 
@@ -850,5 +851,6 @@
   </div>
 </footer>
 
+<script src="js/sticky-cta.js" defer></script>
 </body>
 </html>

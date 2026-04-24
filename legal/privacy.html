@@ -12,13 +12,13 @@
   <link rel="stylesheet" href="../style.css">
   <style>
     :root {
-      --charcoal:         #1A1A1A;
+      --charcoal:         var(--color-bg);
       --navy-deep:    #2A2A2A;
-      --gold:#D4AF37;
-      --gold-light:   #D4AF37;
-      --cream:#F5F5F5;
-      --bg:#1A1A1A;
-      --text:#F5F5F5;
+      --gold:var(--color-accent);
+      --gold-light:   var(--color-accent);
+      --cream:var(--color-text);
+      --bg:var(--color-bg);
+      --text:var(--color-text);
       --text-muted:   rgba(245,245,245,0.65);
       --text-dim:     rgba(245,245,245,0.5);
       --gold-border:  rgba(212,160,23,0.25);
@@ -28,11 +28,11 @@
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
-    body { font-family: 'Lato', sans-serif; background: var(--bg); color: var(--text); line-height: 1.8; -webkit-font-smoothing: antialiased; background-color:#1A1A1A; overflow-x: hidden; }
+    body { font-family: 'Lato', sans-serif; background: var(--bg); color: var(--text); line-height: 1.8; -webkit-font-smoothing: antialiased; background-color:var(--color-bg); overflow-x: hidden; }
 
     /* Mobile background fix */
-    section { background-color:#1A1A1A; }
-    .section { background-color:#1A1A1A; }
+    section { background-color:var(--color-bg); }
+    .section { background-color:var(--color-bg); }
     a { color: inherit; text-decoration: none; }
     img { max-width: 100%; height: auto; display: block; }
 
@@ -285,5 +285,6 @@
     });
   </script>
 
+<script src="../js/sticky-cta.js" defer></script>
 </body>
 </html>

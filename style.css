@@ -1,42 +1,79 @@
 /* ════════════════════════════════════════════════════════════════
    MY LEGACY CONTINUES — MASTER STYLESHEET
-   New Design System
-   Fonts: Big Shoulders Display | Inter | Fraunces (self-hosted — see /fonts/fonts.css)
+   Candy Paint — April 23 2026 rebrand
+   Fonts: Staatliches | Lato | Cormorant Garamond (self-hosted — see /fonts/fonts.css)
    ════════════════════════════════════════════════════════════════ */
 
 :root {
-  /* ──── Candy Paint & Chrome Palette ──── */
-  --cream-bg:           #1A1A1A;  /* charcoal deep */
-  --candy-wine:         #8B0000;  /* brandywine */
-  --candy-red:          #4A0000;  /* brandywine deep */
-  --champagne-gold:     #D4AF37;  /* chrome */
-  --silver:             #C0C0C0;
-  --charcoal:           #1A1A1A;
-  --charcoal-2:         #232323;
-  --charcoal-3:         #141414;
-  --body-text:          #F5F5F5;  /* soft white */
-  --warm-white:         #F5F5F5;
-  --white-card:         #232323;
+  /* ════════════════════════════════════════════════
+     CANDY PAINT — locked palette (Apr 23 2026)
+     Do not introduce hex values outside this block.
+     ════════════════════════════════════════════════ */
 
-  /* Semantic CSS Variables */
-  --bg-primary:         var(--cream-bg);
-  --bg-dark:            var(--charcoal-3);
-  --text-cream:         #F5F5F5;
-  --text-primary:       var(--body-text);
-  --text-secondary:     #9a9a9a;
-  --accent-gold:        var(--champagne-gold);
-  --accent-red:         var(--candy-wine);
-  --card-border:        var(--champagne-gold);
+  /* Primary spec tokens (task-locked) */
+  --onyx-lacquer:       #14110F;   /* background */
+  --brandywine:         #5C0A12;   /* CTA */
+  --pagan-gold:         #C9A24C;   /* accent */
 
-  /* Fonts */
-  --font-headline:      'Big Shoulders Display', 'Inter', sans-serif;
-  --font-body:          'Inter', system-ui, sans-serif;
-  --font-emotion:       'Fraunces', Georgia, serif;
-  --font-button:        'Big Shoulders Display', 'Inter', sans-serif;
+  /* Supporting — from CLAUDE.md DESIGN SPEC */
+  --bone-cream:         #ECE4D2;   /* body text */
+  --chrome-stripe:      #BFB8A8;   /* dividers */
+  --brandywine-mid:     #3A070C;   /* gradient stop */
+  --brandywine-deep:    #2B0608;   /* gradient stop */
+  --oriental-blue:      #1A3A5C;   /* living status only */
+  --error:              #A01E27;
 
-  /* Compatibility aliases (used by older nav/footer markup) */
-  --charcoal-dark:      #141414;
-  --cream-text:         #F5F5F5;
+  /* Memorial sub-palette */
+  --onyx-warm:          #1B1613;
+  --oxblood-memory:     #47121A;
+  --gold-tarnished:     #B49050;
+  --candle-amber:       #E8C070;
+  --divider-memory:     #3A2F27;
+
+  /* Task-required semantic aliases */
+  --color-bg:           var(--onyx-lacquer);
+  --color-cta:          var(--brandywine);
+  --color-accent:       var(--pagan-gold);
+  --color-text:         var(--bone-cream);
+  --color-divider:      var(--chrome-stripe);
+  --color-status:       var(--oriental-blue);
+  --color-error:        var(--error);
+
+  /* Fonts (task-locked) */
+  --font-hero:          'Staatliches', Impact, sans-serif;
+  --font-body:          'Lato', system-ui, -apple-system, sans-serif;
+  --font-quote:         'Cormorant Garamond', Georgia, serif;
+
+  /* Backward-compat aliases — 925 existing inline refs keep working */
+  --cream-bg:           var(--onyx-lacquer);
+  --charcoal:           var(--onyx-lacquer);
+  --charcoal-2:         var(--onyx-lacquer);
+  --charcoal-3:         var(--onyx-lacquer);
+  --charcoal-dark:      var(--onyx-lacquer);
+  --bg-primary:         var(--onyx-lacquer);
+  --bg-dark:            var(--onyx-lacquer);
+  --white-card:         var(--onyx-warm);
+  --candy-wine:         var(--brandywine);
+  --candy-red:          var(--brandywine-mid);
+  --accent-red:         var(--brandywine);
+  --champagne-gold:     var(--pagan-gold);
+  --accent-gold:        var(--pagan-gold);
+  --card-border:        var(--pagan-gold);
+  --warm-gold:          var(--pagan-gold);
+  --gold:               var(--pagan-gold);
+  --silver:             var(--bone-cream);
+  --body-text:          var(--bone-cream);
+  --warm-white:         var(--bone-cream);
+  --text-primary:       var(--bone-cream);
+  --text-cream:         var(--bone-cream);
+  --cream-text:         var(--bone-cream);
+  --chrome:             var(--chrome-stripe);
+  --text-secondary:     var(--chrome-stripe);
+  --font-headline:      var(--font-hero);
+  --font-display:       var(--font-hero);
+  --font-button:        var(--font-hero);
+  --font-serif:         var(--font-quote);
+  --font-emotion:       var(--font-quote);
 
   /* Spacing & Layout */
   --section-pad:        clamp(3rem, 6vw, 5rem);
@@ -89,14 +126,12 @@ img {
 /* ──────────────────────────────────────────────────────────── */
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-headline);
-  font-weight: 700;
-  text-transform: none;
-  letter-spacing: 0.02em;
+  font-family: var(--font-hero);
+  font-weight: 400;
+  letter-spacing: 0.12em;
   line-height: 1.1;
-  color: var(--silver);
+  color: var(--color-text);
   text-transform: uppercase;
-  font-family: 'Big Shoulders Display', 'Inter', sans-serif;
 }
 
 h1 {
@@ -232,7 +267,7 @@ p {
     top: 4rem;
     left: 0;
     right: 0;
-    background-color: #2A2A2A;
+    background-color: var(--onyx-warm);
     flex-direction: column;
     gap: 0;
     margin: 0;
@@ -246,7 +281,7 @@ p {
     display: flex !important;
     flex-direction: column;
     width: 100%;
-    background: #2A2A2A;
+    background: var(--onyx-warm);
     padding: 16px;
     gap: 12px;
     max-height: 500px;
@@ -420,11 +455,11 @@ p {
 }
 
 .btn-gold:hover {
-  background: linear-gradient(180deg, var(--candy-red) 0%, #2a0000 100%);
-  color: #ffffff;
+  background: linear-gradient(180deg, var(--brandywine-mid) 0%, var(--brandywine-deep) 100%);
+  color: var(--color-text);
   box-shadow:
     inset 1px 1px 3px rgba(255,255,255,0.6),
-    0 0 22px -4px var(--candy-wine);
+    0 0 22px -4px var(--color-cta);
   transform: translateY(-2px);
 }
 
@@ -444,8 +479,8 @@ p {
 }
 
 .section-teal {
-  background-color: #141414;
-  color: var(--cream-text);
+  background-color: var(--color-bg);
+  color: var(--color-text);
   padding: var(--section-pad) 0;
   position: relative;
 }
@@ -858,51 +893,51 @@ p {
    Applied last so they win specificity over page-level inline styles.
    ════════════════════════════════════════════════════════════════ */
 
-/* Force Big Shoulders Display on every header across every page */
+/* Force Staatliches on every header across every page */
 html body h1,
 html body h2,
 html body h3,
 html body h4,
 html body h5,
 html body h6 {
-  font-family: 'Big Shoulders Display', 'Inter', sans-serif !important;
+  font-family: var(--font-hero) !important;
   text-transform: uppercase;
   letter-spacing: 0.12em;
-  color: #C0C0C0;
+  color: var(--color-text);
 }
 
 
-/* Buttons site-wide: rectangular, Big Shoulders, brandywine gradient, chrome border */
+/* Buttons site-wide: rectangular, Staatliches, brandywine gradient, gold border */
 .btn,
 button.btn,
 a.btn {
   border-radius: 0 !important;
-  font-family: 'Big Shoulders Display', 'Inter', sans-serif !important;
+  font-family: var(--font-hero) !important;
   letter-spacing: 0.18em !important;
 }
 
-/* btn-gold (or any "gold" button on a page) MUST be brandywine gradient w/ chrome border.
+/* btn-gold (or any "gold" button on a page) MUST be brandywine gradient w/ gold border.
    High specificity + !important so page-level inline styles can't downgrade contrast. */
 html body .btn-gold,
 html body a.btn-gold,
 html body button.btn-gold,
 html body .btn.btn-gold {
-  background: linear-gradient(180deg, #8B0000 0%, #4A0000 100%) !important;
-  background-color: #8B0000 !important;
-  color: #E0E0E0 !important;
-  border: 2px solid #E0E0E0 !important;
+  background: linear-gradient(180deg, var(--color-cta) 0%, var(--brandywine-mid) 100%) !important;
+  background-color: var(--color-cta) !important;
+  color: var(--color-text) !important;
+  border: 2px solid var(--color-accent) !important;
   box-shadow: inset 1px 1px 3px rgba(255,255,255,0.5) !important;
-  font-family: 'Big Shoulders Display', 'Inter', sans-serif !important;
+  font-family: var(--font-hero) !important;
   letter-spacing: 0.18em !important;
 }
 html body .btn-gold:hover,
 html body a.btn-gold:hover,
 html body button.btn-gold:hover {
-  background: linear-gradient(180deg, #4A0000 0%, #2a0000 100%) !important;
-  color: #ffffff !important;
+  background: linear-gradient(180deg, var(--brandywine-mid) 0%, var(--brandywine-deep) 100%) !important;
+  color: var(--color-text) !important;
   box-shadow:
     inset 1px 1px 3px rgba(255,255,255,0.6),
-    0 0 22px -4px #8B0000 !important;
+    0 0 22px -4px var(--color-cta) !important;
 }
 
 /* Anything previously colored cream/white on white-card backgrounds inverts now —
@@ -911,7 +946,7 @@ html body button.btn-gold:hover {
 [style*="background-color:#FFFFFF" i] *,
 [style*="background:#fff" i]:not([style*="#fff,"]) *,
 [style*="background-color:#fff" i]:not([style*="#fff,"]) * {
-  color: #F5F5F5;
+  color: var(--color-text);
 }
 
 /* ─────────────────────────────────────────────────────────────
@@ -928,58 +963,26 @@ select {
 
 
 /* ════════════════════════════════════════════════════════════════
-   STAGE C — Candy Paint :root (April 2026 rebrand)
-   Second :root block. CSS cascades — this overrides the original
-   :root above where variable names overlap, adds new names where
-   they don't. Activates Stage B utility classes.
+   Typography + spacing tokens (Apr 23 2026)
+   Primary :root consolidated at top of file; this block only adds
+   layout/rhythm scales that don't belong in the color/font palette.
    ──────────────────────────────────────────────────────────────── */
 
 :root {
-  /* ──── Candy Paint colors (P3-safe) ──── */
-  --onyx-lacquer:     #14110F;
-  --brandywine:       #5C0A12;
-  --brandywine-mid:   #3A070C;
-  --brandywine-deep:  #2B0608;
-  --pagan-gold:       #C9A24C;
-  --bone-cream:       #ECE4D2;
-  --chrome-stripe:    #BFB8A8;
-
-  /* ──── Memorial sub-palette ──── */
-  --onyx-warm:        #1B1613;
-  --oxblood-memory:   #47121A;
-  --gold-tarnished:   #B49050;
-  --candle-amber:     #E8C070;
-  --divider-memory:   #3A2F27;
-
-  /* ──── Status / semantic ──── */
-  --oriental-blue:    #1A3A5C;
-  --error:            #A01E27;
-
-  /* ──── Font stack (self-hosted, see /fonts/fonts.css) ──── */
-  --font-display:     'Big Shoulders Display', Impact, sans-serif;
-  --font-serif:       'Fraunces', Georgia, serif;
-  --font-body:        'Inter', system-ui, -apple-system, sans-serif;
-
   /* ──── Typography system ──── */
-  --measure:          60ch;
-  --lh-body:          1.6;
-  --lh-h1:            1.05;
-  --lh-h2:            1.15;
-  --lh-h3:            1.25;
-  --lh-h4:            1.30;
-  --space-paragraph:  1.5em;
+  --measure:              60ch;
+  --lh-body:              1.6;
+  --lh-h1:                1.05;
+  --lh-h2:                1.15;
+  --lh-h3:                1.25;
+  --lh-h4:                1.30;
+  --space-paragraph:      1.5em;
 
   /* ──── Section spacing ──── */
   --pad-section-mobile:   32px 16px;
   --pad-section-desktop:  64px 24px;
   --gap-section-mobile:   48px;
   --gap-section-desktop:  96px;
-
-  /* ──── Backward-compat aliases (old CSS keeps working) ──── */
-  --charcoal:         var(--onyx-lacquer);
-  --chrome:           var(--bone-cream);
-  --gold:             var(--pagan-gold);
-  --warm-gold:        var(--pagan-gold);
 }
 
 
@@ -1018,4 +1021,69 @@ select {
 .page-pet body { color: #14110F; background: var(--bone-cream); }
 
 .page-legal { max-width: 680px; margin: 0 auto; }
+
+
+/* ════════════════════════════════════════════════════════════════
+   STICKY MOBILE CTA (Apr 23 2026 — sitewide)
+   Injected by js/sticky-cta.js. Visible only ≤768px.
+   ──────────────────────────────────────────────────────────────── */
+
+.sticky-cta {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 998;
+  display: flex;
+  justify-content: center;
+  padding: 0.75rem 1rem;
+  background: var(--color-bg);
+  border-top: 1px solid var(--color-accent);
+  box-shadow: 0 -4px 12px rgba(0,0,0,0.5);
+}
+.sticky-cta a {
+  width: 100%;
+  max-width: 420px;
+  min-height: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.9rem 1.25rem;
+  font-family: var(--font-hero);
+  font-size: 0.9rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  text-decoration: none;
+  background: var(--color-cta);
+  color: var(--color-text);
+  border: 2px solid var(--color-accent);
+  border-radius: 3px;
+}
+@media (min-width: 769px) { .sticky-cta { display: none; } }
+
+/* Push body up so sticky CTA doesn't overlap content (mobile only). */
+@media (max-width: 768px) {
+  body:not([data-no-sticky-cta="true"]) { padding-bottom: 5rem; }
+}
+
+
+/* ════════════════════════════════════════════════════════════════
+   TOUCH TARGET MINIMUM (Apr 23 2026)
+   WCAG 2.5.5 / Apple HIG: 44×44 CSS px minimum for all tappables.
+   `min-*` only grows elements that are too small — larger buttons
+   are unaffected.
+   ──────────────────────────────────────────────────────────────── */
+
+button,
+.btn,
+a.btn,
+a.home-cta,
+input[type="submit"],
+input[type="button"],
+input[type="reset"],
+.nav-toggle {
+  min-height: 44px;
+  min-width: 44px;
+}
 

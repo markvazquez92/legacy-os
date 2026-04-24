@@ -19,9 +19,8 @@
   <meta name="twitter:title" content="Shoshi Gamliel &mdash; Underdog Heroes">
   <meta name="twitter:description" content="Partner profile for Shoshi Gamliel, founder of Underdog Heroes Inc. Real responsible rescue for the dogs the system wrote off.">
   <meta name="twitter:image" content="https://mylegacycontinues.com/images/shoshi-photo.jpg">
-
-  <link rel="preload" href="/fonts/Inter-VariableFont_opsz,wght.ttf" as="font" type="font/ttf" crossorigin>
-  <link rel="preload" href="/fonts/Fraunces-VariableFont_SOFT,WONK,opsz,wght.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="/fonts/Staatliches-Regular.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="/fonts/Lato-Regular.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="stylesheet" href="/fonts/fonts.css">
 
   <link rel="stylesheet" href="style.css">
@@ -42,7 +41,7 @@
       --brandywine-deep: #9A0B21;
       --chrome: #E0E0E0;
       --chrome-dim: #9a9a9a;
-      --soft-white: #F5F5F5;
+      --soft-white: var(--color-text);
 
       --bg-cream: #0A0A0A;
       --gold: #F5C518;
@@ -781,7 +780,7 @@
       <li><a href="network.html">Network</a></li>
       <li><a href="rescue-registry.html">Rescue</a></li>
       <li><a href="active-transports.html">Transport</a></li>
-            <li><a href="free-profile.html" style="color:#D4AF37;">Free Page</a></li>
+            <li><a href="free-profile.html" style="color:var(--color-accent);">Free Page</a></li>
       <li><a href="about.html">About</a></li>
     </ul>
     <div class="nav-right">
@@ -1119,5 +1118,6 @@
   </div>
 </footer>
 
+<script src="js/sticky-cta.js" defer></script>
 </body>
 </html>

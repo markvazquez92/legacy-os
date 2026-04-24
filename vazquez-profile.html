@@ -20,14 +20,14 @@
   <meta name="twitter:description" content="Heritage profile of Mark 'Bear' Vazquez &mdash; Santa Maria, California. Galicia to Mexico City to the Central Coast. Preserved permanently by My Legacy Continues.">
   <meta name="twitter:image" content="https://mylegacycontinues.com/images/bear-photo.jpg">
   <link rel="stylesheet" href="style.css">
-  <link rel="preload" href="/fonts/Inter-VariableFont_opsz,wght.ttf" as="font" type="font/ttf" crossorigin>
-  <link rel="preload" href="/fonts/Fraunces-VariableFont_SOFT,WONK,opsz,wght.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="/fonts/Staatliches-Regular.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="/fonts/Lato-Regular.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="stylesheet" href="/fonts/fonts.css">
   <style>
 
     /* ===== LOWRIDER LUXURY &mdash; CANDY PAINT & CHROME ===== */
     :root{
-      --charcoal:#1A1A1A;
+      --charcoal:var(--color-bg);
       --charcoal-2:#232323;
       --charcoal-3:#141414;
       --brandywine:#5C0A12;
@@ -35,7 +35,7 @@
       --chrome:#E0E0E0;
       --chrome-dim:#9a9a9a;
       --silver:#C0C0C0;
-      --soft-white:#F5F5F5;
+      --soft-white:var(--color-text);
     }
 
     /* Page-level resets &mdash; scoped to avoid collision with site nav */
@@ -882,24 +882,24 @@
 
 /* ===== CANDY PAINT & CHROME — PALETTE LOCK ===== */
 :root {
-  --charcoal: #1A1A1A;
-  --charcoal-2: #1A1A1A;
+  --charcoal: var(--color-bg);
+  --charcoal-2: var(--color-bg);
   --brandywine: #C8420A;
   --brandywine-deep: #8F2F07;
-  --chrome: #D4AF37;
+  --chrome: var(--color-accent);
   --chrome-dim: #C9BFA0;
-  --soft-white: #FAF3E6;
+  --soft-white: #ECE4D2;
 }
 
 .lr-portrait,
 [class^="lr-"] [style*="inset 2px 2px 5px rgba(255,255,255"],
 .lr-hero { box-shadow: none !important; }
 
-.lr-portrait { background: #0f0f0f; border-color: #D4AF37 !important; }
+.lr-portrait { background: #0f0f0f; border-color: var(--color-accent) !important; }
 
-.lr-btn:active, .lr-cta:active, button:active { color: #FAF3E6 !important; }
+.lr-btn:active, .lr-cta:active, button:active { color: #ECE4D2 !important; }
 
-footer[style] { background: #1A1A1A !important; border-top: 1px solid #D4AF37 !important; }
+footer[style] { background: var(--color-bg) !important; border-top: 1px solid var(--color-accent) !important; }
 footer[style] .footer-contact[style],
 footer[style] .footer-copy[style] { color: #C9BFA0 !important; }
 
@@ -924,7 +924,7 @@ body {
       #130303 76%,
       #050505 100%) !important;
   background-attachment: fixed, fixed, fixed !important;
-  color: #FAF3E6 !important;
+  color: #ECE4D2 !important;
   font-family: var(--font-serif) !important;
   font-weight: 400 !important;
   margin: 0 !important;
@@ -1011,7 +1011,7 @@ body::after { display: none !important; }
   border-radius: 999px;
   overflow: hidden;
   background: #C8420A !important;
-  color: #FAF3E6 !important;
+  color: #ECE4D2 !important;
   box-shadow:
     inset 0 1px 0 rgba(255,255,255,0.22),
     0 0 24px -2px rgba(200,66,10,0.45),
@@ -1021,7 +1021,7 @@ body::after { display: none !important; }
 .lr-btn:hover,
 .lr-cta:hover {
   background: #8F2F07 !important;
-  color: #FAF3E6 !important;
+  color: #ECE4D2 !important;
   box-shadow:
     inset 0 1px 0 rgba(255,255,255,0.22),
     0 0 32px -2px rgba(200,66,10,0.6),
@@ -1063,7 +1063,7 @@ body,
 .lr-dv-card em,
 .lr-dv-card strong,
 .lr-dv-card blockquote,
-.lr-dv-card li { color: #FAF3E6 !important; }
+.lr-dv-card li { color: #ECE4D2 !important; }
 
 /* 7. HEADINGS — Warm Gold with depth shadow */
 .lr-eyebrow,
@@ -1082,7 +1082,7 @@ body,
 .lr-dv-card h2,
 .lr-dv-card h3,
 h1, h2, h3 {
-  color: #D4AF37 !important;
+  color: var(--color-accent) !important;
   font-family: var(--font-serif) !important;
   font-weight: 700 !important;
   letter-spacing: 0.04em !important;
@@ -1144,7 +1144,7 @@ h1 { font-weight: 700 !important; letter-spacing: 0.12rem !important; }
 }
 
 .lr-fact-label,
-.lr-dv-hotline { color: #D4AF37 !important; opacity: 0.78; }
+.lr-dv-hotline { color: var(--color-accent) !important; opacity: 0.78; }
 
 /* 8. LEFT-ACCENT STRIPES — gold removed */
 .lr-section-label,
@@ -1170,10 +1170,10 @@ h1 { font-weight: 700 !important; letter-spacing: 0.12rem !important; }
 footer[style] {
   background: #0A0303 !important;
   border-top: 0 !important;
-  color: #FAF3E6 !important;
+  color: #ECE4D2 !important;
 }
 footer[style] .footer-contact[style],
-footer[style] .footer-copy[style] { color: #D4AF37 !important; opacity: 0.82; }
+footer[style] .footer-copy[style] { color: var(--color-accent) !important; opacity: 0.82; }
 
 /* 11. All hairlines and dividers removed */
 [style*="rgba(224,224,224"] { border-color: transparent !important; }
@@ -1204,7 +1204,7 @@ p { line-height: 1.6 !important; }
   position: sticky;
   top: 64px;
   z-index: 20;
-  background: #1A1A1A;
+  background: var(--color-bg);
   border-top: 1px solid rgba(212,175,55,0.25);
   border-bottom: 1px solid rgba(212,175,55,0.25);
   display: flex;
@@ -1230,8 +1230,8 @@ p { line-height: 1.6 !important; }
 }
 .vz-tabs a:hover,
 .vz-tabs a.active {
-  color: #D4AF37;
-  border-bottom-color: #D4AF37;
+  color: var(--color-accent);
+  border-bottom-color: var(--color-accent);
 }
 @media (max-width: 640px) {
   .vz-tabs { justify-content: flex-start; }
@@ -1250,7 +1250,7 @@ p { line-height: 1.6 !important; }
   font-family: var(--font-display);
   font-weight: 700;
   font-size: 1.1rem;
-  color: #D4AF37;
+  color: var(--color-accent);
   letter-spacing: 0.24em;
   text-transform: uppercase;
   margin-bottom: 0.75rem;
@@ -1308,7 +1308,7 @@ p { line-height: 1.6 !important; }
       <li><a href="network.html">Network</a></li>
       <li><a href="rescue-registry.html">Rescue</a></li>
       <li><a href="active-transports.html">Transport</a></li>
-            <li><a href="free-profile.html" style="color:#D4AF37;">Free Page</a></li>
+            <li><a href="free-profile.html" style="color:var(--color-accent);">Free Page</a></li>
       <li><a href="about.html">About</a></li>
     </ul>
     <div class="nav-right">
@@ -1417,7 +1417,7 @@ p { line-height: 1.6 !important; }
       <p><strong>Joe arrived in Santa Barbara in 1957 at age 12</strong> with his mother Esperanza, three sisters, and three brothers. He went to <strong>Wilson Elementary</strong>, then <strong>Santa Barbara Junior High</strong>, then <strong>Santa Barbara High School</strong> &mdash; where he became a <strong>Don</strong>. "Once a Don, always a Don." That was the line he carried the rest of his life.</p>
       <p>He boxed at the local gyms. He fished off the breakwater and chartered boats out to Santa Cruz Island. In <strong>1964</strong>, still a young man, he helped fight the <strong>Coyote Fire</strong> &mdash; the wildfire that tore through the hills above Santa Barbara. He was proud of that his whole life.</p>
       <p>He drove a <strong>convertible Austin-Healey</strong> up and down the coast with the top down. And then he went to work at <strong>Jostens in Summerland, California</strong> &mdash; an investment caster. He made <strong>class rings</strong> there for decades. Every ring a small permanent thing for someone else's legacy.</p>
-      <p class="lr-pullquote" style="font-family:var(--font-serif); font-style:italic; color:#D4AF37; font-size:1.3rem; line-height:1.6; margin:2rem 0; padding-left:1.5rem; border-left:3px solid #D4AF37;">Rings are permanence. Scale changed. Mastery didn't.</p>
+      <p class="lr-pullquote" style="font-family:var(--font-serif); font-style:italic; color:var(--color-accent); font-size:1.3rem; line-height:1.6; margin:2rem 0; padding-left:1.5rem; border-left:3px solid var(--color-accent);">Rings are permanence. Scale changed. Mastery didn't.</p>
     </div>
 
     <!-- ===== CHAPTER 3 ===== -->
@@ -1923,7 +1923,7 @@ p { line-height: 1.6 !important; }
 
     <!-- ===== JOSEPH HERITAGE BOOK CTA ===== -->
     <div style="text-align:center; margin:3rem auto 2rem;">
-      <a href="joseph-vazquez-profile.html" style="display:inline-block; background:#D4AF37; color:#1A1A1A; padding:16px 32px; font-family:var(--font-display); font-weight:700; font-size:13px; letter-spacing:0.2em; text-transform:uppercase; text-decoration:none;">See Joseph's Profile &rarr;</a>
+      <a href="joseph-vazquez-profile.html" style="display:inline-block; background:var(--color-accent); color:var(--color-bg); padding:16px 32px; font-family:var(--font-display); font-weight:700; font-size:13px; letter-spacing:0.2em; text-transform:uppercase; text-decoration:none;">See Joseph's Profile &rarr;</a>
     </div>
 
     <!-- ===== FAMILY TIMELINE ===== -->
@@ -2034,7 +2034,7 @@ p { line-height: 1.6 !important; }
         <li><a href="legal/privacy.html">Privacy</a></li>
         <li><a href="legal/terms-of-service.html">Terms</a></li>
       </ul>
-      <p style="color:#9a9a9a; font-size:0.9rem; margin-bottom:0.5rem; text-align:center;">Powered by <a href="index.html" style="color:#D4AF37; text-decoration:none;">My Legacy Continues</a> &mdash; Your story deserves forever.</p>
+      <p style="color:#9a9a9a; font-size:0.9rem; margin-bottom:0.5rem; text-align:center;">Powered by <a href="index.html" style="color:var(--color-accent); text-decoration:none;">My Legacy Continues</a> &mdash; Your story deserves forever.</p>
       <p class="footer-copy">&copy; 2026 My Legacy Continues. All rights reserved.</p>
     </div>
   </footer>
@@ -2104,5 +2104,6 @@ p { line-height: 1.6 !important; }
     });
   </script>
 
+<script src="js/sticky-cta.js" defer></script>
 </body>
 </html>

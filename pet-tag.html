@@ -18,24 +18,24 @@
   <meta name="twitter:image" content="https://mylegacycontinues.com/images/products/tag12.jpg">
   <meta name="description" content="QR-enabled pet tags with complete profiles. Medical history, rescue journey, emergency contacts. Basic $24.99, Premium $49.99. One-time purchase, hosted forever.">
   <link rel="icon" href="logo.png" type="image/png">
-  <link rel="preload" href="/fonts/Inter-VariableFont_opsz,wght.ttf" as="font" type="font/ttf" crossorigin>
-  <link rel="preload" href="/fonts/BigShoulders-VariableFont_opsz,wght.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="/fonts/Staatliches-Regular.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="/fonts/Lato-Regular.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="stylesheet" href="/fonts/fonts.css">
   <link rel="stylesheet" href="style.css">
   <style>
     /* Mobile background fix */
     body {
-      background-color:#1A1A1A;
+      background-color:var(--color-bg);
       overflow-x: hidden;
     }
 
     .nav-logo { height: 48px; width: auto; }
     section {
-      background-color:#1A1A1A;
+      background-color:var(--color-bg);
     }
 
     .section {
-      background-color:#1A1A1A;
+      background-color:var(--color-bg);
     }
 
     @media (max-width: 768px) {
@@ -54,15 +54,15 @@
   font-size: 0.58rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color:#F5F5F5;
+  color:var(--color-text);
   font-weight: 600;
 }
 
 .form-input {
-  background:#1A1A1A;
+  background:var(--color-bg);
   border: 1px solid rgba(212, 160, 23, 0.2);
 
-  color:#F5F5F5;
+  color:var(--color-text);
   font-family: var(--font-body);
   font-size: 16px;
   padding: 13px 16px;
@@ -78,13 +78,13 @@
 }
 
 .form-input::placeholder {
-  color:#F5F5F5;
+  color:var(--color-text);
   opacity: 0.6;
 }
 
 .form-button {
   background: #E0E0E0;
-  color: #F5F5F5;
+  color: var(--color-text);
   border: none;
   
   padding: 13px 24px;
@@ -152,7 +152,7 @@
     fbq('track', 'PageView');
   </script>
   </head>
-<body>
+<body data-bionic="true">
   <!-- Facebook Pixel noscript -->
   <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=2828165625364437&ev=PageView&noscript=1" /></noscript>
   <!-- NAVIGATION -->
@@ -161,12 +161,12 @@
   <ul class="nav-links" id="navLinks">
     <li><a href="index.html">Home</a></li>
     <li><a href="heritage-book.html">Heritage</a></li>
-    <li><a href="pet-tag.html" style="color:#D4AF37;">Pet Tags</a></li>
+    <li><a href="pet-tag.html" style="color:var(--color-accent);">Pet Tags</a></li>
     <li><a href="business-profile.html">Business</a></li>
     <li><a href="network.html">Network</a></li>
     <li><a href="rescue-registry.html">Rescue</a></li>
     <li><a href="active-transports.html">Transport</a></li>
-        <li><a href="free-profile.html" style="color:#D4AF37; white-space: nowrap;">Free Page</a></li>
+        <li><a href="free-profile.html" style="color:var(--color-accent); white-space: nowrap;">Free Page</a></li>
     <li><a href="about.html">About</a></li>
   </ul>
   <div style="display: flex; align-items: center; gap: 1rem; flex-shrink: 0;">
@@ -179,7 +179,7 @@
 
   <!-- SECTION 1: SPLIT HERO -->
   <img src="images/products/BUTTERS.jpg?v=20260416" alt="Pet QR Tag — hero" style="width:100%; max-width:800px; display:block; margin:0 auto 2rem auto; border-radius:8px;">
-  <section class="hero-split" style="background-color:#1A1A1A;">
+  <section class="hero-split" style="background-color:var(--color-bg);">
     <div class="hero-left metalflake">
       <h1 style="color: #14110F;"><strong>Forever Tags For Forever Friends</strong></h1>
       <p style="color: var(--cream); font-size: 1.1rem; margin: 1rem 0; opacity: 0.9;"><strong>More than ID.</strong> Your pet's complete story.</p>
@@ -229,9 +229,9 @@
   </section>
 
   <!-- SECTION: AIRTAG COMPATIBLE (honest truth) -->
-  <section style="padding: 72px 48px; background:#1A1A1A;">
+  <section style="padding: 72px 48px; background:var(--color-bg);">
     <div style="max-width: 860px; margin: 0 auto;">
-      <h2 style="font-family:var(--font-display);font-size:clamp(1.4rem,3vw,2rem);font-weight:700;color:#F5F5F5;margin-bottom:16px;">
+      <h2 style="font-family:var(--font-display);font-size:clamp(1.4rem,3vw,2rem);font-weight:700;color:var(--color-text);margin-bottom:16px;">
         <strong>Add Real-Time Tracking — Premium Tier</strong>
       </h2>
       <p style="font-size:0.95rem;color:var(--body);line-height:1.85;max-width:700px;margin-bottom:16px;">
@@ -255,27 +255,27 @@
   <!-- SECTION B: BEHAVIORAL HISTORY -->
   <section style="padding: 72px 48px; background: rgba(26,107,92,0.05);">
     <div style="max-width: 860px; margin: 0 auto;">
-      <h2 style="font-family:var(--font-display);font-size:clamp(1.4rem,3vw,2rem);font-weight:700;color:#F5F5F5;margin-bottom:16px;"><strong>Track Your Pet's Journey</strong></h2>
+      <h2 style="font-family:var(--font-display);font-size:clamp(1.4rem,3vw,2rem);font-weight:700;color:var(--color-text);margin-bottom:16px;"><strong>Track Your Pet's Journey</strong></h2>
       <p style="font-size:0.95rem;color:var(--body);line-height:1.85;max-width:700px;margin-bottom:16px;"><strong>Record medical events, rescue history, behavioral notes, and life milestones.</strong> Build a complete pet profile over time.</p>
       <p style="font-size:0.95rem;color:var(--body);line-height:1.85;max-width:700px;margin-bottom:28px;">Everything a finder or vet needs to know to help your pet — all in one place.</p>
-      <h3 style="font-family:var(--font-display);font-size:0.95rem;font-weight:700;color:#F5F5F5;margin-bottom:12px;letter-spacing:0.1em;text-transform:uppercase;">You Can Track</h3>
+      <h3 style="font-family:var(--font-display);font-size:0.95rem;font-weight:700;color:var(--color-text);margin-bottom:12px;letter-spacing:0.1em;text-transform:uppercase;">You Can Track</h3>
       <ul style="list-style:none;margin-bottom:28px;max-width:700px;">
         <li style="padding:0.5rem 0;border-bottom:1px solid rgba(212,160,23,0.2);font-size:0.9rem;color:var(--body);"><strong>Medical Timeline:</strong> Vet visits, vaccinations, surgeries, medications</li>
         <li style="padding:0.5rem 0;border-bottom:1px solid rgba(212,160,23,0.2);font-size:0.9rem;color:var(--body);"><strong>Rescue Journey:</strong> From shelter to foster to forever family</li>
         <li style="padding:0.5rem 0;border-bottom:1px solid rgba(212,160,23,0.2);font-size:0.9rem;color:var(--body);"><strong>Personality Notes:</strong> Behavioral quirks, known triggers, what they love</li>
         <li style="padding:0.5rem 0;font-size:0.9rem;color:var(--body);"><strong>Life Milestones:</strong> Adoption day, birthdays, memories that matter</li>
       </ul>
-      <a href="#order" style="background:#E0E0E0;color:#F5F5F5;padding:12px 24px;border:none;font-family:var(--font-display);font-size:0.75rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;display:inline-block;text-decoration:none;">Start Tracking</a>
+      <a href="#order" style="background:#E0E0E0;color:var(--color-text);padding:12px 24px;border:none;font-family:var(--font-display);font-size:0.75rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;display:inline-block;text-decoration:none;">Start Tracking</a>
     </div>
   </section>
 
   <!-- SECTION C: MEMORIAL CONVERSION -->
-  <section style="padding: 72px 48px; background:#1A1A1A;">
+  <section style="padding: 72px 48px; background:var(--color-bg);">
     <div style="max-width: 860px; margin: 0 auto;">
-      <h2 style="font-family:var(--font-display);font-size:clamp(1.4rem,3vw,2rem);font-weight:700;color:#F5F5F5;margin-bottom:16px;"><strong>Forever Memory</strong></h2>
+      <h2 style="font-family:var(--font-display);font-size:clamp(1.4rem,3vw,2rem);font-weight:700;color:var(--color-text);margin-bottom:16px;"><strong>Forever Memory</strong></h2>
       <p style="font-size:0.95rem;color:var(--body);line-height:1.85;max-width:700px;margin-bottom:16px;">If your pet passes, their QR tag becomes a permanent memorial. <strong>Share photos, stories, and the dates they changed your life.</strong></p>
       <p style="font-size:0.95rem;color:var(--body);line-height:1.85;max-width:700px;margin-bottom:28px;">Your pet's profile stays live forever — never deleted, always accessible, always theirs.</p>
-      <a href="butters-profile.html" style="background:#E0E0E0;color:#F5F5F5;padding:12px 24px;border:none;font-family:var(--font-display);font-size:0.75rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;display:inline-block;text-decoration:none;">Learn More</a>
+      <a href="butters-profile.html" style="background:#E0E0E0;color:var(--color-text);padding:12px 24px;border:none;font-family:var(--font-display);font-size:0.75rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;display:inline-block;text-decoration:none;">Learn More</a>
     </div>
   </section>
 
@@ -333,13 +333,13 @@
   <section style="background: rgba(42, 42, 42, 0.08); padding: 2rem; text-align: center;">
     <div style="max-width: 700px; margin: 0 auto;">
       <div style="font-size: 1.6rem; margin-bottom: 0.75rem;"> + </div>
-      <h2 style="color:#F5F5F5; margin-bottom: 1rem; font-family: var(--font-body); font-size: 1.8rem;">Your Purchase Helps Rescue Dogs</h2>
-      <p style="font-size: 0.95rem; color:#F5F5F5; line-height: 1.8; margin-bottom: 1rem;"><strong>10% of every pet tag sale goes directly to local animal rescue organizations.</strong> We're building permanent profiles for rescue dogs and helping them find forever families.</p>
+      <h2 style="color:var(--color-text); margin-bottom: 1rem; font-family: var(--font-body); font-size: 1.8rem;">Your Purchase Helps Rescue Dogs</h2>
+      <p style="font-size: 0.95rem; color:var(--color-text); line-height: 1.8; margin-bottom: 1rem;"><strong>10% of every pet tag sale goes directly to local animal rescue organizations.</strong> We're building permanent profiles for rescue dogs and helping them find forever families.</p>
       <p style="font-size: 0.9rem; color:#9a9a9a; margin-bottom: 1rem;">
         Real dogs. Real rescues. Real impact.
       </p>
       <p>
-        <a href="shoshi-gamliel-profile.html" style="color:#F5F5F5; text-decoration: underline; font-weight: 500;">Learn about our rescue partner Shoshi Gamliel →</a>
+        <a href="shoshi-gamliel-profile.html" style="color:var(--color-text); text-decoration: underline; font-weight: 500;">Learn about our rescue partner Shoshi Gamliel →</a>
       </p>
     </div>
   </section>
@@ -397,7 +397,7 @@
   </section>
 
   <!-- COMPARISON: BASIC VS PREMIUM -->
-  <section class="section-cream" style="padding: 3rem 2rem; background-color:#1A1A1A;">
+  <section class="section-cream" style="padding: 3rem 2rem; background-color:var(--color-bg);">
     <div style="max-width: 900px; margin: 0 auto;">
       <h2 style="text-align: center; margin-bottom: 2rem; color: #5C0A12; font-size: clamp(1.4rem, 3vw, 2rem);">Choose Your Pet Tag</h2>
       <div style="overflow-x: auto;">
@@ -460,36 +460,36 @@
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; max-width: 1000px; margin: 0 auto; padding: 0 2rem;">
       <!-- Example 1: Butters -->
       <div style="background:#232323;  overflow: hidden; box-shadow: 0 4px 16px rgba(42, 42, 42, 0.08);">
-        <div style="background:#2A2A2A; height: 180px; display: flex; flex-direction:column; align-items: center; justify-content: center; gap:6px;"><span style="color:#E0E0E0;font-family:var(--font-body);font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;">Pet Legacy Tag</span><span style="color:#F5F5F5;font-family:var(--font-body);font-size:1rem;font-weight:700;">Butters the Cat</span></div>
+        <div style="background:#2A2A2A; height: 180px; display: flex; flex-direction:column; align-items: center; justify-content: center; gap:6px;"><span style="color:#E0E0E0;font-family:var(--font-body);font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;">Pet Legacy Tag</span><span style="color:var(--color-text);font-family:var(--font-body);font-size:1rem;font-weight:700;">Butters the Cat</span></div>
         <div style="padding: 24px;">
           <div style="font-family:var(--font-display);font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:#E0E0E0;font-weight:600;margin-bottom:8px;">Pet Legacy Tag</div>
-          <h3 style="font-family:var(--font-display);font-size:1.2rem;color:#F5F5F5;margin-bottom:12px;">Butters the Cat</h3>
-          <p style="font-size:0.9rem;color:#F5F5F5;font-style:italic;margin-bottom:16px;line-height:1.6;">"His complete story, forever accessible. More than just a pet tag."</p>
-          <a href="butters-profile.html" style="display:inline-block;padding:10px 14px;background:#E0E0E0;color:#F5F5F5;text-decoration:none;font-size:0.85rem;font-weight:600;transition:all 0.2s;">View Profile</a>
+          <h3 style="font-family:var(--font-display);font-size:1.2rem;color:var(--color-text);margin-bottom:12px;">Butters the Cat</h3>
+          <p style="font-size:0.9rem;color:var(--color-text);font-style:italic;margin-bottom:16px;line-height:1.6;">"His complete story, forever accessible. More than just a pet tag."</p>
+          <a href="butters-profile.html" style="display:inline-block;padding:10px 14px;background:#E0E0E0;color:var(--color-text);text-decoration:none;font-size:0.85rem;font-weight:600;transition:all 0.2s;">View Profile</a>
         </div>
       </div>
 
       <!-- Example 2: Underdog Heroes -->
       <div style="background:#232323;  overflow: hidden; box-shadow: 0 4px 16px rgba(42, 42, 42, 0.08);">
-        <div style="background:#2A2A2A; height: 180px; display: flex; flex-direction:column; align-items: center; justify-content: center; gap:6px;"><span style="color:#E0E0E0;font-family:var(--font-body);font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;">Rescue Partnership</span><span style="color:#F5F5F5;font-family:var(--font-body);font-size:1rem;font-weight:700;">Rescue Partner</span></div>
+        <div style="background:#2A2A2A; height: 180px; display: flex; flex-direction:column; align-items: center; justify-content: center; gap:6px;"><span style="color:#E0E0E0;font-family:var(--font-body);font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;">Rescue Partnership</span><span style="color:var(--color-text);font-family:var(--font-body);font-size:1rem;font-weight:700;">Rescue Partner</span></div>
         <div style="padding: 24px;">
           <div style="font-family:var(--font-display);font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:#E0E0E0;font-weight:600;margin-bottom:8px;">Rescue Partnership</div>
-          <h3 style="font-family:var(--font-display);font-size:1.2rem;color:#F5F5F5;margin-bottom:12px;">Rescue Partner</h3>
+          <h3 style="font-family:var(--font-display);font-size:1.2rem;color:var(--color-text);margin-bottom:12px;">Rescue Partner</h3>
           <div style="display: flex; gap: 8px; justify-content: center;">
-            <a href="shoshi-gamliel-profile.html" style="display:inline-block;padding:10px 14px;background:#E0E0E0;color:#F5F5F5;text-decoration:none;font-size:0.85rem;font-weight:600;transition:all 0.2s;">Learn More</a>
-            <a href="rescue-intake.html" style="display:inline-block;padding:10px 14px;background: linear-gradient(135deg, #5C0A12, #3A070C);color:#F5F5F5;text-decoration:none;font-size:0.85rem;font-weight:600;transition:all 0.2s;">Get Involved</a>
+            <a href="shoshi-gamliel-profile.html" style="display:inline-block;padding:10px 14px;background:#E0E0E0;color:var(--color-text);text-decoration:none;font-size:0.85rem;font-weight:600;transition:all 0.2s;">Learn More</a>
+            <a href="rescue-intake.html" style="display:inline-block;padding:10px 14px;background: linear-gradient(135deg, #5C0A12, #3A070C);color:var(--color-text);text-decoration:none;font-size:0.85rem;font-weight:600;transition:all 0.2s;">Get Involved</a>
           </div>
         </div>
       </div>
 
       <!-- Example 3: Another Pet -->
       <div style="background:#232323;  overflow: hidden; box-shadow: 0 4px 16px rgba(42, 42, 42, 0.08);">
-        <div style="background:#2A2A2A; height: 180px; display: flex; flex-direction:column; align-items: center; justify-content: center; gap:6px;"><span style="color:#E0E0E0;font-family:var(--font-body);font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;">Pet Legacy Tag</span><span style="color:#F5F5F5;font-family:var(--font-body);font-size:1rem;font-weight:700;">Your Pet Here</span></div>
+        <div style="background:#2A2A2A; height: 180px; display: flex; flex-direction:column; align-items: center; justify-content: center; gap:6px;"><span style="color:#E0E0E0;font-family:var(--font-body);font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;">Pet Legacy Tag</span><span style="color:var(--color-text);font-family:var(--font-body);font-size:1rem;font-weight:700;">Your Pet Here</span></div>
         <div style="padding: 24px;">
           <div style="font-family:var(--font-display);font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:#E0E0E0;font-weight:600;margin-bottom:8px;">Pet Legacy Tag</div>
-          <h3 style="font-family:var(--font-display);font-size:1.2rem;color:#F5F5F5;margin-bottom:12px;">Pet Tag Users</h3>
-          <p style="font-size:0.9rem;color:#F5F5F5;font-style:italic;margin-bottom:16px;line-height:1.6;">"Their medical history, behavioral notes, and entire story. Forever."</p>
-          <a href="network.html" style="display:inline-block;padding:10px 14px;background:#E0E0E0;color:#F5F5F5;text-decoration:none;font-size:0.85rem;font-weight:600;transition:all 0.2s;">See More</a>
+          <h3 style="font-family:var(--font-display);font-size:1.2rem;color:var(--color-text);margin-bottom:12px;">Pet Tag Users</h3>
+          <p style="font-size:0.9rem;color:var(--color-text);font-style:italic;margin-bottom:16px;line-height:1.6;">"Their medical history, behavioral notes, and entire story. Forever."</p>
+          <a href="network.html" style="display:inline-block;padding:10px 14px;background:#E0E0E0;color:var(--color-text);text-decoration:none;font-size:0.85rem;font-weight:600;transition:all 0.2s;">See More</a>
         </div>
       </div>
     </div>
@@ -504,7 +504,7 @@
       <div style="overflow-x: auto;">
         <table style="width: 100%; border-collapse: collapse; background:#232323;  overflow: hidden; box-shadow: 0 4px 16px rgba(42, 42, 42, 0.08);">
           <thead>
-            <tr style="background: linear-gradient(135deg, #2A2A2A 0%, #2A2A2A 100%); color: #F5F5F5;">
+            <tr style="background: linear-gradient(135deg, #2A2A2A 0%, #2A2A2A 100%); color: var(--color-text);">
               <th style="padding: 16px; text-align: left; font-weight: 600; border-bottom: 2px solid #E0E0E0;">Feature</th>
               <th style="padding: 16px; text-align: center; font-weight: 600; border-bottom: 2px solid #E0E0E0;">Basic<br>$24.99</th>
               <th style="padding: 16px; text-align: center; font-weight: 600; border-bottom: 2px solid #E0E0E0;">Premium<br>$49.99</th>
@@ -512,42 +512,42 @@
           </thead>
           <tbody>
             <tr style="border-bottom: 1px solid rgba(42, 42, 42, 0.1);">
-              <td style="padding: 16px; color:#F5F5F5; font-weight: 600;">Weatherproof QR Tag</td>
+              <td style="padding: 16px; color:var(--color-text); font-weight: 600;">Weatherproof QR Tag</td>
               <td style="padding: 16px; text-align: center;"></td>
               <td style="padding: 16px; text-align: center;"></td>
             </tr>
             <tr style="border-bottom: 1px solid rgba(42, 42, 42, 0.1);">
-              <td style="padding: 16px; color:#F5F5F5; font-weight: 600;">Digital Profile Page</td>
+              <td style="padding: 16px; color:var(--color-text); font-weight: 600;">Digital Profile Page</td>
               <td style="padding: 16px; text-align: center;"></td>
               <td style="padding: 16px; text-align: center;"></td>
             </tr>
             <tr style="border-bottom: 1px solid rgba(42, 42, 42, 0.1);">
-              <td style="padding: 16px; color:#F5F5F5; font-weight: 600;">Pet Name & Contact Info</td>
+              <td style="padding: 16px; color:var(--color-text); font-weight: 600;">Pet Name & Contact Info</td>
               <td style="padding: 16px; text-align: center;"></td>
               <td style="padding: 16px; text-align: center;"></td>
             </tr>
             <tr style="border-bottom: 1px solid rgba(42, 42, 42, 0.1);">
-              <td style="padding: 16px; color:#F5F5F5; font-weight: 600;">Photo Gallery</td>
+              <td style="padding: 16px; color:var(--color-text); font-weight: 600;">Photo Gallery</td>
               <td style="padding: 16px; text-align: center;"></td>
               <td style="padding: 16px; text-align: center;"></td>
             </tr>
             <tr style="border-bottom: 1px solid rgba(42, 42, 42, 0.1); background: rgba(212,160,23,0.05);">
-              <td style="padding: 16px; color:#F5F5F5; font-weight: 600;">Medical History</td>
+              <td style="padding: 16px; color:var(--color-text); font-weight: 600;">Medical History</td>
               <td style="padding: 16px; text-align: center;">—</td>
               <td style="padding: 16px; text-align: center; color: #E0E0E0; font-weight: 600;"></td>
             </tr>
             <tr style="border-bottom: 1px solid rgba(42, 42, 42, 0.1); background: rgba(212,160,23,0.05);">
-              <td style="padding: 16px; color:#F5F5F5; font-weight: 600;">Behavioral Notes</td>
+              <td style="padding: 16px; color:var(--color-text); font-weight: 600;">Behavioral Notes</td>
               <td style="padding: 16px; text-align: center;">—</td>
               <td style="padding: 16px; text-align: center; color: #E0E0E0; font-weight: 600;"></td>
             </tr>
             <tr style="border-bottom: 1px solid rgba(42, 42, 42, 0.1); background: rgba(212,160,23,0.05);">
-              <td style="padding: 16px; color:#F5F5F5; font-weight: 600;">Adoption/Rescue Timeline</td>
+              <td style="padding: 16px; color:var(--color-text); font-weight: 600;">Adoption/Rescue Timeline</td>
               <td style="padding: 16px; text-align: center;">—</td>
               <td style="padding: 16px; text-align: center; color: #E0E0E0; font-weight: 600;"></td>
             </tr>
             <tr style="background: rgba(212,160,23,0.05);">
-              <td style="padding: 16px; color:#F5F5F5; font-weight: 600;">AirTag-compatible holder</td>
+              <td style="padding: 16px; color:var(--color-text); font-weight: 600;">AirTag-compatible holder</td>
               <td style="padding: 16px; text-align: center;">—</td>
               <td style="padding: 16px; text-align: center; color: #E0E0E0; font-weight: 600;"></td>
             </tr>
@@ -566,7 +566,7 @@
     <div class="section-inner">
       <div class="form-container">
         <div style="text-align: center; margin-bottom: 24px;">
-          <button id="showOrderForm" onclick="toggleOrderForm()" style="background: linear-gradient(135deg, #5C0A12, #3A070C);color:#F5F5F5;border:1.5px solid #E0E0E0;padding:12px 24px;font-family:var(--font-display);font-size:0.75rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;transition:all 0.22s ease;min-height:44px;margin-bottom:16px">Order Now</button>
+          <button id="showOrderForm" onclick="toggleOrderForm()" style="background: linear-gradient(135deg, #5C0A12, #3A070C);color:var(--color-text);border:1.5px solid #E0E0E0;padding:12px 24px;font-family:var(--font-display);font-size:0.75rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;transition:all 0.22s ease;min-height:44px;margin-bottom:16px">Order Now</button>
         </div>
         <div id="orderFormWrap" style="display:none;">
         <form action="https://formspree.io/f/xgolrkea" method="POST">
@@ -628,14 +628,14 @@
 
           <!-- UPSELLS SECTION -->
           <div style="margin: 24px 0; padding: 20px; background: rgba(212,160,23,0.08); border: 1px solid rgba(212,160,23,0.2); ">
-            <h3 style="font-family: var(--font-display); font-size: 0.9rem; font-weight: 700; color:#F5F5F5; margin-bottom: 16px; letter-spacing: 0.1em; text-transform: uppercase;">Enhance Your Pet's Legacy (Optional)</h3>
+            <h3 style="font-family: var(--font-display); font-size: 0.9rem; font-weight: 700; color:var(--color-text); margin-bottom: 16px; letter-spacing: 0.1em; text-transform: uppercase;">Enhance Your Pet's Legacy (Optional)</h3>
 
             <div style="margin-bottom: 16px;">
               <label style="display: flex; align-items: flex-start; gap: 12px; cursor: pointer;">
                 <input type="checkbox" name="photo_research" value="yes" style="margin-top: 4px; cursor: pointer;" />
                 <div>
-                  <strong style="color:#F5F5F5; display: block; margin-bottom: 4px;"> Photo Research Add-On</strong>
-                  <span style="font-size: 0.85rem; color:#F5F5F5;">Find historical photos of your pet's breed or rescue origin. +$150</span>
+                  <strong style="color:var(--color-text); display: block; margin-bottom: 4px;"> Photo Research Add-On</strong>
+                  <span style="font-size: 0.85rem; color:var(--color-text);">Find historical photos of your pet's breed or rescue origin. +$150</span>
                 </div>
               </label>
             </div>
@@ -645,8 +645,8 @@
               <label style="display: flex; align-items: flex-start; gap: 12px; cursor: pointer;">
                 <input type="checkbox" name="expedited_delivery" value="yes" style="margin-top: 4px; cursor: pointer;" />
                 <div>
-                  <strong style="color:#F5F5F5; display: block; margin-bottom: 4px;"> Expedited Delivery</strong>
-                  <span style="font-size: 0.85rem; color:#F5F5F5;">Tag ships in 3 days instead of 10 days. +$50</span>
+                  <strong style="color:var(--color-text); display: block; margin-bottom: 4px;"> Expedited Delivery</strong>
+                  <span style="font-size: 0.85rem; color:var(--color-text);">Tag ships in 3 days instead of 10 days. +$50</span>
                 </div>
               </label>
             </div>
@@ -727,16 +727,16 @@
 
   <!-- FOOTER -->
 <!-- TEXT BEAR DIRECT CONTACT STRIP -->
-<section class="text-bear-strip" style="background: #1A1A1A; padding: 3rem 1.5rem; text-align: center; border-top: 1px solid rgba(212,175,55,0.2); border-bottom: 1px solid rgba(212,175,55,0.2);">
+<section class="text-bear-strip" style="background: var(--color-bg); padding: 3rem 1.5rem; text-align: center; border-top: 1px solid rgba(212,175,55,0.2); border-bottom: 1px solid rgba(212,175,55,0.2);">
   <div style="max-width: 680px; margin: 0 auto;">
-    <div style="font-family: var(--font-display); font-size: 0.72rem; letter-spacing: 0.3em; color: #D4AF37; text-transform: uppercase; margin-bottom: 1rem;">Talk To The Founder</div>
-    <h2 style="font-family: var(--font-display); font-weight: 700; font-size: clamp(1.6rem, 3.5vw, 2.25rem); color: #F5F5F5; margin: 0 0 1.25rem; letter-spacing: 0.04em; text-transform: uppercase; line-height: 1.2;">Questions? Text Bear Directly.</h2>
+    <div style="font-family: var(--font-display); font-size: 0.72rem; letter-spacing: 0.3em; color: var(--color-accent); text-transform: uppercase; margin-bottom: 1rem;">Talk To The Founder</div>
+    <h2 style="font-family: var(--font-display); font-weight: 700; font-size: clamp(1.6rem, 3.5vw, 2.25rem); color: var(--color-text); margin: 0 0 1.25rem; letter-spacing: 0.04em; text-transform: uppercase; line-height: 1.2;">Questions? Text Bear Directly.</h2>
     <p style="font-family: var(--font-body); font-size: 1.05rem; color: #E0E0E0; margin: 0 0 2rem; line-height: 1.55; opacity: 0.88;">You're not dealing with a call center. No chatbot. No ticket queue. Text me — I answer personally.</p>
     <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-      <a href="sms:+18058633794" style="display: inline-block; background: #5C0A12; color: #F5F5F5; font-family: var(--font-display); font-weight: 700; font-size: 0.9rem; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; padding: 1rem 2rem; border: 2px solid #5C0A12; transition: background 0.25s;">Text (805) 863-3794</a>
-      <a href="mailto:contact@mylegacycontinues.com" style="display: inline-block; background: transparent; color: #D4AF37; font-family: var(--font-display); font-weight: 700; font-size: 0.9rem; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; padding: 1rem 2rem; border: 2px solid #D4AF37; transition: color 0.25s, background 0.25s;">Email Instead</a>
+      <a href="sms:+18058633794" style="display: inline-block; background: #5C0A12; color: var(--color-text); font-family: var(--font-display); font-weight: 700; font-size: 0.9rem; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; padding: 1rem 2rem; border: 2px solid #5C0A12; transition: background 0.25s;">Text (805) 863-3794</a>
+      <a href="mailto:contact@mylegacycontinues.com" style="display: inline-block; background: transparent; color: var(--color-accent); font-family: var(--font-display); font-weight: 700; font-size: 0.9rem; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; padding: 1rem 2rem; border: 2px solid var(--color-accent); transition: color 0.25s, background 0.25s;">Email Instead</a>
     </div>
-    <p style="font-family: var(--font-serif); font-style: italic; font-size: 1rem; color: #D4AF37; margin: 1.75rem 0 0; opacity: 0.85;">Built solo in Santa Maria, CA.</p>
+    <p style="font-family: var(--font-serif); font-style: italic; font-size: 1rem; color: var(--color-accent); margin: 1.75rem 0 0; opacity: 0.85;">Built solo in Santa Maria, CA.</p>
   </div>
 </section>
 
@@ -849,6 +849,8 @@ document.querySelectorAll('form').forEach(form => {
     });
   </script>
 
+<script src="js/sticky-cta.js" defer></script>
+<script src="js/bionic.js" defer></script>
 </body>
 </html>
 

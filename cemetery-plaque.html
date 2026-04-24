@@ -19,38 +19,38 @@
 <meta name="twitter:image" content="https://mylegacycontinues.com/images/products/finplaq.jpg">
 <meta name="description" content="A stainless steel QR plaque for any headstone. Scan to hear their songs, see photos, leave tributes. One-time $129. Hosted forever. My Legacy Continues.">
 <link rel="icon" href="logo.png" type="image/png">
-<link rel="preload" href="/fonts/Inter-VariableFont_opsz,wght.ttf" as="font" type="font/ttf" crossorigin>
-<link rel="preload" href="/fonts/BigShoulders-VariableFont_opsz,wght.ttf" as="font" type="font/ttf" crossorigin>
-<link rel="stylesheet" href="/fonts/fonts.css">
+<link rel="preload" href="/fonts/Staatliches-Regular.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="/fonts/Lato-Regular.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="stylesheet" href="/fonts/fonts.css">
 <link rel="stylesheet" href="style.css">
 <style>
 
 :root {
-  --charcoal:         #1A1A1A;
+  --charcoal:         var(--color-bg);
   --charcoal-deep: #232323;
-  --gold:#D4AF37;
-  --gold-light:   #D4AF37;
+  --gold:var(--color-accent);
+  --gold-light:   var(--color-accent);
   --coral:        #5C0A12;
-  --cream:#F5F5F5;
+  --cream:var(--color-text);
   --charcoal2:    #141414;
-  --gold-bright:  #D4AF37;
+  --gold-bright:  var(--color-accent);
   --gold-dim:     rgba(212,160,23,0.4);
   --gold-wash:    rgba(212,160,23,0.08);
   --gold-border:  rgba(212,160,23,0.25);
-  --heading:      #D4AF37;
-  --body:         #F5F5F5;
+  --heading:      var(--color-accent);
+  --body:         var(--color-text);
   --muted:        rgba(245,245,245,0.65);
   --card-bg:      rgba(212,160,23,0.08);
-  --nav-bg:       #F5F5F5;
-  --bg:#1A1A1A;
+  --nav-bg:       var(--color-text);
+  --bg:var(--color-bg);
   --bg-card:      rgba(212,160,23,0.08);
-  --bg-warm:      #F5F5F5;
-  --bg-nav:       #F5F5F5;
+  --bg-warm:      var(--color-text);
+  --bg-nav:       var(--color-text);
   --forest:       #2A2A2A;
   --forest-dark:  #232323;
   --serif:        var(--font-serif);
   --sans:         var(--font-body);
-  --text:#F5F5F5;
+  --text:var(--color-text);
   --text-muted:   rgba(245,245,245,0.65);
   --text-dim:     rgba(245,245,245,0.5);
   --brandywine:   #5C0A12;
@@ -59,17 +59,17 @@
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
-body { font-family: var(--sans); background: var(--bg); color: var(--text); line-height: 1.8; -webkit-font-smoothing: antialiased; background-color:#1A1A1A; overflow-x: hidden; }
+body { font-family: var(--sans); background: var(--bg); color: var(--text); line-height: 1.8; -webkit-font-smoothing: antialiased; background-color:var(--color-bg); overflow-x: hidden; }
 
 .nav-logo { height: 48px; width: auto; }
 /* Mobile background fix */
-section { background-color:#1A1A1A; }
-.section { background-color:#1A1A1A; }
+section { background-color:var(--color-bg); }
+.section { background-color:var(--color-bg); }
 a { color: inherit; text-decoration: none; }
 img { max-width: 100%; height: auto; display: block; }
 
 .btn { display: inline-block; font-family: var(--font-display); font-size: 0.72rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; padding: 16px 34px; min-height: 44px; border: none; cursor: pointer; transition: all 0.22s ease; text-decoration: none; white-space: nowrap;  }
-.btn-primary { background: linear-gradient(180deg, #5C0A12 0%, #3A070C 100%); color: #F5F5F5; box-shadow: 0 4px 20px rgba(212,160,23,0.2); transition: all 0.3s ease; }
+.btn-primary { background: linear-gradient(180deg, #5C0A12 0%, #3A070C 100%); color: var(--color-text); box-shadow: 0 4px 20px rgba(212,160,23,0.2); transition: all 0.3s ease; }
 .btn-primary:hover { background: linear-gradient(180deg, #3A070C 0%, #2B0608 100%); transform: translateY(-1px); box-shadow: 0 6px 20px rgba(92, 10, 18, 0.3); }
 .btn-outline { background: transparent; color: #5C0A12; border: 1.5px solid #2A2A2A; }
 .btn-outline:hover { background: #2A2A2A; color: #5C0A12; }
@@ -80,8 +80,8 @@ img { max-width: 100%; height: auto; display: block; }
 .back-link { font-family: var(--font-display); font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(212,160,23,0.8); display: inline-flex; align-items: center; gap: 8px; margin-bottom: 28px; transition: color 0.2s; }
 .back-link:hover { color: #5C0A12; }
 .back-link::before { content: '←'; font-size: 0.9rem; }
-.page-eyebrow { font-family: var(--font-display); font-size: 0.56rem; letter-spacing: 0.32em; text-transform: uppercase; color: #D4AF37; display: block; margin-bottom: 18px; }
-.page-title { font-family: var(--font-display); font-size: clamp(2rem, 4.5vw, 3.2rem); font-weight: 700; color: #F5F5F5; line-height: 1.1; margin-bottom: 18px; }
+.page-eyebrow { font-family: var(--font-display); font-size: 0.56rem; letter-spacing: 0.32em; text-transform: uppercase; color: var(--color-accent); display: block; margin-bottom: 18px; }
+.page-title { font-family: var(--font-display); font-size: clamp(2rem, 4.5vw, 3.2rem); font-weight: 700; color: var(--color-text); line-height: 1.1; margin-bottom: 18px; }
 .page-sub { font-size: 1rem; color: rgba(240,235,224,0.8); line-height: 1.85; max-width: 600px; margin-bottom: 32px; }
 .price-badge { display: inline-block; font-family: var(--font-display); font-size: 2.2rem; font-weight: 700; color: #5C0A12; margin-bottom: 32px; }
 .price-note { font-size: 0.8rem; color: rgba(240,235,224,0.6); margin-top: -20px; margin-bottom: 28px; }
@@ -90,26 +90,26 @@ img { max-width: 100%; height: auto; display: block; }
 .gold-rule { height: 1px; background: var(--gold-border); }
 
 /* WHAT YOU GET */
-.what-section { padding: 72px 48px; background:#1A1A1A; }
+.what-section { padding: 72px 48px; background:var(--color-bg); }
 .what-inner { max-width: 860px; margin: 0 auto; }
 .what-section h2 { font-family: var(--font-display); font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 700; color: #5C0A12; margin-bottom: 32px; }
 .includes-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin-bottom: 40px; }
 .include-item { background: rgba(192,57,43,0.08); border: 1px solid rgba(212,160,23,0.2);  padding: 22px 20px; box-shadow: 0 2px 12px rgba(212,160,23,0.05); }
 .include-item-icon { font-size: 1.4rem; margin-bottom: 10px; }
-.include-item-title { font-family: var(--font-display); font-size: 0.72rem; font-weight: 700; color: #D4AF37; margin-bottom: 6px; }
-.include-item-desc { font-size: 0.8rem; color:#F5F5F5; line-height: 1.7; }
+.include-item-title { font-family: var(--font-display); font-size: 0.72rem; font-weight: 700; color: var(--color-accent); margin-bottom: 6px; }
+.include-item-desc { font-size: 0.8rem; color:var(--color-text); line-height: 1.7; }
 @media (max-width: 600px) { .what-section { padding: 52px 20px; } }
 
 /* ORDER + FORM */
-.order-section { padding: 0 48px 80px; background:#1A1A1A; }
+.order-section { padding: 0 48px 80px; background:var(--color-bg); }
 .order-inner { max-width: 860px; margin: 0 auto; }
 .order-intro { background: #2A2A2A;  padding: 32px 36px; margin-bottom: 40px; }
 .order-intro p { font-size: 0.9rem; color: rgba(240,235,224,0.85); line-height: 1.85; margin-bottom: 16px; }
 .order-intro p:last-child { margin-bottom: 0; }
 .order-intro a { color: #5C0A12; }
-.order-intro strong { color: #F5F5F5; }
+.order-intro strong { color: var(--color-text); }
 
-.form-section-title { font-family: var(--font-display); font-size: 0.6rem; letter-spacing: 0.24em; text-transform: uppercase; color: #D4AF37; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 1px solid rgba(212,160,23,0.25); }
+.form-section-title { font-family: var(--font-display); font-size: 0.6rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(--color-accent); margin-bottom: 20px; padding-bottom: 10px; border-bottom: 1px solid rgba(212,160,23,0.25); }
 .intake-form { display: flex; flex-direction: column; gap: 18px; }
 .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
 @media (max-width: 600px) { .form-row { grid-template-columns: 1fr; } .order-section { padding: 0 20px 64px; } }
@@ -121,22 +121,22 @@ img { max-width: 100%; height: auto; display: block; }
   .includes-grid, .what-grid, .form-grid { grid-template-columns: 1fr !important; }
 }
 .form-group { display: flex; flex-direction: column; gap: 8px; }
-.form-group label { font-family: var(--font-display); font-size: 0.58rem; letter-spacing: 0.2em; text-transform: uppercase; color:#F5F5F5; }
+.form-group label { font-family: var(--font-display); font-size: 0.58rem; letter-spacing: 0.2em; text-transform: uppercase; color:var(--color-text); }
 .form-group input,
 .form-group textarea,
-.form-group select { background:#1A1A1A; border: 1px solid rgba(212,160,23,0.2);  color:#F5F5F5; font-family: var(--font-serif); font-size: 0.9rem; padding: 13px 16px; min-height: 44px; transition: border-color 0.2s; width: 100%; }
+.form-group select { background:var(--color-bg); border: 1px solid rgba(212,160,23,0.2);  color:var(--color-text); font-family: var(--font-serif); font-size: 0.9rem; padding: 13px 16px; min-height: 44px; transition: border-color 0.2s; width: 100%; }
 .form-group input:focus,
 .form-group textarea:focus,
 .form-group select:focus { outline: none; border-color: #5C0A12; box-shadow: 0 0 0 3px rgba(212,160,23,0.1); }
 .form-group input::placeholder,
-.form-group textarea::placeholder { color:#F5F5F5; }
+.form-group textarea::placeholder { color:var(--color-text); }
 .form-group textarea { min-height: 110px; resize: vertical; }
 .form-group select { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23D4A020' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 16px center; padding-right: 40px; }
 .form-divider { height: 1px; background: rgba(192,57,43,0.25); margin: 8px 0; }
 .form-submit-row { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; margin-top: 8px; }
-.form-submit-note { font-size: 0.78rem; color:#F5F5F5; line-height: 1.6; }
+.form-submit-note { font-size: 0.78rem; color:var(--color-text); line-height: 1.6; }
 .stripe-cta { text-align: center; background: rgba(192,57,43,0.08); border: 1px solid rgba(212,160,23,0.2);  padding: 28px 32px; margin-bottom: 32px; box-shadow: 0 2px 12px rgba(212,160,23,0.05); }
-.stripe-cta p { font-size: 0.88rem; color:#F5F5F5; margin-bottom: 18px; line-height: 1.7; }
+.stripe-cta p { font-size: 0.88rem; color:var(--color-text); margin-bottom: 18px; line-height: 1.7; }
 .stripe-cta .price-label { font-family: var(--font-display); font-size: 1.6rem; font-weight: 700; color: #5C0A12; display: block; margin-bottom: 18px; }
 
 </style>
@@ -168,7 +168,7 @@ img { max-width: 100%; height: auto; display: block; }
     fbq('track', 'PageView');
   </script>
   </head>
-<body>
+<body data-bionic="true">
   <!-- Facebook Pixel noscript -->
   <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=2828165625364437&ev=PageView&noscript=1" /></noscript>
   <!-- NAVIGATION -->
@@ -184,7 +184,7 @@ img { max-width: 100%; height: auto; display: block; }
       <li><a href="network.html">Network</a></li>
       <li><a href="rescue-registry.html">Rescue</a></li>
       <li><a href="active-transports.html">Transport</a></li>
-            <li><a href="free-profile.html" style="color:#D4AF37;">Free Page</a></li>
+            <li><a href="free-profile.html" style="color:var(--color-accent);">Free Page</a></li>
       <li><a href="about.html">About</a></li>
     </ul>
     <div class="nav-right">
@@ -215,7 +215,7 @@ img { max-width: 100%; height: auto; display: block; }
 
 <div class="gold-rule"></div>
 
-<section class="what-section" style="background-color:#1A1A1A;">
+<section class="what-section" style="background-color:var(--color-bg);">
   <div class="what-inner">
     <h2>What You're Getting</h2>
     <div class="includes-grid">
@@ -265,7 +265,7 @@ img { max-width: 100%; height: auto; display: block; }
 </section>
 
 <!-- SEE MORE REAL EXAMPLES CAROUSEL -->
-<section style="background-color:#1A1A1A; padding: 72px 48px;">
+<section style="background-color:var(--color-bg); padding: 72px 48px;">
   <div style="max-width: 1000px; margin: 0 auto;">
     <h2 style="font-family:var(--font-display);font-size:clamp(1.4rem,3vw,2rem);font-weight:700;color:#5C0A12;margin-bottom:8px;text-align:center;">More Memorial Examples</h2>
     <p style="font-size:0.95rem;color:var(--body);line-height:1.85;text-align:center;margin-bottom:36px;max-width:700px;margin-left:auto;margin-right:auto;">Real families preserving memories. Here's what cemetery memorials look like on our platform.</p>
@@ -273,34 +273,34 @@ img { max-width: 100%; height: auto; display: block; }
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
       <!-- Example 1: Anthony Raygoza -->
       <div style="background:#232323;  overflow: hidden; box-shadow: 0 4px 16px rgba(42, 42, 42, 0.08);">
-        <div style="background:#2A2A2A; height: 180px; display: flex; flex-direction:column; align-items: center; justify-content: center; gap:6px;"><span style="color:#E0E0E0;font-family:var(--font-serif);font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;">CEMETERY MEMORIAL</span><span style="color:#F5F5F5;font-family:var(--font-serif);font-size:1rem;font-weight:700;">Anthony Raygoza Sr.</span></div>
+        <div style="background:#2A2A2A; height: 180px; display: flex; flex-direction:column; align-items: center; justify-content: center; gap:6px;"><span style="color:#E0E0E0;font-family:var(--font-serif);font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;">CEMETERY MEMORIAL</span><span style="color:var(--color-text);font-family:var(--font-serif);font-size:1rem;font-weight:700;">Anthony Raygoza Sr.</span></div>
         <div style="padding: 24px;">
           <div style="font-family:var(--font-display);font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:#E0E0E0;font-weight:600;margin-bottom:8px;">Cemetery Memorial Plaque</div>
           <h3 style="font-family:var(--font-display);font-size:1.2rem;color:#5C0A12;margin-bottom:12px;">Anthony Raygoza Sr.</h3>
-          <p style="font-size:0.9rem;color:#F5F5F5;font-style:italic;margin-bottom:16px;line-height:1.6;">"Visitors can scan and see his full story. A memorial that really matters."</p>
-          <a href="anthony-raygoza-memorial.html" style="display:inline-block;padding:10px 14px;background: linear-gradient(135deg, #5C0A12, #3A070C);color:#F5F5F5;text-decoration:none;font-size:0.85rem;font-weight:600;transition:all 0.2s;">View Memorial</a>
+          <p style="font-size:0.9rem;color:var(--color-text);font-style:italic;margin-bottom:16px;line-height:1.6;">"Visitors can scan and see his full story. A memorial that really matters."</p>
+          <a href="anthony-raygoza-memorial.html" style="display:inline-block;padding:10px 14px;background: linear-gradient(135deg, #5C0A12, #3A070C);color:var(--color-text);text-decoration:none;font-size:0.85rem;font-weight:600;transition:all 0.2s;">View Memorial</a>
         </div>
       </div>
 
       <!-- Example 2: Deborah's Family History -->
       <div style="background:#232323;  overflow: hidden; box-shadow: 0 4px 16px rgba(42, 42, 42, 0.08);">
-        <div style="background:#2A2A2A; height: 180px; display: flex; flex-direction:column; align-items: center; justify-content: center; gap:6px;"><span style="color:#E0E0E0;font-family:var(--font-serif);font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;">HERITAGE PROFILE</span><span style="color:#F5F5F5;font-family:var(--font-serif);font-size:1rem;font-weight:700;">Family Stories + Plaque</span></div>
+        <div style="background:#2A2A2A; height: 180px; display: flex; flex-direction:column; align-items: center; justify-content: center; gap:6px;"><span style="color:#E0E0E0;font-family:var(--font-serif);font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;">HERITAGE PROFILE</span><span style="color:var(--color-text);font-family:var(--font-serif);font-size:1rem;font-weight:700;">Family Stories + Plaque</span></div>
         <div style="padding: 24px;">
           <div style="font-family:var(--font-display);font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:#E0E0E0;font-weight:600;margin-bottom:8px;">Heritage + Memorial</div>
           <h3 style="font-family:var(--font-display);font-size:1.2rem;color:#5C0A12;margin-bottom:12px;">Family Stories + Plaque</h3>
-          <p style="font-size:0.9rem;color:#F5F5F5;font-style:italic;margin-bottom:16px;line-height:1.6;">"Complete history book linked to cemetery memorial. Generation after generation."</p>
-          <a href="deborah-mahony-profile.html" style="display:inline-block;padding:10px 14px;background: linear-gradient(135deg, #5C0A12, #3A070C);color:#F5F5F5;text-decoration:none;font-size:0.85rem;font-weight:600;transition:all 0.2s;">View Example</a>
+          <p style="font-size:0.9rem;color:var(--color-text);font-style:italic;margin-bottom:16px;line-height:1.6;">"Complete history book linked to cemetery memorial. Generation after generation."</p>
+          <a href="deborah-mahony-profile.html" style="display:inline-block;padding:10px 14px;background: linear-gradient(135deg, #5C0A12, #3A070C);color:var(--color-text);text-decoration:none;font-size:0.85rem;font-weight:600;transition:all 0.2s;">View Example</a>
         </div>
       </div>
 
       <!-- Example 3: Memorial Template -->
       <div style="background:#232323;  overflow: hidden; box-shadow: 0 4px 16px rgba(42, 42, 42, 0.08);">
-        <div style="background:#2A2A2A; height: 180px; display: flex; flex-direction:column; align-items: center; justify-content: center; gap:6px;"><span style="color:#E0E0E0;font-family:var(--font-serif);font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;">MEMORIAL PLAQUE</span><span style="color:#F5F5F5;font-family:var(--font-serif);font-size:1rem;font-weight:700;">Create Your Own</span></div>
+        <div style="background:#2A2A2A; height: 180px; display: flex; flex-direction:column; align-items: center; justify-content: center; gap:6px;"><span style="color:#E0E0E0;font-family:var(--font-serif);font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;">MEMORIAL PLAQUE</span><span style="color:var(--color-text);font-family:var(--font-serif);font-size:1rem;font-weight:700;">Create Your Own</span></div>
         <div style="padding: 24px;">
           <div style="font-family:var(--font-display);font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:#E0E0E0;font-weight:600;margin-bottom:8px;">Cemetery Memorial Plaque</div>
           <h3 style="font-family:var(--font-display);font-size:1.2rem;color:#5C0A12;margin-bottom:12px;">Create Your Own</h3>
-          <p style="font-size:0.9rem;color:#F5F5F5;font-style:italic;margin-bottom:16px;line-height:1.6;">"A permanent memorial that brings people together. A place where love doesn't end."</p>
-          <a href="network.html" style="display:inline-block;padding:10px 14px;background: linear-gradient(135deg, #5C0A12, #3A070C);color:#F5F5F5;text-decoration:none;font-size:0.85rem;font-weight:600;transition:all 0.2s;margin-right:8px;">See More</a>
+          <p style="font-size:0.9rem;color:var(--color-text);font-style:italic;margin-bottom:16px;line-height:1.6;">"A permanent memorial that brings people together. A place where love doesn't end."</p>
+          <a href="network.html" style="display:inline-block;padding:10px 14px;background: linear-gradient(135deg, #5C0A12, #3A070C);color:var(--color-text);text-decoration:none;font-size:0.85rem;font-weight:600;transition:all 0.2s;margin-right:8px;">See More</a>
         </div>
       </div>
     </div>
@@ -308,7 +308,7 @@ img { max-width: 100%; height: auto; display: block; }
 </section>
 
 <!-- FEATURES COMPARISON TABLE -->
-<section style="background-color:#1A1A1A; padding: 72px 48px;">
+<section style="background-color:var(--color-bg); padding: 72px 48px;">
   <div style="max-width: 1000px; margin: 0 auto;">
     <h2 style="font-family:var(--font-display);font-size:clamp(1.4rem,3vw,2rem);font-weight:700;color:#5C0A12;margin-bottom:8px;text-align:center;">What's Included</h2>
     <p style="font-size:0.95rem;color:var(--body);line-height:1.85;text-align:center;margin-bottom:36px;max-width:700px;margin-left:auto;margin-right:auto;">Everything your loved one deserves to be remembered forever.</p>
@@ -316,7 +316,7 @@ img { max-width: 100%; height: auto; display: block; }
     <div style="overflow-x: auto;">
       <table style="width: 100%; border-collapse: collapse; background:#232323;  overflow: hidden; box-shadow: 0 4px 16px rgba(42, 42, 42, 0.08);">
         <thead>
-          <tr style="background: linear-gradient(135deg, #5C0A12 0%, #2A2A2A 100%); color: #F5F5F5;">
+          <tr style="background: linear-gradient(135deg, #5C0A12 0%, #2A2A2A 100%); color: var(--color-text);">
             <th style="padding: 16px; text-align: left; font-weight: 600; border-bottom: 2px solid #E0E0E0;">Feature</th>
             <th style="padding: 16px; text-align: center; font-weight: 600; border-bottom: 2px solid #E0E0E0;">Included</th>
           </tr>
@@ -367,14 +367,14 @@ img { max-width: 100%; height: auto; display: block; }
 <div class="gold-rule"></div>
 
 <!-- DEMO SECTION -->
-<section style="padding: 72px 48px; background:#1A1A1A; text-align: center;">
+<section style="padding: 72px 48px; background:var(--color-bg); text-align: center;">
   <div style="max-width: 860px; margin: 0 auto;">
     <p style="font-family: var(--font-body); font-style: italic; color: #5C0A12; font-size: 18px; margin-bottom: 16px;">See how the memorial plaque works</p>
-    <a href="https://mylegacycontinues.com/plaque-demo.html" style="display: inline-block; padding: 16px 34px; background: linear-gradient(135deg, #5C0A12, #3A070C); color: #F5F5F5; font-weight: 600; text-decoration: none;  transition: background 0.3s; font-family: var(--font-serif); font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase;">View the Memorial Plaque Demo</a>
+    <a href="https://mylegacycontinues.com/plaque-demo.html" style="display: inline-block; padding: 16px 34px; background: linear-gradient(135deg, #5C0A12, #3A070C); color: var(--color-text); font-weight: 600; text-decoration: none;  transition: background 0.3s; font-family: var(--font-serif); font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase;">View the Memorial Plaque Demo</a>
   </div>
 </section>
 
-<section class="order-section" id="order" style="background-color:#1A1A1A;">
+<section class="order-section" id="order" style="background-color:var(--color-bg);">
   <div class="order-inner">
     <div style="padding-top:56px; margin-bottom:36px;">
       <h2 style="font-family:var(--font-display);font-size:clamp(1.4rem,3vw,2rem);font-weight:700;color: var(--heading);margin-bottom:12px;">Start Their Memorial</h2>
@@ -396,7 +396,7 @@ img { max-width: 100%; height: auto; display: block; }
 </div>
 
 <div style="text-align: center; margin-bottom: 32px;">
-  <button id="showOrderForm" onclick="toggleOrderForm()" style="background: linear-gradient(135deg, #5C0A12, #3A070C);color:#F5F5F5;border:1.5px solid #E0E0E0;padding:16px 34px;font-family:var(--font-display);font-size:0.72rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;cursor:pointer;transition:all 0.22s ease;min-height:44px;margin-bottom:24px;">Order Now</button>
+  <button id="showOrderForm" onclick="toggleOrderForm()" style="background: linear-gradient(135deg, #5C0A12, #3A070C);color:var(--color-text);border:1.5px solid #E0E0E0;padding:16px 34px;font-family:var(--font-display);font-size:0.72rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;cursor:pointer;transition:all 0.22s ease;min-height:44px;margin-bottom:24px;">Order Now</button>
 </div>
 
 <div id="orderFormWrap" style="display:none;">
@@ -532,7 +532,7 @@ img { max-width: 100%; height: auto; display: block; }
     type="submit"
     style="
       background: linear-gradient(135deg, #5C0A12, #3A070C);
-      color: #F5F5F5;
+      color: var(--color-text);
       padding: 14px 32px;
       border: none;
       font-size: 16px;
@@ -570,24 +570,24 @@ img { max-width: 100%; height: auto; display: block; }
   <div style="max-width: 900px; margin: 0 auto;">
     <h3 style="font-family: var(--font-serif); color: #5C0A12; margin-bottom: 1.5rem;">Preserve Complete Legacy</h3>
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem;">
-      <div><a href="heritage-book.html" style="display: inline-block; padding: 12px 20px; background: linear-gradient(135deg, #5C0A12, #3A070C); color: #F5F5F5; text-decoration: none; font-weight: 600; border-radius: 4px; transition: all 0.2s;">Heritage Book — $199</a></div>
-      <div><a href="pet-tag.html" style="display: inline-block; padding: 12px 20px; background: linear-gradient(135deg, #5C0A12, #3A070C); color: #F5F5F5; text-decoration: none; font-weight: 600; border-radius: 4px; transition: all 0.2s;">Pet Legacy Tags</a></div>
-      <div><a href="faq.html" style="display: inline-block; padding: 12px 20px; background: #E0E0E0; color:#F5F5F5; text-decoration: none; font-weight: 600; border-radius: 4px; transition: all 0.2s;">Questions? See FAQ</a></div>
+      <div><a href="heritage-book.html" style="display: inline-block; padding: 12px 20px; background: linear-gradient(135deg, #5C0A12, #3A070C); color: var(--color-text); text-decoration: none; font-weight: 600; border-radius: 4px; transition: all 0.2s;">Heritage Book — $199</a></div>
+      <div><a href="pet-tag.html" style="display: inline-block; padding: 12px 20px; background: linear-gradient(135deg, #5C0A12, #3A070C); color: var(--color-text); text-decoration: none; font-weight: 600; border-radius: 4px; transition: all 0.2s;">Pet Legacy Tags</a></div>
+      <div><a href="faq.html" style="display: inline-block; padding: 12px 20px; background: #E0E0E0; color:var(--color-text); text-decoration: none; font-weight: 600; border-radius: 4px; transition: all 0.2s;">Questions? See FAQ</a></div>
     </div>
   </div>
 </section>
 
 <!-- TEXT BEAR DIRECT CONTACT STRIP -->
-<section class="text-bear-strip" style="background: #1A1A1A; padding: 3rem 1.5rem; text-align: center; border-top: 1px solid rgba(212,175,55,0.2); border-bottom: 1px solid rgba(212,175,55,0.2);">
+<section class="text-bear-strip" style="background: var(--color-bg); padding: 3rem 1.5rem; text-align: center; border-top: 1px solid rgba(212,175,55,0.2); border-bottom: 1px solid rgba(212,175,55,0.2);">
   <div style="max-width: 680px; margin: 0 auto;">
-    <div style="font-family: var(--font-display); font-size: 0.72rem; letter-spacing: 0.3em; color: #D4AF37; text-transform: uppercase; margin-bottom: 1rem;">Talk To The Founder</div>
-    <h2 style="font-family: var(--font-display); font-weight: 700; font-size: clamp(1.6rem, 3.5vw, 2.25rem); color: #F5F5F5; margin: 0 0 1.25rem; letter-spacing: 0.04em; text-transform: uppercase; line-height: 1.2;">Questions? Text Bear Directly.</h2>
+    <div style="font-family: var(--font-display); font-size: 0.72rem; letter-spacing: 0.3em; color: var(--color-accent); text-transform: uppercase; margin-bottom: 1rem;">Talk To The Founder</div>
+    <h2 style="font-family: var(--font-display); font-weight: 700; font-size: clamp(1.6rem, 3.5vw, 2.25rem); color: var(--color-text); margin: 0 0 1.25rem; letter-spacing: 0.04em; text-transform: uppercase; line-height: 1.2;">Questions? Text Bear Directly.</h2>
     <p style="font-family: var(--font-body); font-size: 1.05rem; color: #E0E0E0; margin: 0 0 2rem; line-height: 1.55; opacity: 0.88;">You're not dealing with a call center. No chatbot. No ticket queue. Text me — I answer personally.</p>
     <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-      <a href="sms:+18058633794" style="display: inline-block; background: #5C0A12; color: #F5F5F5; font-family: var(--font-display); font-weight: 700; font-size: 0.9rem; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; padding: 1rem 2rem; border: 2px solid #5C0A12; transition: background 0.25s;">Text (805) 863-3794</a>
-      <a href="mailto:contact@mylegacycontinues.com" style="display: inline-block; background: transparent; color: #D4AF37; font-family: var(--font-display); font-weight: 700; font-size: 0.9rem; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; padding: 1rem 2rem; border: 2px solid #D4AF37; transition: color 0.25s, background 0.25s;">Email Instead</a>
+      <a href="sms:+18058633794" style="display: inline-block; background: #5C0A12; color: var(--color-text); font-family: var(--font-display); font-weight: 700; font-size: 0.9rem; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; padding: 1rem 2rem; border: 2px solid #5C0A12; transition: background 0.25s;">Text (805) 863-3794</a>
+      <a href="mailto:contact@mylegacycontinues.com" style="display: inline-block; background: transparent; color: var(--color-accent); font-family: var(--font-display); font-weight: 700; font-size: 0.9rem; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; padding: 1rem 2rem; border: 2px solid var(--color-accent); transition: color 0.25s, background 0.25s;">Email Instead</a>
     </div>
-    <p style="font-family: var(--font-serif); font-style: italic; font-size: 1rem; color: #D4AF37; margin: 1.75rem 0 0; opacity: 0.85;">Built solo in Santa Maria, CA.</p>
+    <p style="font-family: var(--font-serif); font-style: italic; font-size: 1rem; color: var(--color-accent); margin: 1.75rem 0 0; opacity: 0.85;">Built solo in Santa Maria, CA.</p>
   </div>
 </section>
 
@@ -701,6 +701,8 @@ document.querySelectorAll('form').forEach(form => {
     });
   </script>
 
+<script src="js/sticky-cta.js" defer></script>
+<script src="js/bionic.js" defer></script>
 </body>
 </html>
 
