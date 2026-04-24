@@ -5,9 +5,8 @@
  * Skips nav, footer, headings, links, buttons, form controls,
  * already-bolded text, and code/pre blocks.
  *
- * Length rule (per CLAUDE.md spec: "first 2–4 letters on words ≥4 chars"):
- *   len 1–3  → bold 0 (skip short words)
- *   len 4–5  → bold first 2
+ * Length rule (Apr 24 2026 density tune — only bold words with 6+ letters):
+ *   len 1–5  → bold 0 (skip short words)
  *   len 6–8  → bold first 3
  *   len 9+   → bold first 4
  */
@@ -22,8 +21,7 @@
   };
 
   function boldPrefixLen(wordLen) {
-    if (wordLen <= 3) return 0;
-    if (wordLen <= 5) return 2;
+    if (wordLen <= 5) return 0;
     if (wordLen <= 8) return 3;
     return 4;
   }
