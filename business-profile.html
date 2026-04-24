@@ -27,12 +27,12 @@
 
 :root {
   --charcoal:         var(--color-bg);
-  --charcoal-deep: #232323;
+  --charcoal-deep: #14110F;
   --gold:var(--color-accent);
   --gold-light:   var(--color-accent);
   --coral:        #5C0A12;
   --cream:var(--color-text);
-  --charcoal2:    #141414;
+  --charcoal2:    #14110F;
   --gold-bright:  var(--color-accent);
   --gold-dim:     rgba(212,160,23,0.4);
   --gold-wash:    rgba(212,160,23,0.08);
@@ -46,15 +46,15 @@
   --bg-card:      rgba(212,160,23,0.08);
   --bg-warm:      var(--color-text);
   --bg-nav:       var(--color-text);
-  --forest:       #2A2A2A;
-  --forest-dark:  #232323;
+  --forest:       #14110F;
+  --forest-dark:  #14110F;
   --serif:        var(--font-serif);
   --sans:         var(--font-body);
   --text:var(--color-text);
   --text-muted:   rgba(245,245,245,0.65);
   --text-dim:     rgba(245,245,245,0.5);
   --brandywine:   #5C0A12;
-  --brandywine-deep: #3A070C;
+  --brandywine-deep: #5C0A12;
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -69,12 +69,12 @@ a { color: inherit; text-decoration: none; }
 img { max-width: 100%; height: auto; display: block; }
 
 .btn { display: inline-block; font-family: var(--font-display); font-size: 0.72rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; padding: 16px 34px; min-height: 44px; border: none; cursor: pointer; transition: all 0.22s ease; text-decoration: none; white-space: nowrap;  }
-.btn-primary { background: linear-gradient(180deg, #5C0A12 0%, #3A070C 100%); color: var(--color-text); box-shadow: 0 4px 20px rgba(212,160,23,0.2); transition: all 0.3s ease; }
-.btn-primary:hover { background: linear-gradient(180deg, #3A070C 0%, #2B0608 100%); transform: translateY(-1px); box-shadow: 0 6px 20px rgba(92, 10, 18, 0.3); }
-.btn-outline { background: transparent; color: #C9A24C; border: 1.5px solid #2A2A2A; }
-.btn-outline:hover { background: #2A2A2A; color: #C9A24C; }
+.btn-primary { background: linear-gradient(180deg, #5C0A12 0%, #5C0A12 100%); color: var(--color-text); box-shadow: 0 4px 20px rgba(212,160,23,0.2); transition: all 0.3s ease; }
+.btn-primary:hover { background: linear-gradient(180deg, #5C0A12 0%, #5C0A12 100%); transform: translateY(-1px); box-shadow: 0 6px 20px rgba(92, 10, 18, 0.3); }
+.btn-outline { background: transparent; color: #C9A24C; border: 1.5px solid #14110F; }
+.btn-outline:hover { background: #14110F; color: #C9A24C; }
 
-.page-hero { background: #2A2A2A; padding: 130px 48px 72px; }
+.page-hero { background: #14110F; padding: 130px 48px 72px; }
 .page-hero-inner { max-width: 860px; margin: 0 auto; }
 .back-link { font-family: var(--font-display); font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(212,160,23,0.8); display: inline-flex; align-items: center; gap: 8px; margin-bottom: 28px; transition: color 0.2s; }
 .back-link:hover { color: #C9A24C; }
@@ -97,13 +97,13 @@ img { max-width: 100%; height: auto; display: block; }
 .include-item-title { font-family: var(--font-display); font-size: 0.72rem; font-weight: 700; color: #C9A24C; margin-bottom: 6px; }
 .include-item-desc { font-size: 0.8rem; color:var(--color-text); line-height: 1.7; }
 
-.proof-block { background:var(--color-bg); border-left: 3px solid #E0E0E0; padding: 24px 28px;  margin-bottom: 48px; }
+.proof-block { background:var(--color-bg); border-left: 3px solid #ECE4D2; padding: 24px 28px;  margin-bottom: 48px; }
 .proof-block p { font-size: 0.9rem; color:var(--color-text); line-height: 1.85; margin-bottom: 10px; }
 .proof-block p:last-child { margin-bottom: 0; }
 .proof-block strong { color: #C9A24C; font-weight: 600; }
 
 /* SAMPLE PROFILE SECTION */
-.sample-section { background: #2A2A2A; padding: 72px 48px; }
+.sample-section { background: #14110F; padding: 72px 48px; }
 .sample-inner { max-width: 860px; margin: 0 auto; }
 .sample-eyebrow { font-family: var(--font-display); font-size: 0.56rem; letter-spacing: 0.32em; text-transform: uppercase; color: #C9A24C; display: block; margin-bottom: 14px; }
 .sample-section h2 { font-family: var(--font-display); font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 700; color: var(--color-text); margin-bottom: 12px; }
@@ -116,7 +116,7 @@ img { max-width: 100%; height: auto; display: block; }
 .sample-card-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 8px; }
 .sample-tag { font-family: var(--font-display); font-size: 0.55rem; letter-spacing: 0.16em; text-transform: uppercase; color: #C9A24C; border: 1px solid rgba(212,160,23,0.4); padding: 5px 12px;  }
 .sample-btn { display: inline-block; font-family: var(--font-display); font-size: 0.68rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; padding: 14px 28px; background: #5C0A12; color: #ECE4D2;  transition: all 0.22s; white-space: nowrap; }
-.sample-btn:hover { background: #3A070C; transform: translateY(-2px); }
+.sample-btn:hover { background: #5C0A12; transform: translateY(-2px); }
 @media (max-width: 600px) {
 .sample-section { padding: 56px 20px; }
 .sample-card { flex-direction: column; align-items: flex-start; }
@@ -245,26 +245,26 @@ img { max-width: 100%; height: auto; display: block; }
   <div style="max-width: 860px; margin: 0 auto;">
     <div style="font-family:var(--font-body); font-size:0.65rem; letter-spacing:0.32em; text-transform:uppercase; color:var(--color-accent); text-align:center; font-weight:700; margin-bottom:14px;">Who It&rsquo;s For</div>
     <h2 style="font-family:var(--font-body); font-size:clamp(1.6rem,3.2vw,2.2rem); font-weight:700; color:var(--color-text); letter-spacing:0.04em; margin-bottom:14px; text-align:center; text-transform:uppercase;">One Product. Three Worlds.</h2>
-    <p style="text-align:center; color:#bababa; font-size:1rem; line-height:1.75; max-width:620px; margin:0 auto 52px;">Same profile. Same $79. Tell your story however it needs to be told.</p>
+    <p style="text-align:center; color:#ECE4D2; font-size:1rem; line-height:1.75; max-width:620px; margin:0 auto 52px;">Same profile. Same $79. Tell your story however it needs to be told.</p>
 
-    <div style="margin-bottom:28px; padding:34px 32px; background:#232323; border-left:3px solid var(--color-accent);">
+    <div style="margin-bottom:28px; padding:34px 32px; background:#14110F; border-left:3px solid var(--color-accent);">
       <div style="font-family:var(--font-body); font-size:0.68rem; letter-spacing:0.3em; text-transform:uppercase; color:var(--color-accent); font-weight:700; margin-bottom:14px;">For Business Owners</div>
       <h3 style="font-family:var(--font-body); color:var(--color-text); font-size:1.35rem; font-weight:700; margin-bottom:14px;">Your story. Your crew. Your work.</h3>
-      <p style="color:#e0e0e0; line-height:1.8; font-size:0.98rem; margin-bottom:22px;">Origin story. Crew. Projects. License number. QR code on your cards, trucks, and job sites — one scan shows customers everything you&rsquo;ve built.</p>
+      <p style="color:#ECE4D2; line-height:1.8; font-size:0.98rem; margin-bottom:22px;">Origin story. Crew. Projects. License number. QR code on your cards, trucks, and job sites — one scan shows customers everything you&rsquo;ve built.</p>
       <a href="mcneal-construction-profile.html" style="color:var(--color-accent); font-family:var(--font-body); font-size:0.72rem; font-weight:700; letter-spacing:0.22em; text-transform:uppercase; border-bottom:1px solid var(--color-accent); padding-bottom:3px; text-decoration:none;">Example: McNeal Construction &rarr;</a>
     </div>
 
-    <div style="margin-bottom:28px; padding:34px 32px; background:#232323; border-left:3px solid var(--color-accent);">
+    <div style="margin-bottom:28px; padding:34px 32px; background:#14110F; border-left:3px solid var(--color-accent);">
       <div style="font-family:var(--font-body); font-size:0.68rem; letter-spacing:0.3em; text-transform:uppercase; color:var(--color-accent); font-weight:700; margin-bottom:14px;">For Athletes</div>
       <h3 style="font-family:var(--font-body); color:var(--color-text); font-size:1.35rem; font-weight:700; margin-bottom:14px;">Your record. Your highlights. Your journey.</h3>
-      <p style="color:#e0e0e0; line-height:1.8; font-size:0.98rem; margin-bottom:22px;">Record. Highlights. Stats. The grind, documented. A permanent page recruiters, coaches, and fans can find — not an Instagram feed that gets buried.</p>
+      <p style="color:#ECE4D2; line-height:1.8; font-size:0.98rem; margin-bottom:22px;">Record. Highlights. Stats. The grind, documented. A permanent page recruiters, coaches, and fans can find — not an Instagram feed that gets buried.</p>
       <span style="color:rgba(212,175,55,0.5); font-family:var(--font-body); font-size:0.72rem; font-weight:700; letter-spacing:0.22em; text-transform:uppercase; border-bottom:1px solid rgba(212,175,55,0.3); padding-bottom:3px;">Example coming soon</span>
     </div>
 
-    <div style="padding:34px 32px; background:#232323; border-left:3px solid var(--color-accent);">
+    <div style="padding:34px 32px; background:#14110F; border-left:3px solid var(--color-accent);">
       <div style="font-family:var(--font-body); font-size:0.68rem; letter-spacing:0.3em; text-transform:uppercase; color:var(--color-accent); font-weight:700; margin-bottom:14px;">For Creators</div>
       <h3 style="font-family:var(--font-body); color:var(--color-text); font-size:1.35rem; font-weight:700; margin-bottom:14px;">Your portfolio. Your playlists. Your links.</h3>
-      <p style="color:#e0e0e0; line-height:1.8; font-size:0.98rem; margin-bottom:22px;">Portfolio. Playlists. Work samples. Every link that matters. One page that holds the whole catalog — permanent, not algorithm-dependent.</p>
+      <p style="color:#ECE4D2; line-height:1.8; font-size:0.98rem; margin-bottom:22px;">Portfolio. Playlists. Work samples. Every link that matters. One page that holds the whole catalog — permanent, not algorithm-dependent.</p>
       <span style="color:rgba(212,175,55,0.5); font-family:var(--font-body); font-size:0.72rem; font-weight:700; letter-spacing:0.22em; text-transform:uppercase; border-bottom:1px solid rgba(212,175,55,0.3); padding-bottom:3px;">Example coming soon</span>
     </div>
   </div>
@@ -371,7 +371,7 @@ img { max-width: 100%; height: auto; display: block; }
           <img src="images/mcneal-logo.jpg" alt="McNeal Construction" style="max-height:140px; max-width:80%; width:auto; height:auto; filter: drop-shadow(0 4px 12px rgba(0,0,0,0.4));">
         </div>
         <div style="padding:24px;">
-          <div style="font-family:var(--font-display);font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:#E0E0E0;font-weight:600;margin-bottom:8px;">Business Founder Profile</div>
+          <div style="font-family:var(--font-display);font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:#ECE4D2;font-weight:600;margin-bottom:8px;">Business Founder Profile</div>
           <h3 style="font-family:var(--font-display);font-size:1.2rem;color:#C9A24C;margin-bottom:12px;">McNeal Construction</h3>
           <p style="font-size:0.9rem;color:var(--color-text);font-style:italic;margin-bottom:16px;line-height:1.6;">"Every pour we made is still out there. Now the story is too."</p>
           <a href="bears-concrete-profile.html" style="display:inline-block;padding:10px 14px;background:#5C0A12;color:var(--color-text);text-decoration:none;font-size:0.85rem;font-weight:600;transition:all 0.2s;">View Profile</a>
@@ -384,7 +384,7 @@ img { max-width: 100%; height: auto; display: block; }
           <img src="images/bigtymer-logo.png" alt="BigTymer Trucking" style="max-height:140px; max-width:80%; width:auto; height:auto; filter: drop-shadow(0 4px 12px rgba(0,0,0,0.4));">
         </div>
         <div style="padding:24px;">
-          <div style="font-family:var(--font-display);font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:#E0E0E0;font-weight:600;margin-bottom:8px;">Business Founder Profile</div>
+          <div style="font-family:var(--font-display);font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:#ECE4D2;font-weight:600;margin-bottom:8px;">Business Founder Profile</div>
           <h3 style="font-family:var(--font-display);font-size:1.2rem;color:#C9A24C;margin-bottom:12px;">BigTymer Trucking</h3>
           <p style="font-size:0.9rem;color:var(--color-text);font-style:italic;margin-bottom:16px;line-height:1.6;">"Million miles behind us. One permanent story to show for it."</p>
           <a href="bigtymer-trucking-profile.html" style="display:inline-block;padding:10px 14px;background:#5C0A12;color:var(--color-text);text-decoration:none;font-size:0.85rem;font-weight:600;transition:all 0.2s;">View Profile</a>
@@ -397,7 +397,7 @@ img { max-width: 100%; height: auto; display: block; }
           <img src="images/mcneal-logo.jpg" alt="McNeal Construction" style="max-height:140px; max-width:80%; width:auto; height:auto; filter: drop-shadow(0 4px 12px rgba(0,0,0,0.4));">
         </div>
         <div style="padding:24px;">
-          <div style="font-family:var(--font-display);font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:#E0E0E0;font-weight:600;margin-bottom:8px;">Business Founder Profile</div>
+          <div style="font-family:var(--font-display);font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:#ECE4D2;font-weight:600;margin-bottom:8px;">Business Founder Profile</div>
           <h3 style="font-family:var(--font-display);font-size:1.2rem;color:#C9A24C;margin-bottom:12px;">McNeal Construction</h3>
           <p style="font-size:0.9rem;color:var(--color-text);font-style:italic;margin-bottom:16px;line-height:1.6;">"My business story, permanently documented. This is what I built."</p>
           <a href="mcneal-construction-profile.html" style="display:inline-block;padding:10px 14px;background:#5C0A12;color:var(--color-text);text-decoration:none;font-size:0.85rem;font-weight:600;transition:all 0.2s;">View Profile</a>
@@ -410,7 +410,7 @@ img { max-width: 100%; height: auto; display: block; }
           <img src="images/carlos.png" alt="Creative Property Management" style="max-height:140px; max-width:80%; width:auto; height:auto; filter: drop-shadow(0 4px 12px rgba(0,0,0,0.4));">
         </div>
         <div style="padding:24px;">
-          <div style="font-family:var(--font-display);font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:#E0E0E0;font-weight:600;margin-bottom:8px;">Business Founder Profile</div>
+          <div style="font-family:var(--font-display);font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:#ECE4D2;font-weight:600;margin-bottom:8px;">Business Founder Profile</div>
           <h3 style="font-family:var(--font-display);font-size:1.2rem;color:#C9A24C;margin-bottom:12px;">Carlos Macias</h3>
           <p style="font-size:0.9rem;color:var(--color-text);font-style:italic;margin-bottom:16px;line-height:1.6;">"A permanent home for my business story and professional legacy."</p>
           <a href="carlos-macias-profile.html" style="display:inline-block;padding:10px 14px;background:#5C0A12;color:var(--color-text);text-decoration:none;font-size:0.85rem;font-weight:600;transition:all 0.2s;">View Profile</a>
@@ -428,11 +428,11 @@ img { max-width: 100%; height: auto; display: block; }
     <p style="font-size:0.95rem;color:var(--body);line-height:1.85;text-align:center;margin-bottom:36px;max-width:700px;margin-left:auto;margin-right:auto;">Your complete business profile, ready to represent your legacy.</p>
 
     <div style="overflow-x: auto;">
-      <table style="width: 100%; border-collapse: collapse; background:#232323;  overflow: hidden; box-shadow: 0 4px 16px rgba(42, 42, 42, 0.08);">
+      <table style="width: 100%; border-collapse: collapse; background:#14110F;  overflow: hidden; box-shadow: 0 4px 16px rgba(42, 42, 42, 0.08);">
         <thead>
-          <tr style="background: linear-gradient(135deg, #5C0A12 0%, #2A2A2A 100%); color: var(--color-text);">
-            <th style="padding: 16px; text-align: left; font-weight: 600; border-bottom: 2px solid #E0E0E0;">Feature</th>
-            <th style="padding: 16px; text-align: center; font-weight: 600; border-bottom: 2px solid #E0E0E0;">Included</th>
+          <tr style="background: linear-gradient(135deg, #5C0A12 0%, #14110F 100%); color: var(--color-text);">
+            <th style="padding: 16px; text-align: left; font-weight: 600; border-bottom: 2px solid #ECE4D2;">Feature</th>
+            <th style="padding: 16px; text-align: center; font-weight: 600; border-bottom: 2px solid #ECE4D2;">Included</th>
           </tr>
         </thead>
         <tbody>
@@ -481,11 +481,11 @@ img { max-width: 100%; height: auto; display: block; }
 <div class="gold-rule"></div>
 
 <!-- EXPEDITED DELIVERY ADD-ON (CTA) -->
-<section style="background: #2A2A2A; padding: 72px 48px;" class="metalflake full-width fade-in">
+<section style="background: #14110F; padding: 72px 48px;" class="metalflake full-width fade-in">
   <div style="max-width: 700px; margin: 0 auto; text-align: center;">
-    <h2 style="color: #E0E0E0; font-family: var(--font-display); font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 700; margin-bottom: 1rem;">Expedited Delivery — $50</h2>
+    <h2 style="color: #ECE4D2; font-family: var(--font-display); font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 700; margin-bottom: 1rem;">Expedited Delivery — $50</h2>
     <p style="color: var(--color-text); margin-top: 1.5rem; font-size: 0.95rem; line-height: 1.85;">Rush processing. Your Legacy Profile goes live in <strong>5 business days</strong> instead of the standard 14. Perfect for launch deadlines, trade shows, and press events.</p>
-    <a href="https://buy.stripe.com/6oU14o15ZbOc0S82agfQI0f" class="btn btn-primary" style="margin-top: 2rem; background: linear-gradient(180deg, #5C0A12 0%, #3A070C 100%); color:var(--color-text); padding: 16px 34px; font-family: var(--font-display); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; display: inline-block;" data-product="expedited-delivery">Add Expedited Delivery — $50</a>
+    <a href="https://buy.stripe.com/6oU14o15ZbOc0S82agfQI0f" class="btn btn-primary" style="margin-top: 2rem; background: linear-gradient(180deg, #5C0A12 0%, #5C0A12 100%); color:var(--color-text); padding: 16px 34px; font-family: var(--font-display); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; display: inline-block;" data-product="expedited-delivery">Add Expedited Delivery — $50</a>
   </div>
 </section>
 
@@ -512,7 +512,7 @@ img { max-width: 100%; height: auto; display: block; }
 </div>
 
 <div style="text-align: center; margin-bottom: 32px;">
-  <button id="showOrderForm" onclick="toggleOrderForm()" style="background:#5C0A12;color:var(--color-text);border:1.5px solid #E0E0E0;padding:16px 34px;font-family:var(--font-display);font-size:0.72rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;cursor:pointer;transition:all 0.22s ease;min-height:44px;margin-bottom:24px;">Get Started</button>
+  <button id="showOrderForm" onclick="toggleOrderForm()" style="background:#5C0A12;color:var(--color-text);border:1.5px solid #ECE4D2;padding:16px 34px;font-family:var(--font-display);font-size:0.72rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;cursor:pointer;transition:all 0.22s ease;min-height:44px;margin-bottom:24px;">Get Started</button>
 </div>
 
 <div id="orderFormWrap" style="display:none;">
@@ -636,7 +636,7 @@ img { max-width: 100%; height: auto; display: block; }
   <div class="section-inner text-center" style="max-width: 700px; margin: 0 auto;">
     <h2>Your Legacy, Your Control</h2>
     <p style="margin-top: 1.5rem;">Your profile never gets locked. Add photos, update the story, change contacts, add milestones — anytime. Email contact@mylegacycontinues.com and we make changes within 48 hours. No extra charge. Ever.</p>
-    <h3 style="margin-top: 2.5rem; color: #E0E0E0;">Family Portal — In Development. Your family's complete history in one place.</h3>
+    <h3 style="margin-top: 2.5rem; color: #ECE4D2;">Family Portal — In Development. Your family's complete history in one place.</h3>
     <p style="margin-top: 1rem;">Your own private dashboard. Log in, add photos, update your story, leave messages for future generations. No waiting on us. Launching 2026.</p>
   </div>
 </section>
@@ -646,7 +646,7 @@ img { max-width: 100%; height: auto; display: block; }
   <div style="max-width: 680px; margin: 0 auto;">
     <div style="font-family: var(--font-display); font-size: 0.72rem; letter-spacing: 0.3em; color: var(--color-accent); text-transform: uppercase; margin-bottom: 1rem;">Talk To The Founder</div>
     <h2 style="font-family: var(--font-display); font-weight: 700; font-size: clamp(1.6rem, 3.5vw, 2.25rem); color: var(--color-text); margin: 0 0 1.25rem; letter-spacing: 0.04em; text-transform: uppercase; line-height: 1.2;">Questions? Text Bear Directly.</h2>
-    <p style="font-family: var(--font-body); font-size: 1.05rem; color: #E0E0E0; margin: 0 0 2rem; line-height: 1.55; opacity: 0.88;">You're not dealing with a call center. No chatbot. No ticket queue. Text me — I answer personally.</p>
+    <p style="font-family: var(--font-body); font-size: 1.05rem; color: #ECE4D2; margin: 0 0 2rem; line-height: 1.55; opacity: 0.88;">You're not dealing with a call center. No chatbot. No ticket queue. Text me — I answer personally.</p>
     <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
       <a href="sms:+18058633794" style="display: inline-block; background: #5C0A12; color: var(--color-text); font-family: var(--font-display); font-weight: 700; font-size: 0.9rem; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; padding: 1rem 2rem; border: 2px solid #5C0A12; transition: background 0.25s;">Text (805) 863-3794</a>
       <a href="mailto:contact@mylegacycontinues.com" style="display: inline-block; background: transparent; color: var(--color-accent); font-family: var(--font-display); font-weight: 700; font-size: 0.9rem; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; padding: 1rem 2rem; border: 2px solid var(--color-accent); transition: color 0.25s, background 0.25s;">Email Instead</a>

@@ -17,18 +17,18 @@
 
   /* Supporting — from CLAUDE.md DESIGN SPEC */
   --bone-cream:         #ECE4D2;   /* body text */
-  --chrome-stripe:      #BFB8A8;   /* dividers */
-  --brandywine-mid:     #3A070C;   /* gradient stop */
-  --brandywine-deep:    #2B0608;   /* gradient stop */
+  --chrome-stripe:      #ECE4D2;   /* dividers */
+  --brandywine-mid:     #5C0A12;   /* gradient stop */
+  --brandywine-deep:    #5C0A12;   /* gradient stop */
   --oriental-blue:      #1A3A5C;   /* living status only */
-  --error:              #A01E27;
+  --error:              #5C0A12;
 
   /* Memorial sub-palette */
-  --onyx-warm:          #1B1613;
-  --oxblood-memory:     #47121A;
-  --gold-tarnished:     #B49050;
-  --candle-amber:       #E8C070;
-  --divider-memory:     #3A2F27;
+  --onyx-warm:          #14110F;
+  --oxblood-memory:     #5C0A12;
+  --gold-tarnished:     #C9A24C;
+  --candle-amber:       #C9A24C;
+  --divider-memory:     #14110F;
 
   /* Task-required semantic aliases */
   --color-bg:           var(--onyx-lacquer);
@@ -942,10 +942,10 @@ html body button.btn-gold:hover {
 
 /* Anything previously colored cream/white on white-card backgrounds inverts now —
    ensure inline-styled white cards (now charcoal) get readable text */
-[style*="background:#FFFFFF" i] *,
-[style*="background-color:#FFFFFF" i] *,
-[style*="background:#fff" i]:not([style*="#fff,"]) *,
-[style*="background-color:#fff" i]:not([style*="#fff,"]) * {
+[style*="background:#ECE4D2" i] *,
+[style*="background-color:#ECE4D2" i] *,
+[style*="background:#ECE4D2" i]:not([style*="#ECE4D2,"]) *,
+[style*="background-color:#ECE4D2" i]:not([style*="#ECE4D2,"]) * {
   color: var(--color-text);
 }
 
