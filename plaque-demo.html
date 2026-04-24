@@ -18,8 +18,8 @@
   <meta name="twitter:title" content="Cemetery Memorial Plaque Demo | My Legacy Continues">
   <meta name="twitter:description" content="Stainless steel QR plaque on a headstone. Scan it, see a full life. Real example from My Legacy Continues.">
   <meta name="twitter:image" content="https://mylegacycontinues.com/logo.png">
-  <link rel="preload" href="/fonts/Inter-VariableFont_opsz,wght.ttf" as="font" type="font/ttf" crossorigin>
-  <link rel="preload" href="/fonts/BigShoulders-VariableFont_opsz,wght.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="/fonts/Staatliches-Regular.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="/fonts/Lato-Regular.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="stylesheet" href="/fonts/fonts.css">
   <link rel="stylesheet" href="style.css">
   <style>
@@ -44,13 +44,13 @@
       font-family: var(--font-body);
       font-weight: 300;
       line-height: 1.8;
-      background-color:#1A1A1A;
+      background-color:var(--color-bg);
       overflow-x: hidden;
     }
 
     /* Mobile background fix */
-    section { background-color:#1A1A1A; }
-    .section { background-color:#1A1A1A; }
+    section { background-color:var(--color-bg); }
+    .section { background-color:var(--color-bg); }
 
 
     /* HERO */
@@ -142,7 +142,7 @@
     .plaque-qr {
       flex-shrink: 0;
       width: 90px; height: 90px;
-      background: #1a1a1a;
+      background: var(--color-bg);
       
       display: flex; align-items: center; justify-content: center;
       position: relative;
@@ -302,7 +302,7 @@
       <li><a href="network.html">Network</a></li>
       <li><a href="rescue-registry.html">Rescue</a></li>
       <li><a href="active-transports.html">Transport</a></li>
-            <li><a href="free-profile.html" style="color:#D4AF37;">Free Page</a></li>
+            <li><a href="free-profile.html" style="color:var(--color-accent);">Free Page</a></li>
       <li><a href="about.html">About</a></li>
     </ul>
     <div class="nav-right">
@@ -583,5 +583,6 @@
     });
   </script>
 
+<script src="js/sticky-cta.js" defer></script>
 </body>
 </html>

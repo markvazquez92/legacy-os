@@ -20,20 +20,20 @@
 <meta name="twitter:title" content="Privacy Promise — How We Protect Your Family | My Legacy Continues">
 <meta name="twitter:description" content="Your data, your story, your family. Never sold. Never shared. Exportable anytime. Our permanent promise.">
 <meta name="twitter:image" content="https://mylegacycontinues.com/logo.png">
-<link rel="preload" href="/fonts/Inter-VariableFont_opsz,wght.ttf" as="font" type="font/ttf" crossorigin>
-<link rel="preload" href="/fonts/BigShoulders-VariableFont_opsz,wght.ttf" as="font" type="font/ttf" crossorigin>
-<link rel="stylesheet" href="/fonts/fonts.css">
+<link rel="preload" href="/fonts/Staatliches-Regular.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="/fonts/Lato-Regular.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="stylesheet" href="/fonts/fonts.css">
 <style>
   *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
   :root {
-    --charcoal: #1A1A1A;
-    --charcoal: #1A1A1A;
+    --charcoal: var(--color-bg);
+    --charcoal: var(--color-bg);
     --charcoal-deep: #0A0A0A;
     --brandywine: #5C0A12;
     --gold-warm: #D4A017;
     --gold-flake: #b8962e;
-    --gold: #D4AF37;
-    --cream: #F5F5F5;
+    --gold: var(--color-accent);
+    --cream: var(--color-text);
     --chrome: #E0E0E0;
     --brandywine: #5C0A12;
   }
@@ -111,7 +111,7 @@
   }
 
   .section { padding: 5rem 2rem; }
-  .section-charcoal { background: linear-gradient(180deg, #1A1A1A 0%, #1A1A1A 100%); }
+  .section-charcoal { background: linear-gradient(180deg, var(--color-bg) 0%, var(--color-bg) 100%); }
   .section-dark { background: var(--charcoal-deep); }
   .section h2 {
     font-family:var(--font-display); font-weight:700;
@@ -126,7 +126,7 @@
     gap: 1.5rem;
   }
   .principle-card {
-    background: linear-gradient(155deg, #1A1A1A 0%, #1A1A1A 100%);
+    background: linear-gradient(155deg, var(--color-bg) 0%, var(--color-bg) 100%);
     border: 2px solid var(--gold-flake); padding: 1.75rem;
     transition: all 0.35s;
   }
@@ -171,7 +171,7 @@
   /* Testimonial block */
   .testimonial-wrap {
     max-width: 800px; margin: 0 auto;
-    background: linear-gradient(155deg, #1A1A1A 0%, #1A1A1A 100%);
+    background: linear-gradient(155deg, var(--color-bg) 0%, var(--color-bg) 100%);
     border-left: 4px solid var(--brandywine); padding: 2.5rem;
     text-align: left;
   }
@@ -282,7 +282,7 @@
     <li><a href="network.html">Network</a></li>
     <li><a href="rescue-registry.html">Rescue</a></li>
     <li><a href="active-transports.html">Transport</a></li>
-        <li><a href="free-profile.html" style="color:#D4AF37; white-space:nowrap;">Free Page</a></li>
+        <li><a href="free-profile.html" style="color:var(--color-accent); white-space:nowrap;">Free Page</a></li>
     <li><a href="about.html">About</a></li>
   </ul>
   <div style="display:flex; align-items:center; gap:1rem; flex-shrink:0;">
@@ -513,5 +513,6 @@
     });
   });
 </script>
+<script src="js/sticky-cta.js" defer></script>
 </body>
 </html>

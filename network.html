@@ -19,26 +19,25 @@
   <meta name="twitter:title" content="The Network — Real 805 Stories | My Legacy Continues">
   <meta name="twitter:description" content="Every MLC profile lives on the Network. Families. Businesses. Creators. Rescues. Permanent Central Coast stories.">
   <meta name="twitter:image" content="https://mylegacycontinues.com/logo.png">
-
-  <link rel="preload" href="/fonts/Inter-VariableFont_opsz,wght.ttf" as="font" type="font/ttf" crossorigin>
-  <link rel="preload" href="/fonts/BigShoulders-VariableFont_opsz,wght.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="/fonts/Staatliches-Regular.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="/fonts/Lato-Regular.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="stylesheet" href="/fonts/fonts.css">
 
   <link rel="stylesheet" href="style.css">
 
   <style>
     :root {
-      --bg: #1A1A1A;
+      --bg: var(--color-bg);
       --bg-deep: #0A0A0A;
       --bg-card: #232323;
       --brandywine: #5C0A12;
       --brandywine-deep: #3A070C;
-      --gold: #D4AF37;
+      --gold: var(--color-accent);
       --gold-soft: rgba(212,175,55,0.3);
       --gold-glow: rgba(212,175,55,0.45);
       --chrome: #E0E0E0;
       --chrome-dim: #9a9a9a;
-      --cream: #FAF3E6;
+      --cream: #ECE4D2;
       --white: #FFFFFF;
     }
 
@@ -95,7 +94,7 @@
       overflow: hidden;
       background:
         radial-gradient(ellipse at 50% 30%, rgba(212,175,55,0.09) 0%, transparent 60%),
-        linear-gradient(160deg, #0a0a0a 0%, #1A1A1A 55%, #0A0A0A 100%);
+        linear-gradient(160deg, #0a0a0a 0%, var(--color-bg) 55%, #0A0A0A 100%);
     }
     .nw-hero::before {
       content: "";
@@ -170,7 +169,7 @@
     .nw-section { padding: clamp(64px, 9vw, 110px) 24px; }
     .nw-section.deep { background: var(--bg-deep); }
     .nw-section.charcoal { background: var(--bg); }
-    .nw-section.cream { background: var(--cream); color: #1A1A1A; }
+    .nw-section.cream { background: var(--cream); color: var(--color-bg); }
     .nw-container { max-width: 1180px; margin: 0 auto; }
     .nw-section-eyebrow {
       font-family: var(--font-display);
@@ -192,7 +191,7 @@
       margin-bottom: 10px;
       text-transform: uppercase;
     }
-    .nw-section.cream .nw-section-title { color: #1A1A1A; }
+    .nw-section.cream .nw-section-title { color: var(--color-bg); }
     .nw-section-sub {
       font-family: var(--font-serif);
       font-style: italic;
@@ -316,7 +315,7 @@
     .nw-btn {
       display: inline-block;
       background: var(--gold);
-      color: #1A1A1A;
+      color: var(--color-bg);
       font-family: var(--font-display);
       font-weight: 700;
       font-size: 0.82rem;
@@ -343,7 +342,7 @@
       border: 1px solid var(--gold);
       box-shadow: none;
     }
-    .nw-btn.ghost:hover { background: var(--gold); color: #1A1A1A; }
+    .nw-btn.ghost:hover { background: var(--gold); color: var(--color-bg); }
 
     /* ============ JOIN THE NETWORK ============ */
     .nw-join-grid {
@@ -615,10 +614,10 @@
       <li><a href="heritage-book.html">Heritage</a></li>
       <li><a href="pet-tag.html">Pet Tags</a></li>
       <li><a href="business-profile.html">Business</a></li>
-      <li><a href="network.html" style="color:#D4AF37;">Network</a></li>
+      <li><a href="network.html" style="color:var(--color-accent);">Network</a></li>
       <li><a href="rescue-registry.html">Rescue</a></li>
       <li><a href="active-transports.html">Transport</a></li>
-            <li><a href="free-profile.html" style="color:#D4AF37;">Free Page</a></li>
+            <li><a href="free-profile.html" style="color:var(--color-accent);">Free Page</a></li>
       <li><a href="about.html">About</a></li>
     </ul>
     <div class="nav-right">
@@ -647,24 +646,24 @@
   <!-- THIS WEEK'S LEGACY -->
   <section class="nw-section charcoal" style="border-top:1px solid rgba(212,175,55,0.15); border-bottom:1px solid rgba(212,175,55,0.15);">
     <div class="nw-container" style="text-align:center;">
-      <div class="nw-section-eyebrow" style="color:#D4AF37;">This Week's Drop</div>
+      <div class="nw-section-eyebrow" style="color:var(--color-accent);">This Week's Drop</div>
       <h2 class="nw-section-title">THIS WEEK'S LEGACY DROP</h2>
       <div class="nw-section-sub">Every week MLC spotlights one real person. Their story. Their life. Permanent.</div>
 
-      <div style="max-width:560px; margin:2.5rem auto 0; background:#1f1f1f; border:1px solid #D4AF37; padding:2.5rem 2rem; text-align:center;">
-        <div style="color:#D4AF37; font-size:11px; letter-spacing:0.18em; text-transform:uppercase; margin-bottom:0.75rem;">Featured This Week</div>
-        <img src="/images/anthony-memorial.jpg" alt="Anthony Raygoza Sr." style="width:100%; max-width:360px; height:auto; display:block; margin:0 auto 1.5rem; border:1px solid #D4AF37;">
-        <h3 style="font-family:var(--font-body); font-size:1.6rem; color:#F5F5F5; margin-bottom:0.5rem;">Anthony Raygoza Sr.</h3>
+      <div style="max-width:560px; margin:2.5rem auto 0; background:#1f1f1f; border:1px solid var(--color-accent); padding:2.5rem 2rem; text-align:center;">
+        <div style="color:var(--color-accent); font-size:11px; letter-spacing:0.18em; text-transform:uppercase; margin-bottom:0.75rem;">Featured This Week</div>
+        <img src="/images/anthony-memorial.jpg" alt="Anthony Raygoza Sr." style="width:100%; max-width:360px; height:auto; display:block; margin:0 auto 1.5rem; border:1px solid var(--color-accent);">
+        <h3 style="font-family:var(--font-body); font-size:1.6rem; color:var(--color-text); margin-bottom:0.5rem;">Anthony Raygoza Sr.</h3>
         <p style="color:#bababa; margin-bottom:1.75rem;">A life remembered. A legacy preserved.</p>
-        <a href="anthony-raygoza-memorial.html" style="display:inline-block; background:#D4AF37; color:#1A1A1A; padding:14px 28px; font-size:11px; letter-spacing:0.14em; text-transform:uppercase; text-decoration:none; font-weight:700;">See His Legacy</a>
+        <a href="anthony-raygoza-memorial.html" style="display:inline-block; background:var(--color-accent); color:var(--color-bg); padding:14px 28px; font-size:11px; letter-spacing:0.14em; text-transform:uppercase; text-decoration:none; font-weight:700;">See His Legacy</a>
       </div>
 
       <p style="margin-top:2rem; color:#9a9a9a; font-size:0.95rem;">
-        Want to be featured? <a href="contact.html" style="color:#D4AF37; text-decoration:underline;">Submit your story.</a>
+        Want to be featured? <a href="contact.html" style="color:var(--color-accent); text-decoration:underline;">Submit your story.</a>
       </p>
 
       <p style="margin-top:1.25rem;">
-        <a href="#the-roster" style="display:inline-block; font-family:var(--font-display); font-weight:700; font-size:12px; letter-spacing:0.2em; text-transform:uppercase; color:#D4AF37; text-decoration:none; border-bottom:1px solid #D4AF37; padding-bottom:2px;">See All Profiles &rarr;</a>
+        <a href="#the-roster" style="display:inline-block; font-family:var(--font-display); font-weight:700; font-size:12px; letter-spacing:0.2em; text-transform:uppercase; color:var(--color-accent); text-decoration:none; border-bottom:1px solid var(--color-accent); padding-bottom:2px;">See All Profiles &rarr;</a>
       </p>
     </div>
   </section>
@@ -844,7 +843,7 @@
       <h2 class="nw-section-title">THE WEEKLY DROPS</h2>
       <div class="nw-section-sub">Five drops a week. Real 805 voices. No algorithm. No ads. Just culture.</div>
 
-      <p style="text-align:center; font-family: var(--font-serif); font-style: italic; color: #D4AF37; margin-bottom: 2rem;">The Weekly Record — launches with The 805 Network.</p>
+      <p style="text-align:center; font-family: var(--font-serif); font-style: italic; color: var(--color-accent); margin-bottom: 2rem;">The Weekly Record — launches with The 805 Network.</p>
 
       <div class="nw-archive-grid fade-up">
         <div class="nw-archive-card">
@@ -888,16 +887,16 @@
 
   <!-- FOOTER -->
 <!-- TEXT BEAR DIRECT CONTACT STRIP -->
-<section class="text-bear-strip" style="background: #1A1A1A; padding: 3rem 1.5rem; text-align: center; border-top: 1px solid rgba(212,175,55,0.2); border-bottom: 1px solid rgba(212,175,55,0.2);">
+<section class="text-bear-strip" style="background: var(--color-bg); padding: 3rem 1.5rem; text-align: center; border-top: 1px solid rgba(212,175,55,0.2); border-bottom: 1px solid rgba(212,175,55,0.2);">
   <div style="max-width: 680px; margin: 0 auto;">
-    <div style="font-family: var(--font-display); font-size: 0.72rem; letter-spacing: 0.3em; color: #D4AF37; text-transform: uppercase; margin-bottom: 1rem;">Talk To The Founder</div>
-    <h2 style="font-family: var(--font-display); font-weight: 700; font-size: clamp(1.6rem, 3.5vw, 2.25rem); color: #F5F5F5; margin: 0 0 1.25rem; letter-spacing: 0.04em; text-transform: uppercase; line-height: 1.2;">Questions? Text Bear Directly.</h2>
+    <div style="font-family: var(--font-display); font-size: 0.72rem; letter-spacing: 0.3em; color: var(--color-accent); text-transform: uppercase; margin-bottom: 1rem;">Talk To The Founder</div>
+    <h2 style="font-family: var(--font-display); font-weight: 700; font-size: clamp(1.6rem, 3.5vw, 2.25rem); color: var(--color-text); margin: 0 0 1.25rem; letter-spacing: 0.04em; text-transform: uppercase; line-height: 1.2;">Questions? Text Bear Directly.</h2>
     <p style="font-family: var(--font-body); font-size: 1.05rem; color: #E0E0E0; margin: 0 0 2rem; line-height: 1.55; opacity: 0.88;">You're not dealing with a call center. No chatbot. No ticket queue. Text me — I answer personally.</p>
     <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-      <a href="sms:+18058633794" style="display: inline-block; background: #5C0A12; color: #F5F5F5; font-family: var(--font-display); font-weight: 700; font-size: 0.9rem; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; padding: 1rem 2rem; border: 2px solid #5C0A12; transition: background 0.25s;">Text (805) 863-3794</a>
-      <a href="mailto:contact@mylegacycontinues.com" style="display: inline-block; background: transparent; color: #D4AF37; font-family: var(--font-display); font-weight: 700; font-size: 0.9rem; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; padding: 1rem 2rem; border: 2px solid #D4AF37; transition: color 0.25s, background 0.25s;">Email Instead</a>
+      <a href="sms:+18058633794" style="display: inline-block; background: #5C0A12; color: var(--color-text); font-family: var(--font-display); font-weight: 700; font-size: 0.9rem; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; padding: 1rem 2rem; border: 2px solid #5C0A12; transition: background 0.25s;">Text (805) 863-3794</a>
+      <a href="mailto:contact@mylegacycontinues.com" style="display: inline-block; background: transparent; color: var(--color-accent); font-family: var(--font-display); font-weight: 700; font-size: 0.9rem; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; padding: 1rem 2rem; border: 2px solid var(--color-accent); transition: color 0.25s, background 0.25s;">Email Instead</a>
     </div>
-    <p style="font-family: var(--font-serif); font-style: italic; font-size: 1rem; color: #D4AF37; margin: 1.75rem 0 0; opacity: 0.85;">Built solo in Santa Maria, CA.</p>
+    <p style="font-family: var(--font-serif); font-style: italic; font-size: 1rem; color: var(--color-accent); margin: 1.75rem 0 0; opacity: 0.85;">Built solo in Santa Maria, CA.</p>
   </div>
 </section>
 
@@ -944,5 +943,6 @@
     }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
     document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
   </script>
+<script src="js/sticky-cta.js" defer></script>
 </body>
 </html>

@@ -20,16 +20,16 @@
   <meta name="twitter:title" content="Sports Legacy Profile — $79 Forever | My Legacy Continues">
   <meta name="twitter:description" content="Your stats, your story, your game. One payment. Permanent. No subscription. Athletes own their legacy.">
   <meta name="twitter:image" content="https://mylegacycontinues.com/logo.png">
-  <link rel="preload" href="/fonts/Inter-VariableFont_opsz,wght.ttf" as="font" type="font/ttf" crossorigin>
-  <link rel="preload" href="/fonts/BigShoulders-VariableFont_opsz,wght.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="/fonts/Staatliches-Regular.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="/fonts/Lato-Regular.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="stylesheet" href="/fonts/fonts.css">
   <link rel="stylesheet" href="style.css">
   <style>
-    body { background:#1A1A1A; color:#F5F5F5; overflow-x: hidden; font-family: var(--font-body); }
-    section { background-color:#1A1A1A; }
+    body { background:var(--color-bg); color:var(--color-text); overflow-x: hidden; font-family: var(--font-body); }
+    section { background-color:var(--color-bg); }
 
     /* Order form */
-    #order { padding: 64px 24px; background:#1A1A1A; }
+    #order { padding: 64px 24px; background:var(--color-bg); }
     #order .order-inner { max-width: 640px; margin: 0 auto; }
     #order h2 { font-family: var(--font-display); font-size: 32px; color: var(--cream); text-align:center; letter-spacing: 0.06em; margin-bottom: 12px; text-transform: uppercase; }
     #order .order-note { font-size: 14px; color: var(--cream-muted); text-align:center; margin-bottom: 28px; line-height: 1.6; }
@@ -84,7 +84,7 @@
       <li><a href="network.html">Network</a></li>
       <li><a href="rescue-registry.html">Rescue</a></li>
       <li><a href="active-transports.html">Transport</a></li>
-            <li><a href="free-profile.html" style="color:#D4AF37;">Free Page</a></li>
+            <li><a href="free-profile.html" style="color:var(--color-accent);">Free Page</a></li>
       <li><a href="about.html">About</a></li>
     </ul>
     <div class="nav-right">
@@ -98,7 +98,7 @@
   <!-- HERO -->
   <section class="hero section-sunset metalflake" style="text-align: center;">
     <div class="hero-content">
-      <span style="display:inline-block; color:#D4AF37; border:1px solid #D4AF37; padding:6px 14px; font-size:11px; letter-spacing:0.18em; text-transform:uppercase; margin-bottom:1.5rem;">Sports Legacy Profile</span>
+      <span style="display:inline-block; color:var(--color-accent); border:1px solid var(--color-accent); padding:6px 14px; font-size:11px; letter-spacing:0.18em; text-transform:uppercase; margin-bottom:1.5rem;">Sports Legacy Profile</span>
       <h1 style="color: var(--cream); text-transform: uppercase; letter-spacing: 0.06em;">LEGACY PROFILE &mdash; FOR ATHLETES</h1>
       <p style="color: var(--gold); font-size: 1rem; margin: 0.25rem 0 1rem; letter-spacing: 0.04em;">Part of the Legacy Profile — $79 one time</p>
       <p style="color: var(--cream); font-size: 1.1rem; margin: 1rem 0; opacity: 0.9;">Your record. Your highlights. Your stats. Your journey &mdash; documented forever.</p>
@@ -162,9 +162,9 @@
   </section>
 
   <!-- CROSS-LINK — FULL LEGACY PROFILE -->
-  <section style="background:#1A1A1A; padding: 56px 24px; border-top:1px solid rgba(212,175,55,0.2); text-align:center;">
+  <section style="background:var(--color-bg); padding: 56px 24px; border-top:1px solid rgba(212,175,55,0.2); text-align:center;">
     <p style="color:#bababa; font-size:0.95rem; margin:0 0 16px; max-width:620px; margin-left:auto; margin-right:auto; line-height:1.75;">One product. Three worlds. Same $79. See what the full Legacy Profile looks like for business owners and creators too.</p>
-    <a href="business-profile.html" style="display:inline-block; font-family:var(--font-display); font-weight:700; font-size:0.82rem; letter-spacing:0.24em; text-transform:uppercase; color:#D4AF37; text-decoration:none; border-bottom:1px solid #D4AF37; padding-bottom:3px;">See the full Legacy Profile &rarr;</a>
+    <a href="business-profile.html" style="display:inline-block; font-family:var(--font-display); font-weight:700; font-size:0.82rem; letter-spacing:0.24em; text-transform:uppercase; color:var(--color-accent); text-decoration:none; border-bottom:1px solid var(--color-accent); padding-bottom:3px;">See the full Legacy Profile &rarr;</a>
   </section>
 
   <!-- FOOTER -->
@@ -201,5 +201,6 @@
   </script>
   <script src="metalflake.js"></script>
 
+<script src="js/sticky-cta.js" defer></script>
 </body>
 </html>

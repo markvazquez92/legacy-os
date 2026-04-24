@@ -1,6 +1,5 @@
-<!-- v2 -->
 <!DOCTYPE html>
-<!-- Cache bust: April 15 2026 -->
+<!-- My Legacy Continues — Apr 23 2026 rebuild (6-section flow) -->
 <!-- NO EMOJIS EVER -->
 <html lang="en">
 <head>
@@ -8,6 +7,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My Legacy Continues — Your Story Never Dies</title>
   <meta name="description" content="Permanent legacy preservation. Heritage books, cemetery plaques, pet profiles, business founder stories. One-time purchase, hosted forever. No subscriptions.">
+  <meta name="theme-color" content="#5C0A12">
+
   <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://mylegacycontinues.com/">
@@ -15,15 +16,15 @@
   <meta property="og:description" content="Permanent legacy preservation. Heritage books, cemetery plaques, pet profiles, business founder stories. One-time purchase, hosted forever. No subscriptions.">
   <meta property="og:image" content="https://mylegacycontinues.com/logo.png">
   <meta property="og:site_name" content="My Legacy Continues">
-  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:url" content="https://mylegacycontinues.com/">
   <meta name="twitter:title" content="My Legacy Continues — Your Story Never Dies">
   <meta name="twitter:description" content="Permanent legacy preservation. Heritage books, cemetery plaques, pet profiles, business founder stories. One-time purchase, hosted forever. No subscriptions.">
   <meta name="twitter:image" content="https://mylegacycontinues.com/logo.png">
+
   <link rel="icon" href="logo.png" type="image/png">
-  <link rel="preload" href="/fonts/Inter-VariableFont_opsz,wght.ttf" as="font" type="font/ttf" crossorigin>
-  <link rel="preload" href="/fonts/Fraunces-VariableFont_SOFT,WONK,opsz,wght.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="/fonts/Staatliches-Regular.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="/fonts/Lato-Regular.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="stylesheet" href="/fonts/fonts.css">
   <link rel="stylesheet" href="style.css">
   <link rel="manifest" href="manifest.json">
@@ -33,1026 +34,256 @@
   <link rel="alternate" hreflang="es" href="https://mylegacycontinues.com/es/">
 
   <style>
-    *, *::before, *::after {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+    /* ──────────────────────────────────────────────────
+       index.html — 6-section rebuild (Apr 23 2026)
+       All colors + fonts inherit from style.css :root.
+       ──────────────────────────────────────────────── */
+
+    .home-section {
+      padding: clamp(3rem, 7vw, 6rem) clamp(1.25rem, 4vw, 2rem);
+    }
+    .home-wrap {
+      max-width: 1000px;
+      margin: 0 auto;
     }
 
-    :root {
-      --charcoal: #1A1A1A;
-      --charcoal-2: #232323;
-      --charcoal-3: #141414;
-      --brandywine: #5C0A12;
-      --brandywine-deep: #3A070C;
-      --chrome: #E0E0E0;
-      --gold: #D4AF37;
-      --gold-warm: #D4A017;
-      --soft-white: #F5F5F5;
-    }
-
-    /* Candy Paint hero — charcoal with brandywine radial + subtle stars */
-    .candy-hero {
-      background: var(--charcoal);
+    /* ──── SECTION 1 — HERO ──── */
+    .home-hero {
+      min-height: 88vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
       position: relative;
       overflow: hidden;
+      background: var(--color-bg);
+      margin-top: 4rem;
     }
-    .candy-hero::before {
+    .home-hero::before {
       content: "";
       position: absolute;
       inset: 0;
-      background: radial-gradient(ellipse at top, rgba(92,10,18,0.35) 0%, transparent 60%);
+      background: radial-gradient(ellipse at 50% 30%, rgba(92,10,18,0.35) 0%, transparent 65%);
       pointer-events: none;
     }
-    .candy-hero::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background:
-        radial-gradient(1px 1px at 15% 20%, rgba(255,255,255,0.14), transparent 40%),
-        radial-gradient(1px 1px at 42% 68%, rgba(255,255,255,0.10), transparent 40%),
-        radial-gradient(1px 1px at 78% 35%, rgba(255,255,255,0.08), transparent 40%);
-      opacity: 0.5;
-      pointer-events: none;
-    }
-
-    /* Gold numbered badge */
-    .num-badge {
-      font-family: var(--font-display);
-      font-weight: 700;
-      font-size: 1.75rem;
-      color: var(--gold);
+    .home-hero-inner { position: relative; z-index: 1; max-width: 820px; }
+    .home-hero h1 {
+      font-family: var(--font-hero) !important;
+      font-size: clamp(2.75rem, 9vw, 6rem);
+      line-height: 1.02;
       letter-spacing: 0.04em;
-      display: block;
-      margin-bottom: 0.5rem;
+      color: var(--color-text);
+      margin: 0 0 1rem;
     }
-
-    html { scroll-behavior: smooth; }
-
-    body {
+    .home-hero h1 .accent { color: var(--color-accent); }
+    .home-hero .sub {
       font-family: var(--font-body);
-      color: var(--soft-white);
-      line-height: 1.6;
-      background-color: var(--charcoal);
-      overflow-x: hidden;
-    }
-
-    section { background-color: var(--charcoal); }
-
-    /* BUTTON RESET — no exceptions */
-    button, .btn, .btn-gold, .btn-primary,
-    .cta-button, a.btn, input[type="submit"] {
-      border-radius: 0 !important;
-    }
-
-    /* NAVIGATION */
-    nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 1.2rem 3rem;
-      background: #2a2a2a;
-      backdrop-filter: blur(10px);
-      z-index: 1000;
-      border-bottom: 1px solid rgba(212,175,55,0.2);
-    }
-
-    .nav-logo { height: 48px; width: auto; }
-
-    .nav-links {
-      display: flex;
-      list-style: none;
-      gap: 0.8rem;
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-    }
-
-    .nav-links a {
-      text-decoration: none;
-      color: var(--chrome);
-      font-family: var(--font-body);
-      font-weight: 500;
-      font-size: 0.72rem;
+      font-size: clamp(1rem, 1.8vw, 1.25rem);
+      color: var(--color-text);
+      opacity: 0.9;
+      margin: 0 0 2.5rem;
       letter-spacing: 0.02em;
-      transition: color 0.3s;
     }
 
-    .nav-links a:hover { color: var(--gold); }
-
-    .nav-cta {
-      background: var(--brandywine);
-      color: var(--soft-white);
-      border: 2px solid var(--gold);
-      padding: 0.6rem 1.4rem;
-      font-family: var(--font-body);
-      font-weight: 700;
-      font-size: 0.8rem;
-      letter-spacing: 0.08em;
-      cursor: pointer;
-      transition: all 0.3s;
-      border-radius: 0 !important;
-      text-decoration: none;
-      white-space: nowrap;
+    /* ──── SECTION 2 — FOUNDER MISSION ──── */
+    .home-mission {
+      background: var(--color-bg);
+      border-top: 1px solid rgba(201,162,76,0.18);
+      border-bottom: 1px solid rgba(201,162,76,0.18);
     }
-
-    .nav-cta:hover { background: #3A070C; }
-
-    .nav-toggle {
-      display: none;
-      background: none;
-      border: none;
-      cursor: pointer;
-      padding: 0.5rem;
-      flex-direction: column;
-      gap: 5px;
-    }
-
-    .nav-toggle span {
-      display: block;
-      width: 24px;
-      height: 3px;
-      background-color: var(--chrome);
-      transition: all 0.3s;
-    }
-
-    /* METALFLAKE hero texture */
-    .metalflake-hero {
-      position: relative;
-      background-color: var(--charcoal);
-    }
-
-    .metalflake-hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
-      background-size: 200px 200px;
-      pointer-events: none;
-      opacity: 0.5;
-      z-index: 0;
-    }
-
-    /* HERO */
-    .hero {
-      min-height: 100vh;
-      display: flex;
+    .mission-grid {
+      display: grid;
+      grid-template-columns: minmax(180px, 260px) 1fr;
+      gap: clamp(1.5rem, 4vw, 3rem);
       align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      text-align: center;
-      padding: 6rem 3rem 4rem;
-      margin-top: 72px;
-      position: relative;
-      z-index: 1;
     }
-
-    .hero h1 {
-      font-family: var(--font-display);
-      font-weight: 700;
-      font-size: clamp(3rem, 9vw, 6rem);
-      color: var(--soft-white);
-      letter-spacing: 0.06em;
-      line-height: 1;
-      margin-bottom: 1.5rem;
-      text-transform: uppercase;
-    }
-
-    .hero-sub {
-      font-family: var(--font-serif);
-      font-style: italic;
-      font-size: clamp(1.2rem, 2.5vw, 1.7rem);
-      color: var(--gold);
-      margin-bottom: 2.5rem;
-      max-width: 600px;
-      line-height: 1.5;
-    }
-
-    .hero-buttons {
-      display: flex;
-      gap: 1.2rem;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
-    .btn-hero-gold {
-      display: inline-block;
-      border: 2px solid var(--gold);
-      color: var(--gold);
-      background: transparent;
-      padding: 0.9rem 2.2rem;
-      font-family: var(--font-body);
-      font-weight: 700;
-      font-size: 0.9rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      text-decoration: none;
-      transition: all 0.3s;
-      border-radius: 0 !important;
-      cursor: pointer;
-    }
-
-    .btn-hero-gold:hover {
-      background: var(--gold);
-      color: var(--charcoal);
-    }
-
-    .btn-hero-ghost {
-      display: inline-block;
-      border: 2px solid rgba(212,175,55,0.4);
-      color: var(--chrome);
-      background: transparent;
-      padding: 0.9rem 2.2rem;
-      font-family: var(--font-body);
-      font-weight: 600;
-      font-size: 0.9rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      text-decoration: none;
-      transition: all 0.3s;
-      border-radius: 0 !important;
-    }
-
-    .btn-hero-ghost:hover {
-      border-color: var(--gold);
-      color: var(--gold);
-    }
-
-    /* PINSTRIPE */
-    .pinstripe {
+    .mission-photo {
       width: 100%;
-      height: 4px;
-      background: linear-gradient(to right, transparent, var(--gold) 20%, var(--gold) 40%, transparent 42%, transparent 58%, var(--gold) 60%, var(--gold) 80%, transparent);
-      opacity: 0.6;
-    }
-
-    /* WHAT IS MLC */
-    .what-mlc {
-      padding: 5rem 3rem;
-      background: #1e1e1e;
-    }
-
-    .what-mlc h2 {
-      font-family: var(--font-display);
-      font-weight: 700;
-      font-size: clamp(2rem, 4vw, 3rem);
-      color: var(--gold);
-      text-align: center;
-      margin-bottom: 0.75rem;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-    }
-
-    .what-mlc .subheading {
-      font-family: var(--font-serif);
-      font-style: italic;
-      font-size: clamp(1rem, 2vw, 1.3rem);
-      color: var(--chrome);
-      text-align: center;
-      margin-bottom: 3.5rem;
-      max-width: 700px;
-      margin-left: auto;
-      margin-right: auto;
-      line-height: 1.6;
-    }
-
-    .mlc-columns {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .mlc-col {
-      padding: 2rem;
-      border: 1px solid rgba(212,175,55,0.2);
-      border-top: 3px solid var(--gold);
-      background: rgba(26,26,26,0.8);
-    }
-
-    .mlc-col h3 {
-      font-family: var(--font-display);
-      font-weight: 600;
-      font-size: 0.85rem;
-      color: var(--gold);
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      margin-bottom: 1rem;
-    }
-
-    .mlc-col p {
-      font-family: var(--font-body);
-      font-size: 0.95rem;
-      color: var(--chrome);
-      line-height: 1.8;
-    }
-
-    /* HOW IT WORKS */
-    .how-it-works {
-      padding: 5rem 3rem;
-      background: var(--charcoal);
-    }
-
-    .how-it-works h2 {
-      font-family: var(--font-display);
-      font-weight: 700;
-      font-size: clamp(2rem, 4vw, 3rem);
-      color: var(--chrome);
-      text-align: center;
-      margin-bottom: 3rem;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-    }
-
-    .steps {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 0;
-      max-width: 1100px;
-      margin: 0 auto;
-      border: 1px solid rgba(212,175,55,0.2);
-    }
-
-    .step {
-      padding: 2.5rem 2rem;
-      text-align: center;
-      border-right: 1px solid rgba(212,175,55,0.2);
-    }
-
-    .step:last-child { border-right: none; }
-
-    .step-number {
-      font-family: var(--font-display);
-      font-weight: 700;
-      font-size: 3.5rem;
-      color: var(--gold);
-      line-height: 1;
-      margin-bottom: 1rem;
-      opacity: 0.7;
-    }
-
-    .step h3 {
-      font-family: var(--font-display);
-      font-weight: 600;
-      font-size: 1.2rem;
-      color: var(--soft-white);
-      margin-bottom: 0.75rem;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-    }
-
-    .step p {
-      font-family: var(--font-body);
-      font-size: 0.95rem;
-      color: var(--chrome);
-      line-height: 1.7;
-    }
-
-    /* PRODUCTS */
-    .products {
-      padding: 5rem 3rem;
-      background: #1a1a1a;
-    }
-
-    .products h2 {
-      font-family: var(--font-display);
-      font-weight: 700;
-      font-size: clamp(2rem, 4vw, 3rem);
-      color: var(--gold);
-      text-align: center;
-      margin-bottom: 3rem;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-    }
-
-    .product-cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 2rem;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .product-card {
-      background: #222;
-      border: 1px solid rgba(212,175,55,0.2);
-      padding: 0;
-      transition: transform 0.3s, border-color 0.3s;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .product-card:hover {
-      transform: translateY(-4px);
-      border-color: rgba(212,175,55,0.5);
-    }
-
-    .product-card img {
-      width: 100%;
-      height: 200px;
+      aspect-ratio: 1;
       object-fit: cover;
+      border: 2px solid var(--color-accent);
+      border-radius: 3px;
+      filter: grayscale(10%) contrast(1.05);
+    }
+    .mission-quote {
+      font-family: var(--font-quote);
+      font-style: italic;
+      font-size: clamp(1.3rem, 3vw, 2rem);
+      line-height: 1.35;
+      color: var(--color-text);
+      margin: 0;
+    }
+    .mission-attrib {
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--color-accent);
+      margin-top: 1.25rem;
       display: block;
     }
-
-    .product-card-body {
-      padding: 1.5rem;
-      flex: 1;
-      display: flex;
-      flex-direction: column;
+    @media (max-width: 600px) {
+      .mission-grid { grid-template-columns: 1fr; text-align: center; }
+      .mission-photo { max-width: 240px; margin: 0 auto; }
     }
 
-    .product-label {
-      font-family: var(--font-display);
-      font-size: 0.7rem;
-      font-weight: 600;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 0.5rem;
-    }
-
-    .product-card h3 {
-      font-family: var(--font-display);
-      font-weight: 600;
-      font-size: 1.3rem;
-      color: var(--soft-white);
-      margin-bottom: 0.3rem;
-      letter-spacing: 0.04em;
-    }
-
-    .product-subtitle {
-      font-family: var(--font-display);
-      font-size: 0.7rem;
-      color: var(--chrome);
-      letter-spacing: 0.15em;
-      margin-bottom: 0.75rem;
-      opacity: 0.8;
-    }
-
-    .product-card p {
-      font-family: var(--font-body);
-      font-size: 0.9rem;
-      color: var(--chrome);
-      line-height: 1.7;
-      margin-bottom: 1rem;
-      flex: 1;
-      opacity: 0.85;
-    }
-
-    .product-price {
-      font-family: var(--font-display);
-      font-weight: 700;
-      font-size: 1.8rem;
-      color: var(--gold);
-      margin-bottom: 1rem;
-    }
-
-    .product-cta {
-      display: inline-block;
-      background: var(--brandywine);
-      color: var(--soft-white);
-      border: 2px solid var(--gold);
-      padding: 0.7rem 1.5rem;
-      font-family: var(--font-body);
-      font-weight: 700;
-      font-size: 0.8rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      text-decoration: none;
-      transition: all 0.3s;
-      border-radius: 0 !important;
-      cursor: pointer;
-      align-self: flex-start;
-    }
-
-    .product-cta:hover { background: #3A070C; }
-
-    .product-learn-more {
-      display: inline-block;
-      font-family: var(--font-display);
-      font-weight: 600;
-      font-size: 0.85rem;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: #D4AF37;
-      text-decoration: none;
-      border-bottom: 1px solid rgba(212,175,55,0.4);
-      padding: 0.5rem 0;
-      margin-top: 0.5rem;
-      transition: border-color 0.25s, color 0.25s;
-    }
-    .product-learn-more:hover {
-      color: #F5F5F5;
-      border-bottom-color: #F5F5F5;
-    }
-
-    /* COMING SOON */
-    .coming-soon {
-      padding: 5rem 3rem;
-      background: #1e1e1e;
-    }
-
-    .coming-soon h2 {
-      font-family: var(--font-display);
-      font-weight: 700;
-      font-size: clamp(2rem, 4vw, 3rem);
-      color: var(--gold);
+    /* ──── SECTION 3 — 3 STEPS ──── */
+    .home-steps .section-heading,
+    .home-product .section-heading,
+    .home-rescue .section-heading,
+    .home-final .section-heading {
+      font-family: var(--font-hero);
+      font-size: clamp(1.75rem, 4vw, 2.75rem);
+      color: var(--color-text);
+      letter-spacing: 0.08em;
       text-align: center;
-      margin-bottom: 3rem;
+      margin: 0 0 2.5rem;
       text-transform: uppercase;
-      letter-spacing: 0.06em;
     }
-
-    .coming-soon-list {
+    .steps-row {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 2rem;
-      max-width: 1100px;
-      margin: 0 auto;
+      grid-template-columns: repeat(3, 1fr);
+      gap: clamp(1rem, 3vw, 2rem);
     }
-
-    .coming-soon-item {
-      padding: 2rem 1.5rem;
-      border: 1px solid rgba(212,175,55,0.2);
-      background: rgba(26,26,26,0.6);
+    .step {
+      border: 1px solid rgba(201,162,76,0.35);
+      padding: 1.75rem 1.25rem;
       text-align: center;
+      border-radius: 3px;
     }
-
-    .coming-soon-item h4 {
-      font-family: var(--font-display);
-      font-weight: 600;
+    .step-num {
+      font-family: var(--font-hero);
+      font-size: 2.25rem;
+      color: var(--color-accent);
+      display: block;
+      line-height: 1;
+      margin-bottom: 0.75rem;
+    }
+    .step-title {
+      font-family: var(--font-hero);
       font-size: 1.1rem;
-      color: var(--soft-white);
-      margin-bottom: 0.75rem;
-      letter-spacing: 0.04em;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
+      color: var(--color-text);
+      margin: 0;
     }
+    @media (max-width: 600px) { .steps-row { grid-template-columns: 1fr; } }
 
-    .coming-soon-item p {
-      font-family: var(--font-body);
-      font-size: 0.9rem;
-      color: var(--chrome);
-      line-height: 1.6;
-      margin-bottom: 1rem;
-      opacity: 0.85;
+    /* ──── SECTION 4 — PRODUCT HIGHLIGHT (Legacy Bundle) ──── */
+    .home-product { background: var(--color-bg); }
+    .bundle {
+      border: 2px solid var(--color-accent);
+      border-radius: 3px;
+      padding: clamp(1.5rem, 4vw, 2.5rem);
+      max-width: 760px;
+      margin: 0 auto;
+      background: linear-gradient(180deg, var(--onyx-warm) 0%, var(--color-bg) 100%);
     }
-
-    .coming-soon-badge {
-      display: inline-block;
-      background: transparent;
-      border: 1px solid var(--gold);
-      color: var(--gold);
-      padding: 0.3rem 0.9rem;
-      font-family: var(--font-display);
-      font-size: 0.65rem;
-      font-weight: 600;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-    }
-
-    /* 805 NETWORK */
-    .mlc-network {
-      padding: 5rem 3rem;
-      background: var(--brandywine);
-      text-align: center;
-    }
-
-    .mlc-network h2 {
-      font-family: var(--font-display);
-      font-weight: 700;
-      font-size: clamp(2rem, 4vw, 3rem);
-      color: var(--gold);
-      margin-bottom: 1.5rem;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-    }
-
-    .mlc-network p {
-      font-family: var(--font-body);
-      font-size: 1rem;
-      color: var(--chrome);
-      line-height: 1.8;
-      max-width: 600px;
-      margin: 0 auto 2.5rem;
-    }
-
-    .btn-network {
-      display: inline-block;
-      border: 2px solid var(--gold);
-      color: var(--gold);
-      background: transparent;
-      padding: 0.9rem 2.4rem;
-      font-family: var(--font-body);
-      font-weight: 700;
+    .bundle-eyebrow {
+      font-family: var(--font-hero);
       font-size: 0.85rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      text-decoration: none;
-      transition: all 0.3s;
-      border-radius: 0 !important;
-    }
-
-    .btn-network:hover {
-      background: var(--gold);
-      color: var(--charcoal);
-    }
-
-    /* NOW ON THE NETWORK */
-    .now-network {
-      padding: 5rem 3rem;
-      background: var(--charcoal);
-      text-align: center;
-    }
-    .now-network .eyebrow {
-      display: inline-block;
-      font-family: var(--font-display);
-      font-weight: 700;
-      font-size: 0.85rem;
-      color: var(--gold);
-      letter-spacing: 0.3em;
-      text-transform: uppercase;
-      margin-bottom: 1rem;
-    }
-    .now-network h2 {
-      font-family: var(--font-display);
-      font-weight: 700;
-      font-size: clamp(2rem, 4vw, 3rem);
-      color: var(--chrome);
-      margin-bottom: 0.75rem;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-    }
-    .now-network .subhead {
-      font-family: var(--font-body);
-      font-size: 0.95rem;
-      color: rgba(224,224,224,0.6);
-      margin: 0 auto 3rem;
-      max-width: 640px;
-    }
-    .now-network-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1.5rem;
-      max-width: 1200px;
-      margin: 0 auto 2.5rem;
-    }
-    .now-network-card {
-      background: #222;
-      border-left: 3px solid var(--gold);
-      padding: 1.75rem 1.5rem 1.5rem;
-      text-align: left;
-      display: flex;
-      flex-direction: column;
-      transition: transform 0.3s;
-    }
-    .now-network-card:hover { transform: translateY(-4px); }
-    .now-network-card .cat {
-      font-family: var(--font-display);
-      font-weight: 700;
-      font-size: 0.7rem;
-      color: var(--brandywine);
       letter-spacing: 0.24em;
       text-transform: uppercase;
-      margin-bottom: 0.85rem;
+      color: var(--color-accent);
+      margin: 0 0 0.75rem;
     }
-    .now-network-card h3 {
-      font-family: var(--font-display);
-      font-weight: 700;
-      font-size: 1.1rem;
-      color: var(--chrome);
-      letter-spacing: 0.04em;
-      margin-bottom: 0.6rem;
-      text-transform: none;
-    }
-    .now-network-card p {
-      font-family: var(--font-body);
-      font-size: 0.9rem;
-      color: rgba(224,224,224,0.55);
-      line-height: 1.6;
-      margin-bottom: 1.25rem;
-      flex: 1;
-    }
-    .now-network-card a {
-      color: var(--gold);
-      text-decoration: none;
-      font-family: var(--font-body);
-      font-size: 0.82rem;
-      font-weight: 600;
+    .bundle-title {
+      font-family: var(--font-hero);
+      font-size: clamp(1.75rem, 4vw, 2.5rem);
       letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--color-text);
+      margin: 0 0 1rem;
     }
-    .now-network-card a:hover { text-decoration: underline; }
-    .now-network-cta {
-      display: inline-block;
-      border: 2px solid var(--gold);
-      color: var(--gold);
-      background: transparent;
-      padding: 0.9rem 2.4rem;
-      font-family: var(--font-display);
-      font-weight: 700;
-      font-size: 0.85rem;
+    .bundle-body {
+      font-family: var(--font-body);
+      font-size: 1.05rem;
+      line-height: 1.6;
+      color: var(--color-text);
+      margin: 0 0 1.5rem;
+      max-width: 60ch;
+    }
+    .bundle-price {
+      font-family: var(--font-hero);
+      font-size: 2rem;
+      color: var(--color-accent);
+      letter-spacing: 0.04em;
+      margin: 0 0 1.5rem;
+    }
+    .bundle-price .strike {
+      color: var(--color-divider);
+      font-size: 1.1rem;
+      text-decoration: line-through;
+      margin-left: 0.5rem;
+      letter-spacing: 0;
+    }
+
+    /* ──── SECTION 5 — SOCIAL PROOF / RESCUE ──── */
+    .home-rescue { background: var(--color-bg); }
+    .rescue-card {
+      border-left: 3px solid var(--color-accent);
+      padding: 1.5rem 1.75rem;
+      max-width: 760px;
+      margin: 0 auto;
+      background: rgba(201,162,76,0.04);
+    }
+    .rescue-card p {
+      font-family: var(--font-body);
+      font-size: 1rem;
+      line-height: 1.6;
+      color: var(--color-text);
+      margin: 0 0 1rem;
+      max-width: 60ch;
+    }
+    .rescue-card p:last-child { margin-bottom: 0; }
+    .rescue-card a {
+      color: var(--color-accent);
+      text-decoration: none;
+      border-bottom: 1px solid var(--color-accent);
+    }
+
+    /* ──── SECTION 6 — FINAL CALL ──── */
+    .home-final {
+      background: linear-gradient(180deg, var(--color-bg) 0%, var(--onyx-warm) 100%);
+      text-align: center;
+    }
+    .final-subhead {
+      font-family: var(--font-body);
+      font-size: clamp(1rem, 1.8vw, 1.15rem);
+      color: var(--color-text);
+      opacity: 0.85;
+      max-width: 52ch;
+      margin: 0 auto 2rem;
+    }
+
+    /* ──── Shared CTA button — full 44x44 min touch target ──── */
+    .home-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      min-height: 52px;
+      min-width: 44px;
+      padding: 1rem 2rem;
+      font-family: var(--font-hero) !important;
+      font-size: clamp(0.9rem, 1.4vw, 1rem);
       letter-spacing: 0.18em;
       text-transform: uppercase;
       text-decoration: none;
-      transition: all 0.3s;
-      border-radius: 0 !important;
+      background: var(--color-cta);
+      color: var(--color-text);
+      border: 2px solid var(--color-accent);
+      border-radius: 3px;
+      transition: background 0.25s, transform 0.25s;
     }
-    .now-network-cta:hover {
-      background: var(--gold);
-      color: var(--charcoal);
+    .home-cta:hover {
+      background: var(--brandywine-mid);
+      transform: translateY(-2px);
     }
-    @media (max-width: 1024px) {
-      .now-network-grid { grid-template-columns: repeat(2, 1fr); }
-    }
-    @media (max-width: 640px) {
-      .now-network-grid { grid-template-columns: 1fr; }
-    }
+    .home-cta .arrow { transition: transform 0.25s; }
+    .home-cta:hover .arrow { transform: translateX(4px); }
 
-    /* REAL LEGACIES */
-    .real-legacies {
-      padding: 5rem 3rem;
-      background: var(--charcoal);
-    }
-
-    .real-legacies h2 {
-      font-family: var(--font-display);
-      font-weight: 700;
-      font-size: clamp(2rem, 4vw, 3rem);
-      color: var(--chrome);
-      text-align: center;
-      margin-bottom: 0.75rem;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-    }
-
-    .real-legacies .subhead {
-      font-family: var(--font-body);
-      font-size: 0.95rem;
-      color: rgba(224,224,224,0.6);
-      text-align: center;
-      margin-bottom: 3rem;
-    }
-
-    .legacies-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .legacy-card {
-      background: #222;
-      overflow: hidden;
-      transition: transform 0.3s;
-    }
-
-    .legacy-card:hover { transform: translateY(-4px); }
-
-    .legacy-card-body {
-      padding: 1.5rem;
-      border-top: 2px solid rgba(212,175,55,0.3);
-    }
-
-    .legacy-card h3 {
-      font-family: var(--font-body);
-      font-size: 0.95rem;
-      font-weight: 600;
-      color: var(--chrome);
-      margin-bottom: 0.5rem;
-    }
-
-    .legacy-card a {
-      color: var(--gold);
-      text-decoration: none;
-      font-size: 0.85rem;
-      font-weight: 500;
-    }
-
-    .legacy-card a:hover { text-decoration: underline; }
-
-    /* RESCUE */
-    .rescue {
-      padding: 4rem 3rem;
-      background: var(--brandywine);
-      text-align: center;
-    }
-
-    .rescue h2 {
-      font-family: var(--font-display);
-      font-weight: 700;
-      font-size: clamp(1.8rem, 3.5vw, 2.5rem);
-      color: var(--soft-white);
-      margin-bottom: 1.25rem;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-    }
-
-    .rescue p {
-      font-family: var(--font-body);
-      font-size: 1rem;
-      color: var(--chrome);
-      line-height: 1.7;
-      margin-bottom: 2rem;
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    /* PROFILE CUSTOMIZATION */
-    .profile-custom {
-      padding: 5rem 3rem;
-      background: #1e1e1e;
-      text-align: center;
-    }
-
-    .profile-custom h2 {
-      font-family: var(--font-display);
-      font-weight: 700;
-      font-size: clamp(2rem, 4vw, 3rem);
-      color: var(--chrome);
-      margin-bottom: 1.5rem;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-    }
-
-    .profile-custom p {
-      font-family: var(--font-body);
-      font-size: 1rem;
-      color: var(--chrome);
-      line-height: 1.8;
-      max-width: 650px;
-      margin: 0 auto 2.5rem;
-      opacity: 0.9;
-    }
-
-    .btn-custom {
-      display: inline-block;
-      border: 2px solid var(--gold);
-      color: var(--gold);
-      background: transparent;
-      padding: 0.9rem 2.4rem;
-      font-family: var(--font-body);
-      font-weight: 700;
-      font-size: 0.85rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      text-decoration: none;
-      transition: all 0.3s;
-      border-radius: 0 !important;
-    }
-
-    .btn-custom:hover {
-      background: var(--gold);
-      color: var(--charcoal);
-    }
-
-    /* EMAIL SIGNUP */
-    .email-signup {
-      padding: 4rem 3rem;
-      background: var(--charcoal);
-      text-align: center;
-    }
-
-    .email-signup h2 {
-      font-family: var(--font-display);
-      font-weight: 700;
-      font-size: clamp(1.6rem, 3vw, 2rem);
-      color: var(--gold);
-      margin-bottom: 1.5rem;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-    }
-
-    .email-form {
-      display: flex;
-      gap: 0;
-      max-width: 420px;
-      margin: 0 auto;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
-    .email-form input {
-      flex: 1;
-      min-width: 200px;
-      padding: 0.8rem 1rem;
-      border: 2px solid var(--gold);
-      border-right: none;
-      background: transparent;
-      color: var(--soft-white);
-      font-family: var(--font-body);
-      font-size: 0.95rem;
-      border-radius: 0 !important;
-    }
-
-    .email-form input::placeholder { color: rgba(224,224,224,0.5); }
-
-    .email-form button {
-      background: var(--gold);
-      color: var(--charcoal);
-      padding: 0.8rem 1.5rem;
-      border: 2px solid var(--gold);
-      font-family: var(--font-body);
-      font-weight: 700;
-      font-size: 0.8rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      cursor: pointer;
-      transition: opacity 0.3s;
-      border-radius: 0 !important;
-    }
-
-    .email-form button:hover { opacity: 0.85; }
-
-    /* FOOTER */
-    footer {
-      background: #111;
-      color: var(--chrome);
-      padding: 3rem;
-      text-align: center;
-    }
-
-    .footer-content { max-width: 1200px; margin: 0 auto; }
-
-    .footer-contact {
-      margin-bottom: 1.5rem;
-      font-family: var(--font-body);
-      font-size: 0.9rem;
-    }
-
-    .footer-contact a { color: var(--gold); text-decoration: none; }
-    .footer-contact a:hover { text-decoration: underline; }
-
-    .footer-links {
-      list-style: none;
-      display: flex;
-      gap: 1.5rem;
-      justify-content: center;
-      flex-wrap: wrap;
-      margin-bottom: 1.5rem;
-      font-size: 0.85rem;
-    }
-
-    .footer-links a { color: var(--chrome); text-decoration: none; transition: color 0.3s; }
-    .footer-links a:hover { color: var(--gold); }
-
-    .footer-copy { font-size: 0.8rem; opacity: 0.6; font-family: var(--font-body); }
-
-    /* RESPONSIVE */
-    @media (max-width: 768px) {
-      nav { padding: 1rem 1.5rem; }
-
-      .nav-links { display: none; }
-      .nav-toggle { display: flex; }
-      .nav-cta { display: none; }
-
-      .nav-links.active {
-        display: flex !important;
-        flex-direction: column;
-        position: absolute;
-        top: 68px;
-        left: 0;
-        right: 0;
-        transform: none;
-        background: #2a2a2a;
-        gap: 0;
-        padding: 0.5rem 0;
-        z-index: 999;
-      }
-
-      .nav-links.active li a {
-        display: block;
-        padding: 0.75rem 1.5rem;
-        border-bottom: 1px solid rgba(212,175,55,0.1);
-      }
-
-      .hero { padding: 5rem 1.5rem 3rem; margin-top: 60px; }
-      .hero h1 { font-size: 2rem; }
-      .hero-sub { font-size: 1rem; }
-
-      .what-mlc, .how-it-works, .products, .coming-soon,
-      .mlc-network, .now-network, .real-legacies, .rescue, .profile-custom,
-      .email-signup { padding: 3rem 1rem; }
-
-      .steps { grid-template-columns: 1fr; }
-      .step { border-right: none; border-bottom: 1px solid rgba(212,175,55,0.2); }
-      .step:last-child { border-bottom: none; }
-
-      .product-cards { grid-template-columns: 1fr !important; }
-      .product-card img { max-width: 100%; }
-
-      .mlc-columns { grid-template-columns: 1fr !important; }
-      .coming-soon-list { grid-template-columns: 1fr !important; }
-      .legacies-grid { grid-template-columns: 1fr !important; }
-
-      .email-form { flex-direction: column; }
-      .email-form input { border-right: 2px solid var(--gold); min-width: unset; }
-    }
+    /* Sticky mobile CTA + 44x44 rule now live in style.css (sitewide). */
   </style>
 
   <!-- Google Analytics 4 -->
@@ -1083,388 +314,176 @@
 </head>
 <body>
 
-  <!-- Facebook Pixel noscript -->
-  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=2828165625364437&ev=PageView&noscript=1" /></noscript>
-
-<!-- NAVIGATION -->
+<!-- CANONICAL NAVIGATION (9 links per CLAUDE.md) -->
 <nav class="site-nav">
   <a href="https://mylegacycontinues.com/index.html" class="nav-brand">
     <img src="logo.png?v=5" alt="My Legacy Continues" class="nav-logo">
   </a>
   <ul class="nav-links" id="navLinks">
-    <li><a href="#home" style="color:#D4AF37;">Home</a></li>
+    <li><a href="#home" style="color:var(--color-accent);">Home</a></li>
     <li><a href="heritage-book.html">Heritage</a></li>
     <li><a href="pet-tag.html">Pet Tags</a></li>
     <li><a href="business-profile.html">Business</a></li>
     <li><a href="network.html">Network</a></li>
     <li><a href="rescue-registry.html">Rescue</a></li>
     <li><a href="active-transports.html">Transport</a></li>
-    <li><a href="free-profile.html" style="color:#D4AF37; white-space: nowrap;">Free Page</a></li>
+    <li><a href="free-profile.html" style="color:var(--color-accent); white-space: nowrap;">Free Page</a></li>
     <li><a href="about.html">About</a></li>
   </ul>
   <div class="nav-right">
-    <a href="#products" class="btn btn-gold" style="padding: 0.5rem 1.2rem; font-size: 0.7rem;">START YOUR LEGACY</a>
+    <a href="free-profile.html" class="btn btn-gold" style="padding: 0.5rem 1.2rem; font-size: 0.7rem;">Claim Free Page</a>
     <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
       <span></span><span></span><span></span>
     </button>
   </div>
 </nav>
 
-<!-- HERO -->
-<section class="hero candy-hero" id="home">
-  <div style="margin-bottom: 2rem; position: relative; z-index: 2;">
-    <img src="logo.png?v=5" alt="My Legacy Continues" style="width: 180px; height: auto; filter: drop-shadow(0 6px 20px rgba(212,175,55,0.4));">
-  </div>
-  <h1 style="position: relative; z-index: 2; color: var(--soft-white);">MY LEGACY<br>CONTINUES</h1>
-  <p style="position: relative; z-index: 2; font-family: var(--font-display); font-weight: 700; font-size: clamp(1.6rem, 4vw, 2.75rem); color: var(--gold); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 1.25rem;">Your Story Never Dies</p>
-  <p style="position: relative; z-index: 2; font-family: var(--font-body); font-size: clamp(1rem, 1.6vw, 1.15rem); color: var(--soft-white); max-width: 680px; line-height: 1.65; margin-bottom: 2.5rem; opacity: 0.92;">We turn your family's story into a physical book, a permanent digital profile, and a QR code that never dies. One payment. No subscription. Built in the 805.</p>
-  <div class="hero-buttons" style="position: relative; z-index: 2;">
-    <a href="#products" class="btn-hero-gold">Start Your Legacy</a>
-    <a href="free-profile.html" class="btn-hero-ghost">Claim Your Free Page</a>
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- SECTION 1 — HERO (Onyx & Gold)                      -->
+<!-- ═══════════════════════════════════════════════════ -->
+<section class="home-hero" id="home">
+  <div class="home-hero-inner">
+    <h1>YOUR STORY <span class="accent">NEVER DIES.</span></h1>
+    <p class="sub">The 805&rsquo;s premier legacy platform.</p>
+    <a href="free-profile.html" class="home-cta">
+      Claim Your Free Profile <span class="arrow">&rarr;</span>
+    </a>
   </div>
 </section>
 
-<style>
-  @media (min-width: 640px) {
-    .free-vs-grid { grid-template-columns: 1fr 1fr !important; }
-  }
-</style>
-
-<section style="background:#1A1A1A; padding:2.5rem 1.5rem; border-top:1px solid rgba(212,175,55,0.15); border-bottom:1px solid rgba(212,175,55,0.15);">
-  <div style="max-width:720px; margin:0 auto; text-align:center;">
-    <p style="font-family:var(--font-display); font-size:0.72rem; letter-spacing:0.28em; color:#D4AF37; text-transform:uppercase; margin-bottom:1rem;">Free vs. $79 — What's The Difference?</p>
-    <div class="free-vs-grid" style="display:grid; grid-template-columns:1fr; gap:1.5rem; text-align:left; max-width:600px; margin:0 auto;">
-      <div style="padding:1.25rem; border:1px solid rgba(212,175,55,0.2);">
-        <p style="font-family:var(--font-display); font-size:0.7rem; letter-spacing:0.2em; color:#D4AF37; text-transform:uppercase; margin-bottom:0.5rem;">Free Page</p>
-        <p style="font-family:var(--font-body); font-size:0.9rem; color:#E0E0E0; line-height:1.6;">Your name on the network. Basic profile. <strong>You build it yourself</strong> when the builder launches.</p>
-      </div>
-      <div style="padding:1.25rem; border:1px solid rgba(201,162,76,0.5); background:rgba(201,162,76,0.05);">
-        <p style="font-family:var(--font-display); font-size:0.7rem; letter-spacing:0.2em; color:#D4AF37; text-transform:uppercase; margin-bottom:0.5rem;">$79 Legacy Profile</p>
-        <p style="font-family:var(--font-body); font-size:0.9rem; color:#E0E0E0; line-height:1.6;"><strong>We build it for you.</strong> Photos, stories, family tree, music. Done right. Permanent.</p>
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- SECTION 2 — FOUNDER'S MISSION                       -->
+<!-- ═══════════════════════════════════════════════════ -->
+<section class="home-section home-mission">
+  <div class="home-wrap">
+    <div class="mission-grid">
+      <img src="images/bear-photo.jpg" alt="Mark Vázquez, founder" class="mission-photo">
+      <div>
+        <p class="mission-quote">
+          &ldquo;I&rsquo;m building this so no family ever loses their heritage.&rdquo;
+        </p>
+        <span class="mission-attrib">&mdash; Mark V&aacute;zquez, Founder</span>
       </div>
     </div>
   </div>
 </section>
 
-<!-- PRODUCTS -->
-<section class="products" id="products">
-  <div style="max-width: 1200px; margin: 0 auto;">
-    <h2>YOUR LEGACY PRODUCTS</h2>
-    <div class="product-cards">
-
-      <!-- Card 1: Heritage Culture Book -->
-      <div class="product-card">
-        <img src="images/products/book.jpg?v=20260416" alt="Heritage Culture Book">
-        <div class="product-card-body">
-          <div class="product-label">Family</div>
-          <h3>Heritage Culture Book</h3>
-          <p>Your family's complete story.<br>Researched. Written. Printed.<br>Linked to a permanent digital profile via QR.</p>
-          <div class="product-price">$199</div>
-          <a href="heritage-book.html" class="product-learn-more" data-product="heritage-book">Learn More →</a>
-        </div>
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- SECTION 3 — 3-STEP PROCESS                          -->
+<!-- ═══════════════════════════════════════════════════ -->
+<section class="home-section home-steps">
+  <div class="home-wrap">
+    <h2 class="section-heading">How It Works</h2>
+    <div class="steps-row">
+      <div class="step">
+        <span class="step-num">1</span>
+        <p class="step-title">Claim a Profile</p>
       </div>
-
-      <!-- Card 2: Cemetery Memorial Plaque -->
-      <div class="product-card">
-        <img src="images/products/finplaq.jpg?v=20260416" alt="Cemetery Memorial Plaque">
-        <div class="product-card-body">
-          <div class="product-label">Memorial</div>
-          <h3>Cemetery Memorial Plaque</h3>
-          <p>Stainless steel QR plaque for any headstone.<br>Scan it. See photos, stories, a full life.</p>
-          <div class="product-price">$129</div>
-          <a href="cemetery-plaque.html" class="product-learn-more" data-product="cemetery-plaque">Learn More →</a>
-        </div>
+      <div class="step">
+        <span class="step-num">2</span>
+        <p class="step-title">Print Your QR</p>
       </div>
-
-      <!-- Card 3: Pet QR Tag (consolidated) -->
-      <div class="product-card">
-        <img src="images/products/tag12.jpg?v=20260416" alt="Pet QR Tag">
-        <div class="product-card-body">
-          <div class="product-label">Pet</div>
-          <h3>Pet QR Tag</h3>
-          <p class="product-subtitle">Basic $24.99 · Premium $49.99</p>
-          <p>Medical history, emergency contacts, rescue story.<br>Premium adds photos, videos, and lifetime updates.</p>
-          <div class="product-price">From $24.99</div>
-          <a href="pet-tag.html" class="product-learn-more" data-product="pet-tag">Learn More →</a>
-        </div>
-      </div>
-
-      <!-- Card 5: Legacy Profile -->
-      <div class="product-card">
-        <img src="images/products/examples.jpg?v=20260416" alt="Business Founder Profile">
-        <div class="product-card-body">
-          <div class="product-label">Profile</div>
-          <h3>Business Founder Profile</h3>
-          <p class="product-subtitle">For tradespeople, founders, and small business owners</p>
-          <p>Your origin story. Your work.<br>Your QR code on every card, truck, and sign.<br>One payment. Permanent.</p>
-          <div class="product-price">$79</div>
-          <a href="business-profile.html" class="product-learn-more" data-product="legacy-profile">Learn More →</a>
-        </div>
-      </div>
-
-      <!-- Card 6: Contractor Bundle -->
-      <div class="product-card">
-        <img src="images/products/contbundle.jpg?v=20260416" alt="Contractor Bundle">
-        <div class="product-card-body">
-          <div class="product-label">Trades</div>
-          <h3>Contractor Bundle</h3>
-          <p>Business profile plus QR package.<br>On your cards, your truck, your job site signs.</p>
-          <div class="product-price">$129</div>
-          <a href="contractor-bundle.html" class="product-learn-more" data-product="contractor-bundle">Learn More →</a>
-        </div>
-      </div>
-
-      <!-- Card 7: Baby Legacy -->
-      <div class="product-card">
-        <img src="images/products/babyleg.jpg?v=20260416" alt="Baby Legacy">
-        <div class="product-card-body">
-          <div class="product-label">Family</div>
-          <h3>Baby Legacy</h3>
-          <p>Preserve their first year. Birth story, milestones, memories.<br>Unlocks at 18.</p>
-          <div class="product-price">$79</div>
-          <a href="baby-legacy.html" class="product-learn-more" data-product="baby-legacy">Learn More →</a>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- PINSTRIPE -->
-<div class="pinstripe"></div>
-
-<!-- FOUNDER TRUST BLOCK -->
-<section class="founder-trust" style="background: #1A1A1A; padding: 3rem 1.5rem; border-top: 1px solid rgba(212,175,55,0.2); border-bottom: 1px solid rgba(212,175,55,0.2);">
-  <div style="max-width: 800px; margin: 0 auto; display: flex; gap: 2rem; align-items: center; flex-wrap: wrap; justify-content: center;">
-    <div style="flex: 0 0 140px;">
-      <img src="images/bear-photo.jpg" alt="Bear Vázquez, founder of My Legacy Continues" style="width: 140px; height: 140px; border-radius: 50%; border: 2px solid #D4AF37; object-fit: cover; box-shadow: 0 0 20px rgba(212,175,55,0.25);">
-    </div>
-    <div style="flex: 1; min-width: 240px; max-width: 480px;">
-      <div style="font-family: var(--font-display); font-size: 0.72rem; letter-spacing: 0.28em; color: #D4AF37; text-transform: uppercase; margin-bottom: 0.8rem;">Built By</div>
-      <h2 style="font-family: var(--font-display); font-weight: 700; font-size: 1.75rem; color: #F5F5F5; margin: 0 0 0.5rem; letter-spacing: 0.04em; text-transform: uppercase;">Bear Vázquez</h2>
-      <p style="font-family: var(--font-body); font-size: 1rem; color: #E0E0E0; margin: 0 0 0.85rem; opacity: 0.88; letter-spacing: 0.03em;">Founder · Santa Maria, CA</p>
-      <p style="font-family: var(--font-serif); font-style: italic; font-size: 1.05rem; color: #D4AF37; margin: 0; line-height: 1.55; opacity: 0.95;">I built this because my family's stories were slipping. Now yours don't have to.</p>
-    </div>
-  </div>
-</section>
-
-<!-- PINSTRIPE -->
-<div class="pinstripe"></div>
-
-<!-- WHY WE BUILT THIS -->
-<section class="what-mlc">
-  <div style="max-width: 1200px; margin: 0 auto; text-align: center;">
-    <h2>WHY WE BUILT THIS</h2>
-    <div style="font-family: var(--font-body); color: var(--soft-white); font-size: 1.05rem; line-height: 1.8; margin: 2rem auto 2.5rem; max-width: 720px;">
-      <p style="margin-bottom: 1.5rem;">Every family has a story.<br>Most of them disappear.</p>
-      <p style="margin-bottom: 1.5rem;">Instagram forgets. Facebook forgets. Linktree charges rent.<br>Your grandmother&apos;s voice, your father&apos;s trade, your rescue dog&apos;s journey &mdash;<br>all of it gets buried by the algorithm.</p>
-      <p>We built a permanent home.<br>Physical products you can hold. Digital profiles that live forever.<br>One payment. No subscription. Yours.</p>
-    </div>
-    <p style="font-family: var(--font-serif); font-style: italic; font-size: clamp(1.3rem, 2.5vw, 1.75rem); color: var(--gold); max-width: 640px; margin: 0 auto; line-height: 1.5;">&quot;This is how your story stays.&quot;</p>
-    <p class="subheading">The permanent home for your family&apos;s story.<br>Three layers that work together.</p>
-
-    <div class="mlc-columns">
-      <div class="mlc-col">
-        <h3>1. Physical Keys</h3>
-        <p>Heritage Books. Cemetery plaques. Pet tags. Business cards.<br>
-        Real things you hold, wear, and display.<br>
-        Every one carries a QR code to your digital home.</p>
-      </div>
-      <div class="mlc-col">
-        <h3>2. Digital Home</h3>
-        <p>Your Legacy Profile. One payment, $79, yours forever.<br>
-        Photos, stories, voice memories, family tree.<br>
-        No algorithm. No ads. No subscription.</p>
-      </div>
-      <div class="mlc-col">
-        <h3>3. The Network</h3>
-        <p>Every profile connects to the MLC Network &mdash; real Central Coast stories.<br>
-        Families. Businesses. Creators. Rescues.<br>
-        The permanent home for everything the feed forgets.</p>
+      <div class="step">
+        <span class="step-num">3</span>
+        <p class="step-title">Live Forever</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- PINSTRIPE -->
-<div class="pinstripe"></div>
-
-<!-- NOW ON THE NETWORK -->
-<section class="now-network">
-  <div style="max-width: 1200px; margin: 0 auto;">
-    <div class="eyebrow">Live On The Network</div>
-    <h2>NOW ON THE NETWORK</h2>
-    <p class="subhead">Real 805 stories. Permanent profiles. Scan, share, preserve.</p>
-    <div class="now-network-grid">
-      <div class="now-network-card">
-        <div class="cat">Family</div>
-        <h3>V&aacute;zquez Family</h3>
-        <p>Seventeen generations. Galicia to California.</p>
-        <a href="vazquez-profile.html">See Profile &rarr;</a>
-      </div>
-      <div class="now-network-card">
-        <div class="cat">Business</div>
-        <h3>McNeal Construction</h3>
-        <p>805 contractor. Generational trade.</p>
-        <a href="mcneal-construction-profile.html">See Profile &rarr;</a>
-      </div>
-      <div class="now-network-card">
-        <div class="cat">Memorial</div>
-        <h3>Anthony Raygoza Sr.</h3>
-        <p>A father who stood for his daughter. Public record. Permanent home.</p>
-        <a href="anthony-raygoza-memorial.html">See Profile &rarr;</a>
-      </div>
-      <div class="now-network-card">
-        <div class="cat">Rescue</div>
-        <h3>Shoshi Gamliel</h3>
-        <p>Real responsible rescue. Rescue partner.</p>
-        <a href="shoshi-gamliel-profile.html">See Profile &rarr;</a>
-      </div>
-      <div class="now-network-card">
-        <div class="cat">Free Profile</div>
-        <h3>Joseph V&aacute;zquez</h3>
-        <p>Galicia 1547 to Santa Maria. Five chapters. A father's living legacy.</p>
-        <a href="joseph-vazquez-profile.html">See Profile &rarr;</a>
-      </div>
-      <div class="now-network-card">
-        <div class="cat">Family</div>
-        <h3>Deborah Mahony</h3>
-        <p>Faustino's 98 years. 18 siblings. Grandma Elvira's tamales. A mother's line.</p>
-        <a href="deborah-mahony-profile.html">See Profile &rarr;</a>
-      </div>
-      <div class="now-network-card">
-        <div class="cat">Pet</div>
-        <h3>Butters</h3>
-        <p>Shop sidekick. True companion.</p>
-        <a href="butters-profile.html">See Profile &rarr;</a>
-      </div>
-    </div>
-    <a href="network.html" class="now-network-cta">See All Profiles &rarr;</a>
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- SECTION 4 — PRODUCT HIGHLIGHT (Legacy Bundle)       -->
+<!-- Bionic Bold applied to body copy (first 2-4 chars   -->
+<!-- on words ≥4). Phase 4 will extract this as utility. -->
+<!-- ═══════════════════════════════════════════════════ -->
+<section class="home-section home-product">
+  <div class="home-wrap">
+    <h2 class="section-heading">The Legacy Bundle</h2>
+    <article class="bundle">
+      <p class="bundle-eyebrow">Book &middot; Plaque &middot; Forever Page</p>
+      <h3 class="bundle-title">Book + Plaque, One Price</h3>
+      <p class="bundle-body">
+        <b>The</b> <b>Leg</b>acy <b>Bun</b>dle <b>pai</b>rs <b>you</b>r
+        <b>her</b>itage <b>boo</b>k <b>wit</b>h a <b>wea</b>therproof
+        <b>ceme</b>tery <b>pla</b>que. <b>One</b> <b>pay</b>ment.
+        <b>Host</b>ed <b>for</b>ever. <b>No</b> <b>subs</b>criptions &mdash;
+        <b>eve</b>r.
+      </p>
+      <p class="bundle-price">$149<span class="strike">$188 separately</span></p>
+      <a href="heritage-book.html" class="home-cta" data-product="legacy-bundle">
+        Order the Bundle <span class="arrow">&rarr;</span>
+      </a>
+    </article>
   </div>
 </section>
 
-<!-- PINSTRIPE -->
-<div class="pinstripe"></div>
-
-<!-- RESCUE PARTNERS -->
-<section class="rescue">
-  <div style="max-width: 800px; margin: 0 auto;">
-    <h2>OUR RESCUE PARTNERS</h2>
-    <p>10% of every pet tag sale goes directly to local animal rescue organizations.</p>
-    <div style="background: rgba(0,0,0,0.2); border: 1px solid rgba(212,175,55,0.3); padding: 2rem; margin-bottom: 2rem; text-align: center;">
-      <h3 style="font-family: var(--font-display); font-size: 1.5rem; color: var(--chrome); margin-bottom: 0.75rem; letter-spacing: 0.04em;">Shoshi Gamliel</h3>
-      <p>Real responsible rescue for dogs the system wrote off.<br><br>Pit bulls. Bully breeds. Dogs no other rescue will take.</p>
-      <p style="font-family: var(--font-serif); font-style: italic; font-size: 1rem; color: var(--gold); margin-top: 1rem; line-height: 1.55; opacity: 0.92;">My cat Butters reminds me every day why this matters. Every pet tag sold sends 10% to Shoshi's work.</p>
-      <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 1.5rem;">
-        <a href="shoshi-gamliel-profile.html" class="btn-hero-gold" style="font-size: 0.8rem; padding: 0.7rem 1.8rem;">Learn About Shoshi</a>
-        <a href="rescue-intake.html" class="btn-hero-ghost" style="font-size: 0.8rem; padding: 0.7rem 1.8rem; border-color: rgba(212,175,55,0.5);">Submit a Dog for Rescue</a>
-      </div>
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- SECTION 5 — SOCIAL PROOF / RESCUE PARTNER           -->
+<!-- ═══════════════════════════════════════════════════ -->
+<section class="home-section home-rescue">
+  <div class="home-wrap">
+    <h2 class="section-heading">Rescue Partner Commitment</h2>
+    <div class="rescue-card">
+      <p>
+        Ten percent of every legacy order funds animal rescue transport.
+        No markup. No middlemen.
+      </p>
+      <p>
+        Every rescue pet in our network gets a free permanent profile.
+        See the active runs on the <a href="active-transports.html">Transport board</a>
+        or browse the <a href="rescue-registry.html">Rescue Registry</a>.
+      </p>
     </div>
   </div>
 </section>
 
-<!-- PINSTRIPE -->
-<div class="pinstripe"></div>
-
-<!-- EMAIL SIGNUP -->
-<section class="email-signup">
-  <div style="max-width: 600px; margin: 0 auto;">
-    <h2>THE WEEKLY LEGACY DROP</h2>
-    <p style="font-family: var(--font-body); font-size: 1rem; color: var(--soft-white); opacity: 0.88; line-height: 1.6; margin: 0 0 1.5rem; max-width: 520px; margin-left: auto; margin-right: auto;">New profiles. Real family stories from the 805. One email a week. No spam, no selling your data &mdash; ever.</p>
-    <form class="email-form" action="https://formspree.io/f/xgolrkea" method="POST">
-      <input type="hidden" name="_subject" value="Newsletter Signup"/>
-      <input type="hidden" name="_next" value="https://mylegacycontinues.com/thank-you.html"/>
-      <input type="email" name="email" placeholder="Your email" required>
-      <button type="submit">Subscribe</button>
-    </form>
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- SECTION 6 — FINAL CALL                              -->
+<!-- ═══════════════════════════════════════════════════ -->
+<section class="home-section home-final">
+  <div class="home-wrap">
+    <h2 class="section-heading">Start With the Free Profile</h2>
+    <p class="final-subhead">
+      No card. No trial. Your name on the permanent network today.
+    </p>
+    <a href="free-profile.html" class="home-cta">
+      Claim Your Free Profile <span class="arrow">&rarr;</span>
+    </a>
   </div>
 </section>
 
-<!-- PINSTRIPE -->
-<div class="pinstripe"></div>
+<!-- Sticky mobile CTA injected by js/sticky-cta.js -->
 
-<!-- PROFILE CUSTOMIZATION -->
-<section class="profile-custom">
-  <div style="max-width: 800px; margin: 0 auto;">
-    <h2>YOUR PROFILE. YOUR WAY.</h2>
-    <p>Every MLC profile is permanent and fully customizable. Add photos. Update your story. Add chapters as life changes. Email contact@mylegacycontinues.com anytime. We make changes within 48 hours. No extra charge. Ever.</p>
-    <a href="free-profile.html" class="btn-custom">Claim Your Free Page</a>
-  </div>
-</section>
-
-<!-- PINSTRIPE -->
-<div class="pinstripe"></div>
-
-<!-- TEXT BEAR DIRECT CONTACT STRIP -->
-<section class="text-bear-strip" style="background: #1A1A1A; padding: 3rem 1.5rem; text-align: center; border-top: 1px solid rgba(212,175,55,0.2); border-bottom: 1px solid rgba(212,175,55,0.2);">
-  <div style="max-width: 680px; margin: 0 auto;">
-    <div style="font-family: var(--font-display); font-size: 0.72rem; letter-spacing: 0.3em; color: #D4AF37; text-transform: uppercase; margin-bottom: 1rem;">Talk To The Founder</div>
-    <h2 style="font-family: var(--font-display); font-weight: 700; font-size: clamp(1.6rem, 3.5vw, 2.25rem); color: #F5F5F5; margin: 0 0 1.25rem; letter-spacing: 0.04em; text-transform: uppercase; line-height: 1.2;">Questions? Text Bear Directly.</h2>
-    <p style="font-family: var(--font-body); font-size: 1.05rem; color: #E0E0E0; margin: 0 0 2rem; line-height: 1.55; opacity: 0.88;">You're not dealing with a call center. No chatbot. No ticket queue. Text me — I answer personally.</p>
-    <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-      <a href="sms:+18058633794" style="display: inline-block; background: #5C0A12; color: #F5F5F5; font-family: var(--font-display); font-weight: 700; font-size: 0.9rem; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; padding: 1rem 2rem; border: 2px solid #5C0A12; transition: background 0.25s;">Text (805) 863-3794</a>
-      <a href="mailto:contact@mylegacycontinues.com" style="display: inline-block; background: transparent; color: #D4AF37; font-family: var(--font-display); font-weight: 700; font-size: 0.9rem; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; padding: 1rem 2rem; border: 2px solid #D4AF37; transition: color 0.25s, background 0.25s;">Email Instead</a>
-    </div>
-    <p style="font-family: var(--font-serif); font-style: italic; font-size: 1rem; color: #D4AF37; margin: 1.75rem 0 0; opacity: 0.85;">Built solo in Santa Maria, CA.</p>
-  </div>
-</section>
-
-<!-- PINSTRIPE -->
-<div class="pinstripe"></div>
-
-<!-- FOREVER-PROMISE GUARANTEE BAND -->
-<section class="forever-promise" style="background: linear-gradient(135deg, #1A1A1A 0%, #2a0808 50%, #1A1A1A 100%); padding: 4rem 1.5rem; text-align: center; border-top: 2px solid #D4AF37; border-bottom: 2px solid #D4AF37;">
-  <div style="max-width: 760px; margin: 0 auto;">
-    <div style="font-family: var(--font-display); font-size: 0.75rem; letter-spacing: 0.32em; color: #D4AF37; text-transform: uppercase; margin-bottom: 1.25rem;">Our Promise</div>
-    <h2 style="font-family: var(--font-display); font-weight: 700; font-size: clamp(1.8rem, 4vw, 2.75rem); color: #F5F5F5; margin: 0 0 1.5rem; letter-spacing: 0.04em; text-transform: uppercase; line-height: 1.15;">$79 ONCE. YOURS FOREVER.</h2>
-    <p style="font-family: var(--font-serif); font-style: italic; font-size: clamp(1.15rem, 2vw, 1.4rem); color: #D4AF37; margin: 0 0 2rem; line-height: 1.55; opacity: 0.95;">No subscription. No renewal. No exception.</p>
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; max-width: 720px; margin: 0 auto; text-align: left;">
-      <div style="padding: 1.25rem; background: rgba(212,175,55,0.06); border-left: 2px solid #D4AF37;">
-        <div style="font-family: var(--font-display); font-size: 0.7rem; letter-spacing: 0.22em; color: #D4AF37; text-transform: uppercase; margin-bottom: 0.5rem;">Pay Once</div>
-        <p style="font-family: var(--font-body); font-size: 0.95rem; color: #E0E0E0; margin: 0; line-height: 1.5;">One payment. Hosted permanently. Never billed again.</p>
-      </div>
-      <div style="padding: 1.25rem; background: rgba(212,175,55,0.06); border-left: 2px solid #D4AF37;">
-        <div style="font-family: var(--font-display); font-size: 0.7rem; letter-spacing: 0.22em; color: #D4AF37; text-transform: uppercase; margin-bottom: 0.5rem;">Export Anytime</div>
-        <p style="font-family: var(--font-body); font-size: 0.95rem; color: #E0E0E0; margin: 0; line-height: 1.5;">Your photos, stories, and data belong to you. Download anytime.</p>
-      </div>
-      <div style="padding: 1.25rem; background: rgba(212,175,55,0.06); border-left: 2px solid #D4AF37;">
-        <div style="font-family: var(--font-display); font-size: 0.7rem; letter-spacing: 0.22em; color: #D4AF37; text-transform: uppercase; margin-bottom: 0.5rem;">Always Accessible</div>
-        <p style="font-family: var(--font-body); font-size: 0.95rem; color: #E0E0E0; margin: 0; line-height: 1.5;">Your story lives here permanently. Data requests honored within 48 hours.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
+<!-- CANONICAL FOOTER (12 links per CLAUDE.md) -->
 <footer>
   <div class="footer-content">
     <div class="footer-contact">
       <p>Contact: <a href="mailto:contact@mylegacycontinues.com">contact@mylegacycontinues.com</a> | <a href="sms:+18058633794">(805) 863-3794</a> | Santa Maria, CA</p>
     </div>
     <ul class="footer-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="heritage-book.html">Heritage</a></li>
-        <li><a href="pet-tag.html">Pet Tags</a></li>
-        <li><a href="business-profile.html">Business</a></li>
-        <li><a href="network.html">Network</a></li>
-        <li><a href="rescue-registry.html">Rescue</a></li>
-        <li><a href="active-transports.html">Transport</a></li>
-        <li><a href="free-profile.html">Free Page</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="faq.html">FAQ</a></li>
-        <li><a href="legal/privacy.html">Privacy</a></li>
-        <li><a href="legal/terms-of-service.html">Terms</a></li>
-      </ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="heritage-book.html">Heritage</a></li>
+      <li><a href="pet-tag.html">Pet Tags</a></li>
+      <li><a href="business-profile.html">Business</a></li>
+      <li><a href="network.html">Network</a></li>
+      <li><a href="rescue-registry.html">Rescue</a></li>
+      <li><a href="active-transports.html">Transport</a></li>
+      <li><a href="free-profile.html">Free Page</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="legal/privacy.html">Privacy</a></li>
+      <li><a href="legal/terms-of-service.html">Terms</a></li>
+    </ul>
     <p class="footer-copy">&copy; 2026 My Legacy Continues. Every story deserves forever.</p>
-    <p style="font-family: var(--font-serif); font-style: italic; color: #D4AF37; font-size: 1.1rem; margin-top: 0.5rem; text-align: center;">Long Live Your Legacy.</p>
-    <div class="footer-security" style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(212,175,55,0.15); display: flex; gap: 1.5rem; justify-content: center; align-items: center; flex-wrap: wrap; font-family: var(--font-body); font-size: 0.78rem; color: rgba(224,224,224,0.65); letter-spacing: 0.04em;">
+    <p style="font-family: var(--font-quote); font-style: italic; color: var(--color-accent); font-size: 1.1rem; margin-top: 0.5rem; text-align: center;">Long Live Your Legacy.</p>
+    <div class="footer-security" style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(201,162,76,0.15); display: flex; gap: 1.5rem; justify-content: center; align-items: center; flex-wrap: wrap; font-family: var(--font-body); font-size: 0.78rem; color: var(--color-divider); letter-spacing: 0.04em;">
       <span style="display: inline-flex; align-items: center; gap: 0.4rem;">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0;"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; stroke: var(--color-accent);"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
         Stripe Secure Checkout
       </span>
-      <span style="opacity: 0.5;">·</span>
-      <a href="legal/privacy.html" style="color: rgba(224,224,224,0.65); text-decoration: none; border-bottom: 1px solid rgba(212,175,55,0.3);">Privacy Promise</a>
-      <span style="opacity: 0.5;">·</span>
+      <span style="opacity: 0.5;">&middot;</span>
+      <a href="legal/privacy.html" style="color: var(--color-divider); text-decoration: none; border-bottom: 1px solid var(--color-accent);">Privacy Promise</a>
+      <span style="opacity: 0.5;">&middot;</span>
       <span>Your data is never sold</span>
     </div>
   </div>
@@ -1487,7 +506,7 @@
     });
   }
 
-  // Fade-in sections on scroll
+  // Fade-in sections on scroll (skip hero)
   const observer = new IntersectionObserver(function(entries) {
     entries.forEach(function(entry) {
       if (entry.isIntersecting) {
@@ -1497,7 +516,7 @@
     });
   }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 
-  document.querySelectorAll('section:not(.hero)').forEach(function(el) {
+  document.querySelectorAll('section:not(.home-hero)').forEach(function(el) {
     el.style.opacity = '0';
     el.style.transform = 'translateY(20px)';
     el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
@@ -1505,7 +524,7 @@
   });
 </script>
 
-<!-- Form Submission Tracking -->
+<!-- Analytics: form + product tracking -->
 <script>
   document.querySelectorAll('form').forEach(function(form) {
     form.addEventListener('submit', function() {
@@ -1516,10 +535,7 @@
       }
     });
   });
-</script>
 
-<!-- Product Click Tracking -->
-<script>
   document.querySelectorAll('[data-product]').forEach(function(button) {
     button.addEventListener('click', function() {
       if (typeof gtag !== 'undefined') {
@@ -1532,6 +548,6 @@
   });
 </script>
 
+<script src="js/sticky-cta.js" defer></script>
 </body>
 </html>
-

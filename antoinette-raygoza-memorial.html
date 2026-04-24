@@ -20,21 +20,21 @@
 <meta name="twitter:description" content="In loving memory of Antoinette Raygoza (1991-2012). Santa Maria, California. Preserved permanently by My Legacy Continues.">
 <meta name="twitter:image" content="https://mylegacycontinues.com/images/antoinette-memorial.jpg">
 <link rel="stylesheet" href="style.css">
-<link rel="preload" href="/fonts/Inter-VariableFont_opsz,wght.ttf" as="font" type="font/ttf" crossorigin>
-<link rel="preload" href="/fonts/Fraunces-VariableFont_SOFT,WONK,opsz,wght.ttf" as="font" type="font/ttf" crossorigin>
-<link rel="stylesheet" href="/fonts/fonts.css">
+<link rel="preload" href="/fonts/Staatliches-Regular.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="/fonts/Lato-Regular.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="stylesheet" href="/fonts/fonts.css">
 <style>
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --charcoal: #1A1A1A;
+  --charcoal: var(--color-bg);
   --charcoal-2: #232323;
   --brandywine: #5C0A12;
   --brandywine-deep: #3A070C;
   --chrome: #E0E0E0;
   --chrome-dim: #9a9a9a;
-  --soft-white: #F5F5F5;
+  --soft-white: var(--color-text);
   --purple-dv: #6A0DAD;
 }
 
@@ -421,13 +421,13 @@ a { color: inherit; text-decoration: none; }
 
 /* ===== CANDY PAINT & CHROME — PALETTE LOCK ===== */
 :root {
-  --charcoal: #1A1A1A;            /* background */
-  --charcoal-2: #1A1A1A;          /* card/section bg — match bg so gold borders carry the structure */
+  --charcoal: var(--color-bg);            /* background */
+  --charcoal-2: var(--color-bg);          /* card/section bg — match bg so gold borders carry the structure */
   --brandywine: #C8420A;          /* Sunset Orange — buttons + primary accent stripe */
   --brandywine-deep: #8F2F07;     /* darker orange for pressed/active button state */
-  --chrome: #D4AF37;              /* Warm Gold — pinstriping, borders, eyebrows, headings */
+  --chrome: var(--color-accent);              /* Warm Gold — pinstriping, borders, eyebrows, headings */
   --chrome-dim: #C9BFA0;          /* dimmed cream for metadata/secondary text */
-  --soft-white: #FAF3E6;          /* Cream — body text */
+  --soft-white: #ECE4D2;          /* Cream — body text */
 }
 
 /* Remove cool-white inner highlights that read as chrome/silver sheen */
@@ -436,13 +436,13 @@ a { color: inherit; text-decoration: none; }
 .lr-hero { box-shadow: none !important; }
 
 /* Portrait + small hardcoded black fills */
-.lr-portrait { background: #0f0f0f; border-color: #D4AF37 !important; }
+.lr-portrait { background: #0f0f0f; border-color: var(--color-accent) !important; }
 
 /* Button active-state text stays legible on deep orange */
-.lr-btn:active, .lr-cta:active, button:active { color: #FAF3E6 !important; }
+.lr-btn:active, .lr-cta:active, button:active { color: #ECE4D2 !important; }
 
 /* Override the inline footer styles (highest specificity — attribute selector) */
-footer[style] { background: #1A1A1A !important; border-top: 1px solid #D4AF37 !important; }
+footer[style] { background: var(--color-bg) !important; border-top: 1px solid var(--color-accent) !important; }
 footer[style] .footer-contact[style],
 footer[style] .footer-copy[style] { color: #C9BFA0 !important; }
 
@@ -453,21 +453,13 @@ footer[style] .footer-copy[style] { color: #C9BFA0 !important; }
 
 /* 1. BODY — deep brandywine radial fading to near-black, fixed paint */
 html {
-  background: #050505 !important;
+  background: var(--color-bg) !important;
   min-height: 100%;
 }
 body {
-  background:
-    radial-gradient(circle 0.6px at 1px 1px, rgba(255,255,255,0.035) 50%, transparent 51%) 0 0 / 4px 4px,
-    radial-gradient(circle 0.5px at 2px 3px, rgba(212,175,55,0.025) 50%, transparent 51%) 0 0 / 5px 5px,
-    radial-gradient(ellipse at 50% 30%,
-      #4A0E0E 0%,
-      #2E0707 42%,
-      #130303 76%,
-      #050505 100%) !important;
-  background-attachment: fixed, fixed, fixed !important;
-  color: #FAF3E6 !important;
-  font-family: var(--font-serif) !important;
+  background: var(--color-bg) !important;
+  color: var(--color-text) !important;
+  font-family: var(--font-body) !important;
   font-weight: 400 !important;
   margin: 0 !important;
   border-radius: 0 !important;
@@ -555,7 +547,7 @@ body::after { display: none !important; }
   border-radius: 999px;
   overflow: hidden;
   background: #C8420A !important;
-  color: #FAF3E6 !important;
+  color: #ECE4D2 !important;
   box-shadow:
     inset 0 1px 0 rgba(255,255,255,0.22),
     0 0 24px -2px rgba(200,66,10,0.45),
@@ -565,7 +557,7 @@ body::after { display: none !important; }
 .lr-btn:hover,
 .lr-cta:hover {
   background: #8F2F07 !important;
-  color: #FAF3E6 !important;
+  color: #ECE4D2 !important;
   box-shadow:
     inset 0 1px 0 rgba(255,255,255,0.22),
     0 0 32px -2px rgba(200,66,10,0.6),
@@ -608,7 +600,7 @@ body,
 .lr-dv-card em,
 .lr-dv-card strong,
 .lr-dv-card blockquote,
-.lr-dv-card li { color: #FAF3E6 !important; }
+.lr-dv-card li { color: #ECE4D2 !important; }
 
 /* 7. HEADINGS — Warm Gold with depth shadow (high specificity beats card-* rules) */
 .lr-eyebrow,
@@ -627,7 +619,7 @@ body,
 .lr-dv-card h2,
 .lr-dv-card h3,
 h1, h2, h3 {
-  color: #D4AF37 !important;
+  color: var(--color-accent) !important;
   font-family: var(--font-serif) !important;
   font-weight: 700 !important;
   letter-spacing: 0.04em !important;
@@ -692,7 +684,7 @@ h1 { font-weight: 700 !important; letter-spacing: 0.12rem !important; }
 }
 
 .lr-fact-label,
-.lr-dv-hotline { color: #D4AF37 !important; opacity: 0.78; }
+.lr-dv-hotline { color: var(--color-accent) !important; opacity: 0.78; }
 
 /* 8. LEFT-ACCENT STRIPES — gold removed; DV stays orange as emphasis marker */
 .lr-section-label,
@@ -718,10 +710,10 @@ h1 { font-weight: 700 !important; letter-spacing: 0.12rem !important; }
 footer[style] {
   background: #0A0303 !important;
   border-top: 0 !important;
-  color: #FAF3E6 !important;
+  color: #ECE4D2 !important;
 }
 footer[style] .footer-contact[style],
-footer[style] .footer-copy[style] { color: #D4AF37 !important; opacity: 0.82; }
+footer[style] .footer-copy[style] { color: var(--color-accent) !important; opacity: 0.82; }
 
 /* 11. All hairlines and dividers removed — no gold borders anywhere */
 [style*="rgba(224,224,224"] { border-color: transparent !important; }
@@ -779,7 +771,7 @@ p { line-height: 1.6 !important; }
       <li><a href="network.html">Network</a></li>
       <li><a href="rescue-registry.html">Rescue</a></li>
       <li><a href="active-transports.html">Transport</a></li>
-            <li><a href="free-profile.html" style="color:#D4AF37;">Free Page</a></li>
+            <li><a href="free-profile.html" style="color:var(--color-accent);">Free Page</a></li>
       <li><a href="about.html">About</a></li>
     </ul>
     <div class="nav-right">
@@ -913,7 +905,7 @@ p { line-height: 1.6 !important; }
 
     <p>On the evening of February 28, 2012, Antoinette was killed during a domestic dispute with her boyfriend in the 1600 block of North McClelland Street in Santa Maria. She passed away the next day &mdash; <strong>February 29, a leap year day</strong> &mdash; with her mother at her side.</p>
 
-    <p>At sentencing, her mother <strong><span style="color:#D4AF37 !important;">Emma Garcia</span></strong> vowed to promote <strong>domestic violence awareness</strong> in her daughter's memory. That promise is why the memory tree at Waller Park is dressed in purple, and why this section of her page exists.</p>
+    <p>At sentencing, her mother <strong><span style="color:var(--color-accent) !important;">Emma Garcia</span></strong> vowed to promote <strong>domestic violence awareness</strong> in her daughter's memory. That promise is why the memory tree at Waller Park is dressed in purple, and why this section of her page exists.</p>
 
     <div class="lr-dv-stmt">
       "She was killed because he ran her over when they were having an argument. In our eyes, it was domestic violence."
@@ -999,7 +991,7 @@ p { line-height: 1.6 !important; }
   <div class="lr-story-card">
     <p>Her aunt <strong>Debbie Garcia</strong> &mdash; <strong>Deborah Mahony</strong> &mdash; still lives in Santa Maria. Her cousin <strong>Mark "Bear" V&aacute;zquez</strong> founded <strong>My Legacy Continues</strong> in 2026. This page is part of why.</p>
     <p>Antoinette wanted to help people. She was working two jobs and studying at Allan Hancock to figure out exactly how. That intention did not disappear when she did. It moved to the people who loved her. It moved to a younger cousin who decided that no family should lose their stories again.</p>
-    <p class="lr-pullquote" style="font-family:var(--font-serif); font-style:italic; color:#D4AF37; font-size:1.3rem; line-height:1.6; margin:2rem 0; padding-left:1.5rem; border-left:3px solid #D4AF37;">She wanted to help people. Her family is still finding the ways.</p>
+    <p class="lr-pullquote" style="font-family:var(--font-serif); font-style:italic; color:var(--color-accent); font-size:1.3rem; line-height:1.6; margin:2rem 0; padding-left:1.5rem; border-left:3px solid var(--color-accent);">She wanted to help people. Her family is still finding the ways.</p>
   </div>
 </div>
 <hr class="lr-divider" />
@@ -1020,7 +1012,7 @@ p { line-height: 1.6 !important; }
   <a href="cemetery-plaque.html" class="lr-btn" data-product="cemetery-plaque">Order A Memorial Plaque &mdash; $129</a>
 </section>
 
-<footer style="background: #1A1A1A; border-top: 1px solid rgba(224,224,224,0.3); padding: 40px 48px 28px;">
+<footer style="background: var(--color-bg); border-top: 1px solid rgba(224,224,224,0.3); padding: 40px 48px 28px;">
   <div class="footer-inner">
     <div class="footer-contact" style="color:#9a9a9a;">Contact: contact@mylegacycontinues.com | (805) 863-3794 | Santa Maria, CA</div>
     <ul class="footer-links">
@@ -1037,7 +1029,7 @@ p { line-height: 1.6 !important; }
       <li><a href="legal/privacy.html">Privacy</a></li>
       <li><a href="legal/terms-of-service.html">Terms</a></li>
     </ul>
-    <p style="color:#9a9a9a; font-size:0.9rem; margin-bottom:0.5rem; text-align:center;">Powered by <a href="index.html" style="color:#D4AF37; text-decoration:none;">My Legacy Continues</a> &mdash; Your story deserves forever.</p>
+    <p style="color:#9a9a9a; font-size:0.9rem; margin-bottom:0.5rem; text-align:center;">Powered by <a href="index.html" style="color:var(--color-accent); text-decoration:none;">My Legacy Continues</a> &mdash; Your story deserves forever.</p>
     <p class="footer-copy" style="color:#9a9a9a;">&copy; 2026 My Legacy Continues. All rights reserved.</p>
   </div>
 </footer>
@@ -1095,5 +1087,6 @@ p { line-height: 1.6 !important; }
     });
   </script>
 
+<script src="js/sticky-cta.js" defer></script>
 </body>
 </html>

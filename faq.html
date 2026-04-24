@@ -19,9 +19,9 @@
 <meta name="twitter:title" content="FAQ — Questions & Answers | My Legacy Continues">
 <meta name="twitter:description" content="How MLC works. What you get. Why it's permanent. Text Bear directly if you need more.">
 <meta name="twitter:image" content="https://mylegacycontinues.com/logo.png">
-<link rel="preload" href="/fonts/Inter-VariableFont_opsz,wght.ttf" as="font" type="font/ttf" crossorigin>
-<link rel="preload" href="/fonts/BigShoulders-VariableFont_opsz,wght.ttf" as="font" type="font/ttf" crossorigin>
-<link rel="stylesheet" href="/fonts/fonts.css">
+<link rel="preload" href="/fonts/Staatliches-Regular.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="/fonts/Lato-Regular.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="stylesheet" href="/fonts/fonts.css">
 <link rel="stylesheet" href="style.css">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -29,12 +29,12 @@
 :root{
   --black:#0a0a0a;
   --green-deep:#232323;
-  --green:#1A1A1A;
+  --green:var(--color-bg);
   --green-mid:#2A2A2A;
-  --gold:#D4AF37;
+  --gold:var(--color-accent);
   --gold-dim:rgba(212,160,23,0.12);
   --gold-glow:rgba(212,160,23,0.08);
-  --cream:#F5F5F5;
+  --cream:var(--color-text);
   --cream-dim:rgba(224,224,224,0.7);
   --cream-muted:rgba(224,224,224,0.45);
   --border:rgba(212,160,23,0.15);
@@ -53,12 +53,12 @@ body{
   line-height:1.7;
   overflow-x:hidden;
   -webkit-font-smoothing:antialiased;
-  background-color:#1A1A1A;
+  background-color:var(--color-bg);
 }
 
 /* Mobile background fix */
-section { background-color:#1A1A1A; }
-.section { background-color:#1A1A1A; }
+section { background-color:var(--color-bg); }
+.section { background-color:var(--color-bg); }
 
 body::after{
   content:'';position:fixed;inset:0;
@@ -266,7 +266,7 @@ section+section{border-top:1px solid var(--border)}
       <li><a href="network.html">Network</a></li>
       <li><a href="rescue-registry.html">Rescue</a></li>
       <li><a href="active-transports.html">Transport</a></li>
-            <li><a href="free-profile.html" style="color:#D4AF37;">Free Page</a></li>
+            <li><a href="free-profile.html" style="color:var(--color-accent);">Free Page</a></li>
       <li><a href="about.html">About</a></li>
     </ul>
     <div class="nav-right">
@@ -636,5 +636,6 @@ section+section{border-top:1px solid var(--border)}
     });
   </script>
 
+<script src="js/sticky-cta.js" defer></script>
 </body>
 </html>

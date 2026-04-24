@@ -21,21 +21,21 @@
   <meta name="twitter:title" content="Family Vault — Member Access | My Legacy Continues">
   <meta name="twitter:description" content="Access your Legacy Profile. Update photos, stories, and chapters. Built by My Legacy Continues.">
   <meta name="twitter:image" content="https://mylegacycontinues.com/logo.png">
-  <link rel="preload" href="/fonts/Inter-VariableFont_opsz,wght.ttf" as="font" type="font/ttf" crossorigin>
-  <link rel="preload" href="/fonts/BigShoulders-VariableFont_opsz,wght.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="/fonts/Staatliches-Regular.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="/fonts/Lato-Regular.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="stylesheet" href="/fonts/fonts.css">
   <link rel="stylesheet" href="style.css">
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
     :root {
-      --charcoal: #1A1A1A;
-      --charcoal: #1A1A1A;
+      --charcoal: var(--color-bg);
+      --charcoal: var(--color-bg);
       --charcoal-deep: #0A0A0A;
       --brandywine: #5C0A12;
       --gold-warm: #D4A017;
       --gold-flake: #b8962e;
-      --gold: #D4AF37;
-      --cream: #F5F5F5;
+      --gold: var(--color-accent);
+      --cream: var(--color-text);
       --chrome: #E0E0E0;
       --brandywine: #5C0A12;
     }
@@ -90,7 +90,7 @@
     /* Lock screen */
     .lock-gate {
       max-width: 520px; margin: 3rem auto 0;
-      background: linear-gradient(155deg, #1A1A1A 0%, #1A1A1A 100%);
+      background: linear-gradient(155deg, var(--color-bg) 0%, var(--color-bg) 100%);
       border: 2px solid var(--gold-flake); padding: 2rem;
       text-align: left;
     }
@@ -170,7 +170,7 @@
 
     /* Feed */
     .feed-post {
-      background: linear-gradient(155deg, #1A1A1A 0%, #1A1A1A 100%);
+      background: linear-gradient(155deg, var(--color-bg) 0%, var(--color-bg) 100%);
       border-left: 3px solid var(--brandywine); padding: 1.5rem;
       margin-bottom: 1.25rem;
     }
@@ -206,7 +206,7 @@
       display: flex; gap: 1.5rem; position: relative;
     }
     .tree-node {
-      background: linear-gradient(155deg, #1A1A1A 0%, #1A1A1A 100%);
+      background: linear-gradient(155deg, var(--color-bg) 0%, var(--color-bg) 100%);
       border: 2px solid var(--gold-flake); padding: 1rem 1.25rem;
       text-align: center; min-width: 170px; cursor: pointer;
       transition: all 0.3s;
@@ -246,7 +246,7 @@
     }
     .photo-tile {
       width: 130px; aspect-ratio: 1;
-      background: linear-gradient(155deg, #1A1A1A 0%, #1A1A1A 100%);
+      background: linear-gradient(155deg, var(--color-bg) 0%, var(--color-bg) 100%);
       border: 1px solid var(--gold-flake);
       display: flex; flex-direction: column; align-items: center; justify-content: center;
       gap: 0.25rem; padding: 0.5rem; text-align: center;
@@ -269,7 +269,7 @@
       gap: 1.5rem;
     }
     .recipe-card {
-      background: linear-gradient(155deg, #1A1A1A 0%, #1A1A1A 100%);
+      background: linear-gradient(155deg, var(--color-bg) 0%, var(--color-bg) 100%);
       border: 2px solid var(--gold-flake); padding: 1.5rem;
       transition: all 0.3s;
     }
@@ -301,7 +301,7 @@
 
     /* Threads */
     .thread {
-      background: linear-gradient(155deg, #1A1A1A 0%, #1A1A1A 100%);
+      background: linear-gradient(155deg, var(--color-bg) 0%, var(--color-bg) 100%);
       border: 2px solid var(--gold-flake); padding: 1.5rem;
       margin-bottom: 1.25rem; transition: all 0.3s;
     }
@@ -333,7 +333,7 @@
       gap: 1.25rem;
     }
     .vault-card {
-      background: linear-gradient(155deg, #1A1A1A 0%, #1A1A1A 100%);
+      background: linear-gradient(155deg, var(--color-bg) 0%, var(--color-bg) 100%);
       border: 2px solid var(--gold-flake); padding: 1.25rem;
       transition: all 0.3s;
     }
@@ -411,7 +411,7 @@
       <li><a href="network.html">Network</a></li>
       <li><a href="rescue-registry.html">Rescue</a></li>
       <li><a href="active-transports.html">Transport</a></li>
-            <li><a href="free-profile.html" style="color:#D4AF37;">Free Page</a></li>
+            <li><a href="free-profile.html" style="color:var(--color-accent);">Free Page</a></li>
       <li><a href="about.html">About</a></li>
     </ul>
     <div class="nav-right">
@@ -797,5 +797,6 @@
     });
   });
 </script>
+<script src="js/sticky-cta.js" defer></script>
 </body>
 </html>

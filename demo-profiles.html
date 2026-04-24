@@ -20,8 +20,8 @@
   <meta name="twitter:title" content="Real Legacies. Real People. | My Legacy Continues">
   <meta name="twitter:description" content="See actual MLC profiles. Families, businesses, memorials, rescues. Permanent stories from the Central Coast.">
   <meta name="twitter:image" content="https://mylegacycontinues.com/logo.png">
-  <link rel="preload" href="/fonts/Inter-VariableFont_opsz,wght.ttf" as="font" type="font/ttf" crossorigin>
-  <link rel="preload" href="/fonts/BigShoulders-VariableFont_opsz,wght.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="/fonts/Staatliches-Regular.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="/fonts/Lato-Regular.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="stylesheet" href="/fonts/fonts.css">
   <link rel="stylesheet" href="style.css">
 
@@ -29,11 +29,11 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
     :root {
-      --charcoal: #1A1A1A;
+      --charcoal: var(--color-bg);
       --charcoal-2: #232323;
-      --gold: #D4AF37;
+      --gold: var(--color-accent);
       --gold-soft: rgba(212,175,55,0.25);
-      --cream: #F5F5F5;
+      --cream: var(--color-text);
       --dim: #bababa;
     }
 
@@ -243,7 +243,7 @@
       <li><a href="network.html">Network</a></li>
       <li><a href="rescue-registry.html">Rescue</a></li>
       <li><a href="active-transports.html">Transport</a></li>
-            <li><a href="free-profile.html" style="color:#D4AF37;">Free Page</a></li>
+            <li><a href="free-profile.html" style="color:var(--color-accent);">Free Page</a></li>
       <li><a href="about.html">About</a></li>
     </ul>
     <div class="nav-right">
@@ -377,5 +377,6 @@
   </div>
 </footer>
 
+<script src="js/sticky-cta.js" defer></script>
 </body>
 </html>
