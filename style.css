@@ -888,6 +888,17 @@ p {
   margin-top: clamp(2rem, 4vw, 3rem);
 }
 
+/* Timeline total emphasizer — heritage-book only (Apr 24 2026) */
+.timeline-total {
+  font-size: 1.25em;
+  color: #C9A24C;
+  margin-top: 0.5rem;
+  letter-spacing: 0.02em;
+}
+.timeline-total strong {
+  font-weight: 700;
+}
+
 /* ════════════════════════════════════════════════════════════════
    CANDY PAINT & CHROME — SITE-WIDE OVERRIDES
    Applied last so they win specificity over page-level inline styles.
