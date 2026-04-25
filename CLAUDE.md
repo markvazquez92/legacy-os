@@ -175,3 +175,20 @@ These blocks appear on every page and must be kept identical:
 - "Talk To The Founder" / Text Bear block
 
 When fixing any of these, fix ALL pages in one pass using grep + batch edit.
+
+---
+
+## Apr 24 2026 — Total System Sync Reference
+
+Three product pages set the gold standard for the rest of the site:
+- `heritage-book.html`
+- `pet-tag.html`
+- `cemetery-plaque.html`
+
+See `STYLE_GUIDE.md` for the full palette, typography, copy, Bionic, and CTA rules.
+Future pages must match these three on every dimension before merging.
+
+Locked SHAs:
+- `d17fe1b` — Total System Sync (palette purge + 30 Bionic rewrites + timeline harmonization)
+- `6b8dd1c` — Vibe Check (Bionic density 6+ letter gate + Get Started CTA upgrade)
+- `e52c24b` — Phase E (timeline prominence — "Total: 7 weeks" promoted to primary trust signal)
