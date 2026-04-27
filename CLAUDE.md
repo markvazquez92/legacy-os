@@ -76,7 +76,7 @@ GitHub Actions config. Do not modify without explicit approval.
       Network
       Rescue
       Transport
-      Free Page
+      Free Profile
       About
       FAQ
       Privacy
@@ -99,7 +99,7 @@ Business → business-profile.html
 Network → network.html
 Rescue → rescue-registry.html
 Transport → active-transports.html
-Free Page → free-profile.html (gold color: #C9A24C)
+Free Profile → free-profile.html (gold color: #C9A24C)
 About → about.html
 
 For pages inside /legal/ use ../ prefix on every href.
