@@ -22,11 +22,11 @@
     var wrap = document.createElement('div');
     wrap.className = 'sticky-cta';
     wrap.setAttribute('role', 'complementary');
-    wrap.setAttribute('aria-label', 'Claim your free profile');
+    wrap.setAttribute('aria-label', 'Create your free legacy profile');
 
     var a = document.createElement('a');
     a.href = 'free-profile.html';
-    a.textContent = 'Claim Free Profile \u2192';
+    a.textContent = 'Create Your Free Legacy Profile \u2192';
 
     wrap.appendChild(a);
     document.body.appendChild(wrap);

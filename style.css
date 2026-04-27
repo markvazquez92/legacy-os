@@ -1075,7 +1075,7 @@ select {
 
 /* Push body up so sticky CTA doesn't overlap content (mobile only). */
 @media (max-width: 768px) {
-  body:not([data-no-sticky-cta="true"]) { padding-bottom: 5rem; }
+  body:not([data-no-sticky-cta="true"]) { padding-bottom: 96px; }
 }
 
 
@@ -1096,5 +1096,69 @@ input[type="reset"],
 .nav-toggle {
   min-height: 44px;
   min-width: 44px;
+}
+
+
+/* ═══════════════════════════════════════════════════════════
+   MOBILE LOCK-IN BLOCK — Apr 25 2026
+   Hero/footer padding · 44px tap targets · sticky-CTA
+   collision guard · form-input overflow fix
+   ═══════════════════════════════════════════════════════════ */
+@media (max-width: 600px) {
+  .home-hero, .home-hero-inner,
+  .hero, .page-hero, .page-hero-inner,
+  .fp-hero, .nw-hero, .transport-hero, .page-header,
+  .hero-split, .hero-left, .lr-hero {
+    padding-inline: 20px;
+    box-sizing: border-box;
+  }
+
+  footer,
+  .footer-content,
+  .footer-contact,
+  .footer-links {
+    padding-inline: 20px;
+    box-sizing: border-box;
+  }
+  .footer-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 1.5rem;
+  }
+  .footer-contact { text-align: center; }
+  .footer-links ul {
+    align-items: center;
+    padding-left: 0;
+    gap: 0.25rem;
+  }
+  .footer-links li { list-style: none; }
+
+  .footer-links a,
+  footer a[href^="tel:"],
+  footer a[href^="sms:"],
+  .footer-contact a {
+    display: inline-block;
+    min-height: 44px;
+    line-height: 44px;
+  }
+
+  .form-group input,
+  .form-group textarea,
+  .form-group select {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+}
+
+@media (max-width: 768px) {
+  body { padding-bottom: 96px; }
+
+  .sticky-cta {
+    padding: 0.75rem 1rem calc(0.75rem + env(safe-area-inset-bottom));
+    text-align: center;
+    justify-content: center;
+  }
+  .sticky-cta a { margin: 0 auto; }
 }
 
