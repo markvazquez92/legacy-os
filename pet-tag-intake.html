@@ -289,12 +289,12 @@
         </div>
         <div class="field">
           <label for="age">Age (years)</label>
-          <input type="number" id="age" name="age" min="0" step="1" placeholder="5">
+          <input type="number" id="age" name="age" min="0" step="1" inputmode="numeric" placeholder="5">
         </div>
       </div>
       <div class="field">
         <label for="weight">Weight (lbs)</label>
-        <input type="number" id="weight" name="weight" min="0" step="0.1" placeholder="12">
+        <input type="number" id="weight" name="weight" min="0" step="0.1" inputmode="decimal" placeholder="12">
       </div>
     </section>
 
@@ -303,17 +303,17 @@
       <p class="eyebrow"><span class="show-on-basic">2</span><span class="show-on-premium">2</span> &mdash; Owner Contact</p>
       <div class="field">
         <label for="owner_name">Your full name <span class="required">*</span></label>
-        <input type="text" id="owner_name" name="owner_name" required>
+        <input type="text" id="owner_name" name="owner_name" required autocomplete="name">
         <span class="helper">Shown on the public profile as the Owner.</span>
       </div>
       <div class="field">
         <label for="email">Your email <span class="required">*</span></label>
-        <input type="email" id="email" name="email" required>
+        <input type="email" id="email" name="email" required inputmode="email" autocomplete="email">
         <span class="helper">We send your confirmation here.</span>
       </div>
       <div class="field">
         <label for="phone">Your phone <span class="required">*</span></label>
-        <input type="tel" id="phone" name="phone" required>
+        <input type="tel" id="phone" name="phone" required inputmode="tel" autocomplete="tel">
         <span class="helper">Becomes the tap-to-call button on your pet's profile.</span>
       </div>
       <div class="field">
@@ -342,7 +342,7 @@
         </div>
         <div class="field">
           <label for="emergency1_phone">Backup #1 phone <span class="required">*</span></label>
-          <input type="tel" id="emergency1_phone" name="emergency1_phone">
+          <input type="tel" id="emergency1_phone" name="emergency1_phone" inputmode="tel">
         </div>
       </div>
       <div class="field-row">
@@ -352,7 +352,7 @@
         </div>
         <div class="field">
           <label for="emergency2_phone">Backup #2 phone</label>
-          <input type="tel" id="emergency2_phone" name="emergency2_phone">
+          <input type="tel" id="emergency2_phone" name="emergency2_phone" inputmode="tel">
         </div>
       </div>
     </section>
@@ -367,7 +367,7 @@
         </div>
         <div class="field">
           <label for="vet_phone">Vet phone <span class="required">*</span></label>
-          <input type="tel" id="vet_phone" name="vet_phone" required>
+          <input type="tel" id="vet_phone" name="vet_phone" required inputmode="tel">
         </div>
       </div>
       <div class="field">
@@ -389,7 +389,7 @@
       </div>
       <div class="field">
         <label for="microchip">Microchip number</label>
-        <input type="text" id="microchip" name="microchip" placeholder="15-digit ISO">
+        <input type="text" id="microchip" name="microchip" inputmode="numeric" placeholder="15-digit ISO">
       </div>
       <div class="field">
         <label for="insurance">Pet insurance provider</label>
