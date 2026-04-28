@@ -617,6 +617,7 @@
   </script>
   <noscript><img height="1" width="1" style="display:none"
   src="https://www.facebook.com/tr?id=2828165625364437&ev=PageView&noscript=1"/></noscript>
+  <script src="/js/nav-toggle.js" defer></script>
 </head>
 <body>
   <!-- Facebook Pixel noscript -->
@@ -624,27 +625,20 @@
 
   <!-- NAVIGATION -->
   <nav class="site-nav">
-    <a href="https://mylegacycontinues.com/index.html" class="nav-brand">
-      <img src="logo.png" alt="My Legacy Continues" class="nav-logo">
-    </a>
-    <ul class="nav-links" id="navLinks">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="heritage-book.html">Heritage</a></li>
-      <li><a href="pet-tag.html">Pet Tags</a></li>
-      <li><a href="business-profile.html">Business</a></li>
-      <li><a href="network.html">Network</a></li>
-      <li><a href="rescue-registry.html">Rescue</a></li>
-      <li><a href="active-transports.html">Transport</a></li>
-            <li><a href="free-profile.html" style="color:var(--color-accent);">Free Profile</a></li>
-      <li><a href="about.html">About</a></li>
-    </ul>
-    <div class="nav-right">
-      <a href="free-profile.html" class="btn btn-gold" style="padding: 0.5rem 1.2rem; font-size: 0.7rem;">Free Profile</a>
-      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </nav>
+  <a href="/index.html" class="nav-brand">
+    <img src="/logo.png?v=5" alt="My Legacy Continues" class="nav-logo">
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="/index.html">Home</a></li>
+    <li><a href="/pet-tag.html">Pet Tags</a></li>
+    <li><a href="/heritage-book.html">Heritage</a></li>
+    <li><a href="/business-profile.html">Business</a></li>
+    <li><a href="/free-profile.html">Free Profile</a></li>
+  </ul>
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
 
   <img src="images/products/bigtymers.jpg?v=20260416" alt="Big Tymer Trucking — business cards" style="width:100%; max-width:800px; display:block; margin:0 auto 2rem auto; border-radius:8px;">
 
@@ -816,36 +810,47 @@
   </section>
 
   <!-- SECTION 8 — FOOTER -->
-  <footer class="bt-footer">
-    <div class="bt-footer-inner">
-      <div class="bt-footer-left">
-        <div class="bt-footer-brand">Big Tymer Trucking</div>
-        <div class="bt-footer-sub">DOT# 3910331</div>
-      </div>
-      <div class="bt-footer-center">
-        <a href="tel:+18058588180">805-858-8180</a><span class="bar">|</span><a href="mailto:bigtymertrucking@gmail.com">bigtymertrucking@gmail.com</a>
-      </div>
-      <div class="bt-footer-right">
-        <img src="logo.png" alt="My Legacy Continues">
-        <a href="https://mylegacycontinues.com">mylegacycontinues.com</a>
-      </div>
+  <footer class="site-footer">
+  <p class="footer-tagline">Long Live Your Legacy.</p>
+  <div class="footer-grid">
+    <div class="footer-col">
+      <h3 class="footer-col-heading">Products</h3>
+      <ul>
+        <li><a href="/pet-tag.html">Pet Tags</a></li>
+        <li><a href="/heritage-book.html">Heritage</a></li>
+        <li><a href="/cemetery-plaque.html">Cemetery Plaque</a></li>
+        <li><a href="/baby-legacy.html">Baby Legacy</a></li>
+        <li><a href="/business-profile.html">Business</a></li>
+        <li><a href="/contractor-bundle.html">Contractor Bundle</a></li>
+      </ul>
     </div>
-    <div class="bt-footer-bottom">
-      <p style="color:#9a9a9a; font-size:0.9rem; margin-bottom:0.5rem; text-align:center;">Powered by <a href="index.html" style="color:var(--color-accent); text-decoration:none;">My Legacy Continues</a> &mdash; Your story deserves forever.</p>
-      <p class="bt-footer-copy">Copyright &copy; 2026 Zachary Mediano &mdash; Legacy documented by My Legacy Continues</p>
+    <div class="footer-col">
+      <h3 class="footer-col-heading">Community</h3>
+      <ul>
+        <li><a href="/network.html">Network</a></li>
+        <li><a href="/rescue-registry.html">Rescue Partners</a></li>
+        <li><a href="/active-transports.html">Transport</a></li>
+        <li><a href="/free-profile.html">Free Profile</a></li>
+      </ul>
     </div>
-  </footer>
+    <div class="footer-col">
+      <h3 class="footer-col-heading">Company</h3>
+      <ul>
+        <li><a href="/about.html">About</a></li>
+        <li><a href="/faq.html">FAQ</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+        <li><a href="/legal/privacy.html">Privacy</a></li>
+        <li><a href="/legal/terms-of-service.html">Terms</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 My Legacy Continues &middot; Santa Maria, CA</p>
+    <p><a href="mailto:contact@mylegacycontinues.com">contact@mylegacycontinues.com</a> &middot; <a href="tel:+18058633794">(805) 863-3794</a></p>
+  </div>
+</footer>
 
   <script>
-    // Mobile nav toggle
-    const navToggle = document.getElementById('navToggle');
-    const navLinks = document.getElementById('navLinks');
-    if (navToggle) {
-      navToggle.addEventListener('click', () => navLinks.classList.toggle('active'));
-      navLinks.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => navLinks.classList.remove('active'));
-      });
-    }
 
     // Fade-in on scroll
     const observer = new IntersectionObserver((entries) => {
@@ -858,29 +863,6 @@
     }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
     document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
   </script>
-<!-- MLC_CANONICAL_FOOTER -->
-<footer class="footer-section">
-  <div class="section-inner">
-    <div class="footer-contact">Contact: contact@mylegacycontinues.com |
-    <a href="tel:+18058633794">(805) 863-3794</a> | Santa Maria, CA</div>
-    <ul class="footer-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="heritage-book.html">Heritage</a></li>
-      <li><a href="pet-tag.html">Pet Tags</a></li>
-      <li><a href="business-profile.html">Business</a></li>
-      <li><a href="network.html">Network</a></li>
-      <li><a href="rescue-registry.html">Rescue</a></li>
-      <li><a href="active-transports.html">Transport</a></li>
-      <li><a href="free-profile.html" style="color:#C9A24C;">Free Profile</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="faq.html">FAQ</a></li>
-      <li><a href="legal/privacy.html">Privacy</a></li>
-      <li><a href="legal/terms-of-service.html">Terms</a></li>
-    </ul>
-    <p class="footer-copy">&copy; 2026 My Legacy Continues. Every story deserves forever.</p>
-  </div>
-</footer>
-
 <script src="js/sticky-cta.js" defer></script>
 </body>
 </html>
