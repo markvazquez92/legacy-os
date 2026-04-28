@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<!-- NO EMOJIS EVER -->
+<html lang="en" data-tier="basic">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Tier detection — runs before body parses to prevent FOUC of premium sections -->
+  <script>
+    (function () {
+      if (new URLSearchParams(location.search).get('tier') === 'premium') {
+        document.documentElement.dataset.tier = 'premium';
+      }
+    })();
+  </script>
+
+  <title>Pet Tag Intake — My Legacy Continues</title>
+  <meta name="description" content="Tell us about your pet. Permanent QR profile + tap-to-call tag built from your intake. Hosted forever.">
+  <meta name="theme-color" content="#5C0A12">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://mylegacycontinues.com/pet-tag-intake.html">
+  <meta property="og:title" content="Pet Tag Intake — My Legacy Continues">
+  <meta property="og:description" content="Tell us about your pet. Permanent QR profile + tap-to-call tag built from your intake.">
+  <meta property="og:image" content="https://mylegacycontinues.com/logo.png">
+  <meta property="og:site_name" content="My Legacy Continues">
+
+  <link rel="icon" href="logo.png" type="image/png">
+  <link rel="preload" href="/fonts/Staatliches-Regular.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="/fonts/Lato-Regular.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="stylesheet" href="/fonts/fonts.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="manifest.json">
+
+  <style>
+    /* ─────────────────────────────────────────────
+       pet-tag-intake.html — checkout-style intake
+       Onyx #14110F · Bone #ECE4D2 · Gold #C9A24C · Brandywine #5C0A12
+       ───────────────────────────────────────────── */
+    body {
+      background: #14110F;
+      color: #ECE4D2;
+      font-family: 'Lato', system-ui, -apple-system, sans-serif;
+      margin: 0; padding: 0;
+      min-height: 100vh;
+      line-height: 1.5;
+    }
+
+    /* TOP CHROME */
+    .intake-top {
+      display: flex; align-items: center; gap: 1rem;
+      padding: 1.25rem 1.5rem;
+      border-bottom: 1px solid rgba(201, 162, 76, 0.18);
+    }
+    .intake-top img { height: 40px; width: auto; }
+    .intake-top .tagline {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-style: italic; color: #C9A24C; font-size: 1rem;
+    }
+
+    /* PAGE WRAP */
+    .intake-wrap {
+      max-width: 720px; margin: 0 auto;
+      padding: 2.5rem 1.5rem 4rem;
+    }
+
+    /* HERO */
+    .intake-hero { margin-bottom: 1.5rem; }
+    .intake-hero .tier-line {
+      font-family: 'Staatliches', Impact, sans-serif;
+      font-size: 0.85rem; letter-spacing: 0.18em;
+      text-transform: uppercase; color: #C9A24C;
+      margin: 0 0 0.75rem;
+    }
+    .intake-hero h1 {
+      font-family: 'Staatliches', Impact, sans-serif;
+      font-size: clamp(1.85rem, 5vw, 2.6rem);
+      letter-spacing: 0.04em; color: #ECE4D2;
+      margin: 0 0 0.75rem; text-transform: uppercase;
+      line-height: 1.05;
+    }
+    .intake-hero .subhead {
+      font-size: 1.05rem; color: #ECE4D2;
+      opacity: 0.85; margin: 0 0 0.75rem;
+    }
+    .intake-hero .switch-tier {
+      font-size: 0.85rem; color: #ECE4D2;
+      opacity: 0.65; margin: 0;
+    }
+    .intake-hero .switch-tier a {
+      color: #C9A24C; text-decoration: underline;
+    }
+
+    /* SECTIONS */
+    .intake-section {
+      margin-top: 2.5rem; padding-top: 2rem;
+      border-top: 1px solid rgba(201, 162, 76, 0.25);
+    }
+    .intake-section:first-of-type {
+      margin-top: 1rem; padding-top: 0; border-top: 0;
+    }
+    .intake-section .eyebrow {
+      font-family: 'Staatliches', Impact, sans-serif;
+      font-size: 0.85rem; letter-spacing: 0.22em;
+      text-transform: uppercase; color: #C9A24C;
+      margin: 0 0 1.25rem;
+    }
+    .intake-section .section-helper {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-style: italic; font-size: 0.95rem;
+      color: #ECE4D2; opacity: 0.75;
+      margin: -0.75rem 0 1.25rem;
+    }
+
+    /* FIELDS */
+    .field { margin-bottom: 1.25rem; }
+    .field label {
+      display: block; font-size: 0.85rem;
+      letter-spacing: 0.04em; color: #ECE4D2;
+      margin-bottom: 0.4rem; font-weight: 600;
+    }
+    .field .required { color: #C9A24C; margin-left: 4px; }
+    .field .helper {
+      display: block; font-family: 'Cormorant Garamond', Georgia, serif;
+      font-style: italic; font-size: 0.85rem;
+      color: #ECE4D2; opacity: 0.65;
+      margin-top: 0.4rem;
+    }
+    .field input[type="text"], .field input[type="email"],
+    .field input[type="tel"],  .field input[type="number"],
+    .field select, .field textarea {
+      width: 100%; box-sizing: border-box;
+      background: rgba(20, 17, 15, 0.6);
+      border: 1px solid rgba(201, 162, 76, 0.35);
+      color: #ECE4D2;
+      font-family: 'Lato', system-ui, sans-serif;
+      font-size: 16px;
+      padding: 12px 14px;
+      border-radius: 3px;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .field input:focus, .field select:focus, .field textarea:focus {
+      outline: none; border-color: #C9A24C;
+      box-shadow: 0 0 0 3px rgba(201, 162, 76, 0.18);
+    }
+    .field textarea { resize: vertical; line-height: 1.5; min-height: 80px; }
+
+    /* RADIO */
+    .radio-group { display: flex; flex-direction: column; gap: 0.5rem; }
+    .radio-option {
+      display: flex; align-items: center; gap: 0.6rem; cursor: pointer;
+    }
+    .radio-option input[type="radio"] {
+      accent-color: #C9A24C;
+      width: 18px; height: 18px; flex-shrink: 0;
+    }
+
+    /* TWO-COLUMN ROWS */
+    .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    @media (max-width: 600px) {
+      .field-row { grid-template-columns: 1fr; gap: 0; }
+    }
+
+    /* STATIC NOTES */
+    .static-note {
+      background: rgba(201, 162, 76, 0.06);
+      border-left: 3px solid #C9A24C;
+      padding: 1rem 1.25rem; margin: 1rem 0;
+      font-size: 0.95rem; color: #ECE4D2;
+    }
+
+    /* TIER VISIBILITY (CSS-only reveal) */
+    [data-tier="basic"]   .premium-only         { display: none; }
+    [data-tier="basic"]   .show-on-premium      { display: none; }
+    [data-tier="premium"] .show-on-basic        { display: none; }
+    [data-tier="basic"]   .photo-note-premium   { display: none; }
+    [data-tier="premium"] .photo-note-basic     { display: none; }
+
+    /* SUBMIT BUTTON */
+    .intake-submit-wrap { margin-top: 3rem; text-align: center; }
+    .intake-submit {
+      display: inline-block; width: 100%; max-width: 320px;
+      background: #5C0A12; color: #ECE4D2;
+      border: 2px solid #C9A24C;
+      padding: 16px 32px;
+      font-family: 'Staatliches', Impact, sans-serif;
+      font-size: 1.05rem; letter-spacing: 0.18em;
+      text-transform: uppercase; cursor: pointer;
+      border-radius: 3px; min-height: 52px;
+      transition: transform 0.15s, box-shadow 0.2s;
+    }
+    .intake-submit:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(92, 10, 18, 0.45);
+    }
+
+    /* HONEYPOT */
+    .gotcha {
+      position: absolute !important;
+      left: -9999px !important;
+      width: 1px !important; height: 1px !important;
+      overflow: hidden !important;
+    }
+
+    /* FOOTER */
+    .intake-footer {
+      text-align: center; padding: 1.5rem 1rem;
+      border-top: 1px solid rgba(201, 162, 76, 0.18);
+      font-size: 0.78rem; color: #ECE4D2;
+      opacity: 0.55; letter-spacing: 0.04em;
+    }
+  </style>
+
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XQJ8KPVZX9"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XQJ8KPVZX9');
+  </script>
+
+  <!-- Facebook Pixel -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '2828165625364437');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=2828165625364437&ev=PageView&noscript=1"/></noscript>
+</head>
+<body data-no-sticky-cta="true">
+
+<header class="intake-top">
+  <img src="logo.png?v=5" alt="My Legacy Continues">
+  <span class="tagline">Long Live Your Legacy.</span>
+</header>
+
+<main class="intake-wrap">
+
+  <section class="intake-hero">
+    <p class="tier-line">
+      Pet Tag <span class="show-on-basic">Basic</span><span class="show-on-premium">Premium</span> &middot; Intake Form
+    </p>
+    <h1>Tell us about your pet</h1>
+    <p class="subhead">
+      Pay's done. We need a few things to build <span id="petNameOut">your pet</span>'s permanent profile.
+    </p>
+    <p class="switch-tier">
+      <span class="show-on-basic">Premium customer? <a href="?tier=premium">Switch to the Premium form</a>.</span>
+      <span class="show-on-premium">Basic customer? <a href="?tier=basic">Switch to the Basic form</a>.</span>
+    </p>
+  </section>
+
+  <form id="petTagIntake" action="https://formspree.io/f/xgolrkea" method="POST" data-block-cliches="true">
+
+    <input type="hidden" name="_subject" id="subjectField" value="Pet Tag Basic Order — New Intake">
+    <input type="hidden" name="stripe_session_id" id="stripeSessionId" value="">
+    <input type="hidden" name="tier" id="tierField" value="basic">
+    <input class="gotcha" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+    <!-- 1. IDENTITY -->
+    <section class="intake-section">
+      <p class="eyebrow"><span class="show-on-basic">1</span><span class="show-on-premium">1</span> &mdash; Identity</p>
+      <div class="field">
+        <label for="pet_name">Pet's full name <span class="required">*</span></label>
+        <input type="text" id="pet_name" name="pet_name" required placeholder="Butters">
+      </div>
+      <div class="field">
+        <label for="species">Species <span class="required">*</span></label>
+        <select id="species" name="species" required>
+          <option value="">Choose&hellip;</option>
+          <option value="dog">Dog</option>
+          <option value="cat">Cat</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+      <div class="field-row">
+        <div class="field">
+          <label for="breed">Breed</label>
+          <input type="text" id="breed" name="breed" placeholder="Orange Tabby">
+        </div>
+        <div class="field">
+          <label for="age">Age (years)</label>
+          <input type="number" id="age" name="age" min="0" step="1" placeholder="5">
+        </div>
+      </div>
+      <div class="field">
+        <label for="weight">Weight (lbs)</label>
+        <input type="number" id="weight" name="weight" min="0" step="0.1" placeholder="12">
+      </div>
+    </section>
+
+    <!-- 2. OWNER CONTACT -->
+    <section class="intake-section">
+      <p class="eyebrow"><span class="show-on-basic">2</span><span class="show-on-premium">2</span> &mdash; Owner Contact</p>
+      <div class="field">
+        <label for="owner_name">Your full name <span class="required">*</span></label>
+        <input type="text" id="owner_name" name="owner_name" required>
+        <span class="helper">Shown on the public profile as the Owner.</span>
+      </div>
+      <div class="field">
+        <label for="email">Your email <span class="required">*</span></label>
+        <input type="email" id="email" name="email" required>
+        <span class="helper">We send your confirmation here.</span>
+      </div>
+      <div class="field">
+        <label for="phone">Your phone <span class="required">*</span></label>
+        <input type="tel" id="phone" name="phone" required>
+        <span class="helper">Becomes the tap-to-call button on your pet's profile.</span>
+      </div>
+      <div class="field">
+        <label>Phone display preference <span class="required">*</span></label>
+        <div class="radio-group">
+          <label class="radio-option">
+            <input type="radio" name="phone_display" value="public" checked>
+            <span>Show my number publicly on the profile</span>
+          </label>
+          <label class="radio-option">
+            <input type="radio" name="phone_display" value="relay">
+            <span>Use MLC privacy relay (we forward calls)</span>
+          </label>
+        </div>
+      </div>
+    </section>
+
+    <!-- PREMIUM: 3. EMERGENCY CONTACTS -->
+    <section class="intake-section premium-only">
+      <p class="eyebrow">3 &mdash; Emergency Contacts</p>
+      <div class="field-row">
+        <div class="field">
+          <label for="emergency1_name">Backup #1 name <span class="required">*</span></label>
+          <input type="text" id="emergency1_name" name="emergency1_name">
+          <span class="helper">Person who answers if you can't.</span>
+        </div>
+        <div class="field">
+          <label for="emergency1_phone">Backup #1 phone <span class="required">*</span></label>
+          <input type="tel" id="emergency1_phone" name="emergency1_phone">
+        </div>
+      </div>
+      <div class="field-row">
+        <div class="field">
+          <label for="emergency2_name">Backup #2 name</label>
+          <input type="text" id="emergency2_name" name="emergency2_name">
+        </div>
+        <div class="field">
+          <label for="emergency2_phone">Backup #2 phone</label>
+          <input type="tel" id="emergency2_phone" name="emergency2_phone">
+        </div>
+      </div>
+    </section>
+
+    <!-- 3/4. VET & MEDICAL -->
+    <section class="intake-section">
+      <p class="eyebrow"><span class="show-on-basic">3</span><span class="show-on-premium">4</span> &mdash; Vet &amp; Medical</p>
+      <div class="field-row">
+        <div class="field">
+          <label for="vet_name">Vet name <span class="required">*</span></label>
+          <input type="text" id="vet_name" name="vet_name" required placeholder="Coastal Veterinary Clinic">
+        </div>
+        <div class="field">
+          <label for="vet_phone">Vet phone <span class="required">*</span></label>
+          <input type="tel" id="vet_phone" name="vet_phone" required>
+        </div>
+      </div>
+      <div class="field">
+        <label for="medications">Current medications</label>
+        <textarea id="medications" name="medications" rows="3" placeholder="List anything they're on. Skip if none."></textarea>
+      </div>
+      <div class="field">
+        <label for="allergies">Allergies</label>
+        <textarea id="allergies" name="allergies" rows="2" placeholder="Food, meds, environmental."></textarea>
+      </div>
+    </section>
+
+    <!-- PREMIUM: 5. EXTENDED MEDICAL -->
+    <section class="intake-section premium-only">
+      <p class="eyebrow">5 &mdash; Extended Medical</p>
+      <div class="field">
+        <label for="extended_medical">Chronic conditions + behavioral notes</label>
+        <textarea id="extended_medical" name="extended_medical" rows="4" placeholder="Heart condition, anxiety triggers, anything a finder or vet should know."></textarea>
+      </div>
+      <div class="field">
+        <label for="microchip">Microchip number</label>
+        <input type="text" id="microchip" name="microchip" placeholder="15-digit ISO">
+      </div>
+      <div class="field">
+        <label for="insurance">Pet insurance provider</label>
+        <input type="text" id="insurance" name="insurance" placeholder="Trupanion / Healthy Paws / etc.">
+      </div>
+    </section>
+
+    <!-- 4/6. SAFETY & HANDLING -->
+    <section class="intake-section">
+      <p class="eyebrow"><span class="show-on-basic">4</span><span class="show-on-premium">6</span> &mdash; Safety &amp; Handling</p>
+      <div class="field">
+        <label for="approach_notes">How should a stranger approach?</label>
+        <textarea id="approach_notes" name="approach_notes" rows="3" placeholder="Shy with strangers? Food-motivated? Will run if startled?"></textarea>
+      </div>
+      <div class="field">
+        <label for="handling_notes">Special handling instructions</label>
+        <textarea id="handling_notes" name="handling_notes" rows="2" placeholder="Microchip notes, escape history, anything else."></textarea>
+      </div>
+    </section>
+
+    <!-- 5/7. QUIRK DECK -->
+    <section class="intake-section">
+      <p class="eyebrow"><span class="show-on-basic">5</span><span class="show-on-premium">7</span> &mdash; Quirk Deck</p>
+      <p class="section-helper">
+        Specific moments that make them them. Skip any you don't have.
+        <span class="show-on-basic">3 slots.</span><span class="show-on-premium">6 slots.</span>
+      </p>
+      <div class="field-row">
+        <div class="field"><label for="quirk1_title">Quirk #1 &mdash; Title</label>
+          <input type="text" id="quirk1_title" name="quirk1_title" maxlength="40" placeholder="The Supervisor"></div>
+        <div class="field"><label for="quirk1_desc">Quirk #1 &mdash; Description</label>
+          <textarea id="quirk1_desc" name="quirk1_desc" rows="2" placeholder="Specific moment, specific place."></textarea></div>
+      </div>
+      <div class="field-row">
+        <div class="field"><label for="quirk2_title">Quirk #2 &mdash; Title</label>
+          <input type="text" id="quirk2_title" name="quirk2_title" maxlength="40" placeholder="The 3 AM Alarm"></div>
+        <div class="field"><label for="quirk2_desc">Quirk #2 &mdash; Description</label>
+          <textarea id="quirk2_desc" name="quirk2_desc" rows="2"></textarea></div>
+      </div>
+      <div class="field-row">
+        <div class="field"><label for="quirk3_title">Quirk #3 &mdash; Title</label>
+          <input type="text" id="quirk3_title" name="quirk3_title" maxlength="40" placeholder="Forbidden Snack"></div>
+        <div class="field"><label for="quirk3_desc">Quirk #3 &mdash; Description</label>
+          <textarea id="quirk3_desc" name="quirk3_desc" rows="2"></textarea></div>
+      </div>
+      <!-- PREMIUM: Quirks 4-6 -->
+      <div class="premium-only">
+        <div class="field-row">
+          <div class="field"><label for="quirk4_title">Quirk #4 &mdash; Title</label>
+            <input type="text" id="quirk4_title" name="quirk4_title" maxlength="40" placeholder="The Foreman Flop"></div>
+          <div class="field"><label for="quirk4_desc">Quirk #4 &mdash; Description</label>
+            <textarea id="quirk4_desc" name="quirk4_desc" rows="2"></textarea></div>
+        </div>
+        <div class="field-row">
+          <div class="field"><label for="quirk5_title">Quirk #5 &mdash; Title</label>
+            <input type="text" id="quirk5_title" name="quirk5_title" maxlength="40" placeholder="Arch Nemesis"></div>
+          <div class="field"><label for="quirk5_desc">Quirk #5 &mdash; Description</label>
+            <textarea id="quirk5_desc" name="quirk5_desc" rows="2"></textarea></div>
+        </div>
+        <div class="field-row">
+          <div class="field"><label for="quirk6_title">Quirk #6 &mdash; Title</label>
+            <input type="text" id="quirk6_title" name="quirk6_title" maxlength="40" placeholder="The Stare"></div>
+          <div class="field"><label for="quirk6_desc">Quirk #6 &mdash; Description</label>
+            <textarea id="quirk6_desc" name="quirk6_desc" rows="2"></textarea></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6/8. SENSORY ARCHIVE -->
+    <section class="intake-section">
+      <p class="eyebrow"><span class="show-on-basic">6</span><span class="show-on-premium">8</span> &mdash; Sensory Archive</p>
+      <p class="section-helper">One-line poetic descriptions. Optional.</p>
+      <div class="field">
+        <label for="sensory_texture">Texture</label>
+        <input type="text" id="sensory_texture" name="sensory_texture" maxlength="80" placeholder="The softness of the patch behind his ear">
+      </div>
+      <div class="field">
+        <label for="sensory_weight">Weight feeling</label>
+        <input type="text" id="sensory_weight" name="sensory_weight" maxlength="80" placeholder="The 12 lb anchor that settles after a day of work">
+      </div>
+      <div class="field premium-only">
+        <label for="sensory_audio">Audio note</label>
+        <textarea id="sensory_audio" name="sensory_audio" rows="2" placeholder="Reply with an audio file, or describe their voice / purr / bark in 1 sentence."></textarea>
+      </div>
+    </section>
+
+    <!-- PREMIUM: 9. TAG ENGRAVING -->
+    <section class="intake-section premium-only">
+      <p class="eyebrow">9 &mdash; Tag Engraving</p>
+      <div class="field">
+        <label for="engraving">Special engraving requests</label>
+        <textarea id="engraving" name="engraving" rows="2" placeholder="Anything specific to engrave on the tag back."></textarea>
+      </div>
+    </section>
+
+    <!-- 7/10. PHOTOS -->
+    <section class="intake-section">
+      <p class="eyebrow"><span class="show-on-basic">7</span><span class="show-on-premium">10</span> &mdash; Photos</p>
+      <div class="static-note photo-note-basic">
+        <strong>Photos go via email.</strong> Reply to your confirmation email with 1&ndash;3 photos. No app, no upload step here.
+      </div>
+      <div class="static-note photo-note-premium">
+        <strong>Photos go via email.</strong> Reply to your confirmation email with up to 10 photos. No app, no upload step here.
+      </div>
+    </section>
+
+    <div class="intake-submit-wrap">
+      <button type="submit" class="intake-submit">Send Intake &rarr;</button>
+    </div>
+
+  </form>
+</main>
+
+<footer class="intake-footer">
+  Secure form &middot; Formspree &middot; mylegacycontinues.com
+</footer>
+
+<script>
+  (function () {
+    var tier = document.documentElement.dataset.tier || 'basic';
+    var subjectField = document.getElementById('subjectField');
+    var tierField = document.getElementById('tierField');
+    var stripeIdField = document.getElementById('stripeSessionId');
+    var petNameInput = document.getElementById('pet_name');
+    var petNameOut = document.getElementById('petNameOut');
+    var form = document.getElementById('petTagIntake');
+
+    // 1. Mirror tier into hidden field for Formspree filtering
+    tierField.value = tier;
+
+    // 2. stripe_session_id capture from URL
+    var sid = new URLSearchParams(location.search).get('session_id');
+    if (sid) stripeIdField.value = sid;
+
+    // 3. _subject builder — tier label + pet name (if filled)
+    function buildSubject(petName) {
+      var label = (tier === 'premium') ? 'Premium' : 'Basic';
+      var base = 'Pet Tag ' + label + ' Order — New Intake';
+      return petName ? (base + ': ' + petName) : base;
+    }
+    subjectField.value = buildSubject('');
+
+    // 4. Pet name → dynamic subhead + _subject update on every keystroke
+    petNameInput.addEventListener('input', function () {
+      var name = petNameInput.value.trim();
+      petNameOut.textContent = name || 'your pet';
+      subjectField.value = buildSubject(name);
+    });
+
+    // 5. Premium emergency contact #1 conditional required
+    if (tier === 'premium') {
+      var e1n = document.getElementById('emergency1_name');
+      var e1p = document.getElementById('emergency1_phone');
+      if (e1n) e1n.required = true;
+      if (e1p) e1p.required = true;
+    }
+
+    // 6. Conversion event — fires before native form POST. Failures silent.
+    form.addEventListener('submit', function () {
+      var value = (tier === 'premium') ? 49.99 : 24.99;
+      try {
+        if (typeof gtag !== 'undefined') {
+          gtag('event', 'intake_submit', {
+            tier: tier,
+            value: value,
+            currency: 'USD'
+          });
+        }
+      } catch (e) { /* don't block submit on analytics failure */ }
+      try {
+        if (typeof fbq !== 'undefined') {
+          fbq('track', 'Lead', {
+            content_name: 'Pet Tag Intake',
+            tier: tier,
+            value: value,
+            currency: 'USD'
+          });
+        }
+      } catch (e) { /* don't block submit on pixel failure */ }
+    });
+  })();
+</script>
+
+<script src="js/forbidden-phrases.js" defer></script>
+
+</body>
+</html>
