@@ -147,6 +147,23 @@
 
     .btn:hover { background: #6e5636; }
 
+    .cta-pet-tag {
+      display: block;
+      background: #5C0A12;
+      border: 2px solid #C9A24C;
+      color: #ECE4D2;
+      text-decoration: none;
+      padding: 22px 28px;
+      font-family: 'Staatliches', sans-serif;
+      font-size: 19px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-align: center;
+      margin: 0 0 28px;
+      transition: filter 0.2s;
+    }
+    .cta-pet-tag:hover { filter: brightness(1.12); }
+
     .footer-note {
       margin-top: 32px;
       font-size: 13px;
@@ -215,6 +232,10 @@
     <p class="subtitle">
       Payment received. We'll begin preserving your family's story right away.
     </p>
+
+    <a id="petTagCta" class="cta-pet-tag" href="/pet-tag-intake.html" hidden>
+      Complete your pet's profile &rarr;
+    </a>
 
     <hr class="divider"/>
 
@@ -326,5 +347,25 @@
   </script>
 
 <script src="js/sticky-cta.js" defer></script>
+
+  <!-- Pet-tag funnel: reveal intake CTA when arriving via Stripe Pet Tag Payment Link.
+       Graceful degrade: if tier is present but session_id is missing, CTA still
+       renders. Intake will accept submission with empty stripe_session_id rather
+       than block the user. Stripe Dashboard Fix 1a should always append session_id,
+       but we don't gate on it. -->
+  <script>
+    (function () {
+      var params = new URLSearchParams(window.location.search);
+      var tier = params.get('tier');
+      var sid = params.get('session_id');
+      if (tier !== 'basic' && tier !== 'premium') return;
+      var cta = document.getElementById('petTagCta');
+      if (!cta) return;
+      var href = '/pet-tag-intake.html?tier=' + encodeURIComponent(tier);
+      if (sid) href += '&session_id=' + encodeURIComponent(sid);
+      cta.href = href;
+      cta.hidden = false;
+    })();
+  </script>
 </body>
 </html>
