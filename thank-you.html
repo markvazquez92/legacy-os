@@ -240,24 +240,34 @@
 
 <script src="js/sticky-cta.js" defer></script>
 
-  <!-- Pet-tag funnel: reveal intake CTA when arriving via Stripe Pet Tag Payment Link.
-       Graceful degrade: if tier is present but session_id is missing, CTA still
-       renders. Intake will accept submission with empty stripe_session_id rather
-       than block the user. Stripe Dashboard Fix 1a should always append session_id,
-       but we don't gate on it. -->
+  <!-- Pet-tag funnel: reveal intake CTA when arriving from Stripe Pet Tag Payment Link.
+       Stripe Dashboard strips ?tier= and ?session_id= query params from the Confirmation
+       URL field on save (verified on plink_1TIHIBIC and plink_1TIHZrIC), so tier detection
+       happens via sessionStorage written by pet-tag.html on CTA click. 60-minute stale
+       gate prevents stale storage from triggering the CTA on a much-later return visit.
+       session_id "stripe_redirect" sentinel written into intake URL for downstream
+       analytics + Formspree reconciliation — it's a sentinel, not a real Checkout Session ID. -->
   <script>
     (function () {
-      var params = new URLSearchParams(window.location.search);
-      var tier = params.get('tier');
-      var sid = params.get('session_id');
+      var STALE_MS = 60 * 60 * 1000; // 60 minutes
+      var tier, tsRaw, ts;
+      try {
+        tier = sessionStorage.getItem('mlc_pending_tier');
+        tsRaw = sessionStorage.getItem('mlc_pending_ts');
+      } catch (e) { return; /* storage blocked — graceful degrade to default page */ }
       if (tier !== 'basic' && tier !== 'premium') return;
+      ts = parseInt(tsRaw, 10);
+      if (!ts || (Date.now() - ts) > STALE_MS) return;
       var section = document.getElementById('petTagCtaSection');
       var cta = document.getElementById('petTagCta');
       if (!section || !cta) return;
-      var href = '/pet-tag-intake.html?tier=' + encodeURIComponent(tier);
-      if (sid) href += '&session_id=' + encodeURIComponent(sid);
-      cta.href = href;
+      cta.href = '/pet-tag-intake.html?tier=' + encodeURIComponent(tier) + '&session_id=stripe_redirect';
       section.hidden = false;
+      // Clear after successful read so back-button revisit doesn't re-trigger
+      try {
+        sessionStorage.removeItem('mlc_pending_tier');
+        sessionStorage.removeItem('mlc_pending_ts');
+      } catch (e) { /* clear failed — non-critical, stale gate will catch on next load */ }
     })();
   </script>
 </body></html>
