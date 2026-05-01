@@ -2,7 +2,31 @@
 <!-- NO EMOJIS EVER -->
 <html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Thank You - Your Legacy is Permanent</title><meta name="description" content="Thank you for preserving your legacy with My Legacy Continues."><link rel="icon" href="logo.png"><link rel="preload" href="/fonts/Staatliches-Regular.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="preload" href="/fonts/Lato-Regular.ttf" as="font" type="font/ttf" crossorigin>
-  <link rel="stylesheet" href="/fonts/fonts.css"><link rel="stylesheet" href="style.css"><style>*{margin:0;padding:0;box-sizing:border-box}:root{--cream:var(--color-text);--charcoal:#2a2a2a;--gold:var(--color-accent);--text:var(--color-text)}html{scroll-behavior:smooth}body{font-family:var(--font-body);color:var(--text);line-height:1.6;background-color:#14110F;overflow-x:hidden}nav{position:fixed;top:0;left:0;right:0;display:flex;align-items:center;justify-content:space-between;padding:1.5rem 3rem;background:var(--charcoal);z-index:1000;border-bottom:1px solid rgba(224,224,224,0.15)}.nav-logo{height:50px;width:auto}.nav-links{display:flex;list-style:none;gap:2.5rem;position:absolute;left:50%;transform:translateX(-50%)}.nav-links a{text-decoration:none;color:var(--color-text);font-weight:500;transition:color 0.3s}.nav-links a:hover{color:var(--gold)}section{padding:4rem 3rem;opacity:0;transition:opacity 0.8s ease}section.fade-in{opacity:1}h2{font-family:var(--font-body);font-weight:700;font-size:clamp(2rem,4vw,3rem);margin-bottom:2rem}h3{font-family:var(--font-body);font-weight:700;font-size:clamp(1.2rem,2vw,1.5rem);margin-bottom:1rem}p{font-size:clamp(1rem,1.2vw,1.1rem);line-height:1.8;margin-bottom:1.5rem}footer{background:var(--charcoal);color:var(--color-text);padding:3rem;text-align:center;font-size:0.9rem}footer p{margin-bottom:1rem}footer a{color:var(--gold);text-decoration:none}footer a:hover{text-decoration:underline}@media(max-width:768px){nav{padding:1rem 1.5rem}.nav-links{display:none}section{padding:2rem 1.5rem}}</style>  <!-- Google Analytics 4 -->
+  <link rel="stylesheet" href="/fonts/fonts.css"><link rel="stylesheet" href="style.css"><style>*{margin:0;padding:0;box-sizing:border-box}:root{--cream:var(--color-text);--charcoal:#2a2a2a;--gold:var(--color-accent);--text:var(--color-text)}html{scroll-behavior:smooth}body{font-family:var(--font-body);color:var(--text);line-height:1.6;background-color:#14110F;overflow-x:hidden}nav{position:fixed;top:0;left:0;right:0;display:flex;align-items:center;justify-content:space-between;padding:1.5rem 3rem;background:var(--charcoal);z-index:1000;border-bottom:1px solid rgba(224,224,224,0.15)}.nav-logo{height:50px;width:auto}.nav-links{display:flex;list-style:none;gap:2.5rem;position:absolute;left:50%;transform:translateX(-50%)}.nav-links a{text-decoration:none;color:var(--color-text);font-weight:500;transition:color 0.3s}.nav-links a:hover{color:var(--gold)}section{padding:4rem 3rem;opacity:0;transition:opacity 0.8s ease}section.fade-in{opacity:1}h2{font-family:var(--font-body);font-weight:700;font-size:clamp(2rem,4vw,3rem);margin-bottom:2rem}h3{font-family:var(--font-body);font-weight:700;font-size:clamp(1.2rem,2vw,1.5rem);margin-bottom:1rem}p{font-size:clamp(1rem,1.2vw,1.1rem);line-height:1.8;margin-bottom:1.5rem}footer{background:var(--charcoal);color:var(--color-text);padding:3rem;text-align:center;font-size:0.9rem}footer p{margin-bottom:1rem}footer a{color:var(--gold);text-decoration:none}footer a:hover{text-decoration:underline}@media(max-width:768px){nav{padding:1rem 1.5rem}.nav-links{display:none}section{padding:2rem 1.5rem}}</style>
+  <style>
+    #petTagCtaSection {
+      background: #14110F;
+      padding: 2.5rem 2rem;
+      text-align: center;
+      color: #ECE4D2;
+    }
+    .cta-pet-tag {
+      display: inline-block;
+      background: #5C0A12;
+      border: 2px solid #C9A24C;
+      color: #ECE4D2;
+      text-decoration: none;
+      padding: 22px 40px;
+      font-family: 'Staatliches', sans-serif;
+      font-size: 19px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-align: center;
+      transition: filter 0.2s;
+    }
+    .cta-pet-tag:hover { filter: brightness(1.12); }
+  </style>
+  <!-- Google Analytics 4 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XQJ8KPVZX9"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -58,6 +82,13 @@
       <p style="font-family: var(--font-display); font-size: 0.8rem; color: #C9A24C; text-transform: uppercase; letter-spacing: 0.2em; margin-top: 1rem; font-weight: 700;">— Bear, Founder</p>
     </div>
   </div>
+</section>
+
+<!-- PET TAG INTAKE CTA — revealed only when arriving via Stripe Pet Tag Payment Link -->
+<section id="petTagCtaSection" hidden>
+  <a id="petTagCta" class="cta-pet-tag" href="/pet-tag-intake.html">
+    Complete your pet's profile &rarr;
+  </a>
 </section>
 
 <!-- SECTION 2: WHAT HAPPENS NEXT -->
@@ -208,4 +239,25 @@
   </script>
 
 <script src="js/sticky-cta.js" defer></script>
+
+  <!-- Pet-tag funnel: reveal intake CTA when arriving via Stripe Pet Tag Payment Link.
+       Graceful degrade: if tier is present but session_id is missing, CTA still
+       renders. Intake will accept submission with empty stripe_session_id rather
+       than block the user. Stripe Dashboard Fix 1a should always append session_id,
+       but we don't gate on it. -->
+  <script>
+    (function () {
+      var params = new URLSearchParams(window.location.search);
+      var tier = params.get('tier');
+      var sid = params.get('session_id');
+      if (tier !== 'basic' && tier !== 'premium') return;
+      var section = document.getElementById('petTagCtaSection');
+      var cta = document.getElementById('petTagCta');
+      if (!section || !cta) return;
+      var href = '/pet-tag-intake.html?tier=' + encodeURIComponent(tier);
+      if (sid) href += '&session_id=' + encodeURIComponent(sid);
+      cta.href = href;
+      section.hidden = false;
+    })();
+  </script>
 </body></html>
