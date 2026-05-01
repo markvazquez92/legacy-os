@@ -263,7 +263,7 @@
           <li style="padding: 0.5rem 0; border-bottom: 1px solid rgba(92,10,18,0.2); font-size: 0.9rem;">Digital memorial profile</li>
           <li style="padding: 0.5rem 0; font-size: 0.9rem;">Hosted forever</li>
         </ul>
-        <a href="https://buy.stripe.com/eVq7sM9CvdWk9oE4iofQI07" class="btn btn-gold" data-product="pet-tag">Get Basic</a>
+        <a href="https://buy.stripe.com/eVq7sM9CvdWk9oE4iofQI07" class="btn btn-gold" data-product="pet-tag" data-tier="basic">Get Basic</a>
       </div>
       <!-- Premium -->
       <div class="card text-center" style="border-color: #ECE4D2; border-width: 3px; position: relative;">
@@ -281,7 +281,7 @@
           <li style="padding: 0.5rem 0; border-bottom: 1px solid rgba(92,10,18,0.2); font-size: 0.9rem;">Updates forever</li>
           <li style="padding: 0.5rem 0; font-size: 0.9rem;">AirTag-compatible holder (AirTag sold separately)</li>
         </ul>
-        <a href="https://buy.stripe.com/bJe28s15ZcSgdEU9CIfQI09" class="btn btn-gold" data-product="pet-tag">Get Premium</a>
+        <a href="https://buy.stripe.com/bJe28s15ZcSgdEU9CIfQI09" class="btn btn-gold" data-product="pet-tag" data-tier="premium">Get Premium</a>
       </div>
     </div>
   </section>
@@ -802,6 +802,24 @@ document.querySelectorAll('form').forEach(form => {
             'content_type': 'product'
           });
         }
+      });
+    });
+  </script>
+
+  <!-- Pet-tag funnel: write tier to sessionStorage on Stripe CTA click for thank-you.html
+       to read after Stripe redirect. Workaround for Stripe Dashboard stripping
+       ?tier= and ?session_id= query params from Payment Link Confirmation URL on save
+       (verified on plink_1TIHIBIC and plink_1TIHZrIC). Per-tab storage; cleared by
+       thank-you.html after consumption, or expires via 60-min staleness gate. -->
+  <script>
+    document.querySelectorAll('[data-tier]').forEach(function (button) {
+      button.addEventListener('click', function () {
+        var tier = this.getAttribute('data-tier');
+        if (tier !== 'basic' && tier !== 'premium') return;
+        try {
+          sessionStorage.setItem('mlc_pending_tier', tier);
+          sessionStorage.setItem('mlc_pending_ts', Date.now().toString());
+        } catch (e) { /* incognito or quota — don't block navigation */ }
       });
     });
   </script>
